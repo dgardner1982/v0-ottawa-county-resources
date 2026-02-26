@@ -31,12 +31,12 @@ export default function Home() {
 
   const getCategoryColor = (category: string) => {
     const colors: Record<string, { bg: string; border: string; icon: string }> = {
-      "Mental Health": { bg: "bg-blue-50", border: "border-b-4 border-blue-500", icon: "🧠" },
-      "Substance Recovery": { bg: "bg-orange-50", border: "border-b-4 border-orange-500", icon: "🛡️" },
-      "Food": { bg: "bg-green-50", border: "border-b-4 border-green-500", icon: "🍽️" },
-      "Housing": { bg: "bg-amber-50", border: "border-b-4 border-amber-500", icon: "🏠" },
+      "Mental Health": { bg: "bg-blue-100", border: "border-b-4 border-blue-500", icon: "🧠" },
+      "Substance Recovery": { bg: "bg-orange-100", border: "border-b-4 border-orange-500", icon: "🛡️" },
+      "Food": { bg: "bg-green-100", border: "border-b-4 border-green-500", icon: "🍽️" },
+      "Housing": { bg: "bg-amber-100", border: "border-b-4 border-amber-500", icon: "🏠" },
     };
-    return colors[category] || { bg: "bg-gray-50", border: "border-b-4 border-gray-400", icon: "📍" };
+    return colors[category] || { bg: "bg-gray-100", border: "border-b-4 border-gray-400", icon: "📍" };
   };
 
   return (
@@ -44,7 +44,7 @@ export default function Home() {
       <div className="bg-red-600 text-white py-3 px-4 text-center sticky top-0 z-50 font-bold flex items-center justify-center gap-4 flex-wrap">
         <span>CALL <a href="tel:211" className="underline font-bold">2-1-1</a> FOR LOCAL RESOURCES</span>
         <span className="hidden sm:inline">•</span>
-        <span>FOR LIFE-THREATENING EMERGENCIES, CALL <a href="tel:911" className="underline font-bold">911</a></span>
+        <span>FOR LIFE-THREATENING EMERGENCIES, CALL <a href="tel:911" className="underline font-bold">9-1-1</a></span>
       </div>
 
       <header className="bg-white border-b-2 border-teal-200 sticky top-16 z-40 shadow-sm">
@@ -54,7 +54,7 @@ export default function Home() {
               <img 
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Recovery%20Alliance%20Business%20Cards-UXhe7EFsenUbcy44EqMjYgUa3HNUT3.jpg"
                 alt="Ottawa County Recovery Alliance"
-                className="h-20 w-20 object-contain"
+                className="h-36 w-36 object-contain"
               />
               <div>
                 <h1 className="text-4xl font-bold text-teal-700">Recovery Resources</h1>
