@@ -73,9 +73,11 @@ export default function Home() {
     <>
       {/* Emergency Bar */}
       <div className="bg-gradient-to-r from-red-600 to-red-700 text-white py-3 px-4 text-center sticky top-0 z-50 shadow-lg animate-slide-in-down">
-        <div className="flex items-center justify-center gap-2 text-sm font-semibold">
-          <Phone size={16} className="animate-pulse" />
-          <span>NEED IMMEDIATE HELP? CALL <a href="tel:211" className="font-bold underline hover:no-underline">2-1-1</a> OR <a href="tel:911" className="font-bold underline hover:no-underline">911</a></span>
+        <div className="flex items-center justify-center gap-3 text-sm font-semibold flex-wrap">
+          <Phone size={16} className="animate-pulse flex-shrink-0" />
+          <span>CALL <a href="tel:211" className="font-bold underline hover:no-underline">2-1-1</a> FOR LOCAL RESOURCES</span>
+          <span className="text-red-200">•</span>
+          <span>FOR LIFE-THREATENING EMERGENCIES, CALL <a href="tel:911" className="font-bold underline hover:no-underline">911</a></span>
         </div>
       </div>
 
