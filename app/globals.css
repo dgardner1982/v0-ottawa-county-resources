@@ -200,14 +200,6 @@
   @apply transition-all duration-300 ease-out;
 }
 
-.group-hover\:scale-up:group-hover {
-  @apply scale-105;
-}
-
-.hover\:scale-up:hover {
-  @apply scale-105;
-}
-
 .hover\:shadow-lift:hover {
   @apply shadow-lg -translate-y-1;
 }
