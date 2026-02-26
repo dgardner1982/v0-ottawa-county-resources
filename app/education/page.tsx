@@ -14,16 +14,25 @@ export default function EducationPage() {
 
   return (
     <>
-      <div className="bg-red-600 text-white py-3 px-4 text-center sticky top-0 z-50 font-bold">
-        CALL <a href="tel:211" className="underline font-bold">2-1-1</a> FOR LOCAL RESOURCES • CALL <a href="tel:911" className="underline font-bold">911</a> FOR LIFE-THREATENING EMERGENCIES
+      <div className="bg-red-600 text-white py-3 px-4 text-center sticky top-0 z-50 font-bold flex items-center justify-center gap-4 flex-wrap">
+        <span>CALL <a href="tel:211" className="underline font-bold">2-1-1</a> FOR LOCAL RESOURCES</span>
+        <span className="hidden sm:inline">•</span>
+        <span>FOR LIFE-THREATENING EMERGENCIES, CALL <a href="tel:911" className="underline font-bold">911</a></span>
       </div>
 
-      <header className="bg-white border-b-2 border-teal-200 sticky top-12 z-40 shadow-sm">
+      <header className="bg-white border-b-2 border-teal-200 sticky top-16 z-40 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-6">
-          <div className="flex justify-between items-center flex-wrap gap-4">
-            <div>
-              <h1 className="text-4xl font-bold text-teal-700">Education & Resources</h1>
-              <p className="text-gray-600">Substance Guides & Harm Reduction</p>
+          <div className="flex justify-between items-center flex-wrap gap-6">
+            <div className="flex items-center gap-4">
+              <img 
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Recovery%20Alliance%20Business%20Cards-UXhe7EFsenUbcy44EqMjYgUa3HNUT3.jpg"
+                alt="Ottawa County Recovery Alliance"
+                className="h-20 w-20 object-contain"
+              />
+              <div>
+                <h1 className="text-4xl font-bold text-teal-700">Education & Resources</h1>
+                <p className="text-gray-600">Substance Guides & Harm Reduction</p>
+              </div>
             </div>
             <Link href="/">
               <button className="bg-teal-600 hover:bg-teal-700 text-white font-bold px-6 py-2 rounded transition">Directory</button>
