@@ -183,27 +183,31 @@ export default function SupportGroupsPage() {
       </div>
 
       <header className="bg-white border-b-2 border-teal-200 sticky top-16 z-40 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 py-6">
-          <div className="flex justify-between items-center flex-wrap gap-6">
-            <div className="flex items-center gap-4">
+        <div className="max-w-7xl mx-auto px-4 py-8">
+          <div className="flex flex-col items-center gap-8">
+            {/* Logo and Title */}
+            <div className="flex flex-col items-center gap-4">
               <img 
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Recovery%20Alliance%20Business%20Cards-UXhe7EFsenUbcy44EqMjYgUa3HNUT3.jpg"
                 alt="Ottawa County Recovery Alliance"
                 className="h-full w-full object-contain"
                 style={{ maxHeight: '288px', maxWidth: '288px' }}
               />
-              <div>
-                <h1 className="text-4xl font-bold text-teal-700">Support Groups</h1>
-                <p className="text-gray-600">Community Recovery & Peer Support</p>
+              <div className="text-center">
+                <h1 className="text-6xl font-bold text-teal-700 mb-2">Support Groups</h1>
+                <p className="text-2xl text-gray-600">Community Recovery & Peer Support</p>
               </div>
             </div>
-            <div className="flex gap-4 flex-wrap">
+            
+            {/* Navigation Buttons */}
+            <div className="flex gap-4 flex-wrap justify-center">
               <Link href="/">
-                <button className="bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700 text-white font-bold px-8 py-3 rounded transition text-lg">Resources</button>
+                <button className="bg-teal-600 hover:bg-teal-700 text-white font-bold px-8 py-3 rounded transition text-lg">Resources</button>
               </Link>
               <Link href="/education">
-                <button className="bg-teal-600 hover:bg-teal-700 text-white font-bold px-8 py-3 rounded transition text-lg">Education</button>
+                <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-3 rounded transition text-lg">Education</button>
               </Link>
+              <button className="bg-purple-600 hover:bg-purple-700 text-white font-bold px-8 py-3 rounded transition text-lg">Support Groups</button>
             </div>
           </div>
         </div>
