@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Search, Phone, MapPin, BookOpen, ExternalLink } from 'lucide-react';
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -47,14 +46,14 @@ const RESOURCES = [
   { name: "Harbor Transit", category: "Transportation", address: "Grand Haven Area", phone: "616-842-3200", info: "Public transit services for the Tri-Cities area." }
 ];
 
-const CATEGORY_COLORS: Record<string, { badge: string; badgeBg: string; border: string; boxShadow: string; hover: string }> = {
-  "Mental Health": { badge: "bg-blue-100 text-blue-700", badgeBg: "bg-gradient-to-br from-blue-50 to-blue-100", border: "border-l-4 border-blue-500", boxShadow: "hover:shadow-[0_8px_24px_rgba(59,130,246,0.15)]", hover: "hover:border-blue-200" },
-  "Substance Recovery": { badge: "bg-orange-100 text-orange-700", badgeBg: "bg-gradient-to-br from-orange-50 to-orange-100", border: "border-l-4 border-orange-500", boxShadow: "hover:shadow-[0_8px_24px_rgba(249,115,22,0.15)]", hover: "hover:border-orange-200" },
-  "Food": { badge: "bg-green-100 text-green-700", badgeBg: "bg-gradient-to-br from-green-50 to-green-100", border: "border-l-4 border-green-500", boxShadow: "hover:shadow-[0_8px_24px_rgba(34,197,94,0.15)]", hover: "hover:border-green-200" },
-  "Housing": { badge: "bg-amber-100 text-amber-700", badgeBg: "bg-gradient-to-br from-amber-50 to-amber-100", border: "border-l-4 border-amber-500", boxShadow: "hover:shadow-[0_8px_24px_rgba(217,119,6,0.15)]", hover: "hover:border-amber-200" },
-  "Support Services": { badge: "bg-purple-100 text-purple-700", badgeBg: "bg-gradient-to-br from-purple-50 to-purple-100", border: "border-l-4 border-purple-500", boxShadow: "hover:shadow-[0_8px_24px_rgba(168,85,247,0.15)]", hover: "hover:border-purple-200" },
-  "Transportation": { badge: "bg-cyan-100 text-cyan-700", badgeBg: "bg-gradient-to-br from-cyan-50 to-cyan-100", border: "border-l-4 border-cyan-500", boxShadow: "hover:shadow-[0_8px_24px_rgba(34,211,238,0.15)]", hover: "hover:border-cyan-200" },
-  "Employment": { badge: "bg-indigo-100 text-indigo-700", badgeBg: "bg-gradient-to-br from-indigo-50 to-indigo-100", border: "border-l-4 border-indigo-500", boxShadow: "hover:shadow-[0_8px_24px_rgba(99,102,241,0.15)]", hover: "hover:border-indigo-200" }
+const CATEGORY_COLORS: Record<string, { badge: string; badgeBg: string; border: string; boxShadow: string; hover: string; icon: string }> = {
+  "Mental Health": { badge: "bg-blue-100 text-blue-700", badgeBg: "bg-gradient-to-br from-blue-50 to-blue-100", border: "border-l-4 border-blue-500", boxShadow: "hover:shadow-[0_8px_24px_rgba(59,130,246,0.15)]", hover: "hover:border-blue-200", icon: "🧠" },
+  "Substance Recovery": { badge: "bg-orange-100 text-orange-700", badgeBg: "bg-gradient-to-br from-orange-50 to-orange-100", border: "border-l-4 border-orange-500", boxShadow: "hover:shadow-[0_8px_24px_rgba(249,115,22,0.15)]", hover: "hover:border-orange-200", icon: "🛡️" },
+  "Food": { badge: "bg-green-100 text-green-700", badgeBg: "bg-gradient-to-br from-green-50 to-green-100", border: "border-l-4 border-green-500", boxShadow: "hover:shadow-[0_8px_24px_rgba(34,197,94,0.15)]", hover: "hover:border-green-200", icon: "🍽️" },
+  "Housing": { badge: "bg-amber-100 text-amber-700", badgeBg: "bg-gradient-to-br from-amber-50 to-amber-100", border: "border-l-4 border-amber-500", boxShadow: "hover:shadow-[0_8px_24px_rgba(217,119,6,0.15)]", hover: "hover:border-amber-200", icon: "🏠" },
+  "Support Services": { badge: "bg-purple-100 text-purple-700", badgeBg: "bg-gradient-to-br from-purple-50 to-purple-100", border: "border-l-4 border-purple-500", boxShadow: "hover:shadow-[0_8px_24px_rgba(168,85,247,0.15)]", hover: "hover:border-purple-200", icon: "🤝" },
+  "Transportation": { badge: "bg-cyan-100 text-cyan-700", badgeBg: "bg-gradient-to-br from-cyan-50 to-cyan-100", border: "border-l-4 border-cyan-500", boxShadow: "hover:shadow-[0_8px_24px_rgba(34,211,238,0.15)]", hover: "hover:border-cyan-200", icon: "🚌" },
+  "Employment": { badge: "bg-indigo-100 text-indigo-700", badgeBg: "bg-gradient-to-br from-indigo-50 to-indigo-100", border: "border-l-4 border-indigo-500", boxShadow: "hover:shadow-[0_8px_24px_rgba(99,102,241,0.15)]", hover: "hover:border-indigo-200", icon: "💼" }
 };
 
 export default function Home() {
@@ -85,14 +84,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div className="flex items-center gap-3 group cursor-pointer transition-all-smooth">
-              <div className="relative h-16 w-16 rounded-xl overflow-hidden shadow-md group-hover:shadow-lg group-hover:scale-up transition-all-smooth">
-                <Image
-                  src="/logo.jpg"
-                  alt="Ottawa County Recovery Alliance"
-                  fill
-                  className="object-cover"
-                  priority
-                />
+              <div className="h-16 w-16 rounded-xl overflow-hidden shadow-md group-hover:shadow-lg group-hover:scale-105 transition-all-smooth bg-gradient-to-br from-teal-600 to-cyan-500 flex items-center justify-center">
+                <span className="text-3xl">🏥</span>
               </div>
               <div>
                 <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-teal-600 to-teal-500 bg-clip-text text-transparent">
@@ -162,10 +155,10 @@ export default function Home() {
                   style={{ animationDelay: `${idx * 40}ms` }}
                 >
                   <div className={`${colors.badgeBg} p-6 pb-4 border-b-2 border-white/50`}>
-                    <div className={`inline-flex items-center gap-2 w-fit px-4 py-2 rounded-full text-sm font-bold ${colors.badge} mb-3 shadow-sm group-hover:shadow-md transition-shadow`}>
-                      <span className="text-lg">✨</span>
-                      {resource.category}
-                    </div>
+                  <div className={`inline-flex items-center gap-2 w-fit px-4 py-2 rounded-full text-sm font-bold ${colors.badge} mb-3 shadow-sm group-hover:shadow-md transition-shadow`}>
+                    {colors.icon}
+                    {resource.category}
+                  </div>
                     <h3 className="text-lg font-bold text-gray-900 group-hover:text-teal-700 transition-colors line-clamp-2">
                       {resource.name}
                     </h3>
