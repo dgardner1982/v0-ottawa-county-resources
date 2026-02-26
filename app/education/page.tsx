@@ -134,15 +134,19 @@ export default function EducationPage() {
       <header className="bg-white border-b-2 border-teal-100 sticky top-12 z-40 shadow-sm animate-fade-in">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <div className="flex items-center gap-3 group cursor-pointer transition-all-smooth">
-              <div className="h-16 w-16 rounded-xl overflow-hidden shadow-md group-hover:shadow-lg group-hover:scale-105 transition-all-smooth bg-gradient-to-br from-teal-600 to-cyan-500 flex items-center justify-center">
-                <span className="text-3xl">📚</span>
+            <div className="flex items-center gap-4 group cursor-pointer transition-transform duration-300 hover:-translate-y-1">
+              <div className="h-20 w-20 rounded-2xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300 flex-shrink-0">
+                <img 
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Certificate%20Of%20ACHIEVEMENT-dxJjQFgC05XjDzcsYQoQuEaA098j6O.jpg"
+                  alt="Ottawa County Recovery Alliance"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
               </div>
               <div>
-                <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-teal-600 to-teal-500 bg-clip-text text-transparent">
+                <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-teal-700 via-teal-600 to-cyan-600 bg-clip-text text-transparent">
                   Education & Resources
                 </h1>
-                <p className="text-xs md:text-sm text-teal-600 font-medium">Substance Guides & Harm Reduction</p>
+                <p className="text-xs md:text-sm text-teal-700 font-semibold">Substance Guides & Harm Reduction</p>
               </div>
             </div>
             <nav className="flex gap-2">
@@ -185,24 +189,24 @@ export default function EducationPage() {
               {SUBSTANCE_GUIDES.map((guide, idx) => (
                 <Card
                   key={guide.id}
-                  className={`p-6 cursor-pointer transition-all-smooth duration-300 ${guide.border} border-b-0 overflow-hidden group hover:scale-up hover:shadow-xl ${guide.cardBg} animate-scale-in`}
+                  className={`p-6 cursor-pointer transition-all duration-300 overflow-hidden group hover:scale-105 hover:-translate-y-2 hover:shadow-xl ${guide.cardBg} animate-scale-in border-b-4 ${guide.border.replace('border-l-4', '')}`}
                   onClick={() => setSelectedGuide(guide)}
                   style={{ animationDelay: `${idx * 50}ms` }}
                 >
                   <div className="flex items-start justify-between mb-4">
-                    <span className="text-4xl group-hover:scale-110 transition-transform">{guide.icon}</span>
-                    <ChevronRight size={20} className="text-gray-400 group-hover:text-teal-600 group-hover:translate-x-1 transition-all" />
+                    <span className="text-4xl group-hover:scale-125 transition-transform duration-300">{guide.icon}</span>
+                    <ChevronRight size={24} className="text-gray-400 group-hover:text-teal-600 group-hover:translate-x-2 transition-all duration-300 font-bold" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-teal-700 transition-colors">{guide.name}</h3>
-                  <p className="text-sm text-gray-700 mb-4 leading-relaxed">{guide.description}</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-teal-700 transition-colors duration-200">{guide.name}</h3>
+                  <p className="text-sm text-gray-700 mb-4 leading-relaxed group-hover:text-gray-900 transition-colors">{guide.description}</p>
                   <a
                     href={guide.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-teal-600 font-bold hover:text-teal-700 hover:gap-3 transition-all group/link"
+                    className="inline-flex items-center gap-2 text-teal-600 font-bold hover:text-teal-800 hover:gap-3 transition-all duration-200 group/link"
                     onClick={(e) => e.stopPropagation()}
                   >
-                    Read Guide <ExternalLink size={14} className="group-hover/link:translate-x-1 transition-transform" />
+                    Read Guide <ExternalLink size={16} className="group-hover/link:translate-x-1 transition-transform duration-200" />
                   </a>
                 </Card>
               ))}
@@ -242,20 +246,20 @@ export default function EducationPage() {
             {EDUCATION_SECTIONS.map((section, idx) => (
               <Card 
                 key={idx} 
-                className={`p-8 border-l-4 hover:shadow-lg transition-all-smooth duration-300 animate-scale-in group cursor-pointer`}
+                className="p-8 border-l-4 border-teal-500 hover:shadow-lg hover:-translate-y-2 transition-all duration-300 animate-scale-in group cursor-pointer"
                 style={{ animationDelay: `${idx * 50}ms` }}
               >
                 <div className="flex gap-4 items-start mb-6">
-                  <span className="text-4xl group-hover:scale-110 transition-transform">{section.icon}</span>
+                  <span className="text-4xl group-hover:scale-125 transition-transform duration-300">{section.icon}</span>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-gray-900 group-hover:text-teal-700 transition-colors">{section.title}</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 group-hover:text-teal-700 transition-colors duration-200">{section.title}</h3>
                   </div>
                 </div>
                 <ul className="space-y-4 ml-12">
                   {section.content.map((item, itemIdx) => (
-                    <li key={itemIdx} className="flex gap-4 text-gray-700 group-hover:text-gray-900 transition-colors">
-                      <span className="text-teal-600 font-bold text-lg flex-shrink-0 group-hover:scale-125 transition-transform">✓</span>
-                      <span className="leading-relaxed">{item}</span>
+                    <li key={itemIdx} className="flex gap-4 text-gray-700 group-hover:text-gray-900 transition-colors duration-200">
+                      <span className="text-teal-600 font-bold text-lg flex-shrink-0 group-hover:scale-150 transition-transform duration-200">✓</span>
+                      <span className="leading-relaxed group-hover:translate-x-1 transition-transform duration-200">{item}</span>
                     </li>
                   ))}
                 </ul>

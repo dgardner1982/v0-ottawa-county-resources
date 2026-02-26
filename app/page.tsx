@@ -46,14 +46,14 @@ const RESOURCES = [
   { name: "Harbor Transit", category: "Transportation", address: "Grand Haven Area", phone: "616-842-3200", info: "Public transit services for the Tri-Cities area." }
 ];
 
-const CATEGORY_COLORS: Record<string, { badge: string; badgeBg: string; border: string; boxShadow: string; hover: string; icon: string }> = {
-  "Mental Health": { badge: "bg-blue-100 text-blue-700", badgeBg: "bg-gradient-to-br from-blue-50 to-blue-100", border: "border-l-4 border-blue-500", boxShadow: "hover:shadow-[0_8px_24px_rgba(59,130,246,0.15)]", hover: "hover:border-blue-200", icon: "🧠" },
-  "Substance Recovery": { badge: "bg-orange-100 text-orange-700", badgeBg: "bg-gradient-to-br from-orange-50 to-orange-100", border: "border-l-4 border-orange-500", boxShadow: "hover:shadow-[0_8px_24px_rgba(249,115,22,0.15)]", hover: "hover:border-orange-200", icon: "🛡️" },
-  "Food": { badge: "bg-green-100 text-green-700", badgeBg: "bg-gradient-to-br from-green-50 to-green-100", border: "border-l-4 border-green-500", boxShadow: "hover:shadow-[0_8px_24px_rgba(34,197,94,0.15)]", hover: "hover:border-green-200", icon: "🍽️" },
-  "Housing": { badge: "bg-amber-100 text-amber-700", badgeBg: "bg-gradient-to-br from-amber-50 to-amber-100", border: "border-l-4 border-amber-500", boxShadow: "hover:shadow-[0_8px_24px_rgba(217,119,6,0.15)]", hover: "hover:border-amber-200", icon: "🏠" },
-  "Support Services": { badge: "bg-purple-100 text-purple-700", badgeBg: "bg-gradient-to-br from-purple-50 to-purple-100", border: "border-l-4 border-purple-500", boxShadow: "hover:shadow-[0_8px_24px_rgba(168,85,247,0.15)]", hover: "hover:border-purple-200", icon: "🤝" },
-  "Transportation": { badge: "bg-cyan-100 text-cyan-700", badgeBg: "bg-gradient-to-br from-cyan-50 to-cyan-100", border: "border-l-4 border-cyan-500", boxShadow: "hover:shadow-[0_8px_24px_rgba(34,211,238,0.15)]", hover: "hover:border-cyan-200", icon: "🚌" },
-  "Employment": { badge: "bg-indigo-100 text-indigo-700", badgeBg: "bg-gradient-to-br from-indigo-50 to-indigo-100", border: "border-l-4 border-indigo-500", boxShadow: "hover:shadow-[0_8px_24px_rgba(99,102,241,0.15)]", hover: "hover:border-indigo-200", icon: "💼" }
+const CATEGORY_COLORS: Record<string, { badge: string; badgeBg: string; border: string; cardBorder: string; boxShadow: string; hoverBg: string; icon: string }> = {
+  "Mental Health": { badge: "bg-blue-100 text-blue-800 border border-blue-300", badgeBg: "from-blue-50 to-blue-100", border: "border-b-4 border-blue-500", cardBorder: "border-blue-200", boxShadow: "hover:shadow-[0_12px_32px_rgba(59,130,246,0.2)]", hoverBg: "hover:bg-blue-50", icon: "🧠" },
+  "Substance Recovery": { badge: "bg-orange-100 text-orange-800 border border-orange-300", badgeBg: "from-orange-50 to-orange-100", border: "border-b-4 border-orange-500", cardBorder: "border-orange-200", boxShadow: "hover:shadow-[0_12px_32px_rgba(249,115,22,0.2)]", hoverBg: "hover:bg-orange-50", icon: "🛡️" },
+  "Food": { badge: "bg-green-100 text-green-800 border border-green-300", badgeBg: "from-green-50 to-green-100", border: "border-b-4 border-green-500", cardBorder: "border-green-200", boxShadow: "hover:shadow-[0_12px_32px_rgba(34,197,94,0.2)]", hoverBg: "hover:bg-green-50", icon: "🍽️" },
+  "Housing": { badge: "bg-amber-100 text-amber-800 border border-amber-300", badgeBg: "from-amber-50 to-amber-100", border: "border-b-4 border-amber-500", cardBorder: "border-amber-200", boxShadow: "hover:shadow-[0_12px_32px_rgba(217,119,6,0.2)]", hoverBg: "hover:bg-amber-50", icon: "🏠" },
+  "Support Services": { badge: "bg-purple-100 text-purple-800 border border-purple-300", badgeBg: "from-purple-50 to-purple-100", border: "border-b-4 border-purple-500", cardBorder: "border-purple-200", boxShadow: "hover:shadow-[0_12px_32px_rgba(168,85,247,0.2)]", hoverBg: "hover:bg-purple-50", icon: "🤝" },
+  "Transportation": { badge: "bg-cyan-100 text-cyan-800 border border-cyan-300", badgeBg: "from-cyan-50 to-cyan-100", border: "border-b-4 border-cyan-500", cardBorder: "border-cyan-200", boxShadow: "hover:shadow-[0_12px_32px_rgba(34,211,238,0.2)]", hoverBg: "hover:bg-cyan-50", icon: "🚌" },
+  "Employment": { badge: "bg-indigo-100 text-indigo-800 border border-indigo-300", badgeBg: "from-indigo-50 to-indigo-100", border: "border-b-4 border-indigo-500", cardBorder: "border-indigo-200", boxShadow: "hover:shadow-[0_12px_32px_rgba(99,102,241,0.2)]", hoverBg: "hover:bg-indigo-50", icon: "💼" }
 };
 
 export default function Home() {
@@ -83,15 +83,19 @@ export default function Home() {
       <header className="bg-white border-b-2 border-teal-100 sticky top-12 z-40 shadow-sm animate-fade-in">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <div className="flex items-center gap-3 group cursor-pointer transition-all-smooth">
-              <div className="h-16 w-16 rounded-xl overflow-hidden shadow-md group-hover:shadow-lg group-hover:scale-105 transition-all-smooth bg-gradient-to-br from-teal-600 to-cyan-500 flex items-center justify-center">
-                <span className="text-3xl">🏥</span>
+            <div className="flex items-center gap-4 group cursor-pointer transition-transform duration-300 hover:-translate-y-1">
+              <div className="h-20 w-20 rounded-2xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300 flex-shrink-0">
+                <img 
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Certificate%20Of%20ACHIEVEMENT-dxJjQFgC05XjDzcsYQoQuEaA098j6O.jpg"
+                  alt="Ottawa County Recovery Alliance"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
               </div>
               <div>
-                <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-teal-600 to-teal-500 bg-clip-text text-transparent">
+                <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-teal-700 via-teal-600 to-cyan-600 bg-clip-text text-transparent">
                   Recovery Resources
                 </h1>
-                <p className="text-xs md:text-sm text-teal-600 font-medium">Ottawa County Community Support</p>
+                <p className="text-xs md:text-sm text-teal-700 font-semibold">Ottawa County Community Alliance</p>
               </div>
             </div>
             <nav className="flex gap-2">
@@ -151,55 +155,55 @@ export default function Home() {
               return (
                 <Card 
                   key={idx} 
-                  className={`flex flex-col h-full transition-all-smooth duration-300 ${colors.border} border-b-0 overflow-hidden group hover:scale-up cursor-pointer ${colors.boxShadow} ${colors.hover} animate-scale-in`}
+                  className={`p-6 flex flex-col h-full transition-all duration-300 ${colors.cardBorder} border-2 ${colors.hoverBg} ${colors.boxShadow} transform hover:scale-105 hover:-translate-y-2 group cursor-pointer animate-scale-in`}
                   style={{ animationDelay: `${idx * 40}ms` }}
                 >
-                  <div className={`${colors.badgeBg} p-6 pb-4 border-b-2 border-white/50`}>
-                  <div className={`inline-flex items-center gap-2 w-fit px-4 py-2 rounded-full text-sm font-bold ${colors.badge} mb-3 shadow-sm group-hover:shadow-md transition-shadow`}>
-                    {colors.icon}
-                    {resource.category}
-                  </div>
-                    <h3 className="text-lg font-bold text-gray-900 group-hover:text-teal-700 transition-colors line-clamp-2">
+                  <div className={`bg-gradient-to-r ${colors.badgeBg} ${colors.border} rounded-lg p-6 mb-4 transition-all duration-300 group-hover:shadow-md`}>
+                    <div className={`inline-flex items-center gap-3 ${colors.badge} px-4 py-2 rounded-full text-sm font-bold mb-3 transition-all duration-300 group-hover:scale-110`}>
+                      <span className="text-lg">{colors.icon}</span>
+                      {resource.category}
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 group-hover:text-gray-700 transition-colors line-clamp-2">
                       {resource.name}
                     </h3>
                   </div>
                   
-                  <div className="p-6 flex flex-col flex-grow">
-                    <p className="text-sm text-gray-600 mb-6 flex-grow leading-relaxed">{resource.info}</p>
+                  <div className="flex flex-col flex-grow">
+                    <p className="text-sm text-gray-600 mb-6 flex-grow leading-relaxed group-hover:text-gray-700 transition-colors">{resource.info}</p>
                     
-                    <div className="space-y-4 pt-4 border-t-2 border-gray-100 text-sm">
-                      <div className="flex items-start gap-3 group/item">
-                        <MapPin size={16} className="text-teal-500 mt-0.5 flex-shrink-0 group-hover/item:text-teal-700 transition-colors" />
-                        <span className="text-gray-700 group-hover/item:text-gray-900 transition-colors">{resource.address}</span>
+                    <div className="space-y-4 pt-4 border-t-2 border-gray-200 text-sm">
+                      <div className="flex items-start gap-3 group/item transition-all duration-200 hover:translate-x-1">
+                        <MapPin size={18} className="text-teal-600 mt-0.5 flex-shrink-0 group-hover/item:text-teal-700 transition-colors" />
+                        <span className="text-gray-700 group-hover/item:text-gray-900 transition-colors font-medium">{resource.address}</span>
                       </div>
-                      <div className="flex items-center gap-3 group/item">
-                        <Phone size={16} className="text-teal-500 flex-shrink-0 group-hover/item:text-teal-700 transition-colors" />
-                        <a href={`tel:${resource.phone}`} className="text-teal-600 font-bold hover:text-teal-700 hover:underline transition-all-smooth">
+                      <div className="flex items-center gap-3 group/item transition-all duration-200 hover:translate-x-1">
+                        <Phone size={18} className="text-teal-600 flex-shrink-0 group-hover/item:text-teal-700 transition-colors" />
+                        <a href={`tel:${resource.phone}`} className="text-teal-700 font-bold hover:text-teal-800 hover:underline transition-all duration-200">
                           {resource.phone}
                         </a>
                       </div>
                     </div>
                   </div>
 
-                  <div className="flex gap-2 p-6 pt-4 border-t-2 border-gray-100">
+                  <div className="flex gap-2 mt-6 pt-4 border-t-2 border-gray-200">
                     <Button
                       variant="outline"
                       size="sm"
-                      className="flex-1 text-xs border-teal-200 text-teal-700 hover:bg-teal-50 hover:border-teal-300 transition-all-smooth group-hover:shadow-md"
+                      className="flex-1 text-xs border-teal-300 text-teal-700 hover:bg-teal-50 hover:border-teal-400 transition-all duration-200 hover:shadow-md group/btn"
                       asChild
                     >
                       <a href={`https://www.google.com/maps/search/${encodeURIComponent(resource.name + ' ' + resource.address)}`} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink size={14} className="mr-1" />
+                        <ExternalLink size={14} className="mr-1 group-hover/btn:translate-x-1 transition-transform" />
                         Maps
                       </a>
                     </Button>
                     <Button
                       size="sm"
-                      className="flex-1 bg-gradient-to-r from-teal-600 to-teal-500 hover:from-teal-700 hover:to-teal-600 text-xs text-white transition-all-smooth hover:shadow-md"
+                      className="flex-1 bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700 text-xs text-white transition-all duration-200 hover:shadow-md group/btn"
                       asChild
                     >
                       <a href={`tel:${resource.phone}`}>
-                        <Phone size={14} className="mr-1" />
+                        <Phone size={14} className="mr-1 group-hover/btn:animate-pulse transition-all" />
                         Call
                       </a>
                     </Button>
