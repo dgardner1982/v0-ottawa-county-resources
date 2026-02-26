@@ -1,8 +1,11 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 
 export default function EducationPage() {
+  const [activeTab, setActiveTab] = useState('guides');
+  
   const guides = [
     { name: "Fentanyl", icon: "⚠️", link: "https://gemini.google.com/share/cd77a5e1d45a" },
     { name: "Xylazine (Tranq)", icon: "💊", link: "https://gemini.google.com/share/5a6094e7467b" },
@@ -11,6 +14,24 @@ export default function EducationPage() {
     { name: "Emerging Drugs", icon: "🔬", link: "https://gemini.google.com/share/2a26f1e97b40" },
     { name: "Drug Interactions", icon: "🚫", link: "https://gemini.google.com/share/ee3fd2cc103a" },
   ];
+
+  const drugInfo = {
+    stimulants: {
+      title: "Stimulants: Methamphetamine & Cocaine",
+      effects: ["Increased heart rate", "Elevated blood pressure", "Rapid breathing", "Dilated pupils", "Euphoria followed by crash"],
+      risks: ["59% of overdose deaths involve stimulants (2021-2024)", "Cardiac arrest and stroke", "Severe anxiety and paranoia", "Nasal damage (if snorted)", "Rapid addiction potential"]
+    },
+    fentanyl: {
+      title: "Fentanyl Crisis",
+      effects: ["Extreme pain relief", "Drowsiness", "Shallow breathing", "Low blood pressure", "Dangerous respiratory depression"],
+      risks: ["70% of overdose deaths involved fentanyl (2023-2024)", "50-100x more potent than morphine", "High overdose risk even in small doses", "Often mixed with other substances", "Naloxone not always effective when mixed"]
+    },
+    xylazine: {
+      title: "Xylazine (Tranq): The Growing Threat",
+      effects: ["Sedation and drowsiness", "Low blood pressure", "Slow heart rate", "Reduced pain sensation", "Respiratory depression"],
+      risks: ["Frequently mixed with fentanyl", "Creates refractory overdoses", "Naloxone often cannot fully reverse", "Skin wounds and infections", "Severe withdrawal symptoms"]
+    }
+  };
 
   return (
     <>
@@ -27,7 +48,7 @@ export default function EducationPage() {
               <img 
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Recovery%20Alliance%20Business%20Cards-UXhe7EFsenUbcy44EqMjYgUa3HNUT3.jpg"
                 alt="Ottawa County Recovery Alliance"
-                className="h-36 w-36 object-contain"
+                className="h-72 w-72 object-contain"
               />
               <div>
                 <h1 className="text-4xl font-bold text-teal-700">Education & Resources</h1>
@@ -44,70 +65,214 @@ export default function EducationPage() {
       <main className="max-w-7xl mx-auto px-4 py-8">
         <div className="bg-gradient-to-r from-teal-600 to-cyan-600 text-white rounded-lg p-8 mb-12">
           <h2 className="text-3xl font-bold mb-3">Knowledge Saves Lives</h2>
-          <p className="text-lg">Learn about emerging substances, recognize dangers, and discover paths to recovery. This information is for harm reduction and education.</p>
+          <p className="text-lg">Learn about emerging substances, recognize dangers, and discover paths to recovery. This information is for harm reduction and education based on current CDC and public health data.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {guides.map((guide, idx) => (
-            <a
-              key={idx}
-              href={guide.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white rounded-lg shadow-md hover:shadow-xl p-6 border-b-4 border-teal-500 transition transform hover:scale-105"
-            >
-              <div className="text-4xl mb-3">{guide.icon}</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">{guide.name}</h3>
-              <p className="text-teal-600 font-semibold">Read Guide →</p>
-            </a>
-          ))}
+        {/* Tab Navigation */}
+        <div className="flex gap-4 mb-8 border-b border-gray-300">
+          <button
+            onClick={() => setActiveTab('guides')}
+            className={`px-6 py-3 font-semibold border-b-4 transition ${
+              activeTab === 'guides'
+                ? 'border-teal-600 text-teal-600'
+                : 'border-transparent text-gray-600 hover:text-gray-800'
+            }`}
+          >
+            External Guides
+          </button>
+          <button
+            onClick={() => setActiveTab('infograph')}
+            className={`px-6 py-3 font-semibold border-b-4 transition ${
+              activeTab === 'infograph'
+                ? 'border-teal-600 text-teal-600'
+                : 'border-transparent text-gray-600 hover:text-gray-800'
+            }`}
+          >
+            Drug Information & Effects
+          </button>
+          <button
+            onClick={() => setActiveTab('support')}
+            className={`px-6 py-3 font-semibold border-b-4 transition ${
+              activeTab === 'support'
+                ? 'border-teal-600 text-teal-600'
+                : 'border-transparent text-gray-600 hover:text-gray-800'
+            }`}
+          >
+            Resources & Support
+          </button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-          <div className="bg-blue-100 p-6 rounded-lg border-l-4 border-blue-500">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Overdose Prevention</h3>
-            <ul className="space-y-2 text-gray-700">
-              <li>✓ Recognize signs: unresponsiveness, blue lips, slow breathing</li>
-              <li>✓ Call 9-1-1 immediately - Good Samaritan protection applies</li>
-              <li>✓ Use Narcan if available - it reverses opioid overdoses</li>
-              <li>✓ Place person in recovery position</li>
-              <li>✓ Stay until emergency services arrive</li>
-            </ul>
+        {/* External Guides Tab */}
+        {activeTab === 'guides' && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {guides.map((guide, idx) => (
+              <a
+                key={idx}
+                href={guide.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white rounded-lg shadow-md hover:shadow-xl p-6 border-b-4 border-teal-500 transition transform hover:scale-105"
+              >
+                <div className="text-4xl mb-3">{guide.icon}</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{guide.name}</h3>
+                <p className="text-teal-600 font-semibold">Read Guide →</p>
+              </a>
+            ))}
           </div>
+        )}
 
-          <div className="bg-green-100 p-6 rounded-lg border-l-4 border-green-500">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Harm Reduction</h3>
-            <ul className="space-y-2 text-gray-700">
-              <li>✓ Never use alone - have someone with you</li>
-              <li>✓ Start with small test dose if using new supplies</li>
-              <li>✓ Use sterile equipment every time</li>
-              <li>✓ Keep emergency contacts accessible</li>
-              <li>✓ Seek professional help - treatment works</li>
-            </ul>
-          </div>
+        {/* Interactive Infograph Tab */}
+        {activeTab === 'infograph' && (
+          <div className="space-y-8 mb-12">
+            {/* Stimulants Card */}
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden border-l-8 border-orange-500">
+              <div className="bg-orange-100 p-6 border-b-2 border-orange-300">
+                <h3 className="text-3xl font-bold text-gray-900">⚡ {drugInfo.stimulants.title}</h3>
+              </div>
+              <div className="p-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div>
+                    <h4 className="text-xl font-bold text-gray-900 mb-4">Short-Term Effects</h4>
+                    <ul className="space-y-3">
+                      {drugInfo.stimulants.effects.map((effect, idx) => (
+                        <li key={idx} className="flex gap-3 items-start">
+                          <span className="text-orange-500 font-bold text-lg">●</span>
+                          <span className="text-gray-700">{effect}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-red-700 mb-4">Health Risks</h4>
+                    <ul className="space-y-3">
+                      {drugInfo.stimulants.risks.map((risk, idx) => (
+                        <li key={idx} className="flex gap-3 items-start">
+                          <span className="text-red-600 font-bold text-lg">⚠️</span>
+                          <span className="text-gray-700">{risk}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-          <div className="bg-purple-100 p-6 rounded-lg border-l-4 border-purple-500">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Recovery Resources</h3>
-            <ul className="space-y-2 text-gray-700">
-              <li>✓ Medication-Assisted Treatment (MAT)</li>
-              <li>✓ Support groups for community and accountability</li>
-              <li>✓ Residential treatment programs</li>
-              <li>✓ Outpatient services</li>
-              <li>✓ Mental health support</li>
-            </ul>
-          </div>
+            {/* Fentanyl Card */}
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden border-l-8 border-red-500">
+              <div className="bg-red-100 p-6 border-b-2 border-red-300">
+                <h3 className="text-3xl font-bold text-gray-900">⚠️ {drugInfo.fentanyl.title}</h3>
+              </div>
+              <div className="p-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div>
+                    <h4 className="text-xl font-bold text-gray-900 mb-4">Effects</h4>
+                    <ul className="space-y-3">
+                      {drugInfo.fentanyl.effects.map((effect, idx) => (
+                        <li key={idx} className="flex gap-3 items-start">
+                          <span className="text-red-500 font-bold text-lg">●</span>
+                          <span className="text-gray-700">{effect}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-red-700 mb-4">Critical Dangers</h4>
+                    <ul className="space-y-3">
+                      {drugInfo.fentanyl.risks.map((risk, idx) => (
+                        <li key={idx} className="flex gap-3 items-start">
+                          <span className="text-red-600 font-bold text-lg">⚠️</span>
+                          <span className="text-gray-700">{risk}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-          <div className="bg-orange-100 p-6 rounded-lg border-l-4 border-orange-500">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Support for Loved Ones</h3>
-            <ul className="space-y-2 text-gray-700">
-              <li>✓ Set healthy boundaries with compassion</li>
-              <li>✓ Learn about addiction as a medical condition</li>
-              <li>✓ Encourage professional help</li>
-              <li>✓ Take care of your own mental health</li>
-              <li>✓ Join support groups (Al-Anon, Nar-Anon)</li>
-            </ul>
+            {/* Xylazine Card */}
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden border-l-8 border-purple-500">
+              <div className="bg-purple-100 p-6 border-b-2 border-purple-300">
+                <h3 className="text-3xl font-bold text-gray-900">💊 {drugInfo.xylazine.title}</h3>
+              </div>
+              <div className="p-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div>
+                    <h4 className="text-xl font-bold text-gray-900 mb-4">Effects</h4>
+                    <ul className="space-y-3">
+                      {drugInfo.xylazine.effects.map((effect, idx) => (
+                        <li key={idx} className="flex gap-3 items-start">
+                          <span className="text-purple-500 font-bold text-lg">●</span>
+                          <span className="text-gray-700">{effect}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-red-700 mb-4">Emerging Threat</h4>
+                    <ul className="space-y-3">
+                      {drugInfo.xylazine.risks.map((risk, idx) => (
+                        <li key={idx} className="flex gap-3 items-start">
+                          <span className="text-red-600 font-bold text-lg">⚠️</span>
+                          <span className="text-gray-700">{risk}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+        )}
+
+        {/* Resources & Support Tab */}
+        {activeTab === 'support' && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <div className="bg-blue-100 p-6 rounded-lg border-l-4 border-blue-500">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Overdose Prevention</h3>
+              <ul className="space-y-2 text-gray-700">
+                <li>✓ Recognize signs: unresponsiveness, blue lips, slow breathing</li>
+                <li>✓ Call 9-1-1 immediately - Good Samaritan protection applies</li>
+                <li>✓ Use Narcan if available - it reverses opioid overdoses</li>
+                <li>✓ Place person in recovery position</li>
+                <li>✓ Stay until emergency services arrive</li>
+              </ul>
+            </div>
+
+            <div className="bg-green-100 p-6 rounded-lg border-l-4 border-green-500">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Harm Reduction</h3>
+              <ul className="space-y-2 text-gray-700">
+                <li>✓ Never use alone - have someone with you</li>
+                <li>✓ Start with small test dose if using new supplies</li>
+                <li>✓ Use sterile equipment every time</li>
+                <li>✓ Keep emergency contacts accessible</li>
+                <li>✓ Seek professional help - treatment works</li>
+              </ul>
+            </div>
+
+            <div className="bg-purple-100 p-6 rounded-lg border-l-4 border-purple-500">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Recovery Resources</h3>
+              <ul className="space-y-2 text-gray-700">
+                <li>✓ Medication-Assisted Treatment (MAT)</li>
+                <li>✓ Support groups for community and accountability</li>
+                <li>✓ Residential treatment programs</li>
+                <li>✓ Outpatient services</li>
+                <li>✓ Mental health support</li>
+              </ul>
+            </div>
+
+            <div className="bg-orange-100 p-6 rounded-lg border-l-4 border-orange-500">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Support for Loved Ones</h3>
+              <ul className="space-y-2 text-gray-700">
+                <li>✓ Set healthy boundaries with compassion</li>
+                <li>✓ Learn about addiction as a medical condition</li>
+                <li>✓ Encourage professional help</li>
+                <li>✓ Take care of your own mental health</li>
+                <li>✓ Join support groups (Al-Anon, Nar-Anon)</li>
+              </ul>
+            </div>
+          </div>
+        )}
 
         <div className="bg-teal-600 text-white rounded-lg p-8 text-center">
           <h3 className="text-2xl font-bold mb-3">Ready to Get Help?</h3>
@@ -121,7 +286,8 @@ export default function EducationPage() {
       <footer className="bg-gray-900 text-white py-8 mt-12">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <p className="font-bold text-lg mb-2">Ottawa County Recovery Alliance</p>
-          <p className="text-gray-300">Crisis Support: 2-1-1 for Resources | 988 for Suicide Crisis | 911 for Emergencies</p>
+          <p className="text-gray-300 text-sm">Crisis Support: 2-1-1 for Resources | 988 for Suicide Crisis | 9-1-1 for Emergencies</p>
+          <p className="text-gray-400 text-xs mt-4">Information based on CDC data and current public health research (2026)</p>
         </div>
       </footer>
     </>

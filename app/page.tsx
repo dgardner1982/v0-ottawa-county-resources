@@ -54,7 +54,7 @@ export default function Home() {
               <img 
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Recovery%20Alliance%20Business%20Cards-UXhe7EFsenUbcy44EqMjYgUa3HNUT3.jpg"
                 alt="Ottawa County Recovery Alliance"
-                className="h-36 w-36 object-contain"
+                className="h-72 w-72 object-contain"
               />
               <div>
                 <h1 className="text-4xl font-bold text-teal-700">Recovery Resources</h1>
