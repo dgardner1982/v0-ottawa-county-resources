@@ -30,6 +30,21 @@ export default function EducationPage() {
       title: "Xylazine (Tranq): The Growing Threat",
       effects: ["Sedation and drowsiness", "Low blood pressure", "Slow heart rate", "Reduced pain sensation", "Respiratory depression"],
       risks: ["Frequently mixed with fentanyl", "Creates refractory overdoses", "Naloxone often cannot fully reverse", "Skin wounds and infections", "Severe withdrawal symptoms"]
+    },
+    sevenOH: {
+      title: "7-OH-Mitragynine & Benzodiazepines (7-OH)",
+      effects: ["Sedation and relaxation", "Euphoria", "Pain relief", "Muscle relaxation", "Impaired coordination"],
+      risks: ["Emerging counterfeit in pressed pills", "Often mixed with opioids unknowingly", "High addiction potential", "Overdose when combined with alcohol or opioids", "Withdrawal symptoms can be severe"]
+    },
+    duster: {
+      title: "Inhalants (Duster, Air Freshener, Poppers)",
+      effects: ["Euphoria and intoxication", "Dizziness and disorientation", "Hallucinations", "Rapid heart rate", "Lowered inhibitions"],
+      risks: ["Sudden death syndrome (sudden cardiac arrest)", "Permanent brain damage with repeated use", "Organ damage (liver, kidneys)", "Asphyxiation risk", "Overdose occurs quickly and unpredictably"]
+    },
+    nitrous: {
+      title: "Nitrous Oxide (N2O, Whippits, Nos)",
+      effects: ["Brief euphoria and dissociation", "Altered perception", "Dizziness and lightheadedness", "Rapid onset (seconds)", "Effects wear off quickly"],
+      risks: ["Vitamin B12 depletion leading to nerve damage", "Spinal cord damage with frequent use", "Loss of coordination and balance", "Hypoxia (oxygen deprivation)", "Risk of falls and injuries"]
     }
   };
 
@@ -48,7 +63,8 @@ export default function EducationPage() {
               <img 
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Recovery%20Alliance%20Business%20Cards-UXhe7EFsenUbcy44EqMjYgUa3HNUT3.jpg"
                 alt="Ottawa County Recovery Alliance"
-                className="h-72 w-72 object-contain"
+                className="h-full w-full object-contain"
+                style={{ maxHeight: '288px', maxWidth: '288px' }}
               />
               <div>
                 <h1 className="text-4xl font-bold text-teal-700">Education & Resources</h1>
@@ -212,6 +228,105 @@ export default function EducationPage() {
                     <h4 className="text-xl font-bold text-red-700 mb-4">Emerging Threat</h4>
                     <ul className="space-y-3">
                       {drugInfo.xylazine.risks.map((risk, idx) => (
+                        <li key={idx} className="flex gap-3 items-start">
+                          <span className="text-red-600 font-bold text-lg">⚠️</span>
+                          <span className="text-gray-700">{risk}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 7-OH Card */}
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden border-l-8 border-indigo-500">
+              <div className="bg-indigo-100 p-6 border-b-2 border-indigo-300">
+                <h3 className="text-3xl font-bold text-gray-900">🔬 {drugInfo.sevenOH.title}</h3>
+              </div>
+              <div className="p-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div>
+                    <h4 className="text-xl font-bold text-gray-900 mb-4">Effects</h4>
+                    <ul className="space-y-3">
+                      {drugInfo.sevenOH.effects.map((effect, idx) => (
+                        <li key={idx} className="flex gap-3 items-start">
+                          <span className="text-indigo-500 font-bold text-lg">●</span>
+                          <span className="text-gray-700">{effect}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-red-700 mb-4">Critical Dangers</h4>
+                    <ul className="space-y-3">
+                      {drugInfo.sevenOH.risks.map((risk, idx) => (
+                        <li key={idx} className="flex gap-3 items-start">
+                          <span className="text-red-600 font-bold text-lg">⚠️</span>
+                          <span className="text-gray-700">{risk}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Duster Card */}
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden border-l-8 border-pink-500">
+              <div className="bg-pink-100 p-6 border-b-2 border-pink-300">
+                <h3 className="text-3xl font-bold text-gray-900">💨 {drugInfo.duster.title}</h3>
+              </div>
+              <div className="p-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div>
+                    <h4 className="text-xl font-bold text-gray-900 mb-4">Effects</h4>
+                    <ul className="space-y-3">
+                      {drugInfo.duster.effects.map((effect, idx) => (
+                        <li key={idx} className="flex gap-3 items-start">
+                          <span className="text-pink-500 font-bold text-lg">●</span>
+                          <span className="text-gray-700">{effect}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-red-700 mb-4">Deadly Dangers</h4>
+                    <ul className="space-y-3">
+                      {drugInfo.duster.risks.map((risk, idx) => (
+                        <li key={idx} className="flex gap-3 items-start">
+                          <span className="text-red-600 font-bold text-lg">⚠️</span>
+                          <span className="text-gray-700">{risk}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Nitrous Oxide Card */}
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden border-l-8 border-cyan-500">
+              <div className="bg-cyan-100 p-6 border-b-2 border-cyan-300">
+                <h3 className="text-3xl font-bold text-gray-900">😶 {drugInfo.nitrous.title}</h3>
+              </div>
+              <div className="p-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div>
+                    <h4 className="text-xl font-bold text-gray-900 mb-4">Effects</h4>
+                    <ul className="space-y-3">
+                      {drugInfo.nitrous.effects.map((effect, idx) => (
+                        <li key={idx} className="flex gap-3 items-start">
+                          <span className="text-cyan-500 font-bold text-lg">●</span>
+                          <span className="text-gray-700">{effect}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-red-700 mb-4">Long-Term Risks</h4>
+                    <ul className="space-y-3">
+                      {drugInfo.nitrous.risks.map((risk, idx) => (
                         <li key={idx} className="flex gap-3 items-start">
                           <span className="text-red-600 font-bold text-lg">⚠️</span>
                           <span className="text-gray-700">{risk}</span>

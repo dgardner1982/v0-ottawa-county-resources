@@ -30,13 +30,13 @@ export default function Home() {
   });
 
   const getCategoryColor = (category: string) => {
-    const colors: Record<string, { bg: string; border: string; icon: string }> = {
-      "Mental Health": { bg: "bg-blue-100", border: "border-b-4 border-blue-500", icon: "🧠" },
-      "Substance Recovery": { bg: "bg-orange-100", border: "border-b-4 border-orange-500", icon: "🛡️" },
-      "Food": { bg: "bg-green-100", border: "border-b-4 border-green-500", icon: "🍽️" },
-      "Housing": { bg: "bg-amber-100", border: "border-b-4 border-amber-500", icon: "🏠" },
+    const colors: Record<string, { bg: string; border: string; icon: string; button: string; buttonHover: string }> = {
+      "Mental Health": { bg: "bg-blue-100", border: "border-b-4 border-blue-500", icon: "🧠", button: "bg-blue-500 hover:bg-blue-600", buttonHover: "text-white" },
+      "Substance Recovery": { bg: "bg-orange-100", border: "border-b-4 border-orange-500", icon: "🛡️", button: "bg-orange-500 hover:bg-orange-600", buttonHover: "text-white" },
+      "Food": { bg: "bg-green-100", border: "border-b-4 border-green-500", icon: "🍽️", button: "bg-green-500 hover:bg-green-600", buttonHover: "text-white" },
+      "Housing": { bg: "bg-amber-100", border: "border-b-4 border-amber-500", icon: "🏠", button: "bg-amber-500 hover:bg-amber-600", buttonHover: "text-white" },
     };
-    return colors[category] || { bg: "bg-gray-100", border: "border-b-4 border-gray-400", icon: "📍" };
+    return colors[category] || { bg: "bg-gray-100", border: "border-b-4 border-gray-400", icon: "📍", button: "bg-gray-400 hover:bg-gray-500", buttonHover: "text-white" };
   };
 
   return (
@@ -54,7 +54,8 @@ export default function Home() {
               <img 
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Recovery%20Alliance%20Business%20Cards-UXhe7EFsenUbcy44EqMjYgUa3HNUT3.jpg"
                 alt="Ottawa County Recovery Alliance"
-                className="h-72 w-72 object-contain"
+                className="h-full w-full object-contain"
+                style={{ maxHeight: '288px', maxWidth: '288px' }}
               />
               <div>
                 <h1 className="text-4xl font-bold text-teal-700">Recovery Resources</h1>
@@ -62,8 +63,11 @@ export default function Home() {
               </div>
             </div>
             <Link href="/education">
-              <button className="bg-teal-600 hover:bg-teal-700 text-white font-bold px-6 py-2 rounded transition">Education</button>
+              <button className="bg-teal-600 hover:bg-teal-700 text-white font-bold px-8 py-3 rounded transition text-lg">Education</button>
             </Link>
+          </div>
+          <div>
+            <button className="bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700 text-white font-bold px-8 py-3 rounded transition text-lg">Resources</button>
           </div>
         </div>
       </header>
@@ -80,19 +84,22 @@ export default function Home() {
         </div>
 
         <div className="flex gap-2 mb-8 flex-wrap">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-2 rounded font-semibold transition ${
-                selectedCategory === cat 
-                  ? "bg-teal-600 text-white" 
-                  : "bg-gray-200 text-gray-800 hover:bg-gray-300"
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
+          {categories.map((cat) => {
+            const colors = getCategoryColor(cat);
+            return (
+              <button
+                key={cat}
+                onClick={() => setSelectedCategory(cat)}
+                className={`px-4 py-2 rounded font-semibold transition ${
+                  selectedCategory === cat 
+                    ? `${colors.button} text-white` 
+                    : "bg-gray-200 text-gray-800 hover:bg-gray-300"
+                }`}
+              >
+                {cat}
+              </button>
+            );
+          })}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
