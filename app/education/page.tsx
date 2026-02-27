@@ -10,7 +10,7 @@ export default function EducationPage() {
     { name: "Fentanyl", icon: "⚠️", link: "https://gemini.google.com/share/cd77a5e1d45a" },
     { name: "Xylazine (Tranq)", icon: "💊", link: "https://gemini.google.com/share/5a6094e7467b" },
     { name: "Stimulants", icon: "⚡", link: "https://gemini.google.com/share/5fced2f07209" },
-    { name: "Synthetic Cannabinoids", icon: "🌿", link: "https://gemini.google.com/share/9bb8e42a5cb7" },
+    { name: "Synthetic Cannabinoids", icon: "🌿", link: "/synthetic-cannabinoids", internal: true },
     { name: "Emerging Drugs", icon: "🔬", link: "https://gemini.google.com/share/2a26f1e97b40" },
     { name: "Drug Interactions", icon: "🚫", link: "https://gemini.google.com/share/ee3fd2cc103a" },
   ];
@@ -129,19 +129,30 @@ export default function EducationPage() {
         {/* External Guides Tab */}
         {activeTab === 'guides' && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {guides.map((guide, idx) => (
-              <a
-                key={idx}
-                href={guide.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white rounded-lg shadow-md hover:shadow-xl p-6 border-b-4 border-teal-500 transition transform hover:scale-105"
-              >
-                <div className="text-4xl mb-3">{guide.icon}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{guide.name}</h3>
-                <p className="text-teal-600 font-semibold">Read Guide →</p>
-              </a>
-            ))}
+            {guides.map((guide, idx) => {
+              const isInternal = guide.internal;
+              return isInternal ? (
+                <Link key={idx} href={guide.link}>
+                  <div className="bg-white rounded-lg shadow-md hover:shadow-xl p-6 border-b-4 border-teal-500 transition transform hover:scale-105 cursor-pointer">
+                    <div className="text-4xl mb-3">{guide.icon}</div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">{guide.name}</h3>
+                    <p className="text-teal-600 font-semibold">View Guide →</p>
+                  </div>
+                </Link>
+              ) : (
+                <a
+                  key={idx}
+                  href={guide.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white rounded-lg shadow-md hover:shadow-xl p-6 border-b-4 border-teal-500 transition transform hover:scale-105"
+                >
+                  <div className="text-4xl mb-3">{guide.icon}</div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{guide.name}</h3>
+                  <p className="text-teal-600 font-semibold">Read Guide →</p>
+                </a>
+              );
+            })}
           </div>
         )}
 
