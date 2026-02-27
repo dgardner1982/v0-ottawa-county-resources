@@ -85,7 +85,9 @@ export default function SyntheticCannabinoidsPage() {
               <Link href="/">
                 <button className="bg-teal-600 hover:bg-teal-700 text-white font-bold px-10 py-4 rounded-lg transition text-xl min-w-48">Resources</button>
               </Link>
-              <button className="bg-green-600 hover:bg-green-700 text-white font-bold px-10 py-4 rounded-lg transition text-xl min-w-48">Education</button>
+              <Link href="/education">
+                <button className="bg-green-600 hover:bg-green-700 text-white font-bold px-10 py-4 rounded-lg transition text-xl min-w-48">Education</button>
+              </Link>
               <Link href="/support-groups">
                 <button className="bg-purple-600 hover:bg-purple-700 text-white font-bold px-10 py-4 rounded-lg transition text-xl min-w-48">Support Groups</button>
               </Link>
@@ -95,6 +97,14 @@ export default function SyntheticCannabinoidsPage() {
       </header>
 
       <main className="max-w-6xl mx-auto px-4 py-10" ref={contentRef}>
+        {/* Back Button - Top */}
+        <div className="mb-8">
+          <Link href="/education">
+            <button className="flex items-center gap-2 bg-gray-600 hover:bg-gray-700 text-white font-bold px-6 py-2 rounded-lg transition">
+              ← Back to Education
+            </button>
+          </Link>
+        </div>
         {/* Modal */}
         {showModal && (
           <div className="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={closeModal}>
@@ -287,6 +297,15 @@ export default function SyntheticCannabinoidsPage() {
             </div>
           </div>
         </section>
+
+        {/* Back Button - Bottom */}
+        <div className="mt-12 text-center">
+          <Link href="/education">
+            <button className="flex items-center gap-2 bg-gray-600 hover:bg-gray-700 text-white font-bold px-6 py-2 rounded-lg transition mx-auto">
+              ← Back to Education
+            </button>
+          </Link>
+        </div>
       </main>
 
       <footer className="max-w-6xl mx-auto text-center py-20 border-t border-slate-200 mt-20">
