@@ -1,16 +1,17 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Link from 'next/link';
 
 export default function SyntheticCannabinoidsPage() {
   const [showModal, setShowModal] = useState(false);
   const [modalContent, setModalContent] = useState('');
   const [activeImpact, setActiveImpact] = useState('brain');
+  const contentRef = useRef<HTMLDivElement>(null);
 
-  const streetNames = {
-    main: ["K2", "Spice", "Black Mamba", "Genie", "Zohai", "Solar Flare", "Moon Rocks", "Yucatan Fire", "Skunk", "Liquid Gold"],
-    variants: ["A-2", "Atomic", "Bliss", "Blue Lotus", "Cloud 9", "Darknight", "Fake Weed", "Fire and Ice", "G-Force", "Haze", "Jungle Juice", "Kryptonite", "Mad Hatter", "Mr. Nice Guy", "Ninja", "Ocean Blue", "Purple Haze", "Red Dragon", "Serenity", "Silent Night"]
+  const handleModalOpen = (content: string) => {
+    setModalContent(content);
+    setShowModal(true);
   };
 
   const chemicalTypes = [
@@ -66,7 +67,7 @@ export default function SyntheticCannabinoidsPage() {
         <span>FOR LIFE-THREATENING EMERGENCIES, CALL <a href="tel:911" className="underline font-bold">9-1-1</a></span>
       </div>
 
-      <header className="bg-white border-b-2 border-teal-200 sticky top-16 z-40 shadow-sm">
+      <header className="bg-white border-b-2 border-teal-200 shadow-sm">
         <div className="max-w-6xl mx-auto px-4 py-12">
           <div className="flex flex-col items-center gap-8 text-center">
             <img 
@@ -93,7 +94,7 @@ export default function SyntheticCannabinoidsPage() {
         </div>
       </header>
 
-      <main className="max-w-6xl mx-auto px-4 py-10">
+      <main className="max-w-6xl mx-auto px-4 py-10" ref={contentRef}>
         {/* Modal */}
         {showModal && (
           <div className="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={closeModal}>
@@ -195,11 +196,11 @@ export default function SyntheticCannabinoidsPage() {
                 Manufacturers utilize "Chemical Evasion," shifting molecular structures to bypass laws. Click below to explore the variants and common chemical types.
               </p>
               <div className="flex gap-4">
-                <button onClick={openNamesModal} className="flex-1 bg-white p-4 rounded-xl text-center border border-slate-200 hover:border-amber-500 hover:shadow-md transition">
+                <button onClick={() => handleModalOpen('names')} className="flex-1 bg-white p-4 rounded-xl text-center border border-slate-200 hover:border-amber-500 hover:shadow-md transition">
                   <div className="text-2xl mb-2">🏷️</div>
                   <span className="text-xs uppercase font-bold text-slate-800">Street Names</span>
                 </button>
-                <button onClick={openTypesModal} className="flex-1 bg-white p-4 rounded-xl text-center border border-slate-200 hover:border-amber-500 hover:shadow-md transition">
+                <button onClick={() => handleModalOpen('types')} className="flex-1 bg-white p-4 rounded-xl text-center border border-slate-200 hover:border-amber-500 hover:shadow-md transition">
                   <div className="text-2xl mb-2">🧪</div>
                   <span className="text-xs uppercase font-bold text-slate-800">Common Types</span>
                 </button>

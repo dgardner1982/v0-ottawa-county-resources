@@ -21,7 +21,7 @@ export default function EducationPage() {
     { name: "Stimulants", icon: "⚡", link: "https://gemini.google.com/share/5fced2f07209" },
     { name: "Synthetic Cannabinoids", icon: "🌿", link: "/synthetic-cannabinoids", internal: true },
     { name: "Emerging Drugs", icon: "🔬", link: "https://gemini.google.com/share/2a26f1e97b40" },
-    { name: "Drug Interactions", icon: "🚫", link: "https://gemini.google.com/share/ee3fd2cc103a" },
+    { name: "Kratom and Kratom Extracts", icon: "🍃", link: "https://gemini.google.com/share/ee3fd2cc103a" },
   ];
 
   const drugInfo = {
