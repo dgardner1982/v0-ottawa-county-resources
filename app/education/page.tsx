@@ -101,7 +101,7 @@ export default function EducationPage() {
               const href = `/drug/${drug.slug}`;
               return (
                 <Link key={idx} href={href}>
-                  <div className={`${drug.bgColor} rounded-lg shadow-md hover:shadow-xl p-8 border-l-4 ${drug.color} transition transform hover:scale-105 cursor-pointer text-center`}>
+                  <div className={`${drug.bgColor} rounded-lg shadow-md hover:shadow-xl p-8 border-l-4 ${drug.color} transition transform hover:scale-105 cursor-pointer text-center h-64 flex flex-col justify-center items-center`}>
                     <div className="mb-4">
                       {drug.image ? (
                         <img src={drug.image} alt={drug.name} className="w-20 h-20 object-contain mx-auto" />
