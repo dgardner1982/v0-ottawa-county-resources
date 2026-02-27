@@ -48,32 +48,31 @@ export default function Home() {
       </div>
 
       <header className="bg-white border-b-2 border-teal-200 sticky top-16 z-40 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 py-8">
-          <div className="flex flex-col items-center gap-8">
-            {/* Logo and Title */}
-            <div className="flex flex-col items-center gap-4">
-              <img 
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Recovery%20Alliance%20Business%20Cards-UXhe7EFsenUbcy44EqMjYgUa3HNUT3.jpg"
-                alt="Ottawa County Recovery Alliance"
-                className="h-full w-full object-contain"
-                style={{ maxHeight: '288px', maxWidth: '288px' }}
-              />
-              <div className="text-center">
-                <h1 className="text-6xl font-bold text-teal-700 mb-2">Recovery Resources</h1>
-                <p className="text-2xl text-gray-600">Ottawa County Community Alliance</p>
-              </div>
+        <div className="max-w-6xl mx-auto px-4 py-12">
+          <div className="flex flex-col items-center gap-8 text-center">
+            {/* Logo */}
+            <img 
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Recovery%20Alliance%20Business%20Cards-UXhe7EFsenUbcy44EqMjYgUa3HNUT3.jpg"
+              alt="Ottawa County Recovery Alliance"
+              className="h-80 w-80 object-contain"
+            />
+            
+            {/* Title - Much Larger */}
+            <div className="space-y-2">
+              <h1 className="text-8xl font-bold text-teal-700">Recovery Resources</h1>
+              <p className="text-3xl text-gray-700 font-semibold">Ottawa County Community Alliance</p>
             </div>
             
-            {/* Navigation Buttons */}
-            <div className="flex gap-4 flex-wrap justify-center">
+            {/* Navigation Buttons - Uniform and Centered */}
+            <div className="flex gap-6 flex-wrap justify-center pt-4">
               <Link href="/">
-                <button className="bg-teal-600 hover:bg-teal-700 text-white font-bold px-8 py-3 rounded transition text-lg">Resources</button>
+                <button className="bg-teal-600 hover:bg-teal-700 text-white font-bold px-10 py-4 rounded-lg transition text-xl min-w-48">Resources</button>
               </Link>
               <Link href="/education">
-                <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-3 rounded transition text-lg">Education</button>
+                <button className="bg-green-600 hover:bg-green-700 text-white font-bold px-10 py-4 rounded-lg transition text-xl min-w-48">Education</button>
               </Link>
               <Link href="/support-groups">
-                <button className="bg-purple-600 hover:bg-purple-700 text-white font-bold px-8 py-3 rounded transition text-lg">Support Groups</button>
+                <button className="bg-purple-600 hover:bg-purple-700 text-white font-bold px-10 py-4 rounded-lg transition text-xl min-w-48">Support Groups</button>
               </Link>
             </div>
           </div>

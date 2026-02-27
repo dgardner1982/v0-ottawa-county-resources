@@ -14,19 +14,19 @@ export default function SupportGroupsPage() {
           name: "Alcoholics Anonymous (AA)",
           description: "Fellowship for people recovering from alcohol addiction using 12-step program",
           link: "https://www.aa.org",
-          findMeetings: "https://www.aa.org/find-aa-meetings"
+          findMeetings: "https://www.aa.org/find-aa"
         },
         {
           name: "Narcotics Anonymous (NA)",
           description: "Support for recovery from drug addiction through peer support and 12-step principles",
           link: "https://www.na.org",
-          findMeetings: "https://www.na.org/meetingsearch/"
+          findMeetings: "https://www.na.org/meetingsearch/find-na/"
         },
         {
           name: "SMART Recovery",
           description: "Science-based approach emphasizing self-empowerment and 4-point program",
           link: "https://www.smartrecovery.org",
-          findMeetings: "https://www.smartrecovery.org/find-smart-meeting"
+          findMeetings: "https://meetings.smartrecovery.org/meetings"
         },
         {
           name: "Crystal Meth Anonymous (CMA)",
@@ -38,7 +38,7 @@ export default function SupportGroupsPage() {
           name: "Cocaine Anonymous (CA)",
           description: "12-step program specifically for cocaine and other stimulant addiction",
           link: "https://www.ca.org",
-          findMeetings: "https://www.ca.org/meetings"
+          findMeetings: "https://www.camichigan.org"
         }
       ]
     },
@@ -183,31 +183,30 @@ export default function SupportGroupsPage() {
       </div>
 
       <header className="bg-white border-b-2 border-teal-200 sticky top-16 z-40 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 py-8">
-          <div className="flex flex-col items-center gap-8">
-            {/* Logo and Title */}
-            <div className="flex flex-col items-center gap-4">
-              <img 
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Recovery%20Alliance%20Business%20Cards-UXhe7EFsenUbcy44EqMjYgUa3HNUT3.jpg"
-                alt="Ottawa County Recovery Alliance"
-                className="h-full w-full object-contain"
-                style={{ maxHeight: '288px', maxWidth: '288px' }}
-              />
-              <div className="text-center">
-                <h1 className="text-6xl font-bold text-teal-700 mb-2">Support Groups</h1>
-                <p className="text-2xl text-gray-600">Community Recovery & Peer Support</p>
-              </div>
+        <div className="max-w-6xl mx-auto px-4 py-12">
+          <div className="flex flex-col items-center gap-8 text-center">
+            {/* Logo */}
+            <img 
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Recovery%20Alliance%20Business%20Cards-UXhe7EFsenUbcy44EqMjYgUa3HNUT3.jpg"
+              alt="Ottawa County Recovery Alliance"
+              className="h-80 w-80 object-contain"
+            />
+            
+            {/* Title - Much Larger */}
+            <div className="space-y-2">
+              <h1 className="text-8xl font-bold text-teal-700">Support Groups</h1>
+              <p className="text-3xl text-gray-700 font-semibold">Community Recovery & Peer Support</p>
             </div>
             
-            {/* Navigation Buttons */}
-            <div className="flex gap-4 flex-wrap justify-center">
+            {/* Navigation Buttons - Uniform and Centered */}
+            <div className="flex gap-6 flex-wrap justify-center pt-4">
               <Link href="/">
-                <button className="bg-teal-600 hover:bg-teal-700 text-white font-bold px-8 py-3 rounded transition text-lg">Resources</button>
+                <button className="bg-teal-600 hover:bg-teal-700 text-white font-bold px-10 py-4 rounded-lg transition text-xl min-w-48">Resources</button>
               </Link>
               <Link href="/education">
-                <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-3 rounded transition text-lg">Education</button>
+                <button className="bg-green-600 hover:bg-green-700 text-white font-bold px-10 py-4 rounded-lg transition text-xl min-w-48">Education</button>
               </Link>
-              <button className="bg-purple-600 hover:bg-purple-700 text-white font-bold px-8 py-3 rounded transition text-lg">Support Groups</button>
+              <button className="bg-purple-600 hover:bg-purple-700 text-white font-bold px-10 py-4 rounded-lg transition text-xl min-w-48">Support Groups</button>
             </div>
           </div>
         </div>
@@ -265,14 +264,13 @@ export default function SupportGroupsPage() {
             <li>✓ Call <a href="tel:211" className="text-purple-700 font-bold">2-1-1</a> for local support group information and referrals</li>
             <li>✓ Visit individual organization websites for meeting schedules and locations</li>
             <li>✓ Many groups now offer hybrid (in-person and virtual) meetings</li>
-            <li>✓ Your first meeting is always free - just show up and listen</li>
             <li>✓ Anonymity and confidentiality are core principles of all 12-step programs</li>
-            <li>✓ Ask local recovery centers about meetings in your area</li>
           </ul>
         </div>
 
         <div className="bg-green-50 border-l-4 border-green-500 rounded-lg p-8 mb-8">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">Starting Your Recovery Journey</h3>
+          <p className="text-gray-700 mb-4">Everyone's recovery journey looks different. What works for one person, may not work for another.</p>
           <p className="text-gray-700 mb-4">No matter which group you choose, the most important step is reaching out. Each organization has:</p>
           <ul className="space-y-2 text-gray-700 ml-4">
             <li>• Experienced members ready to help newcomers</li>
