@@ -15,14 +15,14 @@ export default function EducationPage() {
   };
   
   const drugs = [
-    { name: "Cocaine", icon: "🧊", slug: "cocaine", color: "border-red-500", bgColor: "bg-red-50" },
+    { name: "Cocaine", slug: "cocaine", color: "border-red-500", bgColor: "bg-red-50", image: "/drug-icons/cocaine.jpg" },
     { name: "Methamphetamine", icon: "⚡", slug: "methamphetamine", color: "border-orange-500", bgColor: "bg-orange-50" },
     { name: "Fentanyl", icon: "⚠️", slug: "fentanyl", color: "border-red-600", bgColor: "bg-red-100" },
-    { name: "Xylazine", icon: "🩹", slug: "xylazine", color: "border-purple-500", bgColor: "bg-purple-50" },
+    { name: "Xylazine", slug: "xylazine", color: "border-purple-500", bgColor: "bg-purple-50", image: "/drug-icons/xylazine.jpg" },
     { name: "Methadone", icon: "💉", slug: "methadone", color: "border-blue-500", bgColor: "bg-blue-50" },
     { name: "Kratom", icon: "🍃", slug: "kratom", color: "border-green-500", bgColor: "bg-green-50" },
     { name: "Inhalants", icon: "💨", slug: "inhalants", color: "border-pink-500", bgColor: "bg-pink-50" },
-    { name: "THC", icon: "🌱", slug: "thc", color: "border-lime-500", bgColor: "bg-lime-50" },
+    { name: "THC", slug: "thc", color: "border-lime-500", bgColor: "bg-lime-50", image: "/drug-icons/thc.jpg" },
     { name: "Synthetic Cannabinoids", icon: "🌿", slug: "synthetic-cannabinoids", color: "border-teal-500", bgColor: "bg-teal-50" }
   ];
 
@@ -98,11 +98,17 @@ export default function EducationPage() {
         {activeTab === 'infograph' && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {drugs.map((drug, idx) => {
-              const href = drug.external ? `/${drug.slug}` : `/drug/${drug.slug}`;
+              const href = `/drug/${drug.slug}`;
               return (
                 <Link key={idx} href={href}>
                   <div className={`${drug.bgColor} rounded-lg shadow-md hover:shadow-xl p-8 border-l-4 ${drug.color} transition transform hover:scale-105 cursor-pointer text-center`}>
-                    <div className="text-5xl mb-4">{drug.icon}</div>
+                    <div className="mb-4">
+                      {drug.image ? (
+                        <img src={drug.image} alt={drug.name} className="w-20 h-20 object-contain mx-auto" />
+                      ) : (
+                        <div className="text-5xl">{drug.icon}</div>
+                      )}
+                    </div>
                     <h3 className="text-xl font-bold text-gray-900">{drug.name}</h3>
                   </div>
                 </Link>
