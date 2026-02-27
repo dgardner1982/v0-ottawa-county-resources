@@ -15,14 +15,15 @@ export default function EducationPage() {
   };
   
   const drugs = [
-    { name: "Cocaine", icon: "❄️", slug: "cocaine", color: "border-red-500", bgColor: "bg-red-50" },
+    { name: "Cocaine", icon: "🧊", slug: "cocaine", color: "border-red-500", bgColor: "bg-red-50" },
     { name: "Methamphetamine", icon: "⚡", slug: "methamphetamine", color: "border-orange-500", bgColor: "bg-orange-50" },
     { name: "Fentanyl", icon: "⚠️", slug: "fentanyl", color: "border-red-600", bgColor: "bg-red-100" },
-    { name: "Xylazine", icon: "💊", slug: "xylazine", color: "border-purple-500", bgColor: "bg-purple-50" },
-    { name: "Methadone", icon: "🧬", slug: "methadone", color: "border-blue-500", bgColor: "bg-blue-50" },
+    { name: "Xylazine", icon: "🩹", slug: "xylazine", color: "border-purple-500", bgColor: "bg-purple-50" },
+    { name: "Methadone", icon: "💉", slug: "methadone", color: "border-blue-500", bgColor: "bg-blue-50" },
     { name: "Kratom", icon: "🍃", slug: "kratom", color: "border-green-500", bgColor: "bg-green-50" },
     { name: "Inhalants", icon: "💨", slug: "inhalants", color: "border-pink-500", bgColor: "bg-pink-50" },
-    { name: "Synthetic Cannabinoids", icon: "🌿", slug: "synthetic-cannabinoids", color: "border-teal-500", bgColor: "bg-teal-50", external: true }
+    { name: "THC", icon: "🌱", slug: "thc", color: "border-lime-500", bgColor: "bg-lime-50" },
+    { name: "Synthetic Cannabinoids", icon: "🌿", slug: "synthetic-cannabinoids", color: "border-teal-500", bgColor: "bg-teal-50" }
   ];
 
   return (
