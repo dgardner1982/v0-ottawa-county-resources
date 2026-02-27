@@ -1,10 +1,19 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Link from 'next/link';
 
 export default function EducationPage() {
   const [activeTab, setActiveTab] = useState('guides');
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  const handleTabClick = (tab: string) => {
+    setActiveTab(tab);
+    // Scroll to content after a brief delay to ensure state update
+    setTimeout(() => {
+      contentRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 0);
+  };
   
   const guides = [
     { name: "Fentanyl", icon: "⚠️", link: "https://gemini.google.com/share/cd77a5e1d45a" },
@@ -93,9 +102,9 @@ export default function EducationPage() {
         </div>
 
         {/* Tab Navigation */}
-        <div className="flex gap-4 mb-8 border-b border-gray-300">
+        <div className="flex gap-4 mb-8 border-b border-gray-300" ref={contentRef}>
           <button
-            onClick={() => setActiveTab('guides')}
+            onClick={() => handleTabClick('guides')}
             className={`px-6 py-3 font-semibold border-b-4 transition ${
               activeTab === 'guides'
                 ? 'border-teal-600 text-teal-600'
@@ -105,7 +114,7 @@ export default function EducationPage() {
             External Guides
           </button>
           <button
-            onClick={() => setActiveTab('infograph')}
+            onClick={() => handleTabClick('infograph')}
             className={`px-6 py-3 font-semibold border-b-4 transition ${
               activeTab === 'infograph'
                 ? 'border-teal-600 text-teal-600'
@@ -115,7 +124,7 @@ export default function EducationPage() {
             Drug Information & Effects
           </button>
           <button
-            onClick={() => setActiveTab('support')}
+            onClick={() => handleTabClick('support')}
             className={`px-6 py-3 font-semibold border-b-4 transition ${
               activeTab === 'support'
                 ? 'border-teal-600 text-teal-600'
