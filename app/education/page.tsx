@@ -19,7 +19,7 @@ export default function EducationPage() {
     { name: "Methamphetamine", icon: "⚡", slug: "methamphetamine", color: "border-orange-500", bgColor: "bg-orange-50" },
     { name: "Fentanyl", icon: "⚠️", slug: "fentanyl", color: "border-red-600", bgColor: "bg-red-100" },
     { name: "Xylazine", slug: "xylazine", color: "border-purple-500", bgColor: "bg-purple-50", image: "/drug-icons/xylazine.jpg" },
-    { name: "Methadone", icon: "💉", slug: "methadone", color: "border-blue-500", bgColor: "bg-blue-50" },
+    { name: "Methadone", slug: "methadone", color: "border-blue-500", bgColor: "bg-blue-50", image: "/drug-icons/methadone.jpg" },
     { name: "Kratom", icon: "🍃", slug: "kratom", color: "border-green-500", bgColor: "bg-green-50" },
     { name: "Inhalants", icon: "💨", slug: "inhalants", color: "border-pink-500", bgColor: "bg-pink-50" },
     { name: "THC", slug: "thc", color: "border-lime-500", bgColor: "bg-lime-50", image: "/drug-icons/thc.jpg" },
