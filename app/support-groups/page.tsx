@@ -182,7 +182,7 @@ export default function SupportGroupsPage() {
         <span>FOR LIFE-THREATENING EMERGENCIES, CALL <a href="tel:911" className="underline font-bold">9-1-1</a></span>
       </div>
 
-      <header className="bg-white border-b-2 border-teal-200 sticky top-16 z-40 shadow-sm">
+      <header className="bg-white border-b-2 border-teal-200 shadow-sm">
         <div className="max-w-6xl mx-auto px-4 py-12">
           <div className="flex flex-col items-center gap-8 text-center">
             {/* Logo */}
