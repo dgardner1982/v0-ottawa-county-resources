@@ -16,7 +16,8 @@ const RESOURCES = [
   { name: "Christian Fellowship Assembly", category: "Food", address: "9930 64th Ave, Allendale", phone: "616-895-7614", info: "Weekly pantry (Wed 5p) and hot dinner (Wed 5:30p)." },
   { name: "Holland Community Kitchen", category: "Food", address: "101 E. 13th St, Holland", phone: "616-566-1417", info: "Free daily meals at Western Theological Seminary." },
   { name: "Good Samaritan Ministries", category: "Housing", address: "513 E. 8th St, Holland", phone: "616-392-7159", info: "Housing Search Assistance, Rapid Re-housing, and CHP programs." },
-  { name: "Gateway Mission", category: "Housing", address: "643 S Waverly Rd, Holland", phone: "616-396-2200", info: "Emergency shelter and long-term recovery programs." },
+  { name: "Gateway Mission", category: "Housing", address: "643 S Waverly Rd, Holland", phone: "616-396-2200", info: "Emergency shelter and long-term recovery programs for women and families." },
+  { name: "Gateway Mission for Women", category: "Housing", address: "643 S Waverly Rd, Holland", phone: "616-396-2200", info: "Specialized residential recovery program for women seeking housing and support services." },
 ];
 
 export default function Home() {
