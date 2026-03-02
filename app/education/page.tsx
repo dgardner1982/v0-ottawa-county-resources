@@ -1,37 +1,30 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Link from 'next/link';
 
 export default function EducationPage() {
-  const [activeTab, setActiveTab] = useState('guides');
-  
-  const guides = [
-    { name: "Fentanyl", icon: "⚠️", link: "https://gemini.google.com/share/cd77a5e1d45a" },
-    { name: "Xylazine (Tranq)", icon: "💊", link: "https://gemini.google.com/share/5a6094e7467b" },
-    { name: "Stimulants", icon: "⚡", link: "https://gemini.google.com/share/5fced2f07209" },
-    { name: "Synthetic Cannabinoids", icon: "🌿", link: "https://gemini.google.com/share/9bb8e42a5cb7" },
-    { name: "Emerging Drugs", icon: "🔬", link: "https://gemini.google.com/share/2a26f1e97b40" },
-    { name: "Drug Interactions", icon: "🚫", link: "https://gemini.google.com/share/ee3fd2cc103a" },
-  ];
+  const [activeTab, setActiveTab] = useState('infograph');
+  const contentRef = useRef<HTMLDivElement>(null);
 
-  const drugInfo = {
-    stimulants: {
-      title: "Stimulants: Methamphetamine & Cocaine",
-      effects: ["Increased heart rate", "Elevated blood pressure", "Rapid breathing", "Dilated pupils", "Euphoria followed by crash"],
-      risks: ["59% of overdose deaths involve stimulants (2021-2024)", "Cardiac arrest and stroke", "Severe anxiety and paranoia", "Nasal damage (if snorted)", "Rapid addiction potential"]
-    },
-    fentanyl: {
-      title: "Fentanyl Crisis",
-      effects: ["Extreme pain relief", "Drowsiness", "Shallow breathing", "Low blood pressure", "Dangerous respiratory depression"],
-      risks: ["70% of overdose deaths involved fentanyl (2023-2024)", "50-100x more potent than morphine", "High overdose risk even in small doses", "Often mixed with other substances", "Naloxone not always effective when mixed"]
-    },
-    xylazine: {
-      title: "Xylazine (Tranq): The Growing Threat",
-      effects: ["Sedation and drowsiness", "Low blood pressure", "Slow heart rate", "Reduced pain sensation", "Respiratory depression"],
-      risks: ["Frequently mixed with fentanyl", "Creates refractory overdoses", "Naloxone often cannot fully reverse", "Skin wounds and infections", "Severe withdrawal symptoms"]
-    }
+  const handleTabClick = (tab: string) => {
+    setActiveTab(tab);
+    setTimeout(() => {
+      contentRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 0);
   };
+  
+  const drugs = [
+    { name: "Cocaine", slug: "cocaine", color: "border-red-500", bgColor: "bg-red-50", image: "/drug-icons/cocaine.jpg" },
+    { name: "Methamphetamine", icon: "⚡", slug: "methamphetamine", color: "border-orange-500", bgColor: "bg-orange-50" },
+    { name: "Fentanyl", icon: "⚠️", slug: "fentanyl", color: "border-red-600", bgColor: "bg-red-100" },
+    { name: "Xylazine", slug: "xylazine", color: "border-purple-500", bgColor: "bg-purple-50", image: "/drug-icons/xylazine.jpg" },
+    { name: "Methadone", slug: "methadone", color: "border-blue-500", bgColor: "bg-blue-50", image: "/drug-icons/methadone.jpg" },
+    { name: "Kratom", icon: "🍃", slug: "kratom", color: "border-green-500", bgColor: "bg-green-50" },
+    { name: "Inhalants", icon: "💨", slug: "inhalants", color: "border-pink-500", bgColor: "bg-pink-50" },
+    { name: "THC", slug: "thc", color: "border-lime-500", bgColor: "bg-lime-50", image: "/drug-icons/thc.jpg" },
+    { name: "Synthetic Cannabinoids", icon: "🌿", slug: "synthetic-cannabinoids", color: "border-teal-500", bgColor: "bg-teal-50" }
+  ];
 
   return (
     <>
@@ -41,23 +34,32 @@ export default function EducationPage() {
         <span>FOR LIFE-THREATENING EMERGENCIES, CALL <a href="tel:911" className="underline font-bold">9-1-1</a></span>
       </div>
 
-      <header className="bg-white border-b-2 border-teal-200 sticky top-16 z-40 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 py-6">
-          <div className="flex justify-between items-center flex-wrap gap-6">
-            <div className="flex items-center gap-4">
-              <img 
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Recovery%20Alliance%20Business%20Cards-UXhe7EFsenUbcy44EqMjYgUa3HNUT3.jpg"
-                alt="Ottawa County Recovery Alliance"
-                className="h-72 w-72 object-contain"
-              />
-              <div>
-                <h1 className="text-4xl font-bold text-teal-700">Education & Resources</h1>
-                <p className="text-gray-600">Substance Guides & Harm Reduction</p>
-              </div>
+      <header className="bg-white border-b-2 border-teal-200 shadow-sm">
+        <div className="max-w-6xl mx-auto px-4 py-12">
+          <div className="flex flex-col items-center gap-8 text-center">
+            {/* Logo */}
+            <img 
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Recovery%20Alliance%20Business%20Cards-UXhe7EFsenUbcy44EqMjYgUa3HNUT3.jpg"
+              alt="Ottawa County Recovery Alliance"
+              className="h-80 w-80 object-contain"
+            />
+            
+            {/* Title - Much Larger */}
+            <div className="space-y-2">
+              <h1 className="text-8xl font-bold text-teal-700">Education & Resources</h1>
+              <p className="text-3xl text-gray-700 font-semibold">Substance Guides & Harm Reduction</p>
             </div>
-            <Link href="/">
-              <button className="bg-teal-600 hover:bg-teal-700 text-white font-bold px-6 py-2 rounded transition">Directory</button>
-            </Link>
+            
+            {/* Navigation Buttons - Uniform and Centered */}
+            <div className="flex gap-6 flex-wrap justify-center pt-4">
+              <Link href="/">
+                <button className="bg-teal-600 hover:bg-teal-700 text-white font-bold px-10 py-4 rounded-lg transition text-xl min-w-48">Resources</button>
+              </Link>
+              <button className="bg-green-600 hover:bg-green-700 text-white font-bold px-10 py-4 rounded-lg transition text-xl min-w-48">Education</button>
+              <Link href="/support-groups">
+                <button className="bg-purple-600 hover:bg-purple-700 text-white font-bold px-10 py-4 rounded-lg transition text-xl min-w-48">Support Groups</button>
+              </Link>
+            </div>
           </div>
         </div>
       </header>
@@ -69,19 +71,9 @@ export default function EducationPage() {
         </div>
 
         {/* Tab Navigation */}
-        <div className="flex gap-4 mb-8 border-b border-gray-300">
+        <div className="flex gap-4 mb-8 border-b border-gray-300" ref={contentRef}>
           <button
-            onClick={() => setActiveTab('guides')}
-            className={`px-6 py-3 font-semibold border-b-4 transition ${
-              activeTab === 'guides'
-                ? 'border-teal-600 text-teal-600'
-                : 'border-transparent text-gray-600 hover:text-gray-800'
-            }`}
-          >
-            External Guides
-          </button>
-          <button
-            onClick={() => setActiveTab('infograph')}
+            onClick={() => handleTabClick('infograph')}
             className={`px-6 py-3 font-semibold border-b-4 transition ${
               activeTab === 'infograph'
                 ? 'border-teal-600 text-teal-600'
@@ -91,7 +83,7 @@ export default function EducationPage() {
             Drug Information & Effects
           </button>
           <button
-            onClick={() => setActiveTab('support')}
+            onClick={() => handleTabClick('support')}
             className={`px-6 py-3 font-semibold border-b-4 transition ${
               activeTab === 'support'
                 ? 'border-teal-600 text-teal-600'
@@ -102,128 +94,31 @@ export default function EducationPage() {
           </button>
         </div>
 
-        {/* External Guides Tab */}
-        {activeTab === 'guides' && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {guides.map((guide, idx) => (
-              <a
-                key={idx}
-                href={guide.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white rounded-lg shadow-md hover:shadow-xl p-6 border-b-4 border-teal-500 transition transform hover:scale-105"
-              >
-                <div className="text-4xl mb-3">{guide.icon}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{guide.name}</h3>
-                <p className="text-teal-600 font-semibold">Read Guide →</p>
-              </a>
-            ))}
-          </div>
-        )}
-
-        {/* Interactive Infograph Tab */}
+        {/* Drug Boxes Tab */}
         {activeTab === 'infograph' && (
-          <div className="space-y-8 mb-12">
-            {/* Stimulants Card */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden border-l-8 border-orange-500">
-              <div className="bg-orange-100 p-6 border-b-2 border-orange-300">
-                <h3 className="text-3xl font-bold text-gray-900">⚡ {drugInfo.stimulants.title}</h3>
-              </div>
-              <div className="p-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div>
-                    <h4 className="text-xl font-bold text-gray-900 mb-4">Short-Term Effects</h4>
-                    <ul className="space-y-3">
-                      {drugInfo.stimulants.effects.map((effect, idx) => (
-                        <li key={idx} className="flex gap-3 items-start">
-                          <span className="text-orange-500 font-bold text-lg">●</span>
-                          <span className="text-gray-700">{effect}</span>
-                        </li>
-                      ))}
-                    </ul>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {drugs.map((drug, idx) => {
+              const href = `/drug/${drug.slug}`;
+              return (
+                <Link key={idx} href={href}>
+                  <div className={`${drug.bgColor} rounded-lg shadow-md hover:shadow-xl p-8 border-l-4 ${drug.color} transition transform hover:scale-105 cursor-pointer text-center h-64 flex flex-col justify-center items-center`}>
+                    <div className="mb-4">
+                      {drug.image ? (
+                        <img src={drug.image} alt={drug.name} className="w-20 h-20 object-contain mx-auto" />
+                      ) : (
+                        <div className="text-5xl">{drug.icon}</div>
+                      )}
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900">{drug.name}</h3>
                   </div>
-                  <div>
-                    <h4 className="text-xl font-bold text-red-700 mb-4">Health Risks</h4>
-                    <ul className="space-y-3">
-                      {drugInfo.stimulants.risks.map((risk, idx) => (
-                        <li key={idx} className="flex gap-3 items-start">
-                          <span className="text-red-600 font-bold text-lg">⚠️</span>
-                          <span className="text-gray-700">{risk}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Fentanyl Card */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden border-l-8 border-red-500">
-              <div className="bg-red-100 p-6 border-b-2 border-red-300">
-                <h3 className="text-3xl font-bold text-gray-900">⚠️ {drugInfo.fentanyl.title}</h3>
-              </div>
-              <div className="p-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div>
-                    <h4 className="text-xl font-bold text-gray-900 mb-4">Effects</h4>
-                    <ul className="space-y-3">
-                      {drugInfo.fentanyl.effects.map((effect, idx) => (
-                        <li key={idx} className="flex gap-3 items-start">
-                          <span className="text-red-500 font-bold text-lg">●</span>
-                          <span className="text-gray-700">{effect}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold text-red-700 mb-4">Critical Dangers</h4>
-                    <ul className="space-y-3">
-                      {drugInfo.fentanyl.risks.map((risk, idx) => (
-                        <li key={idx} className="flex gap-3 items-start">
-                          <span className="text-red-600 font-bold text-lg">⚠️</span>
-                          <span className="text-gray-700">{risk}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Xylazine Card */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden border-l-8 border-purple-500">
-              <div className="bg-purple-100 p-6 border-b-2 border-purple-300">
-                <h3 className="text-3xl font-bold text-gray-900">💊 {drugInfo.xylazine.title}</h3>
-              </div>
-              <div className="p-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div>
-                    <h4 className="text-xl font-bold text-gray-900 mb-4">Effects</h4>
-                    <ul className="space-y-3">
-                      {drugInfo.xylazine.effects.map((effect, idx) => (
-                        <li key={idx} className="flex gap-3 items-start">
-                          <span className="text-purple-500 font-bold text-lg">●</span>
-                          <span className="text-gray-700">{effect}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold text-red-700 mb-4">Emerging Threat</h4>
-                    <ul className="space-y-3">
-                      {drugInfo.xylazine.risks.map((risk, idx) => (
-                        <li key={idx} className="flex gap-3 items-start">
-                          <span className="text-red-600 font-bold text-lg">⚠️</span>
-                          <span className="text-gray-700">{risk}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
+                </Link>
+              );
+            })}
           </div>
         )}
+
+        {/* Interactive Infograph Tab - Now removed, showing drug boxes instead */}
+        
 
         {/* Resources & Support Tab */}
         {activeTab === 'support' && (

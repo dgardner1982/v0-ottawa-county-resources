@@ -30,13 +30,13 @@ export default function Home() {
   });
 
   const getCategoryColor = (category: string) => {
-    const colors: Record<string, { bg: string; border: string; icon: string }> = {
-      "Mental Health": { bg: "bg-blue-100", border: "border-b-4 border-blue-500", icon: "🧠" },
-      "Substance Recovery": { bg: "bg-orange-100", border: "border-b-4 border-orange-500", icon: "🛡️" },
-      "Food": { bg: "bg-green-100", border: "border-b-4 border-green-500", icon: "🍽️" },
-      "Housing": { bg: "bg-amber-100", border: "border-b-4 border-amber-500", icon: "🏠" },
+    const colors: Record<string, { bg: string; border: string; icon: string; button: string; buttonHover: string }> = {
+      "Mental Health": { bg: "bg-blue-100", border: "border-b-4 border-blue-500", icon: "🧠", button: "bg-blue-500 hover:bg-blue-600", buttonHover: "text-white" },
+      "Substance Recovery": { bg: "bg-orange-100", border: "border-b-4 border-orange-500", icon: "🛡️", button: "bg-orange-500 hover:bg-orange-600", buttonHover: "text-white" },
+      "Food": { bg: "bg-green-100", border: "border-b-4 border-green-500", icon: "🍽️", button: "bg-green-500 hover:bg-green-600", buttonHover: "text-white" },
+      "Housing": { bg: "bg-amber-100", border: "border-b-4 border-amber-500", icon: "🏠", button: "bg-amber-500 hover:bg-amber-600", buttonHover: "text-white" },
     };
-    return colors[category] || { bg: "bg-gray-100", border: "border-b-4 border-gray-400", icon: "📍" };
+    return colors[category] || { bg: "bg-gray-100", border: "border-b-4 border-gray-400", icon: "📍", button: "bg-gray-400 hover:bg-gray-500", buttonHover: "text-white" };
   };
 
   return (
@@ -47,23 +47,34 @@ export default function Home() {
         <span>FOR LIFE-THREATENING EMERGENCIES, CALL <a href="tel:911" className="underline font-bold">9-1-1</a></span>
       </div>
 
-      <header className="bg-white border-b-2 border-teal-200 sticky top-16 z-40 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 py-6">
-          <div className="flex justify-between items-center flex-wrap gap-6">
-            <div className="flex items-center gap-4">
-              <img 
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Recovery%20Alliance%20Business%20Cards-UXhe7EFsenUbcy44EqMjYgUa3HNUT3.jpg"
-                alt="Ottawa County Recovery Alliance"
-                className="h-72 w-72 object-contain"
-              />
-              <div>
-                <h1 className="text-4xl font-bold text-teal-700">Recovery Resources</h1>
-                <p className="text-gray-600">Ottawa County Community Alliance</p>
-              </div>
+      <header className="bg-white border-b-2 border-teal-200 shadow-sm">
+        <div className="max-w-6xl mx-auto px-4 py-12">
+          <div className="flex flex-col items-center gap-8 text-center">
+            {/* Logo */}
+            <img 
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Recovery%20Alliance%20Business%20Cards-UXhe7EFsenUbcy44EqMjYgUa3HNUT3.jpg"
+              alt="Ottawa County Recovery Alliance"
+              className="h-80 w-80 object-contain"
+            />
+            
+            {/* Title - Much Larger */}
+            <div className="space-y-2">
+              <h1 className="text-8xl font-bold text-teal-700">Recovery Resources</h1>
+              <p className="text-3xl text-gray-700 font-semibold">Ottawa County Community Alliance</p>
             </div>
-            <Link href="/education">
-              <button className="bg-teal-600 hover:bg-teal-700 text-white font-bold px-6 py-2 rounded transition">Education</button>
-            </Link>
+            
+            {/* Navigation Buttons - Uniform and Centered */}
+            <div className="flex gap-6 flex-wrap justify-center pt-4">
+              <Link href="/">
+                <button className="bg-teal-600 hover:bg-teal-700 text-white font-bold px-10 py-4 rounded-lg transition text-xl min-w-48">Resources</button>
+              </Link>
+              <Link href="/education">
+                <button className="bg-green-600 hover:bg-green-700 text-white font-bold px-10 py-4 rounded-lg transition text-xl min-w-48">Education</button>
+              </Link>
+              <Link href="/support-groups">
+                <button className="bg-purple-600 hover:bg-purple-700 text-white font-bold px-10 py-4 rounded-lg transition text-xl min-w-48">Support Groups</button>
+              </Link>
+            </div>
           </div>
         </div>
       </header>
@@ -80,19 +91,22 @@ export default function Home() {
         </div>
 
         <div className="flex gap-2 mb-8 flex-wrap">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-2 rounded font-semibold transition ${
-                selectedCategory === cat 
-                  ? "bg-teal-600 text-white" 
-                  : "bg-gray-200 text-gray-800 hover:bg-gray-300"
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
+          {categories.map((cat) => {
+            const colors = getCategoryColor(cat);
+            return (
+              <button
+                key={cat}
+                onClick={() => setSelectedCategory(cat)}
+                className={`px-4 py-2 rounded font-semibold transition ${
+                  selectedCategory === cat 
+                    ? `${colors.button} text-white` 
+                    : "bg-gray-200 text-gray-800 hover:bg-gray-300"
+                }`}
+              >
+                {cat}
+              </button>
+            );
+          })}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
