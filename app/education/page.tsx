@@ -16,14 +16,17 @@ export default function EducationPage() {
   
   const drugs = [
     { name: "Cocaine", slug: "cocaine", color: "border-red-500", bgColor: "bg-red-50", image: "/drug-icons/cocaine.jpg" },
-    { name: "Methamphetamine", icon: "⚡", slug: "methamphetamine", color: "border-orange-500", bgColor: "bg-orange-50" },
     { name: "Fentanyl", icon: "⚠️", slug: "fentanyl", color: "border-red-600", bgColor: "bg-red-100" },
-    { name: "Xylazine", slug: "xylazine", color: "border-purple-500", bgColor: "bg-purple-50", image: "/drug-icons/xylazine.jpg" },
-    { name: "Methadone", slug: "methadone", color: "border-blue-500", bgColor: "bg-blue-50", image: "/drug-icons/methadone.jpg" },
-    { name: "Kratom", icon: "🍃", slug: "kratom", color: "border-green-500", bgColor: "bg-green-50" },
+    { name: "Heroin", icon: "💉", slug: "heroin", color: "border-amber-700", bgColor: "bg-amber-50" },
     { name: "Inhalants", icon: "💨", slug: "inhalants", color: "border-pink-500", bgColor: "bg-pink-50" },
+    { name: "Ketamine", icon: "🧪", slug: "ketamine", color: "border-indigo-500", bgColor: "bg-indigo-50" },
+    { name: "Kratom", icon: "🍃", slug: "kratom", color: "border-green-500", bgColor: "bg-green-50" },
+    { name: "Methadone", slug: "methadone", color: "border-blue-500", bgColor: "bg-blue-50", image: "/drug-icons/methadone.jpg" },
+    { name: "Methamphetamine", icon: "⚡", slug: "methamphetamine", color: "border-orange-500", bgColor: "bg-orange-50" },
+    { name: "PCP", icon: "⛔", slug: "pcp", color: "border-red-700", bgColor: "bg-red-200" },
+    { name: "Synthetic Cannabinoids", icon: "🌿", slug: "synthetic-cannabinoids", color: "border-teal-500", bgColor: "bg-teal-50" },
     { name: "THC", slug: "thc", color: "border-lime-500", bgColor: "bg-lime-50", image: "/drug-icons/thc.jpg" },
-    { name: "Synthetic Cannabinoids", icon: "🌿", slug: "synthetic-cannabinoids", color: "border-teal-500", bgColor: "bg-teal-50" }
+    { name: "Xylazine", slug: "xylazine", color: "border-purple-500", bgColor: "bg-purple-50", image: "/drug-icons/xylazine.jpg" }
   ];
 
   return (
@@ -98,7 +101,7 @@ export default function EducationPage() {
         {activeTab === 'infograph' && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {drugs.map((drug, idx) => {
-              const href = `/drug/${drug.slug}`;
+              const href = drug.slug === 'synthetic-cannabinoids' ? '/synthetic-cannabinoids' : `/drug/${drug.slug}`;
               return (
                 <Link key={idx} href={href}>
                   <div className={`${drug.bgColor} rounded-lg shadow-md hover:shadow-xl p-8 border-l-4 ${drug.color} transition transform hover:scale-105 cursor-pointer text-center h-64 flex flex-col justify-center items-center`}>

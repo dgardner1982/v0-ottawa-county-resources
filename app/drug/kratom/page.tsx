@@ -27,6 +27,19 @@ export default function KratomPage() {
       </header>
 
       <main className="max-w-6xl mx-auto px-4 py-12">
+        <div className="bg-green-100 border-l-4 border-green-600 p-6 rounded-lg mb-8">
+          <p className="text-lg text-gray-700">
+            For more detailed information, click{' '}
+            <a 
+              href="https://gemini.google.com/share/01aeefcc3ac1" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-2 rounded-lg transition"
+            >
+              here
+            </a>
+          </p>
+        </div>
         <div className="bg-green-100 border-4 border-green-600 rounded-lg p-8 mb-12">
           <h2 className="text-3xl font-bold text-green-900 mb-4">WHAT IS KRATOM?</h2>
           <p className="text-lg text-green-900 mb-4">Kratom is a tropical plant (Mitragyna speciosa) from Southeast Asia. The leaves contain alkaloids that produce opioid-like and stimulant effects. In the U.S., kratom is legal in most states but not FDA-approved.</p>
