@@ -241,9 +241,14 @@ export default function Home() {
                       <a href={`tel:${resource.phone}`} className="text-teal-700 font-bold hover:underline">{resource.phone}</a>
                     </div>
                   </div>
-                  <a href={`tel:${resource.phone}`} className="block mt-4 w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 rounded text-center transition">
+                  <button 
+                    onClick={() => {
+                      window.location.href = `tel:${resource.phone}`;
+                    }}
+                    className="block mt-4 w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 rounded text-center transition cursor-pointer"
+                  >
                     Call Now
-                  </a>
+                  </button>
                 </div>
               );
             })
