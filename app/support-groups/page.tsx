@@ -54,22 +54,16 @@ export default function SupportGroupsPage() {
           findMeetings: "https://www.emotionalhealthanonymous.org/meetings"
         },
         {
-          name: "Depression Anonymous",
-          description: "Support group for those experiencing depression and related conditions",
-          link: "https://depressionanonymous.org",
-          findMeetings: "https://depressionanonymous.org/meetings"
-        },
-        {
           name: "GriefShare",
           description: "Support for those grieving loss through structured sessions and community",
           link: "https://www.griefshare.org",
-          findMeetings: "https://www.griefshare.org/find-group"
+          findMeetings: "https://find.griefshare.org/find?_ga=2.184560737.918092790.1772460579-79549064.1772460579&_gl=1*jtw4hu*_gcl_au*OTEwMzQ5NjU2LjE3NzI0NjA1Nzk."
         },
         {
           name: "The Dinner Party",
           description: "Community for young adults grieving any loss",
           link: "https://www.thedinnerparty.org",
-          findMeetings: "https://www.thedinnerparty.org/gather"
+          findMeetings: "https://connect.thedinnerparty.org/all-experiences"
         }
       ]
     },
@@ -88,13 +82,13 @@ export default function SupportGroupsPage() {
           name: "Sexaholics Anonymous (SA)",
           description: "Support group focused on sexual addiction recovery",
           link: "https://www.sa.org",
-          findMeetings: "https://www.sa.org/find-meetings"
+          findMeetings: "https://www.sa.org/meetings/"
         },
         {
           name: "Gamblers Anonymous (GA)",
           description: "12-step program for those struggling with gambling addiction",
           link: "http://www.gamblersanonymous.org",
-          findMeetings: "http://www.gamblersanonymous.org/ga/locations"
+          findMeetings: "https://www.gamblersanonymous.org/find-a-meeting/"
         },
         {
           name: "Overeaters Anonymous (OA)",
@@ -106,7 +100,7 @@ export default function SupportGroupsPage() {
           name: "Debtors Anonymous (DA)",
           description: "12-step program for those struggling with compulsive spending and debt",
           link: "https://www.debtorsanonymous.org",
-          findMeetings: "https://www.debtorsanonymous.org/meetings"
+          findMeetings: "https://www.debtorsanonymous.org/meeting-search-virtual/?mytz=Y&myoffset=-5"
         }
       ]
     },
@@ -119,25 +113,25 @@ export default function SupportGroupsPage() {
           name: "Al-Anon/Alateen",
           description: "Support for families and friends affected by someone else's drinking",
           link: "https://www.al-anon.org",
-          findMeetings: "https://www.al-anon.org/find-a-meeting"
+          findMeetings: "https://www.al-anon.org/al-anon-meetings/find-an-al-anon-meeting/"
         },
         {
           name: "Nar-Anon",
           description: "Support for families and friends affected by someone's drug addiction",
           link: "https://www.nar-anon.org",
-          findMeetings: "https://www.nar-anon.org/find-meetings"
+          findMeetings: "https://www.nar-anon.org/find-a-meeting"
         },
         {
           name: "CODA (Codependents Anonymous)",
           description: "For those in codependent relationships and seeking recovery",
           link: "https://coda.org",
-          findMeetings: "https://coda.org/meeting-search"
+          findMeetings: "https://coda.org/find-a-meeting/"
         },
         {
           name: "Gam-Anon",
           description: "Support for families and friends of those with gambling addiction",
           link: "https://www.gam-anon.org",
-          findMeetings: "https://www.gam-anon.org/meetings"
+          findMeetings: "https://www.gam-anon.org/meeting-directory"
         }
       ]
     },
@@ -150,25 +144,13 @@ export default function SupportGroupsPage() {
           name: "Recovery Dharma",
           description: "Buddhist-inspired approach to addiction recovery emphasizing mindfulness",
           link: "https://www.recoverydharma.org",
-          findMeetings: "https://www.recoverydharma.org/meetings"
-        },
-        {
-          name: "All Recovery",
-          description: "LGBTQ+ and ally-inclusive recovery community",
-          link: "https://www.allrecovery.com",
-          findMeetings: "https://www.allrecovery.com/find-meetings"
-        },
-        {
-          name: "SMART Mutual Support (Online)",
-          description: "Virtual support meetings for various recovery topics",
-          link: "https://www.smartrecovery.org",
-          findMeetings: "https://www.smartrecovery.org/find-smart-meeting"
+          findMeetings: "https://www.recoverydharma.org/meetings/"
         },
         {
           name: "LifeRing Secular Recovery",
           description: "Secular alternative recovery community emphasizing self-directed change",
-          link: "https://www.liferinginc.org",
-          findMeetings: "https://www.liferinginc.org/find-a-meeting"
+          link: "https://www.lifering.org",
+          findMeetings: "https://meetings.lifering.org/meetings/?scope=hide"
         }
       ]
     }
