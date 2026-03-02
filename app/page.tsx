@@ -168,8 +168,8 @@ export default function Home() {
             
             {/* Title - Much Larger */}
             <div className="space-y-2">
-              <h1 className="text-8xl font-bold text-teal-700">Recovery Resources</h1>
-              <p className="text-3xl text-gray-700 font-semibold">Ottawa County Community Alliance</p>
+              <h1 className="text-7xl font-bold text-teal-700">Ottawa County</h1>
+              <p className="text-4xl text-gray-700 font-semibold">Recovery Resources</p>
             </div>
             
             {/* Navigation Buttons - Uniform and Centered */}
