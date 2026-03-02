@@ -27,6 +27,19 @@ export default function CocainePage() {
       </header>
 
       <main className="max-w-6xl mx-auto px-4 py-12">
+        <div className="bg-red-100 border-l-4 border-red-600 p-6 rounded-lg mb-8">
+          <p className="text-lg text-gray-700">
+            For more detailed information about Cocaine, click{' '}
+            <a 
+              href="https://gemini.google.com/share/02618a942962" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2 rounded-lg transition"
+            >
+              here
+            </a>
+          </p>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <div className="bg-red-50 border-l-4 border-red-500 p-8 rounded-lg">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Short-Term Effects</h2>
