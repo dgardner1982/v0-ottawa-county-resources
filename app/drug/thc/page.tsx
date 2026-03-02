@@ -47,6 +47,20 @@ export default function THCPage() {
           </Link>
         </div>
 
+        <div className="bg-lime-100 border-l-4 border-lime-600 p-6 rounded-lg mb-8">
+          <p className="text-lg text-gray-700">
+            For more detailed information, click{' '}
+            <a 
+              href="https://gemini.google.com/share/c12a5f1e17cf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block bg-lime-600 hover:bg-lime-700 text-white font-bold px-4 py-2 rounded-lg transition"
+            >
+              here
+            </a>
+          </p>
+        </div>
+
         <div className="bg-gradient-to-r from-lime-600 to-green-600 text-white rounded-lg p-8 mb-8">
           <h2 className="text-4xl font-bold mb-3">THC (Cannabis/Marijuana)</h2>
           <p className="text-lg">Cannabis contains THC (tetrahydrocannabinol), the main psychoactive compound. Understanding its effects and risks is important for informed decision-making.</p>

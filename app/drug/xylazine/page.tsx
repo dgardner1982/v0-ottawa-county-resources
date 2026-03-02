@@ -27,6 +27,19 @@ export default function XylazinePage() {
       </header>
 
       <main className="max-w-6xl mx-auto px-4 py-12">
+        <div className="bg-purple-100 border-l-4 border-purple-600 p-6 rounded-lg mb-8">
+          <p className="text-lg text-gray-700">
+            For more detailed information, click{' '}
+            <a 
+              href="https://gemini.google.com/share/abc836076155" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold px-4 py-2 rounded-lg transition"
+            >
+              here
+            </a>
+          </p>
+        </div>
         <div className="bg-purple-100 border-4 border-purple-600 rounded-lg p-8 mb-12">
           <h2 className="text-3xl font-bold text-purple-900 mb-4">EMERGING CRISIS</h2>
           <p className="text-lg text-purple-900 font-bold mb-4">Xylazine is rapidly becoming mixed into opioid supplies, creating a new overdose emergency. It's called "Tranq" or "Tranq Dope" on the street.</p>

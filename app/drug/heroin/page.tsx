@@ -27,6 +27,19 @@ export default function HeroinPage() {
       </header>
 
       <main className="max-w-6xl mx-auto px-4 py-12">
+        <div className="bg-amber-100 border-l-4 border-amber-700 p-6 rounded-lg mb-8">
+          <p className="text-lg text-gray-700">
+            For more detailed information, click{' '}
+            <a 
+              href="https://gemini.google.com/share/49a0c74c0de0" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block bg-amber-700 hover:bg-amber-800 text-white font-bold px-4 py-2 rounded-lg transition"
+            >
+              here
+            </a>
+          </p>
+        </div>
         <div className="bg-amber-100 border-4 border-amber-700 rounded-lg p-8 mb-12">
           <h2 className="text-3xl font-bold text-amber-900 mb-4">CRITICAL INFORMATION</h2>
           <p className="text-lg text-amber-900 font-bold mb-4">Heroin is an extremely addictive opioid that carries severe health risks including overdose and death.</p>

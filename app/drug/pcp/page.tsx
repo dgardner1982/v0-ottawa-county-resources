@@ -27,6 +27,19 @@ export default function PCPPage() {
       </header>
 
       <main className="max-w-6xl mx-auto px-4 py-12">
+        <div className="bg-red-100 border-l-4 border-red-700 p-6 rounded-lg mb-8">
+          <p className="text-lg text-gray-700">
+            For more detailed information, click{' '}
+            <a 
+              href="https://gemini.google.com/share/23c977d4ff21" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block bg-red-700 hover:bg-red-800 text-white font-bold px-4 py-2 rounded-lg transition"
+            >
+              here
+            </a>
+          </p>
+        </div>
         <div className="bg-red-200 border-4 border-red-700 rounded-lg p-8 mb-12">
           <h2 className="text-3xl font-bold text-red-900 mb-4">EXTREME DANGER WARNING</h2>
           <p className="text-lg text-red-900 font-bold mb-4">PCP is one of the most dangerous illegal drugs, frequently causing severe psychosis, superhuman strength, and violent behavior.</p>

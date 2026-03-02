@@ -27,6 +27,19 @@ export default function KetaminePage() {
       </header>
 
       <main className="max-w-6xl mx-auto px-4 py-12">
+        <div className="bg-indigo-100 border-l-4 border-indigo-600 p-6 rounded-lg mb-8">
+          <p className="text-lg text-gray-700">
+            For more detailed information, click{' '}
+            <a 
+              href="https://gemini.google.com/share/434c55c850da" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-4 py-2 rounded-lg transition"
+            >
+              here
+            </a>
+          </p>
+        </div>
         <div className="bg-indigo-100 border-4 border-indigo-600 rounded-lg p-8 mb-12">
           <h2 className="text-3xl font-bold text-indigo-900 mb-4">CRITICAL INFORMATION</h2>
           <p className="text-lg text-indigo-900 font-bold mb-4">Ketamine is a powerful dissociative anesthetic used medically but increasingly misused recreationally and in drug-facilitated crimes.</p>
