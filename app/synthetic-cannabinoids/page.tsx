@@ -70,11 +70,13 @@ export default function SyntheticCannabinoidsPage() {
       <header className="bg-white border-b-2 border-teal-200 shadow-sm">
         <div className="max-w-6xl mx-auto px-4 py-12">
           <div className="flex flex-col items-center gap-8 text-center">
-            <img 
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Recovery%20Alliance%20Business%20Cards-UXhe7EFsenUbcy44EqMjYgUa3HNUT3.jpg"
-              alt="Ottawa County Recovery Alliance"
-              className="h-80 w-80 object-contain"
-            />
+            <Link href="/">
+              <img 
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Recovery%20Alliance%20Business%20Cards-UXhe7EFsenUbcy44EqMjYgUa3HNUT3.jpg"
+                alt="Ottawa County Recovery Alliance"
+                className="h-80 w-80 object-contain cursor-pointer hover:opacity-80 transition"
+              />
+            </Link>
             
             <div className="space-y-2">
               <h1 className="text-8xl font-bold text-teal-700">Education & Resources</h1>

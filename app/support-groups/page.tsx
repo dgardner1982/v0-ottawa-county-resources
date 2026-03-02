@@ -168,11 +168,13 @@ export default function SupportGroupsPage() {
         <div className="max-w-6xl mx-auto px-4 py-12">
           <div className="flex flex-col items-center gap-8 text-center">
             {/* Logo */}
-            <img 
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Recovery%20Alliance%20Business%20Cards-UXhe7EFsenUbcy44EqMjYgUa3HNUT3.jpg"
-              alt="Ottawa County Recovery Alliance"
-              className="h-80 w-80 object-contain"
-            />
+            <Link href="/">
+              <img 
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Recovery%20Alliance%20Business%20Cards-UXhe7EFsenUbcy44EqMjYgUa3HNUT3.jpg"
+                alt="Ottawa County Recovery Alliance"
+                className="h-80 w-80 object-contain cursor-pointer hover:opacity-80 transition"
+              />
+            </Link>
             
             {/* Title - Much Larger */}
             <div className="space-y-2">
