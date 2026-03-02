@@ -109,14 +109,18 @@ export default function SyntheticCannabinoidsPage() {
         {/* More Information Section */}
         <div className="bg-teal-100 border-l-4 border-teal-600 p-6 rounded-lg mb-8">
           <p className="text-lg text-gray-700">
-            For more detailed information about Synthetic Cannabinoids, click{' '}
+            For more detailed information about Synthetic Cannabinoids, visit{' '}
             <a 
               href="https://gemini.google.com/share/66d45deb46e6" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-block bg-teal-600 hover:bg-teal-700 text-white font-bold px-4 py-2 rounded-lg transition"
+              onClick={(e) => {
+                e.preventDefault();
+                window.open('https://gemini.google.com/share/66d45deb46e6', '_blank');
+              }}
+              className="inline-block bg-teal-600 hover:bg-teal-700 text-white font-bold px-4 py-2 rounded-lg transition cursor-pointer"
             >
-              here
+              this guide
             </a>
           </p>
         </div>
