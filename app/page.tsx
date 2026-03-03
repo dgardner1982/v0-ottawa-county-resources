@@ -17,7 +17,7 @@ interface Resource {
 const RESOURCES: Resource[] = [
   // Overdose Prevention
   { name: "Naloxone/Narcan", category: "Overdose Prevention", address: "Multiple locations", phone: "See Locations", info: "Naloxone (Narcan) is a life-saving medication to reverse opioid overdose. Free kits are available in Ottawa County. For a list of locations click below.", link: "/naloxone-locations" },
-  { name: "Overdose Prevention Training", category: "Overdose Prevention", address: "Multiple locations", phone: "616-416-0860", info: "Overdose Prevention and Naloxone Training. To schedule a free overdose prevention training for yourself or your organization contact Daniel at dgardner@miottawa.org or call 616-416-0860." },
+  { name: "Overdose Prevention Training", category: "Overdose Prevention", address: "Contact for location", phone: "616-416-0860", info: "Overdose Prevention and Naloxone Training. To schedule a free overdose prevention training for yourself or your organization contact Daniel at dgardner@miottawa.org or call 616-416-0860." },
 
   // Harm Reduction
   { name: "Reach for Recovery - Harm Reduction", category: "Harm Reduction", address: "483 Century Lane, Holland", phone: "616-396-5284", info: "Syringe services, harm reduction counseling, and connection to treatment." },
