@@ -187,7 +187,7 @@ export default function Home() {
               <img 
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Recovery%20Alliance%20Business%20Cards-UXhe7EFsenUbcy44EqMjYgUa3HNUT3.jpg"
                 alt="Ottawa County Recovery Alliance"
-                className="h-80 w-80 object-contain cursor-pointer hover:opacity-80 transition"
+                className="h-96 w-96 object-contain cursor-pointer hover:opacity-80 transition bg-transparent"
               />
             </Link>
             
@@ -200,7 +200,7 @@ export default function Home() {
               {/* Tagline/Welcome Message */}
               <div className="bg-teal-100 border-l-4 border-teal-600 p-8 rounded-lg">
                 <p className="text-lg md:text-xl text-gray-800 leading-relaxed font-medium">
-                  Welcome to your central destination for healing, education, and community support. This one stop shop provides deep dive education on substances and the science of addiction alongside a direct connection to local treatment. We believe recovery requires a solid foundation, so we also link you to essential resources like housing, mental health services, and financial assistance. Our goal is to help every resident build an informed and stable path forward.
+                  Welcome to your central destination for healing, education, and community support. This one stop shop provides essential information on various substances alongside connections to local treatment. We believe recovery requires a solid foundation, so we also link you to vital resources like housing, mental health services, and financial assistance. Our goal is to help every resident build an informed and stable path forward.
                 </p>
               </div>
             </div>
