@@ -16,8 +16,8 @@ interface Resource {
 
 const RESOURCES: Resource[] = [
   // Overdose Prevention
-  { name: "Narcan/Naloxone Distribution", category: "Overdose Prevention", address: "Multiple locations", phone: "See Locations", info: "Naloxone (Narcan) is a life-saving medication to reverse opioid overdose. Free kits are available in Ottawa County. For a list of locations click below.", link: "/naloxone-locations" },
-  { name: "Ottawa County Health Department", category: "Overdose Prevention", address: "12220 Fillmore Ave, West Olive", phone: "616-393-5601", info: "Naloxone distribution and overdose prevention education. M-F 8a-5p." },
+  { name: "Naloxone/Narcan", category: "Overdose Prevention", address: "Multiple locations", phone: "See Locations", info: "Naloxone (Narcan) is a life-saving medication to reverse opioid overdose. Free kits are available in Ottawa County. For a list of locations click below.", link: "/naloxone-locations" },
+  { name: "Overdose Prevention Training", category: "Overdose Prevention", address: "Multiple locations", phone: "616-416-0860", info: "Overdose Prevention and Naloxone Training. To schedule a free overdose prevention training for yourself or your organization contact Daniel at dgardner@miottawa.org or call 616-416-0860." },
 
   // Harm Reduction
   { name: "Reach for Recovery - Harm Reduction", category: "Harm Reduction", address: "483 Century Lane, Holland", phone: "616-396-5284", info: "Syringe services, harm reduction counseling, and connection to treatment." },
@@ -273,15 +273,17 @@ export default function Home() {
                       <MapPin size={18} className="text-teal-600 flex-shrink-0 mt-0.5" />
                       <span className="text-gray-700">{resource.address}</span>
                     </div>
-                    <div className="flex gap-3 items-center">
-                      <Phone size={18} className="text-teal-600 flex-shrink-0" />
-                      <a href={`tel:${resource.phone}`} className="text-teal-700 font-bold hover:underline">{resource.phone}</a>
-                    </div>
+                    {resource.phone !== "See Locations" && (
+                      <div className="flex gap-3 items-center">
+                        <Phone size={18} className="text-teal-600 flex-shrink-0" />
+                        <a href={`tel:${resource.phone}`} className="text-teal-700 font-bold hover:underline">{resource.phone}</a>
+                      </div>
+                    )}
                   </div>
                   {resource.link ? (
                     <Link href={resource.link}>
                       <button className="block mt-4 w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 rounded text-center transition cursor-pointer">
-                        Locations
+                        See Locations
                       </button>
                     </Link>
                   ) : (
