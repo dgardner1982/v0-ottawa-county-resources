@@ -296,14 +296,12 @@ export default function Home() {
                       </button>
                     </Link>
                   ) : (
-                    <button 
-                      onClick={() => {
-                        window.location.href = `tel:${resource.phone}`;
-                      }}
+                    <a 
+                      href={`tel:${resource.phone}`}
                       className="block mt-4 w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 rounded text-center transition cursor-pointer"
                     >
                       Call Now
-                    </button>
+                    </a>
                   )}
                 </div>
               );
