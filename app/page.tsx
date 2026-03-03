@@ -15,6 +15,40 @@ interface Resource {
   website?: string;
 }
 
+// Phone Call Handler Component
+function PhoneLink({ phoneNumber, displayText }: { phoneNumber: string; displayText: string }) {
+  const [copied, setCopied] = useState(false);
+
+  const handlePhoneClick = () => {
+    // Try to detect if on mobile
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    
+    if (isMobile) {
+      // On mobile, use tel: protocol
+      window.location.href = `tel:${phoneNumber}`;
+    } else {
+      // On desktop, copy to clipboard and show feedback
+      navigator.clipboard.writeText(phoneNumber).then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      });
+    }
+  };
+
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+  return (
+    <button
+      onClick={handlePhoneClick}
+      className="text-teal-700 font-bold hover:underline cursor-pointer"
+      title={isMobile ? "Click to call" : "Click to copy phone number"}
+    >
+      {displayText}
+      {copied && <span className="ml-2 text-sm text-green-600">(Copied!)</span>}
+    </button>
+  );
+}
+
 const RESOURCES: Resource[] = [
   // Overdose Prevention
   { name: "Naloxone/Narcan", category: "Overdose Prevention", address: "Multiple locations", phone: "See Locations", info: "Naloxone (Narcan) is a life-saving medication to reverse opioid overdose. Free kits are available in Ottawa County. For a list of locations click below.", link: "/naloxone-locations" },
@@ -279,7 +313,7 @@ export default function Home() {
                     {resource.phone !== "See Locations" && (
                       <div className="flex gap-3 items-center">
                         <Phone size={18} className="text-teal-600 flex-shrink-0" />
-                        <a href={`tel:${resource.phone}`} className="text-teal-700 font-bold hover:underline">{resource.phone}</a>
+                        <PhoneLink phoneNumber={resource.phone} displayText={resource.phone} />
                       </div>
                     )}
                     {resource.website && (
@@ -298,6 +332,14 @@ export default function Home() {
                   ) : (
                     <a 
                       href={`tel:${resource.phone}`}
+                      onClick={(e) => {
+                        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+                        if (!isMobile) {
+                          e.preventDefault();
+                          navigator.clipboard.writeText(resource.phone);
+                          alert(`Phone number copied: ${resource.phone}`);
+                        }
+                      }}
                       className="block mt-4 w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 rounded text-center transition cursor-pointer"
                     >
                       Call Now
