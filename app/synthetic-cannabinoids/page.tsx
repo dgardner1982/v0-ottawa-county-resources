@@ -2,6 +2,7 @@
 
 import { useState, useRef } from 'react';
 import Link from 'next/link';
+import { Footer } from '@/components/footer';
 
 export default function SyntheticCannabinoidsPage() {
   const [showModal, setShowModal] = useState(false);
@@ -330,10 +331,7 @@ export default function SyntheticCannabinoidsPage() {
         </div>
       </main>
 
-      <footer className="max-w-6xl mx-auto text-center py-20 border-t border-slate-200 mt-20">
-        <p className="text-sm text-slate-400 mb-4 uppercase tracking-widest font-bold">Health Education & Safety</p>
-        <p className="text-xs text-slate-400">These chemicals are dangerous, unpredictable laboratory substances.</p>
-      </footer>
+      <Footer />
     </>
   );
 }

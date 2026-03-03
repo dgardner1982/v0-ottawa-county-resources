@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { Footer } from '@/components/footer';
 
 export default function PCPPage() {
   return (
@@ -174,6 +175,8 @@ export default function PCPPage() {
           </Link>
         </div>
       </main>
+
+      <Footer />
     </>
   );
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { Footer } from '@/components/footer';
 
 export default function HeroinPage() {
   return (
@@ -178,6 +179,8 @@ export default function HeroinPage() {
           </Link>
         </div>
       </main>
+
+      <Footer />
     </>
   );
 }
