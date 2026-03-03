@@ -179,15 +179,15 @@ export default function Home() {
         <span>FOR LIFE-THREATENING EMERGENCIES, CALL <a href="tel:911" className="underline font-bold">9-1-1</a></span>
       </div>
 
-      {/* Logo Bar - Full Width White */}
-      <div className="w-full bg-white border-b-4 border-teal-300 py-6">
+      {/* Logo Bar - Full Width */}
+      <div className="w-full bg-transparent border-b-4 border-teal-300 py-8">
         <div className="max-w-6xl mx-auto px-4 flex justify-center">
           <Link href="/">
             <img 
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Recovery%20Alliance%20Business%20Cards-UXhe7EFsenUbcy44EqMjYgUa3HNUT3.jpg"
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Recovery%20Alliance%20Business%20Cards-GeuxQpiiZPomdY9mbZUHNpv1VNSZmR.png"
               alt="Ottawa County Recovery Alliance"
-              className="h-32 w-32 object-contain cursor-pointer hover:opacity-80 transition"
-              style={{ filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.1))' }}
+              className="h-48 w-48 object-contain cursor-pointer hover:opacity-90 transition"
+              style={{ filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.1))' }}
             />
           </Link>
         </div>
@@ -196,10 +196,19 @@ export default function Home() {
       <header className="bg-gradient-to-b from-teal-50 to-white border-b-4 border-teal-200">
         <div className="max-w-6xl mx-auto px-4 py-16">
           <div className="flex flex-col items-center gap-12 text-center">
-            {/* Main Title with Border Outline */}
+            {/* Main Title with WordArt Text Outline Effect */}
             <div className="space-y-6 max-w-3xl w-full">
-              <div className="border-4 border-teal-600 rounded-2xl p-10 bg-white hover:shadow-lg transition">
-                <h1 className="text-5xl md:text-6xl font-bold text-teal-700 leading-tight">
+              <div className="p-10">
+                <h1 
+                  className="text-5xl md:text-6xl font-bold leading-tight"
+                  style={{
+                    color: '#E8F4F8',
+                    WebkitTextStroke: '2.5px #0D7377',
+                    textStroke: '2.5px #0D7377',
+                    textShadow: '2px 2px 4px rgba(13, 115, 119, 0.3)',
+                    letterSpacing: '0.05em'
+                  }}
+                >
                   Ottawa County Recovery and Insight Hub
                 </h1>
               </div>
