@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Phone, MapPin } from 'lucide-react';
+import { Phone, MapPin, Globe } from 'lucide-react';
 import { Footer } from '@/components/footer';
 
 interface Resource {
@@ -12,6 +12,7 @@ interface Resource {
   phone: string;
   info: string;
   link?: string;
+  website?: string;
 }
 
 const RESOURCES: Resource[] = [
@@ -20,123 +21,123 @@ const RESOURCES: Resource[] = [
   { name: "Overdose Prevention Training", category: "Overdose Prevention", address: "", phone: "616-416-0860", info: "Overdose Prevention and Naloxone Training. To schedule a free overdose prevention training for yourself or your organization contact Daniel at dgardner@miottawa.org or call 616-416-0860." },
 
   // Harm Reduction
-  { name: "Grand Rapids Red Project", category: "Harm Reduction", address: "401 Hall St SE, Grand Rapids, MI 49507", phone: "616-456-9063", info: "Comprehensive harm reduction services and support." },
-  { name: "Grand Rapids Red Project Mobile Health Unit", category: "Harm Reduction", address: "Friday Afternoons 1-4pm outside of Skipp's Pharmacy, Holland", phone: "616-456-9063", info: "Harm Reduction Services available through the mobile health unit." },
+  { name: "Grand Rapids Red Project", category: "Harm Reduction", address: "401 Hall St SE, Grand Rapids, MI 49507", phone: "616-456-9063", info: "Comprehensive harm reduction services and support.", website: "https://www.grredproject.org" },
+  { name: "Grand Rapids Red Project Mobile Health Unit", category: "Harm Reduction", address: "Friday Afternoons 1-4pm outside of Skipp's Pharmacy, Holland", phone: "616-456-9063", info: "Harm Reduction Services available through the mobile health unit.", website: "https://www.grredproject.org" },
 
   // Mental Health
-  { name: "Community Mental Health of Ottawa County - Holland", category: "Mental Health", address: "12265 James St, Holland", phone: "616-392-1873", info: "Main entry for mental health and IDD services. Includes 24/7 crisis support." },
-  { name: "Community Mental Health of Ottawa County - Grand Haven", category: "Mental Health", address: "1111 Fulton St, Grand Haven", phone: "616-842-4357", info: "Outpatient clinical services for North Ottawa residents." },
-  { name: "988 Lifeline", category: "Mental Health", address: "National", phone: "988", info: "Suicide & Crisis Lifeline available 24/7 - call or text." },
-  { name: "Crisis Text Line", category: "Mental Health", address: "National", phone: "Text HOME to 741741", info: "Crisis support via text message." },
-  { name: "Ottawa Community Mental Health 24-Hour Helpline", category: "Mental Health", address: "Multiple locations", phone: "616-396-4357", info: "24-hour mental health crisis helpline." },
-  { name: "Pine Rest Holland", category: "Mental Health", address: "926 S. Washington #210, Holland", phone: "616-820-3780", info: "Mental health and psychiatric services. M-Th 8:30a-8p, F 8:30a-3p." },
-  { name: "Pine Rest North Shore", category: "Mental Health", address: "17325 Van Wagoner Rd, Spring Lake", phone: "616-847-5145", info: "Mental health services. M-Th 8a-6:30p, F 8a-3p." },
-  { name: "Pine Rest Grand Rapids Psychiatric Urgent Care", category: "Mental Health", address: "300 68th Street SE Bldg E, Grand Rapids", phone: "616-455-9200", info: "Psychiatric urgent care. 10a-8p daily." },
-  { name: "Encourage Counseling", category: "Mental Health", address: "607 Heritage Court, Holland", phone: "616-396-6172", info: "Professional counseling services. M 9a-6p, Tu-Th 8:30a-6p." },
-  { name: "Beacon of Hope Christian Counseling Holland", category: "Mental Health", address: "225 W. 30th St, Holland", phone: "616-594-5380", info: "Christian counseling services." },
-  { name: "Beacon of Hope Christian Counseling Grandville", category: "Mental Health", address: "6265 8th Ave, Grandville", phone: "616-594-5380", info: "Christian counseling services." },
-  { name: "Bethany Christian Services Holland", category: "Mental Health", address: "11335 James St, Holland", phone: "616-396-0623", info: "Christian counseling and services. M-Th 10a-9p, F 10a-3p." },
-  { name: "Bethany Christian Services Grand Haven", category: "Mental Health", address: "1475 Robbins Rd, Grand Haven", phone: "616-396-0623", info: "Christian counseling and services. M-Th 9a-8p." },
-  { name: "Mosaic Counseling", category: "Mental Health", address: "1703 S. Despelder St., Grand Haven", phone: "616-842-9160", info: "Professional counseling. M-F 9a-4p." },
-  { name: "Trinity Health Hospital ER", category: "Mental Health", address: "1500 E. Sherman Blvd., Muskegon", phone: "231-672-2000", info: "Secured psychiatric facility emergency services." },
+  { name: "Community Mental Health of Ottawa County - Holland", category: "Mental Health", address: "12265 James St, Holland", phone: "616-392-1873", info: "Main entry for mental health and IDD services. Includes 24/7 crisis support.", website: "https://www.cmhoc.org" },
+  { name: "Community Mental Health of Ottawa County - Grand Haven", category: "Mental Health", address: "1111 Fulton St, Grand Haven", phone: "616-842-4357", info: "Outpatient clinical services for North Ottawa residents.", website: "https://www.cmhoc.org" },
+  { name: "988 Lifeline", category: "Mental Health", address: "National", phone: "988", info: "Suicide & Crisis Lifeline available 24/7 - call or text.", website: "https://988lifeline.org" },
+  { name: "Crisis Text Line", category: "Mental Health", address: "National", phone: "Text HOME to 741741", info: "Crisis support via text message.", website: "https://www.crisistextline.org" },
+  { name: "Ottawa Community Mental Health 24-Hour Helpline", category: "Mental Health", address: "Multiple locations", phone: "616-396-4357", info: "24-hour mental health crisis helpline.", website: "https://www.cmhoc.org" },
+  { name: "Pine Rest Holland", category: "Mental Health", address: "926 S. Washington #210, Holland", phone: "616-820-3780", info: "Mental health and psychiatric services. M-Th 8:30a-8p, F 8:30a-3p.", website: "https://www.pinerest.org" },
+  { name: "Pine Rest North Shore", category: "Mental Health", address: "17325 Van Wagoner Rd, Spring Lake", phone: "616-847-5145", info: "Mental health services. M-Th 8a-6:30p, F 8a-3p.", website: "https://www.pinerest.org" },
+  { name: "Pine Rest Grand Rapids Psychiatric Urgent Care", category: "Mental Health", address: "300 68th Street SE Bldg E, Grand Rapids", phone: "616-455-9200", info: "Psychiatric urgent care. 10a-8p daily.", website: "https://www.pinerest.org" },
+  { name: "Encourage Counseling", category: "Mental Health", address: "607 Heritage Court, Holland", phone: "616-396-6172", info: "Professional counseling services. M 9a-6p, Tu-Th 8:30a-6p.", website: "https://encouragecounseling.com" },
+  { name: "Beacon of Hope Christian Counseling Holland", category: "Mental Health", address: "225 W. 30th St, Holland", phone: "616-594-5380", info: "Christian counseling services.", website: "https://beaconofhopecc.org" },
+  { name: "Beacon of Hope Christian Counseling Grandville", category: "Mental Health", address: "6265 8th Ave, Grandville", phone: "616-594-5380", info: "Christian counseling services.", website: "https://beaconofhopecc.org" },
+  { name: "Bethany Christian Services Holland", category: "Mental Health", address: "11335 James St, Holland", phone: "616-396-0623", info: "Christian counseling and services. M-Th 10a-9p, F 10a-3p.", website: "https://www.bethanycc.org" },
+  { name: "Bethany Christian Services Grand Haven", category: "Mental Health", address: "1475 Robbins Rd, Grand Haven", phone: "616-396-0623", info: "Christian counseling and services. M-Th 9a-8p.", website: "https://www.bethanycc.org" },
+  { name: "Mosaic Counseling", category: "Mental Health", address: "1703 S. Despelder St., Grand Haven", phone: "616-842-9160", info: "Professional counseling. M-F 9a-4p.", website: "https://mosaiccounseling.org" },
+  { name: "Trinity Health Hospital ER", category: "Mental Health", address: "1500 E. Sherman Blvd., Muskegon", phone: "231-672-2000", info: "Secured psychiatric facility emergency services.", website: "https://www.trinity-health.org" },
   
   // Substance Recovery
-  { name: "Reach for Recovery - Holland", category: "Substance Recovery", address: "483 Century Lane, Holland", phone: "616-396-5284", info: "Comprehensive outpatient and residential programs." },
-  { name: "Reach for Recovery - Grand Haven", category: "Substance Recovery", address: "700 Washington Ave #220, Grand Haven", phone: "616-842-6710", info: "Counseling and recovery community connection." },
-  { name: "Samaritas - Holland", category: "Substance Recovery", address: "Holland", phone: "Contact for details", info: "Substance use treatment and recovery services." },
-  { name: "Samaritas - Grand Haven", category: "Substance Recovery", address: "Grand Haven", phone: "Contact for details", info: "Substance use treatment and recovery services." },
-  { name: "Pathways/Arbor Circle", category: "Substance Recovery", address: "412 Century Lane, Holland", phone: "616-396-2301", info: "Substance recovery programs and support." },
-  { name: "Catholic Charities West Michigan", category: "Substance Recovery", address: "355 Settlers Rd, Holland", phone: "616-796-9595", info: "Adolescent substance recovery programs." },
-  { name: "Pine Rest Spring Lake", category: "Substance Recovery", address: "17325 Van Wagoner Rd, Spring Lake", phone: "866-852-4001", info: "Substance recovery and mental health services." },
-  { name: "Mercy Health Life Counseling", category: "Substance Recovery", address: "125 E. Southern Ave, Muskegon", phone: "231-726-3582", info: "Counseling services. Walk-ins available." },
-  { name: "My House Ministry", category: "Substance Recovery", address: "96 West 15th St Suite 306, Holland", phone: "616-953-0772", info: "Transitional recovery housing for women and children." },
-  { name: "Building Men for Life", category: "Substance Recovery", address: "370 Country Club Road Suite 50, Holland", phone: "616-393-2188", info: "Recovery housing for men. Peer-led sober-living program providing transitional recovery housing, certified recovery coaching, and peer support." },
-  { name: "Sobar Recovery Community Center", category: "Substance Recovery", address: "710 Chicago Drive Suite 200, Holland", phone: "Call for details", info: "Community recovery center offering support, education, and activities for individuals and families in recovery." },
+  { name: "Reach for Recovery - Holland", category: "Substance Recovery", address: "483 Century Lane, Holland", phone: "616-396-5284", info: "Comprehensive outpatient and residential programs.", website: "https://reachforrecoverymichigan.com" },
+  { name: "Reach for Recovery - Grand Haven", category: "Substance Recovery", address: "700 Washington Ave #220, Grand Haven", phone: "616-842-6710", info: "Counseling and recovery community connection.", website: "https://reachforrecoverymichigan.com" },
+  { name: "Samaritas - Holland", category: "Substance Recovery", address: "Holland", phone: "Contact for details", info: "Substance use treatment and recovery services.", website: "https://www.samaritas.org" },
+  { name: "Samaritas - Grand Haven", category: "Substance Recovery", address: "Grand Haven", phone: "Contact for details", info: "Substance use treatment and recovery services.", website: "https://www.samaritas.org" },
+  { name: "Pathways/Arbor Circle", category: "Substance Recovery", address: "412 Century Lane, Holland", phone: "616-396-2301", info: "Substance recovery programs and support.", website: "https://pathwaysmichigan.org" },
+  { name: "Catholic Charities West Michigan", category: "Substance Recovery", address: "355 Settlers Rd, Holland", phone: "616-796-9595", info: "Adolescent substance recovery programs.", website: "https://www.catholiccharitieswm.org" },
+  { name: "Pine Rest Spring Lake", category: "Substance Recovery", address: "17325 Van Wagoner Rd, Spring Lake", phone: "866-852-4001", info: "Substance recovery and mental health services.", website: "https://www.pinerest.org" },
+  { name: "Mercy Health Life Counseling", category: "Substance Recovery", address: "125 E. Southern Ave, Muskegon", phone: "231-726-3582", info: "Counseling services. Walk-ins available.", website: "https://www.mercyhealth.org" },
+  { name: "My House Ministry", category: "Substance Recovery", address: "96 West 15th St Suite 306, Holland", phone: "616-953-0772", info: "Transitional recovery housing for women and children.", website: "https://www.myhouseministrymi.org" },
+  { name: "Building Men for Life", category: "Substance Recovery", address: "370 Country Club Road Suite 50, Holland", phone: "616-393-2188", info: "Recovery housing for men. Peer-led sober-living program providing transitional recovery housing, certified recovery coaching, and peer support.", website: "https://buildingmenforlife.com" },
+  { name: "Sobar Recovery Community Center", category: "Substance Recovery", address: "347 Hoover Blvd, Holland", phone: "Call for details", info: "Community recovery center offering support, education, and activities for individuals and families in recovery.", website: "https://sobarrco.com" },
 
   // Food
-  { name: "Christian Fellowship Assembly", category: "Food", address: "9930 64th Ave, Allendale", phone: "616-895-7614", info: "Food pantry and community meals." },
-  { name: "LOVE INC Allendale", category: "Food", address: "6633 Lake Michigan Dr, Allendale", phone: "616-895-5683", info: "Food pantry. M-F 9a-2p. Must bring photo ID and utility bill." },
-  { name: "Replenish GVSU Pantry", category: "Food", address: "Kirkhof Center 0074, Allendale", phone: "616-331-7867", info: "Food pantry for GVSU students only. M-F 12p-5p." },
-  { name: "Coopersville Cares", category: "Food", address: "180 68th Ave, Coopersville", phone: "616-997-8602", info: "Food pantry. M-Th 9a-2p. Pantry hours: Tu & Th 10a-12p, Tu 5:30p-6:30p." },
-  { name: "LOVE INC Grand Haven", category: "Food", address: "326 Ferry St, Grand Haven", phone: "616-846-2701", info: "Food pantry. M-F 9a-5p." },
-  { name: "St. John's Episcopal Church", category: "Food", address: "524 Washington Ave, Grand Haven", phone: "616-842-6260 ext 21", info: "Free take-home meals W 5:30p-6:30p, Sun 1p-2p." },
-  { name: "The Salvation Army Grand Haven", category: "Food", address: "310 N Despelder St, Grand Haven", phone: "616-842-3380 ext 200", info: "Food pantry by appointment only. M-F 9a-3p." },
-  { name: "East Side Food Pantry", category: "Food", address: "995 E. 8th St, Holland", phone: "616-392-8559 ext 18", info: "Serves Holland Heights residents only. M & W 10a-11:30a, F 3p-4:30p." },
-  { name: "Holland First Assembly of God", category: "Food", address: "1331 E. 16th St, Holland", phone: "616-396-5646", info: "Food pantry. Call for hours/appointments." },
-  { name: "St. Vincent De Paul Center", category: "Food", address: "170 W. 13th St, Holland", phone: "616-394-0676", info: "Food pantry. M & W 3p-8p, Sat 12p-4p." },
-  { name: "The Salvation Army Holland", category: "Food", address: "104 Clover St, Holland", phone: "616-392-4461", info: "Food pantry by appointment only." },
-  { name: "Community Action House", category: "Food", address: "345 W. 14th St, Holland", phone: "616-392-2368", info: "Food pantry by appointment only." },
-  { name: "Holland Community Kitchen", category: "Food", address: "101 E. 13th St, Holland", phone: "616-566-1417", info: "Free community meals M-F 11a-12:30p, Sat & Sun 9a-10:30a." },
-  { name: "Holland Drop In Center Mental Health Recovery", category: "Food", address: "636 Hastings Ave #120, Holland", phone: "616-355-2207", info: "Community meals and recovery support. M-Sat 9a-4p." },
-  { name: "Jehovah Jireh Ministries of West Michigan", category: "Food", address: "4055 VanBuren St, Hudsonville", phone: "616-209-7688", info: "Food pantry. W 11:30a-5:30p, Sat 8a-1p. Bring your own bags." },
-  { name: "Love Your Neighbor", category: "Food", address: "3300 Van Buren St, Hudsonville", phone: "616-662-3300", info: "Food pantry and financial classes. M-F 9a-4p." },
-  { name: "The People Center", category: "Food", address: "307 E. Exchange, Spring Lake", phone: "616-844-6710", info: "Food pantry. M & W 11a-3p. Call first for appointment." },
-  { name: "Harvest Stand Ministries", category: "Food", address: "100 Pine St Ste 100, Zeeland", phone: "616-748-6003", info: "Food pantry. M 9a-3p, W 1p-6p, Th 9a-12p. By appointment." },
-  { name: "Lakeshore Habitat for Humanity", category: "Food", address: "12727 Riley St, Holland", phone: "616-393-8001", info: "Community resources and support." },
-  { name: "MI Bridges", category: "Food", address: "State Program", phone: "1-888-544-8773", info: "State food assistance program." },
-  { name: "F.O.R. (Food and Other Resources)", category: "Food", address: "Statewide", phone: "1-888-544-8773", info: "Food and other resource assistance." },
+  { name: "Christian Fellowship Assembly", category: "Food", address: "9930 64th Ave, Allendale", phone: "616-895-7614", info: "Food pantry and community meals.", website: "https://www.christianfellowshipassembly.org" },
+  { name: "LOVE INC Allendale", category: "Food", address: "6633 Lake Michigan Dr, Allendale", phone: "616-895-5683", info: "Food pantry. M-F 9a-2p. Must bring photo ID and utility bill.", website: "https://loveincallegan.org" },
+  { name: "Replenish GVSU Pantry", category: "Food", address: "Kirkhof Center 0074, Allendale", phone: "616-331-7867", info: "Food pantry for GVSU students only. M-F 12p-5p.", website: "https://www.gvsu.edu" },
+  { name: "Coopersville Cares", category: "Food", address: "180 68th Ave, Coopersville", phone: "616-997-8602", info: "Food pantry. M-Th 9a-2p. Pantry hours: Tu & Th 10a-12p, Tu 5:30p-6:30p.", website: "https://www.coopersvillecares.org" },
+  { name: "LOVE INC Grand Haven", category: "Food", address: "326 Ferry St, Grand Haven", phone: "616-846-2701", info: "Food pantry. M-F 9a-5p.", website: "https://loveincallegan.org" },
+  { name: "St. John's Episcopal Church", category: "Food", address: "524 Washington Ave, Grand Haven", phone: "616-842-6260 ext 21", info: "Free take-home meals W 5:30p-6:30p, Sun 1p-2p.", website: "https://www.stjohnsgh.org" },
+  { name: "The Salvation Army Grand Haven", category: "Food", address: "310 N Despelder St, Grand Haven", phone: "616-842-3380 ext 200", info: "Food pantry by appointment only. M-F 9a-3p.", website: "https://www.salvationarmyusa.org" },
+  { name: "East Side Food Pantry", category: "Food", address: "995 E. 8th St, Holland", phone: "616-392-8559 ext 18", info: "Serves Holland Heights residents only. M & W 10a-11:30a, F 3p-4:30p.", website: "https://www.cityofholland.com" },
+  { name: "Holland First Assembly of God", category: "Food", address: "1331 E. 16th St, Holland", phone: "616-396-5646", info: "Food pantry. Call for hours/appointments.", website: "https://hfag.com" },
+  { name: "St. Vincent De Paul Center", category: "Food", address: "170 W. 13th St, Holland", phone: "616-394-0676", info: "Food pantry. M & W 3p-8p, Sat 12p-4p.", website: "https://svdpholland.org" },
+  { name: "The Salvation Army Holland", category: "Food", address: "104 Clover St, Holland", phone: "616-392-4461", info: "Food pantry by appointment only.", website: "https://www.salvationarmyusa.org" },
+  { name: "Community Action House", category: "Food", address: "345 W. 14th St, Holland", phone: "616-392-2368", info: "Food pantry by appointment only.", website: "https://www.chservices.org" },
+  { name: "Holland Community Kitchen", category: "Food", address: "101 E. 13th St, Holland", phone: "616-566-1417", info: "Free community meals M-F 11a-12:30p, Sat & Sun 9a-10:30a.", website: "https://www.hollandandk.org" },
+  { name: "Holland Drop In Center Mental Health Recovery", category: "Food", address: "636 Hastings Ave #120, Holland", phone: "616-355-2207", info: "Community meals and recovery support. M-Sat 9a-4p.", website: "https://www.hdic.org" },
+  { name: "Jehovah Jireh Ministries of West Michigan", category: "Food", address: "4055 VanBuren St, Hudsonville", phone: "616-209-7688", info: "Food pantry. W 11:30a-5:30p, Sat 8a-1p. Bring your own bags.", website: "https://jjministries.org" },
+  { name: "Love Your Neighbor", category: "Food", address: "3300 Van Buren St, Hudsonville", phone: "616-662-3300", info: "Food pantry and financial classes. M-F 9a-4p.", website: "https://loveyourneighbor.org" },
+  { name: "The People Center", category: "Food", address: "307 E. Exchange, Spring Lake", phone: "616-844-6710", info: "Food pantry. M & W 11a-3p. Call first for appointment.", website: "https://www.thepeoplecenter.org" },
+  { name: "Harvest Stand Ministries", category: "Food", address: "100 Pine St Ste 100, Zeeland", phone: "616-748-6003", info: "Food pantry. M 9a-3p, W 1p-6p, Th 9a-12p. By appointment.", website: "https://harveststandministries.org" },
+  { name: "Lakeshore Habitat for Humanity", category: "Food", address: "12727 Riley St, Holland", phone: "616-393-8001", info: "Community resources and support.", website: "https://www.lakeshorehabitat.org" },
+  { name: "MI Bridges", category: "Food", address: "State Program", phone: "1-888-544-8773", info: "State food assistance program.", website: "https://www.michigan.gov/mibridges" },
+  { name: "F.O.R. (Food and Other Resources)", category: "Food", address: "Statewide", phone: "1-888-544-8773", info: "Food and other resource assistance.", website: "https://www.michigan.gov/mibridges" },
 
   // Housing
-  { name: "Good Samaritan Ministries", category: "Housing", address: "513 E. 8th St, Holland", phone: "616-392-7159", info: "Housing Search Assistance, Rapid Re-housing, and CHP programs." },
-  { name: "Gateway Mission", category: "Housing", address: "643 S Waverly Rd, Holland", phone: "616-396-2200", info: "Emergency shelter for men and long-term recovery programs." },
-  { name: "Gateway Mission Women & Children's Center", category: "Housing", address: "356 Fairbanks Ave, Holland", phone: "616-396-2200", info: "Specialized residential recovery program for women and children seeking housing and support services." },
-  { name: "Community Action House", category: "Housing", address: "345 W. 14th St, Holland", phone: "616-392-2368", info: "Permanent supportive housing services." },
-  { name: "My House Ministry", category: "Housing", address: "96 West 15th Street Suite 306, Holland", phone: "616-953-0772", info: "Housing & restorative programs for women/children of domestic violence." },
-  { name: "Building Men for Life", category: "Housing", address: "370 Country Club Road Suite 50, Holland", phone: "616-393-2188", info: "Recovery housing for men providing safe, structured living conditions for individuals in recovery. Includes peer support and certified recovery coaching." },
-  { name: "Lakeshore Habitat for Humanity", category: "Housing", address: "12727 Riley St, Holland", phone: "616-393-8001", info: "Affordable homeownership and housing programs." },
-  { name: "Good Samaritan", category: "Housing", address: "Holland area", phone: "616-392-7159", info: "Housing assistance and emergency support." },
-  { name: "Degage Ministries - Women", category: "Housing", address: "144 S. Division Ave, Grand Rapids", phone: "616-454-1661", info: "Emergency shelter for women with work programs and ID assistance." },
-  { name: "Mel Trotter Ministries", category: "Housing", address: "225 Commerce Ave SW, Grand Rapids", phone: "616-454-8249", info: "Emergency shelter and recovery programs." },
-  { name: "Guiding Light Mission - Men", category: "Housing", address: "255 S. Division Ave, Grand Rapids", phone: "616-451-0236", info: "Emergency shelter for men with work programs." },
-  { name: "Muskegon Rescue Mission", category: "Housing", address: "400 W. Laketon Ave, Muskegon", phone: "231-727-6085", info: "Emergency shelter. Need picture ID and min. age 18." },
-  { name: "Safe Families for Children", category: "Housing", address: "901 Eastern Ave NE, Grand Rapids", phone: "1-855-273-7233", info: "Host homes for children of homeless parents. Average 45-day stay." },
+  { name: "Good Samaritan Ministries", category: "Housing", address: "513 E. 8th St, Holland", phone: "616-392-7159", info: "Housing Search Assistance, Rapid Re-housing, and CHP programs.", website: "https://www.gsministries.org" },
+  { name: "Gateway Mission", category: "Housing", address: "643 S Waverly Rd, Holland", phone: "616-396-2200", info: "Emergency shelter for men and long-term recovery programs.", website: "https://www.gatewaymission.org" },
+  { name: "Gateway Mission Women & Children's Center", category: "Housing", address: "356 Fairbanks Ave, Holland", phone: "616-396-2200", info: "Specialized residential recovery program for women and children seeking housing and support services.", website: "https://www.gatewaymission.org" },
+  { name: "Community Action House", category: "Housing", address: "345 W. 14th St, Holland", phone: "616-392-2368", info: "Permanent supportive housing services.", website: "https://www.chservices.org" },
+  { name: "My House Ministry", category: "Housing", address: "96 West 15th Street Suite 306, Holland", phone: "616-953-0772", info: "Housing & restorative programs for women/children of domestic violence.", website: "https://www.myhouseministrymi.org" },
+  { name: "Building Men for Life", category: "Housing", address: "370 Country Club Road Suite 50, Holland", phone: "616-393-2188", info: "Recovery housing for men providing safe, structured living conditions for individuals in recovery. Includes peer support and certified recovery coaching.", website: "https://buildingmenforlife.com" },
+  { name: "Lakeshore Habitat for Humanity", category: "Housing", address: "12727 Riley St, Holland", phone: "616-393-8001", info: "Affordable homeownership and housing programs.", website: "https://www.lakeshorehabitat.org" },
+  { name: "Good Samaritan", category: "Housing", address: "Holland area", phone: "616-392-7159", info: "Housing assistance and emergency support.", website: "https://www.gsministries.org" },
+  { name: "Degage Ministries - Women", category: "Housing", address: "144 S. Division Ave, Grand Rapids", phone: "616-454-1661", info: "Emergency shelter for women with work programs and ID assistance.", website: "https://www.degageministries.org" },
+  { name: "Mel Trotter Ministries", category: "Housing", address: "225 Commerce Ave SW, Grand Rapids", phone: "616-454-8249", info: "Emergency shelter and recovery programs.", website: "https://www.meltrotter.org" },
+  { name: "Guiding Light Mission - Men", category: "Housing", address: "255 S. Division Ave, Grand Rapids", phone: "616-451-0236", info: "Emergency shelter for men with work programs.", website: "https://www.guidinglightmission.org" },
+  { name: "Muskegon Rescue Mission", category: "Housing", address: "400 W. Laketon Ave, Muskegon", phone: "231-727-6085", info: "Emergency shelter. Need picture ID and min. age 18.", website: "https://www.muskegonrescuemission.org" },
+  { name: "Safe Families for Children", category: "Housing", address: "901 Eastern Ave NE, Grand Rapids", phone: "1-855-273-7233", info: "Host homes for children of homeless parents. Average 45-day stay.", website: "https://www.safefamilies.org" },
 
   // Health Care
-  { name: "Maternal Infant Health Program Holland", category: "Health Care", address: "12251 James St, Holland", phone: "616-396-5266", info: "Maternal and infant health services." },
-  { name: "Maternal Infant Health Program Grand Haven", category: "Health Care", address: "1207 S. Beechtree St., Grand Haven", phone: "616-846-8360", info: "Maternal and infant health services." },
-  { name: "Maternal Infant Health Program Hudsonville", category: "Health Care", address: "3100 Port Sheldon, Hudsonville", phone: "616-669-0040", info: "Maternal and infant health services." },
-  { name: "Family Life Center Home", category: "Health Care", address: "Allendale", phone: "616-895-8336", info: "Housing and support for pregnant women 18+. Baby supplies provided. 24-hour emergency." },
-  { name: "Ottawa Pathways to Better Health", category: "Health Care", address: "Ottawa County", phone: "616-393-5601", info: "Comprehensive health pathway services." },
-  { name: "The Community Health Center", category: "Health Care", address: "336 S. River Ave, Holland", phone: "616-394-3788", info: "Primary and preventive health care. M-F 8a-5p." },
+  { name: "Maternal Infant Health Program Holland", category: "Health Care", address: "12251 James St, Holland", phone: "616-396-5266", info: "Maternal and infant health services.", website: "https://www.cmhoc.org" },
+  { name: "Maternal Infant Health Program Grand Haven", category: "Health Care", address: "1207 S. Beechtree St., Grand Haven", phone: "616-846-8360", info: "Maternal and infant health services.", website: "https://www.cmhoc.org" },
+  { name: "Maternal Infant Health Program Hudsonville", category: "Health Care", address: "3100 Port Sheldon, Hudsonville", phone: "616-669-0040", info: "Maternal and infant health services.", website: "https://www.cmhoc.org" },
+  { name: "Family Life Center Home", category: "Health Care", address: "Allendale", phone: "616-895-8336", info: "Housing and support for pregnant women 18+. Baby supplies provided. 24-hour emergency.", website: "https://familylifecenter.org" },
+  { name: "Ottawa Pathways to Better Health", category: "Health Care", address: "Ottawa County", phone: "616-393-5601", info: "Comprehensive health pathway services.", website: "https://www.miottawa.org" },
+  { name: "The Community Health Center", category: "Health Care", address: "336 S. River Ave, Holland", phone: "616-394-3788", info: "Primary and preventive health care. M-F 8a-5p.", website: "https://www.thechc.org" },
 
   // Employment Services
-  { name: "Manpower", category: "Employment", address: "12331 James Street, Unit 30, Holland", phone: "616-748-2000", info: "Employment services and job placement. M-F 8a-5p, Sa 8:45a-12:30p." },
-  { name: "Michigan Rehabilitation Services", category: "Employment", address: "121 Clover Street, Holland", phone: "616-395-8495", info: "Vocational rehabilitation services." },
-  { name: "West Michigan Works", category: "Employment", address: "121 Clover Street, Holland", phone: "616-396-2154", info: "Employment and training services. M-F 8a-5p." },
+  { name: "Manpower", category: "Employment", address: "12331 James Street, Unit 30, Holland", phone: "616-748-2000", info: "Employment services and job placement. M-F 8a-5p, Sa 8:45a-12:30p.", website: "https://www.manpowergroup.com" },
+  { name: "Michigan Rehabilitation Services", category: "Employment", address: "121 Clover Street, Holland", phone: "616-395-8495", info: "Vocational rehabilitation services.", website: "https://www.michigan.gov/mrs" },
+  { name: "West Michigan Works", category: "Employment", address: "121 Clover Street, Holland", phone: "616-396-2154", info: "Employment and training services. M-F 8a-5p.", website: "https://www.westmichiganworks.org" },
 
   // Senior Services
-  { name: "The Little Red House", category: "Senior Services", address: "311 E. Exchange St, Spring Lake", phone: "616-846-5720", info: "Adult day care for elderly. M-F 7a-6p. Hourly rate includes meals." },
-  { name: "Senior Resources", category: "Senior Services", address: "560 Seminole Rd, Muskegon", phone: "231-733-8655", info: "Senior services for North Ottawa County. Toll Free: 1-800-442-0054." },
-  { name: "Daybreak Norton Shores", category: "Senior Services", address: "572 Lake Forest Lane, Norton Shores", phone: "231-206-0690", info: "Adult day care center. M-F 8a-5p." },
-  { name: "Life Circles (PACE Partnership) South", category: "Senior Services", address: "12330 James St H-10, Holland", phone: "616-582-3114", info: "Senior care coordination and support." },
-  { name: "Evergreen Commons", category: "Senior Services", address: "55 West 16th St, Holland", phone: "616-355-5118", info: "Adult day care center. M-F 8a-4p." },
-  { name: "Simmons Moka", category: "Senior Services", address: "444 32nd St, Holland", phone: "616-396-9049", info: "Adult day care center." },
-  { name: "Four Pointes Center for Successful Aging", category: "Senior Services", address: "1051 S. Beacon Blvd, Grand Haven", phone: "616-842-9210", info: "Senior services. M-Th 9a-3p." },
-  { name: "CarePatrol of West MI Lakeshore", category: "Senior Services", address: "West Michigan", phone: "616-377-9572", info: "Senior placement for assisted/independent living, memory care, nursing homes." },
-  { name: "Senior Reach Ottawa County", category: "Senior Services", address: "Ottawa County", phone: "877-588-4357", info: "Services for adults 60 years old and older." },
+  { name: "The Little Red House", category: "Senior Services", address: "311 E. Exchange St, Spring Lake", phone: "616-846-5720", info: "Adult day care for elderly. M-F 7a-6p. Hourly rate includes meals.", website: "https://www.thelittleredhouse.org" },
+  { name: "Senior Resources", category: "Senior Services", address: "560 Seminole Rd, Muskegon", phone: "231-733-8655", info: "Senior services for North Ottawa County. Toll Free: 1-800-442-0054.", website: "https://www.seniorresources.org" },
+  { name: "Daybreak Norton Shores", category: "Senior Services", address: "572 Lake Forest Lane, Norton Shores", phone: "231-206-0690", info: "Adult day care center. M-F 8a-5p.", website: "https://www.daybreakadultdaycare.org" },
+  { name: "Life Circles (PACE Partnership) South", category: "Senior Services", address: "12330 James St H-10, Holland", phone: "616-582-3114", info: "Senior care coordination and support.", website: "https://www.lifecircles.org" },
+  { name: "Evergreen Commons", category: "Senior Services", address: "55 West 16th St, Holland", phone: "616-355-5118", info: "Adult day care center. M-F 8a-4p.", website: "https://www.evergreencommons.org" },
+  { name: "Simmons Moka", category: "Senior Services", address: "444 32nd St, Holland", phone: "616-396-9049", info: "Adult day care center.", website: "https://www.simmonsmoka.org" },
+  { name: "Four Pointes Center for Successful Aging", category: "Senior Services", address: "1051 S. Beacon Blvd, Grand Haven", phone: "616-842-9210", info: "Senior services. M-Th 9a-3p.", website: "https://www.fourpointessenior.org" },
+  { name: "CarePatrol of West MI Lakeshore", category: "Senior Services", address: "West Michigan", phone: "616-377-9572", info: "Senior placement for assisted/independent living, memory care, nursing homes.", website: "https://www.carepatrol.com" },
+  { name: "Senior Reach Ottawa County", category: "Senior Services", address: "Ottawa County", phone: "877-588-4357", info: "Services for adults 60 years old and older.", website: "https://www.miottawa.org" },
 
   // Veteran Services
-  { name: "Veterans Crisis Line", category: "Veteran Services", address: "National", phone: "1-800-273-8255 (press 1)", info: "Veteran crisis support available 24/7. Also text 838255." },
-  { name: "Make the Connection", category: "Veteran Services", address: "National", phone: "N/A", info: "Veteran mental health and wellness resources." },
-  { name: "Caption Call", category: "Veteran Services", address: "National", phone: "877-872-7260", info: "Phone services for persons with hearing loss." },
-  { name: "West Michigan Veterans Assistance Program", category: "Veteran Services", address: "620 Century Ave SW, Grand Rapids", phone: "Contact for details", info: "Food pantry, financial assistance, limited housing, education." },
+  { name: "Veterans Crisis Line", category: "Veteran Services", address: "National", phone: "1-800-273-8255 (press 1)", info: "Veteran crisis support available 24/7. Also text 838255.", website: "https://www.veteranscrisisline.net" },
+  { name: "Caption Call", category: "Veteran Services", address: "National", phone: "877-872-7260", info: "Phone services for persons with hearing loss.", website: "https://www.captioncall.com" },
+  { name: "West Michigan Veterans Assistance Program", category: "Veteran Services", address: "620 Century Ave SW, Grand Rapids", phone: "Contact for details", info: "Food pantry, financial assistance, limited housing, education.", website: "https://www.wmvap.org" },
 
   // Transportation
-  { name: "Harbor Transit", category: "Transportation", address: "Grand Haven", phone: "616-842-3200", info: "Free public transportation. M-F 6a-6p, Sat 9a-4p, Sun 8a-12:30p (Advanced reservation)." },
+  { name: "Harbor Transit", category: "Transportation", address: "Grand Haven", phone: "616-842-3200", info: "Free public transportation. M-F 6a-6p, Sat 9a-4p, Sun 8a-12:30p (Advanced reservation).", website: "https://www.harboransportation.org" },
+  { name: "MAX Bus - Holland", category: "Transportation", address: "Holland", phone: "616-355-1025", info: "Free public bus transportation serving Holland. Route schedules and real-time information available.", website: "https://www.maxbus.org" },
 
   // Financial Resources
-  { name: "Good Samaritan Ministries", category: "Financial Resources", address: "513 E. 8th St, Holland", phone: "616-392-7159", info: "Housing Search Assistance, Rapid Re-housing, and CHP programs." },
-  { name: "Community Action Agency", category: "Financial Resources", address: "Ottawa County", phone: "616-393-4433", info: "Financial assistance and support services for low-income families." },
-  { name: "The Salvation Army", category: "Financial Resources", address: "310 N. Despelder St, Grand Haven", phone: "616-842-3380 ext 200", info: "Financial assistance including rent and utilities. M-F 9a-4p." },
+  { name: "Good Samaritan Ministries", category: "Financial Resources", address: "513 E. 8th St, Holland", phone: "616-392-7159", info: "Housing Search Assistance, Rapid Re-housing, and CHP programs.", website: "https://www.gsministries.org" },
+  { name: "Community Action Agency", category: "Financial Resources", address: "Ottawa County", phone: "616-393-4433", info: "Financial assistance and support services for low-income families.", website: "https://www.communityactionagency.org" },
+  { name: "The Salvation Army", category: "Financial Resources", address: "310 N. Despelder St, Grand Haven", phone: "616-842-3380 ext 200", info: "Financial assistance including rent and utilities. M-F 9a-4p.", website: "https://www.salvationarmyusa.org" },
 
   // Miscellaneous
-  { name: "St. John's Episcopal Church", category: "Miscellaneous", address: "524 Washington Ave, Grand Haven", phone: "616-842-6260 ext 21", info: "Food pantry, washer/dryer, shower (M-Th 10a-2p). Hot meals Wed 5:30p-6:15p & Sun 1p-1:45p." },
-  { name: "St. Patrick's Church", category: "Miscellaneous", address: "920 Fulton Ave, Grand Haven", phone: "616-842-0001", info: "Community services. M-F 8a-5p." },
-  { name: "Covenant Life Care Ministry", category: "Miscellaneous", address: "Ottawa County", phone: "616-847-2540", info: "Builds bunk beds and wheelchair ramps for those in need." },
+  { name: "St. John's Episcopal Church", category: "Miscellaneous", address: "524 Washington Ave, Grand Haven", phone: "616-842-6260 ext 21", info: "Food pantry, washer/dryer, shower (M-Th 10a-2p). Hot meals Wed 5:30p-6:15p & Sun 1p-1:45p.", website: "https://www.stjohnsgh.org" },
+  { name: "St. Patrick's Church", category: "Miscellaneous", address: "920 Fulton Ave, Grand Haven", phone: "616-842-0001", info: "Community services. M-F 8a-5p.", website: "https://www.stpatrickgh.org" },
+  { name: "Covenant Life Care Ministry", category: "Miscellaneous", address: "Ottawa County", phone: "616-847-2540", info: "Builds bunk beds and wheelchair ramps for those in need.", website: "https://www.covenantlifecare.org" },
 
   // Government Services
-  { name: "Secretary of State", category: "Government Services", address: "Multiple locations", phone: "1-888-SOS-MICH (767-6424)", info: "Holland: 587 E 8th St; Hudsonville: 5211 Cherry Ave; Grand Haven: 1110 Robbins Rd. M,T,Th,F 9a-5p, W 11a-7p." },
-  { name: "Social Security Administration", category: "Government Services", address: "657 Hastings Ave, Holland", phone: "1-877-223-6062", info: "Social security services. M-F 9a-4p." },
+  { name: "Secretary of State", category: "Government Services", address: "Multiple locations", phone: "1-888-SOS-MICH (767-6424)", info: "Holland: 587 E 8th St; Hudsonville: 5211 Cherry Ave; Grand Haven: 1110 Robbins Rd. M,T,Th,F 9a-5p, W 11a-7p.", website: "https://www.michigan.gov/sos" },
+  { name: "Social Security Administration", category: "Government Services", address: "657 Hastings Ave, Holland", phone: "1-877-223-6062", info: "Social security services. M-F 9a-4p.", website: "https://www.ssa.gov" },
 ];
 
 export default function Home() {
@@ -279,6 +280,12 @@ export default function Home() {
                       <div className="flex gap-3 items-center">
                         <Phone size={18} className="text-teal-600 flex-shrink-0" />
                         <a href={`tel:${resource.phone}`} className="text-teal-700 font-bold hover:underline">{resource.phone}</a>
+                      </div>
+                    )}
+                    {resource.website && (
+                      <div className="flex gap-3 items-center">
+                        <Globe size={18} className="text-teal-600 flex-shrink-0" />
+                        <a href={resource.website} target="_blank" rel="noopener noreferrer" className="text-teal-700 font-bold hover:underline">Visit Website</a>
                       </div>
                     )}
                   </div>
