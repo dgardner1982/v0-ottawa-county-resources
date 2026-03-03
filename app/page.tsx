@@ -32,6 +32,8 @@ const RESOURCES = [
   { name: "Pine Rest Spring Lake", category: "Substance Recovery", address: "17325 Van Wagoner Rd, Spring Lake", phone: "866-852-4001", info: "Substance recovery and mental health services." },
   { name: "Mercy Health Life Counseling", category: "Substance Recovery", address: "125 E. Southern Ave, Muskegon", phone: "231-726-3582", info: "Counseling services. Walk-ins available." },
   { name: "My House Ministry", category: "Substance Recovery", address: "96 West 15th St Suite 306, Holland", phone: "616-953-0772", info: "Transitional recovery housing for women and children." },
+  { name: "Building Men for Life", category: "Substance Recovery", address: "370 Country Club Road Suite 50, Holland", phone: "616-393-2188", info: "Recovery housing for men. Peer-led sober-living program providing transitional recovery housing, certified recovery coaching, and peer support." },
+  { name: "Sobar Recovery Community Center", category: "Substance Recovery", address: "710 Chicago Drive Suite 200, Holland", phone: "Call for details", info: "Community recovery center offering support, education, and activities for individuals and families in recovery." },
 
   // Food
   { name: "Christian Fellowship Assembly", category: "Food", address: "9930 64th Ave, Allendale", phone: "616-895-7614", info: "Food pantry and community meals." },
@@ -62,6 +64,7 @@ const RESOURCES = [
   { name: "Gateway Mission Women & Children's Center", category: "Housing", address: "356 Fairbanks Ave, Holland", phone: "616-396-2200", info: "Specialized residential recovery program for women and children seeking housing and support services." },
   { name: "Community Action House", category: "Housing", address: "345 W. 14th St, Holland", phone: "616-392-2368", info: "Permanent supportive housing services." },
   { name: "My House Ministry", category: "Housing", address: "96 West 15th Street Suite 306, Holland", phone: "616-953-0772", info: "Housing & restorative programs for women/children of domestic violence." },
+  { name: "Building Men for Life", category: "Housing", address: "370 Country Club Road Suite 50, Holland", phone: "616-393-2188", info: "Recovery housing for men providing safe, structured living conditions for individuals in recovery. Includes peer support and certified recovery coaching." },
   { name: "Lakeshore Habitat for Humanity", category: "Housing", address: "12727 Riley St, Holland", phone: "616-393-8001", info: "Affordable homeownership and housing programs." },
   { name: "Good Samaritan", category: "Housing", address: "Holland area", phone: "616-392-7159", info: "Housing assistance and emergency support." },
   { name: "Degage Ministries - Women", category: "Housing", address: "144 S. Division Ave, Grand Rapids", phone: "616-454-1661", info: "Emergency shelter for women with work programs and ID assistance." },
@@ -104,6 +107,8 @@ const RESOURCES = [
   { name: "Harbor Transit", category: "Transportation", address: "Grand Haven", phone: "616-842-3200", info: "Free public transportation. M-F 6a-6p, Sat 9a-4p, Sun 8a-12:30p (Advanced reservation)." },
 
   // Financial Resources
+  { name: "Good Samaritan Ministries", category: "Financial Resources", address: "513 E. 8th St, Holland", phone: "616-392-7159", info: "Housing Search Assistance, Rapid Re-housing, and CHP programs." },
+  { name: "Community Action Agency", category: "Financial Resources", address: "Ottawa County", phone: "616-393-4433", info: "Financial assistance and support services for low-income families." },
   { name: "The Salvation Army", category: "Financial Resources", address: "310 N. Despelder St, Grand Haven", phone: "616-842-3380 ext 200", info: "Financial assistance including rent and utilities. M-F 9a-4p." },
 
   // Miscellaneous
