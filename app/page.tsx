@@ -179,9 +179,9 @@ export default function Home() {
         <span>FOR LIFE-THREATENING EMERGENCIES, CALL <a href="tel:911" className="underline font-bold">9-1-1</a></span>
       </div>
 
-      <header className="bg-white border-b-2 border-teal-200 shadow-sm">
-        <div className="max-w-6xl mx-auto px-4 py-12">
-          <div className="flex flex-col items-center gap-8 text-center">
+      <header className="bg-gradient-to-b from-teal-50 to-white border-b-4 border-teal-200">
+        <div className="max-w-6xl mx-auto px-4 py-16">
+          <div className="flex flex-col items-center gap-12 text-center">
             {/* Logo */}
             <Link href="/">
               <img 
@@ -191,22 +191,30 @@ export default function Home() {
               />
             </Link>
             
-            {/* Title - Much Larger */}
-            <div className="space-y-2">
-              <h1 className="text-7xl font-bold text-teal-700">Ottawa County</h1>
-              <p className="text-4xl text-gray-700 font-semibold">Recovery & Resource Hub</p>
+            {/* Main Title */}
+            <div className="space-y-6 max-w-3xl">
+              <h1 className="text-6xl md:text-7xl font-bold text-teal-700 leading-tight">
+                Ottawa County Recovery and Insight Hub
+              </h1>
+              
+              {/* Tagline/Welcome Message */}
+              <div className="bg-teal-100 border-l-4 border-teal-600 p-8 rounded-lg">
+                <p className="text-lg md:text-xl text-gray-800 leading-relaxed font-medium">
+                  Welcome to your central destination for healing, education, and community support. This one stop shop provides deep dive education on substances and the science of addiction alongside a direct connection to local treatment. We believe recovery requires a solid foundation, so we also link you to essential resources like housing, mental health services, and financial assistance. Our goal is to help every resident build an informed and stable path forward.
+                </p>
+              </div>
             </div>
             
             {/* Navigation Buttons - Uniform and Centered */}
-            <div className="flex gap-6 flex-wrap justify-center pt-4">
+            <div className="flex gap-4 flex-wrap justify-center pt-6">
               <Link href="/">
-                <button className="bg-teal-600 hover:bg-teal-700 text-white font-bold px-10 py-4 rounded-lg transition text-xl min-w-48">Resources</button>
+                <button className="bg-teal-600 hover:bg-teal-700 text-white font-bold px-8 py-3 rounded-lg transition text-lg min-w-44">Resources</button>
               </Link>
               <Link href="/education">
-                <button className="bg-green-600 hover:bg-green-700 text-white font-bold px-10 py-4 rounded-lg transition text-xl min-w-48">Education</button>
+                <button className="bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-3 rounded-lg transition text-lg min-w-44">Education</button>
               </Link>
               <Link href="/support-groups">
-                <button className="bg-purple-600 hover:bg-purple-700 text-white font-bold px-10 py-4 rounded-lg transition text-xl min-w-48">Support Groups</button>
+                <button className="bg-purple-600 hover:bg-purple-700 text-white font-bold px-8 py-3 rounded-lg transition text-lg min-w-44">Support Groups</button>
               </Link>
             </div>
           </div>
