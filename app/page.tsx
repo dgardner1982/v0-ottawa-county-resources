@@ -179,58 +179,42 @@ export default function Home() {
         <span>FOR LIFE-THREATENING EMERGENCIES, CALL <a href="tel:911" className="underline font-bold">9-1-1</a></span>
       </div>
 
-      {/* Logo Bar - Full Width */}
-      <div className="w-full bg-transparent border-b-4 border-teal-300 py-8">
-        <div className="max-w-6xl mx-auto px-4 flex justify-center">
-          <Link href="/">
-            <img 
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Recovery%20Alliance%20Business%20Cards-GeuxQpiiZPomdY9mbZUHNpv1VNSZmR.png"
-              alt="Ottawa County Recovery Alliance"
-              className="h-48 w-48 object-contain cursor-pointer hover:opacity-90 transition"
-              style={{ filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.1))' }}
-            />
-          </Link>
-        </div>
-      </div>
-
       <header className="bg-gradient-to-b from-teal-50 to-white border-b-4 border-teal-200">
         <div className="max-w-6xl mx-auto px-4 py-16">
           <div className="flex flex-col items-center gap-12 text-center">
-            {/* Main Title with WordArt Text Outline Effect */}
-            <div className="space-y-6 max-w-3xl w-full">
-              <div className="p-10">
-                <h1 
-                  className="text-5xl md:text-6xl font-bold leading-tight"
-                  style={{
-                    color: '#E8F4F8',
-                    WebkitTextStroke: '2.5px #0D7377',
-                    textStroke: '2.5px #0D7377',
-                    textShadow: '2px 2px 4px rgba(13, 115, 119, 0.3)',
-                    letterSpacing: '0.05em'
-                  }}
-                >
-                  Ottawa County Recovery and Insight Hub
-                </h1>
-              </div>
+            {/* Logo */}
+            <Link href="/">
+              <img 
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Recovery%20Alliance%20Business%20Cards-UXhe7EFsenUbcy44EqMjYgUa3HNUT3.jpg"
+                alt="Ottawa County Recovery Alliance"
+                className="h-96 w-96 object-contain cursor-pointer hover:opacity-80 transition bg-transparent"
+              />
+            </Link>
+            
+            {/* Main Title */}
+            <div className="space-y-6 max-w-3xl">
+              <h1 className="text-6xl md:text-7xl font-bold text-teal-700 leading-tight">
+                Ottawa County Recovery and Insight Hub
+              </h1>
               
               {/* Tagline/Welcome Message */}
-              <div className="bg-teal-100 border-2 border-teal-400 p-8 rounded-lg shadow-md">
+              <div className="bg-teal-100 border-l-4 border-teal-600 p-8 rounded-lg">
                 <p className="text-lg md:text-xl text-gray-800 leading-relaxed font-medium">
                   Welcome to your central destination for healing, education, and community support. This one stop shop provides essential information on various substances alongside connections to local treatment. We believe recovery requires a solid foundation, so we also link you to vital resources like housing, mental health services, and financial assistance. Our goal is to help every resident build an informed and stable path forward.
                 </p>
               </div>
             </div>
             
-            {/* Navigation Buttons - Uniform and Centered with Borders */}
-            <div className="flex gap-4 flex-wrap justify-center pt-6 w-full">
+            {/* Navigation Buttons - Uniform and Centered */}
+            <div className="flex gap-4 flex-wrap justify-center pt-6">
               <Link href="/">
-                <button className="bg-teal-600 hover:bg-teal-700 text-white font-bold px-8 py-3 rounded-lg transition text-lg min-w-44 border-2 border-teal-800 shadow-md hover:shadow-lg">Resources</button>
+                <button className="bg-teal-600 hover:bg-teal-700 text-white font-bold px-8 py-3 rounded-lg transition text-lg min-w-44">Resources</button>
               </Link>
               <Link href="/education">
-                <button className="bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-3 rounded-lg transition text-lg min-w-44 border-2 border-green-800 shadow-md hover:shadow-lg">Education</button>
+                <button className="bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-3 rounded-lg transition text-lg min-w-44">Education</button>
               </Link>
               <Link href="/support-groups">
-                <button className="bg-purple-600 hover:bg-purple-700 text-white font-bold px-8 py-3 rounded-lg transition text-lg min-w-44 border-2 border-purple-800 shadow-md hover:shadow-lg">Support Groups</button>
+                <button className="bg-purple-600 hover:bg-purple-700 text-white font-bold px-8 py-3 rounded-lg transition text-lg min-w-44">Support Groups</button>
               </Link>
             </div>
           </div>
