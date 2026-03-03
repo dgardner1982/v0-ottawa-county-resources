@@ -17,23 +17,18 @@ export default function FentanylPage() {
             <div className="text-7xl">⚠️</div>
             <h1 className="text-6xl font-bold text-teal-700">Fentanyl</h1>
             <p className="text-2xl text-gray-600">The Leading Cause of Overdose Deaths</p>
-            <div className="space-y-2">
-              <Link href="/education">
-                <button className="flex items-center gap-2 bg-gray-600 hover:bg-gray-700 text-white font-bold px-6 py-2 rounded-lg transition">
-                  ← Back to Education
-                </button>
-              </Link>
-              <Link href="/street-names/fentanyl">
-                <button className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-2 rounded-lg transition ml-0 md:ml-2">
-                  🏷️ Street Names
-                </button>
-              </Link>
-            </div>
           </div>
         </div>
       </header>
 
       <main className="max-w-6xl mx-auto px-4 py-12">
+        <div className="mb-8">
+          <Link href="/education">
+            <button className="flex items-center gap-2 bg-gray-600 hover:bg-gray-700 text-white font-bold px-6 py-2 rounded-lg transition">
+              ← Back to Education
+            </button>
+          </Link>
+        </div>
         <div className="bg-red-100 border-l-4 border-red-600 p-6 rounded-lg mb-8">
           <p className="text-lg text-gray-700">
             For more detailed information about Fentanyl, click{' '}
@@ -46,6 +41,13 @@ export default function FentanylPage() {
               here
             </a>
           </p>
+        </div>
+        <div className="bg-red-100 border-l-4 border-red-600 p-6 rounded-lg mb-8">
+          <Link href="/street-names/fentanyl">
+            <button className="w-full text-lg bg-red-600 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-lg transition">
+              View Street Names
+            </button>
+          </Link>
         </div>
         <div className="bg-red-100 border-4 border-red-600 rounded-lg p-8 mb-12">
           <h2 className="text-3xl font-bold text-red-900 mb-4">CRITICAL INFORMATION</h2>

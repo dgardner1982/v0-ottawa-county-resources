@@ -100,15 +100,10 @@ export default function SyntheticCannabinoidsPage() {
 
       <main className="max-w-6xl mx-auto px-4 py-10" ref={contentRef}>
         {/* Back Button - Top */}
-        <div className="mb-8 flex gap-4">
+        <div className="mb-8">
           <Link href="/education">
             <button className="flex items-center gap-2 bg-gray-600 hover:bg-gray-700 text-white font-bold px-6 py-2 rounded-lg transition">
               ← Back to Education
-            </button>
-          </Link>
-          <Link href="/street-names/synthetic-cannabinoids">
-            <button className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-2 rounded-lg transition">
-              🏷️ Street Names
             </button>
           </Link>
         </div>
@@ -126,6 +121,15 @@ export default function SyntheticCannabinoidsPage() {
               here
             </a>
           </p>
+        </div>
+
+        {/* Street Names Button */}
+        <div className="bg-teal-100 border-l-4 border-teal-600 p-6 rounded-lg mb-8">
+          <Link href="/street-names/synthetic-cannabinoids">
+            <button className="w-full text-lg bg-teal-600 hover:bg-teal-700 text-white font-bold px-6 py-3 rounded-lg transition">
+              View Street Names
+            </button>
+          </Link>
         </div>
 
         {/* Modal */}
