@@ -53,7 +53,7 @@ export default function HeroinPage() {
           <h2 className="text-3xl font-bold text-amber-900 mb-4">CRITICAL INFORMATION</h2>
           <p className="text-lg text-amber-900 font-bold mb-4">Heroin is an extremely addictive opioid that carries severe health risks including overdose and death.</p>
           <ul className="space-y-2 text-amber-900 ml-4">
-            <li>• Often mixed with fentanyl, increasing overdose risk</li>
+            <li>• Sometimes mixed with fentanyl, increasing overdose risk</li>
             <li>• Can be injected, snorted, or smoked</li>
             <li>• Creates rapid physical and psychological dependence</li>
             <li>• Withdrawal is extremely uncomfortable but not typically fatal</li>

@@ -121,7 +121,7 @@ export default function MethadonePage() {
           <ul className="space-y-2 text-red-700 ml-4">
             <li>• Uncontrolled, unknown doses</li>
             <li>• High overdose risk, especially combined with other drugs</li>
-            <li>• Often mixed with fentanyl</li>
+            <li>• Sometimes mixed with fentanyl</li>
             <li>• Creates addiction</li>
             <li>• Naloxone required for overdose</li>
           </ul>

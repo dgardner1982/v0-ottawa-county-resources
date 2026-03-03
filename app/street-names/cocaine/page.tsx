@@ -60,7 +60,7 @@ export default function CocaineStreetNamesPage() {
             </li>
             <li className="flex gap-3 items-start">
               <span className="text-red-600 font-bold">⚠️</span>
-              <span>Often mixed with fentanyl, drastically increasing overdose risk</span>
+              <span>Sometimes mixed with fentanyl, drastically increasing overdose risk</span>
             </li>
             <li className="flex gap-3 items-start">
               <span className="text-red-600 font-bold">⚠️</span>
