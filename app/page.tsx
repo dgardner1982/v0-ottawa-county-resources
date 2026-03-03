@@ -196,11 +196,11 @@ export default function Home() {
               <h1 
                 className="text-5xl md:text-7xl font-bold text-teal-700 leading-tight"
                 style={{
-                  WebkitTextStroke: '1.5px #0D7377',
-                  textStroke: '1.5px #0D7377',
+                  WebkitTextStroke: '3px #0D7377',
+                  textStroke: '3px #0D7377',
                 }}
               >
-                Ottawa County Recovery and Education Hub
+                Ottawa County Recovery resource and education hub
               </h1>
               
               {/* Tagline/Welcome Message */}
