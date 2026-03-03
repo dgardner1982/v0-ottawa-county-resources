@@ -20,8 +20,8 @@ const RESOURCES: Resource[] = [
   { name: "Overdose Prevention Training", category: "Overdose Prevention", address: "", phone: "616-416-0860", info: "Overdose Prevention and Naloxone Training. To schedule a free overdose prevention training for yourself or your organization contact Daniel at dgardner@miottawa.org or call 616-416-0860." },
 
   // Harm Reduction
-  { name: "Grand Rapids Red Project", category: "Harm Reduction", address: "Hall Street, Grand Rapids", phone: "Call for details", info: "Comprehensive harm reduction services and support." },
-  { name: "Grand Rapids Red Project Mobile Health Unit", category: "Harm Reduction", address: "Friday Afternoons 1-4pm outside of Skipp's Pharmacy, Holland", phone: "Call for details", info: "Harm Reduction Services available through the mobile health unit." },
+  { name: "Grand Rapids Red Project", category: "Harm Reduction", address: "Hall Street, Grand Rapids", phone: "616-456-9063", info: "Comprehensive harm reduction services and support." },
+  { name: "Grand Rapids Red Project Mobile Health Unit", category: "Harm Reduction", address: "Friday Afternoons 1-4pm outside of Skipp's Pharmacy, Holland", phone: "616-456-9063", info: "Harm Reduction Services available through the mobile health unit." },
 
   // Mental Health
   { name: "Community Mental Health of Ottawa County - Holland", category: "Mental Health", address: "12265 James St, Holland", phone: "616-392-1873", info: "Main entry for mental health and IDD services. Includes 24/7 crisis support." },
@@ -269,10 +269,12 @@ export default function Home() {
                   </div>
                   <p className="text-sm text-gray-700 mb-4">{resource.info}</p>
                   <div className="space-y-3 text-sm">
-                    <div className="flex gap-3 items-start">
-                      <MapPin size={18} className="text-teal-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700">{resource.address}</span>
-                    </div>
+                    {resource.address && (
+                      <div className="flex gap-3 items-start">
+                        <MapPin size={18} className="text-teal-600 flex-shrink-0 mt-0.5" />
+                        <span className="text-gray-700">{resource.address}</span>
+                      </div>
+                    )}
                     {resource.phone !== "See Locations" && (
                       <div className="flex gap-3 items-center">
                         <Phone size={18} className="text-teal-600 flex-shrink-0" />
