@@ -42,8 +42,8 @@ const RESOURCES: Resource[] = [
   { name: "Trinity Health Hospital ER", category: "Mental Health", address: "1500 E. Sherman Blvd., Muskegon", phone: "231-672-2000", info: "Secured psychiatric facility emergency services.", website: "https://www.trinity-health.org" },
   
   // Substance Recovery
-  { name: "Reach for Recovery - Holland", category: "Substance Recovery", address: "483 Century Lane, Holland", phone: "616-396-5284", info: "Comprehensive outpatient and residential programs.", website: "https://reachforrecoverymichigan.com" },
-  { name: "Reach for Recovery - Grand Haven", category: "Substance Recovery", address: "700 Washington Ave #220, Grand Haven", phone: "616-842-6710", info: "Counseling and recovery community connection.", website: "https://reachforrecoverymichigan.com" },
+  { name: "Reach for Recovery - Holland", category: "Substance Recovery", address: "483 Century Lane, Holland", phone: "616-396-5284", info: "Comprehensive outpatient and residential programs.", website: "https://reachforrecovery.org" },
+  { name: "Reach for Recovery - Grand Haven", category: "Substance Recovery", address: "700 Washington Ave #220, Grand Haven", phone: "616-842-6710", info: "Counseling and recovery community connection.", website: "https://reachforrecovery.org" },
   { name: "Samaritas - Holland", category: "Substance Recovery", address: "Holland", phone: "Contact for details", info: "Substance use treatment and recovery services.", website: "https://www.samaritas.org" },
   { name: "Samaritas - Grand Haven", category: "Substance Recovery", address: "Grand Haven", phone: "Contact for details", info: "Substance use treatment and recovery services.", website: "https://www.samaritas.org" },
   { name: "Pathways/Arbor Circle", category: "Substance Recovery", address: "412 Century Lane, Holland", phone: "616-396-2301", info: "Substance recovery programs and support.", website: "https://pathwaysmichigan.org" },
