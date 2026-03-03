@@ -5,6 +5,14 @@ import Link from 'next/link';
 import { Phone, MapPin } from 'lucide-react';
 
 const RESOURCES = [
+  // Overdose Prevention
+  { name: "Narcan/Naloxone Distribution", category: "Overdose Prevention", address: "Multiple locations", phone: "616-393-5601", info: "Free naloxone kits and training available at health departments and community centers. Life-saving medication to reverse opioid overdose." },
+  { name: "Ottawa County Health Department", category: "Overdose Prevention", address: "12220 Fillmore Ave, West Olive", phone: "616-393-5601", info: "Naloxone distribution and overdose prevention education. M-F 8a-5p." },
+
+  // Harm Reduction
+  { name: "Reach for Recovery - Harm Reduction", category: "Harm Reduction", address: "483 Century Lane, Holland", phone: "616-396-5284", info: "Syringe services, harm reduction counseling, and connection to treatment." },
+  { name: "Holland Community Health Center", category: "Harm Reduction", address: "336 S. River Ave, Holland", phone: "616-394-3788", info: "Harm reduction services and education. M-F 8a-5p." },
+
   // Mental Health
   { name: "Community Mental Health of Ottawa County - Holland", category: "Mental Health", address: "12265 James St, Holland", phone: "616-392-1873", info: "Main entry for mental health and IDD services. Includes 24/7 crisis support." },
   { name: "Community Mental Health of Ottawa County - Grand Haven", category: "Mental Health", address: "1111 Fulton St, Grand Haven", phone: "616-842-4357", info: "Outpatient clinical services for North Ottawa residents." },
@@ -145,6 +153,8 @@ export default function Home() {
       "Veteran Services": { bg: "bg-indigo-100", border: "border-b-4 border-indigo-500", icon: "🎖️", button: "bg-indigo-500 hover:bg-indigo-600", buttonHover: "text-white" },
       "Transportation": { bg: "bg-cyan-100", border: "border-b-4 border-cyan-500", icon: "🚌", button: "bg-cyan-500 hover:bg-cyan-600", buttonHover: "text-white" },
       "Financial Resources": { bg: "bg-yellow-100", border: "border-b-4 border-yellow-500", icon: "💰", button: "bg-yellow-500 hover:bg-yellow-600", buttonHover: "text-white" },
+      "Overdose Prevention": { bg: "bg-red-200", border: "border-b-4 border-red-700", icon: "⚠️", button: "bg-red-700 hover:bg-red-800", buttonHover: "text-white" },
+      "Harm Reduction": { bg: "bg-lime-100", border: "border-b-4 border-lime-600", icon: "🤝", button: "bg-lime-600 hover:bg-lime-700", buttonHover: "text-white" },
       "Miscellaneous": { bg: "bg-gray-100", border: "border-b-4 border-gray-400", icon: "📍", button: "bg-gray-400 hover:bg-gray-500", buttonHover: "text-white" },
       "Government Services": { bg: "bg-slate-100", border: "border-b-4 border-slate-500", icon: "🏛️", button: "bg-slate-500 hover:bg-slate-600", buttonHover: "text-white" },
     };
@@ -174,7 +184,7 @@ export default function Home() {
             {/* Title - Much Larger */}
             <div className="space-y-2">
               <h1 className="text-7xl font-bold text-teal-700">Ottawa County</h1>
-              <p className="text-4xl text-gray-700 font-semibold">Recovery Resources</p>
+              <p className="text-4xl text-gray-700 font-semibold">Recovery & Resource Hub</p>
             </div>
             
             {/* Navigation Buttons - Uniform and Centered */}
