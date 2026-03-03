@@ -4,9 +4,18 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Phone, MapPin } from 'lucide-react';
 
-const RESOURCES = [
+interface Resource {
+  name: string;
+  category: string;
+  address: string;
+  phone: string;
+  info: string;
+  link?: string;
+}
+
+const RESOURCES: Resource[] = [
   // Overdose Prevention
-  { name: "Narcan/Naloxone Distribution", category: "Overdose Prevention", address: "Multiple locations", phone: "616-393-5601", info: "Free naloxone kits and training available at health departments and community centers. Life-saving medication to reverse opioid overdose." },
+  { name: "Narcan/Naloxone Distribution", category: "Overdose Prevention", address: "Multiple locations", phone: "See Locations", info: "Naloxone (Narcan) is a life-saving medication to reverse opioid overdose. Free kits are available in Ottawa County. For a list of locations click below.", link: "/naloxone-locations" },
   { name: "Ottawa County Health Department", category: "Overdose Prevention", address: "12220 Fillmore Ave, West Olive", phone: "616-393-5601", info: "Naloxone distribution and overdose prevention education. M-F 8a-5p." },
 
   // Harm Reduction
@@ -254,14 +263,22 @@ export default function Home() {
                       <a href={`tel:${resource.phone}`} className="text-teal-700 font-bold hover:underline">{resource.phone}</a>
                     </div>
                   </div>
-                  <button 
-                    onClick={() => {
-                      window.location.href = `tel:${resource.phone}`;
-                    }}
-                    className="block mt-4 w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 rounded text-center transition cursor-pointer"
-                  >
-                    Call Now
-                  </button>
+                  {resource.link ? (
+                    <Link href={resource.link}>
+                      <button className="block mt-4 w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 rounded text-center transition cursor-pointer">
+                        Locations
+                      </button>
+                    </Link>
+                  ) : (
+                    <button 
+                      onClick={() => {
+                        window.location.href = `tel:${resource.phone}`;
+                      }}
+                      className="block mt-4 w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 rounded text-center transition cursor-pointer"
+                    >
+                      Call Now
+                    </button>
+                  )}
                 </div>
               );
             })
