@@ -59,9 +59,7 @@ const RESOURCES = [
   // Housing
   { name: "Good Samaritan Ministries", category: "Housing", address: "513 E. 8th St, Holland", phone: "616-392-7159", info: "Housing Search Assistance, Rapid Re-housing, and CHP programs." },
   { name: "Gateway Mission", category: "Housing", address: "643 S Waverly Rd, Holland", phone: "616-396-2200", info: "Emergency shelter for men and long-term recovery programs." },
-  { name: "Gateway Mission for Women", category: "Housing", address: "643 S Waverly Rd, Holland", phone: "616-396-2200", info: "Specialized residential recovery program for women seeking housing and support services." },
-  { name: "Holland Rescue Mission - Men", category: "Housing", address: "166 S. River St, Holland", phone: "616-396-2200", info: "Emergency shelter and services for men." },
-  { name: "Holland Rescue Mission - Women", category: "Housing", address: "356 Fairbanks Ave, Holland", phone: "616-396-2200", info: "Emergency shelter and services for women." },
+  { name: "Gateway Mission Women & Children's Center", category: "Housing", address: "356 Fairbanks Ave, Holland", phone: "616-396-2200", info: "Specialized residential recovery program for women and children seeking housing and support services." },
   { name: "Community Action House", category: "Housing", address: "345 W. 14th St, Holland", phone: "616-392-2368", info: "Permanent supportive housing services." },
   { name: "My House Ministry", category: "Housing", address: "96 West 15th Street Suite 306, Holland", phone: "616-953-0772", info: "Housing & restorative programs for women/children of domestic violence." },
   { name: "Lakeshore Habitat for Humanity", category: "Housing", address: "12727 Riley St, Holland", phone: "616-393-8001", info: "Affordable homeownership and housing programs." },
