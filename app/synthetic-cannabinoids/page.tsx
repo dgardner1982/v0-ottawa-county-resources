@@ -2,6 +2,7 @@
 
 import { useState, useRef } from 'react';
 import Link from 'next/link';
+import { Footer } from '@/components/footer';
 
 export default function SyntheticCannabinoidsPage() {
   const [showModal, setShowModal] = useState(false);
@@ -46,8 +47,8 @@ export default function SyntheticCannabinoidsPage() {
   };
 
   const openNamesModal = () => {
-    setModalContent('names');
-    setShowModal(true);
+    // Navigate to dedicated street names page instead of modal
+    window.location.href = '/street-names/synthetic-cannabinoids';
   };
 
   const openTypesModal = () => {
@@ -123,6 +124,15 @@ export default function SyntheticCannabinoidsPage() {
           </p>
         </div>
 
+        {/* Street Names Button */}
+        <div className="bg-teal-100 border-l-4 border-teal-600 p-6 rounded-lg mb-8">
+          <Link href="/street-names/synthetic-cannabinoids">
+            <button className="w-full text-lg bg-teal-600 hover:bg-teal-700 text-white font-bold px-6 py-3 rounded-lg transition">
+              View Street Names
+            </button>
+          </Link>
+        </div>
+
         {/* Modal */}
         {showModal && (
           <div className="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={closeModal}>
@@ -134,12 +144,7 @@ export default function SyntheticCannabinoidsPage() {
               {modalContent === 'names' && (
                 <>
                   <h2 className="text-3xl font-bold mb-6 text-slate-900">Street Name Variants</h2>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                    {[...streetNames.main, ...streetNames.variants].map((name, idx) => (
-                      <div key={idx} className="p-3 bg-slate-50 rounded-lg text-sm font-semibold text-slate-700 border border-slate-100">{name}</div>
-                    ))}
-                  </div>
-                  <p className="mt-8 text-xs text-slate-400 italic">Names are constantly changing as manufacturers attempt to bypass drug identification protocols.</p>
+                  <p className="text-slate-600 text-center py-8">This modal is no longer used. Please click the Street Names button below to view comprehensive street name information.</p>
                 </>
               )}
 
@@ -326,10 +331,7 @@ export default function SyntheticCannabinoidsPage() {
         </div>
       </main>
 
-      <footer className="max-w-6xl mx-auto text-center py-20 border-t border-slate-200 mt-20">
-        <p className="text-sm text-slate-400 mb-4 uppercase tracking-widest font-bold">Health Education & Safety</p>
-        <p className="text-xs text-slate-400">These chemicals are dangerous, unpredictable laboratory substances.</p>
-      </footer>
+      <Footer />
     </>
   );
 }

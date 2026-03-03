@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { ExternalLink } from 'lucide-react';
+import { Footer } from '@/components/footer';
 
 export default function SupportGroupsPage() {
   const supportGroups = [
@@ -200,7 +201,12 @@ export default function SupportGroupsPage() {
         <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg p-8 mb-12">
           <h2 className="text-3xl font-bold mb-3">Find Your Community</h2>
           <p className="text-lg mb-4">Support groups connect you with people who understand your journey. Whether you're seeking recovery from addiction, supporting a loved one, or working through emotional challenges, there's a community for you.</p>
-          <p className="text-sm opacity-90">All groups listed are peer-led, confidential, and welcoming. Most meetings are free and available locally or online.</p>
+          <p className="text-sm opacity-90">All groups listed are peer led and confidential. These meetings are free and available locally or online. While the majority of our sessions are open to any interested individual, some meetings are designated as Closed.</p>
+        </div>
+
+        <div className="bg-purple-50 border-l-4 border-purple-500 rounded-lg p-8 mb-12">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">Open vs. Closed Meetings</h3>
+          <p className="text-gray-700 mb-4">An Open Meeting is available to anyone, including family members, students, or community supporters. In contrast, a Closed Meeting is restricted exclusively to individuals who personally share the lived experience or specific challenge the group addresses. This distinction ensures a safe, private space where peers can speak freely among those with similar backgrounds.</p>
         </div>
 
         {supportGroups.map((section, idx) => (
@@ -274,13 +280,7 @@ export default function SupportGroupsPage() {
         </div>
       </main>
 
-      <footer className="bg-gray-900 text-white py-8 mt-12">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="font-bold text-lg mb-2">Ottawa County Recovery Alliance</p>
-          <p className="text-gray-300 text-sm">Crisis Support: 2-1-1 for Resources | 988 for Suicide Crisis | 9-1-1 for Emergencies</p>
-          <p className="text-gray-400 text-xs mt-4">Recovery is a journey, not a destination. You are not alone.</p>
-        </div>
-      </footer>
+      <Footer />
     </>
-  );
+  )
 }

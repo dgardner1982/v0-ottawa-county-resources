@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { Footer } from '@/components/footer';
 
 export default function HeroinPage() {
   return (
@@ -17,16 +18,18 @@ export default function HeroinPage() {
             <div className="text-7xl">💉</div>
             <h1 className="text-6xl font-bold text-teal-700">Heroin</h1>
             <p className="text-2xl text-gray-600">Understanding the Risks & Effects</p>
-            <Link href="/education">
-              <button className="flex items-center gap-2 bg-gray-600 hover:bg-gray-700 text-white font-bold px-6 py-2 rounded-lg transition">
-                ← Back to Education
-              </button>
-            </Link>
           </div>
         </div>
       </header>
 
       <main className="max-w-6xl mx-auto px-4 py-12">
+        <div className="mb-8">
+          <Link href="/education">
+            <button className="flex items-center gap-2 bg-gray-600 hover:bg-gray-700 text-white font-bold px-6 py-2 rounded-lg transition">
+              ← Back to Education
+            </button>
+          </Link>
+        </div>
         <div className="bg-amber-100 border-l-4 border-amber-700 p-6 rounded-lg mb-8">
           <p className="text-lg text-gray-700">
             For more detailed information, click{' '}
@@ -40,11 +43,18 @@ export default function HeroinPage() {
             </a>
           </p>
         </div>
+        <div className="bg-amber-100 border-l-4 border-amber-700 p-6 rounded-lg mb-8">
+          <Link href="/street-names/heroin">
+            <button className="w-full text-lg bg-amber-700 hover:bg-amber-800 text-white font-bold px-6 py-3 rounded-lg transition">
+              View Street Names
+            </button>
+          </Link>
+        </div>
         <div className="bg-amber-100 border-4 border-amber-700 rounded-lg p-8 mb-12">
           <h2 className="text-3xl font-bold text-amber-900 mb-4">CRITICAL INFORMATION</h2>
           <p className="text-lg text-amber-900 font-bold mb-4">Heroin is an extremely addictive opioid that carries severe health risks including overdose and death.</p>
           <ul className="space-y-2 text-amber-900 ml-4">
-            <li>• Often mixed with fentanyl, increasing overdose risk</li>
+            <li>• Sometimes mixed with fentanyl, increasing overdose risk</li>
             <li>• Can be injected, snorted, or smoked</li>
             <li>• Creates rapid physical and psychological dependence</li>
             <li>• Withdrawal is extremely uncomfortable but not typically fatal</li>
@@ -169,6 +179,8 @@ export default function HeroinPage() {
           </Link>
         </div>
       </main>
+
+      <Footer />
     </>
   );
 }

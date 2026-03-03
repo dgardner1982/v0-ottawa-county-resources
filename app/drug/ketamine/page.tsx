@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { Footer } from '@/components/footer';
 
 export default function KetaminePage() {
   return (
@@ -165,6 +166,8 @@ export default function KetaminePage() {
           </Link>
         </div>
       </main>
+
+      <Footer />
     </>
   );
 }

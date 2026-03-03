@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { Footer } from '@/components/footer';
 
 export default function CocainePage() {
   return (
@@ -17,16 +18,18 @@ export default function CocainePage() {
             <div className="text-7xl">❄️</div>
             <h1 className="text-6xl font-bold text-teal-700">Cocaine</h1>
             <p className="text-2xl text-gray-600">Understanding the Risks & Effects</p>
-            <Link href="/education">
-              <button className="flex items-center gap-2 bg-gray-600 hover:bg-gray-700 text-white font-bold px-6 py-2 rounded-lg transition">
-                ← Back to Education
-              </button>
-            </Link>
           </div>
         </div>
       </header>
 
       <main className="max-w-6xl mx-auto px-4 py-12">
+        <div className="mb-8">
+          <Link href="/education">
+            <button className="flex items-center gap-2 bg-gray-600 hover:bg-gray-700 text-white font-bold px-6 py-2 rounded-lg transition">
+              ← Back to Education
+            </button>
+          </Link>
+        </div>
         <div className="bg-red-100 border-l-4 border-red-600 p-6 rounded-lg mb-8">
           <p className="text-lg text-gray-700">
             For more detailed information about Cocaine, click{' '}
@@ -39,6 +42,13 @@ export default function CocainePage() {
               here
             </a>
           </p>
+        </div>
+        <div className="bg-red-100 border-l-4 border-red-600 p-6 rounded-lg mb-8">
+          <Link href="/street-names/cocaine">
+            <button className="w-full text-lg bg-red-600 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-lg transition">
+              View Street Names
+            </button>
+          </Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <div className="bg-red-50 border-l-4 border-red-500 p-8 rounded-lg">
@@ -153,12 +163,7 @@ export default function CocainePage() {
         </div>
       </main>
 
-      <footer className="bg-gray-900 text-white py-8 mt-12">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="font-bold text-lg mb-2">Ottawa County Recovery Alliance</p>
-          <p className="text-gray-300 text-sm">Crisis Support: 2-1-1 for Resources | 988 for Suicide Crisis | 9-1-1 for Emergencies</p>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }

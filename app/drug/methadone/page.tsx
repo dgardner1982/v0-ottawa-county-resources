@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { Footer } from '@/components/footer';
 
 export default function MethadonePage() {
   return (
@@ -121,7 +122,7 @@ export default function MethadonePage() {
           <ul className="space-y-2 text-red-700 ml-4">
             <li>• Uncontrolled, unknown doses</li>
             <li>• High overdose risk, especially combined with other drugs</li>
-            <li>• Often mixed with fentanyl</li>
+            <li>• Sometimes mixed with fentanyl</li>
             <li>• Creates addiction</li>
             <li>• Naloxone required for overdose</li>
           </ul>
@@ -159,12 +160,7 @@ export default function MethadonePage() {
         </div>
       </main>
 
-      <footer className="bg-gray-900 text-white py-8 mt-12">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="font-bold text-lg mb-2">Ottawa County Recovery Alliance</p>
-          <p className="text-gray-300 text-sm">Crisis Support: 2-1-1 for Resources | 988 for Suicide Crisis | 9-1-1 for Emergencies</p>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }

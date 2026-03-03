@@ -1,16 +1,16 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
+import { AnalyticsWrapper } from './analytics'
 import './globals.css'
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Ottawa County Recovery Resources | Community Directory',
-  description: 'One-stop guide for recovery resources in Ottawa County MI. Find mental health, substance recovery, housing, food, and employment services. Includes education on emerging substances.',
+  title: 'Ottawa County Recovery Resource and Education Hub | Community Directory',
+  description: 'One-stop guide for recovery resources in Ottawa County MI. Find mental health, substance recovery, housing, food, employment, harm reduction and overdose prevention services. Includes education on emerging substances.',
   generator: 'v0.app',
-  keywords: ['recovery', 'resources', 'Ottawa County', 'mental health', 'substance recovery', 'housing', 'food assistance'],
+  keywords: ['recovery', 'resources', 'Ottawa County', 'mental health', 'substance recovery', 'housing', 'food assistance', 'harm reduction', 'overdose prevention'],
   viewport: {
     width: 'device-width',
     initialScale: 1,
@@ -45,7 +45,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="font-sans antialiased">
         {children}
-        <Analytics />
+        <AnalyticsWrapper />
       </body>
     </html>
   )
