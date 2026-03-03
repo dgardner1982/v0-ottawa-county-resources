@@ -191,16 +191,13 @@ export default function Home() {
               />
             </Link>
             
-            {/* Main Title with WordArt Effect */}
+            {/* Main Title with WordArt Outline Effect */}
             <div className="space-y-6 max-w-3xl">
               <h1 
-                className="text-5xl md:text-7xl font-bold leading-tight"
+                className="text-5xl md:text-7xl font-bold text-teal-700 leading-tight"
                 style={{
-                  color: '#B0E8F0',
-                  WebkitTextStroke: '2px #0D7377',
-                  textStroke: '2px #0D7377',
-                  textShadow: '3px 3px 6px rgba(13, 115, 119, 0.4)',
-                  letterSpacing: '0.02em'
+                  WebkitTextStroke: '1.5px #0D7377',
+                  textStroke: '1.5px #0D7377',
                 }}
               >
                 Ottawa County Recovery and Education Hub
