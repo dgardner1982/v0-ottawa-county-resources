@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Phone, MapPin } from 'lucide-react';
+import { Footer } from '@/components/footer';
 
 interface Resource {
   name: string;
