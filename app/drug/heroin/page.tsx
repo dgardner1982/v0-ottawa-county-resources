@@ -17,11 +17,18 @@ export default function HeroinPage() {
             <div className="text-7xl">💉</div>
             <h1 className="text-6xl font-bold text-teal-700">Heroin</h1>
             <p className="text-2xl text-gray-600">Understanding the Risks & Effects</p>
+          <div className="space-y-2">
             <Link href="/education">
               <button className="flex items-center gap-2 bg-gray-600 hover:bg-gray-700 text-white font-bold px-6 py-2 rounded-lg transition">
                 ← Back to Education
               </button>
             </Link>
+            <Link href="/street-names/heroin">
+              <button className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-2 rounded-lg transition ml-0 md:ml-2">
+                🏷️ Street Names
+              </button>
+            </Link>
+          </div>
           </div>
         </div>
       </header>

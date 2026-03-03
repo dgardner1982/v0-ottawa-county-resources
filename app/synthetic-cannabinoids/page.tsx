@@ -46,8 +46,8 @@ export default function SyntheticCannabinoidsPage() {
   };
 
   const openNamesModal = () => {
-    setModalContent('names');
-    setShowModal(true);
+    // Navigate to dedicated street names page instead of modal
+    window.location.href = '/street-names/synthetic-cannabinoids';
   };
 
   const openTypesModal = () => {
@@ -100,10 +100,15 @@ export default function SyntheticCannabinoidsPage() {
 
       <main className="max-w-6xl mx-auto px-4 py-10" ref={contentRef}>
         {/* Back Button - Top */}
-        <div className="mb-8">
+        <div className="mb-8 flex gap-4">
           <Link href="/education">
             <button className="flex items-center gap-2 bg-gray-600 hover:bg-gray-700 text-white font-bold px-6 py-2 rounded-lg transition">
               ← Back to Education
+            </button>
+          </Link>
+          <Link href="/street-names/synthetic-cannabinoids">
+            <button className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-2 rounded-lg transition">
+              🏷️ Street Names
             </button>
           </Link>
         </div>
@@ -134,12 +139,7 @@ export default function SyntheticCannabinoidsPage() {
               {modalContent === 'names' && (
                 <>
                   <h2 className="text-3xl font-bold mb-6 text-slate-900">Street Name Variants</h2>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                    {[...streetNames.main, ...streetNames.variants].map((name, idx) => (
-                      <div key={idx} className="p-3 bg-slate-50 rounded-lg text-sm font-semibold text-slate-700 border border-slate-100">{name}</div>
-                    ))}
-                  </div>
-                  <p className="mt-8 text-xs text-slate-400 italic">Names are constantly changing as manufacturers attempt to bypass drug identification protocols.</p>
+                  <p className="text-slate-600 text-center py-8">This modal is no longer used. Please click the Street Names button below to view comprehensive street name information.</p>
                 </>
               )}
 
