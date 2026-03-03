@@ -201,7 +201,7 @@ export default function SupportGroupsPage() {
         <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg p-8 mb-12">
           <h2 className="text-3xl font-bold mb-3">Find Your Community</h2>
           <p className="text-lg mb-4">Support groups connect you with people who understand your journey. Whether you're seeking recovery from addiction, supporting a loved one, or working through emotional challenges, there's a community for you.</p>
-          <p className="text-sm opacity-90">All groups listed are peer led and confidential. While the majority of our meetings are open to any interested individual, some sessions are designated as Closed.</p>
+          <p className="text-sm opacity-90">All groups listed are peer led and confidential. These meetings are free and available locally or online. While the majority of our sessions are open to any interested individual, some meetings are designated as Closed.</p>
         </div>
 
         <div className="bg-purple-50 border-l-4 border-purple-500 rounded-lg p-8 mb-12">
