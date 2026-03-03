@@ -200,7 +200,7 @@ export default function Home() {
                   textStroke: '3px #0D7377',
                 }}
               >
-                Ottawa County Recovery resource and education hub
+                Ottawa County Recovery Resource and Education Hub
               </h1>
               
               {/* Tagline/Welcome Message */}
