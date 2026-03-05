@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ottawa County Resources - Community support, harm reduction, mental health, and essential services for individuals and families in need.">
+  <meta name="keywords" content="Ottawa County, resources, mental health, harm reduction, food assistance, housing, support">
+  <title>Ottawa County Resources - Community Support & Services</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #1e7874;
+      --primary-light: #2a9d99;
+      --primary-dark: #0f4542;
+      --accent: #e8533c;
+      --neutral-100: #f9f7f4;
+      --neutral-200: #eae6e1;
+      --neutral-600: #6b6b6b;
+      --neutral-900: #1a1a1a;
+      --border-radius: 8px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--neutral-900);
+      background-color: var(--neutral-100);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.95;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Navigation */
+    nav {
+      background-color: white;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+
+    .nav-btn {
+      padding: 0.75rem 1.25rem;
+      background-color: var(--neutral-200);
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .nav-btn:hover {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    .nav-btn.active {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    /* Main container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    /* Search section */
+    .search-section {
+      background-color: white;
+      padding: 2rem;
+      border-radius: var(--border-radius);
+      margin-bottom: 2rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1rem;
+      border: 2px solid var(--neutral-200);
+      border-radius: var(--border-radius);
+      transition: border-color 0.3s ease;
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(30, 120, 116, 0.1);
+    }
+
+    /* Category section */
+    .category-section {
+      margin-bottom: 3rem;
+    }
+
+    .category-title {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1.75rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 3px solid var(--accent);
+    }
+
+    .category-icon {
+      font-size: 2rem;
+    }
+
+    /* Resource cards grid */
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .resource-card {
+      background-color: white;
+      border-radius: var(--border-radius);
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      border-left: 4px solid var(--primary);
+    }
+
+    .resource-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .resource-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.75rem;
+    }
+
+    .resource-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      color: var(--neutral-600);
+    }
+
+    .info-icon {
+      flex-shrink: 0;
+      color: var(--accent);
+      font-weight: bold;
+      margin-top: 2px;
+    }
+
+    .resource-desc {
+      color: var(--neutral-600);
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+
+    .resource-link {
+      display: inline-block;
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.5rem 0;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s ease;
+    }
+
+    .resource-link:hover {
+      border-bottom-color: var(--primary);
+    }
+
+    /* Crisis section */
+    .crisis-section {
+      background: linear-gradient(135deg, var(--accent) 0%, #d64429 100%);
+      color: white;
+      padding: 2.5rem;
+      border-radius: var(--border-radius);
+      margin-bottom: 3rem;
+      box-shadow: 0 4px 12px rgba(232, 83, 60, 0.3);
+    }
+
+    .crisis-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .crisis-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .crisis-card {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 1.5rem;
+      border-radius: var(--border-radius);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .crisis-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .crisis-number {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 1rem 0;
+    }
+
+    .crisis-desc {
+      font-size: 0.95rem;
+      opacity: 0.95;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--neutral-900);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    footer p {
+      margin: 0.5rem 0;
+      font-size: 0.95rem;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.75rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+
+      .nav-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+      }
+
+      .category-title {
+        font-size: 1.4rem;
+      }
+
+      .resources-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .crisis-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .container {
+        padding: 1.5rem 1rem;
+      }
+
+      .crisis-section {
+        padding: 2rem;
+      }
+
+      .crisis-section h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ottawa County Resources</h1>
+    <p>Essential community support, mental health services, and harm reduction resources</p>
+  </header>
+
+  <nav>
+    <div class="nav-container">
+      <button class="nav-btn active" onclick="filterCategory('all')">All Resources</button>
+      <button class="nav-btn" onclick="filterCategory('crisis')">🚨 Crisis Support</button>
+      <button class="nav-btn" onclick="filterCategory('mental-health')">Mental Health</button>
+      <button class="nav-btn" onclick="filterCategory('substance-recovery')">Recovery Services</button>
+      <button class="nav-btn" onclick="filterCategory('housing')">Housing</button>
+      <button class="nav-btn" onclick="filterCategory('food')">Food Assistance</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <!-- Search Section -->
+    <div class="search-section">
+      <input 
+        type="text" 
+        class="search-input" 
+        id="searchInput" 
+        placeholder="Search resources by name, location, or service..."
+        onkeyup="searchResources()"
+      >
+    </div>
+
+    <!-- Crisis Support Section -->
+    <div class="crisis-section" id="crisis-support">
+      <h2>🚨 Immediate Crisis Support</h2>
+      <div class="crisis-grid">
+        <div class="crisis-card">
+          <h3>National Suicide Prevention Lifeline</h3>
+          <div class="crisis-number">988</div>
+          <div class="crisis-desc">Available 24/7 for suicide & crisis support. Call or text anytime.</div>
+        </div>
+        <div class="crisis-card">
+          <h3>Crisis Text Line</h3>
+          <div class="crisis-number">Text HOME to 741741</div>
+          <div class="crisis-desc">Crisis support via text message, available anytime.</div>
+        </div>
+        <div class="crisis-card">
+          <h3>Ottawa County 24-Hour Helpline</h3>
+          <div class="crisis-number">616-396-4357</div>
+          <div class="crisis-desc">Local mental health crisis support available 24 hours.</div>
+        </div>
+        <div class="crisis-card">
+          <h3>Emergency Services</h3>
+          <div class="crisis-number">911</div>
+          <div class="crisis-desc">Call 911 for immediate life-threatening emergencies.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Overdose Prevention -->
+    <div class="category-section" data-category="overdose">
+      <div class="category-title">
+        <span class="category-icon">💊</span>
+        <span>Overdose Prevention</span>
+      </div>
+      <div class="resources-grid" id="overdose-resources"></div>
+    </div>
+
+    <!-- Harm Reduction -->
+    <div class="category-section" data-category="harm-reduction">
+      <div class="category-title">
+        <span class="category-icon">🤝</span>
+        <span>Harm Reduction Services</span>
+      </div>
+      <div class="resources-grid" id="harm-reduction-resources"></div>
+    </div>
+
+    <!-- Mental Health -->
+    <div class="category-section" data-category="mental-health">
+      <div class="category-title">
+        <span class="category-icon">🧠</span>
+        <span>Mental Health Services</span>
+      </div>
+      <div class="resources-grid" id="mental-health-resources"></div>
+    </div>
+
+    <!-- Substance Recovery -->
+    <div class="category-section" data-category="substance-recovery">
+      <div class="category-title">
+        <span class="category-icon">🌟</span>
+        <span>Substance Recovery Programs</span>
+      </div>
+      <div class="resources-grid" id="substance-recovery-resources"></div>
+    </div>
+
+    <!-- Housing -->
+    <div class="category-section" data-category="housing">
+      <div class="category-title">
+        <span class="category-icon">🏠</span>
+        <span>Housing & Shelter Services</span>
+      </div>
+      <div class="resources-grid" id="housing-resources"></div>
+    </div>
+
+    <!-- Food Assistance -->
+    <div class="category-section" data-category="food">
+      <div class="category-title">
+        <span class="category-icon">🍽️</span>
+        <span>Food Assistance & Pantries</span>
+      </div>
+      <div class="resources-grid" id="food-resources"></div>
+    </div>
+
+    <!-- Health Care -->
+    <div class="category-section" data-category="health-care">
+      <div class="category-title">
+        <span class="category-icon">⚕️</span>
+        <span>Health Care Services</span>
+      </div>
+      <div class="resources-grid" id="health-care-resources"></div>
+    </div>
+
+    <!-- Employment Services -->
+    <div class="category-section" data-category="employment">
+      <div class="category-title">
+        <span class="category-icon">💼</span>
+        <span>Employment Services</span>
+      </div>
+      <div class="resources-grid" id="employment-resources"></div>
+    </div>
+
+    <!-- Senior Services -->
+    <div class="category-section" data-category="senior-services">
+      <div class="category-title">
+        <span class="category-icon">👴</span>
+        <span>Senior Services</span>
+      </div>
+      <div class="resources-grid" id="senior-services-resources"></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <p><strong>Ottawa County Resources Directory</strong></p>
+      <p>Comprehensive community support and services information</p>
+      <p style="margin-top: 1rem; opacity: 0.8; font-size: 0.85rem;">This directory is maintained to provide accurate, up-to-date information. For the most current hours and services, please contact providers directly.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Resource data
+    const resources = {
+      'overdose': [
+        {
+          name: 'Naloxone/Narcan Distribution',
+          category: 'Overdose Prevention',
+          address: 'Multiple locations',
+          phone: 'Free kits available',
+          info: 'Naloxone (Narcan) is a life-saving medication to reverse opioid overdose. Free kits are available throughout Ottawa County.'
+        },
+        {
+          name: 'Overdose Prevention Training',
+          category: 'Overdose Prevention',
+          phone: '616-416-0860',
+          info: 'Free overdose prevention and naloxone training. Contact Daniel Gardner at dgardner@miottawa.org'
+        }
+      ],
+      'harm-reduction': [
+        {
+          name: 'Grand Rapids Red Project',
+          category: 'Harm Reduction',
+          address: '401 Hall St SE, Grand Rapids, MI 49507',
+          phone: '616-456-9063',
+          info: 'Comprehensive harm reduction services and support.',
+          website: 'https://www.grredproject.org'
+        },
+        {
+          name: 'Grand Rapids Red Project Mobile Health Unit',
+          category: 'Harm Reduction',
+          address: 'Friday Afternoons 1-4pm outside of Skipp\'s Pharmacy, Holland',
+          phone: '616-456-9063',
+          info: 'Harm reduction services available through the mobile health unit.',
+          website: 'https://www.grredproject.org'
+        }
+      ],
+      'mental-health': [
+        {
+          name: 'Community Mental Health of Ottawa County - Holland',
+          category: 'Mental Health',
+          address: '12265 James St, Holland',
+          phone: '616-392-1873',
+          info: 'Main entry for mental health and IDD services. Includes 24/7 crisis support.',
+          website: 'https://www.cmhoc.org'
+        },
+        {
+          name: 'Community Mental Health of Ottawa County - Grand Haven',
+          category: 'Mental Health',
+          address: '1111 Fulton St, Grand Haven',
+          phone: '616-842-4357',
+          info: 'Outpatient clinical services for North Ottawa residents.',
+          website: 'https://www.cmhoc.org'
+        },
+        {
+          name: 'Pine Rest Holland',
+          category: 'Mental Health',
+          address: '926 S. Washington #210, Holland',
+          phone: '616-820-3780',
+          info: 'Mental health and psychiatric services. M-Th 8:30a-8p, F 8:30a-3p.',
+          website: 'https://www.pinerest.org'
+        },
+        {
+          name: 'Pine Rest North Shore',
+          category: 'Mental Health',
+          address: '17325 Van Wagoner Rd, Spring Lake',
+          phone: '616-847-5145',
+          info: 'Mental health services. M-Th 8a-6:30p, F 8a-3p.',
+          website: 'https://www.pinerest.org'
+        },
+        {
+          name: 'Encourage Counseling',
+          category: 'Mental Health',
+          address: '607 Heritage Court, Holland',
+          phone: '616-396-6172',
+          info: 'Professional counseling services. M 9a-6p, Tu-Th 8:30a-6p.',
+          website: 'https://encouragecounseling.com'
+        }
+      ],
+      'substance-recovery': [
+        {
+          name: 'Reach for Recovery - Holland',
+          category: 'Substance Recovery',
+          address: '483 Century Lane, Holland',
+          phone: '616-396-5284',
+          info: 'Comprehensive outpatient and residential programs.',
+          website: 'https://reachforrecovery.org'
+        },
+        {
+          name: 'Reach for Recovery - Grand Haven',
+          category: 'Substance Recovery',
+          address: '700 Washington Ave #220, Grand Haven',
+          phone: '616-842-6710',
+          info: 'Counseling and recovery community connection.',
+          website: 'https://reachforrecovery.org'
+        },
+        {
+          name: 'Pathways/Arbor Circle',
+          category: 'Substance Recovery',
+          address: '412 Century Lane, Holland',
+          phone: '616-396-2301',
+          info: 'Substance recovery programs and support.',
+          website: 'https://pathwaysmichigan.org'
+        },
+        {
+          name: 'Building Men for Life',
+          category: 'Substance Recovery',
+          address: '370 Country Club Road Suite 50, Holland',
+          phone: '616-393-2188',
+          info: 'Recovery housing for men. Peer-led sober-living program providing transitional recovery housing and peer support.',
+          website: 'https://buildingmenforlife.com'
+        },
+        {
+          name: 'Sobar Recovery Community Center',
+          category: 'Substance Recovery',
+          address: '347 Hoover Blvd, Holland',
+          phone: 'Call for details',
+          info: 'Community recovery center offering support, education, and activities for individuals and families in recovery.',
+          website: 'https://sobarrco.com'
+        }
+      ],
+      'housing': [
+        {
+          name: 'Good Samaritan Ministries',
+          category: 'Housing',
+          address: '513 E. 8th St, Holland',
+          phone: '616-392-7159',
+          info: 'Housing search assistance, rapid re-housing, and supportive housing programs.',
+          website: 'https://www.gsministries.org'
+        },
+        {
+          name: 'Gateway Mission',
+          category: 'Housing',
+          address: '643 S Waverly Rd, Holland',
+          phone: '616-396-2200',
+          info: 'Emergency shelter for men and long-term recovery programs.',
+          website: 'https://www.gatewaymission.org'
+        },
+        {
+          name: 'Gateway Mission Women & Children\'s Center',
+          category: 'Housing',
+          address: '356 Fairbanks Ave, Holland',
+          phone: '616-396-2200',
+          info: 'Specialized residential recovery program for women and children seeking housing and support services.',
+          website: 'https://www.gatewaymission.org'
+        },
+        {
+          name: 'Community Action House',
+          category: 'Housing',
+          address: '345 W. 14th St, Holland',
+          phone: '616-392-2368',
+          info: 'Permanent supportive housing services.',
+          website: 'https://www.chservices.org'
+        },
+        {
+          name: 'Lakeshore Habitat for Humanity',
+          category: 'Housing',
+          address: '12727 Riley St, Holland',
+          phone: '616-393-8001',
+          info: 'Affordable homeownership and housing programs.',
+          website: 'https://www.lakeshorehabitat.org'
+        }
+      ],
+      'food': [
+        {
+          name: 'Holland Community Kitchen',
+          category: 'Food',
+          address: '101 E. 13th St, Holland',
+          phone: '616-566-1417',
+          info: 'Free community meals M-F 11a-12:30p, Sat & Sun 9a-10:30a.',
+          website: 'https://www.hollandandk.org'
+        },
+        {
+          name: 'St. Vincent De Paul Center',
+          category: 'Food',
+          address: '170 W. 13th St, Holland',
+          phone: '616-394-0676',
+          info: 'Food pantry. M & W 3p-8p, Sat 12p-4p.',
+          website: 'https://svdpholland.org'
+        },
+        {
+          name: 'The Salvation Army Holland',
+          category: 'Food',
+          address: '104 Clover St, Holland',
+          phone: '616-392-4461',
+          info: 'Food pantry by appointment only.',
+          website: 'https://www.salvationarmyusa.org'
+        },
+        {
+          name: 'LOVE INC Grand Haven',
+          category: 'Food',
+          address: '326 Ferry St, Grand Haven',
+          phone: '616-846-2701',
+          info: 'Food pantry. M-F 9a-5p.',
+          website: 'https://loveincallegan.org'
+        },
+        {
+          name: 'MI Bridges',
+          category: 'Food',
+          address: 'State Program',
+          phone: '1-888-544-8773',
+          info: 'State food assistance program providing nutrition benefits.',
+          website: 'https://www.michigan.gov/mibridges'
+        }
+      ],
+      'health-care': [
+        {
+          name: 'The Community Health Center',
+          category: 'Health Care',
+          address: '336 S. River Ave, Holland',
+          phone: '616-394-3788',
+          info: 'Primary and preventive health care. M-F 8a-5p.',
+          website: 'https://www.thechc.org'
+        },
+        {
+          name: 'Maternal Infant Health Program Holland',
+          category: 'Health Care',
+          address: '12251 James St, Holland',
+          phone: '616-396-5266',
+          info: 'Maternal and infant health services.',
+          website: 'https://www.cmhoc.org'
+        },
+        {
+          name: 'Ottawa Pathways to Better Health',
+          category: 'Health Care',
+          address: 'Ottawa County',
+          phone: '616-393-5601',
+          info: 'Comprehensive health pathway services.',
+          website: 'https://www.miottawa.org'
+        }
+      ],
+      'employment': [
+        {
+          name: 'West Michigan Works',
+          category: 'Employment',
+          address: '121 Clover Street, Holland',
+          phone: '616-396-2154',
+          info: 'Employment and training services. M-F 8a-5p.',
+          website: 'https://www.westmichiganworks.org'
+        },
+        {
+          name: 'Michigan Rehabilitation Services',
+          category: 'Employment',
+          address: '121 Clover Street, Holland',
+          phone: '616-395-8495',
+          info: 'Vocational rehabilitation services.',
+          website: 'https://www.michigan.gov/mrs'
+        },
+        {
+          name: 'Manpower',
+          category: 'Employment',
+          address: '12331 James Street, Unit 30, Holland',
+          phone: '616-748-2000',
+          info: 'Employment services and job placement. M-F 8a-5p, Sa 8:45a-12:30p.',
+          website: 'https://www.manpowergroup.com'
+        }
+      ],
+      'senior-services': [
+        {
+          name: 'Senior Resources',
+          category: 'Senior Services',
+          address: '560 Seminole Rd, Muskegon',
+          phone: '231-733-8655 or 1-800-442-0054',
+          info: 'Senior services for North Ottawa County.',
+          website: 'https://www.seniorresources.org'
+        },
+        {
+          name: 'Life Circles (PACE Partnership) South',
+          category: 'Senior Services',
+          address: '12330 James St H-10, Holland',
+          phone: '616-582-3114',
+          info: 'Senior care coordination and support.',
+          website: 'https://www.lifecircles.org'
+        },
+        {
+          name: 'Evergreen Commons',
+          category: 'Senior Services',
+          address: '55 West 16th St, Holland',
+          phone: '616-355-5118',
+          info: 'Adult day care center. M-F 8a-4p.',
+          website: 'https://www.evergreencommons.org'
+        }
+      ]
+    };
+
+    let currentCategory = 'all';
+
+    function createResourceCard(resource) {
+      return `
+        <div class="resource-card">
+          <div class="resource-name">${resource.name}</div>
+          <div class="resource-info">
+            ${resource.address ? `<div class="info-item"><span class="info-icon">📍</span><span>${resource.address}</span></div>` : ''}
+            ${resource.phone ? `<div class="info-item"><span class="info-icon">📞</span><span>${resource.phone}</span></div>` : ''}
+          </div>
+          <div class="resource-desc">${resource.info}</div>
+          ${resource.website ? `<a href="${resource.website}" target="_blank" rel="noopener noreferrer" class="resource-link">Visit Website →</a>` : ''}
+        </div>
+      `;
+    }
+
+    function renderResources() {
+      Object.keys(resources).forEach(category => {
+        const container = document.getElementById(`${category}-resources`);
+        if (container) {
+          container.innerHTML = resources[category].map(createResourceCard).join('');
+        }
+      });
+    }
+
+    function filterCategory(category) {
+      currentCategory = category;
+      
+      // Update nav buttons
+      document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      // Show/hide sections
+      const sections = document.querySelectorAll('.category-section');
+      sections.forEach(section => {
+        if (category === 'all') {
+          section.classList.remove('hidden');
+        } else {
+          const sectionCategory = section.dataset.category;
+          section.classList.toggle('hidden', sectionCategory !== category);
+        }
+      });
+
+      document.getElementById('crisis-support').classList.toggle('hidden', category !== 'all' && category !== 'crisis');
+    }
+
+    function searchResources() {
+      const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+      const cards = document.querySelectorAll('.resource-card');
+      
+      cards.forEach(card => {
+        const name = card.querySelector('.resource-name').textContent.toLowerCase();
+        const phone = card.querySelector('.info-item:nth-child(2)')?.textContent.toLowerCase() || '';
+        const address = card.querySelector('.info-item:nth-child(1)')?.textContent.toLowerCase() || '';
+        const desc = card.querySelector('.resource-desc').textContent.toLowerCase();
+        
+        const matches = name.includes(searchTerm) || phone.includes(searchTerm) || address.includes(searchTerm) || desc.includes(searchTerm);
+        card.parentElement.style.display = matches ? 'block' : 'none';
+      });
+    }
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', renderResources);
+  </script>
+</body>
+</html>
