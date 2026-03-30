@@ -137,7 +137,15 @@ const RESOURCES: Resource[] = [
   // Employment Services
   { name: "Manpower", category: "Employment", address: "12331 James Street, Unit 30, Holland", phone: "616-748-2000", info: "Employment services and job placement. M-F 8a-5p, Sa 8:45a-12:30p.", website: "https://www.manpowergroup.com" },
   { name: "Michigan Rehabilitation Services", category: "Employment", address: "121 Clover Street, Holland", phone: "616-395-8495", info: "Vocational rehabilitation services.", website: "https://www.michigan.gov/mrs" },
-  { name: "West Michigan Works", category: "Employment", address: "121 Clover Street, Holland", phone: "616-396-2154", info: "Employment and training services. M-F 8a-5p.", website: "https://www.westmichiganworks.org" },
+  { name: "West Michigan Works", category: "Employment", address: "121 Clover Street, Holland", phone: "616-396-2154", info: "Employment and training services. M-F 8a-5p.", website: "https://westmiworks.org" },
+  { name: "Gill Staffing", category: "Employment", address: "12470 Felch St, Holland", phone: "616-396-1201", info: "Staffing and employment services.", website: "https://www.gillstaffing.com" },
+  { name: "Workforce Employment Specialists", category: "Employment", address: "200 W 17th St, Holland", phone: "616-396-5557", info: "Employment placement and staffing solutions.", website: "https://www.teamworkforce.com" },
+  { name: "Fettig Jobs", category: "Employment", address: "11449 James St, Holland", phone: "616-335-6770", info: "Employment services and job placement.", website: "https://www.fettig.jobs" },
+  { name: "Workbox Staffing", category: "Employment", address: "100 S Harbor Dr, Grand Haven", phone: "616-844-0131", info: "Staffing and employment solutions.", website: "https://www.workboxstaffing.com" },
+  { name: "WSI (Workforce Strategies)", category: "Employment", address: "12972 James St, Ste 40, Holland", phone: "616-325-1880", info: "Workforce development and employment strategies.", website: "https://www.wsitalent.com" },
+  { name: "Coastal Careers", category: "Employment", address: "12656 Felch St, Holland", phone: "616-355-2244", info: "Career placement and staffing services.", website: "https://www.coastalcareersinc.com" },
+  { name: "Cardinal Staffing", category: "Employment", address: "12330 James St, Ste H80, Holland", phone: "616-394-9100", info: "Employment staffing and placement services.", website: "https://www.cardinalstaffing.com" },
+  { name: "WorkSolved", category: "Employment", address: "240 S River Ave, Holland", phone: "616-283-7521", info: "Employment solutions and staffing services.", website: "https://www.worksolved.com" },
 
   // Senior Services
   { name: "The Little Red House", category: "Senior Services", address: "311 E. Exchange St, Spring Lake", phone: "616-846-5720", info: "Adult day care for elderly. M-F 7a-6p. Hourly rate includes meals.", website: "https://www.thelittleredhouse.org" },
