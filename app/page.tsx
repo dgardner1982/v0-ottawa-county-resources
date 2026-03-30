@@ -109,7 +109,6 @@ const RESOURCES: Resource[] = [
   { name: "Harvest Stand Ministries", category: "Food", address: "100 Pine St Ste 100, Zeeland", phone: "616-748-6003", info: "Food pantry. M 9a-3p, W 1p-6p, Th 9a-12p. By appointment.", website: "https://harveststandministries.org" },
   { name: "Lakeshore Habitat for Humanity", category: "Food", address: "12727 Riley St, Holland", phone: "616-393-8001", info: "Community resources and support.", website: "https://www.lakeshorehabitat.org" },
   { name: "MI Bridges", category: "Food", address: "State Program", phone: "1-888-544-8773", info: "State food assistance program.", website: "https://www.michigan.gov/mibridges" },
-  { name: "F.O.R. (Food and Other Resources)", category: "Food", address: "Statewide", phone: "1-888-544-8773", info: "Food and other resource assistance.", website: "https://www.michigan.gov/mibridges" },
   { name: "Ottawa Foods", category: "Food", address: "12251 James Street, Suite 400, Holland, MI 49424", phone: "616-393-5791", info: "Connect people to food resources and community support services.", website: "https://www.ottawafood.org" },
 
   // Housing
