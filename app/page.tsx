@@ -84,7 +84,7 @@ const RESOURCES: Resource[] = [
   { name: "Catholic Charities West Michigan", category: "Substance Recovery", address: "355 Settlers Rd, Holland", phone: "616-796-9595", info: "Adolescent substance recovery programs.", website: "https://ccwestmi.org" },
   { name: "Pine Rest Spring Lake", category: "Substance Recovery", address: "17325 Van Wagoner Rd, Spring Lake", phone: "866-852-4001", info: "Substance recovery and mental health services.", website: "https://www.pinerest.org" },
   { name: "Mercy Health Life Counseling", category: "Substance Recovery", address: "125 E. Southern Ave, Muskegon", phone: "231-726-3582", info: "Counseling services. Walk-ins available.", website: "https://www.mercyhealth.org" },
-  { name: "My House Ministry", category: "Substance Recovery", address: "96 West 15th St Suite 306, Holland", phone: "616-953-0772", info: "Transitional recovery housing for women and children.", website: "https://www.myhouseministrymi.org" },
+  { name: "My House Ministry", category: "Substance Recovery", address: "96 West 15th St Suite 306, Holland", phone: "616-953-0772", info: "Transitional recovery housing for women and children.", website: "https://myhouseministry.org" },
   { name: "Building Men for Life", category: "Substance Recovery", address: "370 Country Club Road Suite 50, Holland", phone: "616-393-2188", info: "Recovery housing for men. Peer-led sober-living program providing transitional recovery housing, certified recovery coaching, and peer support.", website: "https://buildingmenforlife.com" },
   { name: "Sobar Recovery Community Center", category: "Substance Recovery", address: "347 Hoover Blvd, Holland", phone: "Call for details", info: "Community recovery center offering support, education, and activities for individuals and families in recovery.", website: "https://sobarrco.com" },
 
@@ -113,18 +113,16 @@ const RESOURCES: Resource[] = [
 
   // Housing
   { name: "Good Samaritan Ministries", category: "Housing", address: "513 E. 8th St, Holland", phone: "616-392-7159", info: "Housing Search Assistance, Rapid Re-housing, and CHP programs.", website: "https://www.gsministries.org" },
-  { name: "Gateway Mission", category: "Housing", address: "643 S Waverly Rd, Holland", phone: "616-396-2200", info: "Emergency shelter for men and long-term recovery programs.", website: "https://www.gatewaymission.org" },
-  { name: "Gateway Mission Women & Children's Center", category: "Housing", address: "356 Fairbanks Ave, Holland", phone: "616-396-2200", info: "Specialized residential recovery program for women and children seeking housing and support services.", website: "https://www.gatewaymission.org" },
+  { name: "Gateway Mission", category: "Housing", address: "643 S Waverly Rd, Holland", phone: "616-396-2200", info: "Emergency shelter for men and long-term recovery programs.", website: "https://hopefoundhere.org" },
+  { name: "Gateway Mission Women & Children's Center", category: "Housing", address: "356 Fairbanks Ave, Holland", phone: "616-396-2200", info: "Specialized residential recovery program for women and children seeking housing and support services.", website: "https://hopefoundhere.org" },
   { name: "Community Action House", category: "Housing", address: "345 W. 14th St, Holland", phone: "616-392-2368", info: "Permanent supportive housing services.", website: "https://www.chservices.org" },
-  { name: "My House Ministry", category: "Housing", address: "96 West 15th Street Suite 306, Holland", phone: "616-953-0772", info: "Housing & restorative programs for women/children of domestic violence.", website: "https://www.myhouseministrymi.org" },
+  { name: "My House Ministry", category: "Housing", address: "96 West 15th Street Suite 306, Holland", phone: "616-953-0772", info: "Housing & restorative programs for women/children of domestic violence.", website: "https://myhouseministry.org" },
   { name: "Building Men for Life", category: "Housing", address: "370 Country Club Road Suite 50, Holland", phone: "616-393-2188", info: "Recovery housing for men providing safe, structured living conditions for individuals in recovery. Includes peer support and certified recovery coaching.", website: "https://buildingmenforlife.com" },
-  { name: "Lakeshore Habitat for Humanity", category: "Housing", address: "12727 Riley St, Holland", phone: "616-393-8001", info: "Affordable homeownership and housing programs.", website: "https://www.lakeshorehabitat.org" },
   { name: "Good Samaritan", category: "Housing", address: "Holland area", phone: "616-392-7159", info: "Housing assistance and emergency support.", website: "https://www.gsministries.org" },
-  { name: "Degage Ministries - Women", category: "Housing", address: "144 S. Division Ave, Grand Rapids", phone: "616-454-1661", info: "Emergency shelter for women with work programs and ID assistance.", website: "https://www.degageministries.org" },
   { name: "Mel Trotter Ministries", category: "Housing", address: "225 Commerce Ave SW, Grand Rapids", phone: "616-454-8249", info: "Emergency shelter and recovery programs.", website: "https://www.meltrotter.org" },
-  { name: "Guiding Light Mission - Men", category: "Housing", address: "255 S. Division Ave, Grand Rapids", phone: "616-451-0236", info: "Emergency shelter for men with work programs.", website: "https://www.guidinglightmission.org" },
   { name: "Muskegon Rescue Mission", category: "Housing", address: "400 W. Laketon Ave, Muskegon", phone: "231-727-6085", info: "Emergency shelter. Need picture ID and min. age 18.", website: "https://www.muskegonrescuemission.org" },
-  { name: "Safe Families for Children", category: "Housing", address: "901 Eastern Ave NE, Grand Rapids", phone: "1-855-273-7233", info: "Host homes for children of homeless parents. Average 45-day stay.", website: "https://www.safefamilies.org" },
+  { name: "Arbor Circle - The Bridge", category: "Housing", address: "1115 Ball Ave NE, Grand Rapids", phone: "616-451-3001", info: "Shelter and basic needs services for youth ages 10-17 years old.", website: "https://arborcircle.org/help/the-bridge/" },
+  { name: "70x7 Life Recovery", category: "Housing", address: "97 W. 22nd St, Holland", phone: "616-796-0685", info: "Sober living and post-incarceration housing programs.", website: "https://70x7liferecovery.org/program/housing/" },
 
   // Health Care
   { name: "Maternal Infant Health Program Holland", category: "Health Care", address: "12251 James St, Holland", phone: "616-396-5266", info: "Maternal and infant health services.", website: "https://www.cmhoc.org" },
