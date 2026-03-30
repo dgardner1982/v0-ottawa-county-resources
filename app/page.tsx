@@ -78,10 +78,9 @@ const RESOURCES: Resource[] = [
   // Substance Recovery
   { name: "Reach for Recovery - Holland", category: "Substance Recovery", address: "483 Century Lane, Holland", phone: "616-396-5284", info: "Comprehensive outpatient and residential programs.", website: "https://reachforrecovery.org" },
   { name: "Reach for Recovery - Grand Haven", category: "Substance Recovery", address: "700 Washington Ave #220, Grand Haven", phone: "616-842-6710", info: "Counseling and recovery community connection.", website: "https://reachforrecovery.org" },
-  { name: "Samaritas - Holland", category: "Substance Recovery", address: "Holland", phone: "Contact for details", info: "Substance use treatment and recovery services.", website: "https://www.samaritas.org" },
-  { name: "Samaritas - Grand Haven", category: "Substance Recovery", address: "Grand Haven", phone: "Contact for details", info: "Substance use treatment and recovery services.", website: "https://www.samaritas.org" },
-  { name: "Pathways/Arbor Circle", category: "Substance Recovery", address: "412 Century Lane, Holland", phone: "616-396-2301", info: "Substance recovery programs and support.", website: "https://pathwaysmichigan.org" },
-  { name: "Catholic Charities West Michigan", category: "Substance Recovery", address: "355 Settlers Rd, Holland", phone: "616-796-9595", info: "Adolescent substance recovery programs.", website: "https://ccwestmi.org" },
+  { name: "Samaritas - Holland", category: "Substance Recovery", address: "2416 Van Ommen Dr, Holland", phone: "616-350-7781", info: "Substance use treatment and recovery services.", website: "https://www.samaritas.org" },
+  { name: "Samaritas - Grand Haven", category: "Substance Recovery", address: "923 S Beechtree St Ste 10, Grand Haven", phone: "231-722-2400", info: "Substance use treatment and recovery services.", website: "https://www.samaritas.org" },
+  { name: "Chester Ray Center & Harbor House", category: "Substance Recovery", address: "Holland", phone: "616-396-5284", info: "Recovery programs operated by Reach for Recovery. Chester Ray Center and Harbor House provide comprehensive substance recovery and support services.", website: "https://reachforrecovery.org" },
   { name: "Pine Rest Spring Lake", category: "Substance Recovery", address: "17325 Van Wagoner Rd, Spring Lake", phone: "866-852-4001", info: "Substance recovery and mental health services.", website: "https://www.pinerest.org" },
   { name: "Mercy Health Life Counseling", category: "Substance Recovery", address: "125 E. Southern Ave, Muskegon", phone: "231-726-3582", info: "Counseling services. Walk-ins available.", website: "https://www.mercyhealth.org" },
   { name: "My House Ministry", category: "Substance Recovery", address: "96 West 15th St Suite 306, Holland", phone: "616-953-0772", info: "Transitional recovery housing for women and children.", website: "https://myhouseministry.org" },
@@ -152,23 +151,21 @@ const RESOURCES: Resource[] = [
 
   // Senior Services
   { name: "The Little Red House", category: "Senior Services", address: "311 E. Exchange St, Spring Lake", phone: "616-846-5720", info: "Adult day care for elderly. M-F 7a-6p. Hourly rate includes meals.", website: "https://www.thelittleredhouse.org" },
-  { name: "Senior Resources", category: "Senior Services", address: "560 Seminole Rd, Muskegon", phone: "231-733-8655", info: "Senior services for North Ottawa County. Toll Free: 1-800-442-0054.", website: "https://www.seniorresources.org" },
-  { name: "Daybreak Norton Shores", category: "Senior Services", address: "572 Lake Forest Lane, Norton Shores", phone: "231-206-0690", info: "Adult day care center. M-F 8a-5p.", website: "https://www.daybreakadultdaycare.org" },
-  { name: "Life Circles (PACE Partnership) South", category: "Senior Services", address: "12330 James St H-10, Holland", phone: "616-582-3114", info: "Senior care coordination and support.", website: "https://www.lifecircles.org" },
+  { name: "Senior Resources", category: "Senior Services", address: "560 Seminole Rd, Muskegon", phone: "231-733-8655", info: "Senior services for North Ottawa County. Toll Free: 1-800-442-0054.", website: "https://www.seniorresourceswmi.org" },
+  { name: "Life Circles (PACE Partnership) South", category: "Senior Services", address: "12330 James St H-10, Holland", phone: "616-582-3114", info: "Senior care coordination and support.", website: "https://lifecircles-pace.org" },
   { name: "Evergreen Commons", category: "Senior Services", address: "55 West 16th St, Holland", phone: "616-355-5118", info: "Adult day care center. M-F 8a-4p.", website: "https://www.evergreencommons.org" },
-  { name: "Simmons Moka", category: "Senior Services", address: "444 32nd St, Holland", phone: "616-396-9049", info: "Adult day care center.", website: "https://www.simmonsmoka.org" },
   { name: "Four Pointes Center for Successful Aging", category: "Senior Services", address: "1051 S. Beacon Blvd, Grand Haven", phone: "616-842-9210", info: "Senior services. M-Th 9a-3p.", website: "https://www.fourpointessenior.org" },
-  { name: "CarePatrol of West MI Lakeshore", category: "Senior Services", address: "West Michigan", phone: "616-377-9572", info: "Senior placement for assisted/independent living, memory care, nursing homes.", website: "https://www.carepatrol.com" },
-  { name: "Senior Reach Ottawa County", category: "Senior Services", address: "Ottawa County", phone: "877-588-4357", info: "Services for adults 60 years old and older.", website: "https://www.miottawa.org" },
+  { name: "CarePatrol of West MI Lakeshore", category: "Senior Services", address: "West Michigan", phone: "(231) 683-2002", info: "Senior placement for assisted/independent living, memory care, nursing homes.", website: "https://carepatrol.com/west-michigan-lakeshore/" },
+  { name: "Senior Reach Ottawa County", category: "Senior Services", address: "Ottawa County", phone: "877-588-4357", info: "Services for adults 60 years old and older.", website: "https://miottawa.org/cmh/senior-reach/" },
 
   // Veteran Services
   { name: "Veterans Crisis Line", category: "Veteran Services", address: "National", phone: "1-800-273-8255 (press 1)", info: "Veteran crisis support available 24/7. Also text 838255.", website: "https://www.veteranscrisisline.net" },
-  { name: "Caption Call", category: "Veteran Services", address: "National", phone: "877-872-7260", info: "Phone services for persons with hearing loss.", website: "https://www.captioncall.com" },
   { name: "West Michigan Veterans Assistance Program", category: "Veteran Services", address: "620 Century Ave SW, Grand Rapids", phone: "Contact for details", info: "Food pantry, financial assistance, limited housing, education.", website: "https://www.wmvap.org" },
+  { name: "Ottawa County Veteran Services", category: "Veteran Services", address: "12251 James St, Holland", phone: "616-393-8387", info: "Comprehensive veteran support services and assistance programs.", website: "https://miottawa.org/veterans-services/" },
 
   // Transportation
-  { name: "Harbor Transit", category: "Transportation", address: "Grand Haven", phone: "616-842-3200", info: "Free public transportation. M-F 6a-6p, Sat 9a-4p, Sun 8a-12:30p (Advanced reservation).", website: "https://www.harboransportation.org" },
-  { name: "MAX Bus - Holland", category: "Transportation", address: "Holland", phone: "616-355-1025", info: "Free public bus transportation serving Holland. Route schedules and real-time information available.", website: "https://www.maxbus.org" },
+  { name: "Harbor Transit", category: "Transportation", address: "Grand Haven", phone: "616-842-3200", info: "Free public transportation. M-F 6a-6p, Sat 9a-4p, Sun 8a-12:30p (Advanced reservation).", website: "https://harbortransit.org" },
+  { name: "MAX Bus - Holland", category: "Transportation", address: "Holland", phone: "616-355-1025", info: "Free public bus transportation serving Holland. Route schedules and real-time information available.", website: "https://catchamax.org" },
 
   // Financial Resources
   { name: "Good Samaritan Ministries", category: "Financial Resources", address: "513 E. 8th St, Holland", phone: "616-392-7159", info: "Housing Search Assistance, Rapid Re-housing, and CHP programs.", website: "https://www.gsministries.org" },
