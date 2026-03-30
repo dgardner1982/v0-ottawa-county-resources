@@ -162,6 +162,7 @@ const RESOURCES: Resource[] = [
   // Veteran Services
   { name: "Veterans Crisis Line", category: "Veteran Services", address: "National", phone: "1-800-273-8255 (press 1)", info: "Veteran crisis support available 24/7. Also text 838255.", website: "https://www.veteranscrisisline.net" },
   { name: "West Michigan Veterans Assistance Program", category: "Veteran Services", address: "620 Century Ave SW, Grand Rapids", phone: "Contact for details", info: "Food pantry, financial assistance, limited housing, education.", website: "https://www.wmvap.org" },
+  { name: "Ottawa County Veteran Services", category: "Veteran Services", address: "12251 James St, Holland", phone: "616-393-8387", info: "Comprehensive veteran support services and assistance programs.", website: "https://miottawa.org/veterans-services/" },
 
   // Transportation
   { name: "Harbor Transit", category: "Transportation", address: "Grand Haven", phone: "616-842-3200", info: "Free public transportation. M-F 6a-6p, Sat 9a-4p, Sun 8a-12:30p (Advanced reservation).", website: "https://harbortransit.org" },
