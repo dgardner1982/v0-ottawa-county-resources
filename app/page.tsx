@@ -55,8 +55,8 @@ const RESOURCES: Resource[] = [
   { name: "Overdose Prevention Training", category: "Overdose Prevention", address: "", phone: "616-416-0860", info: "Overdose Prevention and Naloxone Training. To schedule a free overdose prevention training for yourself or your organization contact Daniel at dgardner@miottawa.org or call 616-416-0860." },
 
   // Harm Reduction
-  { name: "Grand Rapids Red Project", category: "Harm Reduction", address: "401 Hall St SE, Grand Rapids, MI 49507", phone: "616-456-9063", info: "Comprehensive harm reduction services and support.", website: "https://www.grredproject.org" },
-  { name: "Grand Rapids Red Project Mobile Health Unit", category: "Harm Reduction", address: "Friday Afternoons 1-4pm outside of Skipp's Pharmacy, Holland", phone: "616-456-9063", info: "Harm Reduction Services available through the mobile health unit.", website: "https://www.grredproject.org" },
+  { name: "Grand Rapids Red Project", category: "Harm Reduction", address: "401 Hall St SE, Grand Rapids, MI 49507", phone: "616-456-9063", info: "Comprehensive harm reduction services and support.", website: "https://www.redproject.org" },
+  { name: "Grand Rapids Red Project Mobile Health Unit", category: "Harm Reduction", address: "Friday Afternoons 1-4pm outside of Skipp's Pharmacy, Holland", phone: "616-456-9063", info: "Harm Reduction Services available through the mobile health unit.", website: "https://www.redproject.org" },
 
   // Mental Health
   { name: "Community Mental Health of Ottawa County - Holland", category: "Mental Health", address: "12265 James St, Holland", phone: "616-392-1873", info: "Main entry for mental health and IDD services. Includes 24/7 crisis support.", website: "https://www.cmhoc.org" },
