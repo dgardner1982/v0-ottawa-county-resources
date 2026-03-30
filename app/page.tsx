@@ -152,14 +152,12 @@ const RESOURCES: Resource[] = [
 
   // Senior Services
   { name: "The Little Red House", category: "Senior Services", address: "311 E. Exchange St, Spring Lake", phone: "616-846-5720", info: "Adult day care for elderly. M-F 7a-6p. Hourly rate includes meals.", website: "https://www.thelittleredhouse.org" },
-  { name: "Senior Resources", category: "Senior Services", address: "560 Seminole Rd, Muskegon", phone: "231-733-8655", info: "Senior services for North Ottawa County. Toll Free: 1-800-442-0054.", website: "https://www.seniorresources.org" },
-  { name: "Daybreak Norton Shores", category: "Senior Services", address: "572 Lake Forest Lane, Norton Shores", phone: "231-206-0690", info: "Adult day care center. M-F 8a-5p.", website: "https://www.daybreakadultdaycare.org" },
-  { name: "Life Circles (PACE Partnership) South", category: "Senior Services", address: "12330 James St H-10, Holland", phone: "616-582-3114", info: "Senior care coordination and support.", website: "https://www.lifecircles.org" },
+  { name: "Senior Resources", category: "Senior Services", address: "560 Seminole Rd, Muskegon", phone: "231-733-8655", info: "Senior services for North Ottawa County. Toll Free: 1-800-442-0054.", website: "https://www.seniorresourceswmi.org" },
+  { name: "Life Circles (PACE Partnership) South", category: "Senior Services", address: "12330 James St H-10, Holland", phone: "616-582-3114", info: "Senior care coordination and support.", website: "https://lifecircles-pace.org" },
   { name: "Evergreen Commons", category: "Senior Services", address: "55 West 16th St, Holland", phone: "616-355-5118", info: "Adult day care center. M-F 8a-4p.", website: "https://www.evergreencommons.org" },
-  { name: "Simmons Moka", category: "Senior Services", address: "444 32nd St, Holland", phone: "616-396-9049", info: "Adult day care center.", website: "https://www.simmonsmoka.org" },
   { name: "Four Pointes Center for Successful Aging", category: "Senior Services", address: "1051 S. Beacon Blvd, Grand Haven", phone: "616-842-9210", info: "Senior services. M-Th 9a-3p.", website: "https://www.fourpointessenior.org" },
-  { name: "CarePatrol of West MI Lakeshore", category: "Senior Services", address: "West Michigan", phone: "616-377-9572", info: "Senior placement for assisted/independent living, memory care, nursing homes.", website: "https://www.carepatrol.com" },
-  { name: "Senior Reach Ottawa County", category: "Senior Services", address: "Ottawa County", phone: "877-588-4357", info: "Services for adults 60 years old and older.", website: "https://www.miottawa.org" },
+  { name: "CarePatrol of West MI Lakeshore", category: "Senior Services", address: "West Michigan", phone: "(231) 683-2002", info: "Senior placement for assisted/independent living, memory care, nursing homes.", website: "https://carepatrol.com/west-michigan-lakeshore/" },
+  { name: "Senior Reach Ottawa County", category: "Senior Services", address: "Ottawa County", phone: "877-588-4357", info: "Services for adults 60 years old and older.", website: "https://miottawa.org/cmh/senior-reach/" },
 
   // Veteran Services
   { name: "Veterans Crisis Line", category: "Veteran Services", address: "National", phone: "1-800-273-8255 (press 1)", info: "Veteran crisis support available 24/7. Also text 838255.", website: "https://www.veteranscrisisline.net" },
