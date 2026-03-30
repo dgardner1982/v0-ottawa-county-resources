@@ -161,7 +161,6 @@ const RESOURCES: Resource[] = [
 
   // Veteran Services
   { name: "Veterans Crisis Line", category: "Veteran Services", address: "National", phone: "1-800-273-8255 (press 1)", info: "Veteran crisis support available 24/7. Also text 838255.", website: "https://www.veteranscrisisline.net" },
-  { name: "Caption Call", category: "Veteran Services", address: "National", phone: "877-872-7260", info: "Phone services for persons with hearing loss.", website: "https://www.captioncall.com" },
   { name: "West Michigan Veterans Assistance Program", category: "Veteran Services", address: "620 Century Ave SW, Grand Rapids", phone: "Contact for details", info: "Food pantry, financial assistance, limited housing, education.", website: "https://www.wmvap.org" },
 
   // Transportation
