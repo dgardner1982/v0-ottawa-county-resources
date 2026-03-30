@@ -55,8 +55,8 @@ const RESOURCES: Resource[] = [
   { name: "Overdose Prevention Training", category: "Overdose Prevention", address: "", phone: "616-416-0860", info: "Overdose Prevention and Naloxone Training. To schedule a free overdose prevention training for yourself or your organization contact Daniel at dgardner@miottawa.org or call 616-416-0860." },
 
   // Harm Reduction
-  { name: "Grand Rapids Red Project", category: "Harm Reduction", address: "401 Hall St SE, Grand Rapids, MI 49507", phone: "616-456-9063", info: "Comprehensive harm reduction services and support.", website: "https://www.grredproject.org" },
-  { name: "Grand Rapids Red Project Mobile Health Unit", category: "Harm Reduction", address: "Friday Afternoons 1-4pm outside of Skipp's Pharmacy, Holland", phone: "616-456-9063", info: "Harm Reduction Services available through the mobile health unit.", website: "https://www.grredproject.org" },
+  { name: "Grand Rapids Red Project", category: "Harm Reduction", address: "401 Hall St SE, Grand Rapids, MI 49507", phone: "616-456-9063", info: "Comprehensive harm reduction services and support.", website: "https://www.redproject.org" },
+  { name: "Grand Rapids Red Project Mobile Health Unit", category: "Harm Reduction", address: "Friday Afternoons 1-4pm outside of Skipp's Pharmacy, Holland", phone: "616-456-9063", info: "Harm Reduction Services available through the mobile health unit.", website: "https://www.redproject.org" },
 
   // Mental Health
   { name: "Community Mental Health of Ottawa County - Holland", category: "Mental Health", address: "12265 James St, Holland", phone: "616-392-1873", info: "Main entry for mental health and IDD services. Includes 24/7 crisis support.", website: "https://www.cmhoc.org" },
@@ -109,7 +109,7 @@ const RESOURCES: Resource[] = [
   { name: "Harvest Stand Ministries", category: "Food", address: "100 Pine St Ste 100, Zeeland", phone: "616-748-6003", info: "Food pantry. M 9a-3p, W 1p-6p, Th 9a-12p. By appointment.", website: "https://harveststandministries.org" },
   { name: "Lakeshore Habitat for Humanity", category: "Food", address: "12727 Riley St, Holland", phone: "616-393-8001", info: "Community resources and support.", website: "https://www.lakeshorehabitat.org" },
   { name: "MI Bridges", category: "Food", address: "State Program", phone: "1-888-544-8773", info: "State food assistance program.", website: "https://www.michigan.gov/mibridges" },
-  { name: "F.O.R. (Food and Other Resources)", category: "Food", address: "Statewide", phone: "1-888-544-8773", info: "Food and other resource assistance.", website: "https://www.michigan.gov/mibridges" },
+  { name: "Ottawa Foods", category: "Food", address: "12251 James Street, Suite 400, Holland, MI 49424", phone: "616-393-5791", info: "Connect people to food resources and community support services.", website: "https://www.ottawafood.org" },
 
   // Housing
   { name: "Good Samaritan Ministries", category: "Housing", address: "513 E. 8th St, Holland", phone: "616-392-7159", info: "Housing Search Assistance, Rapid Re-housing, and CHP programs.", website: "https://www.gsministries.org" },
@@ -132,12 +132,25 @@ const RESOURCES: Resource[] = [
   { name: "Maternal Infant Health Program Hudsonville", category: "Health Care", address: "3100 Port Sheldon, Hudsonville", phone: "616-669-0040", info: "Maternal and infant health services.", website: "https://www.cmhoc.org" },
   { name: "Family Life Center Home", category: "Health Care", address: "Allendale", phone: "616-895-8336", info: "Housing and support for pregnant women 18+. Baby supplies provided. 24-hour emergency.", website: "https://familylifecenter.org" },
   { name: "Ottawa Pathways to Better Health", category: "Health Care", address: "Ottawa County", phone: "616-393-5601", info: "Comprehensive health pathway services.", website: "https://www.miottawa.org" },
-  { name: "The Community Health Center", category: "Health Care", address: "336 S. River Ave, Holland", phone: "616-394-3788", info: "Primary and preventive health care. M-F 8a-5p.", website: "https://www.thechc.org" },
+  { name: "The Community Health Center", category: "Health Care", address: "336 S. River Ave, Holland", phone: "616-394-3788", info: "Primary and preventive health care. M-F 8a-5p.", website: "https://www.hollandcommunityhealthcenter.org" },
+  { name: "Ottawa County Department of Public Health", category: "Health Care", address: "12251 James St, Holland, MI 49424", phone: "616-396-5266", info: "Essential public health services including immunizations, environmental health monitoring, and community health screenings.", website: "https://www.miottawa.org/health" },
+  { name: "InterCare Community Health Network", category: "Health Care", address: "285 James St, Holland, MI 49424", phone: "855-869-6900", info: "Primary care provider offering medical, dental, and mental health services with a focus on underserved populations and migrant health.", website: "https://www.intercare.org" },
+  { name: "Holland Free Health Clinic", category: "Health Care", address: "99 W 26th St, Holland, MI 49423", phone: "616-392-3610", info: "Offers free medical, dental, and vision services to uninsured and underinsured residents who meet specific income guidelines.", website: "https://www.hfhclinic.org" },
+  { name: "City on the Hill Health Clinic", category: "Health Care", address: "100 Pine St, Zeeland, MI 49464", phone: "616-748-6060", info: "Provides free non-emergency medical care and counseling services through a team of volunteer professionals.", website: "https://www.cityonthehill.org" },
+  { name: "Love in Action Medical Clinic", category: "Health Care", address: "326 N Ferry St, Grand Haven, MI 49417", phone: "616-846-2701", info: "Provides urgent and primary medical and dental care for the Tri-Cities community.", website: "https://www.loveinactiontricities.org" },
 
   // Employment Services
   { name: "Manpower", category: "Employment", address: "12331 James Street, Unit 30, Holland", phone: "616-748-2000", info: "Employment services and job placement. M-F 8a-5p, Sa 8:45a-12:30p.", website: "https://www.manpowergroup.com" },
   { name: "Michigan Rehabilitation Services", category: "Employment", address: "121 Clover Street, Holland", phone: "616-395-8495", info: "Vocational rehabilitation services.", website: "https://www.michigan.gov/mrs" },
-  { name: "West Michigan Works", category: "Employment", address: "121 Clover Street, Holland", phone: "616-396-2154", info: "Employment and training services. M-F 8a-5p.", website: "https://www.westmichiganworks.org" },
+  { name: "West Michigan Works", category: "Employment", address: "121 Clover Street, Holland", phone: "616-396-2154", info: "Employment and training services. M-F 8a-5p.", website: "https://westmiworks.org" },
+  { name: "Gill Staffing", category: "Employment", address: "12470 Felch St, Holland", phone: "616-396-1201", info: "Staffing and employment services.", website: "https://www.gillstaffing.com" },
+  { name: "Workforce Employment Specialists", category: "Employment", address: "200 W 17th St, Holland", phone: "616-396-5557", info: "Employment placement and staffing solutions.", website: "https://www.teamworkforce.com" },
+  { name: "Fettig Jobs", category: "Employment", address: "11449 James St, Holland", phone: "616-335-6770", info: "Employment services and job placement.", website: "https://www.fettig.jobs" },
+  { name: "Workbox Staffing", category: "Employment", address: "100 S Harbor Dr, Grand Haven", phone: "616-844-0131", info: "Staffing and employment solutions.", website: "https://www.workboxstaffing.com" },
+  { name: "WSI (Workforce Strategies)", category: "Employment", address: "12972 James St, Ste 40, Holland", phone: "616-325-1880", info: "Workforce development and employment strategies.", website: "https://www.wsitalent.com" },
+  { name: "Coastal Careers", category: "Employment", address: "12656 Felch St, Holland", phone: "616-355-2244", info: "Career placement and staffing services.", website: "https://www.coastalcareersinc.com" },
+  { name: "Cardinal Staffing", category: "Employment", address: "12330 James St, Ste H80, Holland", phone: "616-394-9100", info: "Employment staffing and placement services.", website: "https://www.cardinalstaffing.com" },
+  { name: "WorkSolved", category: "Employment", address: "240 S River Ave, Holland", phone: "616-283-7521", info: "Employment solutions and staffing services.", website: "https://www.worksolved.com" },
 
   // Senior Services
   { name: "The Little Red House", category: "Senior Services", address: "311 E. Exchange St, Spring Lake", phone: "616-846-5720", info: "Adult day care for elderly. M-F 7a-6p. Hourly rate includes meals.", website: "https://www.thelittleredhouse.org" },
@@ -161,8 +174,12 @@ const RESOURCES: Resource[] = [
 
   // Financial Resources
   { name: "Good Samaritan Ministries", category: "Financial Resources", address: "513 E. 8th St, Holland", phone: "616-392-7159", info: "Housing Search Assistance, Rapid Re-housing, and CHP programs.", website: "https://www.gsministries.org" },
-  { name: "Community Action Agency", category: "Financial Resources", address: "Ottawa County", phone: "616-393-4433", info: "Financial assistance and support services for low-income families.", website: "https://www.communityactionagency.org" },
+  { name: "Community Action Agency", category: "Financial Resources", address: "Ottawa County", phone: "616-393-4433", info: "Financial assistance and support services for low-income families.", website: "https://www.miottawa.org/caa" },
   { name: "The Salvation Army", category: "Financial Resources", address: "310 N. Despelder St, Grand Haven", phone: "616-842-3380 ext 200", info: "Financial assistance including rent and utilities. M-F 9a-4p.", website: "https://www.salvationarmyusa.org" },
+  { name: "Michigan Department of Health & Human Services (MDHHS)", category: "Financial Resources", address: "Michigan", phone: "616-394-7200", info: "Cash assistance, State Emergency Relief (SER) for housing/utilities, and food assistance (SNAP).", website: "https://www.newmibridges.michigan.gov/s/isd-landing-page?language=en_US" },
+  { name: "Love in Action (Tri-Cities)", category: "Financial Resources", address: "326 N Ferry St, Grand Haven, MI 49417", phone: "616-846-2701", info: "Financial assistance for rent or medical bills and financial wellness coaching.", website: "https://www.loveinactiontricities.org" },
+  { name: "Community Action House", category: "Financial Resources", address: "739 Paw Paw Dr, Holland, MI 49423", phone: "616-392-2368", info: "Foreclosure intervention and financial wellness coaching.", website: "https://www.communityactionhouse.org" },
+  { name: "Love INC Allendale", category: "Financial Resources", address: "6633 Lake Michigan Dr, Allendale, MI 49401", phone: "616-895-5683", info: "Local assistance and coordination for residents in Allendale.", website: "https://www.loveincofneottawa.org" },
 
   // Miscellaneous
   { name: "St. John's Episcopal Church", category: "Miscellaneous", address: "524 Washington Ave, Grand Haven", phone: "616-842-6260 ext 21", info: "Food pantry, washer/dryer, shower (M-Th 10a-2p). Hot meals Wed 5:30p-6:15p & Sun 1p-1:45p.", website: "https://www.stjohnsgh.org" },
