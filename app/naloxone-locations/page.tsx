@@ -40,6 +40,13 @@ export default function NaloxoneLocations() {
       phone: "616-350-7781",
       hours: "Call for hours",
       details: "Free Naloxone kits available."
+    },
+    {
+      name: "Sobar Recovery Community Center",
+      address: "347 Hoover Blvd, Holland, MI 49423",
+      phone: "(616) 377-5792",
+      hours: "24 hour access",
+      details: "Free Naloxone kits available in newspaper box outside main entrance"
     }
   ];
 
