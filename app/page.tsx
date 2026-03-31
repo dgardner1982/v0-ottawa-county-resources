@@ -72,7 +72,8 @@ const RESOURCES: Resource[] = [
   { name: "Beacon of Hope Christian Counseling Grandville", category: "Mental Health", address: "6265 8th Ave, Grandville", phone: "616-594-5380", info: "Christian counseling services.", website: "https://beaconofhopecc.org" },
   { name: "Bethany Christian Services Holland", category: "Mental Health", address: "11335 James St, Holland", phone: "616-396-0623", info: "Christian counseling and services. M-Th 10a-9p, F 10a-3p.", website: "https://www.bethanycc.org" },
   { name: "Bethany Christian Services Grand Haven", category: "Mental Health", address: "1475 Robbins Rd, Grand Haven", phone: "616-396-0623", info: "Christian counseling and services. M-Th 9a-8p.", website: "https://www.bethanycc.org" },
-  { name: "Mosaic Counseling", category: "Mental Health", address: "1703 S. Despelder St., Grand Haven", phone: "616-842-9160", info: "Professional counseling. M-F 9a-4p.", website: "https://mosaiccounseling.org" },
+  { name: "Mosaic Counseling - Grand Haven", category: "Mental Health", address: "1703 S. Despelder St., Grand Haven", phone: "616-842-9160", info: "Professional counseling. M-F 9a-4p.", website: "https://mosaiccounseling.com" },
+  { name: "Mosaic Counseling - Holland", category: "Mental Health", address: "503 Century Ln, Holland, MI 49423", phone: "616-842-9160", info: "Professional counseling. M-F 9a-4p.", website: "https://mosaiccounseling.com" },
   { name: "Trinity Health Hospital ER", category: "Mental Health", address: "1500 E. Sherman Blvd., Muskegon", phone: "231-672-2000", info: "Secured psychiatric facility emergency services.", website: "https://www.trinity-health.org" },
   
   // Substance Recovery
