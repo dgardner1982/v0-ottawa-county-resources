@@ -7,25 +7,11 @@ import { Footer } from '@/components/footer';
 export default function NaloxoneLocations() {
   const locations = [
     {
-      name: "Ottawa County Health Department",
+      name: "Ottawa County Jail",
       address: "12220 Fillmore Ave, West Olive, MI 49426",
-      phone: "616-393-5601",
+      phone: "616-786-4140",
       hours: "M-F 8a-5p",
       details: "Naloxone kits available for free distribution. Training provided."
-    },
-    {
-      name: "Holland Community Health Center",
-      address: "336 S. River Ave, Holland, MI 49423",
-      phone: "616-394-3788",
-      hours: "M-F 8a-5p",
-      details: "Free naloxone distribution and overdose prevention education available."
-    },
-    {
-      name: "The Community Health Center",
-      address: "336 S. River Ave, Holland, MI 49423",
-      phone: "616-394-3788",
-      hours: "M-F 8a-5p",
-      details: "Naloxone kits available at no cost with training."
     },
     {
       name: "Community Mental Health of Ottawa County - Holland",
@@ -40,13 +26,6 @@ export default function NaloxoneLocations() {
       phone: "616-396-5284",
       hours: "Call for hours",
       details: "Naloxone kits, training, and harm reduction support available."
-    },
-    {
-      name: "Emergency Room - Trinity Health Hospital",
-      address: "1500 E. Sherman Blvd., Muskegon, MI 49444",
-      phone: "231-672-2000",
-      hours: "24/7",
-      details: "Emergency naloxone administration available in emergency situations."
     }
   ];
 
