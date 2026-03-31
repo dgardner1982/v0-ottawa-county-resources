@@ -10,36 +10,36 @@ export default function NaloxoneLocations() {
       name: "Ottawa County Jail - Lobby",
       address: "12220 Fillmore Ave, West Olive, MI 49426",
       phone: "616-786-4140",
-      hours: "M-F 8a-5p",
-      details: "Naloxone kits available for free distribution. Training provided."
+      hours: "24 hour access",
+      details: "Naloxone kits available for free in jail lobby in vending machine"
     },
     {
       name: "Community Mental Health of Ottawa County - Holland",
       address: "347 Hoover Blvd, Holland, MI 49423",
       phone: "616-393-4489",
       hours: "Call for hours",
-      details: "Available for emergency naloxone distribution and crisis intervention."
+      details: "Free Naloxone kits available."
     },
     {
       name: "Reach for Recovery - Holland",
       address: "483 Century Lane, Holland, MI 49424",
       phone: "616-396-5284",
-      hours: "Call for hours",
-      details: "Naloxone kits and training available."
+      hours: "M-F 8a-5p",
+      details: "Free Naloxone Kits available."
     },
     {
       name: "Reach for Recovery - Grand Haven",
       address: "420 Washington Ave, Grand Haven, MI 49417",
       phone: "616-842-2420",
-      hours: "Call for hours",
-      details: "Naloxone kits and training available."
+      hours: "M-F 8a-5p",
+      details: "Free Naloxone Kits available."
     },
     {
       name: "Samaritas",
       address: "2416 Van Ommen Dr, Holland, MI 49424",
       phone: "616-350-7781",
       hours: "Call for hours",
-      details: "Naloxone distribution and overdose prevention services available."
+      details: "Free Naloxone kits available."
     }
   ];
 
@@ -85,6 +85,7 @@ export default function NaloxoneLocations() {
 
         <div className="bg-green-50 border-l-4 border-green-600 p-6 rounded-lg mb-8">
           <h2 className="text-2xl font-bold text-green-700 mb-4">Interested in being trained on naloxone administration?</h2>
+          <p className="text-gray-700 mb-4">Learn to recognize the signs and symptoms of overdose, risk factors from overdose and responding to an overdose with naloxone.</p>
           <p className="text-gray-700 mb-4">To schedule a naloxone training, contact:</p>
           <div className="bg-white p-4 rounded border border-green-200">
             <p className="font-bold text-gray-800 mb-2">Daniel Gardner</p>
@@ -131,9 +132,10 @@ export default function NaloxoneLocations() {
           <ol className="space-y-3 text-gray-700 list-decimal list-inside">
             <li>Call 911 immediately</li>
             <li>If naloxone is available, administer it (nasal spray or injection into outer thigh muscle)</li>
-            <li>Place person in recovery position (on their side) if unconscious</li>
+            <li>Give rescue breathing for 3 minutes (1 breath every 5 seconds)</li>
+            <li>If person has not responded, administer second dose of naloxone and continue rescue breathing</li>
+            <li>If individual responds to the naloxone, place person in recovery position (on their side)</li>
             <li>Stay with the person until emergency responders arrive</li>
-            <li>Be prepared to repeat naloxone after 2-3 minutes if needed</li>
             <li>Tell responders what was taken and when, if known</li>
           </ol>
           <p className="text-sm text-gray-600 mt-4 italic">Good Samaritan Laws protect people who call 911 for overdose emergencies. You will not get in trouble for seeking help.</p>
