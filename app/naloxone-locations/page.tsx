@@ -7,7 +7,7 @@ import { Footer } from '@/components/footer';
 export default function NaloxoneLocations() {
   const locations = [
     {
-      name: "Ottawa County Jail",
+      name: "Ottawa County Jail - Lobby",
       address: "12220 Fillmore Ave, West Olive, MI 49426",
       phone: "616-786-4140",
       hours: "M-F 8a-5p",
@@ -15,17 +15,31 @@ export default function NaloxoneLocations() {
     },
     {
       name: "Community Mental Health of Ottawa County - Holland",
-      address: "12265 James St, Holland, MI 49424",
-      phone: "616-392-1873",
-      hours: "24/7 Crisis Support",
+      address: "347 Hoover Blvd, Holland, MI 49423",
+      phone: "616-393-4489",
+      hours: "Call for hours",
       details: "Available for emergency naloxone distribution and crisis intervention."
     },
     {
-      name: "Reach for Recovery - Harm Reduction",
+      name: "Reach for Recovery - Holland",
       address: "483 Century Lane, Holland, MI 49424",
       phone: "616-396-5284",
       hours: "Call for hours",
-      details: "Naloxone kits, training, and harm reduction support available."
+      details: "Naloxone kits and training available."
+    },
+    {
+      name: "Reach for Recovery - Grand Haven",
+      address: "420 Washington Ave, Grand Haven, MI 49417",
+      phone: "616-842-2420",
+      hours: "Call for hours",
+      details: "Naloxone kits and training available."
+    },
+    {
+      name: "Samaritas",
+      address: "336 S. River Ave, Holland, MI 49423",
+      phone: "616-396-1371",
+      hours: "Call for hours",
+      details: "Naloxone distribution and overdose prevention services available."
     }
   ];
 
@@ -97,6 +111,22 @@ export default function NaloxoneLocations() {
               <p className="text-gray-700 text-sm border-t border-red-200 pt-3">{location.details}</p>
             </div>
           ))}
+        </div>
+
+        <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-lg mt-12">
+          <h2 className="text-2xl font-bold text-blue-700 mb-4">Interested in being trained on naloxone administration?</h2>
+          <p className="text-gray-700 mb-4">To schedule a naloxone training, contact:</p>
+          <div className="bg-white p-4 rounded border border-blue-200">
+            <p className="font-bold text-gray-800 mb-2">Daniel Gardner</p>
+            <p className="text-gray-700 mb-2">Community Mental Health of Ottawa County</p>
+            <p className="text-gray-700 mb-1">
+              <a href="mailto:dgardner@miottawa.org" className="text-blue-700 font-bold hover:underline">dgardner@miottawa.org</a>
+            </p>
+            <p className="text-gray-700 mb-3">
+              <a href="tel:616-393-4489" className="text-blue-700 font-bold hover:underline">616-393-4489</a>
+            </p>
+            <p className="text-gray-700 italic">We offer training for individuals, groups and businesses.</p>
+          </div>
         </div>
 
         <div className="bg-yellow-50 border-l-4 border-yellow-600 p-6 rounded-lg mt-12">
