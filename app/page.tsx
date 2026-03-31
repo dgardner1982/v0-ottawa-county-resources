@@ -52,7 +52,7 @@ function PhoneLink({ phoneNumber, displayText }: { phoneNumber: string; displayT
 const RESOURCES: Resource[] = [
   // Overdose Prevention
   { name: "Naloxone/Narcan", category: "Overdose Prevention", address: "Multiple locations", phone: "See Locations", info: "Naloxone (Narcan) is a life-saving medication to reverse opioid overdose. Free kits are available in Ottawa County. For a list of locations click below.", link: "/naloxone-locations" },
-  { name: "Overdose Prevention Training", category: "Overdose Prevention", address: "", phone: "616-416-0860", info: "Overdose Prevention and Naloxone Training. To schedule a free overdose prevention training for yourself or your organization contact Daniel at dgardner@miottawa.org or call 616-416-0860." },
+  { name: "Overdose Prevention Training", category: "Overdose Prevention", address: "", phone: "616-393-4489", info: "Overdose Prevention and Naloxone Training. To schedule a free overdose prevention training for yourself or your organization contact Daniel at dgardner@miottawa.org or call 616-393-4489." },
 
   // Harm Reduction
   { name: "Grand Rapids Red Project", category: "Harm Reduction", address: "401 Hall St SE, Grand Rapids, MI 49507", phone: "616-456-9063", info: "Comprehensive harm reduction services and support.", website: "https://www.redproject.org" },
