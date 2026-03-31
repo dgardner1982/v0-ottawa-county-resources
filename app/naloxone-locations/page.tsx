@@ -7,46 +7,46 @@ import { Footer } from '@/components/footer';
 export default function NaloxoneLocations() {
   const locations = [
     {
-      name: "Ottawa County Health Department",
+      name: "Ottawa County Jail - Lobby",
       address: "12220 Fillmore Ave, West Olive, MI 49426",
-      phone: "616-393-5601",
-      hours: "M-F 8a-5p",
-      details: "Naloxone kits available for free distribution. Training provided."
-    },
-    {
-      name: "Holland Community Health Center",
-      address: "336 S. River Ave, Holland, MI 49423",
-      phone: "616-394-3788",
-      hours: "M-F 8a-5p",
-      details: "Free naloxone distribution and overdose prevention education available."
-    },
-    {
-      name: "The Community Health Center",
-      address: "336 S. River Ave, Holland, MI 49423",
-      phone: "616-394-3788",
-      hours: "M-F 8a-5p",
-      details: "Naloxone kits available at no cost with training."
+      phone: "616-786-4140",
+      hours: "24 hour access",
+      details: "Naloxone kits available for free in jail lobby in vending machine."
     },
     {
       name: "Community Mental Health of Ottawa County - Holland",
-      address: "12265 James St, Holland, MI 49424",
-      phone: "616-392-1873",
-      hours: "24/7 Crisis Support",
-      details: "Available for emergency naloxone distribution and crisis intervention."
+      address: "347 Hoover Blvd, Holland, MI 49423",
+      phone: "616-393-4489",
+      hours: "M-F 8a-5p",
+      details: "Free Naloxone kits available."
     },
     {
-      name: "Reach for Recovery - Harm Reduction",
+      name: "Reach for Recovery - Holland",
       address: "483 Century Lane, Holland, MI 49424",
       phone: "616-396-5284",
-      hours: "Call for hours",
-      details: "Naloxone kits, training, and harm reduction support available."
+      hours: "M-F 8a-5p",
+      details: "Free Naloxone Kits available."
     },
     {
-      name: "Emergency Room - Trinity Health Hospital",
-      address: "1500 E. Sherman Blvd., Muskegon, MI 49444",
-      phone: "231-672-2000",
-      hours: "24/7",
-      details: "Emergency naloxone administration available in emergency situations."
+      name: "Reach for Recovery - Grand Haven",
+      address: "420 Washington Ave, Grand Haven, MI 49417",
+      phone: "616-842-2420",
+      hours: "M-F 8a-5p",
+      details: "Free Naloxone Kits available."
+    },
+    {
+      name: "Samaritas",
+      address: "2416 Van Ommen Dr, Holland, MI 49424",
+      phone: "616-350-7781",
+      hours: "Call for hours",
+      details: "Free Naloxone kits available."
+    },
+    {
+      name: "Sobar Recovery Community Center",
+      address: "347 Hoover Blvd, Holland, MI 49423",
+      phone: "(616) 377-5792",
+      hours: "24 hour access",
+      details: "Free Naloxone kits available in newspaper box outside main entrance."
     }
   ];
 
@@ -86,11 +86,25 @@ export default function NaloxoneLocations() {
               <span className="text-red-600 font-bold">•</span>
               <span>Available for free at all locations listed below</span>
             </li>
-            <li className="flex gap-3">
-              <span className="text-red-600 font-bold">•</span>
-              <span>Training is provided - you don't need medical experience to use it</span>
-            </li>
+
           </ul>
+        </div>
+
+        <div className="bg-green-50 border-l-4 border-green-600 p-6 rounded-lg mb-8">
+          <h2 className="text-2xl font-bold text-green-700 mb-4">Interested in being trained on naloxone administration?</h2>
+          <p className="text-gray-700 mb-4">Learn to recognize the signs and symptoms of overdose, risk factors from overdose and responding to an overdose with naloxone.</p>
+          <p className="text-gray-700 mb-4">To schedule a naloxone training, contact:</p>
+          <div className="bg-white p-4 rounded border border-green-200">
+            <p className="font-bold text-gray-800 mb-2">Daniel Gardner</p>
+            <p className="text-gray-700 mb-2">Community Mental Health of Ottawa County</p>
+            <p className="text-gray-700 mb-1">
+              <a href="mailto:dgardner@miottawa.org" className="text-green-700 font-bold hover:underline">dgardner@miottawa.org</a>
+            </p>
+            <p className="text-gray-700 mb-3">
+              <a href="tel:616-393-4489" className="text-green-700 font-bold hover:underline">616-393-4489</a>
+            </p>
+            <p className="text-gray-700 italic">We offer training for individuals, groups and businesses.</p>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -125,9 +139,10 @@ export default function NaloxoneLocations() {
           <ol className="space-y-3 text-gray-700 list-decimal list-inside">
             <li>Call 911 immediately</li>
             <li>If naloxone is available, administer it (nasal spray or injection into outer thigh muscle)</li>
-            <li>Place person in recovery position (on their side) if unconscious</li>
+            <li>Give rescue breathing for 3 minutes (1 breath every 5 seconds)</li>
+            <li>If person has not responded, administer second dose of naloxone and continue rescue breathing</li>
+            <li>If individual responds to the naloxone, place person in recovery position (on their side)</li>
             <li>Stay with the person until emergency responders arrive</li>
-            <li>Be prepared to repeat naloxone after 2-3 minutes if needed</li>
             <li>Tell responders what was taken and when, if known</li>
           </ol>
           <p className="text-sm text-gray-600 mt-4 italic">Good Samaritan Laws protect people who call 911 for overdose emergencies. You will not get in trouble for seeking help.</p>
