@@ -17,7 +17,7 @@ export default function NaloxoneLocations() {
       name: "Community Mental Health of Ottawa County - Holland",
       address: "347 Hoover Blvd, Holland, MI 49423",
       phone: "616-393-4489",
-      hours: "Call for hours",
+      hours: "M-F 8a-5p",
       details: "Free Naloxone kits available."
     },
     {
@@ -46,7 +46,7 @@ export default function NaloxoneLocations() {
       address: "347 Hoover Blvd, Holland, MI 49423",
       phone: "(616) 377-5792",
       hours: "24 hour access",
-      details: "Free Naloxone kits available in newspaper box outside main entrance"
+      details: "Free Naloxone kits available in newspaper box outside main entrance."
     }
   ];
 
