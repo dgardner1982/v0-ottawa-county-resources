@@ -11,7 +11,7 @@ export default function NaloxoneLocations() {
       address: "12220 Fillmore Ave, West Olive, MI 49426",
       phone: "616-786-4140",
       hours: "24 hour access",
-      details: "Naloxone kits available for free in jail lobby in vending machine"
+      details: "Naloxone kits available for free in jail lobby in vending machine."
     },
     {
       name: "Community Mental Health of Ottawa County - Holland",
