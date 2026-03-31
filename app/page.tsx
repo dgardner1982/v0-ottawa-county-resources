@@ -59,8 +59,8 @@ const RESOURCES: Resource[] = [
   { name: "Grand Rapids Red Project Mobile Health Unit", category: "Harm Reduction", address: "Friday Afternoons 1-4pm outside of Skipp's Pharmacy, Holland", phone: "616-456-9063", info: "Harm Reduction Services available through the mobile health unit.", website: "https://www.redproject.org" },
 
   // Mental Health
-  { name: "Community Mental Health of Ottawa County - Holland", category: "Mental Health", address: "12265 James St, Holland", phone: "616-392-1873", info: "Main entry for mental health and IDD services. Includes 24/7 crisis support.", website: "https://www.cmhoc.org" },
-  { name: "Community Mental Health of Ottawa County - Grand Haven", category: "Mental Health", address: "1111 Fulton St, Grand Haven", phone: "616-842-4357", info: "Outpatient clinical services for North Ottawa residents.", website: "https://www.cmhoc.org" },
+  { name: "Community Mental Health of Ottawa County - Holland", category: "Mental Health", address: "12265 James St, Holland", phone: "616-392-1873", info: "Main entry for mental health and IDD services. Includes 24/7 crisis support.", website: "https://miottawa.org/cmh/" },
+  { name: "Community Mental Health of Ottawa County - Grand Haven", category: "Mental Health", address: "1111 Fulton St, Grand Haven", phone: "616-842-4357", info: "Outpatient clinical services for North Ottawa residents.", website: "https://miottawa.org/cmh/" },
   { name: "988 Lifeline", category: "Mental Health", address: "National", phone: "988", info: "Suicide & Crisis Lifeline available 24/7 - call or text.", website: "https://988lifeline.org" },
   { name: "Crisis Text Line", category: "Mental Health", address: "National", phone: "Text HOME to 741741", info: "Crisis support via text message.", website: "https://www.crisistextline.org" },
   { name: "Ottawa Community Mental Health 24-Hour Helpline", category: "Mental Health", address: "Multiple locations", phone: "616-396-4357", info: "24-hour mental health crisis helpline.", website: "https://www.cmhoc.org" },
