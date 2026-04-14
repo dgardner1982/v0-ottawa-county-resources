@@ -111,7 +111,7 @@ const RESOURCES: Resource[] = [
   { name: "Christian Fellowship Assembly", category: "Food", address: "9930 64th Ave, Allendale", phone: "616-895-7614", info: "Food pantry and community meals.", website: "https://www.christianfellowshipassembly.org" },
   { name: "LOVE INC Allendale", category: "Food", address: "6633 Lake Michigan Dr, Allendale", phone: "616-895-5683", info: "Food pantry. M-F 9a-2p. Must bring photo ID and utility bill.", website: "https://loveincallegan.org" },
   { name: "Replenish GVSU Pantry", category: "Food", address: "Kirkhof Center 0074, Allendale", phone: "616-331-7867", info: "Food pantry for GVSU students only. M-F 12p-5p.", website: "https://www.gvsu.edu" },
-  { name: "Coopersville Cares", category: "Food", address: "180 68th Ave, Coopersville", phone: "616-997-8602", info: "Food pantry. M-Th 9a-2p. Pantry hours: Tu & Th 10a-12p, Tu 5:30p-6:30p.", website: "https://www.coopersvillecares.org" },
+  { name: "Coopersville Cares", category: "Food", address: "180 68th Ave N, Coopersville, MI 49404", phone: "616-997-8602", info: "Food pantry offering supplemental groceries and household essentials to local residents who meet income eligibility guidelines. Serves the Coopersville Public School district. M-Th 9a-2p, Food pantry: Tu & Th 10a-12p, Tu 5:30p-6:30p.", website: "https://coopersvillecares.org" },
   { name: "LOVE INC Grand Haven", category: "Food", address: "326 Ferry St, Grand Haven", phone: "616-846-2701", info: "Food pantry. M-F 9a-5p.", website: "https://loveincallegan.org" },
   { name: "The People Center", category: "Food", address: "307 E Exchange St, Spring Lake, MI 49456", phone: "(616) 844-6710", info: "Food pantry offering supplemental groceries to residents in the Spring Lake, Ferrysburg, and Grand Haven areas. M, W, F 11a-5p.", website: "https://www.thepeoplecenter.org" },
   { name: "St. John's Episcopal Church", category: "Food", address: "524 Washington Ave, Grand Haven", phone: "616-842-6260 ext 21", info: "Free take-home meals W 5:30p-6:30p, Sun 1p-2p.", website: "https://www.stjohnsgh.org" },
@@ -125,7 +125,7 @@ const RESOURCES: Resource[] = [
   { name: "Holland Drop In Center Mental Health Recovery", category: "Food", address: "636 Hastings Ave #120, Holland", phone: "616-355-2207", info: "Community meals and recovery support. M-Sat 9a-4p.", website: "https://www.hdic.org" },
   { name: "Ottawa Foods", category: "Food", address: "12251 James Street, Suite 400, Holland, MI 49424", phone: "616-393-5791", info: "Connect people to food resources and community support services.", website: "https://www.ottawafood.org" },
   { name: "Jehovah Jireh Ministries of West Michigan", category: "Food", address: "4055 VanBuren St, Hudsonville", phone: "616-209-7688", info: "Food pantry. W 11:30a-5:30p, Sat 8a-1p. Bring your own bags.", website: "https://jjministries.org" },
-  { name: "Love Your Neighbor", category: "Food", address: "3300 Van Buren St, Hudsonville", phone: "616-662-3300", info: "Food pantry and financial classes. M-F 9a-4p.", website: "https://loveyourneighbor.org" },
+  { name: "Love Your Neighbor (Love INC of Hudsonville)", category: "Food", address: "3300 Van Buren St, Hudsonville", phone: "616-662-3300", info: "Faith-based clearinghouse model coordinating church resources. Food pantry providing access to supplemental groceries and household essentials. Life Skills program and personal care items available. M-F 9a-4p.", website: "https://loveinchudsonville.org" },
   { name: "The People Center", category: "Food", address: "307 E. Exchange, Spring Lake", phone: "616-844-6710", info: "Food pantry. M & W 11a-3p. Call first for appointment.", website: "https://www.thepeoplecenter.org" },
   { name: "Harvest Stand Ministries", category: "Food", address: "100 Pine St Ste 100, Zeeland", phone: "616-748-6003", info: "Food pantry. M 9a-3p, W 1p-6p, Th 9a-12p. By appointment.", website: "https://harveststandministries.org" },
   { name: "Lakeshore Habitat for Humanity", category: "Food", address: "12727 Riley St, Holland", phone: "616-393-8001", info: "Community resources and support.", website: "https://www.lakeshorehabitat.org" },
@@ -151,6 +151,7 @@ const RESOURCES: Resource[] = [
   // Prenatal/Maternal
   { name: "Catholic Charities West Michigan", category: "Prenatal/Maternal", address: "456 Century Ln, Holland, MI 49423", phone: "(616) 796-9595", info: "Broad spectrum of family support services and point of distribution for child-related essentials including diapers, formula, and baby items.", website: "https://www.catholiccharitieswm.org" },
   { name: "Community Action House", category: "Prenatal/Maternal", address: "739 Paw Paw Dr, Holland, MI 49423", phone: "(616) 392-2368", info: "Community hub connecting families with essential supplies, nutrition, and maternal health programs. Hosts Help Me Grow: Play 'n Learn for birth to age 5, Chat & Chill support groups, Healthy@Home nutrition program, Food Club, and partnerships with Maternal Infant Health Program and Nestlings for diapers. M-F 9a-5p.", website: "https://www.communityactionhouse.org" },
+  { name: "Love INC of Hudsonville", category: "Prenatal/Maternal", address: "3300 Van Buren St, Hudsonville, MI 49426", phone: "(616) 662-3300", info: "Provides personal care items and infant essentials not typically covered by state assistance programs. Faith-based organization coordinating local church resources for families in need. M-F 9a-4p.", website: "https://loveinchudsonville.org" },
   { name: "Maternal Infant Health Program Grand Haven", category: "Prenatal/Maternal", address: "1207 S. Beechtree St., Grand Haven", phone: "616-846-8360", info: "Maternal and infant health services.", website: "https://www.cmhoc.org" },
   { name: "Maternal Infant Health Program Holland", category: "Prenatal/Maternal", address: "12251 James St, Holland", phone: "616-396-5266", info: "Maternal and infant health services.", website: "https://www.cmhoc.org" },
   { name: "Maternal Infant Health Program Hudsonville", category: "Prenatal/Maternal", address: "3100 Port Sheldon, Hudsonville", phone: "616-669-0040", info: "Maternal and infant health services.", website: "https://www.cmhoc.org" },
@@ -188,6 +189,7 @@ const RESOURCES: Resource[] = [
   { name: "Coastal Careers", category: "Employment", address: "12656 Felch St, Holland", phone: "616-355-2244", info: "Career placement and staffing services.", website: "https://www.coastalcareersinc.com" },
   { name: "Cardinal Staffing", category: "Employment", address: "12330 James St, Ste H80, Holland", phone: "616-394-9100", info: "Employment staffing and placement services.", website: "https://www.cardinalstaffing.com" },
   { name: "WorkSolved", category: "Employment", address: "240 S River Ave, Holland", phone: "616-283-7521", info: "Employment solutions and staffing services.", website: "https://www.worksolved.com" },
+  { name: "70x7 Life Recovery", category: "Employment", address: "97 W 22nd St, Holland, MI 49423", phone: "(616) 796-0685", info: "Specialized organization providing restoration and long-term support for individuals returning to the community after incarceration. Services include employment support with employer partnerships, mentorship, family support groups, life skills training, and housing assistance.", website: "https://70x7liferecovery.org" },
 
   // Senior Services
   { name: "The Little Red House", category: "Senior Services", address: "311 E. Exchange St, Spring Lake", phone: "616-846-5720", info: "Adult day care for elderly. M-F 7a-6p. Hourly rate includes meals.", website: "https://www.thelittleredhouse.org" },
@@ -210,17 +212,24 @@ const RESOURCES: Resource[] = [
   // Financial Resources
   { name: "Community Action Agency", category: "Financial Resources", address: "Ottawa County", phone: "616-393-4433", info: "Financial assistance and support services for low-income families.", website: "https://www.miottawa.org/caa" },
   { name: "Community Action House", category: "Financial Resources", address: "739 Paw Paw Dr, Holland, MI 49423", phone: "616-392-2368", info: "Foreclosure intervention and financial wellness coaching.", website: "https://www.communityactionhouse.org" },
+  { name: "Coopersville Cares", category: "Financial Resources", address: "180 68th Ave N, Coopersville, MI 49404", phone: "(616) 997-8602", info: "Emergency financial assistance for critical needs such as utility shut-off notices and rent assistance for those facing temporary crisis. Also provides food pantry, clothing center, and seasonal assistance programs. Serves the Coopersville Public School district. M-Th 9a-2p.", website: "https://coopersvillecares.org" },
   { name: "Good Samaritan Ministries", category: "Financial Resources", address: "513 E. 8th St, Holland", phone: "616-392-7159", info: "Housing Search Assistance, Rapid Re-housing, and CHP programs.", website: "https://www.gsministries.org" },
   { name: "Love INC Allendale", category: "Financial Resources", address: "6633 Lake Michigan Dr, Allendale, MI 49401", phone: "616-895-5683", info: "Local assistance and coordination for residents in Allendale.", website: "https://www.loveincofneottawa.org" },
   { name: "Love in Action (Tri-Cities)", category: "Financial Resources", address: "326 N Ferry St, Grand Haven, MI 49417", phone: "616-846-2701", info: "Financial assistance for rent or medical bills and financial wellness coaching.", website: "https://www.loveinactiontricities.org" },
   { name: "Michigan Department of Health & Human Services (MDHHS)", category: "Financial Resources", address: "Michigan", phone: "616-394-7200", info: "Cash assistance, State Emergency Relief (SER) for housing/utilities, and food assistance (SNAP).", website: "https://www.newmibridges.michigan.gov/s/isd-landing-page?language=en_US" },
   { name: "The People Center", category: "Financial Resources", address: "307 E Exchange St, Spring Lake, MI 49456", phone: "(616) 844-6710", info: "Financial assistance for emergency needs such as utility payments and other critical expenses. M, W, F 11a-5p.", website: "https://www.thepeoplecenter.org" },
   { name: "The Salvation Army", category: "Financial Resources", address: "310 N. Despelder St, Grand Haven", phone: "616-842-3380 ext 200", info: "Financial assistance including rent and utilities. M-F 9a-4p.", website: "https://www.salvationarmyusa.org" },
+  { name: "Love INC of Hudsonville", category: "Financial Resources", address: "3300 Van Buren St, Hudsonville, MI 49426", phone: "(616) 662-3300", info: "Faith-based clearinghouse coordinating church resources. Provides emergency financial assistance and Life Skills program with budgeting and financial wellness coaching. Participants can earn vouchers/credit toward essentials through program participation. M-F 9a-4p.", website: "https://loveinchudsonville.org" },
 
-  // Miscellaneous
-  { name: "St. John's Episcopal Church", category: "Miscellaneous", address: "524 Washington Ave, Grand Haven", phone: "616-842-6260 ext 21", info: "Food pantry, washer/dryer, shower (M-Th 10a-2p). Hot meals Wed 5:30p-6:15p & Sun 1p-1:45p.", website: "https://www.stjohnsgh.org" },
-  { name: "St. Patrick's Church", category: "Miscellaneous", address: "920 Fulton Ave, Grand Haven", phone: "616-842-0001", info: "Community services. M-F 8a-5p.", website: "https://www.stpatrickgh.org" },
-  { name: "Covenant Life Care Ministry", category: "Miscellaneous", address: "Ottawa County", phone: "616-847-2540", info: "Builds bunk beds and wheelchair ramps for those in need.", website: "https://www.covenantlifecare.org" },
+  // Clothing and Furniture
+  { name: "Coopersville Cares", category: "Clothing and Furniture", address: "180 68th Ave N, Coopersville, MI 49404", phone: "(616) 997-8602", info: "Clothing center maintaining a selection of affordable or free clothing items for children and adults. Serves the Coopersville Public School district. M-Th 9a-2p.", website: "https://coopersvillecares.org" },
+  { name: "The Salvation Army Holland", category: "Clothing and Furniture", address: "104 Clover St, Holland", phone: "616-392-4461", info: "Thrift store offering affordable clothing and household items. Available by appointment.", website: "https://www.salvationarmyusa.org" },
+  { name: "The Salvation Army Grand Haven", category: "Clothing and Furniture", address: "310 N Despelder St, Grand Haven", phone: "616-842-3380 ext 200", info: "Thrift store with clothing and household items. M-F 9a-3p.", website: "https://www.salvationarmyusa.org" },
+  { name: "Covenant Life Care Ministry", category: "Clothing and Furniture", address: "Ottawa County", phone: "616-847-2540", info: "Builds and provides bunk beds and furniture for those in need. Also constructs wheelchair ramps.", website: "https://www.covenantlifecare.org" },
+  { name: "Lakeshore Habitat for Humanity", category: "Clothing and Furniture", address: "12727 Riley St, Holland", phone: "616-393-8001", info: "Provides furniture and household goods through Re-Store locations. Community resources and support available.", website: "https://www.lakeshorehabitat.org" },
+  { name: "Love INC of Hudsonville", category: "Clothing and Furniture", address: "3300 Van Buren St, Hudsonville, MI 49426", phone: "(616) 662-3300", info: "Provides access to clothing, linens, and household furniture through Essential Resource Ministries. Faith-based clearinghouse coordinating local church resources for the Hudsonville, Jenison, and Grandville areas. M-F 9a-4p.", website: "https://loveinchudsonville.org" },
+
+  // Prenatal and Baby Resources
 
   // Government Services
   { name: "Secretary of State", category: "Government Services", address: "Multiple locations", phone: "1-888-SOS-MICH (767-6424)", info: "Holland: 587 E 8th St; Hudsonville: 5211 Cherry Ave; Grand Haven: 1110 Robbins Rd. M,T,Th,F 9a-5p, W 11a-7p.", website: "https://www.michigan.gov/sos" },
@@ -348,6 +357,42 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
             <div className="space-y-3 text-sm">
               <div className="bg-white p-4 rounded border-l-4 border-purple-600">
                 <p className="text-gray-700">You can specifically search for &ldquo;Second Chance&rdquo; employers or &ldquo;Returning Citizen&rdquo; resources. Filter for employers who utilize the Fidelity Bonding Program.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Agency 6: 70x7 Life Recovery */}
+          <div className="bg-purple-100 border-b-4 border-purple-500 rounded-lg p-6 shadow-md">
+            <div className="flex gap-2 mb-3 items-center">
+              <span className="text-3xl">💼</span>
+              <h3 className="text-2xl font-bold text-gray-900">70x7 Life Recovery</h3>
+            </div>
+            <p className="text-gray-700 mb-4 font-medium">Specialized organization providing restoration and long-term support for men and women returning to the community after incarceration.</p>
+            <div className="space-y-3 text-sm">
+              <div className="flex gap-3 items-start">
+                <MapPin size={18} className="text-purple-600 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold">Holland:</p>
+                  <p className="text-gray-700">97 W 22nd St, Holland, MI 49423</p>
+                </div>
+              </div>
+              <div className="flex gap-3 items-center">
+                <Phone size={18} className="text-purple-600 flex-shrink-0" />
+                <a href="tel:616-796-0685" className="text-purple-700 font-bold hover:underline">(616) 796-0685</a>
+              </div>
+              <div className="flex gap-3 items-center">
+                <Globe size={18} className="text-purple-600 flex-shrink-0" />
+                <a href="https://70x7liferecovery.org" target="_blank" rel="noopener noreferrer" className="text-purple-700 font-bold hover:underline">70x7liferecovery.org</a>
+              </div>
+              <div className="bg-white p-4 rounded mt-3 border-l-4 border-purple-600">
+                <p className="font-semibold text-gray-900 mb-2">Programs & Services:</p>
+                <ul className="text-gray-700 space-y-2">
+                  <li>• <strong>Employment Support:</strong> Partners with local employers to help graduates find stable, meaningful work</li>
+                  <li>• <strong>Stronger Together:</strong> Family support groups for loved ones impacted by incarceration</li>
+                  <li>• <strong>Mentorship:</strong> Connects participants with mentors for guidance and accountability</li>
+                  <li>• <strong>Life Skills & Classes:</strong> Programs like &ldquo;Take Charge&rdquo; for empowerment and practical skills</li>
+                  <li>• <strong>Housing & Basic Needs:</strong> Assists in finding stable housing and essential items</li>
+                </ul>
               </div>
             </div>
           </div>
