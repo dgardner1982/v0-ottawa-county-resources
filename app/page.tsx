@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Phone, MapPin, Globe } from 'lucide-react';
+import { Phone, MapPin, Globe, X } from 'lucide-react';
 import { Footer } from '@/components/footer';
 
 interface Resource {
@@ -227,9 +227,178 @@ const RESOURCES: Resource[] = [
   { name: "Social Security Administration", category: "Government Services", address: "657 Hastings Ave, Holland", phone: "1-877-223-6062", info: "Social security services. M-F 9a-4p.", website: "https://www.ssa.gov" },
 ];
 
+// Second Chance Employment Modal Component
+function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 z-[100] flex items-center justify-center p-4">
+      <div className="bg-white rounded-lg max-h-[90vh] overflow-y-auto w-full max-w-4xl shadow-2xl">
+        {/* Header */}
+        <div className="sticky top-0 bg-purple-600 text-white p-6 flex items-center justify-between border-b-4 border-purple-800">
+          <h2 className="text-3xl font-bold">Second Chance Employment Agencies</h2>
+          <button onClick={onClose} className="hover:bg-purple-700 p-2 rounded transition">
+            <X size={28} />
+          </button>
+        </div>
+
+        {/* Content */}
+        <div className="p-8 space-y-8">
+          {/* Introduction */}
+          <div className="bg-purple-50 border-l-4 border-purple-600 p-6 rounded-lg">
+            <p className="text-gray-800 font-medium text-lg">
+              Don&apos;t let your background hold you back. There are employers and agencies in Ottawa County that specialize in helping individuals with records find meaningful employment. Below are resources and tips to help you navigate your job search.
+            </p>
+          </div>
+
+          {/* Agency 1: West Michigan Works */}
+          <div className="bg-purple-100 border-b-4 border-purple-500 rounded-lg p-6 shadow-md">
+            <div className="flex gap-2 mb-3 items-center">
+              <span className="text-3xl">💼</span>
+              <h3 className="text-2xl font-bold text-gray-900">West Michigan Works!</h3>
+            </div>
+            <p className="text-gray-700 mb-4 font-medium">The most comprehensive resource in the county with a dedicated Returning Citizens program.</p>
+            <div className="space-y-3 text-sm">
+              <div className="flex gap-3 items-start">
+                <MapPin size={18} className="text-purple-600 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold">Holland:</p>
+                  <p className="text-gray-700">121 Clover Ave, Holland, MI 49423</p>
+                </div>
+              </div>
+              <div className="flex gap-3 items-start">
+                <MapPin size={18} className="text-purple-600 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold">Grand Haven:</p>
+                  <p className="text-gray-700">1445 Sheldon Rd, Grand Haven, MI 49417</p>
+                </div>
+              </div>
+              <div className="flex gap-3 items-center">
+                <Phone size={18} className="text-purple-600 flex-shrink-0" />
+                <a href="tel:616-396-2154" className="text-purple-700 font-bold hover:underline">(616) 396-2154</a>
+              </div>
+              <div className="bg-white p-4 rounded mt-3 border-l-4 border-purple-600">
+                <p className="font-semibold text-gray-900 mb-2">How They Help:</p>
+                <p className="text-gray-700">Offers &ldquo;Federal Bonding,&rdquo; which is a free insurance policy for employers that covers them if they hire a person with a record. Also provides leads on &ldquo;second chance&rdquo; employers in the region.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Agency 2: Fettig */}
+          <div className="bg-purple-100 border-b-4 border-purple-500 rounded-lg p-6 shadow-md">
+            <div className="flex gap-2 mb-3 items-center">
+              <span className="text-3xl">💼</span>
+              <h3 className="text-2xl font-bold text-gray-900">Fettig</h3>
+            </div>
+            <p className="text-gray-700 mb-4 font-medium">Prominent West Michigan staffing agency widely recognized for working with individuals with backgrounds.</p>
+            <div className="space-y-3 text-sm">
+              <div className="flex gap-3 items-start">
+                <MapPin size={18} className="text-purple-600 flex-shrink-0 mt-0.5" />
+                <p className="text-gray-700">400 136th Ave, Suite 105, Holland, MI 49424</p>
+              </div>
+              <div className="bg-white p-4 rounded mt-3 border-l-4 border-purple-600">
+                <p className="font-semibold text-gray-900 mb-2">Focus:</p>
+                <p className="text-gray-700">Industrial, manufacturing, and warehouse roles.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Agency 3: Forge Industrial Staffing */}
+          <div className="bg-purple-100 border-b-4 border-purple-500 rounded-lg p-6 shadow-md">
+            <div className="flex gap-2 mb-3 items-center">
+              <span className="text-3xl">💼</span>
+              <h3 className="text-2xl font-bold text-gray-900">Forge Industrial Staffing</h3>
+            </div>
+            <p className="text-gray-700 mb-4 font-medium">Local staffing agency with &ldquo;felony friendly&rdquo; openings, focusing on ability to work rather than past convictions.</p>
+            <div className="space-y-3 text-sm">
+              <div className="flex gap-3 items-start">
+                <MapPin size={18} className="text-purple-600 flex-shrink-0 mt-0.5" />
+                <p className="text-gray-700">214 Clover Ave, Holland, MI 49423</p>
+              </div>
+              <div className="bg-white p-4 rounded mt-3 border-l-4 border-purple-600">
+                <p className="font-semibold text-gray-900 mb-2">Focus:</p>
+                <p className="text-gray-700">Entry-level manufacturing and labor jobs.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Agency 4: Cascade Engineering */}
+          <div className="bg-purple-100 border-b-4 border-purple-500 rounded-lg p-6 shadow-md">
+            <div className="flex gap-2 mb-3 items-center">
+              <span className="text-3xl">💼</span>
+              <h3 className="text-2xl font-bold text-gray-900">Cascade Engineering</h3>
+            </div>
+            <p className="text-gray-700 mb-4 font-medium">Major employer in West Michigan region and national leader in the &ldquo;Returning Citizens&rdquo; movement.</p>
+            <div className="space-y-3 text-sm">
+              <p className="text-gray-700"><strong>Main Hub:</strong> Grand Rapids (with regional presence)</p>
+              <div className="bg-white p-4 rounded mt-3 border-l-4 border-purple-600">
+                <p className="font-semibold text-gray-900 mb-2">Program:</p>
+                <p className="text-gray-700">Formal program designed to hire and support individuals coming out of the correctional system.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Agency 5: Pure Michigan Talent Connect */}
+          <div className="bg-purple-100 border-b-4 border-purple-500 rounded-lg p-6 shadow-md">
+            <div className="flex gap-2 mb-3 items-center">
+              <span className="text-3xl">💼</span>
+              <h3 className="text-2xl font-bold text-gray-900">Pure Michigan Talent Connect</h3>
+            </div>
+            <p className="text-gray-700 mb-4 font-medium">Statewide online portal to find Second Chance employers and Returning Citizen resources.</p>
+            <div className="space-y-3 text-sm">
+              <div className="bg-white p-4 rounded border-l-4 border-purple-600">
+                <p className="text-gray-700">You can specifically search for &ldquo;Second Chance&rdquo; employers or &ldquo;Returning Citizen&rdquo; resources. Filter for employers who utilize the Fidelity Bonding Program.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Key Tips Section */}
+          <div className="bg-amber-50 border-l-4 border-amber-600 p-6 rounded-lg">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Key Tips for Your Job Search</h3>
+            <ul className="space-y-3 text-gray-700">
+              <li className="flex gap-3">
+                <span className="text-amber-600 font-bold text-lg flex-shrink-0">→</span>
+                <div>
+                  <p className="font-semibold">Federal Bonding Program:</p>
+                  <p>Mention to any agency or employer that you are eligible for the Federal Bonding Program through Michigan Works! This can often mitigate an employer&apos;s concerns about liability.</p>
+                </div>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-amber-600 font-bold text-lg flex-shrink-0">→</span>
+                <div>
+                  <p className="font-semibold">Honesty is Vital:</p>
+                  <p>Most &ldquo;felony friendly&rdquo; agencies emphasize that they can work with you as long as you disclose your record upfront. Surprises during a background check usually lead to an automatic &ldquo;no.&rdquo;</p>
+                </div>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-amber-600 font-bold text-lg flex-shrink-0">→</span>
+                <div>
+                  <p className="font-semibold">Manufacturing and Trades:</p>
+                  <p>Ottawa County is a manufacturing hub. Large companies in Holland, Zeeland, and Grand Haven (like Gentex, Herman Miller, or Haworth) occasionally work with specialized staffing agencies to fill &ldquo;second chance&rdquo; roles.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Close Button at Bottom */}
+        <div className="sticky bottom-0 bg-white border-t-2 border-purple-200 p-4 flex justify-end">
+          <button 
+            onClick={onClose}
+            className="bg-purple-600 hover:bg-purple-700 text-white font-bold px-6 py-3 rounded-lg transition"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [showSecondChanceModal, setShowSecondChanceModal] = useState(false);
 
   const categories = ['All', ...Array.from(new Set(RESOURCES.map(r => r.category))).sort()];
   
@@ -373,6 +542,19 @@ export default function Home() {
           </div>
         )}
 
+        {selectedCategory === 'Employment' && (
+          <div className="mb-8 p-6 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-lg shadow-lg">
+            <h3 className="text-2xl font-bold mb-3">Looking for Employment with a Criminal Background?</h3>
+            <p className="mb-4">Worried your background will prevent you from getting a job? You&apos;re not alone. There are employers and agencies in Ottawa County that specialize in helping individuals with records find meaningful employment. We&apos;ve compiled a list of &ldquo;second chance&rdquo; employment agencies and resources specifically designed to support you.</p>
+            <button 
+              onClick={() => setShowSecondChanceModal(true)}
+              className="bg-white text-purple-600 hover:bg-purple-50 font-bold px-6 py-3 rounded-lg transition text-lg"
+            >
+              View Second Chance Employment Resources
+            </button>
+          </div>
+        )}
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.length > 0 ? (
             filtered.map((resource, idx) => {
@@ -438,6 +620,7 @@ export default function Home() {
       </main>
 
       <Footer />
+      <SecondChanceModal isOpen={showSecondChanceModal} onClose={() => setShowSecondChanceModal(false)} />
     </>
   )
 }
