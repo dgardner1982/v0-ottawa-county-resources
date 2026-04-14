@@ -28,6 +28,13 @@ export default function NaloxoneLocations() {
       details: "Free Naloxone kits available."
     },
     {
+      name: "Momentum Center - Grand Haven",
+      address: "401 N 7th St, Grand Haven, MI 49417",
+      phone: "(616) 414-9111",
+      hours: "Monday through Friday, 9:00 AM – 4:00 PM",
+      details: "Free Naloxone kits available. Email: hello@momentumcentergh.org"
+    },
+    {
       name: "Ottawa County Jail - Lobby",
       address: "12220 Fillmore Ave, West Olive, MI 49426",
       phone: "616-786-4140",
