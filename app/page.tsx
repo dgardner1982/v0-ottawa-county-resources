@@ -224,6 +224,13 @@ const RESOURCES: Resource[] = [
   { name: "St. Patrick's Church", category: "Miscellaneous", address: "920 Fulton Ave, Grand Haven", phone: "616-842-0001", info: "Community services. M-F 8a-5p.", website: "https://www.stpatrickgh.org" },
   { name: "Covenant Life Care Ministry", category: "Miscellaneous", address: "Ottawa County", phone: "616-847-2540", info: "Builds bunk beds and wheelchair ramps for those in need.", website: "https://www.covenantlifecare.org" },
 
+  // Clothing and Furniture
+  { name: "Coopersville Cares", category: "Clothing and Furniture", address: "180 68th Ave N, Coopersville, MI 49404", phone: "(616) 997-8602", info: "Clothing center maintaining a selection of affordable or free clothing items for children and adults. Serves the Coopersville Public School district. M-Th 9a-2p.", website: "https://coopersvillecares.org" },
+  { name: "The Salvation Army Holland", category: "Clothing and Furniture", address: "104 Clover St, Holland", phone: "616-392-4461", info: "Thrift store offering affordable clothing and household items. Available by appointment.", website: "https://www.salvationarmyusa.org" },
+  { name: "The Salvation Army Grand Haven", category: "Clothing and Furniture", address: "310 N Despelder St, Grand Haven", phone: "616-842-3380 ext 200", info: "Thrift store with clothing and household items. M-F 9a-3p.", website: "https://www.salvationarmyusa.org" },
+  { name: "Covenant Life Care Ministry", category: "Clothing and Furniture", address: "Ottawa County", phone: "616-847-2540", info: "Builds and provides bunk beds and furniture for those in need. Also constructs wheelchair ramps.", website: "https://www.covenantlifecare.org" },
+  { name: "Lakeshore Habitat for Humanity", category: "Clothing and Furniture", address: "12727 Riley St, Holland", phone: "616-393-8001", info: "Provides furniture and household goods through Re-Store locations. Community resources and support available.", website: "https://www.lakeshorehabitat.org" },
+
   // Government Services
   { name: "Secretary of State", category: "Government Services", address: "Multiple locations", phone: "1-888-SOS-MICH (767-6424)", info: "Holland: 587 E 8th St; Hudsonville: 5211 Cherry Ave; Grand Haven: 1110 Robbins Rd. M,T,Th,F 9a-5p, W 11a-7p.", website: "https://www.michigan.gov/sos" },
   { name: "Social Security Administration", category: "Government Services", address: "657 Hastings Ave, Holland", phone: "1-877-223-6062", info: "Social security services. M-F 9a-4p.", website: "https://www.ssa.gov" },
