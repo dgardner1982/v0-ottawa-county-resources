@@ -182,8 +182,8 @@ const RESOURCES: Resource[] = [
   { name: "Ottawa County Veteran Services", category: "Veteran Services", address: "12251 James St, Holland", phone: "616-393-8387", info: "Comprehensive veteran support services and assistance programs.", website: "https://miottawa.org/veterans-services/" },
 
   // Transportation
-  { name: "Harbor Transit", category: "Transportation", address: "Grand Haven", phone: "616-842-3200", info: "Free public transportation. M-F 6a-6p, Sat 9a-4p, Sun 8a-12:30p (Advanced reservation).", website: "https://harbortransit.org" },
-  { name: "MAX Bus - Holland", category: "Transportation", address: "Holland", phone: "616-355-1025", info: "Free public bus transportation serving Holland. Route schedules and real-time information available.", website: "https://catchamax.org" },
+  { name: "Harbor Transit", category: "Transportation", address: "Grand Haven", phone: "616-842-3200", info: "Public transportation. M-F 6a-6p, Sat 9a-4p, Sun 8a-12:30p (Advanced reservation).", website: "https://harbortransit.org" },
+  { name: "MAX Bus - Holland", category: "Transportation", address: "Holland", phone: "616-355-1025", info: "Public bus transportation serving Holland. Route schedules and real-time information available.", website: "https://catchamax.org" },
 
   // Financial Resources
   { name: "Good Samaritan Ministries", category: "Financial Resources", address: "513 E. 8th St, Holland", phone: "616-392-7159", info: "Housing Search Assistance, Rapid Re-housing, and CHP programs.", website: "https://www.gsministries.org" },
