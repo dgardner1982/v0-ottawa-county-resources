@@ -89,6 +89,11 @@ const RESOURCES: Resource[] = [
   { name: "Samaritas - Holland", category: "Substance Recovery", address: "2416 Van Ommen Dr, Holland, MI 49424", phone: "(616) 350-7781", info: "Substance use treatment and recovery services including medication-assisted treatment.", website: "https://www.samaritas.org" },
   { name: "Sobar Recovery Community Center", category: "Substance Recovery", address: "347 Hoover Blvd, Holland", phone: "Call for details", info: "Community recovery center offering support, education, and activities for individuals and families in recovery.", website: "https://sobarrco.com" },
 
+  // Domestic Violence
+  { name: "Every Woman's Place Inc", category: "Domestic Violence", address: "1221 W Laketon Ave, Muskegon, MI 49441", phone: "(231) 722-3333", info: "Muskegon-based agency providing crisis intervention, emergency shelter, counseling, and legal advocacy for survivors of domestic violence, sexual assault, and sex trafficking. 24-hour crisis line available.", website: "https://www.everywomansplace.org" },
+  { name: "Resilience: Advocates for Ending Violence", category: "Domestic Violence", address: "411 Butternut Dr, Holland, MI 49424", phone: "(800) 848-5991", info: "Non-profit providing 24-hour crisis support, emergency shelter, counseling, legal advocacy, and community education for survivors of domestic and sexual violence. M-F 9a-5p, emergency services 24/7.", website: "https://www.resiliencemi.org" },
+  { name: "Sylvia's Place", category: "Domestic Violence", address: "235 North St, Allegan, MI 49010", phone: "(269) 673-8700", info: "Primary domestic violence agency for Allegan County providing 24-hour help line, emergency shelter, legal advocacy, and support services. Toll-free: (888) 411-7837. Available 24/7.", website: "https://www.sylviasplace.com" },
+
   // Medication-Assisted Treatment
   { name: "Western Michigan Comprehensive Treatment Center", category: "Medication-Assisted Treatment", address: "3584 Fairlanes Ave SW STE 2, Grandville, MI 49418", phone: "(616) 797-2124", info: "Major provider of outpatient medication-assisted treatment for adults struggling with opioid use disorder. Offers methadone, Suboxone, and buprenorphine.", website: "https://ctcprograms.com" },
   { name: "Eastside Outpatient Services", category: "Medication-Assisted Treatment", address: "445 E Sherman Blvd, Muskegon, MI 49444", phone: "(231) 739-4359", info: "Located just north of Ottawa County, provides liquid methadone treatment coupled with counseling and rehabilitative services in a safe environment.", website: "https://eastsidesac.com" },
@@ -135,6 +140,9 @@ const RESOURCES: Resource[] = [
   { name: "Muskegon Rescue Mission", category: "Housing", address: "400 W. Laketon Ave, Muskegon", phone: "231-727-6085", info: "Emergency shelter. Need picture ID and min. age 18.", website: "https://www.muskegonrescuemission.org" },
   { name: "Arbor Circle - The Bridge", category: "Housing", address: "1115 Ball Ave NE, Grand Rapids", phone: "616-451-3001", info: "Shelter and basic needs services for youth ages 10-17 years old.", website: "https://arborcircle.org/help/the-bridge/" },
   { name: "70x7 Life Recovery", category: "Housing", address: "97 W. 22nd St, Holland", phone: "616-796-0685", info: "Sober living and post-incarceration housing programs.", website: "https://70x7liferecovery.org/program/housing/" },
+  { name: "Every Woman's Place Inc", category: "Housing", address: "1221 W Laketon Ave, Muskegon, MI 49441", phone: "(231) 722-3333", info: "Emergency shelter and residential program for survivors of domestic violence and sexual assault. 24-hour crisis line available.", website: "https://www.everywomansplace.org" },
+  { name: "Resilience: Advocates for Ending Violence", category: "Housing", address: "411 Butternut Dr, Holland, MI 49424", phone: "(800) 848-5991", info: "Emergency shelter for survivors of domestic and sexual violence. M-F 9a-5p, emergency services 24/7.", website: "https://www.resiliencemi.org" },
+  { name: "Sylvia's Place", category: "Housing", address: "235 North St, Allegan, MI 49010", phone: "(269) 673-8700", info: "Emergency shelter for survivors of domestic violence and their children. 24-hour help line: (888) 411-7837.", website: "https://www.sylviasplace.com" },
 
   // Health Care
   { name: "Maternal Infant Health Program Holland", category: "Health Care", address: "12251 James St, Holland", phone: "616-396-5266", info: "Maternal and infant health services.", website: "https://www.cmhoc.org" },
@@ -229,6 +237,7 @@ export default function Home() {
       "Housing": { bg: "bg-amber-100", border: "border-b-4 border-amber-500", icon: "🏠", button: "bg-amber-500 hover:bg-amber-600", buttonHover: "text-white" },
       "Health Care": { bg: "bg-red-100", border: "border-b-4 border-red-500", icon: "🏥", button: "bg-red-500 hover:bg-red-600", buttonHover: "text-white" },
       "Dental": { bg: "bg-sky-100", border: "border-b-4 border-sky-500", icon: "🦷", button: "bg-sky-500 hover:bg-sky-600", buttonHover: "text-white" },
+      "Domestic Violence": { bg: "bg-rose-100", border: "border-b-4 border-rose-600", icon: "🛑", button: "bg-rose-600 hover:bg-rose-700", buttonHover: "text-white" },
       "Employment": { bg: "bg-purple-100", border: "border-b-4 border-purple-500", icon: "💼", button: "bg-purple-500 hover:bg-purple-600", buttonHover: "text-white" },
       "Senior Services": { bg: "bg-pink-100", border: "border-b-4 border-pink-500", icon: "👴", button: "bg-pink-500 hover:bg-pink-600", buttonHover: "text-white" },
       "Veteran Services": { bg: "bg-indigo-100", border: "border-b-4 border-indigo-500", icon: "🎖️", button: "bg-indigo-500 hover:bg-indigo-600", buttonHover: "text-white" },
@@ -335,6 +344,18 @@ export default function Home() {
             <Link href="/mat-resources">
               <button className="bg-white text-orange-600 hover:bg-orange-50 font-bold px-6 py-3 rounded-lg transition text-lg">
                 View MAT Providers
+              </button>
+            </Link>
+          </div>
+        )}
+
+        {selectedCategory === 'Domestic Violence' && (
+          <div className="mb-8 p-6 bg-gradient-to-r from-rose-600 to-red-600 text-white rounded-lg shadow-lg">
+            <h3 className="text-2xl font-bold mb-3">Get Help for Domestic Violence</h3>
+            <p className="mb-4">If you or someone you know is experiencing domestic violence, comprehensive support and emergency services are available. Visit our dedicated resources page for crisis lines and shelter information.</p>
+            <Link href="/domestic-violence-resources">
+              <button className="bg-white text-rose-600 hover:bg-rose-50 font-bold px-6 py-3 rounded-lg transition text-lg">
+                View Domestic Violence Resources
               </button>
             </Link>
           </div>
