@@ -188,6 +188,7 @@ const RESOURCES: Resource[] = [
   { name: "Coastal Careers", category: "Employment", address: "12656 Felch St, Holland", phone: "616-355-2244", info: "Career placement and staffing services.", website: "https://www.coastalcareersinc.com" },
   { name: "Cardinal Staffing", category: "Employment", address: "12330 James St, Ste H80, Holland", phone: "616-394-9100", info: "Employment staffing and placement services.", website: "https://www.cardinalstaffing.com" },
   { name: "WorkSolved", category: "Employment", address: "240 S River Ave, Holland", phone: "616-283-7521", info: "Employment solutions and staffing services.", website: "https://www.worksolved.com" },
+  { name: "70x7 Life Recovery", category: "Employment", address: "97 W 22nd St, Holland, MI 49423", phone: "(616) 796-0685", info: "Specialized organization providing restoration and long-term support for individuals returning to the community after incarceration. Services include employment support with employer partnerships, mentorship, family support groups, life skills training, and housing assistance.", website: "https://70x7liferecovery.org" },
 
   // Senior Services
   { name: "The Little Red House", category: "Senior Services", address: "311 E. Exchange St, Spring Lake", phone: "616-846-5720", info: "Adult day care for elderly. M-F 7a-6p. Hourly rate includes meals.", website: "https://www.thelittleredhouse.org" },
@@ -348,6 +349,42 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
             <div className="space-y-3 text-sm">
               <div className="bg-white p-4 rounded border-l-4 border-purple-600">
                 <p className="text-gray-700">You can specifically search for &ldquo;Second Chance&rdquo; employers or &ldquo;Returning Citizen&rdquo; resources. Filter for employers who utilize the Fidelity Bonding Program.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Agency 6: 70x7 Life Recovery */}
+          <div className="bg-purple-100 border-b-4 border-purple-500 rounded-lg p-6 shadow-md">
+            <div className="flex gap-2 mb-3 items-center">
+              <span className="text-3xl">💼</span>
+              <h3 className="text-2xl font-bold text-gray-900">70x7 Life Recovery</h3>
+            </div>
+            <p className="text-gray-700 mb-4 font-medium">Specialized organization providing restoration and long-term support for men and women returning to the community after incarceration.</p>
+            <div className="space-y-3 text-sm">
+              <div className="flex gap-3 items-start">
+                <MapPin size={18} className="text-purple-600 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold">Holland:</p>
+                  <p className="text-gray-700">97 W 22nd St, Holland, MI 49423</p>
+                </div>
+              </div>
+              <div className="flex gap-3 items-center">
+                <Phone size={18} className="text-purple-600 flex-shrink-0" />
+                <a href="tel:616-796-0685" className="text-purple-700 font-bold hover:underline">(616) 796-0685</a>
+              </div>
+              <div className="flex gap-3 items-center">
+                <Globe size={18} className="text-purple-600 flex-shrink-0" />
+                <a href="https://70x7liferecovery.org" target="_blank" rel="noopener noreferrer" className="text-purple-700 font-bold hover:underline">70x7liferecovery.org</a>
+              </div>
+              <div className="bg-white p-4 rounded mt-3 border-l-4 border-purple-600">
+                <p className="font-semibold text-gray-900 mb-2">Programs & Services:</p>
+                <ul className="text-gray-700 space-y-2">
+                  <li>• <strong>Employment Support:</strong> Partners with local employers to help graduates find stable, meaningful work</li>
+                  <li>• <strong>Stronger Together:</strong> Family support groups for loved ones impacted by incarceration</li>
+                  <li>• <strong>Mentorship:</strong> Connects participants with mentors for guidance and accountability</li>
+                  <li>• <strong>Life Skills & Classes:</strong> Programs like &ldquo;Take Charge&rdquo; for empowerment and practical skills</li>
+                  <li>• <strong>Housing & Basic Needs:</strong> Assists in finding stable housing and essential items</li>
+                </ul>
               </div>
             </div>
           </div>
