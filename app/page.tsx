@@ -230,7 +230,6 @@ const RESOURCES: Resource[] = [
   { name: "Love INC of Hudsonville", category: "Clothing and Furniture", address: "3300 Van Buren St, Hudsonville, MI 49426", phone: "(616) 662-3300", info: "Provides access to clothing, linens, and household furniture through Essential Resource Ministries. Faith-based clearinghouse coordinating local church resources for the Hudsonville, Jenison, and Grandville areas. M-F 9a-4p.", website: "https://loveinchudsonville.org" },
 
   // Prenatal and Baby Resources
-  { name: "Love INC of Hudsonville", category: "Prenatal and Baby Resources", address: "3300 Van Buren St, Hudsonville, MI 49426", phone: "(616) 662-3300", info: "Provides personal care items and infant essentials not typically covered by state assistance programs. Faith-based organization coordinating local church resources for families in need. M-F 9a-4p.", website: "https://loveinchudsonville.org" },
 
   // Government Services
   { name: "Secretary of State", category: "Government Services", address: "Multiple locations", phone: "1-888-SOS-MICH (767-6424)", info: "Holland: 587 E 8th St; Hudsonville: 5211 Cherry Ave; Grand Haven: 1110 Robbins Rd. M,T,Th,F 9a-5p, W 11a-7p.", website: "https://www.michigan.gov/sos" },
