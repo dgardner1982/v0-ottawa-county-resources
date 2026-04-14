@@ -7,13 +7,6 @@ import { Footer } from '@/components/footer';
 export default function NaloxoneLocations() {
   const locations = [
     {
-      name: "Ottawa County Jail - Lobby",
-      address: "12220 Fillmore Ave, West Olive, MI 49426",
-      phone: "616-786-4140",
-      hours: "24 hour access",
-      details: "Naloxone kits available for free in jail lobby in vending machine."
-    },
-    {
       name: "Community Mental Health of Ottawa County - Holland",
       address: "347 Hoover Blvd, Holland, MI 49423",
       phone: "616-393-4489",
@@ -21,16 +14,37 @@ export default function NaloxoneLocations() {
       details: "Free Naloxone kits available."
     },
     {
-      name: "Reach for Recovery - Holland",
-      address: "483 Century Lane, Holland, MI 49424",
-      phone: "616-396-5284",
-      hours: "M-F 8a-5p",
-      details: "Free Naloxone Kits available."
+      name: "Corewell Health - Grand Haven",
+      address: "15100 Whittaker Way, Grand Haven, MI 49417",
+      phone: "(616) 935-6250",
+      hours: "Call for hours",
+      details: "Free Naloxone kits available."
+    },
+    {
+      name: "Corewell Health - Zeeland",
+      address: "8333 Felch St, Zeeland, MI 49464",
+      phone: "(616) 772-4644",
+      hours: "Open 24 hours",
+      details: "Free Naloxone kits available."
+    },
+    {
+      name: "Ottawa County Jail - Lobby",
+      address: "12220 Fillmore Ave, West Olive, MI 49426",
+      phone: "616-786-4140",
+      hours: "24 hour access",
+      details: "Naloxone kits available for free in jail lobby in vending machine."
     },
     {
       name: "Reach for Recovery - Grand Haven",
       address: "420 Washington Ave, Grand Haven, MI 49417",
       phone: "616-842-2420",
+      hours: "M-F 8a-5p",
+      details: "Free Naloxone Kits available."
+    },
+    {
+      name: "Reach for Recovery - Holland",
+      address: "483 Century Lane, Holland, MI 49424",
+      phone: "616-396-5284",
       hours: "M-F 8a-5p",
       details: "Free Naloxone Kits available."
     },
@@ -47,20 +61,6 @@ export default function NaloxoneLocations() {
       phone: "(616) 377-5792",
       hours: "24 hour access",
       details: "Free Naloxone kits available in newspaper box outside main entrance."
-    },
-    {
-      name: "Corewell Health - Grand Haven",
-      address: "15100 Whittaker Way, Grand Haven, MI 49417",
-      phone: "(616) 935-6250",
-      hours: "Call for hours",
-      details: "Free Naloxone kits available."
-    },
-    {
-      name: "Corewell Health - Zeeland",
-      address: "8333 Felch St, Zeeland, MI 49464",
-      phone: "(616) 772-4644",
-      hours: "Open 24 hours",
-      details: "Free Naloxone kits available."
     }
   ];
 
