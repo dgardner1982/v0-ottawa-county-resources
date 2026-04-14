@@ -214,7 +214,7 @@ export default function Home() {
     const matchesSearch = r.name.toLowerCase().includes(searchTerm.toLowerCase()) || r.info.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesCategory = selectedCategory === 'All' || r.category === selectedCategory;
     return matchesSearch && matchesCategory;
-  });
+  }).sort((a, b) => a.name.localeCompare(b.name));
 
   const getCategoryColor = (category: string) => {
     const colors: Record<string, { bg: string; border: string; icon: string; button: string; buttonHover: string }> = {
