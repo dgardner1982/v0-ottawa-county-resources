@@ -88,6 +88,14 @@ const RESOURCES: Resource[] = [
   { name: "Sobar Recovery Community Center", category: "Substance Recovery", address: "347 Hoover Blvd, Holland", phone: "Call for details", info: "Community recovery center offering support, education, and activities for individuals and families in recovery.", website: "https://sobarrco.com" },
   { name: "New Vision Withdrawal Management", category: "Substance Recovery", address: "1309 Sheldon Road, Grand Haven, MI 49417", phone: "1-844-237-3627", info: "Inpatient detoxification and substance use disorder services at Trinity Health Grand Haven Hospital. Comprehensive withdrawal management program.", website: "https://trinityhealthmichigan.org" },
 
+  // Medication-Assisted Treatment
+  { name: "Western Michigan Comprehensive Treatment Center", category: "Medication-Assisted Treatment", address: "3584 Fairlanes Ave SW STE 2, Grandville, MI 49418", phone: "(616) 797-2124", info: "Major provider of outpatient medication-assisted treatment for adults struggling with opioid use disorder. Offers methadone, Suboxone, and buprenorphine.", website: "https://ctcprograms.com" },
+  { name: "Eastside Outpatient Services", category: "Medication-Assisted Treatment", address: "445 E Sherman Blvd, Muskegon, MI 49444", phone: "(231) 739-4359", info: "Located just north of Ottawa County, provides liquid methadone treatment coupled with counseling and rehabilitative services in a safe environment.", website: "https://eastsidesac.com" },
+  { name: "Cherry Health – Muskegon Recovery Center", category: "Medication-Assisted Treatment", address: "1611 Oak Ave, Muskegon, MI 49442", phone: "(231) 767-1921", info: "Offers comprehensive MAT services including methadone and buprenorphine, integrated with individual and group therapy sessions.", website: "https://cherryhealth.org" },
+  { name: "Holland Hospital Behavioral Health, Outpatient", category: "Medication-Assisted Treatment", address: "854 Washington Ave STE 330, Holland, MI 49423", phone: "(616) 355-3926", info: "Hospital-based program providing outpatient methadone, buprenorphine, and naltrexone treatment options alongside intensive outpatient services.", website: "https://hollandhospital.org" },
+  { name: "Reach for Recovery - MAT", category: "Medication-Assisted Treatment", address: "483 Century Ln, Holland, MI 49423", phone: "(616) 396-5284", info: "Provides outpatient and residential medication-assisted services tailored for both men and women in the Holland area.", website: "https://reachforrecovery.org" },
+  { name: "Pine Rest Holland Clinic - MAT", category: "Medication-Assisted Treatment", address: "926 S. Washington #210, Holland, MI 49423", phone: "(616) 820-3780", info: "Comprehensive mental health and substance recovery services including medication-assisted treatment with psychiatric support.", website: "https://www.pinerest.org" },
+
   // Food
   { name: "Christian Fellowship Assembly", category: "Food", address: "9930 64th Ave, Allendale", phone: "616-895-7614", info: "Food pantry and community meals.", website: "https://www.christianfellowshipassembly.org" },
   { name: "LOVE INC Allendale", category: "Food", address: "6633 Lake Michigan Dr, Allendale", phone: "616-895-5683", info: "Food pantry. M-F 9a-2p. Must bring photo ID and utility bill.", website: "https://loveincallegan.org" },
@@ -202,6 +210,7 @@ export default function Home() {
     const colors: Record<string, { bg: string; border: string; icon: string; button: string; buttonHover: string }> = {
       "Mental Health": { bg: "bg-blue-100", border: "border-b-4 border-blue-500", icon: "🧠", button: "bg-blue-500 hover:bg-blue-600", buttonHover: "text-white" },
       "Substance Recovery": { bg: "bg-orange-100", border: "border-b-4 border-orange-500", icon: "🛡️", button: "bg-orange-500 hover:bg-orange-600", buttonHover: "text-white" },
+      "Medication-Assisted Treatment": { bg: "bg-teal-100", border: "border-b-4 border-teal-600", icon: "💊", button: "bg-teal-600 hover:bg-teal-700", buttonHover: "text-white" },
       "Food": { bg: "bg-green-100", border: "border-b-4 border-green-500", icon: "🍽️", button: "bg-green-500 hover:bg-green-600", buttonHover: "text-white" },
       "Housing": { bg: "bg-amber-100", border: "border-b-4 border-amber-500", icon: "🏠", button: "bg-amber-500 hover:bg-amber-600", buttonHover: "text-white" },
       "Health Care": { bg: "bg-red-100", border: "border-b-4 border-red-500", icon: "🏥", button: "bg-red-500 hover:bg-red-600", buttonHover: "text-white" },
@@ -303,6 +312,18 @@ export default function Home() {
             );
           })}
         </div>
+
+        {selectedCategory === 'Substance Recovery' && (
+          <div className="mb-8 p-6 bg-gradient-to-r from-orange-500 to-amber-500 text-white rounded-lg shadow-lg">
+            <h3 className="text-2xl font-bold mb-3">Medication-Assisted Treatment Options</h3>
+            <p className="mb-4">For evidence-based medication-assisted treatment providers in the area, visit our dedicated MAT resources page.</p>
+            <Link href="/mat-resources">
+              <button className="bg-white text-orange-600 hover:bg-orange-50 font-bold px-6 py-3 rounded-lg transition text-lg">
+                View MAT Providers
+              </button>
+            </Link>
+          </div>
+        )}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.length > 0 ? (
