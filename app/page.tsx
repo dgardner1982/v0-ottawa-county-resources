@@ -77,16 +77,32 @@ const RESOURCES: Resource[] = [
   { name: "Trinity Health Hospital ER", category: "Mental Health", address: "1500 E. Sherman Blvd., Muskegon", phone: "231-672-2000", info: "Secured psychiatric facility emergency services.", website: "https://www.trinity-health.org" },
   
   // Substance Recovery
-  { name: "Reach for Recovery - Holland", category: "Substance Recovery", address: "483 Century Lane, Holland", phone: "616-396-5284", info: "Comprehensive outpatient and residential programs.", website: "https://reachforrecovery.org" },
-  { name: "Reach for Recovery - Grand Haven", category: "Substance Recovery", address: "700 Washington Ave #220, Grand Haven", phone: "616-842-6710", info: "Counseling and recovery community connection.", website: "https://reachforrecovery.org" },
-  { name: "Samaritas - Holland", category: "Substance Recovery", address: "2416 Van Ommen Dr, Holland", phone: "616-350-7781", info: "Substance use treatment and recovery services.", website: "https://www.samaritas.org" },
-  { name: "Samaritas - Grand Haven", category: "Substance Recovery", address: "923 S Beechtree St Ste 10, Grand Haven", phone: "231-722-2400", info: "Substance use treatment and recovery services.", website: "https://www.samaritas.org" },
+  { name: "Arbor Circle - Holland", category: "Substance Recovery", address: "412 Century Ln, Holland, MI 49423", phone: "(616) 396-2301", info: "Substance abuse treatment and recovery programs.", website: "https://arborcircle.org" },
   { name: "Chester Ray Center & Harbor House", category: "Substance Recovery", address: "Holland", phone: "616-396-5284", info: "Recovery programs operated by Reach for Recovery. Chester Ray Center and Harbor House provide comprehensive substance recovery and support services.", website: "https://reachforrecovery.org" },
-  { name: "Pine Rest Spring Lake", category: "Substance Recovery", address: "17325 Van Wagoner Rd, Spring Lake", phone: "866-852-4001", info: "Substance recovery and mental health services.", website: "https://www.pinerest.org" },
+  { name: "Community Mental Health of Ottawa County", category: "Substance Recovery", address: "<b>Holland:</b> 12265 James St, Holland, MI 49424 | <b>Grand Haven:</b> 1111 Fulton St, Grand Haven, MI 49417", phone: "(616) 393-5681", info: "Access services available Monday through Friday, 8:00 AM – 5:00 PM. Crisis line available 24/7 at (866) 512-4357 or (616) 396-4357.", website: "https://www.miottawa.org/cmh" },
   { name: "Mercy Health Life Counseling", category: "Substance Recovery", address: "125 E. Southern Ave, Muskegon", phone: "231-726-3582", info: "Counseling services. Walk-ins available.", website: "https://www.mercyhealth.org" },
-  { name: "My House Ministry", category: "Substance Recovery", address: "96 West 15th St Suite 306, Holland", phone: "616-953-0772", info: "Transitional recovery housing for women and children.", website: "https://myhouseministry.org" },
-  { name: "Sobar Recovery Community Center", category: "Substance Recovery", address: "347 Hoover Blvd, Holland", phone: "Call for details", info: "Community recovery center offering support, education, and activities for individuals and families in recovery.", website: "https://sobarrco.com" },
   { name: "New Vision Withdrawal Management", category: "Substance Recovery", address: "1309 Sheldon Road, Grand Haven, MI 49417", phone: "1-844-237-3627", info: "Inpatient detoxification and substance use disorder services at Trinity Health Grand Haven Hospital. Comprehensive withdrawal management program.", website: "https://trinityhealthmichigan.org" },
+  { name: "Pine Rest Spring Lake", category: "Substance Recovery", address: "17325 Van Wagoner Rd, Spring Lake", phone: "866-852-4001", info: "Substance recovery and mental health services.", website: "https://www.pinerest.org" },
+  { name: "Reach for Recovery - Grand Haven", category: "Substance Recovery", address: "700 Washington Ave #220, Grand Haven", phone: "616-842-6710", info: "Counseling and recovery community connection.", website: "https://reachforrecovery.org" },
+  { name: "Reach for Recovery - Holland", category: "Substance Recovery", address: "483 Century Lane, Holland", phone: "616-396-5284", info: "Comprehensive outpatient and residential programs.", website: "https://reachforrecovery.org" },
+  { name: "Samaritas - Grand Haven", category: "Substance Recovery", address: "923 S Beechtree St Ste 10, Grand Haven, MI", phone: "(616) 516-9985", info: "Substance use treatment and recovery services including medication-assisted treatment.", website: "https://www.samaritas.org" },
+  { name: "Samaritas - Holland", category: "Substance Recovery", address: "2416 Van Ommen Dr, Holland, MI 49424", phone: "(616) 350-7781", info: "Substance use treatment and recovery services including medication-assisted treatment.", website: "https://www.samaritas.org" },
+  { name: "Sobar Recovery Community Center", category: "Substance Recovery", address: "347 Hoover Blvd, Holland", phone: "Call for details", info: "Community recovery center offering support, education, and activities for individuals and families in recovery.", website: "https://sobarrco.com" },
+
+  // Domestic Violence
+  { name: "Every Woman's Place Inc", category: "Domestic Violence", address: "1221 W Laketon Ave, Muskegon, MI 49441", phone: "(231) 722-3333", info: "Muskegon-based agency providing crisis intervention, emergency shelter, counseling, and legal advocacy for survivors of domestic violence, sexual assault, and sex trafficking. 24-hour crisis line available.", website: "https://www.everywomansplace.org" },
+  { name: "Resilience: Advocates for Ending Violence", category: "Domestic Violence", address: "411 Butternut Dr, Holland, MI 49424", phone: "(800) 848-5991", info: "Non-profit providing 24-hour crisis support, emergency shelter, counseling, legal advocacy, and community education for survivors of domestic and sexual violence. M-F 9a-5p, emergency services 24/7.", website: "https://www.resiliencemi.org" },
+  { name: "Sylvia's Place", category: "Domestic Violence", address: "235 North St, Allegan, MI 49010", phone: "(269) 673-8700", info: "Primary domestic violence agency for Allegan County providing 24-hour help line, emergency shelter, legal advocacy, and support services. Toll-free: (888) 411-7837. Available 24/7.", website: "https://www.sylviasplace.com" },
+
+  // Medication-Assisted Treatment
+  { name: "Western Michigan Comprehensive Treatment Center", category: "Medication-Assisted Treatment", address: "3584 Fairlanes Ave SW STE 2, Grandville, MI 49418", phone: "(616) 797-2124", info: "Major provider of outpatient medication-assisted treatment for adults struggling with opioid use disorder. Offers methadone, Suboxone, and buprenorphine.", website: "https://ctcprograms.com" },
+  { name: "Eastside Outpatient Services", category: "Medication-Assisted Treatment", address: "445 E Sherman Blvd, Muskegon, MI 49444", phone: "(231) 739-4359", info: "Located just north of Ottawa County, provides liquid methadone treatment coupled with counseling and rehabilitative services in a safe environment.", website: "https://eastsidesac.com" },
+  { name: "Cherry Health – Muskegon Recovery Center", category: "Medication-Assisted Treatment", address: "1611 Oak Ave, Muskegon, MI 49442", phone: "(231) 767-1921", info: "Offers comprehensive MAT services including methadone and buprenorphine, integrated with individual and group therapy sessions.", website: "https://cherryhealth.org" },
+  { name: "Holland Hospital Behavioral Health, Outpatient", category: "Medication-Assisted Treatment", address: "854 Washington Ave STE 330, Holland, MI 49423", phone: "(616) 355-3926", info: "Hospital-based program providing outpatient methadone, buprenorphine, and naltrexone treatment options alongside intensive outpatient services.", website: "https://hollandhospital.org" },
+  { name: "Reach for Recovery - MAT", category: "Medication-Assisted Treatment", address: "483 Century Ln, Holland, MI 49423", phone: "(616) 396-5284", info: "Provides outpatient and residential medication-assisted services tailored for both men and women in the Holland area.", website: "https://reachforrecovery.org" },
+  { name: "Pine Rest Holland Clinic - MAT", category: "Medication-Assisted Treatment", address: "926 S. Washington #210, Holland, MI 49423", phone: "(616) 820-3780", info: "Comprehensive mental health and substance recovery services including medication-assisted treatment with psychiatric support.", website: "https://www.pinerest.org" },
+  { name: "Samaritas Holland", category: "Medication-Assisted Treatment", address: "2416 Van Ommen Dr, Holland, MI 49424", phone: "(616) 350-7781", info: "Offers medication-assisted treatment services with integrated recovery support, community meals, and therapeutic programming.", website: "https://www.samaritas.org" },
+  { name: "Samaritas Grand Haven", category: "Medication-Assisted Treatment", address: "923 S Beechtree St Ste 10, Grand Haven, MI", phone: "(616) 516-9985", info: "Samaritas provides comprehensive MAT services focused on recovery and community integration in the Grand Haven area.", website: "https://www.samaritas.org" },
 
   // Food
   { name: "Christian Fellowship Assembly", category: "Food", address: "9930 64th Ave, Allendale", phone: "616-895-7614", info: "Food pantry and community meals.", website: "https://www.christianfellowshipassembly.org" },
@@ -94,6 +110,7 @@ const RESOURCES: Resource[] = [
   { name: "Replenish GVSU Pantry", category: "Food", address: "Kirkhof Center 0074, Allendale", phone: "616-331-7867", info: "Food pantry for GVSU students only. M-F 12p-5p.", website: "https://www.gvsu.edu" },
   { name: "Coopersville Cares", category: "Food", address: "180 68th Ave, Coopersville", phone: "616-997-8602", info: "Food pantry. M-Th 9a-2p. Pantry hours: Tu & Th 10a-12p, Tu 5:30p-6:30p.", website: "https://www.coopersvillecares.org" },
   { name: "LOVE INC Grand Haven", category: "Food", address: "326 Ferry St, Grand Haven", phone: "616-846-2701", info: "Food pantry. M-F 9a-5p.", website: "https://loveincallegan.org" },
+  { name: "The People Center", category: "Food", address: "307 E Exchange St, Spring Lake, MI 49456", phone: "(616) 844-6710", info: "Food pantry offering supplemental groceries to residents in the Spring Lake, Ferrysburg, and Grand Haven areas. M, W, F 11a-5p.", website: "https://www.thepeoplecenter.org" },
   { name: "St. John's Episcopal Church", category: "Food", address: "524 Washington Ave, Grand Haven", phone: "616-842-6260 ext 21", info: "Free take-home meals W 5:30p-6:30p, Sun 1p-2p.", website: "https://www.stjohnsgh.org" },
   { name: "The Salvation Army Grand Haven", category: "Food", address: "310 N Despelder St, Grand Haven", phone: "616-842-3380 ext 200", info: "Food pantry by appointment only. M-F 9a-3p.", website: "https://www.salvationarmyusa.org" },
   { name: "East Side Food Pantry", category: "Food", address: "995 E. 8th St, Holland", phone: "616-392-8559 ext 18", info: "Serves Holland Heights residents only. M & W 10a-11:30a, F 3p-4:30p.", website: "https://www.cityofholland.com" },
@@ -117,12 +134,15 @@ const RESOURCES: Resource[] = [
   { name: "Gateway Mission Women & Children's Center", category: "Housing", address: "356 Fairbanks Ave, Holland", phone: "616-396-2200", info: "Specialized residential recovery program for women and children seeking housing and support services.", website: "https://hopefoundhere.org" },
   { name: "Community Action House", category: "Housing", address: "345 W. 14th St, Holland", phone: "616-392-2368", info: "Permanent supportive housing services.", website: "https://www.chservices.org" },
   { name: "My House Ministry", category: "Housing", address: "96 West 15th Street Suite 306, Holland", phone: "616-953-0772", info: "Housing & restorative programs for women/children of domestic violence.", website: "https://myhouseministry.org" },
+  { name: "The People Center", category: "Housing", address: "307 E Exchange St, Spring Lake, MI 49456", phone: "(616) 844-6710", info: "Housing assistance providing support and resources for those experiencing housing instability or homelessness. M, W, F 11a-5p.", website: "https://www.thepeoplecenter.org" },
   { name: "Building Men for Life", category: "Housing", address: "370 Country Club Road Suite 50, Holland", phone: "616-393-2188", info: "Recovery housing for men providing safe, structured living conditions for individuals in recovery. Includes peer support and certified recovery coaching.", website: "https://buildingmenforlife.com" },
-  { name: "Good Samaritan", category: "Housing", address: "Holland area", phone: "616-392-7159", info: "Housing assistance and emergency support.", website: "https://www.gsministries.org" },
   { name: "Mel Trotter Ministries", category: "Housing", address: "225 Commerce Ave SW, Grand Rapids", phone: "616-454-8249", info: "Emergency shelter and recovery programs.", website: "https://www.meltrotter.org" },
   { name: "Muskegon Rescue Mission", category: "Housing", address: "400 W. Laketon Ave, Muskegon", phone: "231-727-6085", info: "Emergency shelter. Need picture ID and min. age 18.", website: "https://www.muskegonrescuemission.org" },
   { name: "Arbor Circle - The Bridge", category: "Housing", address: "1115 Ball Ave NE, Grand Rapids", phone: "616-451-3001", info: "Shelter and basic needs services for youth ages 10-17 years old.", website: "https://arborcircle.org/help/the-bridge/" },
   { name: "70x7 Life Recovery", category: "Housing", address: "97 W. 22nd St, Holland", phone: "616-796-0685", info: "Sober living and post-incarceration housing programs.", website: "https://70x7liferecovery.org/program/housing/" },
+  { name: "Every Woman's Place Inc", category: "Housing", address: "1221 W Laketon Ave, Muskegon, MI 49441", phone: "(231) 722-3333", info: "Emergency shelter and residential program for survivors of domestic violence and sexual assault. 24-hour crisis line available.", website: "https://www.everywomansplace.org" },
+  { name: "Resilience: Advocates for Ending Violence", category: "Housing", address: "411 Butternut Dr, Holland, MI 49424", phone: "(800) 848-5991", info: "Emergency shelter for survivors of domestic and sexual violence. M-F 9a-5p, emergency services 24/7.", website: "https://www.resiliencemi.org" },
+  { name: "Sylvia's Place", category: "Housing", address: "235 North St, Allegan, MI 49010", phone: "(269) 673-8700", info: "Emergency shelter for survivors of domestic violence and their children. 24-hour help line: (888) 411-7837.", website: "https://www.sylviasplace.com" },
 
   // Health Care
   { name: "Maternal Infant Health Program Holland", category: "Health Care", address: "12251 James St, Holland", phone: "616-396-5266", info: "Maternal and infant health services.", website: "https://www.cmhoc.org" },
@@ -135,6 +155,15 @@ const RESOURCES: Resource[] = [
   { name: "Holland Free Health Clinic", category: "Health Care", address: "99 W 26th St, Holland, MI 49423", phone: "616-392-3610", info: "Offers free medical, dental, and vision services to uninsured and underinsured residents who meet specific income guidelines.", website: "https://www.hfhclinic.org" },
   { name: "City On A Hill Ministries", category: "Health Care", address: "100 Pine St, Zeeland, MI 49464", phone: "616-748-6060", info: "Provides free non-emergency medical care and counseling services through a team of volunteer professionals.", website: "https://coahm.org" },
   { name: "Love in Action Medical Clinic", category: "Health Care", address: "326 N Ferry St, Grand Haven, MI 49417", phone: "616-846-2701", info: "Provides urgent and primary medical and dental care for the Tri-Cities community.", website: "https://loveinactiontricities.org/liaclinic/" },
+
+  // Dental
+  { name: "Holland Free Health Clinic (HFHC)", category: "Dental", address: "99 W 26th St, Holland, MI 49423", phone: "616-392-3610", info: "Provides free dental services including oral exams, X-rays, cleanings, fillings, extractions, and oral surgery. Focus on medically underserved population in Ottawa and Allegan counties.", website: "https://www.hfhclinic.org" },
+  { name: "Love in Action of the Tri-Cities (Dental Center)", category: "Dental", address: "326 N Ferry St, Grand Haven, MI 49417", phone: "616-846-2701", info: "Offers basic dental care and referrals provided by licensed volunteer dentists and hygienists. For adults 18+ who are uninsured or underinsured and meet financial eligibility guidelines.", website: "https://www.loveinactiontricities.org" },
+  { name: "InterCare Community Health Network", category: "Dental", address: "285 James St, Holland, MI 49424", phone: "855-869-6900", info: "Comprehensive general and preventive dentistry services. Open to the public with sliding fee scale, accepts Medicaid, Healthy Michigan, and commercial plans.", website: "https://www.intercare.org" },
+  { name: "City on a Hill Health Clinic", category: "Dental", address: "100 Pine St, Suite 175, Zeeland, MI 49464", phone: "616-748-6009", info: "Provides screenings, X-rays, fillings, extractions, and specialty care like root canals through a volunteer referral network. Focus on uninsured or those unable to pay.", website: "https://coah.org" },
+  { name: "Miles of Smiles (MOS) Mobile Dental Unit", category: "Dental", address: "12251 James Street, Holland, MI 49424", phone: "616-393-5694", info: "40-foot mobile dental unit providing comprehensive services including cleanings, X-rays, and restorative work at schools and community sites. For Ottawa County children ages 0-20 with Medicaid or uninsured.", website: "https://www.miottawa.org" },
+  { name: "Smile Help Now", category: "Dental", address: "Online Directory", phone: "N/A", info: "A tool provided by the Delta Dental Foundation to help Michigan residents find dentists who accept Medicaid or offer sliding-scale fees.", website: "https://www.smilehelpnow.com" },
+  { name: "My Community Dental Centers (MCDC)", category: "Dental", address: "Multiple Locations", phone: "(877) 313-6232", info: "Partners with local health departments to provide dental services to Medicaid recipients and low-income uninsured residents across Michigan.", website: "https://www.mydental.org" },
 
   // Employment Services
   { name: "Manpower", category: "Employment", address: "12331 James Street, Unit 30, Holland", phone: "616-748-2000", info: "Employment services and job placement. M-F 8a-5p, Sa 8:45a-12:30p.", website: "https://www.manpowergroup.com" },
@@ -164,17 +193,18 @@ const RESOURCES: Resource[] = [
   { name: "Ottawa County Veteran Services", category: "Veteran Services", address: "12251 James St, Holland", phone: "616-393-8387", info: "Comprehensive veteran support services and assistance programs.", website: "https://miottawa.org/veterans-services/" },
 
   // Transportation
-  { name: "Harbor Transit", category: "Transportation", address: "Grand Haven", phone: "616-842-3200", info: "Free public transportation. M-F 6a-6p, Sat 9a-4p, Sun 8a-12:30p (Advanced reservation).", website: "https://harbortransit.org" },
-  { name: "MAX Bus - Holland", category: "Transportation", address: "Holland", phone: "616-355-1025", info: "Free public bus transportation serving Holland. Route schedules and real-time information available.", website: "https://catchamax.org" },
+  { name: "Harbor Transit", category: "Transportation", address: "Grand Haven", phone: "616-842-3200", info: "Public transportation. M-F 6a-6p, Sat 9a-4p, Sun 8a-12:30p (Advanced reservation).", website: "https://harbortransit.org" },
+  { name: "MAX Bus - Holland", category: "Transportation", address: "Holland", phone: "616-355-1025", info: "Public bus transportation serving Holland. Route schedules and real-time information available.", website: "https://catchamax.org" },
 
   // Financial Resources
-  { name: "Good Samaritan Ministries", category: "Financial Resources", address: "513 E. 8th St, Holland", phone: "616-392-7159", info: "Housing Search Assistance, Rapid Re-housing, and CHP programs.", website: "https://www.gsministries.org" },
   { name: "Community Action Agency", category: "Financial Resources", address: "Ottawa County", phone: "616-393-4433", info: "Financial assistance and support services for low-income families.", website: "https://www.miottawa.org/caa" },
-  { name: "The Salvation Army", category: "Financial Resources", address: "310 N. Despelder St, Grand Haven", phone: "616-842-3380 ext 200", info: "Financial assistance including rent and utilities. M-F 9a-4p.", website: "https://www.salvationarmyusa.org" },
-  { name: "Michigan Department of Health & Human Services (MDHHS)", category: "Financial Resources", address: "Michigan", phone: "616-394-7200", info: "Cash assistance, State Emergency Relief (SER) for housing/utilities, and food assistance (SNAP).", website: "https://www.newmibridges.michigan.gov/s/isd-landing-page?language=en_US" },
-  { name: "Love in Action (Tri-Cities)", category: "Financial Resources", address: "326 N Ferry St, Grand Haven, MI 49417", phone: "616-846-2701", info: "Financial assistance for rent or medical bills and financial wellness coaching.", website: "https://www.loveinactiontricities.org" },
   { name: "Community Action House", category: "Financial Resources", address: "739 Paw Paw Dr, Holland, MI 49423", phone: "616-392-2368", info: "Foreclosure intervention and financial wellness coaching.", website: "https://www.communityactionhouse.org" },
+  { name: "Good Samaritan Ministries", category: "Financial Resources", address: "513 E. 8th St, Holland", phone: "616-392-7159", info: "Housing Search Assistance, Rapid Re-housing, and CHP programs.", website: "https://www.gsministries.org" },
   { name: "Love INC Allendale", category: "Financial Resources", address: "6633 Lake Michigan Dr, Allendale, MI 49401", phone: "616-895-5683", info: "Local assistance and coordination for residents in Allendale.", website: "https://www.loveincofneottawa.org" },
+  { name: "Love in Action (Tri-Cities)", category: "Financial Resources", address: "326 N Ferry St, Grand Haven, MI 49417", phone: "616-846-2701", info: "Financial assistance for rent or medical bills and financial wellness coaching.", website: "https://www.loveinactiontricities.org" },
+  { name: "Michigan Department of Health & Human Services (MDHHS)", category: "Financial Resources", address: "Michigan", phone: "616-394-7200", info: "Cash assistance, State Emergency Relief (SER) for housing/utilities, and food assistance (SNAP).", website: "https://www.newmibridges.michigan.gov/s/isd-landing-page?language=en_US" },
+  { name: "The People Center", category: "Financial Resources", address: "307 E Exchange St, Spring Lake, MI 49456", phone: "(616) 844-6710", info: "Financial assistance for emergency needs such as utility payments and other critical expenses. M, W, F 11a-5p.", website: "https://www.thepeoplecenter.org" },
+  { name: "The Salvation Army", category: "Financial Resources", address: "310 N. Despelder St, Grand Haven", phone: "616-842-3380 ext 200", info: "Financial assistance including rent and utilities. M-F 9a-4p.", website: "https://www.salvationarmyusa.org" },
 
   // Miscellaneous
   { name: "St. John's Episcopal Church", category: "Miscellaneous", address: "524 Washington Ave, Grand Haven", phone: "616-842-6260 ext 21", info: "Food pantry, washer/dryer, shower (M-Th 10a-2p). Hot meals Wed 5:30p-6:15p & Sun 1p-1:45p.", website: "https://www.stjohnsgh.org" },
@@ -196,15 +226,18 @@ export default function Home() {
     const matchesSearch = r.name.toLowerCase().includes(searchTerm.toLowerCase()) || r.info.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesCategory = selectedCategory === 'All' || r.category === selectedCategory;
     return matchesSearch && matchesCategory;
-  });
+  }).sort((a, b) => a.name.localeCompare(b.name));
 
   const getCategoryColor = (category: string) => {
     const colors: Record<string, { bg: string; border: string; icon: string; button: string; buttonHover: string }> = {
       "Mental Health": { bg: "bg-blue-100", border: "border-b-4 border-blue-500", icon: "🧠", button: "bg-blue-500 hover:bg-blue-600", buttonHover: "text-white" },
       "Substance Recovery": { bg: "bg-orange-100", border: "border-b-4 border-orange-500", icon: "🛡️", button: "bg-orange-500 hover:bg-orange-600", buttonHover: "text-white" },
+      "Medication-Assisted Treatment": { bg: "bg-teal-100", border: "border-b-4 border-teal-600", icon: "💊", button: "bg-teal-600 hover:bg-teal-700", buttonHover: "text-white" },
       "Food": { bg: "bg-green-100", border: "border-b-4 border-green-500", icon: "🍽️", button: "bg-green-500 hover:bg-green-600", buttonHover: "text-white" },
       "Housing": { bg: "bg-amber-100", border: "border-b-4 border-amber-500", icon: "🏠", button: "bg-amber-500 hover:bg-amber-600", buttonHover: "text-white" },
       "Health Care": { bg: "bg-red-100", border: "border-b-4 border-red-500", icon: "🏥", button: "bg-red-500 hover:bg-red-600", buttonHover: "text-white" },
+      "Dental": { bg: "bg-sky-100", border: "border-b-4 border-sky-500", icon: "🦷", button: "bg-sky-500 hover:bg-sky-600", buttonHover: "text-white" },
+      "Domestic Violence": { bg: "bg-rose-100", border: "border-b-4 border-rose-600", icon: "🛑", button: "bg-rose-600 hover:bg-rose-700", buttonHover: "text-white" },
       "Employment": { bg: "bg-purple-100", border: "border-b-4 border-purple-500", icon: "💼", button: "bg-purple-500 hover:bg-purple-600", buttonHover: "text-white" },
       "Senior Services": { bg: "bg-pink-100", border: "border-b-4 border-pink-500", icon: "👴", button: "bg-pink-500 hover:bg-pink-600", buttonHover: "text-white" },
       "Veteran Services": { bg: "bg-indigo-100", border: "border-b-4 border-indigo-500", icon: "🎖️", button: "bg-indigo-500 hover:bg-indigo-600", buttonHover: "text-white" },
@@ -304,6 +337,30 @@ export default function Home() {
           })}
         </div>
 
+        {selectedCategory === 'Substance Recovery' && (
+          <div className="mb-8 p-6 bg-gradient-to-r from-orange-500 to-amber-500 text-white rounded-lg shadow-lg">
+            <h3 className="text-2xl font-bold mb-3">Medication-Assisted Treatment Options</h3>
+            <p className="mb-4">For evidence-based medication-assisted treatment providers in the area, visit our dedicated MAT resources page.</p>
+            <Link href="/mat-resources">
+              <button className="bg-white text-orange-600 hover:bg-orange-50 font-bold px-6 py-3 rounded-lg transition text-lg">
+                View MAT Providers
+              </button>
+            </Link>
+          </div>
+        )}
+
+        {selectedCategory === 'Domestic Violence' && (
+          <div className="mb-8 p-6 bg-gradient-to-r from-rose-600 to-red-600 text-white rounded-lg shadow-lg">
+            <h3 className="text-2xl font-bold mb-3">Get Help for Domestic Violence</h3>
+            <p className="mb-4">If you or someone you know is experiencing domestic violence, comprehensive support and emergency services are available. Visit our dedicated resources page for crisis lines and shelter information.</p>
+            <Link href="/domestic-violence-resources">
+              <button className="bg-white text-rose-600 hover:bg-rose-50 font-bold px-6 py-3 rounded-lg transition text-lg">
+                View Domestic Violence Resources
+              </button>
+            </Link>
+          </div>
+        )}
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.length > 0 ? (
             filtered.map((resource, idx) => {
@@ -319,7 +376,7 @@ export default function Home() {
                     {resource.address && (
                       <div className="flex gap-3 items-start">
                         <MapPin size={18} className="text-teal-600 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-700">{resource.address}</span>
+                        <span className="text-gray-700" dangerouslySetInnerHTML={{ __html: resource.address }}></span>
                       </div>
                     )}
                     {resource.phone !== "See Locations" && (
