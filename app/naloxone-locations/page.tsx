@@ -47,6 +47,20 @@ export default function NaloxoneLocations() {
       phone: "(616) 377-5792",
       hours: "24 hour access",
       details: "Free Naloxone kits available in newspaper box outside main entrance."
+    },
+    {
+      name: "Corewell Health - Grand Haven",
+      address: "15100 Whittaker Way, Grand Haven, MI 49417",
+      phone: "(616) 935-6250",
+      hours: "Call for hours",
+      details: "Free Naloxone kits available."
+    },
+    {
+      name: "Corewell Health - Zeeland",
+      address: "8333 Felch St, Zeeland, MI 49464",
+      phone: "(616) 772-4644",
+      hours: "Open 24 hours",
+      details: "Free Naloxone kits available."
     }
   ];
 
