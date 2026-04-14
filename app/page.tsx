@@ -148,9 +148,9 @@ const RESOURCES: Resource[] = [
   { name: "Sylvia's Place", category: "Housing", address: "235 North St, Allegan, MI 49010", phone: "(269) 673-8700", info: "Emergency shelter for survivors of domestic violence and their children. 24-hour help line: (888) 411-7837.", website: "https://www.sylviasplace.com" },
 
   // Health Care
-  { name: "Maternal Infant Health Program Holland", category: "Health Care", address: "12251 James St, Holland", phone: "616-396-5266", info: "Maternal and infant health services.", website: "https://www.cmhoc.org" },
-  { name: "Maternal Infant Health Program Grand Haven", category: "Health Care", address: "1207 S. Beechtree St., Grand Haven", phone: "616-846-8360", info: "Maternal and infant health services.", website: "https://www.cmhoc.org" },
-  { name: "Maternal Infant Health Program Hudsonville", category: "Health Care", address: "3100 Port Sheldon, Hudsonville", phone: "616-669-0040", info: "Maternal and infant health services.", website: "https://www.cmhoc.org" },
+  { name: "Maternal Infant Health Program Grand Haven", category: "Prenatal/Maternal", address: "1207 S. Beechtree St., Grand Haven", phone: "616-846-8360", info: "Maternal and infant health services.", website: "https://www.cmhoc.org" },
+  { name: "Maternal Infant Health Program Holland", category: "Prenatal/Maternal", address: "12251 James St, Holland", phone: "616-396-5266", info: "Maternal and infant health services.", website: "https://www.cmhoc.org" },
+  { name: "Maternal Infant Health Program Hudsonville", category: "Prenatal/Maternal", address: "3100 Port Sheldon, Hudsonville", phone: "616-669-0040", info: "Maternal and infant health services.", website: "https://www.cmhoc.org" },
   { name: "Ottawa Pathways to Better Health", category: "Health Care", address: "Ottawa County", phone: "616-393-5601", info: "Comprehensive health pathway services.", website: "https://miottawa.org/health/opbh/" },
   { name: "Holland Community Health Center", category: "Health Care", address: "336 S. River Ave, Holland", phone: "616-394-3788", info: "Primary and preventive health care. M-F 8a-5p.", website: "https://www.hollandcommunityhealthcenter.org" },
   { name: "Ottawa County Department of Public Health", category: "Health Care", address: "12251 James St, Holland, MI 49424", phone: "616-396-5266", info: "Essential public health services including immunizations, environmental health monitoring, and community health screenings.", website: "https://www.miottawa.org/health" },
@@ -239,6 +239,7 @@ export default function Home() {
       "Food": { bg: "bg-green-100", border: "border-b-4 border-green-500", icon: "🍽️", button: "bg-green-500 hover:bg-green-600", buttonHover: "text-white" },
       "Housing": { bg: "bg-amber-100", border: "border-b-4 border-amber-500", icon: "🏠", button: "bg-amber-500 hover:bg-amber-600", buttonHover: "text-white" },
       "Health Care": { bg: "bg-red-100", border: "border-b-4 border-red-500", icon: "🏥", button: "bg-red-500 hover:bg-red-600", buttonHover: "text-white" },
+      "Prenatal/Maternal": { bg: "bg-pink-200", border: "border-b-4 border-pink-600", icon: "🤰", button: "bg-pink-600 hover:bg-pink-700", buttonHover: "text-white" },
       "Dental": { bg: "bg-sky-100", border: "border-b-4 border-sky-500", icon: "🦷", button: "bg-sky-500 hover:bg-sky-600", buttonHover: "text-white" },
       "Domestic Violence": { bg: "bg-rose-100", border: "border-b-4 border-rose-600", icon: "🛑", button: "bg-rose-600 hover:bg-rose-700", buttonHover: "text-white" },
       "Employment": { bg: "bg-purple-100", border: "border-b-4 border-purple-500", icon: "💼", button: "bg-purple-500 hover:bg-purple-600", buttonHover: "text-white" },
