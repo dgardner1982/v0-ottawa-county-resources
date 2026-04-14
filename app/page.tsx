@@ -145,6 +145,13 @@ const RESOURCES: Resource[] = [
   { name: "City On A Hill Ministries", category: "Health Care", address: "100 Pine St, Zeeland, MI 49464", phone: "616-748-6060", info: "Provides free non-emergency medical care and counseling services through a team of volunteer professionals.", website: "https://coahm.org" },
   { name: "Love in Action Medical Clinic", category: "Health Care", address: "326 N Ferry St, Grand Haven, MI 49417", phone: "616-846-2701", info: "Provides urgent and primary medical and dental care for the Tri-Cities community.", website: "https://loveinactiontricities.org/liaclinic/" },
 
+  // Dental
+  { name: "Holland Free Health Clinic (HFHC)", category: "Dental", address: "99 W 26th St, Holland, MI 49423", phone: "616-392-3610", info: "Provides free dental services including oral exams, X-rays, cleanings, fillings, extractions, and oral surgery. Focus on medically underserved population in Ottawa and Allegan counties.", website: "https://www.hfhclinic.org" },
+  { name: "Love in Action of the Tri-Cities (Dental Center)", category: "Dental", address: "326 N Ferry St, Grand Haven, MI 49417", phone: "616-846-2701", info: "Offers basic dental care and referrals provided by licensed volunteer dentists and hygienists. For adults 18+ who are uninsured or underinsured and meet financial eligibility guidelines.", website: "https://www.loveinactiontricities.org" },
+  { name: "InterCare Community Health Network", category: "Dental", address: "285 James St, Holland, MI 49424", phone: "855-869-6900", info: "Comprehensive general and preventive dentistry services. Open to the public with sliding fee scale, accepts Medicaid, Healthy Michigan, and commercial plans.", website: "https://www.intercare.org" },
+  { name: "City on a Hill Health Clinic", category: "Dental", address: "100 Pine St, Suite 175, Zeeland, MI 49464", phone: "616-748-6009", info: "Provides screenings, X-rays, fillings, extractions, and specialty care like root canals through a volunteer referral network. Focus on uninsured or those unable to pay.", website: "https://coah.org" },
+  { name: "Miles of Smiles (MOS) Mobile Dental Unit", category: "Dental", address: "12251 James Street, Holland, MI 49424", phone: "616-393-5694", info: "40-foot mobile dental unit providing comprehensive services including cleanings, X-rays, and restorative work at schools and community sites. For Ottawa County children ages 0-20 with Medicaid or uninsured.", website: "https://www.miottawa.org" },
+
   // Employment Services
   { name: "Manpower", category: "Employment", address: "12331 James Street, Unit 30, Holland", phone: "616-748-2000", info: "Employment services and job placement. M-F 8a-5p, Sa 8:45a-12:30p.", website: "https://www.manpowergroup.com" },
   { name: "Michigan Rehabilitation Services", category: "Employment", address: "121 Clover Street, Holland", phone: "616-395-8495", info: "Vocational rehabilitation services.", website: "https://www.michigan.gov/mrs" },
@@ -215,6 +222,7 @@ export default function Home() {
       "Food": { bg: "bg-green-100", border: "border-b-4 border-green-500", icon: "🍽️", button: "bg-green-500 hover:bg-green-600", buttonHover: "text-white" },
       "Housing": { bg: "bg-amber-100", border: "border-b-4 border-amber-500", icon: "🏠", button: "bg-amber-500 hover:bg-amber-600", buttonHover: "text-white" },
       "Health Care": { bg: "bg-red-100", border: "border-b-4 border-red-500", icon: "🏥", button: "bg-red-500 hover:bg-red-600", buttonHover: "text-white" },
+      "Dental": { bg: "bg-sky-100", border: "border-b-4 border-sky-500", icon: "🦷", button: "bg-sky-500 hover:bg-sky-600", buttonHover: "text-white" },
       "Employment": { bg: "bg-purple-100", border: "border-b-4 border-purple-500", icon: "💼", button: "bg-purple-500 hover:bg-purple-600", buttonHover: "text-white" },
       "Senior Services": { bg: "bg-pink-100", border: "border-b-4 border-pink-500", icon: "👴", button: "bg-pink-500 hover:bg-pink-600", buttonHover: "text-white" },
       "Veteran Services": { bg: "bg-indigo-100", border: "border-b-4 border-indigo-500", icon: "🎖️", button: "bg-indigo-500 hover:bg-indigo-600", buttonHover: "text-white" },
