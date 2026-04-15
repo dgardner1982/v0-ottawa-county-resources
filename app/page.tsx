@@ -276,7 +276,7 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                 <Phone size={18} className="text-purple-600 flex-shrink-0" />
                 <a href="tel:616-396-2154" className="text-purple-700 font-bold hover:underline">(616) 396-2154</a>
               </div>
-              <div className="bg-white p-4 rounded mt-3 border-l-4 border-purple-600">
+              <div className="bg-purple-100 p-4 rounded mt-3 border-l-4 border-purple-600">
                 <p className="font-semibold text-gray-900 mb-2">How They Help:</p>
                 <p className="text-gray-700">Offers &ldquo;Federal Bonding,&rdquo; which is a free insurance policy for employers that covers them if they hire a person with a record. Also provides leads on &ldquo;second chance&rdquo; employers in the region.</p>
               </div>
@@ -306,7 +306,7 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                 <Globe size={18} className="text-purple-600 flex-shrink-0" />
                 <a href="https://70x7liferecovery.org" target="_blank" rel="noopener noreferrer" className="text-purple-700 font-bold hover:underline">70x7liferecovery.org</a>
               </div>
-              <div className="bg-white p-4 rounded mt-3 border-l-4 border-purple-600">
+              <div className="bg-purple-100 p-4 rounded mt-3 border-l-4 border-purple-600">
                 <p className="font-semibold text-gray-900 mb-2">Programs & Services:</p>
                 <ul className="text-gray-700 space-y-2">
                   <li>• <strong>Employment Support:</strong> Partners with local employers to help graduates find stable, meaningful work</li>
@@ -338,7 +338,7 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                 <Globe size={18} className="text-purple-600 flex-shrink-0" />
                 <a href="https://freshcoastalliance.org" target="_blank" rel="noopener noreferrer" className="text-purple-700 font-bold hover:underline">freshcoastalliance.org</a>
               </div>
-              <div className="bg-white p-4 rounded mt-3 border-l-4 border-purple-600">
+              <div className="bg-purple-100 p-4 rounded mt-3 border-l-4 border-purple-600">
                 <p className="font-semibold text-gray-900 mb-2">Programs & Services:</p>
                 <ul className="text-gray-700 space-y-2">
                   <li>• <strong>Fresh Coast Cleaning:</strong> Job placement through their cleaning enterprise with employer partnership</li>
@@ -370,6 +370,10 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                 <Globe size={18} className="text-blue-600 flex-shrink-0" />
                 <a href="https://fettig.jobs" target="_blank" rel="noopener noreferrer" className="text-blue-700 font-bold hover:underline">fettig.jobs</a>
               </div>
+              <div className="bg-purple-100 p-4 rounded mt-3 border-l-4 border-purple-600">
+                <p className="font-semibold text-gray-900 mb-2">Focus:</p>
+                <p className="text-gray-700">Industrial and manufacturing roles with personalized approach to candidate backgrounds.</p>
+              </div>
             </div>
           </div>
 
@@ -396,7 +400,7 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                 <Globe size={18} className="text-orange-600 flex-shrink-0" />
                 <a href="https://forgestaff.com" target="_blank" rel="noopener noreferrer" className="text-orange-700 font-bold hover:underline">forgestaff.com</a>
               </div>
-              <div className="bg-white p-4 rounded mt-3 border-l-4 border-orange-600">
+              <div className="bg-purple-100 p-4 rounded mt-3 border-l-4 border-purple-600">
                 <p className="font-semibold text-gray-900 mb-2">Focus:</p>
                 <p className="text-gray-700">Entry-level manufacturing and labor positions with focus on current ability to perform work.</p>
               </div>
@@ -426,7 +430,7 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                 <Globe size={18} className="text-green-600 flex-shrink-0" />
                 <a href="https://cascadeng.com" target="_blank" rel="noopener noreferrer" className="text-green-700 font-bold hover:underline">cascadeng.com</a>
               </div>
-              <div className="bg-white p-4 rounded mt-3 border-l-4 border-green-600">
+              <div className="bg-purple-100 p-4 rounded mt-3 border-l-4 border-purple-600">
                 <p className="font-semibold text-gray-900 mb-2">Program:</p>
                 <p className="text-gray-700">Formalized program specifically designed to hire and support individuals transitioning from the correctional system.</p>
               </div>
@@ -449,7 +453,7 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                 <Globe size={18} className="text-teal-600 flex-shrink-0" />
                 <a href="https://mitalent.org/returning-citizens" target="_blank" rel="noopener noreferrer" className="text-teal-700 font-bold hover:underline">mitalent.org/returning-citizens</a>
               </div>
-              <div className="bg-white p-4 rounded mt-3 border-l-4 border-teal-600">
+              <div className="bg-purple-100 p-4 rounded mt-3 border-l-4 border-purple-600">
                 <p className="font-semibold text-gray-900">Statewide Resources:</p>
                 <ul className="text-gray-700 space-y-1 mt-2">
                   <li>• Fidelity Bonding Program information</li>
