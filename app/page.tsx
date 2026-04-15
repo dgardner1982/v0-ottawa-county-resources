@@ -590,6 +590,21 @@ export default function Home() {
           </div>
         )}
 
+        {selectedCategory === 'Food' && (
+          <div className="mb-8 p-6 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-lg shadow-lg">
+            <h3 className="text-2xl font-bold mb-3">Find Food Assistance</h3>
+            <p className="mb-4">Looking for food resources in Ottawa County, MI? Explore nearby food pantries, food banks, and community resources offering free or low-cost options.</p>
+            <a 
+              href="https://ottawafood.org/findfood/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-white text-green-600 hover:bg-green-50 font-bold px-6 py-3 rounded-lg transition text-lg"
+            >
+              Click Here to Find Food
+            </a>
+          </div>
+        )}
+
         {selectedCategory === 'Employment' && (
           <div className="mb-8 p-6 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-lg shadow-lg">
             <h3 className="text-2xl font-bold mb-3">Looking for Employment with a Criminal Background?</h3>
