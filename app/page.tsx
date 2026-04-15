@@ -272,41 +272,6 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
             </div>
           </div>
 
-          {/* Agency 3: Forge Industrial Staffing */}
-          <div className="bg-purple-100 border-b-4 border-purple-500 rounded-lg p-6 shadow-md">
-            <div className="flex gap-2 mb-3 items-center">
-              <span className="text-3xl">💼</span>
-              <h3 className="text-2xl font-bold text-gray-900">Forge Industrial Staffing</h3>
-            </div>
-            <p className="text-gray-700 mb-4 font-medium">Local staffing agency with &ldquo;felony friendly&rdquo; openings, focusing on ability to work rather than past convictions.</p>
-            <div className="space-y-3 text-sm">
-              <div className="flex gap-3 items-start">
-                <MapPin size={18} className="text-purple-600 flex-shrink-0 mt-0.5" />
-                <p className="text-gray-700">214 Clover Ave, Holland, MI 49423</p>
-              </div>
-              <div className="bg-white p-4 rounded mt-3 border-l-4 border-purple-600">
-                <p className="font-semibold text-gray-900 mb-2">Focus:</p>
-                <p className="text-gray-700">Entry-level manufacturing and labor jobs.</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Agency 4: Cascade Engineering */}
-          <div className="bg-purple-100 border-b-4 border-purple-500 rounded-lg p-6 shadow-md">
-            <div className="flex gap-2 mb-3 items-center">
-              <span className="text-3xl">💼</span>
-              <h3 className="text-2xl font-bold text-gray-900">Cascade Engineering</h3>
-            </div>
-            <p className="text-gray-700 mb-4 font-medium">Major employer in West Michigan region and national leader in the &ldquo;Returning Citizens&rdquo; movement.</p>
-            <div className="space-y-3 text-sm">
-              <p className="text-gray-700"><strong>Main Hub:</strong> Grand Rapids (with regional presence)</p>
-              <div className="bg-white p-4 rounded mt-3 border-l-4 border-purple-600">
-                <p className="font-semibold text-gray-900 mb-2">Program:</p>
-                <p className="text-gray-700">Formal program designed to hire and support individuals coming out of the correctional system.</p>
-              </div>
-            </div>
-          </div>
-
           {/* Agency 5: Pure Michigan Talent Connect */}
           <div className="bg-purple-100 border-b-4 border-purple-500 rounded-lg p-6 shadow-md">
             <div className="flex gap-2 mb-3 items-center">
