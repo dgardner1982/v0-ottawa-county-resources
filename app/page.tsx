@@ -685,6 +685,22 @@ export default function Home() {
           </div>
         )}
 
+        {selectedCategory === 'Housing' && (
+          <div className="mb-8 p-6 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg shadow-lg">
+            <h3 className="text-2xl font-bold mb-3">Good Samaritan Housing Search Packet</h3>
+            <p className="mb-4">Get step-by-step guidance to help you in your housing search. This comprehensive packet includes tips, resources, and important information for finding affordable housing.</p>
+            <a 
+              href="https://goodsamottawa.org/wp-content/uploads/2025/09/Housing-Search-Packet.August.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-white text-blue-600 hover:bg-blue-50 font-bold px-6 py-3 rounded-lg transition text-lg"
+            >
+              Download Housing Search Packet
+            </a>
+            <p className="mt-3 text-sm text-blue-100">Updated August 2025</p>
+          </div>
+        )}
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.length > 0 ? (
             filtered.map((resource, idx) => {
