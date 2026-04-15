@@ -231,6 +231,7 @@ const RESOURCES: Resource[] = [
   { name: "Lakeshore Habitat for Humanity", category: "Clothing and Furniture", address: "12727 Riley St, Holland", phone: "616-393-8001", info: "Provides furniture and household goods through Re-Store locations. Community resources and support available.", website: "https://www.lakeshorehabitat.org" },
   { name: "Love INC of Hudsonville", category: "Clothing and Furniture", address: "3300 Van Buren St, Hudsonville, MI 49426", phone: "(616) 662-3300", info: "Provides access to clothing, linens, and household furniture through Essential Resource Ministries. Faith-based clearinghouse coordinating local church resources for the Hudsonville, Jenison, and Grandville areas. M-F 9a-4p.", website: "https://loveinchudsonville.org" },
   { name: "Habitat for Humanity ReStore Grand Haven", category: "Clothing and Furniture", address: "408 N Ferry St, Grand Haven, MI 49417", phone: "(616) 846-1505", info: "ReStore location offering affordable furniture and household goods. Hours: M-F 9:30 AM – 6:30 PM; Saturday 9:30 AM – 4:30 PM. Office hours: M-F 9:00 AM – 5:00 PM.", website: "https://tricitieshabitat.org" },
+  { name: "Habitat for Humanity ReStore Lakeshore", category: "Clothing and Furniture", address: "12727 Riley St, Holland, MI 49424", phone: "(616) 393-8001", info: "Primary resale outlet for the Holland area operating as a home improvement center. Offers cabinetry, lighting, flooring, hardware, and appliances (stoves, refrigerators, washers/dryers) at reduced prices. Accepts donations, diverts materials from landfills, and provides volunteer opportunities. Store Hours: T-F 10:00 AM – 5:30 PM; Saturday 10:00 AM – 4:00 PM. Donations close 30 minutes before store closing.", website: "https://lakeshorehabitat.org/restore" },
 
   // Prenatal and Baby Resources
 
@@ -394,7 +395,7 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                   <li>• <strong>Stronger Together:</strong> Family support groups for loved ones impacted by incarceration</li>
                   <li>• <strong>Mentorship:</strong> Connects participants with mentors for guidance and accountability</li>
                   <li>• <strong>Life Skills & Classes:</strong> Programs like &ldquo;Take Charge&rdquo; for empowerment and practical skills</li>
-                  <li>• <strong>Housing & Basic Needs:</strong> Assists in finding stable housing and essential items</li>
+                  <li>�� <strong>Housing & Basic Needs:</strong> Assists in finding stable housing and essential items</li>
                 </ul>
               </div>
             </div>
