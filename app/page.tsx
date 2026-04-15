@@ -272,20 +272,6 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
             </div>
           </div>
 
-          {/* Agency 5: Pure Michigan Talent Connect */}
-          <div className="bg-purple-100 border-b-4 border-purple-500 rounded-lg p-6 shadow-md">
-            <div className="flex gap-2 mb-3 items-center">
-              <span className="text-3xl">��</span>
-              <h3 className="text-2xl font-bold text-gray-900">Pure Michigan Talent Connect</h3>
-            </div>
-            <p className="text-gray-700 mb-4 font-medium">Statewide online portal to find Second Chance employers and Returning Citizen resources.</p>
-            <div className="space-y-3 text-sm">
-              <div className="bg-white p-4 rounded border-l-4 border-purple-600">
-                <p className="text-gray-700">You can specifically search for &ldquo;Second Chance&rdquo; employers or &ldquo;Returning Citizen&rdquo; resources. Filter for employers who utilize the Fidelity Bonding Program.</p>
-              </div>
-            </div>
-          </div>
-
           {/* Agency 6: 70x7 Life Recovery */}
           <div className="bg-purple-100 border-b-4 border-purple-500 rounded-lg p-6 shadow-md">
             <div className="flex gap-2 mb-3 items-center">
