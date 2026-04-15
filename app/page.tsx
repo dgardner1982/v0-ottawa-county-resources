@@ -1,3 +1,4 @@
+// v39 - Fixed HTML tag issue
 'use client';
 
 import { useState } from 'react';
