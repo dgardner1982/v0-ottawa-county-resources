@@ -288,54 +288,6 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
             <div className="flex gap-2 mb-3 items-center">
               <span className="text-3xl">💼</span>
               <h3 className="text-2xl font-bold text-gray-900">70x7 Life Recovery</h3>
-            </div>
-            <p className="text-gray-700 mb-4 font-medium">Specialized organization providing restoration and long-term support for men and women returning to the community after incarceration.</p>
-            <div className="space-y-3 text-sm">
-              <div className="flex gap-3 items-start">
-                <MapPin size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
-                <div>
-                  <p className="font-semibold">Holland:</p>
-                  <p className="text-gray-700">97 W 22nd St, Holland, MI 49423</p>
-                </div>
-              </div>
-              <div className="flex gap-3 items-center">
-                <Phone size={18} className="text-blue-600 flex-shrink-0" />
-                <a href="tel:616-796-0685" className="text-blue-700 font-bold hover:underline">(616) 796-0685</a>
-              </div>
-              <div className="flex gap-3 items-center">
-                <Globe size={18} className="text-blue-600 flex-shrink-0" />
-                <a href="https://70x7liferecovery.org" target="_blank" rel="noopener noreferrer" className="text-blue-700 font-bold hover:underline">70x7liferecovery.org</a>
-              </div>
-            </div>
-          </div>
-            <p className="text-gray-700 mb-4 font-medium">Specialized organization providing restoration and long-term support for men and women returning to the community after incarceration.</p>
-            <div className="space-y-3 text-sm">
-              <div className="flex gap-3 items-start">
-                <MapPin size={18} className="text-purple-600 flex-shrink-0 mt-0.5" />
-                <div>
-                  <p className="font-semibold">Holland:</p>
-                  <p className="text-gray-700">97 W 22nd St, Holland, MI 49423</p>
-                </div>
-              </div>
-              <div className="flex gap-3 items-center">
-                <Phone size={18} className="text-purple-600 flex-shrink-0" />
-                <a href="tel:616-796-0685" className="text-purple-700 font-bold hover:underline">(616) 796-0685</a>
-              </div>
-              <div className="flex gap-3 items-center">
-                <Globe size={18} className="text-purple-600 flex-shrink-0" />
-                <a href="https://70x7liferecovery.org" target="_blank" rel="noopener noreferrer" className="text-purple-700 font-bold hover:underline">70x7liferecovery.org</a>
-              </div>
-              <div className="bg-white p-4 rounded mt-3 border-l-4 border-purple-600">
-                <p className="font-semibold text-gray-900 mb-2">Programs & Services:</p>
-                <ul className="text-gray-700 space-y-2">
-                  <li>• <strong>Employment Support:</strong> Partners with local employers to help graduates find stable, meaningful work</li>
-                  <li>• <strong>Stronger Together:</strong> Family support groups for loved ones impacted by incarceration</li>
-                  <li>• <strong>Mentorship:</strong> Connects participants with mentors for guidance and accountability</li>
-                  <li>• <strong>Life Skills & Classes:</strong> Programs like &ldquo;Take Charge&rdquo; for empowerment and practical skills</li>
-                  <li>���� <strong>Housing & Basic Needs:</strong> Assists in finding stable housing and essential items</li>
-                </ul>
-              </div>
-            </div>
           </div>
 
           {/* Agency 7: Fresh Coast Alliance */}
