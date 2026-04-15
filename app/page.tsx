@@ -128,7 +128,6 @@ const RESOURCES: Resource[] = [
   { name: "Love Your Neighbor (Love INC of Hudsonville)", category: "Food", address: "3300 Van Buren St, Hudsonville", phone: "616-662-3300", info: "Faith-based clearinghouse model coordinating church resources. Food pantry providing access to supplemental groceries and household essentials. Life Skills program and personal care items available. M-F 9a-4p.", website: "https://loveinchudsonville.org" },
   { name: "The People Center", category: "Food", address: "307 E. Exchange, Spring Lake", phone: "616-844-6710", info: "Food pantry. M & W 11a-3p. Call first for appointment.", website: "https://www.thepeoplecenter.org" },
   { name: "Harvest Stand Ministries", category: "Food", address: "100 Pine St Ste 100, Zeeland", phone: "616-748-6003", info: "Food pantry. M 9a-3p, W 1p-6p, Th 9a-12p. By appointment.", website: "https://harveststandministries.org" },
-  { name: "Lakeshore Habitat for Humanity", category: "Food", address: "12727 Riley St, Holland", phone: "616-393-8001", info: "Community resources and support.", website: "https://www.lakeshorehabitat.org" },
   { name: "MI Bridges", category: "Food", address: "State Program", phone: "1-888-544-8773", info: "State food assistance program.", website: "https://www.michigan.gov/mibridges" },
 
   // Housing
@@ -394,7 +393,7 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                   <li>• <strong>Stronger Together:</strong> Family support groups for loved ones impacted by incarceration</li>
                   <li>• <strong>Mentorship:</strong> Connects participants with mentors for guidance and accountability</li>
                   <li>• <strong>Life Skills & Classes:</strong> Programs like &ldquo;Take Charge&rdquo; for empowerment and practical skills</li>
-                  <li>��� <strong>Housing & Basic Needs:</strong> Assists in finding stable housing and essential items</li>
+                  <li>���� <strong>Housing & Basic Needs:</strong> Assists in finding stable housing and essential items</li>
                 </ul>
               </div>
             </div>
