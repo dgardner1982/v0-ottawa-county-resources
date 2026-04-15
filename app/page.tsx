@@ -272,25 +272,6 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
             </div>
           </div>
 
-          {/* Agency 2: Fettig */}
-          <div className="bg-purple-100 border-b-4 border-purple-500 rounded-lg p-6 shadow-md">
-            <div className="flex gap-2 mb-3 items-center">
-              <span className="text-3xl">💼</span>
-              <h3 className="text-2xl font-bold text-gray-900">Fettig</h3>
-            </div>
-            <p className="text-gray-700 mb-4 font-medium">Prominent West Michigan staffing agency widely recognized for working with individuals with backgrounds.</p>
-            <div className="space-y-3 text-sm">
-              <div className="flex gap-3 items-start">
-                <MapPin size={18} className="text-purple-600 flex-shrink-0 mt-0.5" />
-                <p className="text-gray-700">400 136th Ave, Suite 105, Holland, MI 49424</p>
-              </div>
-              <div className="bg-white p-4 rounded mt-3 border-l-4 border-purple-600">
-                <p className="font-semibold text-gray-900 mb-2">Focus:</p>
-                <p className="text-gray-700">Industrial, manufacturing, and warehouse roles.</p>
-              </div>
-            </div>
-          </div>
-
           {/* Agency 3: Forge Industrial Staffing */}
           <div className="bg-purple-100 border-b-4 border-purple-500 rounded-lg p-6 shadow-md">
             <div className="flex gap-2 mb-3 items-center">
