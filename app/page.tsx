@@ -284,7 +284,7 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
           </div>
 
           {/* Agency 6: 70x7 Life Recovery */}
-          <div className="bg-blue-100 border-b-4 border-blue-500 rounded-lg p-6 shadow-md">
+          <div className="bg-purple-100 border-b-4 border-purple-500 rounded-lg p-6 shadow-md">
             <div className="flex gap-2 mb-3 items-center">
               <span className="text-3xl">💼</span>
               <h3 className="text-2xl font-bold text-gray-900">70x7 Life Recovery</h3>
@@ -292,21 +292,21 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
             <p className="text-gray-700 mb-4 font-medium">Specialized organization providing restoration and long-term support for men and women returning to the community after incarceration.</p>
             <div className="space-y-3 text-sm">
               <div className="flex gap-3 items-start">
-                <MapPin size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
+                <MapPin size={18} className="text-purple-600 flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="font-semibold">Holland:</p>
                   <p className="text-gray-700">97 W 22nd St, Holland, MI 49423</p>
                 </div>
               </div>
               <div className="flex gap-3 items-center">
-                <Phone size={18} className="text-blue-600 flex-shrink-0" />
-                <a href="tel:616-796-0685" className="text-blue-700 font-bold hover:underline">(616) 796-0685</a>
+                <Phone size={18} className="text-purple-600 flex-shrink-0" />
+                <a href="tel:616-796-0685" className="text-purple-700 font-bold hover:underline">(616) 796-0685</a>
               </div>
               <div className="flex gap-3 items-center">
-                <Globe size={18} className="text-blue-600 flex-shrink-0" />
-                <a href="https://70x7liferecovery.org" target="_blank" rel="noopener noreferrer" className="text-blue-700 font-bold hover:underline">70x7liferecovery.org</a>
+                <Globe size={18} className="text-purple-600 flex-shrink-0" />
+                <a href="https://70x7liferecovery.org" target="_blank" rel="noopener noreferrer" className="text-purple-700 font-bold hover:underline">70x7liferecovery.org</a>
               </div>
-              <div className="bg-white p-4 rounded mt-3 border-l-4 border-blue-600">
+              <div className="bg-white p-4 rounded mt-3 border-l-4 border-purple-600">
                 <p className="font-semibold text-gray-900 mb-2">Programs & Services:</p>
                 <ul className="text-gray-700 space-y-2">
                   <li>• <strong>Employment Support:</strong> Partners with local employers to help graduates find stable, meaningful work</li>
@@ -316,7 +316,7 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
           </div>
 
           {/* Agency 7: Fresh Coast Alliance */}
-          <div className="bg-orange-100 border-b-4 border-orange-500 rounded-lg p-6 shadow-md">
+          <div className="bg-purple-100 border-b-4 border-purple-500 rounded-lg p-6 shadow-md">
             <div className="flex gap-2 mb-3 items-center">
               <span className="text-3xl">💼</span>
               <h3 className="text-2xl font-bold text-gray-900">Fresh Coast Alliance</h3>
@@ -324,21 +324,21 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
             <p className="text-gray-700 mb-4 font-medium">Muskegon-based non-profit specializing in employment placement and recovery support for individuals returning from incarceration and those in substance use recovery.</p>
             <div className="space-y-3 text-sm">
               <div className="flex gap-3 items-start">
-                <MapPin size={18} className="text-orange-600 flex-shrink-0 mt-0.5" />
+                <MapPin size={18} className="text-purple-600 flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="font-semibold">Muskegon:</p>
                   <p className="text-gray-700">1128 Roberts St, Muskegon, MI 49442</p>
                 </div>
               </div>
               <div className="flex gap-3 items-center">
-                <Phone size={18} className="text-orange-600 flex-shrink-0" />
-                <a href="tel:231-286-1992" className="text-orange-700 font-bold hover:underline">(231) 286-1992</a>
+                <Phone size={18} className="text-purple-600 flex-shrink-0" />
+                <a href="tel:231-286-1992" className="text-purple-700 font-bold hover:underline">(231) 286-1992</a>
               </div>
               <div className="flex gap-3 items-center">
-                <Globe size={18} className="text-orange-600 flex-shrink-0" />
-                <a href="https://freshcoastalliance.org" target="_blank" rel="noopener noreferrer" className="text-orange-700 font-bold hover:underline">freshcoastalliance.org</a>
+                <Globe size={18} className="text-purple-600 flex-shrink-0" />
+                <a href="https://freshcoastalliance.org" target="_blank" rel="noopener noreferrer" className="text-purple-700 font-bold hover:underline">freshcoastalliance.org</a>
               </div>
-              <div className="bg-white p-4 rounded mt-3 border-l-4 border-orange-600">
+              <div className="bg-white p-4 rounded mt-3 border-l-4 border-purple-600">
                 <p className="font-semibold text-gray-900 mb-2">Programs & Services:</p>
                 <ul className="text-gray-700 space-y-2">
                   <li>• <strong>Fresh Coast Cleaning:</strong> Job placement through their cleaning enterprise with employer partnership</li>
@@ -348,7 +348,7 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
           </div>
 
           {/* Agency 8: Fettig.jobs */}
-          <div className="bg-green-100 border-b-4 border-green-500 rounded-lg p-6 shadow-md">
+          <div className="bg-purple-100 border-b-4 border-purple-500 rounded-lg p-6 shadow-md">
             <div className="flex gap-2 mb-3 items-center">
               <span className="text-3xl">🏭</span>
               <h3 className="text-2xl font-bold text-gray-900">Fettig.jobs</h3>
@@ -356,21 +356,21 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
             <p className="text-gray-700 mb-4 font-medium">Established regional agency specializing in connecting workers with industrial and manufacturing roles, known for their personalized approach to candidate backgrounds.</p>
             <div className="space-y-3 text-sm">
               <div className="flex gap-3 items-start">
-                <MapPin size={18} className="text-green-600 flex-shrink-0 mt-0.5" />
+                <MapPin size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="font-semibold">Holland:</p>
                   <p className="text-gray-700">12465 James St #2, Holland, MI 49424</p>
                 </div>
               </div>
               <div className="flex gap-3 items-center">
-                <Phone size={18} className="text-green-600 flex-shrink-0" />
-                <a href="tel:616-335-6770" className="text-green-700 font-bold hover:underline">(616) 335-6770</a>
+                <Phone size={18} className="text-blue-600 flex-shrink-0" />
+                <a href="tel:616-335-6770" className="text-blue-700 font-bold hover:underline">(616) 335-6770</a>
               </div>
               <div className="flex gap-3 items-center">
-                <Globe size={18} className="text-green-600 flex-shrink-0" />
-                <a href="https://fettig.jobs" target="_blank" rel="noopener noreferrer" className="text-green-700 font-bold hover:underline">fettig.jobs</a>
+                <Globe size={18} className="text-blue-600 flex-shrink-0" />
+                <a href="https://fettig.jobs" target="_blank" rel="noopener noreferrer" className="text-blue-700 font-bold hover:underline">fettig.jobs</a>
               </div>
-              <div className="bg-white p-4 rounded mt-3 border-l-4 border-green-600">
+              <div className="bg-white p-4 rounded mt-3 border-l-4 border-purple-600">
                 <p className="font-semibold text-gray-900 mb-2">Focus:</p>
                 <p className="text-gray-700">Industrial and manufacturing roles with personalized approach to candidate backgrounds.</p>
               </div>
@@ -378,34 +378,11 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
           </div>
 
           {/* Agency 9: Forge Industrial Staffing */}
-          <div className="bg-teal-100 border-b-4 border-teal-500 rounded-lg p-6 shadow-md">
+          <div className="bg-purple-100 border-b-4 border-purple-500 rounded-lg p-6 shadow-md">
             <div className="flex gap-2 mb-3 items-center">
               <span className="text-3xl">⚙️</span>
               <h3 className="text-2xl font-bold text-gray-900">Forge Industrial Staffing</h3>
             </div>
-            <p className="text-gray-700 mb-4 font-medium">Local staffing agency specializing in entry-level labor and manufacturing jobs. Focuses on current ability to perform work with many accessible opportunities for those with past convictions.</p>
-            <div className="space-y-3 text-sm">
-              <div className="flex gap-3 items-start">
-                <MapPin size={18} className="text-teal-600 flex-shrink-0 mt-0.5" />
-                <div>
-                  <p className="font-semibold">Holland:</p>
-                  <p className="text-gray-700">520 Butternut Dr, Holland, MI 49424</p>
-                </div>
-              </div>
-              <div className="flex gap-3 items-center">
-                <Phone size={18} className="text-teal-600 flex-shrink-0" />
-                <a href="tel:616-393-8800" className="text-teal-700 font-bold hover:underline">(616) 393-8800</a>
-              </div>
-              <div className="flex gap-3 items-center">
-                <Globe size={18} className="text-teal-600 flex-shrink-0" />
-                <a href="https://forgestaff.com" target="_blank" rel="noopener noreferrer" className="text-teal-700 font-bold hover:underline">forgestaff.com</a>
-              </div>
-              <div className="bg-white p-4 rounded mt-3 border-l-4 border-teal-600">
-                <p className="font-semibold text-gray-900 mb-2">Focus:</p>
-                <p className="text-gray-700">Entry-level manufacturing and labor positions with focus on current ability to perform work.</p>
-              </div>
-            </div>
-          </div>
             <p className="text-gray-700 mb-4 font-medium">Local staffing agency specializing in entry-level labor and manufacturing jobs. Focuses on current ability to perform work with many accessible opportunities for those with past convictions.</p>
             <div className="space-y-3 text-sm">
               <div className="flex gap-3 items-start">
@@ -431,7 +408,7 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
           </div>
 
           {/* Agency 10: Cascade Engineering */}
-          <div className="bg-red-100 border-b-4 border-red-500 rounded-lg p-6 shadow-md">
+          <div className="bg-purple-100 border-b-4 border-purple-500 rounded-lg p-6 shadow-md">
             <div className="flex gap-2 mb-3 items-center">
               <span className="text-3xl">🌱</span>
               <h3 className="text-2xl font-bold text-gray-900">Cascade Engineering</h3>
@@ -439,21 +416,21 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
             <p className="text-gray-700 mb-4 font-medium">National leader in the "Returning Citizens" movement based in Grand Rapids. Features a formalized program designed specifically to hire and support individuals transitioning from the correctional system.</p>
             <div className="space-y-3 text-sm">
               <div className="flex gap-3 items-start">
-                <MapPin size={18} className="text-red-600 flex-shrink-0 mt-0.5" />
+                <MapPin size={18} className="text-green-600 flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="font-semibold">Grand Rapids:</p>
                   <p className="text-gray-700">5175 36th St SE, Grand Rapids, MI 49512</p>
                 </div>
               </div>
               <div className="flex gap-3 items-center">
-                <Phone size={18} className="text-red-600 flex-shrink-0" />
-                <a href="tel:616-975-4800" className="text-red-700 font-bold hover:underline">(616) 975-4800</a>
+                <Phone size={18} className="text-green-600 flex-shrink-0" />
+                <a href="tel:616-975-4800" className="text-green-700 font-bold hover:underline">(616) 975-4800</a>
               </div>
               <div className="flex gap-3 items-center">
-                <Globe size={18} className="text-red-600 flex-shrink-0" />
-                <a href="https://cascadeng.com" target="_blank" rel="noopener noreferrer" className="text-red-700 font-bold hover:underline">cascadeng.com</a>
+                <Globe size={18} className="text-green-600 flex-shrink-0" />
+                <a href="https://cascadeng.com" target="_blank" rel="noopener noreferrer" className="text-green-700 font-bold hover:underline">cascadeng.com</a>
               </div>
-              <div className="bg-white p-4 rounded mt-3 border-l-4 border-red-600">
+              <div className="bg-white p-4 rounded mt-3 border-l-4 border-purple-600">
                 <p className="font-semibold text-gray-900 mb-2">Program:</p>
                 <p className="text-gray-700">Formalized program specifically designed to hire and support individuals transitioning from the correctional system.</p>
               </div>
@@ -461,31 +438,11 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
           </div>
 
           {/* Agency 11: Pure Michigan Talent Connect */}
-          <div className="bg-indigo-100 border-b-4 border-indigo-500 rounded-lg p-6 shadow-md">
+          <div className="bg-purple-100 border-b-4 border-purple-500 rounded-lg p-6 shadow-md">
             <div className="flex gap-2 mb-3 items-center">
               <span className="text-3xl">🌐</span>
               <h3 className="text-2xl font-bold text-gray-900">Pure Michigan Talent Connect</h3>
             </div>
-            <p className="text-gray-700 mb-4 font-medium">Official statewide portal for job seekers and employers, featuring a dedicated section for "Returning Citizens" with resources on the Fidelity Bonding Program and tools to find employers actively participating in second-chance hiring.</p>
-            <div className="space-y-3 text-sm">
-              <div className="flex gap-3 items-center">
-                <Phone size={18} className="text-indigo-600 flex-shrink-0" />
-                <a href="tel:800-285-9675" className="text-indigo-700 font-bold hover:underline">(800) 285-WORKS (9675)</a>
-              </div>
-              <div className="flex gap-3 items-center">
-                <Globe size={18} className="text-indigo-600 flex-shrink-0" />
-                <a href="https://mitalent.org/returning-citizens" target="_blank" rel="noopener noreferrer" className="text-indigo-700 font-bold hover:underline">mitalent.org/returning-citizens</a>
-              </div>
-              <div className="bg-white p-4 rounded mt-3 border-l-4 border-indigo-600">
-                <p className="font-semibold text-gray-900">Statewide Resources:</p>
-                <ul className="text-gray-700 space-y-1 mt-2">
-                  <li>• Fidelity Bonding Program information</li>
-                  <li>• Directory of second-chance employers</li>
-                  <li>• Job search tools for returning citizens</li>
-                </ul>
-              </div>
-            </div>
-          </div>
             <p className="text-gray-700 mb-4 font-medium">Official statewide portal for job seekers and employers, featuring a dedicated section for "Returning Citizens" with resources on the Fidelity Bonding Program and tools to find employers actively participating in second-chance hiring.</p>
             <div className="space-y-3 text-sm">
               <div className="flex gap-3 items-center">
