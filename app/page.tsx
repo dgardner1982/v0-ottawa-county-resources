@@ -82,7 +82,7 @@ const RESOURCES: Resource[] = [
   // Substance Recovery
   { name: "Arbor Circle - Holland", category: "Substance Recovery", address: "412 Century Ln, Holland, MI 49423", phone: "(616) 396-2301", info: "Substance abuse treatment and recovery programs.", website: "https://arborcircle.org" },
   { name: "Chester Ray Center & Harbor House", category: "Substance Recovery", address: "Holland", phone: "616-396-5284", info: "Recovery programs operated by Reach for Recovery. Chester Ray Center and Harbor House provide comprehensive substance recovery and support services.", website: "https://reachforrecovery.org" },
-  { name: "Community Mental Health of Ottawa County", category: "Substance Recovery", address: "Holland: 12265 James St, Holland, MI 49424 | Grand Haven: 1111 Fulton St, Grand Haven, MI 49417", phone: "(616) 393-5681", info: "Access services available Monday through Friday, 8:00 AM – 5:00 PM. Crisis line available 24/7 at (866) 512-4357 or (616) 396-4357.", website: "https://www.miottawa.org/cmh" },
+  { name: "Community Mental Health of Ottawa County", category: "Substance Recovery", address: "<b>Holland:</b> 12265 James St, Holland, MI 49424 | <b>Grand Haven:</b> 1111 Fulton St, Grand Haven, MI 49417", phone: "(616) 393-5681", info: "Access services available Monday through Friday, 8:00 AM – 5:00 PM. Crisis line available 24/7 at (866) 512-4357 or (616) 396-4357.", website: "https://www.miottawa.org/cmh" },
   { name: "Mercy Health Life Counseling", category: "Substance Recovery", address: "125 E. Southern Ave, Muskegon", phone: "231-726-3582", info: "Counseling services. Walk-ins available.", website: "https://www.mercyhealth.org" },
   { name: "New Vision Withdrawal Management", category: "Substance Recovery", address: "1309 Sheldon Road, Grand Haven, MI 49417", phone: "1-844-237-3627", info: "Inpatient detoxification and substance use disorder services at Trinity Health Grand Haven Hospital. Comprehensive withdrawal management program.", website: "https://trinityhealthmichigan.org" },
   { name: "Pine Rest Spring Lake", category: "Substance Recovery", address: "17325 Van Wagoner Rd, Spring Lake", phone: "866-852-4001", info: "Substance recovery and mental health services.", website: "https://www.pinerest.org" },
@@ -129,6 +129,17 @@ const RESOURCES: Resource[] = [
   { name: "The People Center", category: "Food", address: "307 E. Exchange, Spring Lake", phone: "616-844-6710", info: "Food pantry. M & W 11a-3p. Call first for appointment.", website: "https://www.thepeoplecenter.org" },
   { name: "Harvest Stand Ministries", category: "Food", address: "100 Pine St Ste 100, Zeeland", phone: "616-748-6003", info: "Food pantry. M 9a-3p, W 1p-6p, Th 9a-12p. By appointment.", website: "https://harveststandministries.org" },
   { name: "MI Bridges", category: "Food", address: "State Program", phone: "1-888-544-8773", info: "State food assistance program.", website: "https://www.michigan.gov/mibridges" },
+
+  // Clothing and Furniture
+  { name: "Love INC of Hudsonville", category: "Clothing and Furniture", address: "3300 Van Buren St, Hudsonville, MI 49426", phone: "(616) 662-3300", info: "Provides access to clothing, linens, and household furniture through Essential Resource Ministries. Faith-based clearinghouse coordinating local church resources for the Hudsonville, Jenison, and Grandville areas. M-F 9a-4p.", website: "https://loveinchudsonville.org" },
+  { name: "Habitat for Humanity ReStore Grand Haven", category: "Clothing and Furniture", address: "408 N Ferry St, Grand Haven, MI 49417", phone: "(616) 846-1505", info: "ReStore location offering affordable furniture and household goods. Hours: M-F 9:30 AM – 6:30 PM; Saturday 9:30 AM – 4:30 PM. Office hours: M-F 9:00 AM – 5:00 PM.", website: "https://tricitieshabitat.org" },
+  { name: "Habitat for Humanity ReStore Lakeshore", category: "Clothing and Furniture", address: "12727 Riley St, Holland, MI 49424", phone: "(616) 393-8001", info: "Primary resale outlet for the Holland area operating as a home improvement center. Offers cabinetry, lighting, flooring, hardware, and appliances (stoves, refrigerators, washers/dryers) at reduced prices. Accepts donations, diverts materials from landfills, and provides volunteer opportunities. Store Hours: T-F 10:00 AM – 5:30 PM; Saturday 10:00 AM – 4:00 PM. Donations close 30 minutes before store closing.", website: "https://lakeshorehabitat.org/restore" },
+  { name: "The People Center - Clothing Hutch", category: "Clothing and Furniture", address: "Spring Lake", phone: "Contact for details", info: "Provides gently used clothes and household items at no cost to families in the Tri-Cities area. Offers men's, women's, and children's clothing, as well as books and backpacks. Open Monday, Wednesday, and Friday from 11:00 AM to 5:00 PM. Services available to Grand Haven, Spring Lake, Ferrysburg, and nearby communities.", website: "Contact for details" },
+  { name: "Grant Me Hope Thrift Store", category: "Clothing and Furniture", address: "Hudsonville", phone: "Contact for details", info: "Public thrift store with free clothing closet for foster families. Foster parents can receive essential clothing and shoes for children by completing intake form. Also provides work experience for youth aging out of foster care. Open M-F 10:00 AM – 6:00 PM, Saturday 10:00 AM – 4:00 PM.", website: "Contact for details" },
+  { name: "Love in Action", category: "Clothing and Furniture", address: "Grand Haven (multiple locations)", phone: "Contact for details", info: "Manages resale shops in Grand Haven and Spring Lake providing clothing and household items. Direct clothing assistance coordinated through main office on Ferry Street. Proceeds support emergency assistance programs. Contact main office for clothing assistance services.", website: "Contact for details" },
+  { name: "New to You Thrift & Donation Center - Love INC of Allendale", category: "Clothing and Furniture", address: "Allendale", phone: "Contact for details", info: "Affiliated with Love INC of Allendale, offers low-cost furniture, clothing, and housewares. Features large inventory of gently used items. Sales directly fund local ministries including food pantry. Open M-Sa with extended hours until 6:00 PM on weekends.", website: "Contact for details" },
+  { name: "Paradise Bound Thrift Shoppe", category: "Clothing and Furniture", address: "Downtown Zeeland on Washington Avenue", phone: "Contact for details", info: "Provides affordable apparel and home goods with well-organized selection of adult and children's clothing. Proceeds support mission work and community outreach. Open daily 9:00 AM – 7:00 PM (Saturday 9:00 AM – 5:00 PM).", website: "Contact for details" },
+  { name: "Legacy Thrift", category: "Clothing and Furniture", address: "Holland", phone: "Contact for details", info: "Popular destination for budget-conscious shoppers with apparel, footwear, and accessories. Maintains consistent rotation of seasonal clothing at accessible price points. Revenue supports local educational and community development initiatives. Open M-Sa starting at 10:00 AM.", website: "Contact for details" },
 
   // Housing
   { name: "Good Samaritan Ministries", category: "Housing", address: "513 E. 8th St, Holland", phone: "616-392-7159", info: "Housing Search Assistance, Rapid Re-housing, and CHP programs.", website: "https://www.gsministries.org" },
@@ -273,30 +284,11 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
           </div>
 
           {/* Agency 6: 70x7 Life Recovery */}
-          <div className="bg-blue-100 border-b-4 border-blue-500 rounded-lg p-6 shadow-md">
+          <div className="bg-purple-100 border-b-4 border-purple-500 rounded-lg p-6 shadow-md">
             <div className="flex gap-2 mb-3 items-center">
               <span className="text-3xl">💼</span>
               <h3 className="text-2xl font-bold text-gray-900">70x7 Life Recovery</h3>
             </div>
-            <p className="text-gray-700 mb-4 font-medium">Specialized organization providing restoration and long-term support for individuals returning to the community after incarceration. Services include employment support with employer partnerships, mentorship, family support groups, life skills training, and housing assistance.</p>
-            <div className="space-y-3 text-sm">
-              <div className="flex gap-3 items-start">
-                <MapPin size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
-                <div>
-                  <p className="font-semibold">Holland:</p>
-                  <p className="text-gray-700">97 W 22nd St, Holland, MI 49423</p>
-                </div>
-              </div>
-              <div className="flex gap-3 items-center">
-                <Phone size={18} className="text-blue-600 flex-shrink-0" />
-                <a href="tel:616-796-0685" className="text-blue-700 font-bold hover:underline">(616) 796-0685</a>
-              </div>
-              <div className="flex gap-3 items-center">
-                <Globe size={18} className="text-blue-600 flex-shrink-0" />
-                <a href="https://70x7liferecovery.org" target="_blank" rel="noopener noreferrer" className="text-blue-700 font-bold hover:underline">70x7liferecovery.org</a>
-              </div>
-            </div>
-          </div>
             <p className="text-gray-700 mb-4 font-medium">Specialized organization providing restoration and long-term support for men and women returning to the community after incarceration.</p>
             <div className="space-y-3 text-sm">
               <div className="flex gap-3 items-start">
@@ -328,7 +320,7 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
           </div>
 
           {/* Agency 7: Fresh Coast Alliance */}
-          <div className="bg-orange-100 border-b-4 border-orange-500 rounded-lg p-6 shadow-md">
+          <div className="bg-purple-100 border-b-4 border-purple-500 rounded-lg p-6 shadow-md">
             <div className="flex gap-2 mb-3 items-center">
               <span className="text-3xl">💼</span>
               <h3 className="text-2xl font-bold text-gray-900">Fresh Coast Alliance</h3>
@@ -336,21 +328,21 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
             <p className="text-gray-700 mb-4 font-medium">Muskegon-based non-profit specializing in employment placement and recovery support for individuals returning from incarceration and those in substance use recovery.</p>
             <div className="space-y-3 text-sm">
               <div className="flex gap-3 items-start">
-                <MapPin size={18} className="text-orange-600 flex-shrink-0 mt-0.5" />
+                <MapPin size={18} className="text-purple-600 flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="font-semibold">Muskegon:</p>
                   <p className="text-gray-700">1128 Roberts St, Muskegon, MI 49442</p>
                 </div>
               </div>
               <div className="flex gap-3 items-center">
-                <Phone size={18} className="text-orange-600 flex-shrink-0" />
-                <a href="tel:231-286-1992" className="text-orange-700 font-bold hover:underline">(231) 286-1992</a>
+                <Phone size={18} className="text-purple-600 flex-shrink-0" />
+                <a href="tel:231-286-1992" className="text-purple-700 font-bold hover:underline">(231) 286-1992</a>
               </div>
               <div className="flex gap-3 items-center">
-                <Globe size={18} className="text-orange-600 flex-shrink-0" />
-                <a href="https://freshcoastalliance.org" target="_blank" rel="noopener noreferrer" className="text-orange-700 font-bold hover:underline">freshcoastalliance.org</a>
+                <Globe size={18} className="text-purple-600 flex-shrink-0" />
+                <a href="https://freshcoastalliance.org" target="_blank" rel="noopener noreferrer" className="text-purple-700 font-bold hover:underline">freshcoastalliance.org</a>
               </div>
-              <div className="bg-white p-4 rounded mt-3 border-l-4 border-orange-600">
+              <div className="bg-white p-4 rounded mt-3 border-l-4 border-purple-600">
                 <p className="font-semibold text-gray-900 mb-2">Programs & Services:</p>
                 <ul className="text-gray-700 space-y-2">
                   <li>• <strong>Fresh Coast Cleaning:</strong> Job placement through their cleaning enterprise with employer partnership</li>
@@ -362,7 +354,7 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
           </div>
 
           {/* Agency 8: Fettig.jobs */}
-          <div className="bg-green-100 border-b-4 border-green-500 rounded-lg p-6 shadow-md">
+          <div className="bg-blue-100 border-b-4 border-blue-500 rounded-lg p-6 shadow-md">
             <div className="flex gap-2 mb-3 items-center">
               <span className="text-3xl">🏭</span>
               <h3 className="text-2xl font-bold text-gray-900">Fettig.jobs</h3>
@@ -370,25 +362,25 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
             <p className="text-gray-700 mb-4 font-medium">Established regional agency specializing in connecting workers with industrial and manufacturing roles, known for their personalized approach to candidate backgrounds.</p>
             <div className="space-y-3 text-sm">
               <div className="flex gap-3 items-start">
-                <MapPin size={18} className="text-green-600 flex-shrink-0 mt-0.5" />
+                <MapPin size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="font-semibold">Holland:</p>
                   <p className="text-gray-700">12465 James St #2, Holland, MI 49424</p>
                 </div>
               </div>
               <div className="flex gap-3 items-center">
-                <Phone size={18} className="text-green-600 flex-shrink-0" />
-                <a href="tel:616-335-6770" className="text-green-700 font-bold hover:underline">(616) 335-6770</a>
+                <Phone size={18} className="text-blue-600 flex-shrink-0" />
+                <a href="tel:616-335-6770" className="text-blue-700 font-bold hover:underline">(616) 335-6770</a>
               </div>
               <div className="flex gap-3 items-center">
-                <Globe size={18} className="text-green-600 flex-shrink-0" />
-                <a href="https://fettig.jobs" target="_blank" rel="noopener noreferrer" className="text-green-700 font-bold hover:underline">fettig.jobs</a>
+                <Globe size={18} className="text-blue-600 flex-shrink-0" />
+                <a href="https://fettig.jobs" target="_blank" rel="noopener noreferrer" className="text-blue-700 font-bold hover:underline">fettig.jobs</a>
               </div>
             </div>
           </div>
 
           {/* Agency 9: Forge Industrial Staffing */}
-          <div className="bg-teal-100 border-b-4 border-teal-500 rounded-lg p-6 shadow-md">
+          <div className="bg-orange-100 border-b-4 border-orange-500 rounded-lg p-6 shadow-md">
             <div className="flex gap-2 mb-3 items-center">
               <span className="text-3xl">⚙️</span>
               <h3 className="text-2xl font-bold text-gray-900">Forge Industrial Staffing</h3>
@@ -396,25 +388,25 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
             <p className="text-gray-700 mb-4 font-medium">Local staffing agency specializing in entry-level labor and manufacturing jobs. Focuses on current ability to perform work with many accessible opportunities for those with past convictions.</p>
             <div className="space-y-3 text-sm">
               <div className="flex gap-3 items-start">
-                <MapPin size={18} className="text-teal-600 flex-shrink-0 mt-0.5" />
+                <MapPin size={18} className="text-orange-600 flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="font-semibold">Holland:</p>
                   <p className="text-gray-700">520 Butternut Dr, Holland, MI 49424</p>
                 </div>
               </div>
               <div className="flex gap-3 items-center">
-                <Phone size={18} className="text-teal-600 flex-shrink-0" />
-                <a href="tel:616-393-8800" className="text-teal-700 font-bold hover:underline">(616) 393-8800</a>
+                <Phone size={18} className="text-orange-600 flex-shrink-0" />
+                <a href="tel:616-393-8800" className="text-orange-700 font-bold hover:underline">(616) 393-8800</a>
               </div>
               <div className="flex gap-3 items-center">
-                <Globe size={18} className="text-teal-600 flex-shrink-0" />
-                <a href="https://forgestaff.com" target="_blank" rel="noopener noreferrer" className="text-teal-700 font-bold hover:underline">forgestaff.com</a>
+                <Globe size={18} className="text-orange-600 flex-shrink-0" />
+                <a href="https://forgestaff.com" target="_blank" rel="noopener noreferrer" className="text-orange-700 font-bold hover:underline">forgestaff.com</a>
               </div>
             </div>
           </div>
 
           {/* Agency 10: Cascade Engineering */}
-          <div className="bg-red-100 border-b-4 border-red-500 rounded-lg p-6 shadow-md">
+          <div className="bg-green-100 border-b-4 border-green-500 rounded-lg p-6 shadow-md">
             <div className="flex gap-2 mb-3 items-center">
               <span className="text-3xl">🌱</span>
               <h3 className="text-2xl font-bold text-gray-900">Cascade Engineering</h3>
@@ -422,25 +414,25 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
             <p className="text-gray-700 mb-4 font-medium">National leader in the "Returning Citizens" movement based in Grand Rapids. Features a formalized program designed specifically to hire and support individuals transitioning from the correctional system.</p>
             <div className="space-y-3 text-sm">
               <div className="flex gap-3 items-start">
-                <MapPin size={18} className="text-red-600 flex-shrink-0 mt-0.5" />
+                <MapPin size={18} className="text-green-600 flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="font-semibold">Grand Rapids:</p>
                   <p className="text-gray-700">5175 36th St SE, Grand Rapids, MI 49512</p>
                 </div>
               </div>
               <div className="flex gap-3 items-center">
-                <Phone size={18} className="text-red-600 flex-shrink-0" />
-                <a href="tel:616-975-4800" className="text-red-700 font-bold hover:underline">(616) 975-4800</a>
+                <Phone size={18} className="text-green-600 flex-shrink-0" />
+                <a href="tel:616-975-4800" className="text-green-700 font-bold hover:underline">(616) 975-4800</a>
               </div>
               <div className="flex gap-3 items-center">
-                <Globe size={18} className="text-red-600 flex-shrink-0" />
-                <a href="https://cascadeng.com" target="_blank" rel="noopener noreferrer" className="text-red-700 font-bold hover:underline">cascadeng.com</a>
+                <Globe size={18} className="text-green-600 flex-shrink-0" />
+                <a href="https://cascadeng.com" target="_blank" rel="noopener noreferrer" className="text-green-700 font-bold hover:underline">cascadeng.com</a>
               </div>
             </div>
           </div>
 
           {/* Agency 11: Pure Michigan Talent Connect */}
-          <div className="bg-indigo-100 border-b-4 border-indigo-500 rounded-lg p-6 shadow-md">
+          <div className="bg-teal-100 border-b-4 border-teal-500 rounded-lg p-6 shadow-md">
             <div className="flex gap-2 mb-3 items-center">
               <span className="text-3xl">🌐</span>
               <h3 className="text-2xl font-bold text-gray-900">Pure Michigan Talent Connect</h3>
@@ -448,14 +440,14 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
             <p className="text-gray-700 mb-4 font-medium">Official statewide portal for job seekers and employers, featuring a dedicated section for "Returning Citizens" with resources on the Fidelity Bonding Program and tools to find employers actively participating in second-chance hiring.</p>
             <div className="space-y-3 text-sm">
               <div className="flex gap-3 items-center">
-                <Phone size={18} className="text-indigo-600 flex-shrink-0" />
-                <a href="tel:800-285-9675" className="text-indigo-700 font-bold hover:underline">(800) 285-WORKS (9675)</a>
+                <Phone size={18} className="text-teal-600 flex-shrink-0" />
+                <a href="tel:800-285-9675" className="text-teal-700 font-bold hover:underline">(800) 285-WORKS (9675)</a>
               </div>
               <div className="flex gap-3 items-center">
-                <Globe size={18} className="text-indigo-600 flex-shrink-0" />
-                <a href="https://mitalent.org/returning-citizens" target="_blank" rel="noopener noreferrer" className="text-indigo-700 font-bold hover:underline">mitalent.org/returning-citizens</a>
+                <Globe size={18} className="text-teal-600 flex-shrink-0" />
+                <a href="https://mitalent.org/returning-citizens" target="_blank" rel="noopener noreferrer" className="text-teal-700 font-bold hover:underline">mitalent.org/returning-citizens</a>
               </div>
-              <div className="bg-white p-4 rounded mt-3 border-l-4 border-indigo-600">
+              <div className="bg-white p-4 rounded mt-3 border-l-4 border-teal-600">
                 <p className="font-semibold text-gray-900">Statewide Resources:</p>
                 <ul className="text-gray-700 space-y-1 mt-2">
                   <li>• Fidelity Bonding Program information</li>
@@ -536,7 +528,7 @@ export default function Home() {
       "Employment": { bg: "bg-purple-100", border: "border-b-4 border-purple-500", icon: "💼", button: "bg-purple-500 hover:bg-purple-600", buttonHover: "text-white" },
       "Senior Services": { bg: "bg-pink-100", border: "border-b-4 border-pink-500", icon: "👴", button: "bg-pink-500 hover:bg-pink-600", buttonHover: "text-white" },
       "Veteran Services": { bg: "bg-indigo-100", border: "border-b-4 border-indigo-500", icon: "🎖️", button: "bg-indigo-500 hover:bg-indigo-600", buttonHover: "text-white" },
-      "Transportation": { bg: "bg-cyan-100", border: "border-b-4 border-cyan-500", icon: "����", button: "bg-cyan-500 hover:bg-cyan-600", buttonHover: "text-white" },
+      "Transportation": { bg: "bg-cyan-100", border: "border-b-4 border-cyan-500", icon: "🚌", button: "bg-cyan-500 hover:bg-cyan-600", buttonHover: "text-white" },
       "Financial Resources": { bg: "bg-yellow-100", border: "border-b-4 border-yellow-500", icon: "💰", button: "bg-yellow-500 hover:bg-yellow-600", buttonHover: "text-white" },
       "Overdose Prevention/Free Naloxone(Narcan)": { bg: "bg-red-200", border: "border-b-4 border-red-700", icon: "⚠️", button: "bg-red-700 hover:bg-red-800", buttonHover: "text-white" },
       "Harm Reduction": { bg: "bg-lime-100", border: "border-b-4 border-lime-600", icon: "🤝", button: "bg-lime-600 hover:bg-lime-700", buttonHover: "text-white" },
