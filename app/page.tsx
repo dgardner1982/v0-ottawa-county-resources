@@ -72,7 +72,7 @@ const RESOURCES: Resource[] = [
   { name: "Beacon of Hope Christian Counseling Grandville", category: "Mental Health", address: "6265 8th Ave, Grandville", phone: "616-594-5380", info: "Christian counseling services.", website: "https://beaconofhopecc.org" },
   { name: "Bethany Christian Services Holland", category: "Mental Health", address: "11335 James St, Holland", phone: "616-396-0623", info: "Christian counseling and services. M-Th 10a-9p, F 10a-3p.", website: "https://www.bethanycc.org" },
   { name: "Bethany Christian Services Grand Haven", category: "Mental Health", address: "1475 Robbins Rd, Grand Haven", phone: "616-396-0623", info: "Christian counseling and services. M-Th 9a-8p.", website: "https://www.bethanycc.org" },
-  { name: "City On A Hill Ministries", category: "Mental Health", address: "100 Pine St STE 175, Zeeland, MI 49464", phone: "(616) 748-6060", info: "Multi-service community hub with health clinic providing free or low-cost medical and dental care, collaborative support services, and resource referral. M-F 9a-4p.", website: "https://www.coahm.org" },
+  { name: "City On A Hill Ministries", category: "Mental Health", address: "100 Pine St STE 175, Zeeland, MI 49464", phone: "(616) 748-6060", info: "Multi-service community hub with health clinic providing free or low-cost mental health services.", website: "https://www.coahm.org" },
   { name: "Counseling Center of West Michigan - Holland Campus", category: "Mental Health", address: "3124 N Wellness Dr # 50, Holland, MI 49424", phone: "(616) 805-3660 ext. 1201", info: "Diverse counseling for children, teens, and adults. Specialized therapy for couples and families, large provider network with evening and Saturday availability. M-F 8a-8p, Sat 8a-2p.", website: "https://www.counselingcenterwm.org" },
   { name: "Mosaic Counseling - Grand Haven", category: "Mental Health", address: "1703 S. Despelder St., Grand Haven", phone: "616-842-9160", info: "Professional counseling. M-F 9a-4p.", website: "https://mosaiccounseling.com" },
   { name: "Mosaic Counseling - Holland", category: "Mental Health", address: "503 Century Ln, Holland, MI 49423", phone: "616-842-9160", info: "Professional counseling. M-F 9a-4p.", website: "https://mosaiccounseling.com" },
@@ -122,13 +122,12 @@ const RESOURCES: Resource[] = [
   { name: "The Salvation Army Holland", category: "Food", address: "104 Clover St, Holland", phone: "616-392-4461", info: "Food pantry by appointment only.", website: "https://www.salvationarmyusa.org" },
   { name: "Community Action House", category: "Food", address: "345 W. 14th St, Holland", phone: "616-392-2368", info: "Food pantry by appointment only.", website: "https://www.chservices.org" },
   { name: "Holland Community Kitchen", category: "Food", address: "101 E. 13th St, Holland", phone: "616-566-1417", info: "Free community meals M-F 11a-12:30p, Sat & Sun 9a-10:30a.", website: "https://www.hollandandk.org" },
-  { name: "Holland Drop In Center Mental Health Recovery", category: "Food", address: "636 Hastings Ave #120, Holland", phone: "616-355-2207", info: "Community meals and recovery support. M-Sat 9a-4p.", website: "https://www.hdic.org" },
+  { name: "Holland Drop-in Center", category: "Food", address: "636 Hastings Ave #120, Holland", phone: "616-355-2207", info: "Community meals and recovery support. M-Sat 9a-4p.", website: "https://www.hdic.org" },
   { name: "Ottawa Foods", category: "Food", address: "12251 James Street, Suite 400, Holland, MI 49424", phone: "616-393-5791", info: "Connect people to food resources and community support services.", website: "https://www.ottawafood.org" },
   { name: "Jehovah Jireh Ministries of West Michigan", category: "Food", address: "4055 VanBuren St, Hudsonville", phone: "616-209-7688", info: "Food pantry. W 11:30a-5:30p, Sat 8a-1p. Bring your own bags.", website: "https://jjministries.org" },
   { name: "Love Your Neighbor (Love INC of Hudsonville)", category: "Food", address: "3300 Van Buren St, Hudsonville", phone: "616-662-3300", info: "Faith-based clearinghouse model coordinating church resources. Food pantry providing access to supplemental groceries and household essentials. Life Skills program and personal care items available. M-F 9a-4p.", website: "https://loveinchudsonville.org" },
   { name: "The People Center", category: "Food", address: "307 E. Exchange, Spring Lake", phone: "616-844-6710", info: "Food pantry. M & W 11a-3p. Call first for appointment.", website: "https://www.thepeoplecenter.org" },
   { name: "Harvest Stand Ministries", category: "Food", address: "100 Pine St Ste 100, Zeeland", phone: "616-748-6003", info: "Food pantry. M 9a-3p, W 1p-6p, Th 9a-12p. By appointment.", website: "https://harveststandministries.org" },
-  { name: "Lakeshore Habitat for Humanity", category: "Food", address: "12727 Riley St, Holland", phone: "616-393-8001", info: "Community resources and support.", website: "https://www.lakeshorehabitat.org" },
   { name: "MI Bridges", category: "Food", address: "State Program", phone: "1-888-544-8773", info: "State food assistance program.", website: "https://www.michigan.gov/mibridges" },
 
   // Housing
@@ -146,6 +145,8 @@ const RESOURCES: Resource[] = [
   { name: "Every Woman's Place Inc", category: "Housing", address: "1221 W Laketon Ave, Muskegon, MI 49441", phone: "(231) 722-3333", info: "Emergency shelter and residential program for survivors of domestic violence and sexual assault. 24-hour crisis line available.", website: "https://www.everywomansplace.org" },
   { name: "Resilience: Advocates for Ending Violence", category: "Housing", address: "411 Butternut Dr, Holland, MI 49424", phone: "(800) 848-5991", info: "Emergency shelter for survivors of domestic and sexual violence. M-F 9a-5p, emergency services 24/7.", website: "https://www.resiliencemi.org" },
   { name: "Sylvia's Place", category: "Housing", address: "235 North St, Allegan, MI 49010", phone: "(269) 673-8700", info: "Emergency shelter for survivors of domestic violence and their children. 24-hour help line: (888) 411-7837.", website: "https://www.sylviasplace.com" },
+  { name: "Tri-Cities Area Habitat For Humanity", category: "Housing", address: "3610 Airline Rd. Norton Shores, MI 49444", phone: "(616) 846-1505", info: "Provides affordable housing solutions through construction, home repairs, and financial education. Services include Homeownership Program (build/renovate houses with affordable mortgages), Home Repair Services for low-income homeowners, Habitat ReStore (donated building materials and furniture at discounted prices), and Financial Education on budgeting and credit.", website: "https://tricitieshabitat.com" },
+  { name: "Lakeshore Habitat for Humanity", category: "Housing", address: "12727 Riley St, Holland, MI 49424", phone: "(616) 393-8001", info: "Serves the greater Holland area, creating affordable housing through new construction, home rehabilitation, and critical repairs. Services include Homeownership Program (sweat equity and financial education classes), Home Repair Services (exterior projects like siding and accessibility ramps), Habitat ReStore (home goods and building supplies with proceeds funding local builds), and Volunteer Advocacy opportunities.", website: "https://lakeshorehabitat.org" },
 
   // Health Care
   // Prenatal/Maternal
@@ -228,6 +229,7 @@ const RESOURCES: Resource[] = [
   { name: "Covenant Life Care Ministry", category: "Clothing and Furniture", address: "Ottawa County", phone: "616-847-2540", info: "Builds and provides bunk beds and furniture for those in need. Also constructs wheelchair ramps.", website: "https://www.covenantlifecare.org" },
   { name: "Lakeshore Habitat for Humanity", category: "Clothing and Furniture", address: "12727 Riley St, Holland", phone: "616-393-8001", info: "Provides furniture and household goods through Re-Store locations. Community resources and support available.", website: "https://www.lakeshorehabitat.org" },
   { name: "Love INC of Hudsonville", category: "Clothing and Furniture", address: "3300 Van Buren St, Hudsonville, MI 49426", phone: "(616) 662-3300", info: "Provides access to clothing, linens, and household furniture through Essential Resource Ministries. Faith-based clearinghouse coordinating local church resources for the Hudsonville, Jenison, and Grandville areas. M-F 9a-4p.", website: "https://loveinchudsonville.org" },
+  { name: "Habitat for Humanity ReStore Grand Haven", category: "Clothing and Furniture", address: "408 N Ferry St, Grand Haven, MI 49417", phone: "(616) 846-1505", info: "ReStore location offering affordable furniture and household goods. Hours: M-F 9:30 AM – 6:30 PM; Saturday 9:30 AM – 4:30 PM. Office hours: M-F 9:00 AM – 5:00 PM.", website: "https://tricitieshabitat.org" },
 
   // Prenatal and Baby Resources
 
@@ -391,7 +393,7 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                   <li>• <strong>Stronger Together:</strong> Family support groups for loved ones impacted by incarceration</li>
                   <li>• <strong>Mentorship:</strong> Connects participants with mentors for guidance and accountability</li>
                   <li>• <strong>Life Skills & Classes:</strong> Programs like &ldquo;Take Charge&rdquo; for empowerment and practical skills</li>
-                  <li>• <strong>Housing & Basic Needs:</strong> Assists in finding stable housing and essential items</li>
+                  <li>���� <strong>Housing & Basic Needs:</strong> Assists in finding stable housing and essential items</li>
                 </ul>
               </div>
             </div>
@@ -587,6 +589,34 @@ export default function Home() {
           </div>
         )}
 
+        {selectedCategory === 'Food' && (
+          <div className="mb-8 space-y-6">
+            <div className="p-6 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-lg shadow-lg">
+              <h3 className="text-2xl font-bold mb-3">Find Food Assistance</h3>
+              <p className="mb-4">Looking for food resources in Ottawa County, MI? Explore nearby food pantries, food banks, and community resources offering free or low-cost options.</p>
+              <a 
+                href="https://ottawafood.org/findfood/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-white text-green-600 hover:bg-green-50 font-bold px-6 py-3 rounded-lg transition text-lg"
+              >
+                Click Here to Find Food
+              </a>
+            </div>
+
+            <div className="p-6 bg-gradient-to-r from-amber-600 to-orange-600 text-white rounded-lg shadow-lg">
+              <h3 className="text-2xl font-bold mb-3">Double Up Food Bucks 2026</h3>
+              <p className="mb-4">Learn about the 2026 Double Up Food Bucks program with major updates including unlimited earn & spend, frozen produce inclusion, and expanded access to fresh produce at farmers markets and grocery stores across Ottawa County.</p>
+              <a 
+                href="/double-up-food-bucks"
+                className="inline-block bg-white text-amber-600 hover:bg-amber-50 font-bold px-6 py-3 rounded-lg transition text-lg"
+              >
+                Learn More About Double Up Food Bucks
+              </a>
+            </div>
+          </div>
+        )}
+
         {selectedCategory === 'Employment' && (
           <div className="mb-8 p-6 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-lg shadow-lg">
             <h3 className="text-2xl font-bold mb-3">Looking for Employment with a Criminal Background?</h3>
@@ -597,6 +627,90 @@ export default function Home() {
             >
               View Second Chance Employment Resources
             </button>
+          </div>
+        )}
+
+        {selectedCategory === 'Transportation' && (
+          <div className="mb-8 space-y-6">
+            {/* Medicaid Transportation Section */}
+            <div className="p-6 bg-gradient-to-r from-teal-600 to-cyan-600 text-white rounded-lg shadow-lg">
+              <h3 className="text-2xl font-bold mb-3">Have Medicaid and Need a Ride to Your Appointment?</h3>
+              <p className="mb-4 font-medium">In Michigan, Non-Emergency Medical Transportation (NEMT) is a covered benefit for Medicaid members. To reserve a ride, contact your health plan's transportation vendor at least 2 to 3 business days before your appointment.</p>
+              
+              {/* Medicaid Plans Table */}
+              <div className="bg-white rounded-lg overflow-hidden shadow-md">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-gray-800 text-sm">
+                    <thead className="bg-teal-50 border-b-2 border-teal-300">
+                      <tr>
+                        <th className="px-4 py-3 text-left font-bold">Health Plan</th>
+                        <th className="px-4 py-3 text-left font-bold">Reservation Phone</th>
+                        <th className="px-4 py-3 text-left font-bold">Notes</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b hover:bg-teal-50">
+                        <td className="px-4 py-3 font-semibold">Aetna Better Health</td>
+                        <td className="px-4 py-3 text-teal-700 font-bold">(866) 316-3784</td>
+                        <td className="px-4 py-3 text-gray-600">Mon–Fri, 8 AM – 5 PM</td>
+                      </tr>
+                      <tr className="border-b hover:bg-teal-50">
+                        <td className="px-4 py-3 font-semibold">Blue Cross Complete</td>
+                        <td className="px-4 py-3 text-teal-700 font-bold">(888) 803-4947</td>
+                        <td className="px-4 py-3 text-gray-600">Available 24/7; managed by MTMHAP</td>
+                      </tr>
+                      <tr className="border-b hover:bg-teal-50">
+                        <td className="px-4 py-3 font-semibold">CareSource</td>
+                        <td className="px-4 py-3 text-teal-700 font-bold">(833) 230-2053</td>
+                        <td className="px-4 py-3 text-gray-600">Schedule 2 business days in advance</td>
+                      </tr>
+                      <tr className="border-b hover:bg-teal-50">
+                        <td className="px-4 py-3 font-semibold">McLaren Health Plan</td>
+                        <td className="px-4 py-3 text-teal-700 font-bold">(888) 327-0671</td>
+                        <td className="px-4 py-3 text-gray-600">Call 2–3 business days prior</td>
+                      </tr>
+                      <tr className="border-b hover:bg-teal-50">
+                        <td className="px-4 py-3 font-semibold">Meridian Health Plan</td>
+                        <td className="px-4 py-3 text-teal-700 font-bold">(800) 821-9369</td>
+                        <td className="px-4 py-3 text-gray-600">Managed by Modivcare</td>
+                      </tr>
+                      <tr className="border-b hover:bg-teal-50">
+                        <td className="px-4 py-3 font-semibold">Molina Healthcare</td>
+                        <td className="px-4 py-3 text-teal-700 font-bold">(888) 898-7969</td>
+                        <td className="px-4 py-3 text-gray-600">Available 24/7</td>
+                      </tr>
+                      <tr className="border-b hover:bg-teal-50">
+                        <td className="px-4 py-3 font-semibold">Priority Health</td>
+                        <td className="px-4 py-3 text-teal-700 font-bold">(888) 975-8102</td>
+                        <td className="px-4 py-3 text-gray-600">Local: (616) 575-8102</td>
+                      </tr>
+                      <tr className="hover:bg-teal-50">
+                        <td className="px-4 py-3 font-semibold">UnitedHealthcare</td>
+                        <td className="px-4 py-3 text-teal-700 font-bold">(800) 903-5253</td>
+                        <td className="px-4 py-3 text-gray-600">Call Member Services to schedule</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p className="mt-4 text-sm text-teal-100">Information as of April 2026</p>
+            </div>
+          </div>
+        )}
+
+        {selectedCategory === 'Housing' && (
+          <div className="mb-8 p-6 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg shadow-lg">
+            <h3 className="text-2xl font-bold mb-3">Good Samaritan Housing Search Packet</h3>
+            <p className="mb-4">Get step-by-step guidance to help you in your housing search. This comprehensive packet includes tips, resources, and important information for finding affordable housing.</p>
+            <a 
+              href="https://goodsamottawa.org/wp-content/uploads/2025/09/Housing-Search-Packet.August.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-white text-blue-600 hover:bg-blue-50 font-bold px-6 py-3 rounded-lg transition text-lg"
+            >
+              Download Housing Search Packet
+            </a>
+            <p className="mt-3 text-sm text-blue-100">Updated August 2025</p>
           </div>
         )}
 
