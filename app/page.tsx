@@ -310,10 +310,6 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                 <p className="font-semibold text-gray-900 mb-2">Programs & Services:</p>
                 <ul className="text-gray-700 space-y-2">
                   <li>• <strong>Employment Support:</strong> Partners with local employers to help graduates find stable, meaningful work</li>
-                  <li>• <strong>Stronger Together:</strong> Family support groups for loved ones impacted by incarceration</li>
-                  <li>• <strong>Mentorship:</strong> Connects participants with mentors for guidance and accountability</li>
-                  <li>• <strong>Life Skills & Classes:</strong> Programs like &ldquo;Take Charge&rdquo; for empowerment and practical skills</li>
-                  <li>���� <strong>Housing & Basic Needs:</strong> Assists in finding stable housing and essential items</li>
                 </ul>
               </div>
             </div>
@@ -346,8 +342,6 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                 <p className="font-semibold text-gray-900 mb-2">Programs & Services:</p>
                 <ul className="text-gray-700 space-y-2">
                   <li>• <strong>Fresh Coast Cleaning:</strong> Job placement through their cleaning enterprise with employer partnership</li>
-                  <li>• <strong>Recovery Housing:</strong> Men&apos;s and women&apos;s residential programs supporting long-term stability</li>
-                  <li>• <strong>One-on-One Coaching:</strong> Personalized recovery coaching and mentorship support</li>
                 </ul>
               </div>
             </div>
@@ -402,6 +396,10 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                 <Globe size={18} className="text-orange-600 flex-shrink-0" />
                 <a href="https://forgestaff.com" target="_blank" rel="noopener noreferrer" className="text-orange-700 font-bold hover:underline">forgestaff.com</a>
               </div>
+              <div className="bg-white p-4 rounded mt-3 border-l-4 border-orange-600">
+                <p className="font-semibold text-gray-900 mb-2">Focus:</p>
+                <p className="text-gray-700">Entry-level manufacturing and labor positions with focus on current ability to perform work.</p>
+              </div>
             </div>
           </div>
 
@@ -427,6 +425,10 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
               <div className="flex gap-3 items-center">
                 <Globe size={18} className="text-green-600 flex-shrink-0" />
                 <a href="https://cascadeng.com" target="_blank" rel="noopener noreferrer" className="text-green-700 font-bold hover:underline">cascadeng.com</a>
+              </div>
+              <div className="bg-white p-4 rounded mt-3 border-l-4 border-green-600">
+                <p className="font-semibold text-gray-900 mb-2">Program:</p>
+                <p className="text-gray-700">Formalized program specifically designed to hire and support individuals transitioning from the correctional system.</p>
               </div>
             </div>
           </div>
@@ -527,7 +529,7 @@ export default function Home() {
       "Domestic Violence": { bg: "bg-rose-100", border: "border-b-4 border-rose-600", icon: "🛑", button: "bg-rose-600 hover:bg-rose-700", buttonHover: "text-white" },
       "Employment": { bg: "bg-purple-100", border: "border-b-4 border-purple-500", icon: "💼", button: "bg-purple-500 hover:bg-purple-600", buttonHover: "text-white" },
       "Senior Services": { bg: "bg-pink-100", border: "border-b-4 border-pink-500", icon: "👴", button: "bg-pink-500 hover:bg-pink-600", buttonHover: "text-white" },
-      "Veteran Services": { bg: "bg-indigo-100", border: "border-b-4 border-indigo-500", icon: "🎖���", button: "bg-indigo-500 hover:bg-indigo-600", buttonHover: "text-white" },
+      "Veteran Services": { bg: "bg-indigo-100", border: "border-b-4 border-indigo-500", icon: "🎖����", button: "bg-indigo-500 hover:bg-indigo-600", buttonHover: "text-white" },
       "Transportation": { bg: "bg-cyan-100", border: "border-b-4 border-cyan-500", icon: "🚌", button: "bg-cyan-500 hover:bg-cyan-600", buttonHover: "text-white" },
       "Financial Resources": { bg: "bg-yellow-100", border: "border-b-4 border-yellow-500", icon: "💰", button: "bg-yellow-500 hover:bg-yellow-600", buttonHover: "text-white" },
       "Overdose Prevention/Free Naloxone(Narcan)": { bg: "bg-red-200", border: "border-b-4 border-red-700", icon: "⚠️", button: "bg-red-700 hover:bg-red-800", buttonHover: "text-white" },
