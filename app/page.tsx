@@ -147,6 +147,11 @@ const RESOURCES: Resource[] = [
   { name: "Sylvia's Place", category: "Housing", address: "235 North St, Allegan, MI 49010", phone: "(269) 673-8700", info: "Emergency shelter for survivors of domestic violence and their children. 24-hour help line: (888) 411-7837.", website: "https://www.sylviasplace.com" },
   { name: "Tri-Cities Area Habitat For Humanity", category: "Housing", address: "3610 Airline Rd. Norton Shores, MI 49444", phone: "(616) 846-1505", info: "Provides affordable housing solutions through construction, home repairs, and financial education. Services include Homeownership Program (build/renovate houses with affordable mortgages), Home Repair Services for low-income homeowners, Habitat ReStore (donated building materials and furniture at discounted prices), and Financial Education on budgeting and credit.", website: "https://tricitieshabitat.com" },
   { name: "Lakeshore Habitat for Humanity", category: "Housing", address: "12727 Riley St, Holland, MI 49424", phone: "(616) 393-8001", info: "Serves the greater Holland area, creating affordable housing through new construction, home rehabilitation, and critical repairs. Services include Homeownership Program (sweat equity and financial education classes), Home Repair Services (exterior projects like siding and accessibility ramps), Habitat ReStore (home goods and building supplies with proceeds funding local builds), and Volunteer Advocacy opportunities.", website: "https://lakeshorehabitat.org" },
+  { name: "YWCA West Central Michigan", category: "Housing", address: "25 Sheldon Blvd SE, Grand Rapids, MI 49503", phone: "(616) 454-9922", info: "Provides comprehensive services for survivors of domestic violence, sexual assault, and stalking. Services include 24-hour crisis helpline, emergency shelter, legal advocacy, and counseling for adults and children.", website: "https://ywcawcmi.org" },
+  { name: "Exodus Place", category: "Housing", address: "322 Front Ave SW, Grand Rapids, MI 49504", phone: "(616) 242-9130", info: "Transitional housing program for men experiencing homelessness emphasizing a 'hand up' approach. Services include affordable housing with no time limits, life skills training, medical and dental coordination, and spiritual support.", website: "https://exodusplace.org" },
+  { name: "Guiding Light", category: "Housing", address: "255 Division Ave S, Grand Rapids, MI 49503", phone: "(616) 451-0236", info: "Operates an intensive recovery and re-engagement program providing no-cost residential addiction treatment and structured pathways to employment. Services include four-month residential recovery program, women's recovery at Aquinas College campus, and the 'Iron House' sober living network.", website: "https://guidinglightworks.org" },
+  { name: "Recovery Road", category: "Housing", address: "336 Wealthy St SE, Grand Rapids, MI 49503", phone: "(888) 588-0434", info: "Network of sober living homes throughout Grand Rapids and Muskegon providing structured environments for residents transitioning from clinical treatment to mainstream life. Services include eleven sober living houses (male and female), peer support, and accountability.", website: "https://recoveryroadhomes.org" },
+  { name: "Fresh Coast Alliance", category: "Housing", address: "1128 Roberts St, Muskegon, MI 49442", phone: "(231) 286-1992", info: "Muskegon-based non-profit providing recovery housing for men and women, supporting individuals returning from incarceration and those in recovery from substance use. Offers one-on-one recovery coaching and stability-focused housing.", website: "https://freshcoastalliance.org" },
 
   // Health Care
   // Prenatal/Maternal
@@ -191,47 +196,7 @@ const RESOURCES: Resource[] = [
   { name: "Cardinal Staffing", category: "Employment", address: "12330 James St, Ste H80, Holland", phone: "616-394-9100", info: "Employment staffing and placement services.", website: "https://www.cardinalstaffing.com" },
   { name: "WorkSolved", category: "Employment", address: "240 S River Ave, Holland", phone: "616-283-7521", info: "Employment solutions and staffing services.", website: "https://www.worksolved.com" },
   { name: "70x7 Life Recovery", category: "Employment", address: "97 W 22nd St, Holland, MI 49423", phone: "(616) 796-0685", info: "Specialized organization providing restoration and long-term support for individuals returning to the community after incarceration. Services include employment support with employer partnerships, mentorship, family support groups, life skills training, and housing assistance.", website: "https://70x7liferecovery.org" },
-
-  // Senior Services
-  { name: "The Little Red House", category: "Senior Services", address: "311 E. Exchange St, Spring Lake", phone: "616-846-5720", info: "Adult day care for elderly. M-F 7a-6p. Hourly rate includes meals.", website: "https://www.thelittleredhouse.org" },
-  { name: "Senior Resources", category: "Senior Services", address: "560 Seminole Rd, Muskegon", phone: "231-733-8655", info: "Senior services for North Ottawa County. Toll Free: 1-800-442-0054.", website: "https://www.seniorresourceswmi.org" },
-  { name: "Life Circles (PACE Partnership) South", category: "Senior Services", address: "12330 James St H-10, Holland", phone: "616-582-3114", info: "Senior care coordination and support.", website: "https://lifecircles-pace.org" },
-  { name: "Evergreen Commons", category: "Senior Services", address: "Main: 480 State St, Holland, MI 49423 | Day Center: 55 W. 16th St, Holland, MI 49423", phone: "(616) 396-7100", info: "Community center for adults 55+ offering wellness & fitness (warm-water pool, fitness center, indoor track, pickleball courts, disease-specific programs like Parkinson's classes), life enrichment activities (clubs, art classes, music groups, travel), adult day center services, café dining, and caregiver support. Member Services: (616) 355-5120. M-F 8a-4p.", website: "https://www.evergreencommons.org" },
-  { name: "Four Pointes Center for Successful Aging", category: "Senior Services", address: "1051 S. Beacon Blvd, Grand Haven", phone: "616-842-9210", info: "Senior services. M-Th 9a-3p.", website: "https://www.fourpointessenior.org" },
-  { name: "CarePatrol of West MI Lakeshore", category: "Senior Services", address: "West Michigan", phone: "(231) 683-2002", info: "Senior placement for assisted/independent living, memory care, nursing homes.", website: "https://carepatrol.com/west-michigan-lakeshore/" },
-  { name: "Senior Reach Ottawa County", category: "Senior Services", address: "Ottawa County", phone: "877-588-4357", info: "Services for adults 60 years old and older.", website: "https://miottawa.org/cmh/senior-reach/" },
-
-  // Veteran Services
-  { name: "Veterans Crisis Line", category: "Veteran Services", address: "National", phone: "1-800-273-8255 (press 1)", info: "Veteran crisis support available 24/7. Also text 838255.", website: "https://www.veteranscrisisline.net" },
-  { name: "West Michigan Veterans Assistance Program", category: "Veteran Services", address: "620 Century Ave SW, Grand Rapids", phone: "Contact for details", info: "Food pantry, financial assistance, limited housing, education.", website: "https://www.wmvap.org" },
-  { name: "Ottawa County Veteran Services", category: "Veteran Services", address: "12251 James St, Holland", phone: "616-393-8387", info: "Comprehensive veteran support services and assistance programs.", website: "https://miottawa.org/veterans-services/" },
-
-  // Transportation
-  { name: "Harbor Transit", category: "Transportation", address: "Grand Haven", phone: "616-842-3200", info: "Public transportation. M-F 6a-6p, Sat 9a-4p, Sun 8a-12:30p (Advanced reservation).", website: "https://harbortransit.org" },
-  { name: "MAX Bus - Holland", category: "Transportation", address: "Holland", phone: "616-355-1025", info: "Public bus transportation serving Holland. Route schedules and real-time information available.", website: "https://catchamax.org" },
-
-  // Financial Resources
-  { name: "Community Action Agency", category: "Financial Resources", address: "Ottawa County", phone: "616-393-4433", info: "Financial assistance and support services for low-income families.", website: "https://www.miottawa.org/caa" },
-  { name: "Community Action House", category: "Financial Resources", address: "739 Paw Paw Dr, Holland, MI 49423", phone: "616-392-2368", info: "Foreclosure intervention and financial wellness coaching.", website: "https://www.communityactionhouse.org" },
-  { name: "Coopersville Cares", category: "Financial Resources", address: "180 68th Ave N, Coopersville, MI 49404", phone: "(616) 997-8602", info: "Emergency financial assistance for critical needs such as utility shut-off notices and rent assistance for those facing temporary crisis. Also provides food pantry, clothing center, and seasonal assistance programs. Serves the Coopersville Public School district. M-Th 9a-2p.", website: "https://coopersvillecares.org" },
-  { name: "Good Samaritan Ministries", category: "Financial Resources", address: "513 E. 8th St, Holland", phone: "616-392-7159", info: "Housing Search Assistance, Rapid Re-housing, and CHP programs.", website: "https://www.gsministries.org" },
-  { name: "Love INC Allendale", category: "Financial Resources", address: "6633 Lake Michigan Dr, Allendale, MI 49401", phone: "616-895-5683", info: "Local assistance and coordination for residents in Allendale.", website: "https://www.loveincofneottawa.org" },
-  { name: "Love in Action (Tri-Cities)", category: "Financial Resources", address: "326 N Ferry St, Grand Haven, MI 49417", phone: "616-846-2701", info: "Financial assistance for rent or medical bills and financial wellness coaching.", website: "https://www.loveinactiontricities.org" },
-  { name: "Michigan Department of Health & Human Services (MDHHS)", category: "Financial Resources", address: "Michigan", phone: "616-394-7200", info: "Cash assistance, State Emergency Relief (SER) for housing/utilities, and food assistance (SNAP).", website: "https://www.newmibridges.michigan.gov/s/isd-landing-page?language=en_US" },
-  { name: "The People Center", category: "Financial Resources", address: "307 E Exchange St, Spring Lake, MI 49456", phone: "(616) 844-6710", info: "Financial assistance for emergency needs such as utility payments and other critical expenses. M, W, F 11a-5p.", website: "https://www.thepeoplecenter.org" },
-  { name: "The Salvation Army", category: "Financial Resources", address: "310 N. Despelder St, Grand Haven", phone: "616-842-3380 ext 200", info: "Financial assistance including rent and utilities. M-F 9a-4p.", website: "https://www.salvationarmyusa.org" },
-  { name: "Love INC of Hudsonville", category: "Financial Resources", address: "3300 Van Buren St, Hudsonville, MI 49426", phone: "(616) 662-3300", info: "Faith-based clearinghouse coordinating church resources. Provides emergency financial assistance and Life Skills program with budgeting and financial wellness coaching. Participants can earn vouchers/credit toward essentials through program participation. M-F 9a-4p.", website: "https://loveinchudsonville.org" },
-
-  // Clothing and Furniture
-  { name: "Coopersville Cares", category: "Clothing and Furniture", address: "180 68th Ave N, Coopersville, MI 49404", phone: "(616) 997-8602", info: "Clothing center maintaining a selection of affordable or free clothing items for children and adults. Serves the Coopersville Public School district. M-Th 9a-2p.", website: "https://coopersvillecares.org" },
-  { name: "The Salvation Army Holland", category: "Clothing and Furniture", address: "104 Clover St, Holland", phone: "616-392-4461", info: "Thrift store offering affordable clothing and household items. Available by appointment.", website: "https://www.salvationarmyusa.org" },
-  { name: "The Salvation Army Grand Haven", category: "Clothing and Furniture", address: "310 N Despelder St, Grand Haven", phone: "616-842-3380 ext 200", info: "Thrift store with clothing and household items. M-F 9a-3p.", website: "https://www.salvationarmyusa.org" },
-  { name: "Covenant Life Care Ministry", category: "Clothing and Furniture", address: "Ottawa County", phone: "616-847-2540", info: "Builds and provides bunk beds and furniture for those in need. Also constructs wheelchair ramps.", website: "https://www.covenantlifecare.org" },
-  { name: "Lakeshore Habitat for Humanity", category: "Clothing and Furniture", address: "12727 Riley St, Holland", phone: "616-393-8001", info: "Provides furniture and household goods through Re-Store locations. Community resources and support available.", website: "https://www.lakeshorehabitat.org" },
-  { name: "Love INC of Hudsonville", category: "Clothing and Furniture", address: "3300 Van Buren St, Hudsonville, MI 49426", phone: "(616) 662-3300", info: "Provides access to clothing, linens, and household furniture through Essential Resource Ministries. Faith-based clearinghouse coordinating local church resources for the Hudsonville, Jenison, and Grandville areas. M-F 9a-4p.", website: "https://loveinchudsonville.org" },
-  { name: "Habitat for Humanity ReStore Grand Haven", category: "Clothing and Furniture", address: "408 N Ferry St, Grand Haven, MI 49417", phone: "(616) 846-1505", info: "ReStore location offering affordable furniture and household goods. Hours: M-F 9:30 AM – 6:30 PM; Saturday 9:30 AM – 4:30 PM. Office hours: M-F 9:00 AM – 5:00 PM.", website: "https://tricitieshabitat.org" },
-
-  // Prenatal and Baby Resources
+  { name: "Fresh Coast Alliance", category: "Employment", address: "1128 Roberts St, Muskegon, MI 49442", phone: "(231) 286-1992", info: "Muskegon-based non-profit specializing in employment placement through their 'Fresh Coast Cleaning' enterprise for individuals returning from incarceration and those in recovery from substance use. Also offers recovery housing and one-on-one recovery coaching.", website: "https://freshcoastalliance.org" },
 
   // Legal
   { name: "Legal Aid of Western Michigan", category: "Legal", address: "Holland Office", phone: "(616) 394-1380", info: "Provides free legal services for low-income residents in Allegan and Ottawa counties for non-criminal cases.", website: "https://lawestmi.org" },
@@ -307,25 +272,6 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
             </div>
           </div>
 
-          {/* Agency 2: Fettig */}
-          <div className="bg-purple-100 border-b-4 border-purple-500 rounded-lg p-6 shadow-md">
-            <div className="flex gap-2 mb-3 items-center">
-              <span className="text-3xl">💼</span>
-              <h3 className="text-2xl font-bold text-gray-900">Fettig</h3>
-            </div>
-            <p className="text-gray-700 mb-4 font-medium">Prominent West Michigan staffing agency widely recognized for working with individuals with backgrounds.</p>
-            <div className="space-y-3 text-sm">
-              <div className="flex gap-3 items-start">
-                <MapPin size={18} className="text-purple-600 flex-shrink-0 mt-0.5" />
-                <p className="text-gray-700">400 136th Ave, Suite 105, Holland, MI 49424</p>
-              </div>
-              <div className="bg-white p-4 rounded mt-3 border-l-4 border-purple-600">
-                <p className="font-semibold text-gray-900 mb-2">Focus:</p>
-                <p className="text-gray-700">Industrial, manufacturing, and warehouse roles.</p>
-              </div>
-            </div>
-          </div>
-
           {/* Agency 3: Forge Industrial Staffing */}
           <div className="bg-purple-100 border-b-4 border-purple-500 rounded-lg p-6 shadow-md">
             <div className="flex gap-2 mb-3 items-center">
@@ -364,7 +310,7 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
           {/* Agency 5: Pure Michigan Talent Connect */}
           <div className="bg-purple-100 border-b-4 border-purple-500 rounded-lg p-6 shadow-md">
             <div className="flex gap-2 mb-3 items-center">
-              <span className="text-3xl">💼</span>
+              <span className="text-3xl">��</span>
               <h3 className="text-2xl font-bold text-gray-900">Pure Michigan Talent Connect</h3>
             </div>
             <p className="text-gray-700 mb-4 font-medium">Statewide online portal to find Second Chance employers and Returning Citizen resources.</p>
@@ -406,6 +352,145 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                   <li>• <strong>Mentorship:</strong> Connects participants with mentors for guidance and accountability</li>
                   <li>• <strong>Life Skills & Classes:</strong> Programs like &ldquo;Take Charge&rdquo; for empowerment and practical skills</li>
                   <li>���� <strong>Housing & Basic Needs:</strong> Assists in finding stable housing and essential items</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Agency 7: Fresh Coast Alliance */}
+          <div className="bg-purple-100 border-b-4 border-purple-500 rounded-lg p-6 shadow-md">
+            <div className="flex gap-2 mb-3 items-center">
+              <span className="text-3xl">💼</span>
+              <h3 className="text-2xl font-bold text-gray-900">Fresh Coast Alliance</h3>
+            </div>
+            <p className="text-gray-700 mb-4 font-medium">Muskegon-based non-profit specializing in employment placement and recovery support for individuals returning from incarceration and those in substance use recovery.</p>
+            <div className="space-y-3 text-sm">
+              <div className="flex gap-3 items-start">
+                <MapPin size={18} className="text-purple-600 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold">Muskegon:</p>
+                  <p className="text-gray-700">1128 Roberts St, Muskegon, MI 49442</p>
+                </div>
+              </div>
+              <div className="flex gap-3 items-center">
+                <Phone size={18} className="text-purple-600 flex-shrink-0" />
+                <a href="tel:231-286-1992" className="text-purple-700 font-bold hover:underline">(231) 286-1992</a>
+              </div>
+              <div className="flex gap-3 items-center">
+                <Globe size={18} className="text-purple-600 flex-shrink-0" />
+                <a href="https://freshcoastalliance.org" target="_blank" rel="noopener noreferrer" className="text-purple-700 font-bold hover:underline">freshcoastalliance.org</a>
+              </div>
+              <div className="bg-white p-4 rounded mt-3 border-l-4 border-purple-600">
+                <p className="font-semibold text-gray-900 mb-2">Programs & Services:</p>
+                <ul className="text-gray-700 space-y-2">
+                  <li>• <strong>Fresh Coast Cleaning:</strong> Job placement through their cleaning enterprise with employer partnership</li>
+                  <li>• <strong>Recovery Housing:</strong> Men&apos;s and women&apos;s residential programs supporting long-term stability</li>
+                  <li>• <strong>One-on-One Coaching:</strong> Personalized recovery coaching and mentorship support</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Agency 8: Fettig.jobs */}
+          <div className="bg-blue-100 border-b-4 border-blue-500 rounded-lg p-6 shadow-md">
+            <div className="flex gap-2 mb-3 items-center">
+              <span className="text-3xl">🏭</span>
+              <h3 className="text-2xl font-bold text-gray-900">Fettig.jobs</h3>
+            </div>
+            <p className="text-gray-700 mb-4 font-medium">Established regional agency specializing in connecting workers with industrial and manufacturing roles, known for their personalized approach to candidate backgrounds.</p>
+            <div className="space-y-3 text-sm">
+              <div className="flex gap-3 items-start">
+                <MapPin size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold">Holland:</p>
+                  <p className="text-gray-700">12465 James St #2, Holland, MI 49424</p>
+                </div>
+              </div>
+              <div className="flex gap-3 items-center">
+                <Phone size={18} className="text-blue-600 flex-shrink-0" />
+                <a href="tel:616-335-6770" className="text-blue-700 font-bold hover:underline">(616) 335-6770</a>
+              </div>
+              <div className="flex gap-3 items-center">
+                <Globe size={18} className="text-blue-600 flex-shrink-0" />
+                <a href="https://fettig.jobs" target="_blank" rel="noopener noreferrer" className="text-blue-700 font-bold hover:underline">fettig.jobs</a>
+              </div>
+            </div>
+          </div>
+
+          {/* Agency 9: Forge Industrial Staffing */}
+          <div className="bg-orange-100 border-b-4 border-orange-500 rounded-lg p-6 shadow-md">
+            <div className="flex gap-2 mb-3 items-center">
+              <span className="text-3xl">⚙️</span>
+              <h3 className="text-2xl font-bold text-gray-900">Forge Industrial Staffing</h3>
+            </div>
+            <p className="text-gray-700 mb-4 font-medium">Local staffing agency specializing in entry-level labor and manufacturing jobs. Focuses on current ability to perform work with many accessible opportunities for those with past convictions.</p>
+            <div className="space-y-3 text-sm">
+              <div className="flex gap-3 items-start">
+                <MapPin size={18} className="text-orange-600 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold">Holland:</p>
+                  <p className="text-gray-700">520 Butternut Dr, Holland, MI 49424</p>
+                </div>
+              </div>
+              <div className="flex gap-3 items-center">
+                <Phone size={18} className="text-orange-600 flex-shrink-0" />
+                <a href="tel:616-393-8800" className="text-orange-700 font-bold hover:underline">(616) 393-8800</a>
+              </div>
+              <div className="flex gap-3 items-center">
+                <Globe size={18} className="text-orange-600 flex-shrink-0" />
+                <a href="https://forgestaff.com" target="_blank" rel="noopener noreferrer" className="text-orange-700 font-bold hover:underline">forgestaff.com</a>
+              </div>
+            </div>
+          </div>
+
+          {/* Agency 10: Cascade Engineering */}
+          <div className="bg-green-100 border-b-4 border-green-500 rounded-lg p-6 shadow-md">
+            <div className="flex gap-2 mb-3 items-center">
+              <span className="text-3xl">🌱</span>
+              <h3 className="text-2xl font-bold text-gray-900">Cascade Engineering</h3>
+            </div>
+            <p className="text-gray-700 mb-4 font-medium">National leader in the "Returning Citizens" movement based in Grand Rapids. Features a formalized program designed specifically to hire and support individuals transitioning from the correctional system.</p>
+            <div className="space-y-3 text-sm">
+              <div className="flex gap-3 items-start">
+                <MapPin size={18} className="text-green-600 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold">Grand Rapids:</p>
+                  <p className="text-gray-700">5175 36th St SE, Grand Rapids, MI 49512</p>
+                </div>
+              </div>
+              <div className="flex gap-3 items-center">
+                <Phone size={18} className="text-green-600 flex-shrink-0" />
+                <a href="tel:616-975-4800" className="text-green-700 font-bold hover:underline">(616) 975-4800</a>
+              </div>
+              <div className="flex gap-3 items-center">
+                <Globe size={18} className="text-green-600 flex-shrink-0" />
+                <a href="https://cascadeng.com" target="_blank" rel="noopener noreferrer" className="text-green-700 font-bold hover:underline">cascadeng.com</a>
+              </div>
+            </div>
+          </div>
+
+          {/* Agency 11: Pure Michigan Talent Connect */}
+          <div className="bg-teal-100 border-b-4 border-teal-500 rounded-lg p-6 shadow-md">
+            <div className="flex gap-2 mb-3 items-center">
+              <span className="text-3xl">🌐</span>
+              <h3 className="text-2xl font-bold text-gray-900">Pure Michigan Talent Connect</h3>
+            </div>
+            <p className="text-gray-700 mb-4 font-medium">Official statewide portal for job seekers and employers, featuring a dedicated section for "Returning Citizens" with resources on the Fidelity Bonding Program and tools to find employers actively participating in second-chance hiring.</p>
+            <div className="space-y-3 text-sm">
+              <div className="flex gap-3 items-center">
+                <Phone size={18} className="text-teal-600 flex-shrink-0" />
+                <a href="tel:800-285-9675" className="text-teal-700 font-bold hover:underline">(800) 285-WORKS (9675)</a>
+              </div>
+              <div className="flex gap-3 items-center">
+                <Globe size={18} className="text-teal-600 flex-shrink-0" />
+                <a href="https://mitalent.org/returning-citizens" target="_blank" rel="noopener noreferrer" className="text-teal-700 font-bold hover:underline">mitalent.org/returning-citizens</a>
+              </div>
+              <div className="bg-white p-4 rounded mt-3 border-l-4 border-teal-600">
+                <p className="font-semibold text-gray-900">Statewide Resources:</p>
+                <ul className="text-gray-700 space-y-1 mt-2">
+                  <li>• Fidelity Bonding Program information</li>
+                  <li>• Directory of second-chance employers</li>
+                  <li>• Job search tools for returning citizens</li>
                 </ul>
               </div>
             </div>
@@ -470,7 +555,7 @@ export default function Home() {
   const getCategoryColor = (category: string) => {
     const colors: Record<string, { bg: string; border: string; icon: string; button: string; buttonHover: string }> = {
       "Mental Health": { bg: "bg-blue-100", border: "border-b-4 border-blue-500", icon: "🧠", button: "bg-blue-500 hover:bg-blue-600", buttonHover: "text-white" },
-      "Substance Recovery": { bg: "bg-orange-100", border: "border-b-4 border-orange-500", icon: "🛡️", button: "bg-orange-500 hover:bg-orange-600", buttonHover: "text-white" },
+      "Substance Recovery": { bg: "bg-orange-100", border: "border-b-4 border-orange-500", icon: "���️", button: "bg-orange-500 hover:bg-orange-600", buttonHover: "text-white" },
       "Medication-Assisted Treatment": { bg: "bg-teal-100", border: "border-b-4 border-teal-600", icon: "💊", button: "bg-teal-600 hover:bg-teal-700", buttonHover: "text-white" },
       "Food": { bg: "bg-green-100", border: "border-b-4 border-green-500", icon: "🍽️", button: "bg-green-500 hover:bg-green-600", buttonHover: "text-white" },
       "Housing": { bg: "bg-amber-100", border: "border-b-4 border-amber-500", icon: "🏠", button: "bg-amber-500 hover:bg-amber-600", buttonHover: "text-white" },
@@ -558,14 +643,14 @@ export default function Home() {
           />
         </div>
 
-        <div className="flex gap-2 mb-8 flex-wrap">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mb-8">
           {categories.map((cat) => {
             const colors = getCategoryColor(cat);
             return (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 rounded font-semibold transition ${
+                className={`px-4 py-2 rounded font-semibold transition text-center ${
                   selectedCategory === cat 
                     ? `${colors.button} text-white` 
                     : "bg-gray-200 text-gray-800 hover:bg-gray-300"
