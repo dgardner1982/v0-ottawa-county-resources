@@ -233,6 +233,15 @@ const RESOURCES: Resource[] = [
 
   // Prenatal and Baby Resources
 
+  // Legal
+  { name: "Legal Aid of Western Michigan", category: "Legal", address: "Holland Office", phone: "(616) 394-1380", info: "Provides free legal services for low-income residents in Allegan and Ottawa counties for non-criminal cases.", website: "https://lawestmi.org" },
+  { name: "Legal Self-Help Center", category: "Legal", address: "Grand Haven Courthouse", phone: "(616) 846-8141", info: "Provides forms and instructions for individuals representing themselves in court.", website: "https://miottawa.org/courts/lshc" },
+  { name: "MDOC Probation & Parole (Circuit Court)", category: "Legal", address: "Grand Haven Office: Grand Haven | Hudsonville Office: Hudsonville", phone: "Grand Haven: (616) 846-8320 | Hudsonville: (616) 662-6075", info: "Handles felony probation and parole services for Ottawa County.", website: "https://miottawa.org/courts/20th-circuit/probation-parole" },
+  { name: "58th District Court Probation", category: "Legal", address: "Holland / Grand Haven", phone: "Holland: (616) 355-4314 | Grand Haven: (616) 846-8268", info: "Handles misdemeanor cases and programs like the Sobriety Treatment Program." },
+  { name: "Friend of the Court", category: "Legal", address: "12240 Fillmore Street, Ste 150, West Olive, MI 49460", phone: "(877) 543-2660", info: "Handles domestic relations cases including child support, custody, and parenting time. Statewide IVR system - follow prompts for Ottawa County. Book phone appointments with caseworkers online via Setmore." },
+  { name: "Lighthouse Immigrant Advocates (LIA)", category: "Legal", address: "Holland", phone: "(616) 298-8984", info: "Non-profit law office providing high-quality, low-cost legal services for immigrants and refugees. Services include DACA, naturalization, family-based petitions, and asylum assistance.", website: "https://lia-michigan.org" },
+  { name: "Ottawa County Jail - Inmate Lookup", category: "Legal", address: "Ottawa County", phone: "Use online tool", info: "Search for individuals currently in custody through app.miottawa.org/InmateLookup. For status notifications (release/transfer), register at vinelink.com.", website: "https://app.miottawa.org/InmateLookup" },
+
   // Government Services
   { name: "Secretary of State", category: "Government Services", address: "Multiple locations", phone: "1-888-SOS-MICH (767-6424)", info: "Holland: 587 E 8th St; Hudsonville: 5211 Cherry Ave; Grand Haven: 1110 Robbins Rd. M,T,Th,F 9a-5p, W 11a-7p.", website: "https://www.michigan.gov/sos" },
   { name: "Social Security Administration", category: "Government Services", address: "657 Hastings Ave, Holland", phone: "1-877-223-6062", info: "Social security services. M-F 9a-4p.", website: "https://www.ssa.gov" },
@@ -627,6 +636,13 @@ export default function Home() {
             >
               View Second Chance Employment Resources
             </button>
+          </div>
+        )}
+
+        {selectedCategory === 'Legal' && (
+          <div className="mb-8 p-6 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg shadow-lg">
+            <h3 className="text-2xl font-bold mb-3">Legal Resources & Support</h3>
+            <p className="mb-4">Ottawa County offers a variety of legal assistance services, from affordable legal representation to court self-help resources. Whether you need help with probation, immigration, domestic relations, or criminal matters, these resources can help guide you through the legal process.</p>
           </div>
         )}
 
