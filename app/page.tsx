@@ -527,7 +527,7 @@ export default function Home() {
       "Domestic Violence": { bg: "bg-rose-100", border: "border-b-4 border-rose-600", icon: "🛑", button: "bg-rose-600 hover:bg-rose-700", buttonHover: "text-white" },
       "Employment": { bg: "bg-purple-100", border: "border-b-4 border-purple-500", icon: "💼", button: "bg-purple-500 hover:bg-purple-600", buttonHover: "text-white" },
       "Senior Services": { bg: "bg-pink-100", border: "border-b-4 border-pink-500", icon: "👴", button: "bg-pink-500 hover:bg-pink-600", buttonHover: "text-white" },
-      "Veteran Services": { bg: "bg-indigo-100", border: "border-b-4 border-indigo-500", icon: "🎖️", button: "bg-indigo-500 hover:bg-indigo-600", buttonHover: "text-white" },
+      "Veteran Services": { bg: "bg-indigo-100", border: "border-b-4 border-indigo-500", icon: "🎖��", button: "bg-indigo-500 hover:bg-indigo-600", buttonHover: "text-white" },
       "Transportation": { bg: "bg-cyan-100", border: "border-b-4 border-cyan-500", icon: "🚌", button: "bg-cyan-500 hover:bg-cyan-600", buttonHover: "text-white" },
       "Financial Resources": { bg: "bg-yellow-100", border: "border-b-4 border-yellow-500", icon: "💰", button: "bg-yellow-500 hover:bg-yellow-600", buttonHover: "text-white" },
       "Overdose Prevention/Free Naloxone(Narcan)": { bg: "bg-red-200", border: "border-b-4 border-red-700", icon: "⚠️", button: "bg-red-700 hover:bg-red-800", buttonHover: "text-white" },
@@ -673,19 +673,6 @@ export default function Home() {
                 Learn More About Double Up Food Bucks
               </a>
             </div>
-          </div>
-        )}
-
-        {selectedCategory === 'Employment' && (
-          <div className="mb-8 p-6 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-lg shadow-lg">
-            <h3 className="text-2xl font-bold mb-3">Looking for Employment with a Criminal Background?</h3>
-            <p className="mb-4">Worried your background will prevent you from getting a job? You&apos;re not alone. There are employers and agencies in Ottawa County that specialize in helping individuals with records find meaningful employment. We&apos;ve compiled a list of &ldquo;second chance&rdquo; employment agencies and resources specifically designed to support you.</p>
-            <button 
-              onClick={() => setShowSecondChanceModal(true)}
-              className="bg-white text-purple-600 hover:bg-purple-50 font-bold px-6 py-3 rounded-lg transition text-lg"
-            >
-              View Second Chance Employment Resources
-            </button>
           </div>
         )}
 
