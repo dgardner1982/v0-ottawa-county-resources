@@ -268,7 +268,7 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
               </div>
               <div className="bg-white p-4 rounded mt-3 border-l-4 border-purple-600">
                 <p className="font-semibold text-gray-900 mb-2">How They Help:</p>
-                <p className="text-gray-700">Offers &ldquo;Federal Bonding,&rdquo; which is a free insurance policy for employers that covers them if they hire a person with a record. Also provides leads on &ldquo;second chance&rdquo; employers in the region.</p>
+                <p className="text-gray-700">Offers "Federal Bonding," which is a free insurance policy for employers that covers them if they hire a person with a record. Also provides leads on "second chance" employers in the region.</p>
               </div>
             </div>
           </div>
