@@ -590,17 +590,30 @@ export default function Home() {
         )}
 
         {selectedCategory === 'Food' && (
-          <div className="mb-8 p-6 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-lg shadow-lg">
-            <h3 className="text-2xl font-bold mb-3">Find Food Assistance</h3>
-            <p className="mb-4">Looking for food resources in Ottawa County, MI? Explore nearby food pantries, food banks, and community resources offering free or low-cost options.</p>
-            <a 
-              href="https://ottawafood.org/findfood/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-white text-green-600 hover:bg-green-50 font-bold px-6 py-3 rounded-lg transition text-lg"
-            >
-              Click Here to Find Food
-            </a>
+          <div className="mb-8 space-y-6">
+            <div className="p-6 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-lg shadow-lg">
+              <h3 className="text-2xl font-bold mb-3">Find Food Assistance</h3>
+              <p className="mb-4">Looking for food resources in Ottawa County, MI? Explore nearby food pantries, food banks, and community resources offering free or low-cost options.</p>
+              <a 
+                href="https://ottawafood.org/findfood/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-white text-green-600 hover:bg-green-50 font-bold px-6 py-3 rounded-lg transition text-lg"
+              >
+                Click Here to Find Food
+              </a>
+            </div>
+
+            <div className="p-6 bg-gradient-to-r from-amber-600 to-orange-600 text-white rounded-lg shadow-lg">
+              <h3 className="text-2xl font-bold mb-3">Double Up Food Bucks 2026</h3>
+              <p className="mb-4">Learn about the 2026 Double Up Food Bucks program with major updates including unlimited earn & spend, frozen produce inclusion, and expanded access to fresh produce at farmers markets and grocery stores across Ottawa County.</p>
+              <a 
+                href="/double-up-food-bucks"
+                className="inline-block bg-white text-amber-600 hover:bg-amber-50 font-bold px-6 py-3 rounded-lg transition text-lg"
+              >
+                Learn More About Double Up Food Bucks
+              </a>
+            </div>
           </div>
         )}
 
