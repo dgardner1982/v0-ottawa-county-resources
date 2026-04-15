@@ -114,11 +114,11 @@ const RESOURCES: Resource[] = [
   { name: "Coopersville Cares", category: "Food", address: "180 68th Ave N, Coopersville, MI 49404", phone: "616-997-8602", info: "Food pantry offering supplemental groceries and household essentials to local residents who meet income eligibility guidelines. Serves the Coopersville Public School district. M-Th 9a-2p, Food pantry: Tu & Th 10a-12p, Tu 5:30p-6:30p.", website: "https://coopersvillecares.org" },
   { name: "LOVE INC Grand Haven", category: "Food", address: "326 Ferry St, Grand Haven", phone: "616-846-2701", info: "Food pantry. M-F 9a-5p.", website: "https://loveincallegan.org" },
   { name: "The People Center", category: "Food", address: "307 E Exchange St, Spring Lake, MI 49456", phone: "(616) 844-6710", info: "Food pantry offering supplemental groceries to residents in the Spring Lake, Ferrysburg, and Grand Haven areas. M, W, F 11a-5p.", website: "https://www.thepeoplecenter.org" },
-  { name: "St. John's Episcopal Church", category: "Food", address: "524 Washington Ave, Grand Haven", phone: "616-842-6260 ext 21", info: "Free take-home meals W 5:30p-6:30p, Sun 1p-2p.", website: "https://www.stjohnsgh.org" },
+  { name: "St. John's Episcopal Church", category: "Food", address: "524 Washington Ave, Grand Haven", phone: "616-842-6260 ext 21", info: "Free take-home meals W 5:30p-6:30p, Sun 1p-2p.", website: "https://sjegh.com" },
   { name: "The Salvation Army Grand Haven", category: "Food", address: "310 N Despelder St, Grand Haven", phone: "616-842-3380 ext 200", info: "Food pantry by appointment only. M-F 9a-3p.", website: "https://www.salvationarmyusa.org" },
   { name: "East Side Food Pantry", category: "Food", address: "995 E. 8th St, Holland", phone: "616-392-8559 ext 18", info: "Serves Holland Heights residents only. M & W 10a-11:30a, F 3p-4:30p.", website: "https://www.cityofholland.com" },
   { name: "Holland First Assembly of God", category: "Food", address: "1331 E. 16th St, Holland", phone: "616-396-5646", info: "Food pantry. Call for hours/appointments.", website: "https://hfag.com" },
-  { name: "St. Vincent De Paul Center", category: "Food", address: "170 W. 13th St, Holland", phone: "616-394-0676", info: "Food pantry. M & W 3p-8p, Sat 12p-4p.", website: "https://svdpholland.org" },
+  { name: "St. Vincent De Paul Center", category: "Food", address: "170 W. 13th St, Holland", phone: "616-394-0676", info: "Food pantry. M & W 3p-8p, Sat 12p-4p.", website: "https://stfrancisholland.org/svdp" },
   { name: "The Salvation Army Holland", category: "Food", address: "104 Clover St, Holland", phone: "616-392-4461", info: "Food pantry by appointment only.", website: "https://www.salvationarmyusa.org" },
   { name: "Community Action House", category: "Food", address: "345 W. 14th St, Holland", phone: "616-392-2368", info: "Food pantry by appointment only.", website: "https://www.chservices.org" },
   { name: "Holland Community Kitchen", category: "Food", address: "101 E. 13th St, Holland", phone: "616-566-1417", info: "Free community meals M-F 11a-12:30p, Sat & Sun 9a-10:30a.", website: "https://www.hollandandk.org" },
@@ -232,6 +232,18 @@ const RESOURCES: Resource[] = [
   { name: "Habitat for Humanity ReStore Grand Haven", category: "Clothing and Furniture", address: "408 N Ferry St, Grand Haven, MI 49417", phone: "(616) 846-1505", info: "ReStore location offering affordable furniture and household goods. Hours: M-F 9:30 AM – 6:30 PM; Saturday 9:30 AM – 4:30 PM. Office hours: M-F 9:00 AM – 5:00 PM.", website: "https://tricitieshabitat.org" },
 
   // Prenatal and Baby Resources
+
+  // Legal
+  { name: "Legal Aid of Western Michigan", category: "Legal", address: "Holland Office", phone: "(616) 394-1380", info: "Provides free legal services for low-income residents in Allegan and Ottawa counties for non-criminal cases.", website: "https://lawestmi.org" },
+  { name: "Legal Self-Help Center", category: "Legal", address: "Grand Haven Courthouse", phone: "(616) 846-8141", info: "Provides forms and instructions for individuals representing themselves in court.", website: "https://miottawa.org/courts/lshc" },
+  { name: "MDOC Probation & Parole (Circuit Court)", category: "Legal", address: "Grand Haven Office: Grand Haven | Hudsonville Office: Hudsonville", phone: "Grand Haven: (616) 846-8320 | Hudsonville: (616) 662-6075", info: "Handles felony probation and parole services for Ottawa County.", website: "https://miottawa.org/courts/20th-circuit/probation-parole" },
+  { name: "58th District Court Probation - Holland", category: "Legal", address: "Holland", phone: "(616) 355-4314", info: "Handles misdemeanor cases and programs like the Sobriety Treatment Program." },
+  { name: "58th District Court Probation - Grand Haven", category: "Legal", address: "Grand Haven", phone: "(616) 846-8268", info: "Handles misdemeanor cases and programs like the Sobriety Treatment Program." },
+  { name: "Friend of the Court", category: "Legal", address: "12240 Fillmore Street, Ste 150, West Olive, MI 49460", phone: "(877) 543-2660", info: "Handles domestic relations cases including child support, custody, and parenting time. Statewide IVR system - follow prompts for Ottawa County. Book phone appointments with caseworkers online via Setmore." },
+  { name: "Lighthouse Immigrant Advocates (LIA)", category: "Legal", address: "Holland", phone: "(616) 298-8984", info: "Non-profit law office providing high-quality, low-cost legal services for immigrants and refugees. Services include DACA, naturalization, family-based petitions, and asylum assistance.", website: "https://lia-michigan.org" },
+  { name: "Ottawa County Jail - Inmate Lookup", category: "Legal", address: "Ottawa County", phone: "Use online tool", info: "Search for individuals currently in custody through app.miottawa.org/InmateLookup. For status notifications (release/transfer), register at vinelink.com.", website: "https://app.miottawa.org/InmateLookup" },
+  { name: "OK2SAY - Michigan Student Safety Program", category: "Legal", address: "Statewide Program", phone: "(855) 565-2729 (855-5-OK2SAY)", info: "Confidential reporting system for students, parents, and community members to report safety concerns 24/7. Report bullying, cyberbullying, threats, weapons, drug abuse, sexual assault, and other safety concerns. Trained Michigan State Police technicians handle reports and share with schools and local law enforcement.", website: "https://ok2say.com" },
+  { name: "Silent Observer", category: "Legal", address: "Ottawa County - Three Regional Branches", phone: "(877) 887-4536 (877-88-SILENT)", info: "Non-profit anonymous tip line for serious crimes and criminal activity. Three regional branches serve: Northwest (Grand Haven, Spring Lake, Ferrysburg), Holland/Zeeland, and Eastern (Coopersville, Hudsonville). Submit tips via phone, web, or P3 Tips app with guaranteed anonymity - no caller ID or recordings.", website: "https://p3tips.com" },
 
   // Government Services
   { name: "Secretary of State", category: "Government Services", address: "Multiple locations", phone: "1-888-SOS-MICH (767-6424)", info: "Holland: 587 E 8th St; Hudsonville: 5211 Cherry Ave; Grand Haven: 1110 Robbins Rd. M,T,Th,F 9a-5p, W 11a-7p.", website: "https://www.michigan.gov/sos" },
@@ -627,6 +639,13 @@ export default function Home() {
             >
               View Second Chance Employment Resources
             </button>
+          </div>
+        )}
+
+        {selectedCategory === 'Legal' && (
+          <div className="mb-8 p-6 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg shadow-lg">
+            <h3 className="text-2xl font-bold mb-3">Legal Resources & Support</h3>
+            <p className="mb-4">Ottawa County offers a variety of legal assistance services, from affordable legal representation to court self-help resources. Whether you need help with probation, immigration, domestic relations, or criminal matters, these resources can help guide you through the legal process.</p>
           </div>
         )}
 
