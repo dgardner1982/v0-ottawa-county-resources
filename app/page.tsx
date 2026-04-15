@@ -394,7 +394,7 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                   <li>• <strong>Stronger Together:</strong> Family support groups for loved ones impacted by incarceration</li>
                   <li>• <strong>Mentorship:</strong> Connects participants with mentors for guidance and accountability</li>
                   <li>• <strong>Life Skills & Classes:</strong> Programs like &ldquo;Take Charge&rdquo; for empowerment and practical skills</li>
-                  <li>�� <strong>Housing & Basic Needs:</strong> Assists in finding stable housing and essential items</li>
+                  <li>��� <strong>Housing & Basic Needs:</strong> Assists in finding stable housing and essential items</li>
                 </ul>
               </div>
             </div>
@@ -600,6 +600,74 @@ export default function Home() {
             >
               View Second Chance Employment Resources
             </button>
+          </div>
+        )}
+
+        {selectedCategory === 'Transportation' && (
+          <div className="mb-8 space-y-6">
+            {/* Medicaid Transportation Section */}
+            <div className="p-6 bg-gradient-to-r from-teal-600 to-cyan-600 text-white rounded-lg shadow-lg">
+              <h3 className="text-2xl font-bold mb-3">Have Medicaid and Need a Ride to Your Appointment?</h3>
+              <p className="mb-4 font-medium">In Michigan, Non-Emergency Medical Transportation (NEMT) is a covered benefit for Medicaid members. To reserve a ride, contact your health plan's transportation vendor at least 2 to 3 business days before your appointment.</p>
+              
+              {/* Medicaid Plans Table */}
+              <div className="bg-white rounded-lg overflow-hidden shadow-md">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-gray-800 text-sm">
+                    <thead className="bg-teal-50 border-b-2 border-teal-300">
+                      <tr>
+                        <th className="px-4 py-3 text-left font-bold">Health Plan</th>
+                        <th className="px-4 py-3 text-left font-bold">Reservation Phone</th>
+                        <th className="px-4 py-3 text-left font-bold">Notes</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b hover:bg-teal-50">
+                        <td className="px-4 py-3 font-semibold">Aetna Better Health</td>
+                        <td className="px-4 py-3 text-teal-700 font-bold">(866) 316-3784</td>
+                        <td className="px-4 py-3 text-gray-600">Mon–Fri, 8 AM – 5 PM</td>
+                      </tr>
+                      <tr className="border-b hover:bg-teal-50">
+                        <td className="px-4 py-3 font-semibold">Blue Cross Complete</td>
+                        <td className="px-4 py-3 text-teal-700 font-bold">(888) 803-4947</td>
+                        <td className="px-4 py-3 text-gray-600">Available 24/7; managed by MTMHAP</td>
+                      </tr>
+                      <tr className="border-b hover:bg-teal-50">
+                        <td className="px-4 py-3 font-semibold">CareSource</td>
+                        <td className="px-4 py-3 text-teal-700 font-bold">(833) 230-2053</td>
+                        <td className="px-4 py-3 text-gray-600">Schedule 2 business days in advance</td>
+                      </tr>
+                      <tr className="border-b hover:bg-teal-50">
+                        <td className="px-4 py-3 font-semibold">McLaren Health Plan</td>
+                        <td className="px-4 py-3 text-teal-700 font-bold">(888) 327-0671</td>
+                        <td className="px-4 py-3 text-gray-600">Call 2–3 business days prior</td>
+                      </tr>
+                      <tr className="border-b hover:bg-teal-50">
+                        <td className="px-4 py-3 font-semibold">Meridian Health Plan</td>
+                        <td className="px-4 py-3 text-teal-700 font-bold">(800) 821-9369</td>
+                        <td className="px-4 py-3 text-gray-600">Managed by Modivcare</td>
+                      </tr>
+                      <tr className="border-b hover:bg-teal-50">
+                        <td className="px-4 py-3 font-semibold">Molina Healthcare</td>
+                        <td className="px-4 py-3 text-teal-700 font-bold">(888) 898-7969</td>
+                        <td className="px-4 py-3 text-gray-600">Available 24/7</td>
+                      </tr>
+                      <tr className="border-b hover:bg-teal-50">
+                        <td className="px-4 py-3 font-semibold">Priority Health</td>
+                        <td className="px-4 py-3 text-teal-700 font-bold">(888) 975-8102</td>
+                        <td className="px-4 py-3 text-gray-600">Local: (616) 575-8102</td>
+                      </tr>
+                      <tr className="hover:bg-teal-50">
+                        <td className="px-4 py-3 font-semibold">UnitedHealthcare</td>
+                        <td className="px-4 py-3 text-teal-700 font-bold">(800) 903-5253</td>
+                        <td className="px-4 py-3 text-gray-600">Call Member Services to schedule</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p className="mt-4 text-sm text-teal-100">Information as of April 2026</p>
+            </div>
           </div>
         )}
 
