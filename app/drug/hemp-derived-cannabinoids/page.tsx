@@ -32,6 +32,21 @@ export default function HempDerivedCannabinoids() {
           </p>
         </div>
 
+        {/* Detailed Information */}
+        <div className="bg-green-100 border-l-4 border-green-600 p-6 rounded-lg mb-8">
+          <p className="text-lg text-gray-700">
+            For more detailed information, click{' '}
+            <a 
+              href="https://gemini.google.com/share/389b769f762d" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-2 rounded-lg transition"
+            >
+              here
+            </a>
+          </p>
+        </div>
+
         {/* Common Types */}
         <div className="bg-white p-8 rounded-lg border-l-4 border-green-500 mb-8 shadow-md">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">Common Hemp-Derived Cannabinoids</h3>
