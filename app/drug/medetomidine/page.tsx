@@ -35,7 +35,7 @@ export default function MedetomidinePage() {
           <p className="text-lg text-gray-700 mb-4">
             For more detailed information, click{' '}
             <a 
-              href="https://gemini.google.com/share/0802dddcda86" 
+              href="https://gemini.google.com/share/53173a5b8e80" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-4 py-2 rounded-lg transition"
