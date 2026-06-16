@@ -33,22 +33,11 @@ export default function NitazinePage() {
 
         <div className="bg-yellow-100 border-l-4 border-yellow-600 p-6 rounded-lg mb-8">
           <h3 className="text-2xl font-bold text-gray-900 mb-3">Potency Level: HIGH</h3>
-          <p className="text-lg text-gray-700">
+          <p className="text-lg text-gray-700 mb-3">
             Nitazine is a powerful sedative with high overdose risk, especially when combined with other substances. It has become increasingly prevalent in the illicit drug supply.
           </p>
-        </div>
-
-        <div className="bg-yellow-100 border-l-4 border-yellow-600 p-6 rounded-lg mb-8">
-          <p className="text-lg text-gray-700">
-            For more detailed information about Nitazine, click{' '}
-            <a 
-              href="https://www.samhsa.gov/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-bold px-4 py-2 rounded-lg transition"
-            >
-              here
-            </a>
+          <p className="text-lg text-gray-700 font-bold">
+            Nitazine is approximately 40 times more potent than morphine.
           </p>
         </div>
 

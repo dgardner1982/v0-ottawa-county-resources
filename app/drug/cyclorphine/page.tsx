@@ -33,22 +33,11 @@ export default function CyclorphinePage() {
 
         <div className="bg-purple-100 border-l-4 border-purple-600 p-6 rounded-lg mb-8">
           <h3 className="text-2xl font-bold text-gray-900 mb-3">Potency Level: EXTREME</h3>
-          <p className="text-lg text-gray-700">
+          <p className="text-lg text-gray-700 mb-3">
             Cyclorphine is an extremely potent synthetic opioid, significantly stronger than fentanyl. It poses severe overdose and death risk, particularly in the illicit drug supply where doses are uncontrolled.
           </p>
-        </div>
-
-        <div className="bg-purple-100 border-l-4 border-purple-600 p-6 rounded-lg mb-8">
-          <p className="text-lg text-gray-700">
-            For more detailed information about Cyclorphine, click{' '}
-            <a 
-              href="https://www.samhsa.gov/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold px-4 py-2 rounded-lg transition"
-            >
-              here
-            </a>
+          <p className="text-lg text-gray-700 font-bold">
+            Cyclorphine is approximately 2,000-5,000 times more potent than morphine, making it one of the most dangerous opioids in existence.
           </p>
         </div>
 
