@@ -19,6 +19,7 @@ export default function EducationPage() {
     { name: "Cocaine", slug: "cocaine", color: "border-red-500", bgColor: "bg-red-50", image: "/drug-icons/cocaine.jpg" },
     { name: "Cyclorphine", icon: "💀", slug: "cyclorphine", color: "border-purple-700", bgColor: "bg-purple-100" },
     { name: "Fentanyl", icon: "⚠️", slug: "fentanyl", color: "border-red-600", bgColor: "bg-red-100" },
+    { name: "Hemp-Derived Cannabinoids", icon: "🌱", slug: "hemp-derived-cannabinoids", color: "border-green-600", bgColor: "bg-green-100" },
     { name: "Heroin", icon: "💉", slug: "heroin", color: "border-amber-700", bgColor: "bg-amber-50" },
     { name: "Inhalants", icon: "💨", slug: "inhalants", color: "border-pink-500", bgColor: "bg-pink-50" },
     { name: "Ketamine", icon: "🧪", slug: "ketamine", color: "border-indigo-500", bgColor: "bg-indigo-50" },
