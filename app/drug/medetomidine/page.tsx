@@ -17,7 +17,7 @@ export default function MedetomidinePage() {
           <div className="flex flex-col items-center gap-6 text-center">
             <div className="text-7xl">💊</div>
             <h1 className="text-6xl font-bold text-indigo-700">Medetomidine</h1>
-            <p className="text-2xl text-gray-600">The Veterinary Sedative Threat</p>
+            <p className="text-2xl text-gray-600">Rhino Tranq</p>
             <Link href="/education">
               <button className="flex items-center gap-2 bg-gray-600 hover:bg-gray-700 text-white font-bold px-6 py-2 rounded-lg transition">
                 ← Back to Education
@@ -29,14 +29,13 @@ export default function MedetomidinePage() {
 
       <main className="max-w-6xl mx-auto px-4 py-12">
         <div className="bg-indigo-100 border-l-4 border-indigo-600 p-6 rounded-lg mb-8">
-          <h3 className="text-2xl font-bold text-gray-900 mb-3">Potency & Veterinary Use</h3>
-          <p className="text-lg text-gray-700 mb-3">
-            Medetomidine is approximately 10 times more potent than Xylazine. It is a veterinary alpha-2 agonist primarily used as a sedative and analgesic in veterinary medicine for dogs, cats, and other animals during medical procedures and surgeries.
+          <p className="text-lg text-gray-700 mb-4">
+            Estimated to be 100 to 200 times more potent than xylazine. It triggers profound central nervous system depression far exceeding standard street adulterants.
           </p>
           <p className="text-lg text-gray-700 mb-4">
             For more detailed information, click{' '}
             <a 
-              href="https://gemini.google.com/share/c6066ab5dbcb" 
+              href="https://gemini.google.com/share/0802dddcda86" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-4 py-2 rounded-lg transition"
