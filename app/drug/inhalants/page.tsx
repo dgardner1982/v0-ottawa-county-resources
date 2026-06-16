@@ -30,7 +30,7 @@ export default function InhalantsPage() {
       <main className="max-w-6xl mx-auto px-4 py-12">
         <div className="bg-blue-100 border-l-4 border-blue-600 p-6 rounded-lg mb-8">
           <p className="text-lg text-gray-700">
-            For specific information about Duster/Compressed Air, click{' '}
+            For specific information about <strong>Duster/Compressed Air</strong>, click{' '}
             <a 
               href="https://gemini.google.com/share/b5a5d42e7caf" 
               target="_blank" 
@@ -44,7 +44,7 @@ export default function InhalantsPage() {
 
         <div className="bg-cyan-100 border-l-4 border-cyan-600 p-6 rounded-lg mb-8">
           <p className="text-lg text-gray-700">
-            For specific information about Nitrous Oxide, click{' '}
+            For specific information about <strong>Nitrous Oxide</strong>, click{' '}
             <a 
               href="https://gemini.google.com/share/9b0d8ebae411" 
               target="_blank" 
