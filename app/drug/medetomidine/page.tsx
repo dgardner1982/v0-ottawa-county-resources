@@ -32,7 +32,7 @@ export default function MedetomidinePage() {
           <p className="text-lg text-gray-700">
             For more detailed information, click{' '}
             <a 
-              href="https://gemini.google.com/share/medetomidine-infographic" 
+              href="https://gemini.google.com/share/abc836076155" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-4 py-2 rounded-lg transition"
