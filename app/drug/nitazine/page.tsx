@@ -113,7 +113,7 @@ export default function NitazinePage() {
             <ul className="space-y-3 text-gray-700">
               <li className="flex gap-3 items-start">
                 <span className="text-red-600 font-bold">⚠️</span>
-                <span>Overdose potential significantly increased with opioids or alcohol</span>
+                <span>Overdose potential significantly increased when combined with other opioids, benzodiazepines, or alcohol</span>
               </li>
               <li className="flex gap-3 items-start">
                 <span className="text-red-600 font-bold">⚠️</span>
