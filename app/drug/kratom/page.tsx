@@ -136,6 +136,17 @@ export default function KratomPage() {
           </div>
         </div>
 
+        <div className="bg-green-100 border-l-4 border-green-600 p-6 rounded-lg mb-8">
+          <p className="text-lg text-gray-700">
+            For information on 7-Hydroxymitragynine (7-OH) & Mitragynine Pseudoindoxyl (Pseudo), click{' '}
+            <Link href="/drug/kratom-alkaloids">
+              <span className="inline-block bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-2 rounded-lg transition cursor-pointer">
+                here
+              </span>
+            </Link>
+          </p>
+        </div>
+
         <div className="bg-blue-50 border-l-4 border-blue-500 p-8 rounded-lg mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Kratom Withdrawal</h2>
           <p className="text-gray-700 mb-4">Users who stop after regular use may experience:</p>
