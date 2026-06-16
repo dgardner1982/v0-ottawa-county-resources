@@ -33,12 +33,38 @@ export default function CyclorphinePage() {
 
         <div className="bg-purple-100 border-l-4 border-purple-600 p-6 rounded-lg mb-8">
           <h3 className="text-2xl font-bold text-gray-900 mb-3">Potency Level: EXTREME</h3>
-          <p className="text-lg text-gray-700 mb-3">
+          <p className="text-lg text-gray-700 mb-6">
             Cyclorphine is an extremely potent synthetic opioid, significantly stronger than fentanyl. It poses severe overdose and death risk, particularly in the illicit drug supply where doses are uncontrolled.
           </p>
-          <p className="text-lg text-gray-700 font-bold">
-            Cyclorphine is approximately 2,000-5,000 times more potent than morphine, making it one of the most dangerous opioids in existence.
-          </p>
+          
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse bg-white rounded-lg">
+              <thead>
+                <tr className="bg-purple-200">
+                  <th className="border border-purple-400 px-4 py-3 text-left font-bold text-gray-900">Opioid</th>
+                  <th className="border border-purple-400 px-4 py-3 text-left font-bold text-gray-900">Potency Compared to Morphine</th>
+                  <th className="border border-purple-400 px-4 py-3 text-left font-bold text-gray-900">Potency Compared to Fentanyl</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="hover:bg-purple-50">
+                  <td className="border border-purple-400 px-4 py-3 font-semibold text-gray-800">Morphine</td>
+                  <td className="border border-purple-400 px-4 py-3 text-gray-700">1x (Baseline)</td>
+                  <td className="border border-purple-400 px-4 py-3 text-gray-700">1/100th as potent</td>
+                </tr>
+                <tr className="hover:bg-purple-50">
+                  <td className="border border-purple-400 px-4 py-3 font-semibold text-gray-800">Fentanyl</td>
+                  <td className="border border-purple-400 px-4 py-3 text-gray-700">100x more potent</td>
+                  <td className="border border-purple-400 px-4 py-3 text-gray-700">1x (Baseline)</td>
+                </tr>
+                <tr className="hover:bg-purple-50 bg-red-50">
+                  <td className="border border-purple-400 px-4 py-3 font-semibold text-gray-800">Cyclorphine</td>
+                  <td className="border border-purple-400 px-4 py-3 text-red-700 font-bold">500-1,000x more potent</td>
+                  <td className="border border-purple-400 px-4 py-3 text-red-700 font-bold">10x more potent</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
