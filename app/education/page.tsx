@@ -17,13 +17,16 @@ export default function EducationPage() {
   
   const drugs = [
     { name: "Cocaine", slug: "cocaine", color: "border-red-500", bgColor: "bg-red-50", image: "/drug-icons/cocaine.jpg" },
+    { name: "Cyclorphine", icon: "💀", slug: "cyclorphine", color: "border-purple-700", bgColor: "bg-purple-100" },
     { name: "Fentanyl", icon: "⚠️", slug: "fentanyl", color: "border-red-600", bgColor: "bg-red-100" },
     { name: "Heroin", icon: "💉", slug: "heroin", color: "border-amber-700", bgColor: "bg-amber-50" },
     { name: "Inhalants", icon: "💨", slug: "inhalants", color: "border-pink-500", bgColor: "bg-pink-50" },
     { name: "Ketamine", icon: "🧪", slug: "ketamine", color: "border-indigo-500", bgColor: "bg-indigo-50" },
     { name: "Kratom", icon: "🍃", slug: "kratom", color: "border-green-500", bgColor: "bg-green-50" },
+    { name: "Medetomidine", icon: "🔬", slug: "medetomidine", color: "border-indigo-600", bgColor: "bg-indigo-100" },
     { name: "Methadone", slug: "methadone", color: "border-blue-500", bgColor: "bg-blue-50", image: "/drug-icons/methadone.jpg" },
     { name: "Methamphetamine", icon: "⚡", slug: "methamphetamine", color: "border-orange-500", bgColor: "bg-orange-50" },
+    { name: "Nitazine", icon: "💊", slug: "nitazine", color: "border-yellow-600", bgColor: "bg-yellow-50" },
     { name: "PCP", icon: "⛔", slug: "pcp", color: "border-red-700", bgColor: "bg-red-200" },
     { name: "Synthetic Cannabinoids", icon: "🌿", slug: "synthetic-cannabinoids", color: "border-teal-500", bgColor: "bg-teal-50" },
     { name: "THC", slug: "thc", color: "border-lime-500", bgColor: "bg-lime-50", image: "/drug-icons/thc.jpg" },
