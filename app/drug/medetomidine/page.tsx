@@ -29,10 +29,14 @@ export default function MedetomidinePage() {
 
       <main className="max-w-6xl mx-auto px-4 py-12">
         <div className="bg-indigo-100 border-l-4 border-indigo-600 p-6 rounded-lg mb-8">
-          <p className="text-lg text-gray-700">
+          <h3 className="text-2xl font-bold text-gray-900 mb-3">Potency & Veterinary Use</h3>
+          <p className="text-lg text-gray-700 mb-3">
+            Medetomidine is approximately 10 times more potent than Xylazine. It is a veterinary alpha-2 agonist primarily used as a sedative and analgesic in veterinary medicine for dogs, cats, and other animals during medical procedures and surgeries.
+          </p>
+          <p className="text-lg text-gray-700 mb-4">
             For more detailed information, click{' '}
             <a 
-              href="https://gemini.google.com/share/abc836076155" 
+              href="https://gemini.google.com/share/c6066ab5dbcb" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-4 py-2 rounded-lg transition"
