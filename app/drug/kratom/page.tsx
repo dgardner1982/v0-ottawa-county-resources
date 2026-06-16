@@ -111,6 +111,31 @@ export default function KratomPage() {
           </ul>
         </div>
 
+        <div className="bg-orange-50 border-l-4 border-orange-600 p-8 rounded-lg mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Kratom Extracts</h2>
+          <p className="text-gray-700 mb-4">Kratom extracts are concentrated forms of kratom that are significantly more potent than powder or capsules:</p>
+          <div className="bg-white p-4 rounded-lg mb-4">
+            <h3 className="font-bold text-gray-900 mb-3">Types of Kratom Extracts:</h3>
+            <ul className="space-y-2 text-gray-700 ml-4">
+              <li>• <strong>Resin Extract:</strong> Sticky, concentrated form that requires smaller doses</li>
+              <li>• <strong>Liquid Extract:</strong> Tincture-like form, often mixed with beverages</li>
+              <li>• <strong>Enhanced Kratom:</strong> Powder mixed with extracted alkaloids for increased potency</li>
+              <li>• <strong>Ultra-Enhanced:</strong> Highest concentration of alkaloids, extremely potent</li>
+            </ul>
+          </div>
+          <div className="bg-red-100 p-4 rounded-lg border-l-4 border-red-600">
+            <h3 className="font-bold text-red-900 mb-2">⚠️ Extract Dangers:</h3>
+            <ul className="space-y-2 text-red-900 ml-4">
+              <li>• Much faster onset and more intense effects</li>
+              <li>• Higher addiction potential than powder</li>
+              <li>• Increased risk of overdose due to potency</li>
+              <li>• More severe withdrawal symptoms</li>
+              <li>• Greater liver toxicity risk</li>
+              <li>• Often contain undisclosed additives or contaminants</li>
+            </ul>
+          </div>
+        </div>
+
         <div className="bg-blue-50 border-l-4 border-blue-500 p-8 rounded-lg mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Kratom Withdrawal</h2>
           <p className="text-gray-700 mb-4">Users who stop after regular use may experience:</p>
