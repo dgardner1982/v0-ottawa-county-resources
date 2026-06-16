@@ -24,7 +24,7 @@ export default function EducationPage() {
     { name: "Inhalants", icon: "💨", slug: "inhalants", color: "border-pink-500", bgColor: "bg-pink-50" },
     { name: "Ketamine", icon: "🧪", slug: "ketamine", color: "border-indigo-500", bgColor: "bg-indigo-50" },
     { name: "Kratom", icon: "🍃", slug: "kratom", color: "border-green-500", bgColor: "bg-green-50" },
-    { name: "Kratom Alkaloids", icon: "🔬", slug: "kratom-alkaloids", color: "border-green-700", bgColor: "bg-green-200" },
+    { name: "7-Hydroxymitragynine (7-OH) & Mitragynine Pseudoindoxyl (Pseudo)", icon: "🔬", slug: "kratom-alkaloids", color: "border-green-700", bgColor: "bg-green-200" },
     { name: "Medetomidine", icon: "🔬", slug: "medetomidine", color: "border-indigo-600", bgColor: "bg-indigo-100" },
     { name: "Methadone", slug: "methadone", color: "border-blue-500", bgColor: "bg-blue-50", image: "/drug-icons/methadone.jpg" },
     { name: "Methamphetamine", icon: "⚡", slug: "methamphetamine", color: "border-orange-500", bgColor: "bg-orange-50" },
