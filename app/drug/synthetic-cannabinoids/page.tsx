@@ -49,6 +49,7 @@ export default function SyntheticCannabinoidsPage() {
         </div>
 
         <div className="bg-teal-100 border-l-4 border-teal-600 p-6 rounded-lg mb-8">
+          <h3 className="text-2xl font-bold text-gray-900 mb-3">Synthetic Cannabinoids</h3>
           <p className="text-lg text-gray-700">
             For more detailed information, click{' '}
             <a 
