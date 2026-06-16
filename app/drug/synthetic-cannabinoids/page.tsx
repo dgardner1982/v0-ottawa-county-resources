@@ -134,6 +134,26 @@ export default function SyntheticCannabinoidsPage() {
           </ul>
         </div>
 
+        <div className="bg-yellow-50 p-8 rounded-lg border-l-4 border-yellow-600 mb-8">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">Hemp-Derived Cannabinoids</h3>
+          <p className="text-lg text-gray-700 mb-4">
+            Hemp-derived cannabinoids like THC-V, Delta-8, Delta-10, and other isomers are legal compounds extracted or synthesized from hemp plants. While they are less potent than traditional Delta-9 THC, they still carry health risks and are often mislabeled or contaminated products.
+          </p>
+          <div className="bg-white p-6 rounded-lg mt-4">
+            <h4 className="text-xl font-bold text-gray-900 mb-3">Common Hemp-Derived Cannabinoids:</h4>
+            <ul className="space-y-3 text-gray-700 ml-4">
+              <li><strong>Delta-8 THC:</strong> Slightly less potent than Delta-9, produces mild psychoactive effects and relaxation</li>
+              <li><strong>Delta-10 THC:</strong> Similar effects to Delta-8 with potential stimulating properties</li>
+              <li><strong>THC-V:</strong> May suppress appetite, often marketed for weight loss with minimal psychoactive effects</li>
+              <li><strong>THC-O:</strong> Synthetic cannabinoid derived from hemp, potentially more potent than Delta-9</li>
+              <li><strong>HHC:</strong> Semi-synthetic cannabinoid with effects comparable to Delta-9 THC</li>
+            </ul>
+          </div>
+          <div className="bg-red-100 p-4 rounded-lg mt-4 border-l-4 border-red-600">
+            <p className="text-gray-800 font-semibold">⚠️ Important: These products are largely unregulated, often mislabeled, may contain harmful contaminants, and can produce unpredictable effects. Products marketed as "legal" still carry health risks and may interfere with drug tests or medications.</p>
+          </div>
+        </div>
+
         <div className="bg-red-50 p-8 rounded-lg border-l-4 border-red-500 mb-8">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">Overdose Symptoms</h3>
           <ul className="space-y-3 text-gray-700 ml-4">
