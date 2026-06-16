@@ -34,7 +34,7 @@ export default function NitazinePage() {
         <div className="bg-yellow-100 border-l-4 border-yellow-600 p-6 rounded-lg mb-8">
           <h3 className="text-2xl font-bold text-gray-900 mb-3">Potency Level: HIGH</h3>
           <p className="text-lg text-gray-700 mb-6">
-            Nitazine is a powerful sedative with high overdose risk, especially when combined with other substances. It has become increasingly prevalent in the illicit drug supply.
+            Nitazines are a powerful type of opioid with high overdose risk, especially when combined with other substances. They have become increasingly prevalent in the illicit drug supply. The term "nitazines" is an umbrella classification that includes several different synthetic opioid analogs, each with varying levels of potency. Common varieties include Metonitazene, Isotonitazene (ISO), Protonitazene, N-Desethyl Isotonitazene, and Etonitazene—all of which carry significant overdose dangers.
           </p>
           
           <div className="overflow-x-auto">
