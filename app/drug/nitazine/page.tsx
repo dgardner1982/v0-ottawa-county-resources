@@ -33,12 +33,48 @@ export default function NitazinePage() {
 
         <div className="bg-yellow-100 border-l-4 border-yellow-600 p-6 rounded-lg mb-8">
           <h3 className="text-2xl font-bold text-gray-900 mb-3">Potency Level: HIGH</h3>
-          <p className="text-lg text-gray-700 mb-3">
+          <p className="text-lg text-gray-700 mb-6">
             Nitazine is a powerful sedative with high overdose risk, especially when combined with other substances. It has become increasingly prevalent in the illicit drug supply.
           </p>
-          <p className="text-lg text-gray-700 font-bold">
-            Nitazine is approximately 40 times more potent than morphine.
-          </p>
+          
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse bg-white rounded-lg">
+              <thead>
+                <tr className="bg-yellow-200">
+                  <th className="border border-yellow-400 px-4 py-3 text-left font-bold text-gray-900">Nitazene Analog</th>
+                  <th className="border border-yellow-400 px-4 py-3 text-left font-bold text-gray-900">Potency vs Morphine</th>
+                  <th className="border border-yellow-400 px-4 py-3 text-left font-bold text-gray-900">Potency vs Fentanyl</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="hover:bg-yellow-50">
+                  <td className="border border-yellow-400 px-4 py-3 font-semibold text-gray-800">Metonitazene</td>
+                  <td className="border border-yellow-400 px-4 py-3 text-gray-700">~100x more potent</td>
+                  <td className="border border-yellow-400 px-4 py-3 text-gray-700">Roughly equal</td>
+                </tr>
+                <tr className="hover:bg-yellow-50">
+                  <td className="border border-yellow-400 px-4 py-3 font-semibold text-gray-800">Protonitazene</td>
+                  <td className="border border-yellow-400 px-4 py-3 text-gray-700">~200-300x more potent</td>
+                  <td className="border border-yellow-400 px-4 py-3 text-gray-700">~3x more potent</td>
+                </tr>
+                <tr className="hover:bg-yellow-50">
+                  <td className="border border-yellow-400 px-4 py-3 font-semibold text-gray-800">Isotonitazene ("ISO")</td>
+                  <td className="border border-yellow-400 px-4 py-3 text-gray-700">~500-800x more potent</td>
+                  <td className="border border-yellow-400 px-4 py-3 text-gray-700">~5-9x more potent</td>
+                </tr>
+                <tr className="hover:bg-yellow-50">
+                  <td className="border border-yellow-400 px-4 py-3 font-semibold text-gray-800">N-Desethyl Isotonitazene</td>
+                  <td className="border border-yellow-400 px-4 py-3 text-gray-700">~1,000-1,400x more potent</td>
+                  <td className="border border-yellow-400 px-4 py-3 text-gray-700">~20x more potent</td>
+                </tr>
+                <tr className="hover:bg-yellow-50">
+                  <td className="border border-yellow-400 px-4 py-3 font-semibold text-gray-800">Etonitazene / N-Pyrrolidino Etonitazene</td>
+                  <td className="border border-yellow-400 px-4 py-3 text-gray-700">~1,500x more potent</td>
+                  <td className="border border-yellow-400 px-4 py-3 text-gray-700">~10-40x more potent</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
