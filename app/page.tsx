@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
 import { Phone, MapPin, Globe, X } from 'lucide-react';
 import { Footer } from '@/components/footer';
@@ -17,60 +16,14 @@ interface Resource {
 
 // Phone Call Handler Component
 function PhoneLink({ phoneNumber, displayText }: { phoneNumber: string; displayText: string }) {
-  const [copied, setCopied] = useState(false);
-
-  const handlePhoneClick = () => {
-    // Try to detect if on mobile
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    
-    if (isMobile) {
-      // On mobile, use tel: protocol
-      window.location.href = `tel:${phoneNumber}`;
-    } else {
-      // On desktop, try modern Clipboard API with fallback
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(phoneNumber).then(() => {
-          setCopied(true);
-          setTimeout(() => setCopied(false), 2000);
-        }).catch(() => {
-          // Fallback if Clipboard API is blocked
-          copyToClipboardFallback(phoneNumber);
-        });
-      } else {
-        // Fallback for older browsers
-        copyToClipboardFallback(phoneNumber);
-      }
-    }
-  };
-
-  const copyToClipboardFallback = (text: string) => {
-    const textarea = document.createElement('textarea');
-    textarea.value = text;
-    textarea.style.position = 'fixed';
-    textarea.style.left = '-9999px';
-    document.body.appendChild(textarea);
-    
-    try {
-      textarea.select();
-      document.execCommand('copy');
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } finally {
-      document.body.removeChild(textarea);
-    }
-  };
-
-  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
   return (
-    <button
-      onClick={handlePhoneClick}
-      className="text-teal-700 font-bold hover:underline cursor-pointer"
-      title={isMobile ? "Click to call" : "Click to copy phone number"}
+    <a
+      href={`tel:${phoneNumber}`}
+      className="text-teal-700 font-bold hover:underline"
+      title="Click to call"
     >
       {displayText}
-      {copied && <span className="ml-2 text-sm text-green-600">(Copied!)</span>}
-    </button>
+    </a>
   );
 }
 
