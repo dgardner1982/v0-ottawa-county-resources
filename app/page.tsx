@@ -799,7 +799,15 @@ export default function Home() {
                     {resource.website && (
                       <div className="flex gap-3 items-center">
                         <Globe size={18} className="text-teal-600 flex-shrink-0" />
-                        <a href={resource.website} target="_blank" rel="noopener noreferrer" className="text-teal-700 font-bold hover:underline">{new URL(resource.website).hostname.replace('www.', '')}</a>
+                        <a href={resource.website} target="_blank" rel="noopener noreferrer" className="text-teal-700 font-bold hover:underline">
+                          {(() => {
+                            try {
+                              return new URL(resource.website).hostname.replace('www.', '');
+                            } catch {
+                              return resource.website;
+                            }
+                          })()}
+                        </a>
                       </div>
                     )}
                     {resource.hours && (
