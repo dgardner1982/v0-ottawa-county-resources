@@ -27,11 +27,36 @@ function PhoneLink({ phoneNumber, displayText }: { phoneNumber: string; displayT
       // On mobile, use tel: protocol
       window.location.href = `tel:${phoneNumber}`;
     } else {
-      // On desktop, copy to clipboard and show feedback
-      navigator.clipboard.writeText(phoneNumber).then(() => {
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
-      });
+      // On desktop, try modern Clipboard API with fallback
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(phoneNumber).then(() => {
+          setCopied(true);
+          setTimeout(() => setCopied(false), 2000);
+        }).catch(() => {
+          // Fallback if Clipboard API is blocked
+          copyToClipboardFallback(phoneNumber);
+        });
+      } else {
+        // Fallback for older browsers
+        copyToClipboardFallback(phoneNumber);
+      }
+    }
+  };
+
+  const copyToClipboardFallback = (text: string) => {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.style.position = 'fixed';
+    textarea.style.left = '-9999px';
+    document.body.appendChild(textarea);
+    
+    try {
+      textarea.select();
+      document.execCommand('copy');
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } finally {
+      document.body.removeChild(textarea);
     }
   };
 
