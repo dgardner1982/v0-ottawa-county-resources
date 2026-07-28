@@ -13,39 +13,23 @@ interface Resource {
   info: string;
   link?: string;
   website?: string;
+  hours?: string;
+  officeAddress?: string;
+  officeHours?: string;
+  officePhone?: string;
+  officeWebsite?: string;
 }
 
 // Phone Call Handler Component
 function PhoneLink({ phoneNumber, displayText }: { phoneNumber: string; displayText: string }) {
-  const [copied, setCopied] = useState(false);
-
-  const handlePhoneClick = () => {
-    // Try to detect if on mobile
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    
-    if (isMobile) {
-      // On mobile, use tel: protocol
-      window.location.href = `tel:${phoneNumber}`;
-    } else {
-      // On desktop, copy to clipboard and show feedback
-      navigator.clipboard.writeText(phoneNumber).then(() => {
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
-      });
-    }
-  };
-
-  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
   return (
-    <button
-      onClick={handlePhoneClick}
-      className="text-teal-700 font-bold hover:underline cursor-pointer"
-      title={isMobile ? "Click to call" : "Click to copy phone number"}
+    <a
+      href={`tel:${phoneNumber}`}
+      className="text-teal-700 font-bold hover:underline"
+      title="Click to call"
     >
       {displayText}
-      {copied && <span className="ml-2 text-sm text-green-600">(Copied!)</span>}
-    </button>
+    </a>
   );
 }
 
@@ -64,20 +48,20 @@ const RESOURCES: Resource[] = [
   { name: "988 Lifeline", category: "Mental Health", address: "National", phone: "988", info: "Suicide & Crisis Lifeline available 24/7 - call or text.", website: "https://988lifeline.org" },
   { name: "Crisis Text Line", category: "Mental Health", address: "National", phone: "Text HOME to 741741", info: "Crisis support via text message.", website: "https://www.crisistextline.org" },
   { name: "Ottawa Community Mental Health 24-Hour Helpline", category: "Mental Health", address: "Multiple locations", phone: "616-396-4357", info: "24-hour mental health crisis helpline.", website: "https://www.cmhoc.org" },
-  { name: "Pine Rest Holland", category: "Mental Health", address: "926 S. Washington #210, Holland", phone: "616-820-3780", info: "Mental health and psychiatric services. M-Th 8:30a-8p, F 8:30a-3p.", website: "https://www.pinerest.org" },
-  { name: "Pine Rest North Shore", category: "Mental Health", address: "17325 Van Wagoner Rd, Spring Lake", phone: "616-847-5145", info: "Mental health services. M-Th 8a-6:30p, F 8a-3p.", website: "https://www.pinerest.org" },
-  { name: "Pine Rest Grand Rapids Psychiatric Urgent Care", category: "Mental Health", address: "300 68th Street SE Bldg E, Grand Rapids", phone: "616-455-9200", info: "Psychiatric urgent care. 10a-8p daily.", website: "https://www.pinerest.org" },
-  { name: "Encourage Counseling", category: "Mental Health", address: "607 Heritage Court, Holland", phone: "616-396-6172", info: "Professional counseling services. M 9a-6p, Tu-Th 8:30a-6p.", website: "https://encouragecounseling.com" },
+  { name: "Pine Rest Holland", category: "Mental Health", address: "926 S. Washington #210, Holland", phone: "616-820-3780", info: "Mental health and psychiatric services.", hours: "M-Th 8:30a-8p, F 8:30a-3p", website: "https://www.pinerest.org" },
+  { name: "Pine Rest North Shore", category: "Mental Health", address: "17325 Van Wagoner Rd, Spring Lake", phone: "616-847-5145", info: "Mental health services.", hours: "M-Th 8a-6:30p, F 8a-3p", website: "https://www.pinerest.org" },
+  { name: "Pine Rest Grand Rapids Psychiatric Urgent Care", category: "Mental Health", address: "300 68th Street SE Bldg E, Grand Rapids", phone: "616-455-9200", info: "Psychiatric urgent care.", hours: "10a-8p daily", website: "https://www.pinerest.org" },
+  { name: "Encourage Counseling", category: "Mental Health", address: "607 Heritage Court, Holland", phone: "616-396-6172", info: "Professional counseling services.", hours: "M 9a-6p, Tu-Th 8:30a-6p", website: "https://encouragecounseling.com" },
   { name: "Beacon of Hope Christian Counseling Holland", category: "Mental Health", address: "225 W. 30th St, Holland", phone: "616-594-5380", info: "Christian counseling services.", website: "https://beaconofhopecc.org" },
   { name: "Beacon of Hope Christian Counseling Grandville", category: "Mental Health", address: "6265 8th Ave, Grandville", phone: "616-594-5380", info: "Christian counseling services.", website: "https://beaconofhopecc.org" },
-  { name: "Bethany Christian Services Holland", category: "Mental Health", address: "11335 James St, Holland", phone: "616-396-0623", info: "Christian counseling and services. M-Th 10a-9p, F 10a-3p.", website: "https://www.bethanycc.org" },
-  { name: "Bethany Christian Services Grand Haven", category: "Mental Health", address: "1475 Robbins Rd, Grand Haven", phone: "616-396-0623", info: "Christian counseling and services. M-Th 9a-8p.", website: "https://www.bethanycc.org" },
+  { name: "Bethany Christian Services Holland", category: "Mental Health", address: "11335 James St, Holland", phone: "616-396-0623", info: "Christian counseling and services.", hours: "M-Th 10a-9p, F 10a-3p", website: "https://www.bethanycc.org" },
+  { name: "Bethany Christian Services Grand Haven", category: "Mental Health", address: "1475 Robbins Rd, Grand Haven", phone: "616-396-0623", info: "Christian counseling and services.", hours: "M-Th 9a-8p", website: "https://www.bethanycc.org" },
   { name: "City On A Hill Ministries", category: "Mental Health", address: "100 Pine St STE 175, Zeeland, MI 49464", phone: "(616) 748-6060", info: "Multi-service community hub with health clinic providing free or low-cost mental health services.", website: "https://www.coahm.org" },
-  { name: "Counseling Center of West Michigan - Holland Campus", category: "Mental Health", address: "3124 N Wellness Dr # 50, Holland, MI 49424", phone: "(616) 805-3660 ext. 1201", info: "Diverse counseling for children, teens, and adults. Specialized therapy for couples and families, large provider network with evening and Saturday availability. M-F 8a-8p, Sat 8a-2p.", website: "https://www.counselingcenterwm.org" },
-  { name: "Mosaic Counseling - Grand Haven", category: "Mental Health", address: "1703 S. Despelder St., Grand Haven", phone: "616-842-9160", info: "Professional counseling. M-F 9a-4p.", website: "https://mosaiccounseling.com" },
-  { name: "Mosaic Counseling - Holland", category: "Mental Health", address: "503 Century Ln, Holland, MI 49423", phone: "616-842-9160", info: "Professional counseling. M-F 9a-4p.", website: "https://mosaiccounseling.com" },
+  { name: "Counseling Center of West Michigan - Holland Campus", category: "Mental Health", address: "3124 N Wellness Dr # 50, Holland, MI 49424", phone: "(616) 805-3660 ext. 1201", info: "Diverse counseling for children, teens, and adults. Specialized therapy for couples and families, large provider network with evening and Saturday availability.", hours: "M-F 8a-8p, Sat 8a-2p", website: "https://www.counselingcenterwm.org" },
+  { name: "Mosaic Counseling - Grand Haven", category: "Mental Health", address: "1703 S. Despelder St., Grand Haven", phone: "616-842-9160", info: "Professional counseling.", hours: "M-F 9a-4p", website: "https://mosaiccounseling.com" },
+  { name: "Mosaic Counseling - Holland", category: "Mental Health", address: "503 Century Ln, Holland, MI 49423", phone: "616-842-9160", info: "Professional counseling.", hours: "M-F 9a-4p", website: "https://mosaiccounseling.com" },
   { name: "Trinity Health Hospital ER", category: "Mental Health", address: "1500 E. Sherman Blvd., Muskegon", phone: "231-672-2000", info: "Secured psychiatric facility emergency services.", website: "https://www.trinity-health.org" },
-  { name: "Winning At Home", category: "Mental Health", address: "300 S State St STE 13, Zeeland, MI 49464", phone: "(616) 772-1733", info: "Professional counseling for individuals, couples, and families. Includes coaching, wellness programs, workshops on parenting and marriage, and online resources. M-Th 8a-8p, F 8a-3p.", website: "https://www.winningathome.com" },
+  { name: "Winning At Home", category: "Mental Health", address: "300 S State St STE 13, Zeeland, MI 49464", phone: "(616) 772-1733", info: "Professional counseling for individuals, couples, and families. Includes coaching, wellness programs, workshops on parenting and marriage, and online resources.", hours: "M-Th 8a-8p, F 8a-3p", website: "https://www.winningathome.com" },
   
   // Substance Recovery
   { name: "Arbor Circle - Holland", category: "Substance Recovery", address: "412 Century Ln, Holland, MI 49423", phone: "(616) 396-2301", info: "Substance abuse treatment and recovery programs.", website: "https://arborcircle.org" },
@@ -94,7 +78,7 @@ const RESOURCES: Resource[] = [
 
   // Domestic Violence
   { name: "Every Woman's Place Inc", category: "Domestic Violence", address: "1221 W Laketon Ave, Muskegon, MI 49441", phone: "(231) 722-3333", info: "Muskegon-based agency providing crisis intervention, emergency shelter, counseling, and legal advocacy for survivors of domestic violence, sexual assault, and sex trafficking. 24-hour crisis line available.", website: "https://www.everywomansplace.org" },
-  { name: "Resilience: Advocates for Ending Violence", category: "Domestic Violence", address: "411 Butternut Dr, Holland, MI 49424", phone: "(800) 848-5991", info: "Non-profit providing 24-hour crisis support, emergency shelter, counseling, legal advocacy, and community education for survivors of domestic and sexual violence. M-F 9a-5p, emergency services 24/7.", website: "https://www.resiliencemi.org" },
+  { name: "Resilience: Advocates for Ending Violence", category: "Domestic Violence", address: "411 Butternut Dr, Holland, MI 49424", phone: "(800) 848-5991", info: "Non-profit providing 24-hour crisis support, emergency shelter, counseling, legal advocacy, and community education for survivors of domestic and sexual violence.", hours: "M-F 9a-5p, crisis services 24/7", website: "https://www.resiliencemi.org" },
   { name: "Sylvia's Place", category: "Domestic Violence", address: "235 North St, Allegan, MI 49010", phone: "(269) 673-8700", info: "Primary domestic violence agency for Allegan County providing 24-hour help line, emergency shelter, legal advocacy, and support services. Toll-free: (888) 411-7837. Available 24/7.", website: "https://www.sylviasplace.com" },
 
   // Medication-Assisted Treatment
@@ -109,37 +93,37 @@ const RESOURCES: Resource[] = [
 
   // Food
   { name: "Christian Fellowship Assembly", category: "Food", address: "9930 64th Ave, Allendale", phone: "616-895-7614", info: "Food pantry and community meals.", website: "https://www.christianfellowshipassembly.org" },
-  { name: "LOVE INC Allendale", category: "Food", address: "6633 Lake Michigan Dr, Allendale", phone: "616-895-5683", info: "Food pantry. M-F 9a-2p. Must bring photo ID and utility bill.", website: "https://loveincallegan.org" },
-  { name: "Replenish GVSU Pantry", category: "Food", address: "Kirkhof Center 0074, Allendale", phone: "616-331-7867", info: "Food pantry for GVSU students only. M-F 12p-5p.", website: "https://www.gvsu.edu" },
-  { name: "Coopersville Cares", category: "Food", address: "180 68th Ave N, Coopersville, MI 49404", phone: "616-997-8602", info: "Food pantry offering supplemental groceries and household essentials to local residents who meet income eligibility guidelines. Serves the Coopersville Public School district. M-Th 9a-2p, Food pantry: Tu & Th 10a-12p, Tu 5:30p-6:30p.", website: "https://coopersvillecares.org" },
-  { name: "LOVE INC Grand Haven", category: "Food", address: "326 Ferry St, Grand Haven", phone: "616-846-2701", info: "Food pantry. M-F 9a-5p.", website: "https://loveincallegan.org" },
-  { name: "The People Center", category: "Food", address: "307 E Exchange St, Spring Lake, MI 49456", phone: "(616) 844-6710", info: "Food pantry offering supplemental groceries to residents in the Spring Lake, Ferrysburg, and Grand Haven areas. M, W, F 11a-5p.", website: "https://www.thepeoplecenter.org" },
-  { name: "St. John's Episcopal Church", category: "Food", address: "524 Washington Ave, Grand Haven", phone: "616-842-6260 ext 21", info: "Free take-home meals W 5:30p-6:30p, Sun 1p-2p.", website: "https://sjegh.com" },
-  { name: "The Salvation Army Grand Haven", category: "Food", address: "310 N Despelder St, Grand Haven", phone: "616-842-3380 ext 200", info: "Food pantry by appointment only. M-F 9a-3p.", website: "https://www.salvationarmyusa.org" },
-  { name: "East Side Food Pantry", category: "Food", address: "995 E. 8th St, Holland", phone: "616-392-8559 ext 18", info: "Serves Holland Heights residents only. M & W 10a-11:30a, F 3p-4:30p.", website: "https://www.cityofholland.com" },
+  { name: "LOVE INC Allendale", category: "Food", address: "6633 Lake Michigan Dr, Allendale", phone: "616-895-5683", info: "Food pantry. Must bring photo ID and utility bill.", hours: "M-F 9a-2p", website: "https://loveincallegan.org" },
+  { name: "Replenish GVSU Pantry", category: "Food", address: "Kirkhof Center 0074, Allendale", phone: "616-331-7867", info: "Food pantry for GVSU students only.", hours: "M-F 12p-5p", website: "https://www.gvsu.edu" },
+  { name: "Coopersville Cares", category: "Food", address: "180 68th Ave N, Coopersville, MI 49404", phone: "616-997-8602", info: "Food pantry offering supplemental groceries and household essentials to local residents who meet income eligibility guidelines. Serves the Coopersville Public School district.", hours: "M-Th 9a-2p, Tu & Th 10a-12p, Tu 5:30p-6:30p", website: "https://coopersvillecares.org" },
+  { name: "LOVE INC Grand Haven", category: "Food", address: "326 Ferry St, Grand Haven", phone: "616-846-2701", info: "Food pantry.", hours: "M-F 9a-5p", website: "https://loveincallegan.org" },
+  { name: "The People Center", category: "Food", address: "307 E Exchange St, Spring Lake, MI 49456", phone: "(616) 844-6710", info: "Food pantry offering supplemental groceries to residents in the Spring Lake, Ferrysburg, and Grand Haven areas.", hours: "M, W, F 11a-5p", website: "https://www.thepeoplecenter.org" },
+  { name: "St. John's Episcopal Church", category: "Food", address: "524 Washington Ave, Grand Haven", phone: "616-842-6260 ext 21", info: "Free take-home meals.", hours: "W 5:30p-6:30p, Sun 1p-2p", website: "https://sjegh.com" },
+  { name: "The Salvation Army Grand Haven", category: "Food", address: "310 N Despelder St, Grand Haven", phone: "616-842-3380 ext 200", info: "Food pantry by appointment only.", hours: "M-F 9a-3p", website: "https://www.salvationarmyusa.org" },
+  { name: "East Side Food Pantry", category: "Food", address: "995 E. 8th St, Holland", phone: "616-392-8559 ext 18", info: "Serves Holland Heights residents only.", hours: "M & W 10a-11:30a, F 3p-4:30p", website: "https://www.cityofholland.com" },
   { name: "Holland First Assembly of God", category: "Food", address: "1331 E. 16th St, Holland", phone: "616-396-5646", info: "Food pantry. Call for hours/appointments.", website: "https://hfag.com" },
-  { name: "St. Vincent De Paul Center", category: "Food", address: "170 W. 13th St, Holland", phone: "616-394-0676", info: "Food pantry. M & W 3p-8p, Sat 12p-4p.", website: "https://stfrancisholland.org/svdp" },
+  { name: "St. Vincent De Paul Center", category: "Food", address: "170 W. 13th St, Holland", phone: "616-394-0676", info: "Food pantry.", hours: "M & W 3p-8p, Sat 12p-4p", website: "https://stfrancisholland.org/svdp" },
   { name: "The Salvation Army Holland", category: "Food", address: "104 Clover St, Holland", phone: "616-392-4461", info: "Food pantry by appointment only.", website: "https://www.salvationarmyusa.org" },
   { name: "Community Action House", category: "Food", address: "345 W. 14th St, Holland", phone: "616-392-2368", info: "Food pantry by appointment only.", website: "https://www.chservices.org" },
-  { name: "Holland Community Kitchen", category: "Food", address: "101 E. 13th St, Holland", phone: "616-566-1417", info: "Free community meals M-F 11a-12:30p, Sat & Sun 9a-10:30a.", website: "https://www.hollandandk.org" },
-  { name: "Holland Drop-in Center", category: "Food", address: "636 Hastings Ave #120, Holland", phone: "616-355-2207", info: "Community meals and recovery support. M-Sat 9a-4p.", website: "https://www.hdic.org" },
+  { name: "Holland Community Kitchen", category: "Food", address: "101 E. 13th St, Holland", phone: "616-566-1417", info: "Free community meals.", hours: "M-F 11a-12:30p, Sat & Sun 9a-10:30a", website: "https://www.hollandandk.org" },
+  { name: "Holland Drop-in Center", category: "Food", address: "636 Hastings Ave #120, Holland", phone: "616-355-2207", info: "Community meals and recovery support.", hours: "M-Sat 9a-4p", website: "https://www.hdic.org" },
   { name: "Ottawa Foods", category: "Food", address: "12251 James Street, Suite 400, Holland, MI 49424", phone: "616-393-5791", info: "Connect people to food resources and community support services.", website: "https://www.ottawafood.org" },
-  { name: "Jehovah Jireh Ministries of West Michigan", category: "Food", address: "4055 VanBuren St, Hudsonville", phone: "616-209-7688", info: "Food pantry. W 11:30a-5:30p, Sat 8a-1p. Bring your own bags.", website: "https://jjministries.org" },
-  { name: "Love Your Neighbor (Love INC of Hudsonville)", category: "Food", address: "3300 Van Buren St, Hudsonville", phone: "616-662-3300", info: "Faith-based clearinghouse model coordinating church resources. Food pantry providing access to supplemental groceries and household essentials. Life Skills program and personal care items available. M-F 9a-4p.", website: "https://loveinchudsonville.org" },
-  { name: "The People Center", category: "Food", address: "307 E. Exchange, Spring Lake", phone: "616-844-6710", info: "Food pantry. M & W 11a-3p. Call first for appointment.", website: "https://www.thepeoplecenter.org" },
-  { name: "Harvest Stand Ministries", category: "Food", address: "100 Pine St Ste 100, Zeeland", phone: "616-748-6003", info: "Food pantry. M 9a-3p, W 1p-6p, Th 9a-12p. By appointment.", website: "https://harveststandministries.org" },
+  { name: "Jehovah Jireh Ministries of West Michigan", category: "Food", address: "4055 VanBuren St, Hudsonville", phone: "616-209-7688", info: "Food pantry. Bring your own bags.", hours: "W 11:30a-5:30p, Sat 8a-1p", website: "https://jjministries.org" },
+  { name: "Love Your Neighbor (Love INC of Hudsonville)", category: "Food", address: "3300 Van Buren St, Hudsonville", phone: "616-662-3300", info: "Faith-based clearinghouse model coordinating church resources. Food pantry providing access to supplemental groceries and household essentials. Life Skills program and personal care items available.", hours: "M-F 9a-4p", website: "https://loveinchudsonville.org" },
+  { name: "The People Center", category: "Food", address: "307 E. Exchange, Spring Lake", phone: "616-844-6710", info: "Food pantry. Call first for appointment.", hours: "M & W 11a-3p", website: "https://www.thepeoplecenter.org" },
+  { name: "Harvest Stand Ministries", category: "Food", address: "100 Pine St Ste 100, Zeeland", phone: "616-748-6003", info: "Food pantry. By appointment.", hours: "M 9a-3p, W 1p-6p, Th 9a-12p", website: "https://harveststandministries.org" },
   { name: "MI Bridges", category: "Food", address: "State Program", phone: "1-888-544-8773", info: "State food assistance program.", website: "https://www.michigan.gov/mibridges" },
 
   // Clothing and Furniture
-  { name: "Love INC of Hudsonville", category: "Clothing and Furniture", address: "3300 Van Buren St, Hudsonville, MI 49426", phone: "(616) 662-3300", info: "Provides access to clothing, linens, and household furniture through Essential Resource Ministries. Faith-based clearinghouse coordinating local church resources for the Hudsonville, Jenison, and Grandville areas. M-F 9a-4p.", website: "https://loveinchudsonville.org" },
-  { name: "Habitat for Humanity ReStore Grand Haven", category: "Clothing and Furniture", address: "408 N Ferry St, Grand Haven, MI 49417", phone: "(616) 846-1505", info: "ReStore location offering affordable furniture and household goods. Hours: M-F 9:30 AM – 6:30 PM; Saturday 9:30 AM – 4:30 PM. Office hours: M-F 9:00 AM – 5:00 PM.", website: "https://tricitieshabitat.org" },
-  { name: "Habitat for Humanity ReStore Lakeshore", category: "Clothing and Furniture", address: "12727 Riley St, Holland, MI 49424", phone: "(616) 393-8001", info: "Primary resale outlet for the Holland area operating as a home improvement center. Offers cabinetry, lighting, flooring, hardware, and appliances (stoves, refrigerators, washers/dryers) at reduced prices. Accepts donations, diverts materials from landfills, and provides volunteer opportunities. Store Hours: T-F 10:00 AM – 5:30 PM; Saturday 10:00 AM – 4:00 PM. Donations close 30 minutes before store closing.", website: "https://lakeshorehabitat.org/restore" },
+  { name: "Love INC of Hudsonville", category: "Clothing and Furniture", address: "3300 Van Buren St, Hudsonville, MI 49426", phone: "(616) 662-3300", info: "Provides access to clothing, linens, and household furniture through Essential Resource Ministries. Faith-based clearinghouse coordinating local church resources for the Hudsonville, Jenison, and Grandville areas.", hours: "M-F 9a-4p", website: "https://loveinchudsonville.org" },
+  { name: "Habitat for Humanity ReStore Grand Haven", category: "Clothing and Furniture", address: "Grand Haven Restore, 408 N Ferry St, Grand Haven, MI 49417", phone: "(616) 846-1505", info: "ReStore location offering affordable furniture and household goods. Proceeds help build housing for low income families through partnerships with local churches, businesses, and individuals. Anyone is welcome to volunteer regardless of race or religion.", hours: "M-F 9:30 AM – 6:30 PM; Sat 9:30 AM – 4:30 PM", officeAddress: "Office, 3610 Airline Dr, Norton Shores, MI 49444", officeHours: "M-F 9:00 AM – 5:00 PM", website: "https://tricitieshabitat.org" },
+  { name: "Habitat for Humanity ReStore Lakeshore", category: "Clothing and Furniture", address: "12727 Riley St, Holland, MI 49424", phone: "(616) 393-8001", info: "Nonprofit thrift store and donation store with 2 purposes. To keep used items out of the landfill, and to help families in Ottawa, Allegan, and Van Buren counties access safe and affordable homeownership. Sales go towards affordable housing. Also builds housing for low income families.", hours: "T-F 10:00 AM – 5:30 PM; Saturday 10:00 AM – 4:00 PM", website: "https://lakeshorehabitat.org/restore" },
   { name: "The People Center - Clothing Hutch", category: "Clothing and Furniture", address: "Spring Lake", phone: "Contact for details", info: "Provides gently used clothes and household items at no cost to families in the Tri-Cities area. Offers men's, women's, and children's clothing, as well as books and backpacks. Open Monday, Wednesday, and Friday from 11:00 AM to 5:00 PM. Services available to Grand Haven, Spring Lake, Ferrysburg, and nearby communities.", website: "Contact for details" },
-  { name: "Grant Me Hope Thrift Store", category: "Clothing and Furniture", address: "Hudsonville", phone: "Contact for details", info: "Public thrift store with free clothing closet for foster families. Foster parents can receive essential clothing and shoes for children by completing intake form. Also provides work experience for youth aging out of foster care. Open M-F 10:00 AM – 6:00 PM, Saturday 10:00 AM – 4:00 PM.", website: "Contact for details" },
-  { name: "Love in Action", category: "Clothing and Furniture", address: "Grand Haven (multiple locations)", phone: "Contact for details", info: "Manages resale shops in Grand Haven and Spring Lake providing clothing and household items. Direct clothing assistance coordinated through main office on Ferry Street. Proceeds support emergency assistance programs. Contact main office for clothing assistance services.", website: "Contact for details" },
+  { name: "Grant Me Hope Thrift Store", category: "Clothing and Furniture", address: "930 Interchange Drive, Holland, Michigan 49423", phone: "616-379-4054", info: "Public thrift store supporting adoption and fostering initiatives. Provides information about adoption and fostering services, job opportunities and housing for youth who've aged out of foster care, and free clothing for parents of foster children upon completion of intake survey. Also offers work experience opportunities for youth aging out of foster care.", hours: "M-F 10:00 AM – 6:00 PM, Sat 10:00 AM – 4:00 PM", website: "https://grantmehope.org" },
+  { name: "Love in Action Tri-Cities", category: "Clothing and Furniture", address: "Grand Haven, 948 Robbins Rd, Grand Haven 49417", phone: "(616) 607-2827", info: "Manages resale shops providing clothing and household items. Proceeds support emergency assistance programs.", hours: "Store: M-F 10am – 6pm, Sat 10am – 4pm\nDonations: M-F 10am – 4pm, Sat 10am – 2pm", officeAddress: "Spring Lake, 200 W. Savidge St., Spring Lake 49456", officePhone: "(616) 844-1360", officeHours: "Store: M-F 10am – 6pm, Sat 10am – 4pm\nPlease note: We are not able to accept donations at our Spring Lake location.", website: "https://www.loveinactiontricities.org", officeWebsite: "https://www.loveinactiontricities.org" },
   { name: "New to You Thrift & Donation Center - Love INC of Allendale", category: "Clothing and Furniture", address: "Allendale", phone: "Contact for details", info: "Affiliated with Love INC of Allendale, offers low-cost furniture, clothing, and housewares. Features large inventory of gently used items. Sales directly fund local ministries including food pantry. Open M-Sa with extended hours until 6:00 PM on weekends.", website: "Contact for details" },
   { name: "Paradise Bound Thrift Shoppe", category: "Clothing and Furniture", address: "Downtown Zeeland on Washington Avenue", phone: "Contact for details", info: "Provides affordable apparel and home goods with well-organized selection of adult and children's clothing. Proceeds support mission work and community outreach. Open daily 9:00 AM – 7:00 PM (Saturday 9:00 AM – 5:00 PM).", website: "Contact for details" },
-  { name: "Legacy Thrift", category: "Clothing and Furniture", address: "Holland", phone: "Contact for details", info: "Popular destination for budget-conscious shoppers with apparel, footwear, and accessories. Maintains consistent rotation of seasonal clothing at accessible price points. Revenue supports local educational and community development initiatives. Open M-Sa starting at 10:00 AM.", website: "Contact for details" },
+  { name: "Legacy Thrift", category: "Clothing and Furniture", address: "Holland (North), 91 Douglas Ave", phone: "616-394-5260", info: "Popular destination for budget-conscious shoppers with apparel, footwear, and accessories. Maintains consistent rotation of seasonal clothing at accessible price points. Revenue supports local educational and community development initiatives. Open M-Sa starting at 10:00 AM.", website: "https://legacythrift.org" },
 
   // Housing
   { name: "Good Samaritan Ministries", category: "Housing", address: "513 E. 8th St, Holland", phone: "616-392-7159", info: "Housing Search Assistance, Rapid Re-housing, and CHP programs.", website: "https://www.gsministries.org" },
@@ -154,7 +138,7 @@ const RESOURCES: Resource[] = [
   { name: "Arbor Circle - The Bridge", category: "Housing", address: "1115 Ball Ave NE, Grand Rapids", phone: "616-451-3001", info: "Shelter and basic needs services for youth ages 10-17 years old.", website: "https://arborcircle.org/help/the-bridge/" },
   { name: "70x7 Life Recovery", category: "Housing", address: "97 W. 22nd St, Holland", phone: "616-796-0685", info: "Sober living and post-incarceration housing programs.", website: "https://70x7liferecovery.org/program/housing/" },
   { name: "Every Woman's Place Inc", category: "Housing", address: "1221 W Laketon Ave, Muskegon, MI 49441", phone: "(231) 722-3333", info: "Emergency shelter and residential program for survivors of domestic violence and sexual assault. 24-hour crisis line available.", website: "https://www.everywomansplace.org" },
-  { name: "Resilience: Advocates for Ending Violence", category: "Housing", address: "411 Butternut Dr, Holland, MI 49424", phone: "(800) 848-5991", info: "Emergency shelter for survivors of domestic and sexual violence. M-F 9a-5p, emergency services 24/7.", website: "https://www.resiliencemi.org" },
+  { name: "Resilience: Advocates for Ending Violence", category: "Housing", address: "411 Butternut Dr, Holland, MI 49424", phone: "(800) 848-5991", info: "Emergency shelter for survivors of domestic and sexual violence.", hours: "M-F 9a-5p, emergency services 24/7", website: "https://www.resiliencemi.org" },
   { name: "Sylvia's Place", category: "Housing", address: "235 North St, Allegan, MI 49010", phone: "(269) 673-8700", info: "Emergency shelter for survivors of domestic violence and their children. 24-hour help line: (888) 411-7837.", website: "https://www.sylviasplace.com" },
   { name: "Tri-Cities Area Habitat For Humanity", category: "Housing", address: "3610 Airline Rd. Norton Shores, MI 49444", phone: "(616) 846-1505", info: "Provides affordable housing solutions through construction, home repairs, and financial education. Services include Homeownership Program (build/renovate houses with affordable mortgages), Home Repair Services for low-income homeowners, Habitat ReStore (donated building materials and furniture at discounted prices), and Financial Education on budgeting and credit.", website: "https://tricitieshabitat.com" },
   { name: "Lakeshore Habitat for Humanity", category: "Housing", address: "12727 Riley St, Holland, MI 49424", phone: "(616) 393-8001", info: "Serves the greater Holland area, creating affordable housing through new construction, home rehabilitation, and critical repairs. Services include Homeownership Program (sweat equity and financial education classes), Home Repair Services (exterior projects like siding and accessibility ramps), Habitat ReStore (home goods and building supplies with proceeds funding local builds), and Volunteer Advocacy opportunities.", website: "https://lakeshorehabitat.org" },
@@ -167,15 +151,15 @@ const RESOURCES: Resource[] = [
   // Health Care
   // Prenatal/Maternal
   { name: "Catholic Charities West Michigan", category: "Prenatal/Maternal", address: "456 Century Ln, Holland, MI 49423", phone: "(616) 796-9595", info: "Broad spectrum of family support services and point of distribution for child-related essentials including diapers, formula, and baby items.", website: "https://www.catholiccharitieswm.org" },
-  { name: "Community Action House", category: "Prenatal/Maternal", address: "739 Paw Paw Dr, Holland, MI 49423", phone: "(616) 392-2368", info: "Community hub connecting families with essential supplies, nutrition, and maternal health programs. Hosts Help Me Grow: Play 'n Learn for birth to age 5, Chat & Chill support groups, Healthy@Home nutrition program, Food Club, and partnerships with Maternal Infant Health Program and Nestlings for diapers. M-F 9a-5p.", website: "https://www.communityactionhouse.org" },
-  { name: "Love INC of Hudsonville", category: "Prenatal/Maternal", address: "3300 Van Buren St, Hudsonville, MI 49426", phone: "(616) 662-3300", info: "Provides personal care items and infant essentials not typically covered by state assistance programs. Faith-based organization coordinating local church resources for families in need. M-F 9a-4p.", website: "https://loveinchudsonville.org" },
+  { name: "Community Action House", category: "Prenatal/Maternal", address: "739 Paw Paw Dr, Holland, MI 49423", phone: "(616) 392-2368", info: "Community hub connecting families with essential supplies, nutrition, and maternal health programs. Hosts Help Me Grow: Play 'n Learn for birth to age 5, Chat & Chill support groups, Healthy@Home nutrition program, Food Club, and partnerships with Maternal Infant Health Program and Nestlings for diapers.", hours: "M-F 9a-5p", website: "https://www.communityactionhouse.org" },
+  { name: "Love INC of Hudsonville", category: "Prenatal/Maternal", address: "3300 Van Buren St, Hudsonville, MI 49426", phone: "(616) 662-3300", info: "Provides personal care items and infant essentials not typically covered by state assistance programs. Faith-based organization coordinating local church resources for families in need.", hours: "M-F 9a-4p", website: "https://loveinchudsonville.org" },
   { name: "Maternal Infant Health Program Grand Haven", category: "Prenatal/Maternal", address: "1207 S. Beechtree St., Grand Haven", phone: "616-846-8360", info: "Maternal and infant health services.", website: "https://www.cmhoc.org" },
   { name: "Maternal Infant Health Program Holland", category: "Prenatal/Maternal", address: "12251 James St, Holland", phone: "616-396-5266", info: "Maternal and infant health services.", website: "https://www.cmhoc.org" },
   { name: "Maternal Infant Health Program Hudsonville", category: "Prenatal/Maternal", address: "3100 Port Sheldon, Hudsonville", phone: "616-669-0040", info: "Maternal and infant health services.", website: "https://www.cmhoc.org" },
   { name: "The Salvation Army Holland Corps Community Center", category: "Prenatal/Maternal", address: "104 Clover St, Holland, MI 49423", phone: "(616) 392-4461", info: "Community center offering social services and emergency assistance, often including basic needs like diapers when supplies are available.", website: "https://www.salvationarmyusa.org" },
 
   // Health Care
-  { name: "Holland Community Health Center", category: "Health Care", address: "336 S. River Ave, Holland", phone: "616-394-3788", info: "Primary and preventive health care. M-F 8a-5p.", website: "https://www.hollandcommunityhealthcenter.org" },
+  { name: "Holland Community Health Center", category: "Health Care", address: "336 S. River Ave, Holland", phone: "616-394-3788", info: "Primary and preventive health care.", hours: "M-F 8a-5p", website: "https://www.hollandcommunityhealthcenter.org" },
   { name: "Ottawa County Department of Public Health", category: "Health Care", address: "12251 James St, Holland, MI 49424", phone: "616-396-5266", info: "Essential public health services including immunizations, environmental health monitoring, and community health screenings.", website: "https://www.miottawa.org/health" },
   { name: "InterCare Community Health Network", category: "Health Care", address: "285 James St, Holland, MI 49424", phone: "855-869-6900", info: "Primary care provider offering medical, dental, and mental health services with a focus on underserved populations and migrant health.", website: "https://www.intercare.org" },
   { name: "Holland Free Health Clinic", category: "Health Care", address: "99 W 26th St, Holland, MI 49423", phone: "616-392-3610", info: "Offers free medical, dental, and vision services to uninsured and underinsured residents who meet specific income guidelines.", website: "https://www.hfhclinic.org" },
@@ -801,7 +785,13 @@ export default function Home() {
                     {resource.address && (
                       <div className="flex gap-3 items-start">
                         <MapPin size={18} className="text-teal-600 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-700" dangerouslySetInnerHTML={{ __html: resource.address }}></span>
+                        <a 
+                          href={`https://maps.google.com/?q=${encodeURIComponent(resource.address.replace(/<[^>]*>/g, ''))}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-teal-700 hover:underline"
+                          dangerouslySetInnerHTML={{ __html: resource.address }}
+                        ></a>
                       </div>
                     )}
                     {resource.phone !== "See Locations" && (
@@ -813,7 +803,60 @@ export default function Home() {
                     {resource.website && (
                       <div className="flex gap-3 items-center">
                         <Globe size={18} className="text-teal-600 flex-shrink-0" />
-                        <a href={resource.website} target="_blank" rel="noopener noreferrer" className="text-teal-700 font-bold hover:underline">Visit Website</a>
+                        <a href={resource.website} target="_blank" rel="noopener noreferrer" className="text-teal-700 font-bold hover:underline">
+                          {(() => {
+                            try {
+                              return new URL(resource.website).hostname.replace('www.', '');
+                            } catch {
+                              return resource.website;
+                            }
+                          })()}
+                        </a>
+                      </div>
+                    )}
+                    {resource.hours && (
+                      <div className="pt-2 border-t border-gray-300">
+                        <p className="text-gray-800"><span className="font-bold">{resource.officeAddress ? 'Restore Hours:' : 'Hours:'}</span> {resource.hours}</p>
+                      </div>
+                    )}
+                    {resource.officeAddress && (
+                      <div className="pt-3 border-t border-gray-300 mt-3">
+                        <div className="flex gap-3 items-start">
+                          <MapPin size={18} className="text-teal-600 flex-shrink-0 mt-0.5" />
+                          <a 
+                            href={`https://maps.google.com/?q=${encodeURIComponent(resource.officeAddress.replace(/Office, /, '').replace(/Spring Lake, /, ''))}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-teal-700 hover:underline"
+                          >
+                            {resource.officeAddress}
+                          </a>
+                        </div>
+                      </div>
+                    )}
+                    {resource.officePhone && (
+                      <div className="flex gap-3 items-center">
+                        <Phone size={18} className="text-teal-600 flex-shrink-0" />
+                        <PhoneLink phoneNumber={resource.officePhone} displayText={resource.officePhone} />
+                      </div>
+                    )}
+                    {resource.officeWebsite && (
+                      <div className="flex gap-3 items-center">
+                        <Globe size={18} className="text-teal-600 flex-shrink-0" />
+                        <a href={resource.officeWebsite} target="_blank" rel="noopener noreferrer" className="text-teal-700 font-bold hover:underline">
+                          {(() => {
+                            try {
+                              return new URL(resource.officeWebsite).hostname.replace('www.', '');
+                            } catch {
+                              return resource.officeWebsite;
+                            }
+                          })()}
+                        </a>
+                      </div>
+                    )}
+                    {resource.officeHours && (
+                      <div className="pt-2">
+                        <p className="text-gray-800"><span className="font-bold">Restore Hours:</span> {resource.officeHours}</p>
                       </div>
                     )}
                   </div>
