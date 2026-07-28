@@ -814,7 +814,7 @@ export default function Home() {
                     )}
                     {resource.hours && (
                       <div className="pt-2 border-t border-gray-300">
-                        <p className="text-gray-800"><span className="font-bold">Hours:</span> {resource.hours}</p>
+                        <p className="text-gray-800"><span className="font-bold">{resource.officeAddress ? 'Restore Hours:' : 'Hours:'}</span> {resource.hours}</p>
                       </div>
                     )}
                     {resource.officeAddress && (
