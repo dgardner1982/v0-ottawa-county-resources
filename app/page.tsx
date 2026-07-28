@@ -826,7 +826,13 @@ export default function Home() {
                     {resource.address && (
                       <div className="flex gap-3 items-start">
                         <MapPin size={18} className="text-teal-600 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-700" dangerouslySetInnerHTML={{ __html: resource.address }}></span>
+                        <a 
+                          href={`https://maps.google.com/?q=${encodeURIComponent(resource.address.replace(/<[^>]*>/g, ''))}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-teal-700 hover:underline"
+                          dangerouslySetInnerHTML={{ __html: resource.address }}
+                        ></a>
                       </div>
                     )}
                     {resource.phone !== "See Locations" && (
