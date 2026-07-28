@@ -17,19 +17,14 @@ interface Resource {
 
 // Phone Call Handler Component
 function PhoneLink({ phoneNumber, displayText }: { phoneNumber: string; displayText: string }) {
-  const handlePhoneClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    window.location.href = `tel:${phoneNumber}`;
-  };
-
   return (
-    <button
-      onClick={handlePhoneClick}
-      className="text-teal-700 font-bold hover:underline cursor-pointer bg-none border-none p-0"
+    <a
+      href={`tel:${phoneNumber}`}
+      className="text-teal-700 font-bold hover:underline"
       title="Click to call"
     >
       {displayText}
-    </button>
+    </a>
   );
 }
 
