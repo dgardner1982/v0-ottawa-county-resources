@@ -856,7 +856,7 @@ export default function Home() {
                     )}
                     {resource.officeHours && (
                       <div className="pt-2">
-                        <p className="text-gray-800"><span className="font-bold">Office Hours:</span> {resource.officeHours}</p>
+                        <p className="text-gray-800"><span className="font-bold">Restore Hours:</span> {resource.officeHours}</p>
                       </div>
                     )}
                   </div>
