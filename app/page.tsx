@@ -14,6 +14,8 @@ interface Resource {
   link?: string;
   website?: string;
   hours?: string;
+  officeAddress?: string;
+  officeHours?: string;
 }
 
 // Phone Call Handler Component
@@ -112,7 +114,7 @@ const RESOURCES: Resource[] = [
 
   // Clothing and Furniture
   { name: "Love INC of Hudsonville", category: "Clothing and Furniture", address: "3300 Van Buren St, Hudsonville, MI 49426", phone: "(616) 662-3300", info: "Provides access to clothing, linens, and household furniture through Essential Resource Ministries. Faith-based clearinghouse coordinating local church resources for the Hudsonville, Jenison, and Grandville areas.", hours: "M-F 9a-4p", website: "https://loveinchudsonville.org" },
-  { name: "Habitat for Humanity ReStore Grand Haven", category: "Clothing and Furniture", address: "Grand Haven Restore\n408 N Ferry St, Grand Haven, MI 49417\n\nOffice\n3610 Airline Dr, Norton Shores, MI 49444", phone: "(616) 846-1505", info: "ReStore location offering affordable furniture and household goods.", hours: "Store: M-F 9:30 AM – 6:30 PM; Sat 9:30 AM – 4:30 PM\nOffice: M-F 9:00 AM – 5:00 PM", website: "https://tricitieshabitat.org" },
+  { name: "Habitat for Humanity ReStore Grand Haven", category: "Clothing and Furniture", address: "Grand Haven Restore, 408 N Ferry St, Grand Haven, MI 49417", phone: "(616) 846-1505", info: "ReStore location offering affordable furniture and household goods.", hours: "M-F 9:30 AM – 6:30 PM; Sat 9:30 AM – 4:30 PM", officeAddress: "Office, 3610 Airline Dr, Norton Shores, MI 49444", officeHours: "M-F 9:00 AM – 5:00 PM", website: "https://tricitieshabitat.org" },
   { name: "Habitat for Humanity ReStore Lakeshore", category: "Clothing and Furniture", address: "12727 Riley St, Holland, MI 49424", phone: "(616) 393-8001", info: "Primary resale outlet for the Holland area operating as a home improvement center. Offers cabinetry, lighting, flooring, hardware, and appliances (stoves, refrigerators, washers/dryers) at reduced prices. Accepts donations, diverts materials from landfills, and provides volunteer opportunities. Donations close 30 minutes before store closing.", hours: "T-F 10:00 AM – 5:30 PM; Saturday 10:00 AM – 4:00 PM", website: "https://lakeshorehabitat.org/restore" },
   { name: "The People Center - Clothing Hutch", category: "Clothing and Furniture", address: "Spring Lake", phone: "Contact for details", info: "Provides gently used clothes and household items at no cost to families in the Tri-Cities area. Offers men's, women's, and children's clothing, as well as books and backpacks. Open Monday, Wednesday, and Friday from 11:00 AM to 5:00 PM. Services available to Grand Haven, Spring Lake, Ferrysburg, and nearby communities.", website: "Contact for details" },
   { name: "Grant Me Hope Thrift Store", category: "Clothing and Furniture", address: "930 Interchange Drive, Holland, Michigan 49423", phone: "616-379-4054", info: "Public thrift store supporting adoption and fostering initiatives. Provides information about adoption and fostering services, job opportunities and housing for youth who've aged out of foster care, and free clothing for parents of foster children upon completion of intake survey. Also offers work experience opportunities for youth aging out of foster care.", hours: "M-F 10:00 AM – 6:00 PM, Sat 10:00 AM – 4:00 PM", website: "https://grantmehope.org" },
@@ -813,6 +815,26 @@ export default function Home() {
                     {resource.hours && (
                       <div className="pt-2 border-t border-gray-300">
                         <p className="text-gray-800"><span className="font-bold">Hours:</span> {resource.hours}</p>
+                      </div>
+                    )}
+                    {resource.officeAddress && (
+                      <div className="pt-3 border-t border-gray-300 mt-3">
+                        <div className="flex gap-3 items-start">
+                          <MapPin size={18} className="text-teal-600 flex-shrink-0 mt-0.5" />
+                          <a 
+                            href={`https://maps.google.com/?q=${encodeURIComponent(resource.officeAddress.replace(/Office, /, ''))}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-teal-700 hover:underline"
+                          >
+                            {resource.officeAddress}
+                          </a>
+                        </div>
+                      </div>
+                    )}
+                    {resource.officeHours && (
+                      <div className="pt-2">
+                        <p className="text-gray-800"><span className="font-bold">Office Hours:</span> {resource.officeHours}</p>
                       </div>
                     )}
                   </div>
