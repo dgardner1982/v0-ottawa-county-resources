@@ -13,7 +13,6 @@ interface Resource {
   info: string;
   link?: string;
   website?: string;
-  contact?: string;
 }
 
 // Phone Call Handler Component
@@ -161,7 +160,7 @@ const RESOURCES: Resource[] = [
   { name: "Habitat for Humanity ReStore Grand Haven", category: "Clothing and Furniture", address: "408 N Ferry St, Grand Haven, MI 49417", phone: "(616) 846-1505", info: "ReStore location offering affordable furniture and household goods. Hours: M-F 9:30 AM – 6:30 PM; Saturday 9:30 AM – 4:30 PM. Office hours: M-F 9:00 AM – 5:00 PM.", website: "https://tricitieshabitat.org" },
   { name: "Habitat for Humanity ReStore Lakeshore", category: "Clothing and Furniture", address: "12727 Riley St, Holland, MI 49424", phone: "(616) 393-8001", info: "Primary resale outlet for the Holland area operating as a home improvement center. Offers cabinetry, lighting, flooring, hardware, and appliances (stoves, refrigerators, washers/dryers) at reduced prices. Accepts donations, diverts materials from landfills, and provides volunteer opportunities. Store Hours: T-F 10:00 AM – 5:30 PM; Saturday 10:00 AM – 4:00 PM. Donations close 30 minutes before store closing.", website: "https://lakeshorehabitat.org/restore" },
   { name: "The People Center - Clothing Hutch", category: "Clothing and Furniture", address: "Spring Lake", phone: "Contact for details", info: "Provides gently used clothes and household items at no cost to families in the Tri-Cities area. Offers men's, women's, and children's clothing, as well as books and backpacks. Open Monday, Wednesday, and Friday from 11:00 AM to 5:00 PM. Services available to Grand Haven, Spring Lake, Ferrysburg, and nearby communities.", website: "Contact for details" },
-  { name: "Grant Me Hope Thrift Store", category: "Clothing and Furniture", address: "930 Interchange Drive, Holland, Michigan 49423", phone: "616-379-4054", info: "Public thrift store supporting adoption and fostering initiatives. Provides information about adoption and fostering services, job opportunities and housing for youth who've aged out of foster care, and free clothing for parents of foster children upon completion of intake survey. Also offers work experience opportunities for youth aging out of foster care. Open M-F 10:00 AM – 6:00 PM, Saturday 10:00 AM – 4:00 PM.", website: "https://grantmehope.org", contact: "616-836-7949" },
+  { name: "Grant Me Hope Thrift Store", category: "Clothing and Furniture", address: "930 Interchange Drive, Holland, Michigan 49423", phone: "616-379-4054", info: "Public thrift store supporting adoption and fostering initiatives. Provides information about adoption and fostering services, job opportunities and housing for youth who've aged out of foster care, and free clothing for parents of foster children upon completion of intake survey. Also offers work experience opportunities for youth aging out of foster care. Open M-F 10:00 AM – 6:00 PM, Saturday 10:00 AM – 4:00 PM.", website: "https://grantmehope.org" },
   { name: "Love in Action", category: "Clothing and Furniture", address: "Grand Haven (multiple locations)", phone: "Contact for details", info: "Manages resale shops in Grand Haven and Spring Lake providing clothing and household items. Direct clothing assistance coordinated through main office on Ferry Street. Proceeds support emergency assistance programs. Contact main office for clothing assistance services.", website: "Contact for details" },
   { name: "New to You Thrift & Donation Center - Love INC of Allendale", category: "Clothing and Furniture", address: "Allendale", phone: "Contact for details", info: "Affiliated with Love INC of Allendale, offers low-cost furniture, clothing, and housewares. Features large inventory of gently used items. Sales directly fund local ministries including food pantry. Open M-Sa with extended hours until 6:00 PM on weekends.", website: "Contact for details" },
   { name: "Paradise Bound Thrift Shoppe", category: "Clothing and Furniture", address: "Downtown Zeeland on Washington Avenue", phone: "Contact for details", info: "Provides affordable apparel and home goods with well-organized selection of adult and children's clothing. Proceeds support mission work and community outreach. Open daily 9:00 AM – 7:00 PM (Saturday 9:00 AM – 5:00 PM).", website: "Contact for details" },
@@ -840,12 +839,6 @@ export default function Home() {
                       <div className="flex gap-3 items-center">
                         <Globe size={18} className="text-teal-600 flex-shrink-0" />
                         <a href={resource.website} target="_blank" rel="noopener noreferrer" className="text-teal-700 font-bold hover:underline">Visit Website</a>
-                      </div>
-                    )}
-                    {resource.contact && (
-                      <div className="flex gap-3 items-center">
-                        <Phone size={18} className="text-teal-600 flex-shrink-0" />
-                        <PhoneLink phoneNumber={resource.contact} displayText={`Contact: ${resource.contact}`} />
                       </div>
                     )}
                   </div>
