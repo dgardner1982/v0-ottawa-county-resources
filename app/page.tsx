@@ -16,6 +16,8 @@ interface Resource {
   hours?: string;
   officeAddress?: string;
   officeHours?: string;
+  officePhone?: string;
+  officeWebsite?: string;
 }
 
 // Phone Call Handler Component
@@ -118,7 +120,7 @@ const RESOURCES: Resource[] = [
   { name: "Habitat for Humanity ReStore Lakeshore", category: "Clothing and Furniture", address: "12727 Riley St, Holland, MI 49424", phone: "(616) 393-8001", info: "Nonprofit thrift store and donation store with 2 purposes. To keep used items out of the landfill, and to help families in Ottawa, Allegan, and Van Buren counties access safe and affordable homeownership. Sales go towards affordable housing. Also builds housing for low income families.", hours: "T-F 10:00 AM – 5:30 PM; Saturday 10:00 AM – 4:00 PM", website: "https://lakeshorehabitat.org/restore" },
   { name: "The People Center - Clothing Hutch", category: "Clothing and Furniture", address: "Spring Lake", phone: "Contact for details", info: "Provides gently used clothes and household items at no cost to families in the Tri-Cities area. Offers men's, women's, and children's clothing, as well as books and backpacks. Open Monday, Wednesday, and Friday from 11:00 AM to 5:00 PM. Services available to Grand Haven, Spring Lake, Ferrysburg, and nearby communities.", website: "Contact for details" },
   { name: "Grant Me Hope Thrift Store", category: "Clothing and Furniture", address: "930 Interchange Drive, Holland, Michigan 49423", phone: "616-379-4054", info: "Public thrift store supporting adoption and fostering initiatives. Provides information about adoption and fostering services, job opportunities and housing for youth who've aged out of foster care, and free clothing for parents of foster children upon completion of intake survey. Also offers work experience opportunities for youth aging out of foster care.", hours: "M-F 10:00 AM – 6:00 PM, Sat 10:00 AM – 4:00 PM", website: "https://grantmehope.org" },
-  { name: "Love in Action Tri-Cities", category: "Clothing and Furniture", address: "Grand Haven, 948 Robbins Rd, Grand Haven 49417", phone: "(616) 607-2827, Spring Lake: (616) 844-1360", info: "Manages resale shops providing clothing and household items. Proceeds support emergency assistance programs.", hours: "Store: M-F 10am – 6pm, Sat 10am – 4pm\nDonations: M-F 10am – 4pm, Sat 10am – 2pm", officeAddress: "Spring Lake, 200 W. Savidge St., Spring Lake 49456", officeHours: "Store: M-F 10am – 6pm, Sat 10am – 4pm\nPlease note: We are not able to accept donations at our Spring Lake location.", website: "https://www.loveinactiontricities.org" },
+  { name: "Love in Action Tri-Cities", category: "Clothing and Furniture", address: "Grand Haven, 948 Robbins Rd, Grand Haven 49417", phone: "(616) 607-2827", info: "Manages resale shops providing clothing and household items. Proceeds support emergency assistance programs.", hours: "Store: M-F 10am – 6pm, Sat 10am – 4pm\nDonations: M-F 10am – 4pm, Sat 10am – 2pm", officeAddress: "Spring Lake, 200 W. Savidge St., Spring Lake 49456", officePhone: "(616) 844-1360", officeHours: "Store: M-F 10am – 6pm, Sat 10am – 4pm\nPlease note: We are not able to accept donations at our Spring Lake location.", website: "https://www.loveinactiontricities.org", officeWebsite: "https://www.loveinactiontricities.org" },
   { name: "New to You Thrift & Donation Center - Love INC of Allendale", category: "Clothing and Furniture", address: "Allendale", phone: "Contact for details", info: "Affiliated with Love INC of Allendale, offers low-cost furniture, clothing, and housewares. Features large inventory of gently used items. Sales directly fund local ministries including food pantry. Open M-Sa with extended hours until 6:00 PM on weekends.", website: "Contact for details" },
   { name: "Paradise Bound Thrift Shoppe", category: "Clothing and Furniture", address: "Downtown Zeeland on Washington Avenue", phone: "Contact for details", info: "Provides affordable apparel and home goods with well-organized selection of adult and children's clothing. Proceeds support mission work and community outreach. Open daily 9:00 AM – 7:00 PM (Saturday 9:00 AM – 5:00 PM).", website: "Contact for details" },
   { name: "Legacy Thrift", category: "Clothing and Furniture", address: "Holland (North), 91 Douglas Ave", phone: "616-394-5260", info: "Popular destination for budget-conscious shoppers with apparel, footwear, and accessories. Maintains consistent rotation of seasonal clothing at accessible price points. Revenue supports local educational and community development initiatives. Open M-Sa starting at 10:00 AM.", website: "https://legacythrift.org" },
@@ -822,7 +824,7 @@ export default function Home() {
                         <div className="flex gap-3 items-start">
                           <MapPin size={18} className="text-teal-600 flex-shrink-0 mt-0.5" />
                           <a 
-                            href={`https://maps.google.com/?q=${encodeURIComponent(resource.officeAddress.replace(/Office, /, ''))}`}
+                            href={`https://maps.google.com/?q=${encodeURIComponent(resource.officeAddress.replace(/Office, /, '').replace(/Spring Lake, /, ''))}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-teal-700 hover:underline"
@@ -830,6 +832,26 @@ export default function Home() {
                             {resource.officeAddress}
                           </a>
                         </div>
+                      </div>
+                    )}
+                    {resource.officePhone && (
+                      <div className="flex gap-3 items-center">
+                        <Phone size={18} className="text-teal-600 flex-shrink-0" />
+                        <PhoneLink phoneNumber={resource.officePhone} displayText={resource.officePhone} />
+                      </div>
+                    )}
+                    {resource.officeWebsite && (
+                      <div className="flex gap-3 items-center">
+                        <Globe size={18} className="text-teal-600 flex-shrink-0" />
+                        <a href={resource.officeWebsite} target="_blank" rel="noopener noreferrer" className="text-teal-700 font-bold hover:underline">
+                          {(() => {
+                            try {
+                              return new URL(resource.officeWebsite).hostname.replace('www.', '');
+                            } catch {
+                              return resource.officeWebsite;
+                            }
+                          })()}
+                        </a>
                       </div>
                     )}
                     {resource.officeHours && (
