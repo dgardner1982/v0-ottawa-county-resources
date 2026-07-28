@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { Phone, MapPin, Globe, X } from 'lucide-react';
 import { Footer } from '@/components/footer';
