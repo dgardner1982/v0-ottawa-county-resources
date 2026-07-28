@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Phone, MapPin, Globe, X, Clock } from 'lucide-react';
+import { Phone, MapPin, Globe, X } from 'lucide-react';
 import { Footer } from '@/components/footer';
 
 interface Resource {
@@ -13,7 +13,6 @@ interface Resource {
   info: string;
   link?: string;
   website?: string;
-  hours?: string;
 }
 
 // Phone Call Handler Component
@@ -44,20 +43,20 @@ const RESOURCES: Resource[] = [
   { name: "988 Lifeline", category: "Mental Health", address: "National", phone: "988", info: "Suicide & Crisis Lifeline available 24/7 - call or text.", website: "https://988lifeline.org" },
   { name: "Crisis Text Line", category: "Mental Health", address: "National", phone: "Text HOME to 741741", info: "Crisis support via text message.", website: "https://www.crisistextline.org" },
   { name: "Ottawa Community Mental Health 24-Hour Helpline", category: "Mental Health", address: "Multiple locations", phone: "616-396-4357", info: "24-hour mental health crisis helpline.", website: "https://www.cmhoc.org" },
-  { name: "Pine Rest Holland", category: "Mental Health", address: "926 S. Washington #210, Holland", phone: "616-820-3780", info: "Mental health and psychiatric services.", hours: "M-Th 8:30a-8p, F 8:30a-3p", website: "https://www.pinerest.org" },
-  { name: "Pine Rest North Shore", category: "Mental Health", address: "17325 Van Wagoner Rd, Spring Lake", phone: "616-847-5145", info: "Mental health services.", hours: "M-Th 8a-6:30p, F 8a-3p", website: "https://www.pinerest.org" },
-  { name: "Pine Rest Grand Rapids Psychiatric Urgent Care", category: "Mental Health", address: "300 68th Street SE Bldg E, Grand Rapids", phone: "616-455-9200", info: "Psychiatric urgent care.", hours: "10a-8p daily", website: "https://www.pinerest.org" },
-  { name: "Encourage Counseling", category: "Mental Health", address: "607 Heritage Court, Holland", phone: "616-396-6172", info: "Professional counseling services.", hours: "M 9a-6p, Tu-Th 8:30a-6p", website: "https://encouragecounseling.com" },
+  { name: "Pine Rest Holland", category: "Mental Health", address: "926 S. Washington #210, Holland", phone: "616-820-3780", info: "Mental health and psychiatric services. M-Th 8:30a-8p, F 8:30a-3p.", website: "https://www.pinerest.org" },
+  { name: "Pine Rest North Shore", category: "Mental Health", address: "17325 Van Wagoner Rd, Spring Lake", phone: "616-847-5145", info: "Mental health services. M-Th 8a-6:30p, F 8a-3p.", website: "https://www.pinerest.org" },
+  { name: "Pine Rest Grand Rapids Psychiatric Urgent Care", category: "Mental Health", address: "300 68th Street SE Bldg E, Grand Rapids", phone: "616-455-9200", info: "Psychiatric urgent care. 10a-8p daily.", website: "https://www.pinerest.org" },
+  { name: "Encourage Counseling", category: "Mental Health", address: "607 Heritage Court, Holland", phone: "616-396-6172", info: "Professional counseling services. M 9a-6p, Tu-Th 8:30a-6p.", website: "https://encouragecounseling.com" },
   { name: "Beacon of Hope Christian Counseling Holland", category: "Mental Health", address: "225 W. 30th St, Holland", phone: "616-594-5380", info: "Christian counseling services.", website: "https://beaconofhopecc.org" },
   { name: "Beacon of Hope Christian Counseling Grandville", category: "Mental Health", address: "6265 8th Ave, Grandville", phone: "616-594-5380", info: "Christian counseling services.", website: "https://beaconofhopecc.org" },
-  { name: "Bethany Christian Services Holland", category: "Mental Health", address: "11335 James St, Holland", phone: "616-396-0623", info: "Christian counseling and services.", hours: "M-Th 10a-9p, F 10a-3p", website: "https://www.bethanycc.org" },
-  { name: "Bethany Christian Services Grand Haven", category: "Mental Health", address: "1475 Robbins Rd, Grand Haven", phone: "616-396-0623", info: "Christian counseling and services.", hours: "M-Th 9a-8p", website: "https://www.bethanycc.org" },
+  { name: "Bethany Christian Services Holland", category: "Mental Health", address: "11335 James St, Holland", phone: "616-396-0623", info: "Christian counseling and services. M-Th 10a-9p, F 10a-3p.", website: "https://www.bethanycc.org" },
+  { name: "Bethany Christian Services Grand Haven", category: "Mental Health", address: "1475 Robbins Rd, Grand Haven", phone: "616-396-0623", info: "Christian counseling and services. M-Th 9a-8p.", website: "https://www.bethanycc.org" },
   { name: "City On A Hill Ministries", category: "Mental Health", address: "100 Pine St STE 175, Zeeland, MI 49464", phone: "(616) 748-6060", info: "Multi-service community hub with health clinic providing free or low-cost mental health services.", website: "https://www.coahm.org" },
-  { name: "Counseling Center of West Michigan - Holland Campus", category: "Mental Health", address: "3124 N Wellness Dr # 50, Holland, MI 49424", phone: "(616) 805-3660 ext. 1201", info: "Diverse counseling for children, teens, and adults. Specialized therapy for couples and families, large provider network with evening and Saturday availability.", hours: "M-F 8a-8p, Sat 8a-2p", website: "https://www.counselingcenterwm.org" },
-  { name: "Mosaic Counseling - Grand Haven", category: "Mental Health", address: "1703 S. Despelder St., Grand Haven", phone: "616-842-9160", info: "Professional counseling.", hours: "M-F 9a-4p", website: "https://mosaiccounseling.com" },
-  { name: "Mosaic Counseling - Holland", category: "Mental Health", address: "503 Century Ln, Holland, MI 49423", phone: "616-842-9160", info: "Professional counseling.", hours: "M-F 9a-4p", website: "https://mosaiccounseling.com" },
+  { name: "Counseling Center of West Michigan - Holland Campus", category: "Mental Health", address: "3124 N Wellness Dr # 50, Holland, MI 49424", phone: "(616) 805-3660 ext. 1201", info: "Diverse counseling for children, teens, and adults. Specialized therapy for couples and families, large provider network with evening and Saturday availability. M-F 8a-8p, Sat 8a-2p.", website: "https://www.counselingcenterwm.org" },
+  { name: "Mosaic Counseling - Grand Haven", category: "Mental Health", address: "1703 S. Despelder St., Grand Haven", phone: "616-842-9160", info: "Professional counseling. M-F 9a-4p.", website: "https://mosaiccounseling.com" },
+  { name: "Mosaic Counseling - Holland", category: "Mental Health", address: "503 Century Ln, Holland, MI 49423", phone: "616-842-9160", info: "Professional counseling. M-F 9a-4p.", website: "https://mosaiccounseling.com" },
   { name: "Trinity Health Hospital ER", category: "Mental Health", address: "1500 E. Sherman Blvd., Muskegon", phone: "231-672-2000", info: "Secured psychiatric facility emergency services.", website: "https://www.trinity-health.org" },
-  { name: "Winning At Home", category: "Mental Health", address: "300 S State St STE 13, Zeeland, MI 49464", phone: "(616) 772-1733", info: "Professional counseling for individuals, couples, and families. Includes coaching, wellness programs, workshops on parenting and marriage, and online resources.", hours: "M-Th 8a-8p, F 8a-3p", website: "https://www.winningathome.com" },
+  { name: "Winning At Home", category: "Mental Health", address: "300 S State St STE 13, Zeeland, MI 49464", phone: "(616) 772-1733", info: "Professional counseling for individuals, couples, and families. Includes coaching, wellness programs, workshops on parenting and marriage, and online resources. M-Th 8a-8p, F 8a-3p.", website: "https://www.winningathome.com" },
   
   // Substance Recovery
   { name: "Arbor Circle - Holland", category: "Substance Recovery", address: "412 Century Ln, Holland, MI 49423", phone: "(616) 396-2301", info: "Substance abuse treatment and recovery programs.", website: "https://arborcircle.org" },
@@ -800,12 +799,6 @@ export default function Home() {
                       <div className="flex gap-3 items-center">
                         <Globe size={18} className="text-teal-600 flex-shrink-0" />
                         <a href={resource.website} target="_blank" rel="noopener noreferrer" className="text-teal-700 font-bold hover:underline">Visit Website</a>
-                      </div>
-                    )}
-                    {resource.hours && (
-                      <div className="flex gap-3 items-start">
-                        <Clock size={18} className="text-teal-600 flex-shrink-0 mt-0.5" />
-                        <span className="text-teal-700">{resource.hours}</span>
                       </div>
                     )}
                   </div>
