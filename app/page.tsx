@@ -18,6 +18,7 @@ interface Resource {
   officeHours?: string;
   officePhone?: string;
   officeWebsite?: string;
+  officeDescription?: string;
 }
 
 // Phone Call Handler Component
@@ -121,7 +122,7 @@ const RESOURCES: Resource[] = [
   { name: "The People Center - Clothing Hutch", category: "Clothing and Furniture", address: "Spring Lake", phone: "Contact for details", info: "Provides gently used clothes and household items at no cost to families in the Tri-Cities area. Offers men's, women's, and children's clothing, as well as books and backpacks. Open Monday, Wednesday, and Friday from 11:00 AM to 5:00 PM. Services available to Grand Haven, Spring Lake, Ferrysburg, and nearby communities.", website: "Contact for details" },
   { name: "Grant Me Hope Thrift Store", category: "Clothing and Furniture", address: "930 Interchange Drive, Holland, Michigan 49423", phone: "616-379-4054", info: "Public thrift store supporting adoption and fostering initiatives. Provides information about adoption and fostering services, job opportunities and housing for youth who've aged out of foster care, and free clothing for parents of foster children upon completion of intake survey. Also offers work experience opportunities for youth aging out of foster care.", hours: "M-F 10:00 AM – 6:00 PM, Sat 10:00 AM – 4:00 PM", website: "https://grantmehope.org" },
   { name: "Love in Action Tri-Cities", category: "Clothing and Furniture", address: "Grand Haven, 948 Robbins Rd, Grand Haven 49417", phone: "(616) 607-2827", info: "Manages resale shops providing clothing and household items. Proceeds support emergency assistance programs.", hours: "Store: M-F 10am – 6pm, Sat 10am – 4pm\nDonations: M-F 10am – 4pm, Sat 10am – 2pm", officeAddress: "Spring Lake, 200 W. Savidge St., Spring Lake 49456", officePhone: "(616) 844-1360", officeHours: "Store: M-F 10am – 6pm, Sat 10am – 4pm\nPlease note: We are not able to accept donations at our Spring Lake location.", website: "https://www.loveinactiontricities.org", officeWebsite: "https://www.loveinactiontricities.org" },
-  { name: "New to You Thrift & Donation Center", category: "Clothing and Furniture", address: "Thrift Store, 11620 60th Ave, Allendale MI 49401", phone: "616-895-5683", info: "Affiliated with Love INC, offers low-cost furniture, clothing, and housewares. Features large inventory of gently used items. Sales directly fund local ministries. Donations only accepted during store hours.", hours: "M-F 9am-5pm, Sat 9am-4pm", officeAddress: "LoveINC Office, 6633 Lake Michigan Drive, Allendale MI 49401", officeHours: "M-F 9am - 2pm\nFor administration and client intake", website: "https://loveincallegan.org", officeWebsite: "https://loveincallegan.org" },
+  { name: "New to You Thrift & Donation Center", category: "Clothing and Furniture", address: "Thrift Store, 11620 60th Ave, Allendale MI 49401", phone: "616-895-5683", info: "Affiliated with Love INC, offers low-cost furniture, clothing, and housewares. Features large inventory of gently used items. Sales directly fund local ministries. Donations only accepted during store hours.", hours: "M-F 9am-5pm, Sat 9am-4pm", officeAddress: "LoveINC Office, 6633 Lake Michigan Drive, Allendale MI 49401", officeHours: "M-F 9am - 2pm\nFor administration and client intake", officeDescription: "Love INC of Northeast Ottawa County partners with local churches to support neighbors in need through relational care, emergency financial aid, food, clothing, household goods, and medical equipment. They also offer long term stability tools, including personal budgeting classes, employment connections, and seasonal assistance programs.", website: "https://loveincallegan.org", officeWebsite: "https://loveincallegan.org" },
   { name: "Paradise Bound Thrift Shoppe", category: "Clothing and Furniture", address: "Downtown Zeeland on Washington Avenue", phone: "Contact for details", info: "Provides affordable apparel and home goods with well-organized selection of adult and children's clothing. Proceeds support mission work and community outreach. Open daily 9:00 AM – 7:00 PM (Saturday 9:00 AM – 5:00 PM).", website: "Contact for details" },
   { name: "Legacy Thrift", category: "Clothing and Furniture", address: "Holland (North), 91 Douglas Ave", phone: "616-394-5260", info: "Popular destination for budget-conscious shoppers with apparel, footwear, and accessories. Maintains consistent rotation of seasonal clothing at accessible price points. Revenue supports local educational and community development initiatives.", hours: "M, T, Th, F 10-5; S 11-3", officeAddress: "Holland (South), 813 Lincoln Ave", officePhone: "616-395-0129", officeHours: "M-F 10-5; S 10-4", website: "https://legacythrift.org", officeWebsite: "https://legacythrift.org" },
 
@@ -857,6 +858,11 @@ export default function Home() {
                     {resource.officeHours && (
                       <div className="pt-2">
                         <p className="text-gray-800"><span className="font-bold">Restore Hours:</span> {resource.officeHours}</p>
+                      </div>
+                    )}
+                    {resource.officeDescription && (
+                      <div className="pt-3 border-t border-gray-300 mt-3">
+                        <p className="text-sm text-gray-700">{resource.officeDescription}</p>
                       </div>
                     )}
                   </div>
