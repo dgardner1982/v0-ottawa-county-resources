@@ -222,7 +222,7 @@ const RESOURCES: Resource[] = [
   { name: "West Michigan Works", category: "Employment", address: "121 Clover Street, Holland", phone: "616-396-2154", info: "Employment and training services. M-F 8a-5p.", website: "https://westmiworks.org" },
   { name: "Gill Staffing", category: "Employment", address: "12470 Felch St, Holland", phone: "616-396-1201", info: "Staffing and employment services.", website: "https://www.gillstaffing.com" },
   { name: "Workforce Employment Specialists", category: "Employment", address: "200 W 17th St, Holland", phone: "616-396-5557", info: "Employment placement and staffing solutions.", website: "https://www.teamworkforce.com" },
-  { name: "Fettig Jobs", category: "Employment", address: "11449 James St, Holland", phone: "616-335-6770", info: "Employment services and job placement.", website: "https://www.fettig.jobs" },
+  { name: "Fettig Jobs", category: "Employment", address: "12465 James St #2", phone: "616-355-6770", info: "Provider of job placement and employment staffing.", website: "https://fettig.jobs" },
   { name: "Workbox Staffing", category: "Employment", address: "100 S Harbor Dr, Grand Haven", phone: "616-844-0131", info: "Staffing and employment solutions.", website: "https://www.workboxstaffing.com" },
   { name: "WSI (Workforce Strategies)", category: "Employment", address: "12972 James St, Ste 40, Holland", phone: "616-325-1880", info: "Workforce development and employment strategies.", website: "https://www.wsitalent.com" },
   { name: "Coastal Careers", category: "Employment", address: "2863 West Shore Drive, Suite 108, Holland, MI 49424", phone: "(616) 298-2922", info: "Career placement and staffing services.", website: "https://www.coastalcareersinc.com" },
