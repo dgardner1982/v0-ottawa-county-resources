@@ -5,6 +5,12 @@ import Link from 'next/link';
 import { Phone, MapPin, Globe, X } from 'lucide-react';
 import { Footer } from '@/components/footer';
 
+interface Location {
+  city: string;
+  phone: string;
+  address: string;
+}
+
 interface Resource {
   name: string;
   category: string;
@@ -19,7 +25,40 @@ interface Resource {
   officePhone?: string;
   officeWebsite?: string;
   officeDescription?: string;
+  locations?: Location[];
 }
+
+// MCDC Locations Data
+const MCDC_LOCATIONS: Location[] = [
+  { city: "Allegan", phone: "269-673-3619", address: "1535 Lincoln Road, Allegan, MI" },
+  { city: "Battle Creek", phone: "269-924-3002", address: "3566 Capital Avenue Southwest, Battle Creek, MI" },
+  { city: "Bay City", phone: "989-402-0510", address: "2614 Center Avenue, Bay City, MI" },
+  { city: "Benton Harbor", phone: "269-927-1313", address: "143 E Main St, Benton Harbor, MI" },
+  { city: "Big Rapids", phone: "231-796-3617", address: "14435 Northland Drive, Big Rapids, MI" },
+  { city: "Cadillac", phone: "231-775-7662", address: "521 Cobb Street, Cadillac, MI" },
+  { city: "Cedar Springs", phone: "616-696-0879", address: "14111 White Creek Avenue Northeast, Cedar Springs, MI" },
+  { city: "Charlotte", phone: "517-541-8197", address: "623 Courthouse Drive, Charlotte, MI" },
+  { city: "Coldwater", phone: "517-278-7269", address: "382 East Chicago Street, Coldwater, MI" },
+  { city: "Detroit", phone: "313-571-2648", address: "5555 Conner Avenue, Detroit, MI" },
+  { city: "Engadine", phone: "906-477-6596", address: "W14034 Melville Street, Engadine, MI" },
+  { city: "Flint", phone: "810-732-2867", address: "4007 West Court Street, Flint, MI" },
+  { city: "Harrison", phone: "989-630-0760", address: "815 North Clare Avenue, Harrison, MI" },
+  { city: "Hart", phone: "231-873-9340", address: "3988 North Oceana Drive, Hart, MI" },
+  { city: "Hillsdale", phone: "517-437-2654", address: "20 Care Drive, Hillsdale, MI" },
+  { city: "Howell", phone: "517-552-0321", address: "1335 Byron Road, Howell, MI" },
+  { city: "Kentwood", phone: "616-281-7464", address: "4700 Kalamazoo Avenue Southeast, Kentwood, MI" },
+  { city: "Manistee", phone: "231-398-9305", address: "220 Glocheski Drive, Manistee, MI" },
+  { city: "Marquette", phone: "906-226-9992", address: "1110 West Washington Street, Marquette, MI" },
+  { city: "Mt Pleasant", phone: "989-772-4026", address: "2020 East Preston, Mt Pleasant, MI" },
+  { city: "Port Huron", phone: "810-984-5197", address: "3037 Electric Avenue, Port Huron, MI" },
+  { city: "Saginaw", phone: "989-792-6621", address: "185 North Frost, Saginaw, MI" },
+  { city: "Sandusky", phone: "810-891-1032", address: "135 West Sanilac Road, Sandusky, MI" },
+  { city: "Sidney", phone: "989-328-2200", address: "1550 West Sidney Road, Sidney, MI" },
+  { city: "Sturgis", phone: "269-651-7760", address: "1525 East Chicago Road, Sturgis, MI" },
+  { city: "Three Rivers", phone: "269-273-3247", address: "721 6th Avenue, Three Rivers, MI" },
+  { city: "Walker", phone: "616-348-6464", address: "890 3 Mile Road Northwest, Grand Rapids, MI" },
+  { city: "Ypsilanti", phone: "734-480-4250", address: "111 North Huron Street Suite 100, Ypsilanti, MI" },
+];
 
 // Phone Call Handler Component
 function PhoneLink({ phoneNumber, displayText }: { phoneNumber: string; displayText: string }) {
@@ -175,7 +214,7 @@ const RESOURCES: Resource[] = [
   { name: "InterCare Community Health Network", category: "Dental", address: "285 James Street, Holland MI 49424", phone: "855-869-6900", info: "InterCare accepts most insurance plans and offers a sliding-fee option with payment plans available. Offices are equipped with technology to ensure comfort during visits and high quality care. Services include: Exams, Cleanings, Fluoride Treatment, Varnish, Sealants, Digital X-Rays, Restorative Treatment, Extractions, Dentures & Partials, Oral Cancer Screenings, and Dental Education.", hours: "M 8:00am-7:00pm, T-F 8:00am-5:00pm", website: "https://intercare.org" },
   { name: "Miles of Smiles (MOS) Mobile Dental Unit", category: "Dental", address: "12251 James Street, Holland, MI 49424", phone: "(616) 393-5797", info: "40-foot mobile dental unit providing comprehensive services including cleanings, X-rays, and restorative work at schools and community sites. For Ottawa County children ages 0-20 with Medicaid or uninsured. Call for eligibility.", website: "https://miottawa.org/health/dental/" },
   { name: "Smile Help Now", category: "Dental", address: "Online Directory", phone: "N/A", info: "A tool provided by the Delta Dental Foundation to help Michigan residents find dentists who accept Medicaid or offer sliding-scale fees.", website: "https://www.smilehelpnow.com" },
-  { name: "My Community Dental Centers (MCDC)", category: "Dental", address: "Multiple Locations", phone: "(877) 313-6232", info: "Partners with local health departments to provide dental services to Medicaid recipients and low-income uninsured residents across Michigan.", website: "https://www.mydental.org" },
+  { name: "My Community Dental Centers (MCDC)", category: "Dental", address: "Multiple Locations", phone: "(877) 313-6232", info: "MCDC provides care for everyone, including those on Medicaid or those who are uninsured. We offer the same quality of care you would receive at a private, for-profit dental office.", website: "https://www.mydental.org", locations: MCDC_LOCATIONS },
 
   // Employment Services
   { name: "Manpower", category: "Employment", address: "12331 James Street, Unit 30, Holland", phone: "616-748-2000", info: "Employment services and job placement. M-F 8a-5p, Sa 8:45a-12:30p.", website: "https://www.manpowergroup.com" },
@@ -490,10 +529,56 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
   );
 }
 
+// MCDC Locations Modal Component
+function MCDCLocationsModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+      <div className="bg-white rounded-lg max-w-2xl w-full max-h-96 overflow-y-auto">
+        <div className="sticky top-0 bg-teal-600 text-white p-6 flex justify-between items-center">
+          <h2 className="text-2xl font-bold">My Community Dental Centers (MCDC) Locations</h2>
+          <button onClick={onClose} className="text-white hover:text-gray-200">
+            <X size={24} />
+          </button>
+        </div>
+        <div className="p-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {MCDC_LOCATIONS.map((location, idx) => (
+              <div key={idx} className="border border-gray-300 rounded-lg p-4 hover:shadow-md transition">
+                <h3 className="font-bold text-gray-900 text-lg mb-2">{location.city}</h3>
+                <div className="space-y-2 text-sm">
+                  <a 
+                    href={`https://maps.google.com/?q=${encodeURIComponent(location.address)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-teal-700 hover:underline flex gap-2 items-start"
+                  >
+                    <MapPin size={16} className="flex-shrink-0 mt-0.5" />
+                    {location.address}
+                  </a>
+                  <a 
+                    href={`tel:${location.phone}`}
+                    className="text-teal-700 hover:underline flex gap-2 items-center"
+                  >
+                    <Phone size={16} className="flex-shrink-0" />
+                    {location.phone}
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [showSecondChanceModal, setShowSecondChanceModal] = useState(false);
+  const [showMCDCLocations, setShowMCDCLocations] = useState(false);
 
   const categories = ['All', ...Array.from(new Set(RESOURCES.map(r => r.category))).sort()];
   
@@ -707,7 +792,7 @@ export default function Home() {
                       <tr className="border-b hover:bg-teal-50">
                         <td className="px-4 py-3 font-semibold">Aetna Better Health</td>
                         <td className="px-4 py-3 text-teal-700 font-bold">(866) 316-3784</td>
-                        <td className="px-4 py-3 text-gray-600">Mon–Fri, 8 AM – 5 PM</td>
+                        <td className="px-4 py-3 text-gray-600">Mon��Fri, 8 AM – 5 PM</td>
                       </tr>
                       <tr className="border-b hover:bg-teal-50">
                         <td className="px-4 py-3 font-semibold">Blue Cross Complete</td>
@@ -784,13 +869,22 @@ export default function Home() {
                     {resource.address && (
                       <div className="flex gap-3 items-start">
                         <MapPin size={18} className="text-teal-600 flex-shrink-0 mt-0.5" />
-                        <a 
-                          href={`https://maps.google.com/?q=${encodeURIComponent(resource.address.replace(/<[^>]*>/g, ''))}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-teal-700 hover:underline"
-                          dangerouslySetInnerHTML={{ __html: resource.address }}
-                        ></a>
+                        {resource.address === "Multiple Locations" && resource.locations ? (
+                          <button
+                            onClick={() => setShowMCDCLocations(true)}
+                            className="text-teal-700 hover:underline cursor-pointer font-semibold"
+                          >
+                            {resource.address}
+                          </button>
+                        ) : (
+                          <a 
+                            href={`https://maps.google.com/?q=${encodeURIComponent(resource.address.replace(/<[^>]*>/g, ''))}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-teal-700 hover:underline"
+                            dangerouslySetInnerHTML={{ __html: resource.address }}
+                          ></a>
+                        )}
                       </div>
                     )}
                     {resource.phone !== "See Locations" && (
@@ -898,6 +992,7 @@ export default function Home() {
       </main>
 
       <Footer />
+      <MCDCLocationsModal isOpen={showMCDCLocations} onClose={() => setShowMCDCLocations(false)} />
       <SecondChanceModal isOpen={showSecondChanceModal} onClose={() => setShowSecondChanceModal(false)} />
     </>
   )
