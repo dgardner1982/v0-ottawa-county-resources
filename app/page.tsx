@@ -559,8 +559,9 @@ function MCDCLocationsModal({ isOpen, onClose }: { isOpen: boolean; onClose: () 
                   </a>
                   <a 
                     href={`tel:${location.phone}`}
-                    className="text-teal-700 hover:underline"
+                    className="text-teal-700 hover:underline flex gap-2 items-center"
                   >
+                    <Phone size={16} className="flex-shrink-0" />
                     {location.phone}
                   </a>
                 </div>
@@ -891,6 +892,7 @@ export default function Home() {
                     )}
                     {resource.phone !== "See Locations" && (
                       <div className="flex gap-3 items-center">
+                        {resource.name !== "Smile Help Now" && <Phone size={18} className="text-teal-600 flex-shrink-0" />}
                         <PhoneLink phoneNumber={resource.phone} displayText={resource.phone} />
                       </div>
                     )}
@@ -930,6 +932,7 @@ export default function Home() {
                     )}
                     {resource.officePhone && (
                       <div className="flex gap-3 items-center">
+                        <Phone size={18} className="text-teal-600 flex-shrink-0" />
                         <PhoneLink phoneNumber={resource.officePhone} displayText={resource.officePhone} />
                       </div>
                     )}
