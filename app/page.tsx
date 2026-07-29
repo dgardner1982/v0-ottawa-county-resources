@@ -220,7 +220,7 @@ const RESOURCES: Resource[] = [
   { name: "Manpower", category: "Employment", address: "12331 James Street, Unit 30, Holland", phone: "616-748-2000", info: "Employment services and job placement. M-F 8a-5p, Sa 8:45a-12:30p.", website: "https://www.manpowergroup.com" },
   { name: "Michigan Rehabilitation Services", category: "Employment", address: "121 Clover Street, Holland", phone: "616-395-8495", info: "Vocational rehabilitation services.", website: "https://www.michigan.gov/mrs" },
   { name: "West Michigan Works", category: "Employment", address: "121 Clover Street, Holland", phone: "616-396-2154", info: "Employment and training services. M-F 8a-5p.", website: "https://westmiworks.org" },
-  { name: "Gill Staffing", category: "Employment", address: "12470 Felch St, Holland", phone: "616-396-1201", info: "Staffing and employment services.", hours: "M-F 8am-5pm", website: "https://www.gillstaffing.com" },
+  { name: "Gill Staffing", category: "Employment", address: "12470 Felch St, Holland", phone: "616-396-1201", info: "Staffing and employment services.", website: "https://www.gillstaffing.com" },
   { name: "Workforce Employment Specialists", category: "Employment", address: "200 W 17th St, Holland", phone: "616-396-5557", info: "Employment placement and staffing solutions.", website: "https://www.teamworkforce.com" },
   { name: "Fettig Jobs", category: "Employment", address: "12465 James St #2", phone: "616-355-6770", info: "Provider of job placement and employment staffing.", website: "https://fettig.jobs" },
   { name: "Workbox Staffing", category: "Employment", address: "100 S Harbor Dr, Grand Haven", phone: "616-844-0131", info: "Staffing and employment solutions.", website: "https://www.workboxstaffing.com" },
