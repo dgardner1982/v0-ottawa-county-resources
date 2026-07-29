@@ -18,6 +18,7 @@ interface Resource {
   officeHours?: string;
   officePhone?: string;
   officeWebsite?: string;
+  showDentalModal?: boolean;
 }
 
 // Phone Call Handler Component
@@ -176,7 +177,7 @@ const RESOURCES: Resource[] = [
   { name: "City on a Hill Health Clinic", category: "Dental", address: "100 Pine St, Suite 175, Zeeland, MI 49464", phone: "616-748-6009", info: "Provides screenings, X-rays, fillings, extractions, and specialty care like root canals through a volunteer referral network. Focus on uninsured or those unable to pay.", website: "https://coah.org" },
   { name: "Miles of Smiles (MOS) Mobile Dental Unit", category: "Dental", address: "12251 James Street, Holland, MI 49424", phone: "616-393-5694", info: "40-foot mobile dental unit providing comprehensive services including cleanings, X-rays, and restorative work at schools and community sites. For Ottawa County children ages 0-20 with Medicaid or uninsured.", website: "https://www.miottawa.org" },
   { name: "Smile Help Now", category: "Dental", address: "Online Directory", phone: "N/A", info: "A tool provided by the Delta Dental Foundation to help Michigan residents find dentists who accept Medicaid or offer sliding-scale fees.", website: "https://www.smilehelpnow.com" },
-  { name: "My Community Dental Centers (MCDC)", category: "Dental", address: "Multiple Locations", phone: "(877) 313-6232", info: "Partners with local health departments to provide dental services to Medicaid recipients and low-income uninsured residents across Michigan.", website: "https://www.mydental.org" },
+  { name: "My Community Dental Centers (MCDC)", category: "Dental", address: "Multiple Locations", phone: "(877) 313-6232", info: "Partners with local health departments to provide dental services to Medicaid recipients and low-income uninsured residents across Michigan.", website: "https://www.mydental.org", showDentalModal: true },
 
   // Employment Services
   { name: "Manpower", category: "Employment", address: "12331 James Street, Unit 30, Holland", phone: "616-748-2000", info: "Employment services and job placement. M-F 8a-5p, Sa 8:45a-12:30p.", website: "https://www.manpowergroup.com" },
@@ -491,10 +492,105 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
   );
 }
 
+// Dental Locations Modal Component
+function DentalLocationsModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+  if (!isOpen) return null;
+
+  const dentalLocations = [
+    {
+      name: "My Community Dental Centers (MCDC) - Holland",
+      address: "285 James St, Holland, MI 49424",
+      phone: "(877) 313-6232",
+      hours: "Call for hours",
+      description: "Full-service dental care for Medicaid recipients and uninsured/underinsured residents."
+    },
+    {
+      name: "My Community Dental Centers (MCDC) - Grand Haven",
+      address: "1111 Fulton St, Grand Haven, MI 49417",
+      phone: "(877) 313-6232",
+      hours: "Call for hours",
+      description: "Comprehensive dental services for low-income and Medicaid-eligible patients."
+    },
+    {
+      name: "My Community Dental Centers (MCDC) - Zeeland",
+      address: "100 Pine St, Zeeland, MI 49464",
+      phone: "(877) 313-6232",
+      hours: "Call for hours",
+      description: "Quality dental care accessible to uninsured and underinsured community members."
+    }
+  ];
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 z-[100] flex items-center justify-center p-4">
+      <div className="bg-white rounded-lg max-h-[90vh] overflow-y-auto w-full max-w-4xl shadow-2xl">
+        {/* Header */}
+        <div className="sticky top-0 bg-sky-600 text-white p-6 flex items-center justify-between border-b-4 border-sky-800">
+          <h2 className="text-3xl font-bold">My Community Dental Centers (MCDC)</h2>
+          <button onClick={onClose} className="hover:bg-sky-700 p-2 rounded transition">
+            <X size={28} />
+          </button>
+        </div>
+
+        {/* Content */}
+        <div className="p-8 space-y-8">
+          {/* Introduction */}
+          <div className="bg-sky-50 border-l-4 border-sky-600 p-6 rounded-lg">
+            <p className="text-gray-800 font-medium text-lg">
+              My Community Dental Centers partners with local health departments to provide dental services to Medicaid recipients and low-income uninsured residents across Michigan. Find your nearest location below and call to schedule an appointment.
+            </p>
+          </div>
+
+          {/* Locations */}
+          {dentalLocations.map((location, index) => (
+            <div key={index} className="bg-sky-100 border-b-4 border-sky-500 rounded-lg p-6 shadow-md">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">{location.name}</h3>
+              <div className="space-y-3 text-sm">
+                <div className="flex gap-3 items-start">
+                  <MapPin size={18} className="text-sky-600 flex-shrink-0 mt-0.5" />
+                  <a 
+                    href={`https://maps.google.com/?q=${encodeURIComponent(location.address)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sky-700 hover:underline font-semibold"
+                  >
+                    {location.address}
+                  </a>
+                </div>
+                <div className="flex gap-3 items-center">
+                  <Phone size={18} className="text-sky-600 flex-shrink-0" />
+                  <a href={`tel:${location.phone}`} className="text-sky-700 font-bold hover:underline">{location.phone}</a>
+                </div>
+                <div className="flex gap-3 items-start">
+                  <span className="text-sky-600 font-bold">Hours:</span>
+                  <span className="text-gray-700">{location.hours}</span>
+                </div>
+                <div className="bg-white p-4 rounded mt-3 border-l-4 border-sky-600">
+                  <p className="text-gray-700">{location.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Close Button at Bottom */}
+        <div className="sticky bottom-0 bg-white border-t-2 border-sky-200 p-4 flex justify-end">
+          <button 
+            onClick={onClose}
+            className="bg-sky-600 hover:bg-sky-700 text-white font-bold px-6 py-3 rounded-lg transition"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [showSecondChanceModal, setShowSecondChanceModal] = useState(false);
+  const [showDentalModal, setShowDentalModal] = useState(false);
 
   const categories = ['All', ...Array.from(new Set(RESOURCES.map(r => r.category))).sort()];
   
@@ -860,7 +956,14 @@ export default function Home() {
                       </div>
                     )}
                   </div>
-                  {resource.link ? (
+                  {resource.showDentalModal ? (
+                    <button 
+                      onClick={() => setShowDentalModal(true)}
+                      className="block mt-4 w-full bg-sky-600 hover:bg-sky-700 text-white font-bold py-2 rounded text-center transition cursor-pointer"
+                    >
+                      View Locations
+                    </button>
+                  ) : resource.link ? (
                     <Link href={resource.link}>
                       <button className="block mt-4 w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 rounded text-center transition cursor-pointer">
                         See Locations
@@ -895,6 +998,7 @@ export default function Home() {
 
       <Footer />
       <SecondChanceModal isOpen={showSecondChanceModal} onClose={() => setShowSecondChanceModal(false)} />
+      <DentalLocationsModal isOpen={showDentalModal} onClose={() => setShowDentalModal(false)} />
     </>
   )
 }
