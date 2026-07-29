@@ -596,7 +596,7 @@ export default function Home() {
       "Food": { bg: "bg-green-100", border: "border-b-4 border-green-500", icon: "🍽️", button: "bg-green-500 hover:bg-green-600", buttonHover: "text-white" },
       "Housing": { bg: "bg-amber-100", border: "border-b-4 border-amber-500", icon: "🏠", button: "bg-amber-500 hover:bg-amber-600", buttonHover: "text-white" },
       "Health Care": { bg: "bg-red-100", border: "border-b-4 border-red-500", icon: "🏥", button: "bg-red-500 hover:bg-red-600", buttonHover: "text-white" },
-      "Prenatal/Maternal": { bg: "bg-pink-200", border: "border-b-4 border-pink-600", icon: "🤰", button: "bg-pink-600 hover:bg-pink-700", buttonHover: "text-white" },
+      "Prenatal/Maternal": { bg: "bg-pink-200", border: "border-b-4 border-pink-600", icon: "���", button: "bg-pink-600 hover:bg-pink-700", buttonHover: "text-white" },
       "Dental": { bg: "bg-sky-100", border: "border-b-4 border-sky-500", icon: "🦷", button: "bg-sky-500 hover:bg-sky-600", buttonHover: "text-white" },
       "Domestic Violence": { bg: "bg-rose-100", border: "border-b-4 border-rose-600", icon: "🛑", button: "bg-rose-600 hover:bg-rose-700", buttonHover: "text-white" },
       "Employment": { bg: "bg-purple-100", border: "border-b-4 border-purple-500", icon: "💼", button: "bg-purple-500 hover:bg-purple-600", buttonHover: "text-white" },
@@ -870,12 +870,15 @@ export default function Home() {
                       <div className="flex gap-3 items-start">
                         <MapPin size={18} className="text-teal-600 flex-shrink-0 mt-0.5" />
                         {resource.address === "Multiple Locations" && resource.locations ? (
-                          <button
-                            onClick={() => setShowMCDCLocations(true)}
-                            className="text-teal-700 hover:underline cursor-pointer font-semibold"
-                          >
-                            {resource.address}
-                          </button>
+                          <div className="flex flex-col gap-1">
+                            <button
+                              onClick={() => setShowMCDCLocations(true)}
+                              className="text-teal-700 hover:underline cursor-pointer font-semibold text-left"
+                            >
+                              {resource.address}
+                            </button>
+                            <span className="text-xs text-gray-500">(Click for address and direct phone number)</span>
+                          </div>
                         ) : (
                           <a 
                             href={`https://maps.google.com/?q=${encodeURIComponent(resource.address.replace(/<[^>]*>/g, ''))}`}
