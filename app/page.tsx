@@ -5,6 +5,12 @@ import Link from 'next/link';
 import { Phone, MapPin, Globe, X } from 'lucide-react';
 import { Footer } from '@/components/footer';
 
+interface Location {
+  city: string;
+  phone: string;
+  address: string;
+}
+
 interface Resource {
   name: string;
   category: string;
@@ -18,7 +24,41 @@ interface Resource {
   officeHours?: string;
   officePhone?: string;
   officeWebsite?: string;
+  officeDescription?: string;
+  locations?: Location[];
 }
+
+// MCDC Locations Data
+const MCDC_LOCATIONS: Location[] = [
+  { city: "Allegan", phone: "269-673-3619", address: "1535 Lincoln Road, Allegan, MI" },
+  { city: "Battle Creek", phone: "269-924-3002", address: "3566 Capital Avenue Southwest, Battle Creek, MI" },
+  { city: "Bay City", phone: "989-402-0510", address: "2614 Center Avenue, Bay City, MI" },
+  { city: "Benton Harbor", phone: "269-927-1313", address: "143 E Main St, Benton Harbor, MI" },
+  { city: "Big Rapids", phone: "231-796-3617", address: "14435 Northland Drive, Big Rapids, MI" },
+  { city: "Cadillac", phone: "231-775-7662", address: "521 Cobb Street, Cadillac, MI" },
+  { city: "Cedar Springs", phone: "616-696-0879", address: "14111 White Creek Avenue Northeast, Cedar Springs, MI" },
+  { city: "Charlotte", phone: "517-541-8197", address: "623 Courthouse Drive, Charlotte, MI" },
+  { city: "Coldwater", phone: "517-278-7269", address: "382 East Chicago Street, Coldwater, MI" },
+  { city: "Detroit", phone: "313-571-2648", address: "5555 Conner Avenue, Detroit, MI" },
+  { city: "Engadine", phone: "906-477-6596", address: "W14034 Melville Street, Engadine, MI" },
+  { city: "Flint", phone: "810-732-2867", address: "4007 West Court Street, Flint, MI" },
+  { city: "Harrison", phone: "989-630-0760", address: "815 North Clare Avenue, Harrison, MI" },
+  { city: "Hart", phone: "231-873-9340", address: "3988 North Oceana Drive, Hart, MI" },
+  { city: "Hillsdale", phone: "517-437-2654", address: "20 Care Drive, Hillsdale, MI" },
+  { city: "Howell", phone: "517-552-0321", address: "1335 Byron Road, Howell, MI" },
+  { city: "Kentwood", phone: "616-281-7464", address: "4700 Kalamazoo Avenue Southeast, Kentwood, MI" },
+  { city: "Manistee", phone: "231-398-9305", address: "220 Glocheski Drive, Manistee, MI" },
+  { city: "Marquette", phone: "906-226-9992", address: "1110 West Washington Street, Marquette, MI" },
+  { city: "Mt Pleasant", phone: "989-772-4026", address: "2020 East Preston, Mt Pleasant, MI" },
+  { city: "Port Huron", phone: "810-984-5197", address: "3037 Electric Avenue, Port Huron, MI" },
+  { city: "Saginaw", phone: "989-792-6621", address: "185 North Frost, Saginaw, MI" },
+  { city: "Sandusky", phone: "810-891-1032", address: "135 West Sanilac Road, Sandusky, MI" },
+  { city: "Sidney", phone: "989-328-2200", address: "1550 West Sidney Road, Sidney, MI" },
+  { city: "Sturgis", phone: "269-651-7760", address: "1525 East Chicago Road, Sturgis, MI" },
+  { city: "Three Rivers", phone: "269-273-3247", address: "721 6th Avenue, Three Rivers, MI" },
+  { city: "Walker", phone: "616-348-6464", address: "890 3 Mile Road Northwest, Grand Rapids, MI" },
+  { city: "Ypsilanti", phone: "734-480-4250", address: "111 North Huron Street Suite 100, Ypsilanti, MI" },
+];
 
 // Phone Call Handler Component
 function PhoneLink({ phoneNumber, displayText }: { phoneNumber: string; displayText: string }) {
@@ -109,21 +149,21 @@ const RESOURCES: Resource[] = [
   { name: "Holland Drop-in Center", category: "Food", address: "636 Hastings Ave #120, Holland", phone: "616-355-2207", info: "Community meals and recovery support.", hours: "M-Sat 9a-4p", website: "https://www.hdic.org" },
   { name: "Ottawa Foods", category: "Food", address: "12251 James Street, Suite 400, Holland, MI 49424", phone: "616-393-5791", info: "Connect people to food resources and community support services.", website: "https://www.ottawafood.org" },
   { name: "Jehovah Jireh Ministries of West Michigan", category: "Food", address: "4055 VanBuren St, Hudsonville", phone: "616-209-7688", info: "Food pantry. Bring your own bags.", hours: "W 11:30a-5:30p, Sat 8a-1p", website: "https://jjministries.org" },
-  { name: "Love Your Neighbor (Love INC of Hudsonville)", category: "Food", address: "3300 Van Buren St, Hudsonville", phone: "616-662-3300", info: "Faith-based clearinghouse model coordinating church resources. Food pantry providing access to supplemental groceries and household essentials. Life Skills program and personal care items available.", hours: "M-F 9a-4p", website: "https://loveinchudsonville.org" },
+  { name: "Love Your Neighbor", category: "Food", address: "3300 Van Buren St, Hudsonville", phone: "616-662-3300", info: "Faith-based clearinghouse model coordinating church resources. Food pantry providing access to supplemental groceries and household essentials. Life Skills program and personal care items available.", hours: "M-F 10am - 5pm, Sat 10am - 3pm, Sun Closed", website: "https://lovewm.org" },
   { name: "The People Center", category: "Food", address: "307 E. Exchange, Spring Lake", phone: "616-844-6710", info: "Food pantry. Call first for appointment.", hours: "M & W 11a-3p", website: "https://www.thepeoplecenter.org" },
   { name: "Harvest Stand Ministries", category: "Food", address: "100 Pine St Ste 100, Zeeland", phone: "616-748-6003", info: "Food pantry. By appointment.", hours: "M 9a-3p, W 1p-6p, Th 9a-12p", website: "https://harveststandministries.org" },
   { name: "MI Bridges", category: "Food", address: "State Program", phone: "1-888-544-8773", info: "State food assistance program.", website: "https://www.michigan.gov/mibridges" },
 
   // Clothing and Furniture
-  { name: "Love INC of Hudsonville", category: "Clothing and Furniture", address: "3300 Van Buren St, Hudsonville, MI 49426", phone: "(616) 662-3300", info: "Provides access to clothing, linens, and household furniture through Essential Resource Ministries. Faith-based clearinghouse coordinating local church resources for the Hudsonville, Jenison, and Grandville areas.", hours: "M-F 9a-4p", website: "https://loveinchudsonville.org" },
+  { name: "Love Your Neighbor", category: "Clothing and Furniture", address: "3300 Van Buren St, Hudsonville, MI 49426", phone: "(616) 662-3300", info: "Provides access to clothing, linens, and household furniture through Essential Resource Ministries. Faith-based clearinghouse coordinating local church resources for the Hudsonville, Jenison, and Grandville areas.", hours: "M-F 10am - 5pm, Sat 10am - 3pm, Sun Closed", website: "https://lovewm.org" },
   { name: "Habitat for Humanity ReStore Grand Haven", category: "Clothing and Furniture", address: "Grand Haven Restore, 408 N Ferry St, Grand Haven, MI 49417", phone: "(616) 846-1505", info: "ReStore location offering affordable furniture and household goods. Proceeds help build housing for low income families through partnerships with local churches, businesses, and individuals. Anyone is welcome to volunteer regardless of race or religion.", hours: "M-F 9:30 AM – 6:30 PM; Sat 9:30 AM – 4:30 PM", officeAddress: "Office, 3610 Airline Dr, Norton Shores, MI 49444", officeHours: "M-F 9:00 AM – 5:00 PM", website: "https://tricitieshabitat.org" },
   { name: "Habitat for Humanity ReStore Lakeshore", category: "Clothing and Furniture", address: "12727 Riley St, Holland, MI 49424", phone: "(616) 393-8001", info: "Nonprofit thrift store and donation store with 2 purposes. To keep used items out of the landfill, and to help families in Ottawa, Allegan, and Van Buren counties access safe and affordable homeownership. Sales go towards affordable housing. Also builds housing for low income families.", hours: "T-F 10:00 AM – 5:30 PM; Saturday 10:00 AM – 4:00 PM", website: "https://lakeshorehabitat.org/restore" },
-  { name: "The People Center - Clothing Hutch", category: "Clothing and Furniture", address: "Spring Lake", phone: "Contact for details", info: "Provides gently used clothes and household items at no cost to families in the Tri-Cities area. Offers men's, women's, and children's clothing, as well as books and backpacks. Open Monday, Wednesday, and Friday from 11:00 AM to 5:00 PM. Services available to Grand Haven, Spring Lake, Ferrysburg, and nearby communities.", website: "Contact for details" },
+  { name: "The People Center - Clothing Hutch", category: "Clothing and Furniture", address: "307 E. Exchange St. Spring Lake MI 49456", phone: "616-844-6710", info: "Gently used clothing and housing items to provide families with a new start. The People Center services the Tri-Cities area, including Grand Haven, Spring Lake, Ferrysburg, and smaller surrounding communities.", hours: "Mon, Wed, Fri 11am-5pm", website: "https://thepeoplecenter.org/clothing-hutch/" },
   { name: "Grant Me Hope Thrift Store", category: "Clothing and Furniture", address: "930 Interchange Drive, Holland, Michigan 49423", phone: "616-379-4054", info: "Public thrift store supporting adoption and fostering initiatives. Provides information about adoption and fostering services, job opportunities and housing for youth who've aged out of foster care, and free clothing for parents of foster children upon completion of intake survey. Also offers work experience opportunities for youth aging out of foster care.", hours: "M-F 10:00 AM – 6:00 PM, Sat 10:00 AM – 4:00 PM", website: "https://grantmehope.org" },
   { name: "Love in Action Tri-Cities", category: "Clothing and Furniture", address: "Grand Haven, 948 Robbins Rd, Grand Haven 49417", phone: "(616) 607-2827", info: "Manages resale shops providing clothing and household items. Proceeds support emergency assistance programs.", hours: "Store: M-F 10am – 6pm, Sat 10am – 4pm\nDonations: M-F 10am – 4pm, Sat 10am – 2pm", officeAddress: "Spring Lake, 200 W. Savidge St., Spring Lake 49456", officePhone: "(616) 844-1360", officeHours: "Store: M-F 10am – 6pm, Sat 10am – 4pm\nPlease note: We are not able to accept donations at our Spring Lake location.", website: "https://www.loveinactiontricities.org", officeWebsite: "https://www.loveinactiontricities.org" },
-  { name: "New to You Thrift & Donation Center - Love INC of Allendale", category: "Clothing and Furniture", address: "Allendale", phone: "Contact for details", info: "Affiliated with Love INC of Allendale, offers low-cost furniture, clothing, and housewares. Features large inventory of gently used items. Sales directly fund local ministries including food pantry. Open M-Sa with extended hours until 6:00 PM on weekends.", website: "Contact for details" },
-  { name: "Paradise Bound Thrift Shoppe", category: "Clothing and Furniture", address: "Downtown Zeeland on Washington Avenue", phone: "Contact for details", info: "Provides affordable apparel and home goods with well-organized selection of adult and children's clothing. Proceeds support mission work and community outreach. Open daily 9:00 AM – 7:00 PM (Saturday 9:00 AM – 5:00 PM).", website: "Contact for details" },
-  { name: "Legacy Thrift", category: "Clothing and Furniture", address: "Holland (North), 91 Douglas Ave", phone: "616-394-5260", info: "Popular destination for budget-conscious shoppers with apparel, footwear, and accessories. Maintains consistent rotation of seasonal clothing at accessible price points. Revenue supports local educational and community development initiatives. Open M-Sa starting at 10:00 AM.", website: "https://legacythrift.org" },
+  { name: "New to You Thrift & Donation Center", category: "Clothing and Furniture", address: "Thrift Store, 11620 60th Ave, Allendale MI 49401", phone: "616-895-5683", info: "Affiliated with Love INC, offers low-cost furniture, clothing, and housewares. Features large inventory of gently used items. Sales directly fund local ministries. Donations only accepted during store hours.", hours: "M-F 9am-5pm, Sat 9am-4pm", officeAddress: "LoveINC Office, 6633 Lake Michigan Drive, Allendale MI 49401", officeHours: "M-F 9am - 2pm\nFor administration and client intake", officeDescription: "They also offer long term stability tools, including personal budgeting classes, employment connections, and seasonal assistance programs.", website: "https://loveincallegan.org", officeWebsite: "https://loveincallegan.org" },
+  { name: "Paradise Bound Thrift Shoppe", category: "Clothing and Furniture", address: "59 W. Washington Ave, Zeeland MI 49464", phone: "616-748-7960", info: "Thrift shoppe that took roots as a way to help generate income, which helps the Paradisebound ministries offer support to locals in Guatemala. Offers brand new and gently used items at affordable prices.", hours: "M-F 9am-7pm, Sat 10am-5pm (Closed Sunday)", website: "https://paradiseboundthriftshoppe.com" },
+  { name: "Legacy Thrift", category: "Clothing and Furniture", address: "Holland (North), 91 Douglas Ave", phone: "616-394-5260", info: "Popular destination for budget-conscious shoppers with apparel, footwear, and accessories. Maintains consistent rotation of seasonal clothing at accessible price points. Revenue supports local educational and community development initiatives.", hours: "M, T, Th, F 10-5; S 11-3", officeAddress: "Holland (South), 813 Lincoln Ave", officePhone: "616-395-0129", officeHours: "M-F 10-5; S 10-4", website: "https://legacythrift.org", officeWebsite: "https://legacythrift.org" },
 
   // Housing
   { name: "Good Samaritan Ministries", category: "Housing", address: "513 E. 8th St, Holland", phone: "616-392-7159", info: "Housing Search Assistance, Rapid Re-housing, and CHP programs.", website: "https://www.gsministries.org" },
@@ -146,13 +186,13 @@ const RESOURCES: Resource[] = [
   { name: "Exodus Place", category: "Housing", address: "322 Front Ave SW, Grand Rapids, MI 49504", phone: "(616) 242-9130", info: "Transitional housing program for men experiencing homelessness emphasizing a 'hand up' approach. Services include affordable housing with no time limits, life skills training, medical and dental coordination, and spiritual support.", website: "https://exodusplace.org" },
   { name: "Guiding Light", category: "Housing", address: "255 Division Ave S, Grand Rapids, MI 49503", phone: "(616) 451-0236", info: "Operates an intensive recovery and re-engagement program providing no-cost residential addiction treatment and structured pathways to employment. Services include four-month residential recovery program, women's recovery at Aquinas College campus, and the 'Iron House' sober living network.", website: "https://guidinglightworks.org" },
   { name: "Recovery Road", category: "Housing", address: "336 Wealthy St SE, Grand Rapids, MI 49503", phone: "(888) 588-0434", info: "Network of sober living homes throughout Grand Rapids and Muskegon providing structured environments for residents transitioning from clinical treatment to mainstream life. Services include eleven sober living houses (male and female), peer support, and accountability.", website: "https://recoveryroadhomes.org" },
-  { name: "Fresh Coast Alliance", category: "Housing", address: "1128 Roberts St, Muskegon, MI 49442", phone: "(231) 286-1992", info: "Muskegon-based non-profit providing recovery housing for men and women, supporting individuals returning from incarceration and those in recovery from substance use. Offers one-on-one recovery coaching and stability-focused housing.", website: "https://freshcoastalliance.org" },
+  { name: "Fresh Coast Alliance", category: "Housing", address: "1128 Roberts St, Muskegon, MI 49442", phone: "(231) 286-1992", info: "Muskegon-based non-profit providing recovery housing for men and women, supporting individuals returning from incarceration and those in recovery from substance use. Offers one-on-one recovery coaching and stability-focused housing.", hours: "Mon-Thurs 9am-5pm, Fri 9am-3pm", website: "https://freshcoastalliance.org" },
 
   // Health Care
   // Prenatal/Maternal
   { name: "Catholic Charities West Michigan", category: "Prenatal/Maternal", address: "456 Century Ln, Holland, MI 49423", phone: "(616) 796-9595", info: "Broad spectrum of family support services and point of distribution for child-related essentials including diapers, formula, and baby items.", website: "https://www.catholiccharitieswm.org" },
   { name: "Community Action House", category: "Prenatal/Maternal", address: "739 Paw Paw Dr, Holland, MI 49423", phone: "(616) 392-2368", info: "Community hub connecting families with essential supplies, nutrition, and maternal health programs. Hosts Help Me Grow: Play 'n Learn for birth to age 5, Chat & Chill support groups, Healthy@Home nutrition program, Food Club, and partnerships with Maternal Infant Health Program and Nestlings for diapers.", hours: "M-F 9a-5p", website: "https://www.communityactionhouse.org" },
-  { name: "Love INC of Hudsonville", category: "Prenatal/Maternal", address: "3300 Van Buren St, Hudsonville, MI 49426", phone: "(616) 662-3300", info: "Provides personal care items and infant essentials not typically covered by state assistance programs. Faith-based organization coordinating local church resources for families in need.", hours: "M-F 9a-4p", website: "https://loveinchudsonville.org" },
+  { name: "Love Your Neighbor", category: "Prenatal/Maternal", address: "3300 Van Buren St, Hudsonville, MI 49426", phone: "(616) 662-3300", info: "Provides personal care items and infant essentials not typically covered by state assistance programs. Faith-based organization coordinating local church resources for families in need.", hours: "M-F 10am - 5pm, Sat 10am - 3pm, Sun Closed", website: "https://lovewm.org" },
   { name: "Maternal Infant Health Program Grand Haven", category: "Prenatal/Maternal", address: "1207 S. Beechtree St., Grand Haven", phone: "616-846-8360", info: "Maternal and infant health services.", website: "https://www.cmhoc.org" },
   { name: "Maternal Infant Health Program Holland", category: "Prenatal/Maternal", address: "12251 James St, Holland", phone: "616-396-5266", info: "Maternal and infant health services.", website: "https://www.cmhoc.org" },
   { name: "Maternal Infant Health Program Hudsonville", category: "Prenatal/Maternal", address: "3100 Port Sheldon, Hudsonville", phone: "616-669-0040", info: "Maternal and infant health services.", website: "https://www.cmhoc.org" },
@@ -170,28 +210,25 @@ const RESOURCES: Resource[] = [
   { name: "Maternal Infant Health Program Hudsonville", category: "Health Care", address: "3100 Port Sheldon, Hudsonville", phone: "616-669-0040", info: "Maternal and infant health services.", website: "https://www.cmhoc.org" },
 
   // Dental
-  { name: "Holland Free Health Clinic (HFHC)", category: "Dental", address: "99 W 26th St, Holland, MI 49423", phone: "616-392-3610", info: "Provides free dental services including oral exams, X-rays, cleanings, fillings, extractions, and oral surgery. Focus on medically underserved population in Ottawa and Allegan counties.", website: "https://www.hfhclinic.org" },
-  { name: "Love in Action of the Tri-Cities (Dental Center)", category: "Dental", address: "326 N Ferry St, Grand Haven, MI 49417", phone: "616-846-2701", info: "Offers basic dental care and referrals provided by licensed volunteer dentists and hygienists. For adults 18+ who are uninsured or underinsured and meet financial eligibility guidelines.", website: "https://www.loveinactiontricities.org" },
-  { name: "InterCare Community Health Network", category: "Dental", address: "285 James St, Holland, MI 49424", phone: "855-869-6900", info: "Comprehensive general and preventive dentistry services. Open to the public with sliding fee scale, accepts Medicaid, Healthy Michigan, and commercial plans.", website: "https://www.intercare.org" },
-  { name: "City on a Hill Health Clinic", category: "Dental", address: "100 Pine St, Suite 175, Zeeland, MI 49464", phone: "616-748-6009", info: "Provides screenings, X-rays, fillings, extractions, and specialty care like root canals through a volunteer referral network. Focus on uninsured or those unable to pay.", website: "https://coah.org" },
-  { name: "Miles of Smiles (MOS) Mobile Dental Unit", category: "Dental", address: "12251 James Street, Holland, MI 49424", phone: "616-393-5694", info: "40-foot mobile dental unit providing comprehensive services including cleanings, X-rays, and restorative work at schools and community sites. For Ottawa County children ages 0-20 with Medicaid or uninsured.", website: "https://www.miottawa.org" },
-  { name: "Smile Help Now", category: "Dental", address: "Online Directory", phone: "N/A", info: "A tool provided by the Delta Dental Foundation to help Michigan residents find dentists who accept Medicaid or offer sliding-scale fees.", website: "https://www.smilehelpnow.com" },
-  { name: "My Community Dental Centers (MCDC)", category: "Dental", address: "Multiple Locations", phone: "(877) 313-6232", info: "Partners with local health departments to provide dental services to Medicaid recipients and low-income uninsured residents across Michigan.", website: "https://www.mydental.org" },
+  { name: "Love in Action of the Tri-Cities (Dental Center)", category: "Dental", address: "326 N Ferry St, Grand Haven, MI 49417", phone: "616-846-2701", info: "Provides basic dental services and referrals for adults 18 years or older who are uninsured or under-insured and meet financial eligibility on intake. Licensed dentists, hygienists, and compassionate dental staff volunteer their time. Services include screenings, X-rays, oral health education, insurance and resource referrals, cleaning and preventative exams, extractions, fillings, and dental referrals.", hours: "M-F 9:00am-4:00pm (staff available for questions)\nAppointments scheduled per volunteer availability, weekdays", website: "https://www.loveinactiontricities.org" },
+  { name: "InterCare Community Health Network", category: "Dental", address: "285 James Street, Holland MI 49424", phone: "855-869-6900", info: "InterCare accepts most insurance plans and offers a sliding-fee option with payment plans available. Offices are equipped with technology to ensure comfort during visits and high quality care. Services include: Exams, Cleanings, Fluoride Treatment, Varnish, Sealants, Digital X-Rays, Restorative Treatment, Extractions, Dentures & Partials, Oral Cancer Screenings, and Dental Education.", hours: "M 8:00am-7:00pm, T-F 8:00am-5:00pm", website: "https://intercare.org" },
+  { name: "Miles of Smiles (MOS) Mobile Dental Unit", category: "Dental", address: "12251 James Street, Holland, MI 49424", phone: "(616) 393-5797", info: "40-foot mobile dental unit providing comprehensive services including cleanings, X-rays, and restorative work at schools and community sites. For Ottawa County children ages 0-20 with Medicaid or uninsured. Call for eligibility.", website: "https://miottawa.org/health/dental/" },
+  { name: "Smile Help Now", category: "Dental", address: "", phone: "", info: "A tool provided by the Delta Dental Foundation to help Michigan residents find dentists who accept Medicaid or offer sliding-scale fees.", website: "https://www.smilehelpnow.com" },
+  { name: "My Community Dental Centers (MCDC)", category: "Dental", address: "Multiple Locations", phone: "(877) 313-6232", info: "MCDC provides care for everyone, including those on Medicaid or those who are uninsured. We offer the same quality of care you would receive at a private, for-profit dental office.", website: "https://www.mydental.org", locations: MCDC_LOCATIONS },
 
   // Employment Services
   { name: "Manpower", category: "Employment", address: "12331 James Street, Unit 30, Holland", phone: "616-748-2000", info: "Employment services and job placement. M-F 8a-5p, Sa 8:45a-12:30p.", website: "https://www.manpowergroup.com" },
   { name: "Michigan Rehabilitation Services", category: "Employment", address: "121 Clover Street, Holland", phone: "616-395-8495", info: "Vocational rehabilitation services.", website: "https://www.michigan.gov/mrs" },
   { name: "West Michigan Works", category: "Employment", address: "121 Clover Street, Holland", phone: "616-396-2154", info: "Employment and training services. M-F 8a-5p.", website: "https://westmiworks.org" },
-  { name: "Gill Staffing", category: "Employment", address: "12470 Felch St, Holland", phone: "616-396-1201", info: "Staffing and employment services.", website: "https://www.gillstaffing.com" },
+  { name: "Gill Staffing", category: "Employment", address: "12470 Felch St, Holland", phone: "616-396-1201", info: "Staffing and employment services.", hours: "M-F 8am-5pm", website: "https://www.gillstaffing.com" },
   { name: "Workforce Employment Specialists", category: "Employment", address: "200 W 17th St, Holland", phone: "616-396-5557", info: "Employment placement and staffing solutions.", website: "https://www.teamworkforce.com" },
-  { name: "Fettig Jobs", category: "Employment", address: "11449 James St, Holland", phone: "616-335-6770", info: "Employment services and job placement.", website: "https://www.fettig.jobs" },
+  { name: "Fettig Jobs", category: "Employment", address: "12465 James St #2", phone: "616-355-6770", info: "Provider of job placement and employment staffing.", website: "https://fettig.jobs" },
   { name: "Workbox Staffing", category: "Employment", address: "100 S Harbor Dr, Grand Haven", phone: "616-844-0131", info: "Staffing and employment solutions.", website: "https://www.workboxstaffing.com" },
   { name: "WSI (Workforce Strategies)", category: "Employment", address: "12972 James St, Ste 40, Holland", phone: "616-325-1880", info: "Workforce development and employment strategies.", website: "https://www.wsitalent.com" },
-  { name: "Coastal Careers", category: "Employment", address: "12656 Felch St, Holland", phone: "616-355-2244", info: "Career placement and staffing services.", website: "https://www.coastalcareersinc.com" },
-  { name: "Cardinal Staffing", category: "Employment", address: "12330 James St, Ste H80, Holland", phone: "616-394-9100", info: "Employment staffing and placement services.", website: "https://www.cardinalstaffing.com" },
+  { name: "Coastal Careers", category: "Employment", address: "2863 West Shore Drive, Suite 108, Holland, MI 49424", phone: "(616) 298-2922", info: "Career placement and staffing services.", website: "https://www.coastalcareersinc.com" },
   { name: "WorkSolved", category: "Employment", address: "240 S River Ave, Holland", phone: "616-283-7521", info: "Employment solutions and staffing services.", website: "https://www.worksolved.com" },
   { name: "70x7 Life Recovery", category: "Employment", address: "97 W 22nd St, Holland, MI 49423", phone: "(616) 796-0685", info: "Specialized organization providing restoration and long-term support for individuals returning to the community after incarceration. Services include employment support with employer partnerships, mentorship, family support groups, life skills training, and housing assistance.", website: "https://70x7liferecovery.org" },
-  { name: "Fresh Coast Alliance", category: "Employment", address: "1128 Roberts St, Muskegon, MI 49442", phone: "(231) 286-1992", info: "Muskegon-based non-profit specializing in employment placement through their 'Fresh Coast Cleaning' enterprise for individuals returning from incarceration and those in recovery from substance use. Also offers recovery housing and one-on-one recovery coaching.", website: "https://freshcoastalliance.org" },
+  { name: "Fresh Coast Alliance", category: "Employment", address: "1128 Roberts St, Muskegon, MI 49442", phone: "(231) 286-1992", info: "Muskegon-based non-profit specializing in employment placement through their 'Fresh Coast Cleaning' enterprise for individuals returning from incarceration and those in recovery from substance use. Also offers recovery housing and one-on-one recovery coaching.", hours: "Mon-Thurs 9am-5pm, Fri 9am-3pm", website: "https://freshcoastalliance.org" },
 
   // Legal
   { name: "Legal Aid of Western Michigan", category: "Legal", address: "Holland Office", phone: "(616) 394-1380", info: "Provides free legal services for low-income residents in Allegan and Ottawa counties for non-criminal cases.", website: "https://lawestmi.org" },
@@ -491,10 +528,56 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
   );
 }
 
+// MCDC Locations Modal Component
+function MCDCLocationsModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+      <div className="bg-white rounded-lg max-w-2xl w-full max-h-96 overflow-y-auto">
+        <div className="sticky top-0 bg-teal-600 text-white p-6 flex justify-between items-center">
+          <h2 className="text-2xl font-bold">My Community Dental Centers (MCDC) Locations</h2>
+          <button onClick={onClose} className="text-white hover:text-gray-200">
+            <X size={24} />
+          </button>
+        </div>
+        <div className="p-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {MCDC_LOCATIONS.map((location, idx) => (
+              <div key={idx} className="border border-gray-300 rounded-lg p-4 hover:shadow-md transition">
+                <h3 className="font-bold text-gray-900 text-lg mb-2">{location.city}</h3>
+                <div className="space-y-2 text-sm">
+                  <a 
+                    href={`https://maps.google.com/?q=${encodeURIComponent(location.address)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-teal-700 hover:underline flex gap-2 items-start"
+                  >
+                    <MapPin size={16} className="flex-shrink-0 mt-0.5" />
+                    {location.address}
+                  </a>
+                  <a 
+                    href={`tel:${location.phone}`}
+                    className="text-teal-700 hover:underline flex gap-2 items-center"
+                  >
+                    <Phone size={16} className="flex-shrink-0" />
+                    {location.phone}
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [showSecondChanceModal, setShowSecondChanceModal] = useState(false);
+  const [showMCDCLocations, setShowMCDCLocations] = useState(false);
 
   const categories = ['All', ...Array.from(new Set(RESOURCES.map(r => r.category))).sort()];
   
@@ -512,7 +595,7 @@ export default function Home() {
       "Food": { bg: "bg-green-100", border: "border-b-4 border-green-500", icon: "🍽️", button: "bg-green-500 hover:bg-green-600", buttonHover: "text-white" },
       "Housing": { bg: "bg-amber-100", border: "border-b-4 border-amber-500", icon: "🏠", button: "bg-amber-500 hover:bg-amber-600", buttonHover: "text-white" },
       "Health Care": { bg: "bg-red-100", border: "border-b-4 border-red-500", icon: "🏥", button: "bg-red-500 hover:bg-red-600", buttonHover: "text-white" },
-      "Prenatal/Maternal": { bg: "bg-pink-200", border: "border-b-4 border-pink-600", icon: "🤰", button: "bg-pink-600 hover:bg-pink-700", buttonHover: "text-white" },
+      "Prenatal/Maternal": { bg: "bg-pink-200", border: "border-b-4 border-pink-600", icon: "���", button: "bg-pink-600 hover:bg-pink-700", buttonHover: "text-white" },
       "Dental": { bg: "bg-sky-100", border: "border-b-4 border-sky-500", icon: "🦷", button: "bg-sky-500 hover:bg-sky-600", buttonHover: "text-white" },
       "Domestic Violence": { bg: "bg-rose-100", border: "border-b-4 border-rose-600", icon: "🛑", button: "bg-rose-600 hover:bg-rose-700", buttonHover: "text-white" },
       "Employment": { bg: "bg-purple-100", border: "border-b-4 border-purple-500", icon: "💼", button: "bg-purple-500 hover:bg-purple-600", buttonHover: "text-white" },
@@ -708,7 +791,7 @@ export default function Home() {
                       <tr className="border-b hover:bg-teal-50">
                         <td className="px-4 py-3 font-semibold">Aetna Better Health</td>
                         <td className="px-4 py-3 text-teal-700 font-bold">(866) 316-3784</td>
-                        <td className="px-4 py-3 text-gray-600">Mon–Fri, 8 AM – 5 PM</td>
+                        <td className="px-4 py-3 text-gray-600">Mon��Fri, 8 AM – 5 PM</td>
                       </tr>
                       <tr className="border-b hover:bg-teal-50">
                         <td className="px-4 py-3 font-semibold">Blue Cross Complete</td>
@@ -785,18 +868,30 @@ export default function Home() {
                     {resource.address && (
                       <div className="flex gap-3 items-start">
                         <MapPin size={18} className="text-teal-600 flex-shrink-0 mt-0.5" />
-                        <a 
-                          href={`https://maps.google.com/?q=${encodeURIComponent(resource.address.replace(/<[^>]*>/g, ''))}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-teal-700 hover:underline"
-                          dangerouslySetInnerHTML={{ __html: resource.address }}
-                        ></a>
+                        {resource.address === "Multiple Locations" && resource.locations ? (
+                          <div className="flex flex-col gap-1">
+                            <button
+                              onClick={() => setShowMCDCLocations(true)}
+                              className="text-teal-700 hover:underline cursor-pointer font-semibold text-left"
+                            >
+                              {resource.address}
+                            </button>
+                            <span className="text-xs text-gray-500">(Click for address and direct phone number)</span>
+                          </div>
+                        ) : (
+                          <a 
+                            href={`https://maps.google.com/?q=${encodeURIComponent(resource.address.replace(/<[^>]*>/g, ''))}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-teal-700 hover:underline"
+                            dangerouslySetInnerHTML={{ __html: resource.address }}
+                          ></a>
+                        )}
                       </div>
                     )}
                     {resource.phone !== "See Locations" && (
                       <div className="flex gap-3 items-center">
-                        <Phone size={18} className="text-teal-600 flex-shrink-0" />
+                        {resource.name !== "Smile Help Now" && <Phone size={18} className="text-teal-600 flex-shrink-0" />}
                         <PhoneLink phoneNumber={resource.phone} displayText={resource.phone} />
                       </div>
                     )}
@@ -859,6 +954,11 @@ export default function Home() {
                         <p className="text-gray-800"><span className="font-bold">Restore Hours:</span> {resource.officeHours}</p>
                       </div>
                     )}
+                    {resource.officeDescription && (
+                      <div className="pt-3 border-t border-gray-300 mt-3">
+                        <p className="text-sm text-gray-700">{resource.officeDescription}</p>
+                      </div>
+                    )}
                   </div>
                   {resource.link ? (
                     <Link href={resource.link}>
@@ -894,6 +994,7 @@ export default function Home() {
       </main>
 
       <Footer />
+      <MCDCLocationsModal isOpen={showMCDCLocations} onClose={() => setShowMCDCLocations(false)} />
       <SecondChanceModal isOpen={showSecondChanceModal} onClose={() => setShowSecondChanceModal(false)} />
     </>
   )
