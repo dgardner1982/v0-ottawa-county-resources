@@ -75,7 +75,7 @@ function PhoneLink({ phoneNumber, displayText }: { phoneNumber: string; displayT
 
 const RESOURCES: Resource[] = [
   // Overdose Prevention
-  { name: "Naloxone/Narcan", category: "Overdose Prevention/Free Naloxone(Narcan)", address: "Multiple locations", phone: "See Locations", info: "Naloxone (Narcan) is a life-saving medication to reverse opioid overdose. Free kits are available in Ottawa County. For a list of locations click below.", link: "/naloxone-locations" },
+  { name: "Free Naloxone/Narcan", category: "Overdose Prevention/Free Naloxone(Narcan)", address: "Multiple locations", phone: "See Locations", info: "Free naloxone (Narcan) is a life-saving medication to reverse opioid overdose. Free kits are available in Ottawa County. For a list of locations click below.", link: "/naloxone-locations" },
   { name: "Overdose Prevention Training", category: "Overdose Prevention/Free Naloxone(Narcan)", address: "", phone: "616-393-4489", info: "Overdose Prevention and Naloxone Training. To schedule a free overdose prevention training for yourself or your organization contact Daniel at dgardner@miottawa.org or call 616-393-4489." },
 
   // Harm Reduction
