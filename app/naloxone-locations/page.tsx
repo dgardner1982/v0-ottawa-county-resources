@@ -112,6 +112,18 @@ export default function NaloxoneLocations() {
         </div>
 
         <div className="bg-blue-50 border-2 border-blue-300 p-6 rounded-lg mb-8 text-center">
+          <p className="text-lg font-bold text-blue-900 mb-3">For an Ottawa County map of free naloxone locations, click here.</p>
+          <a
+            href="https://www.google.com/maps/dir/?api=1&origin=347+Hoover+Blvd%2C+Holland%2C+MI+49423&destination=347+Hoover+Blvd%2C+Holland%2C+MI+49423&waypoints=15100+Whittaker+Way%2C+Grand+Haven%2C+MI+49417%7C8333+Felch+St%2C+Zeeland%2C+MI+49464%7C401+N+7th+St%2C+Grand+Haven%2C+MI+49417%7C12220+Fillmore+Ave%2C+West+Olive%2C+MI+49426%7C420+Washington+Ave%2C+Grand+Haven%2C+MI+49417%7C483+Century+Lane%2C+Holland%2C+MI+49424%7C2416+Van+Ommen+Dr%2C+Holland%2C+MI+49424"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3 rounded-lg transition"
+          >
+            View Ottawa County Map
+          </a>
+        </div>
+
+        <div className="bg-blue-50 border-2 border-blue-300 p-6 rounded-lg mb-8 text-center">
           <p className="text-lg font-bold text-blue-900 mb-3">For a state map of free naloxone locations, click here.</p>
           <a
             href="https://www.google.com/maps/d/u/0/embed?mid=1W-AhICd89o-740l0rUlEbLMUmJNSPyU&ehbc=2E312F&ll=42.97444424797593%2C-85.59040682815237&z=10"
