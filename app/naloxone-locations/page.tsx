@@ -111,6 +111,30 @@ export default function NaloxoneLocations() {
           </ul>
         </div>
 
+        <div className="bg-blue-50 border-2 border-blue-300 p-6 rounded-lg mb-8 text-center">
+          <p className="text-lg font-bold text-blue-900 mb-3">For an Ottawa County map of free naloxone locations, click here.</p>
+          <a
+            href="/ottawa-county-map"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3 rounded-lg transition"
+          >
+            View Ottawa County Map
+          </a>
+        </div>
+
+        <div className="bg-blue-50 border-2 border-blue-300 p-6 rounded-lg mb-8 text-center">
+          <p className="text-lg font-bold text-blue-900 mb-3">For a state map of free naloxone locations, click here.</p>
+          <a
+            href="https://www.google.com/maps/d/u/0/embed?mid=1W-AhICd89o-740l0rUlEbLMUmJNSPyU&ehbc=2E312F&ll=42.97444424797593%2C-85.59040682815237&z=10"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3 rounded-lg transition"
+          >
+            View State Map
+          </a>
+        </div>
+
         <div className="bg-green-50 border-l-4 border-green-600 p-6 rounded-lg mb-8">
           <h2 className="text-2xl font-bold text-green-700 mb-4">Interested in being trained on naloxone administration?</h2>
           <p className="text-gray-700 mb-4">Learn to recognize the signs and symptoms of overdose, risk factors from overdose and responding to an overdose with naloxone.</p>
