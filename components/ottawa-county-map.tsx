@@ -1,7 +1,6 @@
 'use client'
 
 import 'leaflet/dist/leaflet.css'
-import L from 'leaflet'
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 
 const locations = [
@@ -20,17 +19,7 @@ const locations = [
   { name: 'Momentum Center - Grand Haven', address: '401 N 7th St, Grand Haven, MI 49417', position: [43.0652, -86.2286] as [number, number] },
 ]
 
-const markerIcon = new L.Icon({
-  iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
-  iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
-  shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41],
-})
-
-export function OttawaCountyMap() {
+export default function OttawaCountyMap() {
   return (
     <MapContainer center={[42.88, -86.12]} zoom={11} scrollWheelZoom className="h-[600px] w-full rounded-xl">
       <TileLayer
@@ -38,7 +27,7 @@ export function OttawaCountyMap() {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       {locations.map((location) => (
-        <Marker key={`${location.name}-${location.address}`} position={location.position} icon={markerIcon}>
+        <Marker key={`${location.name}-${location.address}`} position={location.position}>
           <Popup>
             <strong>{location.name}</strong>
             <br />

@@ -1,5 +1,12 @@
+'use client'
+
+import dynamic from 'next/dynamic'
 import Link from 'next/link'
-import { OttawaCountyMap } from '@/components/ottawa-county-map'
+
+const OttawaCountyMap = dynamic(
+  () => import('@/components/ottawa-county-map'),
+  { ssr: false },
+)
 
 export default function OttawaCountyMapPage() {
   return (
