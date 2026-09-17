@@ -21,7 +21,17 @@ const locations = [
 
 export default function OttawaCountyMap() {
   return (
-    <MapContainer center={[42.88, -86.12]} zoom={11} scrollWheelZoom className="h-[600px] w-full rounded-xl">
+    <>
+      <style jsx global>{`
+        .leaflet-marker-icon {
+          content: url('/leaflet/marker-icon.png');
+        }
+
+        .leaflet-marker-shadow {
+          content: url('/leaflet/marker-shadow.png');
+        }
+      `}</style>
+      <MapContainer center={[42.88, -86.12]} zoom={11} scrollWheelZoom className="h-[600px] w-full rounded-xl">
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -35,6 +45,7 @@ export default function OttawaCountyMap() {
           </Popup>
         </Marker>
       ))}
-    </MapContainer>
+      </MapContainer>
+    </>
   )
 }
