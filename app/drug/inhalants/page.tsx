@@ -28,19 +28,6 @@ export default function InhalantsPage() {
       </header>
 
       <main className="max-w-6xl mx-auto px-4 py-12">
-        <div className="bg-blue-100 border-l-4 border-blue-600 p-6 rounded-lg mb-8">
-          <p className="text-lg text-gray-700">
-            For specific information about <strong>Duster/Compressed Air</strong>, click{' '}
-            <a 
-              href="https://gemini.google.com/share/b5a5d42e7caf" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded-lg transition"
-            >
-              here
-            </a>
-          </p>
-        </div>
 
         <div className="bg-cyan-100 border-l-4 border-cyan-600 p-6 rounded-lg mb-8">
           <p className="text-lg text-gray-700">

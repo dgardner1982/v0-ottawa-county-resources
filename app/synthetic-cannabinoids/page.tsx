@@ -109,21 +109,6 @@ export default function SyntheticCannabinoidsPage() {
           </Link>
         </div>
 
-        {/* More Information Section */}
-        <div className="bg-teal-100 border-l-4 border-teal-600 p-6 rounded-lg mb-8">
-          <p className="text-lg text-gray-700">
-            For more detailed information, click{' '}
-            <a 
-              href="https://gemini.google.com/share/39b4c15afd9a" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-block bg-teal-600 hover:bg-teal-700 text-white font-bold px-4 py-2 rounded-lg transition"
-            >
-              here
-            </a>
-          </p>
-        </div>
-
         {/* Street Names Button */}
         <div className="bg-teal-100 border-l-4 border-teal-600 p-6 rounded-lg mb-8">
           <Link href="/street-names/synthetic-cannabinoids">
