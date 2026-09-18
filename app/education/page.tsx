@@ -16,7 +16,10 @@ export default function EducationPage() {
   };
   
   const drugs = [
+    { name: "Alcohol", icon: "AL", slug: "alcohol", color: "border-amber-600", bgColor: "bg-amber-50" },
     { name: "Cocaine", slug: "cocaine", color: "border-red-500", bgColor: "bg-red-50", image: "/drug-icons/cocaine.jpg" },
+    { name: "Crack Cocaine", icon: "CC", slug: "crack-cocaine", color: "border-red-700", bgColor: "bg-red-50" },
+    { name: "MDMA", icon: "MD", slug: "mdma", color: "border-pink-600", bgColor: "bg-pink-50" },
     { name: "Cyclorphine", icon: "💀", slug: "cyclorphine", color: "border-purple-700", bgColor: "bg-purple-100" },
     { name: "Fentanyl", icon: "⚠️", slug: "fentanyl", color: "border-red-600", bgColor: "bg-red-100" },
     { name: "Hemp-Derived Cannabinoids", icon: "🌱", slug: "hemp-derived-cannabinoids", color: "border-green-600", bgColor: "bg-green-100" },
@@ -28,8 +31,11 @@ export default function EducationPage() {
     { name: "Methadone", slug: "methadone", color: "border-blue-500", bgColor: "bg-blue-50", image: "/drug-icons/methadone.jpg" },
     { name: "Methamphetamine", icon: "⚡", slug: "methamphetamine", color: "border-orange-500", bgColor: "bg-orange-50" },
     { name: "Nitazine", icon: "💊", slug: "nitazine", color: "border-yellow-600", bgColor: "bg-yellow-50" },
-    { name: "PCP", icon: "⛔", slug: "pcp", color: "border-red-700", bgColor: "bg-red-200" },
-    { name: "Synthetic Cannabinoids", icon: "🌿", slug: "synthetic-cannabinoids", color: "border-teal-500", bgColor: "bg-teal-50" },
+    { name: "PCP", icon: "PCP", slug: "pcp", color: "border-red-700", bgColor: "bg-red-200" },
+    { name: "Psilocybin", icon: "PSI", slug: "psilocybin", color: "border-emerald-600", bgColor: "bg-emerald-50" },
+    { name: "LSD", icon: "LSD", slug: "lsd", color: "border-violet-600", bgColor: "bg-violet-50" },
+    { name: "Suboxone", icon: "SUB", slug: "suboxone", color: "border-cyan-600", bgColor: "bg-cyan-50" },
+    { name: "Synthetic Cannabinoids", icon: "SC", slug: "synthetic-cannabinoids", color: "border-teal-500", bgColor: "bg-teal-50" },
     { name: "THC", slug: "thc", color: "border-lime-500", bgColor: "bg-lime-50", image: "/drug-icons/thc.jpg" },
     { name: "Xylazine", slug: "xylazine", color: "border-purple-500", bgColor: "bg-purple-50", image: "/drug-icons/xylazine.jpg" }
   ];
