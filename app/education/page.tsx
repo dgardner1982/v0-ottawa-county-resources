@@ -3,6 +3,7 @@
 import { useState, useRef } from 'react';
 import Link from 'next/link';
 import { Footer } from '@/components/footer';
+import { Input } from '@/components/ui/input';
 import {
   AlertTriangle,
   Atom,
@@ -19,10 +20,12 @@ import {
   Wind,
   Wine,
   Zap,
+  Search,
 } from 'lucide-react';
 
 export default function EducationPage() {
   const [activeTab, setActiveTab] = useState('infograph');
+  const [searchQuery, setSearchQuery] = useState('');
   const contentRef = useRef<HTMLDivElement>(null);
 
   const handleTabClick = (tab: string) => {
@@ -67,6 +70,10 @@ export default function EducationPage() {
     { name: "THC", symbol: Leaf, slug: "thc", color: "border-lime-500", bgColor: "bg-lime-50", image: "/drug-icons/thc.jpg" },
     { name: "Xylazine", symbol: FlaskConical, slug: "xylazine", color: "border-purple-500", bgColor: "bg-purple-50", image: "/drug-icons/xylazine.jpg" }
   ];
+
+  const filteredDrugs = drugs.filter((drug) =>
+    drug.name.toLowerCase().includes(searchQuery.trim().toLowerCase()),
+  );
 
   return (
     <>
@@ -114,6 +121,23 @@ export default function EducationPage() {
           <p className="text-lg">Learn about emerging substances, recognize dangers, and discover paths to recovery. This information is for harm reduction and education based on current CDC and public health data.</p>
         </div>
 
+        <div className="mb-10">
+          <label htmlFor="substance-search" className="sr-only">
+            Search substance guides
+          </label>
+          <div className="relative mx-auto max-w-3xl">
+            <Search aria-hidden="true" className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-teal-700" />
+            <Input
+              id="substance-search"
+              type="search"
+              value={searchQuery}
+              onChange={(event) => setSearchQuery(event.target.value)}
+              placeholder="Search substance guides..."
+              className="h-14 rounded-xl border-2 border-teal-200 bg-white pl-12 pr-4 text-lg shadow-sm focus-visible:border-teal-500 focus-visible:ring-teal-200"
+            />
+          </div>
+        </div>
+
         {/* Tab Navigation */}
         <div className="flex gap-4 mb-8 border-b border-gray-300" ref={contentRef}>
           <button
@@ -141,7 +165,7 @@ export default function EducationPage() {
         {/* Drug Boxes Tab */}
         {activeTab === 'infograph' && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {drugs.map((drug, idx) => {
+            {filteredDrugs.length > 0 ? filteredDrugs.map((drug, idx) => {
               const href = drug.slug === 'synthetic-cannabinoids' ? '/synthetic-cannabinoids' : `/drug/${drug.slug}`;
               return (
                 <Link key={idx} href={href}>
@@ -157,7 +181,11 @@ export default function EducationPage() {
                   </div>
                 </Link>
               );
-            })}
+            }) : (
+              <p className="col-span-full rounded-lg border border-dashed border-teal-300 bg-teal-50 p-8 text-center text-lg text-teal-900">
+                No substance guides match “{searchQuery}”.
+              </p>
+            )}
           </div>
         )}
 
