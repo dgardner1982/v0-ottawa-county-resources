@@ -3,6 +3,23 @@
 import { useState, useRef } from 'react';
 import Link from 'next/link';
 import { Footer } from '@/components/footer';
+import {
+  AlertTriangle,
+  Atom,
+  Brain,
+  Droplets,
+  FlaskConical,
+  Leaf,
+  Microscope,
+  Pill,
+  ShieldAlert,
+  Sparkles,
+  Syringe,
+  TestTube,
+  Wind,
+  Wine,
+  Zap,
+} from 'lucide-react';
 
 export default function EducationPage() {
   const [activeTab, setActiveTab] = useState('infograph');
@@ -16,38 +33,38 @@ export default function EducationPage() {
   };
   
   const drugs = [
-    { name: "Alcohol", icon: "AL", slug: "alcohol", color: "border-amber-600", bgColor: "bg-amber-50" },
-    { name: "Bromazolam", icon: "BR", slug: "bromazolam", color: "border-slate-700", bgColor: "bg-slate-50" },
-    { name: "7-Hydroxymitragynine (7-OH)", icon: "7-OH", slug: "7-hydroxymitragynine", color: "border-lime-600", bgColor: "bg-lime-50" },
-    { name: "Alprazolam", icon: "X", slug: "alprazolam", color: "border-sky-600", bgColor: "bg-sky-50" },
-    { name: "Adderall", icon: "AD", slug: "adderall", color: "border-orange-600", bgColor: "bg-orange-50" },
-    { name: "Cocaine", slug: "cocaine", color: "border-red-500", bgColor: "bg-red-50", image: "/drug-icons/cocaine.jpg" },
-    { name: "Crack Cocaine", icon: "CC", slug: "crack-cocaine", color: "border-red-700", bgColor: "bg-red-50" },
-    { name: "Dextromethorphan (DXM)", icon: "DXM", slug: "dextromethorphan", color: "border-fuchsia-600", bgColor: "bg-fuchsia-50" },
-    { name: "GHB", icon: "GHB", slug: "ghb", color: "border-cyan-600", bgColor: "bg-cyan-50" },
-    { name: "MDMA", icon: "MD", slug: "mdma", color: "border-pink-600", bgColor: "bg-pink-50" },
-    { name: "Oxycodone", icon: "OXY", slug: "oxycodone", color: "border-amber-600", bgColor: "bg-amber-50" },
-    { name: "Pregabalin", icon: "PGB", slug: "pregabalin", color: "border-green-600", bgColor: "bg-green-50" },
-    { name: "Cyclorphine", icon: "💀", slug: "cyclorphine", color: "border-purple-700", bgColor: "bg-purple-100" },
-    { name: "Fentanyl", icon: "⚠️", slug: "fentanyl", color: "border-red-600", bgColor: "bg-red-100" },
-    { name: "Hemp-Derived Cannabinoids", icon: "🌱", slug: "hemp-derived-cannabinoids", color: "border-green-600", bgColor: "bg-green-100" },
-    { name: "Heroin", icon: "💉", slug: "heroin", color: "border-amber-700", bgColor: "bg-amber-50" },
-    { name: "Inhalants", icon: "💨", slug: "inhalants", color: "border-pink-500", bgColor: "bg-pink-50" },
-    { name: "Ketamine", icon: "🧪", slug: "ketamine", color: "border-indigo-500", bgColor: "bg-indigo-50" },
-    { name: "Kratom", icon: "🍃", slug: "kratom", color: "border-green-500", bgColor: "bg-green-50" },
-    { name: "Medetomidine", icon: "🔬", slug: "medetomidine", color: "border-indigo-600", bgColor: "bg-indigo-100" },
-    { name: "Methadone", slug: "methadone", color: "border-blue-500", bgColor: "bg-blue-50", image: "/drug-icons/methadone.jpg" },
-    { name: "Methamphetamine", icon: "⚡", slug: "methamphetamine", color: "border-orange-500", bgColor: "bg-orange-50" },
-    { name: "Nitazine", icon: "💊", slug: "nitazine", color: "border-yellow-600", bgColor: "bg-yellow-50" },
-    { name: "PCP", icon: "PCP", slug: "pcp", color: "border-red-700", bgColor: "bg-red-200" },
-    { name: "Psilocybin", icon: "PSI", slug: "psilocybin", color: "border-emerald-600", bgColor: "bg-emerald-50" },
-    { name: "LSD", icon: "LSD", slug: "lsd", color: "border-violet-600", bgColor: "bg-violet-50" },
-    { name: "Ritalin", icon: "RIT", slug: "ritalin", color: "border-indigo-600", bgColor: "bg-indigo-50" },
-    { name: "Tianeptine", icon: "TIA", slug: "tianeptine", color: "border-red-600", bgColor: "bg-red-50" },
-    { name: "Suboxone", icon: "SUB", slug: "suboxone", color: "border-cyan-600", bgColor: "bg-cyan-50" },
-    { name: "Synthetic Cannabinoids", icon: "SC", slug: "synthetic-cannabinoids", color: "border-teal-500", bgColor: "bg-teal-50" },
-    { name: "THC", slug: "thc", color: "border-lime-500", bgColor: "bg-lime-50", image: "/drug-icons/thc.jpg" },
-    { name: "Xylazine", slug: "xylazine", color: "border-purple-500", bgColor: "bg-purple-50", image: "/drug-icons/xylazine.jpg" }
+    { name: "Alcohol", symbol: Wine, slug: "alcohol", color: "border-amber-600", bgColor: "bg-amber-50" },
+    { name: "Bromazolam", symbol: Pill, slug: "bromazolam", color: "border-slate-700", bgColor: "bg-slate-50" },
+    { name: "7-Hydroxymitragynine (7-OH)", symbol: Leaf, slug: "7-hydroxymitragynine", color: "border-lime-600", bgColor: "bg-lime-50" },
+    { name: "Alprazolam", symbol: Pill, slug: "alprazolam", color: "border-sky-600", bgColor: "bg-sky-50" },
+    { name: "Adderall", symbol: Zap, slug: "adderall", color: "border-orange-600", bgColor: "bg-orange-50" },
+    { name: "Cocaine", symbol: Pill, slug: "cocaine", color: "border-red-500", bgColor: "bg-red-50", image: "/drug-icons/cocaine.jpg" },
+    { name: "Crack Cocaine", symbol: Atom, slug: "crack-cocaine", color: "border-red-700", bgColor: "bg-red-50" },
+    { name: "Dextromethorphan (DXM)", symbol: FlaskConical, slug: "dextromethorphan", color: "border-fuchsia-600", bgColor: "bg-fuchsia-50" },
+    { name: "GHB", symbol: Droplets, slug: "ghb", color: "border-cyan-600", bgColor: "bg-cyan-50" },
+    { name: "MDMA", symbol: Sparkles, slug: "mdma", color: "border-pink-600", bgColor: "bg-pink-50" },
+    { name: "Oxycodone", symbol: Pill, slug: "oxycodone", color: "border-amber-600", bgColor: "bg-amber-50" },
+    { name: "Pregabalin", symbol: Brain, slug: "pregabalin", color: "border-green-600", bgColor: "bg-green-50" },
+    { name: "Cyclorphine", symbol: ShieldAlert, slug: "cyclorphine", color: "border-purple-700", bgColor: "bg-purple-100" },
+    { name: "Fentanyl", symbol: AlertTriangle, slug: "fentanyl", color: "border-red-600", bgColor: "bg-red-100" },
+    { name: "Hemp-Derived Cannabinoids", symbol: Leaf, slug: "hemp-derived-cannabinoids", color: "border-green-600", bgColor: "bg-green-100" },
+    { name: "Heroin", symbol: Syringe, slug: "heroin", color: "border-amber-700", bgColor: "bg-amber-50" },
+    { name: "Inhalants", symbol: Wind, slug: "inhalants", color: "border-pink-500", bgColor: "bg-pink-50" },
+    { name: "Ketamine", symbol: TestTube, slug: "ketamine", color: "border-indigo-500", bgColor: "bg-indigo-50" },
+    { name: "Kratom", symbol: Leaf, slug: "kratom", color: "border-green-500", bgColor: "bg-green-50" },
+    { name: "Medetomidine", symbol: Microscope, slug: "medetomidine", color: "border-indigo-600", bgColor: "bg-indigo-100" },
+    { name: "Methadone", symbol: Pill, slug: "methadone", color: "border-blue-500", bgColor: "bg-blue-50", image: "/drug-icons/methadone.jpg" },
+    { name: "Methamphetamine", symbol: Zap, slug: "methamphetamine", color: "border-orange-500", bgColor: "bg-orange-50" },
+    { name: "Nitazine", symbol: Pill, slug: "nitazine", color: "border-yellow-600", bgColor: "bg-yellow-50" },
+    { name: "PCP", symbol: FlaskConical, slug: "pcp", color: "border-red-700", bgColor: "bg-red-200" },
+    { name: "Psilocybin", symbol: Leaf, slug: "psilocybin", color: "border-emerald-600", bgColor: "bg-emerald-50" },
+    { name: "LSD", symbol: Sparkles, slug: "lsd", color: "border-violet-600", bgColor: "bg-violet-50" },
+    { name: "Ritalin", symbol: Pill, slug: "ritalin", color: "border-indigo-600", bgColor: "bg-indigo-50" },
+    { name: "Tianeptine", symbol: Pill, slug: "tianeptine", color: "border-red-600", bgColor: "bg-red-50" },
+    { name: "Suboxone", symbol: Pill, slug: "suboxone", color: "border-cyan-600", bgColor: "bg-cyan-50" },
+    { name: "Synthetic Cannabinoids", symbol: Leaf, slug: "synthetic-cannabinoids", color: "border-teal-500", bgColor: "bg-teal-50" },
+    { name: "THC", symbol: Leaf, slug: "thc", color: "border-lime-500", bgColor: "bg-lime-50", image: "/drug-icons/thc.jpg" },
+    { name: "Xylazine", symbol: FlaskConical, slug: "xylazine", color: "border-purple-500", bgColor: "bg-purple-50", image: "/drug-icons/xylazine.jpg" }
   ];
 
   return (
@@ -132,7 +149,7 @@ export default function EducationPage() {
                       {drug.image ? (
                         <img src={drug.image} alt={drug.name} className="w-20 h-20 object-contain mx-auto" />
                       ) : (
-                        <div className="text-5xl">{drug.icon}</div>
+                        <drug.symbol aria-hidden="true" className="h-16 w-16 stroke-[1.5] text-teal-700" />
                       )}
                     </div>
                     <h3 className="text-xl font-bold text-gray-900">{drug.name}</h3>
