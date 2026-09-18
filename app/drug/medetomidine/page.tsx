@@ -28,22 +28,6 @@ export default function MedetomidinePage() {
       </header>
 
       <main className="max-w-6xl mx-auto px-4 py-12">
-        <div className="bg-indigo-100 border-l-4 border-indigo-600 p-6 rounded-lg mb-8">
-          <p className="text-lg text-gray-700 mb-4">
-            Estimated to be 100 to 200 times more potent than xylazine. It triggers profound central nervous system depression far exceeding standard street adulterants.
-          </p>
-          <p className="text-lg text-gray-700 mb-4">
-            For more detailed information, click{' '}
-            <a 
-              href="https://gemini.google.com/share/53173a5b8e80" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-4 py-2 rounded-lg transition"
-            >
-              here
-            </a>
-          </p>
-        </div>
         <div className="bg-indigo-100 border-4 border-indigo-600 rounded-lg p-8 mb-12">
           <h2 className="text-3xl font-bold text-indigo-900 mb-4">EMERGING CRISIS</h2>
           <p className="text-lg text-indigo-900 font-bold mb-4">Medetomidine is a powerful veterinary sedative being illicitly used and mixed into drug supplies, creating serious overdose risks.</p>

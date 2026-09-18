@@ -31,19 +31,6 @@ export default function FentanylPage() {
           </Link>
         </div>
         <div className="bg-red-100 border-l-4 border-red-600 p-6 rounded-lg mb-8">
-          <p className="text-lg text-gray-700">
-            For more detailed information about Fentanyl, click{' '}
-            <a 
-              href="https://gemini.google.com/share/772d700f160f" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-block bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2 rounded-lg transition"
-            >
-              here
-            </a>
-          </p>
-        </div>
-        <div className="bg-red-100 border-l-4 border-red-600 p-6 rounded-lg mb-8">
           <Link href="/street-names/fentanyl">
             <button className="w-full text-lg bg-red-600 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-lg transition">
               View Street Names

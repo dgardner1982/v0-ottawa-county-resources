@@ -31,19 +31,6 @@ export default function HeroinPage() {
           </Link>
         </div>
         <div className="bg-amber-100 border-l-4 border-amber-700 p-6 rounded-lg mb-8">
-          <p className="text-lg text-gray-700">
-            For more detailed information, click{' '}
-            <a 
-              href="https://gemini.google.com/share/49a0c74c0de0" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-block bg-amber-700 hover:bg-amber-800 text-white font-bold px-4 py-2 rounded-lg transition"
-            >
-              here
-            </a>
-          </p>
-        </div>
-        <div className="bg-amber-100 border-l-4 border-amber-700 p-6 rounded-lg mb-8">
           <Link href="/street-names/heroin">
             <button className="w-full text-lg bg-amber-700 hover:bg-amber-800 text-white font-bold px-6 py-3 rounded-lg transition">
               View Street Names
