@@ -25,7 +25,30 @@ import {
 
 export default function EducationPage() {
   const [activeTab, setActiveTab] = useState('infograph');
+  const [supportTab, setSupportTab] = useState<'resources' | 'support'>('resources');
   const [searchQuery, setSearchQuery] = useState('');
+
+  const substanceResources = [
+    { name: 'Free Naloxone/Narcan', type: 'Overdose Prevention', description: 'Free naloxone kits and locations throughout Ottawa County.', href: '/naloxone-locations' },
+    { name: 'Overdose Prevention Training', type: 'Overdose Prevention', description: 'Free training for individuals and organizations. Call 616-393-4489 or email dgardner@miottawa.org.', href: 'tel:6163934489' },
+    { name: 'Grand Rapids Red Project', type: 'Harm Reduction', description: 'Comprehensive harm reduction services and a mobile health unit serving the area.', href: 'https://www.redproject.org' },
+    { name: 'Arbor Circle - Holland', type: 'Substance Recovery', description: 'Substance use treatment and recovery programs. Call (616) 396-2301.', href: 'https://arborcircle.org' },
+    { name: 'Reach for Recovery', type: 'Substance Recovery', description: 'Counseling, recovery community connection, and outpatient and residential programs.', href: 'https://reachforrecovery.org' },
+    { name: 'Community Mental Health of Ottawa County', type: 'Substance Recovery', description: 'Access services in Holland or Grand Haven, with crisis support available 24/7.', href: 'https://www.miottawa.org/cmh' },
+    { name: 'New Vision Withdrawal Management', type: 'Substance Recovery', description: 'Inpatient detoxification and withdrawal management at Trinity Health Grand Haven Hospital.', href: 'https://trinityhealthmichigan.org' },
+    { name: 'Samaritas', type: 'Medication-Assisted Treatment', description: 'Medication-assisted treatment and integrated recovery support in Holland and Grand Haven.', href: 'https://www.samaritas.org' },
+  ];
+
+  const supportGroups = [
+    { name: 'Alcoholics Anonymous (AA)', description: 'Fellowship for people recovering from alcohol addiction using a 12-step program.', href: 'https://www.aa.org' },
+    { name: 'Narcotics Anonymous (NA)', description: 'Peer support for recovery from drug addiction through 12-step principles.', href: 'https://www.na.org' },
+    { name: 'SMART Recovery', description: 'A science-based approach emphasizing self-empowerment and a four-point program.', href: 'https://www.smartrecovery.org' },
+    { name: 'Crystal Meth Anonymous (CMA)', description: 'Support specifically for people struggling with methamphetamine addiction.', href: 'https://www.crystalmeth.org' },
+    { name: 'Cocaine Anonymous (CA)', description: 'A 12-step program for cocaine and other stimulant addiction.', href: 'https://www.ca.org' },
+    { name: 'Al-Anon/Alateen', description: 'Support for families and friends affected by someone else’s drinking.', href: 'https://www.al-anon.org' },
+    { name: 'Nar-Anon', description: 'Support for families and friends affected by someone’s drug addiction.', href: 'https://www.nar-anon.org' },
+    { name: 'Recovery Dharma', description: 'A mindfulness-based, Buddhist-inspired approach to addiction recovery.', href: 'https://www.recoverydharma.org' },
+  ];
   const contentRef = useRef<HTMLDivElement>(null);
 
   const handleTabClick = (tab: string) => {
@@ -151,14 +174,24 @@ export default function EducationPage() {
             Drug Information & Effects
           </button>
           <button
-            onClick={() => handleTabClick('support')}
+            onClick={() => { setSupportTab('resources'); handleTabClick('support'); }}
             className={`px-6 py-3 font-semibold border-b-4 transition ${
-              activeTab === 'support'
+              activeTab === 'support' && supportTab === 'resources'
                 ? 'border-teal-600 text-teal-600'
                 : 'border-transparent text-gray-600 hover:text-gray-800'
             }`}
           >
-            Resources & Support
+            Resources
+          </button>
+          <button
+            onClick={() => { setSupportTab('support'); handleTabClick('support'); }}
+            className={`px-6 py-3 font-semibold border-b-4 transition ${
+              activeTab === 'support' && supportTab === 'support'
+                ? 'border-teal-600 text-teal-600'
+                : 'border-transparent text-gray-600 hover:text-gray-800'
+            }`}
+          >
+            Support Groups
           </button>
         </div>
 
@@ -192,51 +225,38 @@ export default function EducationPage() {
         {/* Interactive Infograph Tab - Now removed, showing drug boxes instead */}
         
 
-        {/* Resources & Support Tab */}
+        {/* Resources and Support Groups tabs */}
         {activeTab === 'support' && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-            <div className="bg-blue-100 p-6 rounded-lg border-l-4 border-blue-500">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Overdose Prevention</h3>
-              <ul className="space-y-2 text-gray-700">
-                <li>✓ Recognize signs: unresponsiveness, blue lips, slow breathing</li>
-                <li>✓ Call 9-1-1 immediately - Good Samaritan protection applies</li>
-                <li>✓ Use Narcan if available - it reverses opioid overdoses</li>
-                <li>✓ Place person in recovery position</li>
-                <li>✓ Stay until emergency services arrive</li>
-              </ul>
+          <div className="mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+              <div className="bg-blue-100 p-6 rounded-lg border-l-4 border-blue-500">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Overdose Prevention</h3>
+                <ul className="space-y-2 text-gray-700"><li>Recognize unresponsiveness, blue lips, and slow breathing.</li><li>Call 9-1-1; Good Samaritan protection applies.</li><li>Use Narcan if available and place the person in recovery position.</li><li>Stay until emergency services arrive.</li></ul>
+              </div>
+              <div className="bg-green-100 p-6 rounded-lg border-l-4 border-green-500">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Harm Reduction</h3>
+                <ul className="space-y-2 text-gray-700"><li>Never use alone and keep emergency contacts accessible.</li><li>Use sterile equipment every time.</li><li>Start with a small test dose when using new supplies.</li><li>Seek professional help; treatment works.</li></ul>
+              </div>
+              <div className="bg-purple-100 p-6 rounded-lg border-l-4 border-purple-500">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Recovery Resources</h3>
+                <ul className="space-y-2 text-gray-700"><li>Medication-Assisted Treatment (MAT).</li><li>Residential and outpatient treatment programs.</li><li>Support groups for community and accountability.</li><li>Mental health support.</li></ul>
+              </div>
+              <div className="bg-orange-100 p-6 rounded-lg border-l-4 border-orange-500">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Support for Loved Ones</h3>
+                <ul className="space-y-2 text-gray-700"><li>Set healthy boundaries with compassion.</li><li>Learn about addiction as a medical condition.</li><li>Encourage professional help.</li><li>Take care of your own mental health.</li></ul>
+              </div>
             </div>
 
-            <div className="bg-green-100 p-6 rounded-lg border-l-4 border-green-500">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Harm Reduction</h3>
-              <ul className="space-y-2 text-gray-700">
-                <li>✓ Never use alone - have someone with you</li>
-                <li>✓ Start with small test dose if using new supplies</li>
-                <li>✓ Use sterile equipment every time</li>
-                <li>✓ Keep emergency contacts accessible</li>
-                <li>✓ Seek professional help - treatment works</li>
-              </ul>
-            </div>
-
-            <div className="bg-purple-100 p-6 rounded-lg border-l-4 border-purple-500">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Recovery Resources</h3>
-              <ul className="space-y-2 text-gray-700">
-                <li>✓ Medication-Assisted Treatment (MAT)</li>
-                <li>✓ Support groups for community and accountability</li>
-                <li>✓ Residential treatment programs</li>
-                <li>✓ Outpatient services</li>
-                <li>✓ Mental health support</li>
-              </ul>
-            </div>
-
-            <div className="bg-orange-100 p-6 rounded-lg border-l-4 border-orange-500">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Support for Loved Ones</h3>
-              <ul className="space-y-2 text-gray-700">
-                <li>✓ Set healthy boundaries with compassion</li>
-                <li>✓ Learn about addiction as a medical condition</li>
-                <li>✓ Encourage professional help</li>
-                <li>✓ Take care of your own mental health</li>
-                <li>✓ Join support groups (Al-Anon, Nar-Anon)</li>
-              </ul>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">{supportTab === 'resources' ? 'Substance Use Resources' : 'Support Group Information'}</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {(supportTab === 'resources' ? substanceResources : supportGroups).map((item) => (
+                <article key={item.name} className="rounded-lg border border-teal-200 bg-white p-6 shadow-sm">
+                  <p className="mb-2 text-sm font-bold uppercase tracking-wide text-teal-700">{'type' in item ? item.type : 'Peer Support'}</p>
+                  <h3 className="text-2xl font-bold text-gray-900">{item.name}</h3>
+                  <p className="mt-3 leading-6 text-gray-700">{item.description}</p>
+                  <a href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noreferrer' : undefined} className="mt-4 inline-block font-semibold text-teal-700 underline">Learn more</a>
+                </article>
+              ))}
             </div>
           </div>
         )}
