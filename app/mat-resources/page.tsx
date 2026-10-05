@@ -12,7 +12,6 @@ interface MATProvider {
   website: string;
   hours: string;
   info: string;
-  rating?: number;
 }
 
 // Phone Call Handler Component
@@ -54,7 +53,6 @@ const MAT_PROVIDERS: MATProvider[] = [
     website: "ctcprograms.com",
     hours: "Mon–Fri 6:00 AM – 11:30 AM, Sat 6:30 AM – 9:30 AM",
     info: "Major provider of outpatient medication-assisted treatment for adults struggling with opioid use disorder. Offers methadone, Suboxone, and buprenorphine.",
-    rating: 4.7
   },
   {
     name: "Eastside Outpatient Services",
@@ -63,7 +61,6 @@ const MAT_PROVIDERS: MATProvider[] = [
     website: "eastsidesac.com",
     hours: "Mon–Fri 6:30 AM – 11:00 AM, Sat 8:00 AM – 10:00 AM",
     info: "Located just north of Ottawa County, provides liquid methadone treatment coupled with counseling and rehabilitative services in a safe environment.",
-    rating: 3.3
   },
   {
     name: "Cherry Health – Muskegon Recovery Center",
@@ -72,7 +69,6 @@ const MAT_PROVIDERS: MATProvider[] = [
     website: "cherryhealth.org",
     hours: "Mon–Fri 6:15 AM – 2:00 PM, Sat 6:30 AM – 10:30 AM",
     info: "Offers comprehensive MAT services including methadone and buprenorphine, integrated with individual and group therapy sessions.",
-    rating: 4.0
   },
   {
     name: "Holland Hospital Behavioral Health, Outpatient",
@@ -81,7 +77,6 @@ const MAT_PROVIDERS: MATProvider[] = [
     website: "hollandhospital.org",
     hours: "Mon–Thu 7:30 AM – 9:00 PM, Fri 7:30 AM – 5:00 PM",
     info: "Hospital-based outpatient behavioral health program offering buprenorphine and naltrexone alongside intensive outpatient services.",
-    rating: 2.5
   },
   {
     name: "Reach for Recovery",
@@ -90,7 +85,6 @@ const MAT_PROVIDERS: MATProvider[] = [
     website: "reachforrecovery.org",
     hours: "Mon–Fri 8:00 AM – 5:00 PM",
     info: "Formerly known as OAR, provides outpatient and residential medication-assisted services tailored for both men and women in the Holland area.",
-    rating: 1.5
   },
   {
     name: "Pine Rest Holland Clinic",
@@ -99,7 +93,6 @@ const MAT_PROVIDERS: MATProvider[] = [
     website: "pinerest.org",
     hours: "M-Th 8:30 AM – 8:00 PM, Fri 8:30 AM – 3:00 PM",
     info: "Comprehensive mental health and substance recovery services including medication-assisted treatment with psychiatric support.",
-    rating: 3.8
   }
 ];
 
@@ -279,9 +272,6 @@ export default function MATResourcesPage() {
               <div className="flex justify-between items-start mb-4">
                 <div>
                   <h3 className="text-2xl font-bold text-gray-900">{provider.name}</h3>
-                  {provider.rating && (
-                    <p className="text-sm text-amber-600 font-semibold">★ {provider.rating} out of 5 stars</p>
-                  )}
                 </div>
               </div>
 
