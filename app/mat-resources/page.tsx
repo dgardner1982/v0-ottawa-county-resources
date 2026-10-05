@@ -132,8 +132,11 @@ export default function MATResourcesPage() {
             
             {/* Navigation Buttons */}
             <div className="flex gap-6 flex-wrap justify-center pt-4">
-              <Link href="/">
-                <button className="bg-teal-600 hover:bg-teal-700 text-white font-bold px-10 py-4 rounded-lg transition text-xl min-w-48">Resources</button>
+              <Link
+                href="/"
+                className="inline-flex min-w-48 items-center justify-center rounded-lg bg-teal-600 px-10 py-4 text-xl font-bold text-white transition hover:bg-teal-700"
+              >
+                Resources
               </Link>
               <Link href="/education">
                 <button className="bg-green-600 hover:bg-green-700 text-white font-bold px-10 py-4 rounded-lg transition text-xl min-w-48">Education</button>
