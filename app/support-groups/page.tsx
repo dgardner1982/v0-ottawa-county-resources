@@ -40,6 +40,18 @@ export default function SupportGroupsPage() {
           description: "12-step program specifically for cocaine and other stimulant addiction",
           link: "https://www.ca.org",
           findMeetings: "https://www.camichigan.org"
+        },
+        {
+          name: "Recovery Dharma",
+          description: "Buddhist-inspired approach to addiction recovery emphasizing mindfulness",
+          link: "https://www.recoverydharma.org",
+          findMeetings: "https://www.recoverydharma.org/meetings/"
+        },
+        {
+          name: "LifeRing Secular Recovery",
+          description: "Secular alternative recovery community emphasizing self-directed change",
+          link: "https://www.lifering.org",
+          findMeetings: "https://meetings.lifering.org/meetings/?scope=hide"
         }
       ]
     },
@@ -133,25 +145,6 @@ export default function SupportGroupsPage() {
           description: "Support for families and friends of those with gambling addiction",
           link: "https://www.gam-anon.org",
           findMeetings: "https://www.gam-anon.org/meeting-directory"
-        }
-      ]
-    },
-    {
-      category: "Recovery & Wellness",
-      icon: "🌱",
-      color: "green",
-      groups: [
-        {
-          name: "Recovery Dharma",
-          description: "Buddhist-inspired approach to addiction recovery emphasizing mindfulness",
-          link: "https://www.recoverydharma.org",
-          findMeetings: "https://www.recoverydharma.org/meetings/"
-        },
-        {
-          name: "LifeRing Secular Recovery",
-          description: "Secular alternative recovery community emphasizing self-directed change",
-          link: "https://www.lifering.org",
-          findMeetings: "https://meetings.lifering.org/meetings/?scope=hide"
         }
       ]
     }
