@@ -149,8 +149,8 @@ export default function MATResourcesPage() {
       <main className="max-w-7xl mx-auto px-4 py-8">
         <div className="bg-gradient-to-r from-teal-600 to-cyan-600 text-white rounded-lg p-8 mb-12">
           <h2 className="text-3xl font-bold mb-3">Medicated Assisted Treatment (MAT)</h2>
-          <p className="text-lg mb-4">Medicated Assisted Treatment (MAT) combines FDA-approved medications with counseling and behavioral therapies to treat opioid use disorder. It is one of the most effective evidence-based treatment approaches available.</p>
-          <p className="text-sm opacity-90">The medications used in MAT can include methadone, buprenorphine, and naltrexone. Combined with therapy and support services, MAT helps individuals reduce illicit opioid use, improve treatment outcomes, and restore stability in their lives.</p>
+          <p className="text-lg mb-4">Medicated Assisted Treatment (MAT) combines FDA-approved medications with counseling and behavioral therapies to treat opioid use disorder and alcohol use disorder. It is one of the most effective evidence-based treatment approaches available.</p>
+          <p className="text-sm opacity-90">Medication-Assisted Treatment (MAT) incorporates medications such as methadone, buprenorphine, and naltrexone alongside behavioral therapy and wraparound support services. By addressing both the physical and psychological dimensions of opioid and alcohol use disorders, MAT strengthens treatment retention and fosters sustained personal stability.</p>
         </div>
 
         <div className="bg-blue-50 border-l-4 border-blue-500 rounded-lg p-8 mb-12">
