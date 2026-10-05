@@ -80,7 +80,7 @@ const MAT_PROVIDERS: MATProvider[] = [
     phone: "(616) 355-3926",
     website: "hollandhospital.org",
     hours: "Mon–Thu 7:30 AM – 9:00 PM, Fri 7:30 AM – 5:00 PM",
-    info: "Hospital-based program providing outpatient methadone, buprenorphine, and naltrexone treatment options alongside intensive outpatient services.",
+    info: "Hospital-based outpatient behavioral health program offering buprenorphine and naltrexone treatment options alongside intensive outpatient services.",
     rating: 2.5
   },
   {

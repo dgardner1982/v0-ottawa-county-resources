@@ -101,6 +101,7 @@ const RESOURCES: Resource[] = [
   { name: "Mosaic Counseling - Grand Haven", category: "Mental Health", address: "1703 S. Despelder St., Grand Haven", phone: "616-842-9160", info: "Professional counseling.", hours: "M-F 9a-4p", website: "https://mosaiccounseling.com" },
   { name: "Mosaic Counseling - Holland", category: "Mental Health", address: "503 Century Ln, Holland, MI 49423", phone: "616-842-9160", info: "Professional counseling.", hours: "M-F 9a-4p", website: "https://mosaiccounseling.com" },
   { name: "Trinity Health Hospital ER", category: "Mental Health", address: "1500 E. Sherman Blvd., Muskegon", phone: "231-672-2000", info: "Secured psychiatric facility emergency services.", website: "https://www.trinity-health.org" },
+  { name: "Holland Hospital Behavioral Health, Outpatient", category: "Mental Health", address: "854 Washington Ave STE 330, Holland, MI 49423", phone: "(616) 355-3926", info: "Hospital-based outpatient behavioral health program offering buprenorphine and naltrexone treatment options alongside intensive outpatient services.", website: "https://hollandhospital.org" },
   { name: "Winning At Home", category: "Mental Health", address: "300 S State St STE 13, Zeeland, MI 49464", phone: "(616) 772-1733", info: "Professional counseling for individuals, couples, and families. Includes coaching, wellness programs, workshops on parenting and marriage, and online resources.", hours: "M-Th 8a-8p, F 8a-3p", website: "https://www.winningathome.com" },
   
   // Substance Recovery
@@ -110,6 +111,7 @@ const RESOURCES: Resource[] = [
   { name: "Mercy Health Life Counseling", category: "Substance Recovery", address: "125 E. Southern Ave, Muskegon", phone: "231-726-3582", info: "Counseling services. Walk-ins available.", website: "https://www.mercyhealth.org" },
   { name: "New Vision Withdrawal Management", category: "Substance Recovery", address: "1309 Sheldon Road, Grand Haven, MI 49417", phone: "1-844-237-3627", info: "Inpatient detoxification and substance use disorder services at Trinity Health Grand Haven Hospital. Comprehensive withdrawal management program.", website: "https://trinityhealthmichigan.org" },
   { name: "Pine Rest Spring Lake", category: "Substance Recovery", address: "17325 Van Wagoner Rd, Spring Lake", phone: "866-852-4001", info: "Substance recovery and mental health services.", website: "https://www.pinerest.org" },
+  { name: "Holland Hospital Behavioral Health, Outpatient", category: "Substance Recovery", address: "854 Washington Ave STE 330, Holland, MI 49423", phone: "(616) 355-3926", info: "Hospital-based outpatient behavioral health program offering buprenorphine and naltrexone treatment options alongside intensive outpatient services.", website: "https://hollandhospital.org" },
   { name: "Reach for Recovery - Grand Haven", category: "Substance Recovery", address: "700 Washington Ave #220, Grand Haven", phone: "616-842-6710", info: "Counseling and recovery community connection.", website: "https://reachforrecovery.org" },
   { name: "Reach for Recovery - Holland", category: "Substance Recovery", address: "483 Century Lane, Holland", phone: "616-396-5284", info: "Comprehensive outpatient and residential programs.", website: "https://reachforrecovery.org" },
   { name: "Samaritas - Grand Haven", category: "Substance Recovery", address: "923 S Beechtree St Ste 10, Grand Haven, MI", phone: "(616) 516-9985", info: "Substance use treatment and recovery services including medication-assisted treatment.", website: "https://www.samaritas.org" },
@@ -504,7 +506,7 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                 </div>
               </li>
               <li className="flex gap-3">
-                <span className="text-amber-600 font-bold text-lg flex-shrink-0">→</span>
+                <span className="text-amber-600 font-bold text-lg flex-shrink-0">���</span>
                 <div>
                   <p className="font-semibold">Manufacturing and Trades:</p>
                   <p>Ottawa County is a manufacturing hub. Large companies in Holland, Zeeland, and Grand Haven (like Gentex, Herman Miller, or Haworth) occasionally work with specialized staffing agencies to fill &ldquo;second chance&rdquo; roles.</p>
