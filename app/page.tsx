@@ -101,6 +101,7 @@ const RESOURCES: Resource[] = [
   { name: "Mosaic Counseling - Grand Haven", category: "Mental Health", address: "1703 S. Despelder St., Grand Haven", phone: "616-842-9160", info: "Professional counseling.", hours: "M-F 9a-4p", website: "https://mosaiccounseling.com" },
   { name: "Mosaic Counseling - Holland", category: "Mental Health", address: "503 Century Ln, Holland, MI 49423", phone: "616-842-9160", info: "Professional counseling.", hours: "M-F 9a-4p", website: "https://mosaiccounseling.com" },
   { name: "Trinity Health Hospital ER", category: "Mental Health", address: "1500 E. Sherman Blvd., Muskegon", phone: "231-672-2000", info: "Secured psychiatric facility emergency services.", website: "https://www.trinity-health.org" },
+  { name: "Holland Hospital Behavioral Health, Outpatient", category: "Mental Health", address: "854 Washington Ave STE 330, Holland, MI 49423", phone: "(616) 355-3926", info: "Hospital-based outpatient behavioral health program offering buprenorphine and naltrexone treatment options alongside intensive outpatient services.", website: "https://hollandhospital.org" },
   { name: "Winning At Home", category: "Mental Health", address: "300 S State St STE 13, Zeeland, MI 49464", phone: "(616) 772-1733", info: "Professional counseling for individuals, couples, and families. Includes coaching, wellness programs, workshops on parenting and marriage, and online resources.", hours: "M-Th 8a-8p, F 8a-3p", website: "https://www.winningathome.com" },
   
   // Substance Recovery
@@ -110,6 +111,7 @@ const RESOURCES: Resource[] = [
   { name: "Mercy Health Life Counseling", category: "Substance Recovery", address: "125 E. Southern Ave, Muskegon", phone: "231-726-3582", info: "Counseling services. Walk-ins available.", website: "https://www.mercyhealth.org" },
   { name: "New Vision Withdrawal Management", category: "Substance Recovery", address: "1309 Sheldon Road, Grand Haven, MI 49417", phone: "1-844-237-3627", info: "Inpatient detoxification and substance use disorder services at Trinity Health Grand Haven Hospital. Comprehensive withdrawal management program.", website: "https://trinityhealthmichigan.org" },
   { name: "Pine Rest Spring Lake", category: "Substance Recovery", address: "17325 Van Wagoner Rd, Spring Lake", phone: "866-852-4001", info: "Substance recovery and mental health services.", website: "https://www.pinerest.org" },
+  { name: "Holland Hospital Behavioral Health, Outpatient", category: "Substance Recovery", address: "854 Washington Ave STE 330, Holland, MI 49423", phone: "(616) 355-3926", info: "Hospital-based outpatient behavioral health program offering buprenorphine and naltrexone treatment options alongside intensive outpatient services.", website: "https://hollandhospital.org" },
   { name: "Reach for Recovery - Grand Haven", category: "Substance Recovery", address: "700 Washington Ave #220, Grand Haven", phone: "616-842-6710", info: "Counseling and recovery community connection.", website: "https://reachforrecovery.org" },
   { name: "Reach for Recovery - Holland", category: "Substance Recovery", address: "483 Century Lane, Holland", phone: "616-396-5284", info: "Comprehensive outpatient and residential programs.", website: "https://reachforrecovery.org" },
   { name: "Samaritas - Grand Haven", category: "Substance Recovery", address: "923 S Beechtree St Ste 10, Grand Haven, MI", phone: "(616) 516-9985", info: "Substance use treatment and recovery services including medication-assisted treatment.", website: "https://www.samaritas.org" },
@@ -121,15 +123,15 @@ const RESOURCES: Resource[] = [
   { name: "Resilience: Advocates for Ending Violence", category: "Domestic Violence", address: "411 Butternut Dr, Holland, MI 49424", phone: "(800) 848-5991", info: "Non-profit providing 24-hour crisis support, emergency shelter, counseling, legal advocacy, and community education for survivors of domestic and sexual violence.", hours: "M-F 9a-5p, crisis services 24/7", website: "https://www.resiliencemi.org" },
   { name: "Sylvia's Place", category: "Domestic Violence", address: "235 North St, Allegan, MI 49010", phone: "(269) 673-8700", info: "Primary domestic violence agency for Allegan County providing 24-hour help line, emergency shelter, legal advocacy, and support services. Toll-free: (888) 411-7837. Available 24/7.", website: "https://www.sylviasplace.com" },
 
-  // Medication-Assisted Treatment
-  { name: "Western Michigan Comprehensive Treatment Center", category: "Medication-Assisted Treatment", address: "3584 Fairlanes Ave SW STE 2, Grandville, MI 49418", phone: "(616) 797-2124", info: "Major provider of outpatient medication-assisted treatment for adults struggling with opioid use disorder. Offers methadone, Suboxone, and buprenorphine.", website: "https://ctcprograms.com" },
-  { name: "Eastside Outpatient Services", category: "Medication-Assisted Treatment", address: "445 E Sherman Blvd, Muskegon, MI 49444", phone: "(231) 739-4359", info: "Located just north of Ottawa County, provides liquid methadone treatment coupled with counseling and rehabilitative services in a safe environment.", website: "https://eastsidesac.com" },
-  { name: "Cherry Health – Muskegon Recovery Center", category: "Medication-Assisted Treatment", address: "1611 Oak Ave, Muskegon, MI 49442", phone: "(231) 767-1921", info: "Offers comprehensive MAT services including methadone and buprenorphine, integrated with individual and group therapy sessions.", website: "https://cherryhealth.org" },
-  { name: "Holland Hospital Behavioral Health, Outpatient", category: "Medication-Assisted Treatment", address: "854 Washington Ave STE 330, Holland, MI 49423", phone: "(616) 355-3926", info: "Hospital-based program providing outpatient methadone, buprenorphine, and naltrexone treatment options alongside intensive outpatient services.", website: "https://hollandhospital.org" },
-  { name: "Reach for Recovery - MAT", category: "Medication-Assisted Treatment", address: "483 Century Ln, Holland, MI 49423", phone: "(616) 396-5284", info: "Provides outpatient and residential medication-assisted services tailored for both men and women in the Holland area.", website: "https://reachforrecovery.org" },
-  { name: "Pine Rest Holland Clinic - MAT", category: "Medication-Assisted Treatment", address: "926 S. Washington #210, Holland, MI 49423", phone: "(616) 820-3780", info: "Comprehensive mental health and substance recovery services including medication-assisted treatment with psychiatric support.", website: "https://www.pinerest.org" },
-  { name: "Samaritas Holland", category: "Medication-Assisted Treatment", address: "2416 Van Ommen Dr, Holland, MI 49424", phone: "(616) 350-7781", info: "Offers medication-assisted treatment services with integrated recovery support, community meals, and therapeutic programming.", website: "https://www.samaritas.org" },
-  { name: "Samaritas Grand Haven", category: "Medication-Assisted Treatment", address: "923 S Beechtree St Ste 10, Grand Haven, MI", phone: "(616) 516-9985", info: "Samaritas provides comprehensive MAT services focused on recovery and community integration in the Grand Haven area.", website: "https://www.samaritas.org" },
+  // Medicated Assisted Treatment
+  { name: "Western Michigan Comprehensive Treatment Center", category: "Medicated Assisted Treatment", address: "3584 Fairlanes Ave SW STE 2, Grandville, MI 49418", phone: "(616) 797-2124", info: "Major provider of outpatient medication-assisted treatment for adults struggling with opioid use disorder. Offers methadone, Suboxone, and buprenorphine.", website: "https://ctcprograms.com" },
+  { name: "Eastside Outpatient Services", category: "Medicated Assisted Treatment", address: "445 E Sherman Blvd, Muskegon, MI 49444", phone: "(231) 739-4359", info: "Located just north of Ottawa County, provides liquid methadone treatment coupled with counseling and rehabilitative services in a safe environment.", website: "https://eastsidesac.com" },
+  { name: "Cherry Health – Muskegon Recovery Center", category: "Medicated Assisted Treatment", address: "1611 Oak Ave, Muskegon, MI 49442", phone: "(231) 767-1921", info: "Offers comprehensive MAT services including methadone and buprenorphine, integrated with individual and group therapy sessions.", website: "https://cherryhealth.org" },
+  { name: "Holland Hospital Behavioral Health, Outpatient", category: "Medicated Assisted Treatment", address: "854 Washington Ave STE 330, Holland, MI 49423", phone: "(616) 355-3926", info: "Hospital-based program providing outpatient buprenorphine and naltrexone treatment options alongside intensive outpatient services.", website: "https://hollandhospital.org" },
+  { name: "Reach for Recovery - MAT", category: "Medicated Assisted Treatment", address: "483 Century Ln, Holland, MI 49423", phone: "(616) 396-5284", info: "Provides outpatient and residential medication-assisted services tailored for both men and women in the Holland area.", website: "https://reachforrecovery.org" },
+  { name: "Pine Rest Holland", category: "Substance Recovery", address: "926 S. Washington #210, Holland, MI 49423", phone: "(616) 820-3780", info: "Comprehensive mental health and substance recovery services.", website: "https://www.pinerest.org" },
+  { name: "Samaritas Holland", category: "Medicated Assisted Treatment", address: "2416 Van Ommen Dr, Holland, MI 49424", phone: "(616) 350-7781", info: "Offers medication-assisted treatment services with integrated recovery support and therapeutic programming.", website: "https://www.samaritas.org" },
+  { name: "Samaritas Grand Haven", category: "Medicated Assisted Treatment", address: "923 S Beechtree St Ste 10, Grand Haven, MI", phone: "(616) 516-9985", info: "Samaritas provides comprehensive MAT services focused on recovery and community integration in the Grand Haven area.", website: "https://www.samaritas.org" },
 
   // Food
   { name: "Christian Fellowship Assembly", category: "Food", address: "9930 64th Ave, Allendale", phone: "616-895-7614", info: "Food pantry and community meals.", website: "https://www.christianfellowshipassembly.org" },
@@ -504,7 +506,7 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                 </div>
               </li>
               <li className="flex gap-3">
-                <span className="text-amber-600 font-bold text-lg flex-shrink-0">→</span>
+                <span className="text-amber-600 font-bold text-lg flex-shrink-0">���</span>
                 <div>
                   <p className="font-semibold">Manufacturing and Trades:</p>
                   <p>Ottawa County is a manufacturing hub. Large companies in Holland, Zeeland, and Grand Haven (like Gentex, Herman Miller, or Haworth) occasionally work with specialized staffing agencies to fill &ldquo;second chance&rdquo; roles.</p>
@@ -591,7 +593,7 @@ export default function Home() {
     const colors: Record<string, { bg: string; border: string; icon: string; button: string; buttonHover: string }> = {
       "Mental Health": { bg: "bg-blue-100", border: "border-b-4 border-blue-500", icon: "🧠", button: "bg-blue-500 hover:bg-blue-600", buttonHover: "text-white" },
       "Substance Recovery": { bg: "bg-orange-100", border: "border-b-4 border-orange-500", icon: "🧩", button: "bg-orange-500 hover:bg-orange-600", buttonHover: "text-white" },
-      "Medication-Assisted Treatment": { bg: "bg-teal-100", border: "border-b-4 border-teal-600", icon: "💊", button: "bg-teal-600 hover:bg-teal-700", buttonHover: "text-white" },
+      "Medicated Assisted Treatment": { bg: "bg-teal-100", border: "border-b-4 border-teal-600", icon: "💊", button: "bg-teal-600 hover:bg-teal-700", buttonHover: "text-white" },
       "Food": { bg: "bg-green-100", border: "border-b-4 border-green-500", icon: "🍽️", button: "bg-green-500 hover:bg-green-600", buttonHover: "text-white" },
       "Housing": { bg: "bg-amber-100", border: "border-b-4 border-amber-500", icon: "🏠", button: "bg-amber-500 hover:bg-amber-600", buttonHover: "text-white" },
       "Health Care": { bg: "bg-red-100", border: "border-b-4 border-red-500", icon: "🏥", button: "bg-red-500 hover:bg-red-600", buttonHover: "text-white" },
@@ -697,17 +699,14 @@ export default function Home() {
           })}
         </div>
 
-        {selectedCategory === 'Substance Recovery' && (
-          <div className="mb-8 p-6 bg-gradient-to-r from-orange-500 to-amber-500 text-white rounded-lg shadow-lg">
-            <h3 className="text-2xl font-bold mb-3">Medication-Assisted Treatment Options</h3>
-            <p className="mb-4">For evidence-based medication-assisted treatment providers in the area, visit our dedicated MAT resources page.</p>
-            <Link href="/mat-resources">
-              <button className="bg-white text-orange-600 hover:bg-orange-50 font-bold px-6 py-3 rounded-lg transition text-lg">
-                View MAT Providers
-              </button>
-            </Link>
-          </div>
-        )}
+{(selectedCategory === 'Substance Recovery' || selectedCategory === 'Medicated Assisted Treatment') && (
+  <div className="mb-8 rounded-lg bg-gradient-to-r from-orange-500 to-amber-500 p-6 text-white shadow-lg">
+  <h3 className="mb-4 text-2xl font-bold">Medicated Assisted Treatment</h3>
+  <Link href="/mat-resources" className="inline-block rounded-lg bg-white px-6 py-3 text-lg font-bold text-orange-600 transition hover:bg-orange-50">
+  To learn about Medicated Assisted Treatment and find providers, click here.
+  </Link>
+  </div>
+  )}
 
         {selectedCategory === 'Domestic Violence' && (
           <div className="mb-8 p-6 bg-gradient-to-r from-rose-600 to-red-600 text-white rounded-lg shadow-lg">
