@@ -229,6 +229,39 @@ export default function MATResourcesPage() {
                     </article>
                   </div>
                 </div>
+
+                <div className="rounded-xl border border-purple-200 bg-purple-50 p-6">
+                  <h4 className="text-xl font-bold text-purple-950">2. Alcohol Use Disorder (AUD)</h4>
+                  <div className="mt-5 grid gap-4 lg:grid-cols-3">
+                    <article className="rounded-lg bg-white p-5 shadow-sm">
+                      <h5 className="text-lg font-bold text-gray-900">Naltrexone</h5>
+                      <p className="mt-1 text-sm font-semibold text-teal-700">Vivitrol, Revia</p>
+                      <dl className="mt-4 space-y-3 text-sm leading-6 text-gray-700">
+                        <div><dt className="font-bold text-gray-900">What it is</dt><dd>An opioid and endorphin receptor antagonist.</dd></div>
+                        <div><dt className="font-bold text-gray-900">What it does</dt><dd>Blocks the pleasurable buzz and euphoric reward of drinking. This dulls cravings and reduces the likelihood of heavy drinking episodes.</dd></div>
+                        <div><dt className="font-bold text-gray-900">Use</dt><dd>Available as a daily oral pill or a monthly extended-release intramuscular injection. It can be initiated while someone is still drinking or after detox.</dd></div>
+                      </dl>
+                    </article>
+                    <article className="rounded-lg bg-white p-5 shadow-sm">
+                      <h5 className="text-lg font-bold text-gray-900">Acamprosate</h5>
+                      <p className="mt-1 text-sm font-semibold text-teal-700">Campral</p>
+                      <dl className="mt-4 space-y-3 text-sm leading-6 text-gray-700">
+                        <div><dt className="font-bold text-gray-900">What it is</dt><dd>A neurochemical stabilizer.</dd></div>
+                        <div><dt className="font-bold text-gray-900">What it does</dt><dd>Rebalances glutamate and GABA activity disrupted by chronic alcohol use. It relieves protracted withdrawal symptoms like restlessness, anxiety, and sleep disturbances to help prevent relapse.</dd></div>
+                        <div><dt className="font-bold text-gray-900">Use</dt><dd>Taken orally three times daily. It is started after detoxification and is intended for individuals aiming for total abstinence.</dd></div>
+                      </dl>
+                    </article>
+                    <article className="rounded-lg bg-white p-5 shadow-sm">
+                      <h5 className="text-lg font-bold text-gray-900">Disulfiram</h5>
+                      <p className="mt-1 text-sm font-semibold text-teal-700">Antabuse</p>
+                      <dl className="mt-4 space-y-3 text-sm leading-6 text-gray-700">
+                        <div><dt className="font-bold text-gray-900">What it is</dt><dd>An alcohol metabolism inhibitor.</dd></div>
+                        <div><dt className="font-bold text-gray-900">What it does</dt><dd>Blocks the enzyme that breaks down acetaldehyde. Consuming alcohol causes rapid, unpleasant reactions such as flushing, nausea, headache, and palpitations.</dd></div>
+                        <div><dt className="font-bold text-gray-900">Use</dt><dd>Taken as a daily oral pill. It functions as a psychological deterrent for individuals committed to abstinence and requires medical supervision.</dd></div>
+                      </dl>
+                    </article>
+                  </div>
+                </div>
               </div>
             </div>
 
