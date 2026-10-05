@@ -126,7 +126,7 @@ export default function MATResourcesPage() {
             
             {/* Title */}
             <div className="space-y-2">
-              <h1 className="text-8xl font-bold text-teal-700">Medication-Assisted Treatment</h1>
+              <h1 className="text-8xl font-bold text-teal-700">Medicated Assisted Treatment</h1>
               <p className="text-3xl text-gray-700 font-semibold">Evidence-Based Recovery Resources</p>
             </div>
             
@@ -148,13 +148,13 @@ export default function MATResourcesPage() {
 
       <main className="max-w-7xl mx-auto px-4 py-8">
         <div className="bg-gradient-to-r from-teal-600 to-cyan-600 text-white rounded-lg p-8 mb-12">
-          <h2 className="text-3xl font-bold mb-3">Medication-Assisted Treatment (MAT)</h2>
-          <p className="text-lg mb-4">Medication-Assisted Treatment (MAT) combines FDA-approved medications with counseling and behavioral therapies to treat opioid use disorder. It is one of the most effective evidence-based treatment approaches available.</p>
+          <h2 className="text-3xl font-bold mb-3">Medicated Assisted Treatment (MAT)</h2>
+          <p className="text-lg mb-4">Medicated Assisted Treatment (MAT) combines FDA-approved medications with counseling and behavioral therapies to treat opioid use disorder. It is one of the most effective evidence-based treatment approaches available.</p>
           <p className="text-sm opacity-90">The medications used in MAT can include methadone, buprenorphine, and naltrexone. Combined with therapy and support services, MAT helps individuals reduce illicit opioid use, improve treatment outcomes, and restore stability in their lives.</p>
         </div>
 
         <div className="bg-blue-50 border-l-4 border-blue-500 rounded-lg p-8 mb-12">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">What is Medication-Assisted Treatment?</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">What is Medicated Assisted Treatment?</h3>
           <ul className="space-y-3 text-gray-700">
             <li className="flex gap-3">
               <span className="text-blue-600 font-bold">•</span>
@@ -179,7 +179,7 @@ export default function MATResourcesPage() {
           <div className="bg-teal-700 px-6 py-8 text-white sm:px-10">
             <p className="mb-2 text-sm font-bold uppercase tracking-[0.18em] text-teal-100">Treatment and recovery options</p>
             <h2 id="mat-details-heading" className="text-3xl font-bold sm:text-4xl">Understanding MAT medications</h2>
-            <p className="mt-4 max-w-4xl text-base leading-7 text-teal-50 sm:text-lg">Medication-Assisted Treatment (MAT), increasingly referred to as MOUD (Medications for Opioid Use Disorder) or MAUD (Medications for Alcohol Use Disorder), combines FDA-approved medications with counseling, behavioral therapies, and social support services.</p>
+            <p className="mt-4 max-w-4xl text-base leading-7 text-teal-50 sm:text-lg">Medicated Assisted Treatment (MAT), increasingly referred to as MOUD (Medications for Opioid Use Disorder) or MAUD (Medications for Alcohol Use Disorder), combines FDA-approved medications with counseling, behavioral therapies, and social support services.</p>
           </div>
 
           <div className="space-y-8 bg-teal-50/60 px-6 py-8 sm:px-10">
@@ -238,7 +238,7 @@ export default function MATResourcesPage() {
           </div>
         </section>
 
-        <h2 className="text-4xl font-bold text-gray-900 mb-8">Medication-Assisted Treatment Providers</h2>
+        <h2 className="text-4xl font-bold text-gray-900 mb-8">Medicated Assisted Treatment Providers</h2>
 
         <div className="grid gap-8 mb-8">
           {MAT_PROVIDERS.map((provider, idx) => (
@@ -311,7 +311,7 @@ export default function MATResourcesPage() {
         </div>
 
         <div className="bg-orange-50 border-l-4 border-orange-500 rounded-lg p-8 mb-8">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">Benefits of Medication-Assisted Treatment</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">Benefits of Medicated Assisted Treatment</h3>
           <ul className="space-y-2 text-gray-700">
             <li>✓ Reduces cravings and withdrawal symptoms</li>
             <li>✓ Decreases illicit drug use</li>
