@@ -175,6 +175,69 @@ export default function MATResourcesPage() {
           </ul>
         </div>
 
+        <section aria-labelledby="mat-details-heading" className="mb-12 overflow-hidden rounded-2xl border border-teal-200 bg-white shadow-lg">
+          <div className="bg-teal-700 px-6 py-8 text-white sm:px-10">
+            <p className="mb-2 text-sm font-bold uppercase tracking-[0.18em] text-teal-100">Treatment and recovery options</p>
+            <h2 id="mat-details-heading" className="text-3xl font-bold sm:text-4xl">Understanding MAT medications</h2>
+            <p className="mt-4 max-w-4xl text-base leading-7 text-teal-50 sm:text-lg">Medication-Assisted Treatment (MAT), increasingly referred to as MOUD (Medications for Opioid Use Disorder) or MAUD (Medications for Alcohol Use Disorder), combines FDA-approved medications with counseling, behavioral therapies, and social support services.</p>
+          </div>
+
+          <div className="space-y-8 bg-teal-50/60 px-6 py-8 sm:px-10">
+            <div className="rounded-xl border border-teal-200 bg-white p-6">
+              <h3 className="text-2xl font-bold text-gray-900">How MAT supports recovery</h3>
+              <p className="mt-3 leading-7 text-gray-700">Rather than substituting one drug for another, MAT helps normalize brain chemistry, blocks the euphoric effects of substances, relieves severe physiological cravings, and prevents withdrawal without inducing a high.</p>
+            </div>
+
+            <div>
+              <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <p className="text-sm font-bold uppercase tracking-[0.15em] text-teal-700">Medications used in MAT</p>
+                  <h3 className="mt-1 text-2xl font-bold text-gray-900">Treatment for opioid and alcohol use disorders</h3>
+                </div>
+                <p className="max-w-md text-sm leading-6 text-gray-600">Medication choices are made with a qualified healthcare provider and are part of a broader recovery plan.</p>
+              </div>
+
+              <div className="space-y-6">
+                <div className="rounded-xl border border-orange-200 bg-orange-50 p-6">
+                  <h4 className="text-xl font-bold text-orange-950">1. Opioid Use Disorder (OUD)</h4>
+                  <div className="mt-5 grid gap-4 lg:grid-cols-3">
+                    <article className="rounded-lg bg-white p-5 shadow-sm">
+                      <h5 className="text-lg font-bold text-gray-900">Buprenorphine</h5>
+                      <p className="mt-1 text-sm font-semibold text-teal-700">Suboxone, Subutex, Sublocade</p>
+                      <dl className="mt-4 space-y-3 text-sm leading-6 text-gray-700">
+                        <div><dt className="font-bold text-gray-900">What it is</dt><dd>A partial opioid agonist.</dd></div>
+                        <div><dt className="font-bold text-gray-900">What it does</dt><dd>Activates opioid receptors enough to relieve cravings and withdrawal symptoms. Its ceiling effect means higher doses do not increase euphoria or respiratory depression. Suboxone also includes naloxone to discourage injection.</dd></div>
+                        <div><dt className="font-bold text-gray-900">Use</dt><dd>Prescribed by certified healthcare providers in office-based settings or clinics, or administered as a monthly extended-release injection.</dd></div>
+                      </dl>
+                    </article>
+                    <article className="rounded-lg bg-white p-5 shadow-sm">
+                      <h5 className="text-lg font-bold text-gray-900">Methadone</h5>
+                      <dl className="mt-4 space-y-3 text-sm leading-6 text-gray-700">
+                        <div><dt className="font-bold text-gray-900">What it is</dt><dd>A long-acting full opioid agonist.</dd></div>
+                        <div><dt className="font-bold text-gray-900">What it does</dt><dd>Fully binds to opioid receptors, eliminating cravings and withdrawal for 24 to 36 hours. Its slow action provides stability without the rapid spikes that trigger a high.</dd></div>
+                        <div><dt className="font-bold text-gray-900">Use</dt><dd>Highly regulated and dispensed daily through federally certified Opioid Treatment Programs.</dd></div>
+                      </dl>
+                    </article>
+                    <article className="rounded-lg bg-white p-5 shadow-sm">
+                      <h5 className="text-lg font-bold text-gray-900">Naltrexone</h5>
+                      <p className="mt-1 text-sm font-semibold text-teal-700">Vivitrol, Revia</p>
+                      <dl className="mt-4 space-y-3 text-sm leading-6 text-gray-700">
+                        <div><dt className="font-bold text-gray-900">What it is</dt><dd>A full opioid antagonist.</dd></div>
+                        <div><dt className="font-bold text-gray-900">What it does</dt><dd>Blocks opioid receptors, so using opioids while taking it does not produce euphoric effects or pain relief.</dd></div>
+                        <div><dt className="font-bold text-gray-900">Use</dt><dd>Used for relapse prevention after a complete detox period, typically 7 to 14 days opioid-free. It is commonly administered as a monthly intramuscular injection.</dd></div>
+                      </dl>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-xl border border-amber-200 bg-amber-50 p-5 text-sm leading-6 text-amber-950">
+              <p><strong>Important:</strong> Treatment should be individualized with a qualified healthcare professional. Do not start, stop, or change medication without medical guidance.</p>
+            </div>
+          </div>
+        </section>
+
         <h2 className="text-4xl font-bold text-gray-900 mb-8">Medication-Assisted Treatment Providers</h2>
 
         <div className="grid gap-8 mb-8">
