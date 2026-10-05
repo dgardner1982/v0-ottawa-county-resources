@@ -173,26 +173,18 @@ export default function EducationPage() {
           >
             Drug Information & Effects
           </button>
-          <button
-            onClick={() => { setSupportTab('resources'); handleTabClick('support'); }}
-            className={`px-6 py-3 font-semibold border-b-4 transition ${
-              activeTab === 'support' && supportTab === 'resources'
-                ? 'border-teal-600 text-teal-600'
-                : 'border-transparent text-gray-600 hover:text-gray-800'
-            }`}
+          <Link
+            href="/"
+            className="px-6 py-3 font-semibold border-b-4 border-transparent text-gray-600 transition hover:text-gray-800"
           >
             Resources
-          </button>
-          <button
-            onClick={() => { setSupportTab('support'); handleTabClick('support'); }}
-            className={`px-6 py-3 font-semibold border-b-4 transition ${
-              activeTab === 'support' && supportTab === 'support'
-                ? 'border-teal-600 text-teal-600'
-                : 'border-transparent text-gray-600 hover:text-gray-800'
-            }`}
+          </Link>
+          <Link
+            href="/support-groups"
+            className="px-6 py-3 font-semibold border-b-4 border-transparent text-gray-600 transition hover:text-gray-800"
           >
             Support Groups
-          </button>
+          </Link>
         </div>
 
         {/* Drug Boxes Tab */}
