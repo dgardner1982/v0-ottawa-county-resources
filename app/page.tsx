@@ -280,7 +280,7 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
               <h3 className="text-2xl font-bold text-gray-900">West Michigan Works!</h3>
             </div>
             <p className="text-gray-700 mb-4 font-medium">The most comprehensive resource in the county with a dedicated Returning Citizens program.</p>
-            <div className="space-y-3 text-sm">
+            <div className="space-y-3 text-sm leading-6">
               <div className="flex gap-3 items-start">
                 <MapPin size={18} className="text-purple-600 flex-shrink-0 mt-0.5" />
                 <div>
@@ -313,7 +313,7 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
               <h3 className="text-2xl font-bold text-gray-900">70x7 Life Recovery</h3>
             </div>
             <p className="text-gray-700 mb-4 font-medium">Specialized organization providing restoration and long-term support for men and women returning to the community after incarceration.</p>
-            <div className="space-y-3 text-sm">
+            <div className="space-y-3 text-sm leading-6">
               <div className="flex gap-3 items-start">
                 <MapPin size={18} className="text-green-600 flex-shrink-0 mt-0.5" />
                 <div>
@@ -345,7 +345,7 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
               <h3 className="text-2xl font-bold text-gray-900">Fresh Coast Alliance</h3>
             </div>
             <p className="text-gray-700 mb-4 font-medium">Muskegon-based non-profit specializing in employment placement and recovery support for individuals returning from incarceration and those in substance use recovery.</p>
-            <div className="space-y-3 text-sm">
+            <div className="space-y-3 text-sm leading-6">
               <div className="flex gap-3 items-start">
                 <MapPin size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
                 <div>
@@ -377,7 +377,7 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
               <h3 className="text-2xl font-bold text-gray-900">Fettig.jobs</h3>
             </div>
             <p className="text-gray-700 mb-4 font-medium">Established regional agency specializing in connecting workers with industrial and manufacturing roles, known for their personalized approach to candidate backgrounds.</p>
-            <div className="space-y-3 text-sm">
+            <div className="space-y-3 text-sm leading-6">
               <div className="flex gap-3 items-start">
                 <MapPin size={18} className="text-yellow-600 flex-shrink-0 mt-0.5" />
                 <div>
@@ -407,7 +407,7 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
               <h3 className="text-2xl font-bold text-gray-900">Forge Industrial Staffing</h3>
             </div>
             <p className="text-gray-700 mb-4 font-medium">Local staffing agency specializing in entry-level labor and manufacturing jobs. Focuses on current ability to perform work with many accessible opportunities for those with past convictions.</p>
-            <div className="space-y-3 text-sm">
+            <div className="space-y-3 text-sm leading-6">
               <div className="flex gap-3 items-start">
                 <MapPin size={18} className="text-red-600 flex-shrink-0 mt-0.5" />
                 <div>
@@ -437,7 +437,7 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
               <h3 className="text-2xl font-bold text-gray-900">Cascade Engineering</h3>
             </div>
             <p className="text-gray-700 mb-4 font-medium">National leader in the "Returning Citizens" movement based in Grand Rapids. Features a formalized program designed specifically to hire and support individuals transitioning from the correctional system.</p>
-            <div className="space-y-3 text-sm">
+            <div className="space-y-3 text-sm leading-6">
               <div className="flex gap-3 items-start">
                 <MapPin size={18} className="text-pink-600 flex-shrink-0 mt-0.5" />
                 <div>
@@ -467,7 +467,7 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
               <h3 className="text-2xl font-bold text-gray-900">Pure Michigan Talent Connect</h3>
             </div>
             <p className="text-gray-700 mb-4 font-medium">Official statewide portal for job seekers and employers, featuring a dedicated section for "Returning Citizens" with resources on the Fidelity Bonding Program and tools to find employers actively participating in second-chance hiring.</p>
-            <div className="space-y-3 text-sm">
+            <div className="space-y-3 text-sm leading-6">
               <div className="flex gap-3 items-center">
                 <Phone size={18} className="text-orange-600 flex-shrink-0" />
                 <a href="tel:800-285-9675" className="text-orange-700 font-bold hover:underline">(800) 285-WORKS (9675)</a>
@@ -615,82 +615,83 @@ export default function Home() {
 
   return (
     <>
-      <div className="bg-red-600 text-white py-3 px-4 text-center sticky top-0 z-50 font-bold flex items-center justify-center gap-4 flex-wrap">
-        <span>CALL <a href="tel:211" className="underline font-bold">2-1-1</a> FOR LOCAL RESOURCES</span>
-        <span className="hidden sm:inline">•</span>
-        <span>FOR LIFE-THREATENING EMERGENCIES, CALL <a href="tel:911" className="underline font-bold">9-1-1</a></span>
+      <div className="sticky top-0 z-50 flex flex-wrap items-center justify-center gap-x-5 gap-y-1 border-b border-white/20 bg-slate-950 px-4 py-3 text-center text-xs font-bold uppercase tracking-[0.18em] text-white shadow-lg">
+        <span><span className="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-[#fb7185]" />Call <a href="tel:211" className="text-teal-300 underline underline-offset-4 hover:text-white">2-1-1</a> for local resources</span>
+        <span className="hidden text-slate-500 sm:inline">/</span>
+        <span>Life-threatening emergency? <a href="tel:911" className="text-amber-300 underline underline-offset-4 hover:text-white">Call 9-1-1</a></span>
       </div>
 
-      <header className="bg-gradient-to-b from-teal-50 to-white border-b-4 border-teal-200">
-        <div className="max-w-6xl mx-auto px-4 py-16">
-          <div className="flex flex-col items-center gap-12 text-center">
-            {/* Logo */}
-            <Link href="/">
-              <img 
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Recovery%20Alliance%20Business%20Cards-UXhe7EFsenUbcy44EqMjYgUa3HNUT3.jpg"
-                alt="Ottawa County Recovery Alliance"
-                className="h-96 w-96 object-contain cursor-pointer hover:opacity-80 transition bg-transparent"
-              />
-            </Link>
-            
-            {/* Main Title with WordArt Outline Effect */}
-            <div className="space-y-6 max-w-3xl">
-              <h1 
-                className="text-5xl md:text-7xl font-bold text-teal-700 leading-tight"
-                style={{
-                  WebkitTextStroke: '3px #0D7377',
-                  textStroke: '3px #0D7377',
-                }}
-              >
-                Ottawa County Recovery Resource and Education Hub
+      <header className="relative isolate overflow-hidden bg-slate-950 text-white">
+        <div className="absolute -left-24 top-8 -z-10 h-72 w-72 animate-float-orb rounded-full bg-teal-400/30 blur-3xl" />
+        <div className="absolute -right-20 bottom-0 -z-10 h-96 w-96 animate-float-orb rounded-full bg-fuchsia-500/20 blur-3xl [animation-delay:2s]" />
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_70%_15%,rgba(45,212,191,0.18),transparent_34%),linear-gradient(135deg,#020617_0%,#0f172a_58%,#123b46_100%)]" />
+        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-24">
+          <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+            <div className="animate-slide-in-up text-left">
+              <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-teal-300/30 bg-teal-300/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-teal-200 backdrop-blur">
+                <span className="h-2 w-2 rounded-full bg-teal-300 shadow-[0_0_14px_#5eead4]" /> Ottawa County, Michigan
+              </div>
+              <h1 className="max-w-4xl text-balance text-5xl font-black leading-[0.98] tracking-[-0.045em] text-white sm:text-7xl lg:text-8xl">
+                Find your next <span className="bg-gradient-to-r from-teal-300 via-cyan-200 to-amber-200 bg-clip-text text-transparent">step forward.</span>
               </h1>
-              
-              {/* Tagline/Welcome Message */}
-              <div className="bg-teal-100 border-l-4 border-teal-600 p-8 rounded-lg">
-                <p className="text-lg md:text-xl text-gray-800 leading-relaxed font-medium">
-                  Welcome to your central destination for healing, education, and community support. This one stop shop provides essential information on various substances alongside connections to local treatment. We believe recovery requires a solid foundation, so we also link you to vital resources like housing, mental health services, and financial assistance. Our goal is to help every resident build an informed and stable path forward.
-                </p>
+              <p className="mt-7 max-w-2xl text-pretty text-lg leading-8 text-slate-300 sm:text-xl">
+                A central destination for healing, education, and community support—built to help you find the right resource without the runaround.
+              </p>
+              <div className="mt-9 flex flex-wrap gap-4">
+                <Link href="#resources" className="group inline-flex items-center gap-3 rounded-full bg-teal-300 px-6 py-3.5 font-bold text-slate-950 shadow-[0_10px_35px_-12px_#5eead4] transition duration-300 hover:-translate-y-1 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-200">
+                  Explore resources <span className="transition-transform group-hover:translate-x-1">→</span>
+                </Link>
+                <Link href="/education" className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-6 py-3.5 font-bold text-white backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-white/50 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-200">
+                  Learn something new
+                </Link>
               </div>
             </div>
-            
-            {/* Navigation Buttons - Uniform and Centered */}
-            <div className="flex gap-4 flex-wrap justify-center pt-6">
-              <Link href="/">
-                <button className="bg-teal-600 hover:bg-teal-700 text-white font-bold px-8 py-3 rounded-lg transition text-lg min-w-44">Resources</button>
-              </Link>
-              <Link href="/education">
-                <button className="bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-3 rounded-lg transition text-lg min-w-44">Education</button>
-              </Link>
-              <Link href="/support-groups">
-                <button className="bg-purple-600 hover:bg-purple-700 text-white font-bold px-8 py-3 rounded-lg transition text-lg min-w-44">Support Groups</button>
-              </Link>
+            <div className="relative animate-scale-in [animation-delay:180ms]">
+              <div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-tr from-teal-400/20 via-transparent to-fuchsia-400/20 blur-2xl" />
+              <div className="animate-border-glow relative overflow-hidden rounded-[2rem] border border-white/15 bg-white/10 p-3 backdrop-blur-xl">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Recovery%20Alliance%20Business%20Cards-UXhe7EFsenUbcy44EqMjYgUa3HNUT3.jpg" alt="Ottawa County Recovery Alliance" className="h-auto w-full rounded-[1.4rem] object-cover" />
+                <div className="absolute bottom-7 left-7 right-7 flex items-center justify-between rounded-2xl border border-white/15 bg-slate-950/70 px-4 py-3 backdrop-blur-md">
+                  <span className="text-sm font-semibold text-white">Support starts here.</span>
+                  <span className="text-xs font-bold uppercase tracking-widest text-teal-300">Always local</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 py-8">
-        <div className="mb-8">
-          <input
-            type="text"
-            placeholder="Search resources..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full border-2 border-teal-300 p-4 rounded text-lg"
-          />
+      <main id="resources" className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-24">
+        <div className="mb-10 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div>
+            <p className="mb-3 text-xs font-black uppercase tracking-[0.22em] text-teal-600">The resource directory</p>
+            <h2 className="text-balance text-4xl font-black tracking-[-0.04em] text-slate-950 sm:text-5xl">Start where you are.</h2>
+            <p className="mt-3 max-w-xl text-base leading-7 text-slate-600">Search by need, browse by category, and connect directly with people who can help.</p>
+          </div>
+          <div className="relative w-full lg:max-w-md">
+            <label htmlFor="resource-search" className="sr-only">Search resources</label>
+            <input
+              id="resource-search"
+              type="text"
+              placeholder="Search resources..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 text-base shadow-[0_12px_30px_-22px_rgba(15,23,42,0.7)] outline-none transition duration-300 placeholder:text-slate-400 focus:border-teal-400 focus:ring-4 focus:ring-teal-400/15"
+            />
+            <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-xl text-teal-500">⌕</span>
+          </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mb-8">
+        <div className="mb-12 flex gap-2 overflow-x-auto pb-3">
           {categories.map((cat) => {
             const colors = getCategoryColor(cat);
             return (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 rounded font-semibold transition text-center ${
+                className={`whitespace-nowrap rounded-full border px-4 py-2 text-sm font-bold transition duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-500 ${
                   selectedCategory === cat 
-                    ? `${colors.button} text-white` 
-                    : "bg-gray-200 text-gray-800 hover:bg-gray-300"
+                    ? `${colors.button} scale-105 border-transparent text-white shadow-lg`
+                    : "border-slate-200 bg-white text-slate-600 hover:-translate-y-0.5 hover:border-teal-300 hover:text-teal-700 hover:shadow-md"
                 }`}
               >
                 {cat}
@@ -857,13 +858,16 @@ export default function Home() {
             filtered.map((resource, idx) => {
               const colors = getCategoryColor(resource.category);
               return (
-                <div key={idx} className={`${colors.bg} ${colors.border} rounded-lg shadow-md hover:shadow-lg p-6 transition transform hover:scale-105`}>
-                  <div className="flex gap-2 mb-3 items-center">
-                    <span className="text-2xl">{colors.icon}</span>
-                    <h3 className="text-lg font-bold text-gray-900">{resource.name}</h3>
+                <div key={idx} style={{ animationDelay: `${Math.min(idx * 45, 450)}ms` }} className={`${colors.bg} ${colors.border} resource-card group relative overflow-hidden rounded-[1.35rem] p-6 shadow-[0_14px_35px_-25px_rgba(15,23,42,0.75)] transition duration-500 hover:-translate-y-2 hover:shadow-[0_24px_45px_-25px_rgba(15,23,42,0.85)]`}>
+                  <div className="mb-4 flex items-start justify-between gap-3">
+                    <div className="flex items-center gap-3">
+                      <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/75 text-2xl shadow-sm transition duration-300 group-hover:rotate-6 group-hover:scale-110">{colors.icon}</span>
+                      <h3 className="text-lg font-black leading-tight tracking-tight text-slate-900">{resource.name}</h3>
+                    </div>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-current opacity-40 transition group-hover:scale-150 group-hover:opacity-80" />
                   </div>
-                  <p className="text-sm text-gray-700 mb-4">{resource.info}</p>
-                  <div className="space-y-3 text-sm">
+                  <p className="mb-5 text-sm leading-6 text-slate-700">{resource.info}</p>
+                  <div className="space-y-3 text-sm leading-6">
                     {resource.address && (
                       <div className="flex gap-3 items-start">
                         <MapPin size={18} className="text-teal-600 flex-shrink-0 mt-0.5" />
@@ -961,7 +965,7 @@ export default function Home() {
                   </div>
                   {resource.link ? (
                     <Link href={resource.link}>
-                      <button className="block mt-4 w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 rounded text-center transition cursor-pointer">
+                      <button className="mt-5 block w-full rounded-xl bg-slate-950 px-4 py-3 text-center text-sm font-black uppercase tracking-[0.12em] text-white transition duration-300 hover:-translate-y-0.5 hover:bg-teal-700 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-950 cursor-pointer">
                         See Locations
                       </button>
                     </Link>
@@ -976,7 +980,7 @@ export default function Home() {
                           alert(`Phone number copied: ${resource.phone}`);
                         }
                       }}
-                      className="block mt-4 w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 rounded text-center transition cursor-pointer"
+                      className="mt-5 block w-full rounded-xl bg-slate-950 px-4 py-3 text-center text-sm font-black uppercase tracking-[0.12em] text-white transition duration-300 hover:-translate-y-0.5 hover:bg-teal-700 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-950 cursor-pointer"
                     >
                       Call Now
                     </a>
