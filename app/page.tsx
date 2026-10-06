@@ -652,7 +652,7 @@ Explore support groups <span className="transition-transform group-hover:transla
             <div className="relative animate-scale-in [animation-delay:180ms]">
               <div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-tr from-teal-400/20 via-transparent to-fuchsia-400/20 blur-2xl" />
               <div className="animate-border-glow relative overflow-hidden rounded-[2rem] border border-white/15 bg-white/10 p-3 backdrop-blur-xl">
-                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Recovery%20Alliance%20Business%20Cards-UXhe7EFsenUbcy44EqMjYgUa3HNUT3.jpg" alt="Ottawa County Recovery Alliance" className="h-auto w-full rounded-[1.4rem] object-cover" />
+                <Link href="/" aria-label="Go to Ottawa County Recovery Alliance homepage"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Recovery%20Alliance%20Business%20Cards-UXhe7EFsenUbcy44EqMjYgUa3HNUT3.jpg" alt="Ottawa County Recovery Alliance" className="h-auto w-full rounded-[1.4rem] object-cover transition duration-500 hover:scale-[1.02]" /></Link>
 
               </div>
             </div>
