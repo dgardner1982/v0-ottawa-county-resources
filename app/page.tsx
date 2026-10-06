@@ -616,9 +616,9 @@ export default function Home() {
   return (
     <>
       <div className="sticky top-0 z-50 flex flex-wrap items-center justify-center gap-x-5 gap-y-1 border-b border-white/20 bg-slate-950 px-4 py-3 text-center text-xs font-bold uppercase tracking-[0.18em] text-white shadow-lg">
-        <span><span className="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-[#fb7185]" />Call <a href="tel:211" className="text-teal-300 underline underline-offset-4 hover:text-white">2-1-1</a> for local resources</span>
+        <span className="text-lg"><span className="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-[#fb7185]" />Call <a href="tel:211" className="text-teal-300 underline underline-offset-4 hover:text-white">2-1-1</a> for local resources</span>
         <span className="hidden text-slate-500 sm:inline">/</span>
-        <span>Life-threatening emergency? <a href="tel:911" className="text-amber-300 underline underline-offset-4 hover:text-white">Call 9-1-1</a></span>
+        <span className="text-lg">Life-threatening emergency? <a href="tel:911" className="text-amber-300 underline underline-offset-4 hover:text-white">Call 9-1-1</a></span>
       </div>
 
       <header className="relative isolate overflow-hidden bg-slate-950 text-white">
@@ -635,7 +635,7 @@ export default function Home() {
                 Find your next <span className="bg-gradient-to-r from-teal-300 via-cyan-200 to-amber-200 bg-clip-text text-transparent">step forward.</span>
               </h1>
               <p className="mt-7 max-w-2xl text-pretty text-lg leading-8 text-slate-300 sm:text-xl">
-                A central destination for healing, education, and community support—built to help you find the right resource without the runaround.
+                A central destination for recovery resources, education, and community support. Built to help you find the right resource without the runaround.
               </p>
 <div className="mt-9 grid max-w-2xl grid-cols-2 gap-4">
   <Link href="#resources" className="group inline-flex items-center justify-center gap-3 rounded-full bg-teal-300 px-6 py-3.5 font-bold text-slate-950 shadow-[0_10px_35px_-12px_#5eead4] transition duration-300 hover:-translate-y-1 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-200">
@@ -663,7 +663,7 @@ Explore support groups <span className="transition-transform group-hover:transla
       <main id="resources" className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-24">
         <div className="mb-10 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <p className="mb-3 text-xs font-black uppercase tracking-[0.22em] text-teal-600">The resource directory</p>
+            <p className="mb-3 text-2xl font-black uppercase tracking-[0.22em] text-teal-600">The resource directory</p>
             <h2 className="text-balance text-4xl font-black tracking-[-0.04em] text-slate-950 sm:text-5xl">Start where you are.</h2>
             <p className="mt-3 max-w-xl text-base leading-7 text-slate-600">Search by need, browse by category, and connect directly with people who can help.</p>
           </div>
