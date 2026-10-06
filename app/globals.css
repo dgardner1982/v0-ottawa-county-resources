@@ -324,24 +324,24 @@ body:has(header.bg-white.border-b-2.border-teal-200) main.max-w-6xl > div h3 {
 
 body:has(main.max-w-6xl) header a[href="/education"] > button,
 body:has(main.max-w-6xl) main a[href="/education"] > button {
-  background: #4b5563 !important;
+  margin-inline: auto;
+  background: linear-gradient(135deg, #14b8a6, #0891b2) !important;
   color: #ffffff !important;
-  border: 0 !important;
-  border-radius: 0.5rem !important;
-  padding: 0.5rem 1.5rem !important;
+  border: 2px solid rgba(255, 255, 255, 0.9) !important;
+  border-radius: 9999px !important;
+  padding: 0.75rem 1.5rem !important;
   font-size: 1rem !important;
   font-weight: 800 !important;
-  box-shadow: none !important;
-  transition: background-color 250ms ease;
+  box-shadow: 0 12px 28px -14px rgba(8, 145, 178, 0.9) !important;
+  transition: transform 250ms ease, box-shadow 250ms ease, filter 250ms ease;
 }
 
 body:has(main.max-w-6xl) header a[href="/education"] > button:hover,
 body:has(main.max-w-6xl) main a[href="/education"] > button:hover {
   transform: translateY(-3px) scale(1.02);
-  background: #374151 !important;
-  filter: none;
-  box-shadow: none;
-}
+  filter: brightness(1.08);
+  box-shadow: 0 18px 32px -14px rgba(8, 145, 178, 0.9) !important;
+  }
 
 body:has(header.bg-white.border-b-2.border-teal-200) main.max-w-6xl > div::before,
 body:has(header.bg-white.border-b-2.border-teal-200) main.max-w-6xl > div::after {
