@@ -650,10 +650,7 @@ export default function Home() {
               <div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-tr from-teal-400/20 via-transparent to-fuchsia-400/20 blur-2xl" />
               <div className="animate-border-glow relative overflow-hidden rounded-[2rem] border border-white/15 bg-white/10 p-3 backdrop-blur-xl">
                 <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Recovery%20Alliance%20Business%20Cards-UXhe7EFsenUbcy44EqMjYgUa3HNUT3.jpg" alt="Ottawa County Recovery Alliance" className="h-auto w-full rounded-[1.4rem] object-cover" />
-                <div className="absolute bottom-7 left-7 right-7 flex items-center justify-between rounded-2xl border border-white/15 bg-slate-950/70 px-4 py-3 backdrop-blur-md">
-                  <span className="text-sm font-semibold text-white">Support starts here.</span>
-                  <span className="text-xs font-bold uppercase tracking-widest text-teal-300">Always local</span>
-                </div>
+
               </div>
             </div>
           </div>
