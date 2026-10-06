@@ -100,46 +100,30 @@ export default function EducationPage() {
 
   return (
     <>
-      <div className="bg-red-600 text-white py-3 px-4 text-center sticky top-0 z-50 font-bold flex items-center justify-center gap-4 flex-wrap">
-        <span>CALL <a href="tel:211" className="underline font-bold">2-1-1</a> FOR LOCAL RESOURCES</span>
-        <span className="hidden sm:inline">•</span>
-        <span>FOR LIFE-THREATENING EMERGENCIES, CALL <a href="tel:911" className="underline font-bold">9-1-1</a></span>
+      <div className="sticky top-0 z-50 flex flex-wrap items-center justify-center gap-x-5 gap-y-1 border-b border-white/20 bg-slate-950 px-4 py-3 text-center text-xs font-bold uppercase tracking-[0.18em] text-white shadow-lg">
+        <span><span className="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-[#fb7185]" />Call <a href="tel:211" className="text-teal-300 underline underline-offset-4 hover:text-white">2-1-1</a> for local resources</span>
+        <span className="hidden text-slate-500 sm:inline">/</span>
+        <span>Life-threatening emergency? <a href="tel:911" className="text-amber-300 underline underline-offset-4 hover:text-white">Call 9-1-1</a></span>
       </div>
-
-      <header className="bg-white border-b-2 border-teal-200 shadow-sm">
-        <div className="max-w-6xl mx-auto px-4 py-12">
-          <div className="flex flex-col items-center gap-8 text-center">
-            {/* Logo */}
-            <Link href="/">
-              <img 
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Recovery%20Alliance%20Business%20Cards-UXhe7EFsenUbcy44EqMjYgUa3HNUT3.jpg"
-                alt="Ottawa County Recovery Alliance"
-                className="h-80 w-80 object-contain cursor-pointer hover:opacity-80 transition"
-              />
-            </Link>
-            
-            {/* Title - Much Larger */}
-            <div className="space-y-2">
-              <h1 className="text-8xl font-bold text-teal-700">Education & Resources</h1>
-              <p className="text-3xl text-gray-700 font-semibold">Substance Guides & Harm Reduction</p>
+      <header className="relative isolate overflow-hidden bg-slate-950 text-white">
+        <div className="absolute -left-24 top-8 -z-10 h-72 w-72 animate-float-orb rounded-full bg-teal-400/30 blur-3xl" />
+        <div className="absolute -right-20 bottom-0 -z-10 h-96 w-96 animate-float-orb rounded-full bg-fuchsia-500/20 blur-3xl [animation-delay:2s]" />
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_70%_15%,rgba(45,212,191,0.18),transparent_34%),linear-gradient(135deg,#020617_0%,#0f172a_58%,#123b46_100%)]" />
+        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-20">
+          <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
+            <div className="animate-slide-in-up text-left">
+              <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-teal-300/30 bg-teal-300/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-teal-200 backdrop-blur"><span className="h-2 w-2 rounded-full bg-teal-300 shadow-[0_0_14px_#5eead4]" /> Learn with confidence</div>
+              <h1 className="text-balance text-5xl font-black leading-[0.98] tracking-[-0.045em] text-white sm:text-7xl">Education that helps you <span className="bg-gradient-to-r from-teal-300 via-cyan-200 to-amber-200 bg-clip-text text-transparent">move forward.</span></h1>
+              <p className="mt-7 max-w-2xl text-pretty text-lg leading-8 text-slate-300 sm:text-xl">Explore clear, current substance guides and harm-reduction information designed to help you make informed choices.</p>
+              <div className="mt-9 flex flex-wrap gap-4"><Link href="#guides" className="group inline-flex items-center gap-3 rounded-full bg-teal-300 px-6 py-3.5 font-bold text-slate-950 shadow-[0_10px_35px_-12px_#5eead4] transition duration-300 hover:-translate-y-1 hover:bg-white">Browse guides <span className="transition-transform group-hover:translate-x-1">→</span></Link><Link href="/support-groups" className="group inline-flex items-center gap-3 rounded-full border border-amber-200/40 bg-amber-200/10 px-6 py-3.5 font-bold text-amber-100 backdrop-blur transition duration-300 hover:-translate-y-1 hover:bg-amber-200/20">Find support <span className="transition-transform group-hover:translate-x-1">→</span></Link></div>
             </div>
-            
-            {/* Navigation Buttons - Uniform and Centered */}
-            <div className="flex gap-6 flex-wrap justify-center pt-4">
-              <Link href="/">
-                <button className="bg-teal-600 hover:bg-teal-700 text-white font-bold px-10 py-4 rounded-lg transition text-xl min-w-48">Resources</button>
-              </Link>
-              <button className="bg-green-600 hover:bg-green-700 text-white font-bold px-10 py-4 rounded-lg transition text-xl min-w-48">Education</button>
-              <Link href="/support-groups">
-                <button className="bg-purple-600 hover:bg-purple-700 text-white font-bold px-10 py-4 rounded-lg transition text-xl min-w-48">Support Groups</button>
-              </Link>
-            </div>
+            <div className="relative animate-scale-in [animation-delay:180ms]"><div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-tr from-teal-400/20 via-transparent to-fuchsia-400/20 blur-2xl" /><div className="animate-border-glow relative overflow-hidden rounded-[2rem] border border-white/15 bg-white/10 p-3 backdrop-blur-xl"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Recovery%20Alliance%20Business%20Cards-UXhe7EFsenUbcy44EqMjYgUa3HNUT3.jpg" alt="Ottawa County Recovery Alliance" className="h-auto w-full rounded-[1.4rem] object-cover" /></div></div>
           </div>
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 py-8">
-        <div className="bg-gradient-to-r from-teal-600 to-cyan-600 text-white rounded-lg p-8 mb-12">
+      <main id="guides" className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-20">
+        <div className="animate-slide-in-up relative mb-12 overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-teal-700 via-cyan-600 to-slate-900 p-8 text-white shadow-[0_24px_55px_-30px_rgba(13,148,136,0.8)] sm:p-10">
           <h2 className="text-3xl font-bold mb-3">Knowledge Saves Lives</h2>
           <p className="text-lg">Learn about emerging substances, recognize dangers, and discover paths to recovery. This information is for harm reduction and education based on current CDC and public health data.</p>
         </div>
@@ -194,7 +178,7 @@ export default function EducationPage() {
               const href = drug.slug === 'synthetic-cannabinoids' ? '/synthetic-cannabinoids' : `/drug/${drug.slug}`;
               return (
                 <Link key={idx} href={href}>
-                  <div className={`${drug.bgColor} rounded-lg shadow-md hover:shadow-xl p-8 border-l-4 ${drug.color} transition transform hover:scale-105 cursor-pointer text-center h-64 flex flex-col justify-center items-center`}>
+                  <div style={{ animationDelay: `${Math.min(idx * 35, 420)}ms` }} className={`${drug.bgColor} resource-card group rounded-[1.35rem] border border-white/70 p-8 text-center shadow-[0_18px_40px_-30px_rgba(15,23,42,0.8)] transition duration-500 hover:-translate-y-2 hover:shadow-[0_25px_48px_-28px_rgba(15,23,42,0.85)] cursor-pointer h-64 flex flex-col justify-center items-center`}>
                     <div className="mb-4">
                       {drug.image ? (
                         <img src={drug.image} alt={drug.name} className="w-20 h-20 object-contain mx-auto" />

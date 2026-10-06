@@ -152,46 +152,11 @@ export default function SupportGroupsPage() {
 
   return (
     <>
-      <div className="bg-red-600 text-white py-3 px-4 text-center sticky top-0 z-50 font-bold flex items-center justify-center gap-4 flex-wrap">
-        <span>CALL <a href="tel:211" className="underline font-bold">2-1-1</a> FOR LOCAL RESOURCES</span>
-        <span className="hidden sm:inline">•</span>
-        <span>FOR LIFE-THREATENING EMERGENCIES, CALL <a href="tel:911" className="underline font-bold">9-1-1</a></span>
-      </div>
+      <div className="sticky top-0 z-50 flex flex-wrap items-center justify-center gap-x-5 gap-y-1 border-b border-white/20 bg-slate-950 px-4 py-3 text-center text-xs font-bold uppercase tracking-[0.18em] text-white shadow-lg"><span><span className="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-[#fb7185]" />Call <a href="tel:211" className="text-teal-300 underline underline-offset-4 hover:text-white">2-1-1</a> for local resources</span><span className="hidden text-slate-500 sm:inline">/</span><span>Life-threatening emergency? <a href="tel:911" className="text-amber-300 underline underline-offset-4 hover:text-white">Call 9-1-1</a></span></div>
+      <header className="relative isolate overflow-hidden bg-slate-950 text-white"><div className="absolute -left-24 top-8 -z-10 h-72 w-72 animate-float-orb rounded-full bg-fuchsia-500/25 blur-3xl" /><div className="absolute -right-20 bottom-0 -z-10 h-96 w-96 animate-float-orb rounded-full bg-teal-400/25 blur-3xl [animation-delay:2s]" /><div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_70%_15%,rgba(217,70,239,0.16),transparent_34%),linear-gradient(135deg,#020617_0%,#0f172a_58%,#32194d_100%)]" /><div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-20"><div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]"><div className="animate-slide-in-up text-left"><div className="mb-7 inline-flex items-center gap-3 rounded-full border border-fuchsia-300/30 bg-fuchsia-300/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-fuchsia-200 backdrop-blur"><span className="h-2 w-2 rounded-full bg-fuchsia-300 shadow-[0_0_14px_#f0abfc]" /> You do not have to do this alone</div><h1 className="text-balance text-5xl font-black leading-[0.98] tracking-[-0.045em] text-white sm:text-7xl">Find a community that <span className="bg-gradient-to-r from-fuchsia-300 via-pink-200 to-amber-200 bg-clip-text text-transparent">gets it.</span></h1><p className="mt-7 max-w-2xl text-pretty text-lg leading-8 text-slate-300 sm:text-xl">Peer support creates connection, accountability, and a place to be understood—wherever you are in your journey.</p><div className="mt-9 flex flex-wrap gap-4"><Link href="#groups" className="group inline-flex items-center gap-3 rounded-full bg-fuchsia-300 px-6 py-3.5 font-bold text-slate-950 shadow-[0_10px_35px_-12px_#f0abfc] transition duration-300 hover:-translate-y-1 hover:bg-white">Explore groups <span className="transition-transform group-hover:translate-x-1">→</span></Link><Link href="/education" className="group inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/5 px-6 py-3.5 font-bold text-cyan-200 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-cyan-200/70 hover:bg-white/10">Learn more <span className="text-cyan-200 transition-transform group-hover:translate-x-1 group-hover:text-white">→</span></Link></div></div><div className="relative animate-scale-in [animation-delay:180ms]"><div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-tr from-fuchsia-400/20 via-transparent to-teal-400/20 blur-2xl" /><div className="animate-border-glow relative overflow-hidden rounded-[2rem] border border-white/15 bg-white/10 p-3 backdrop-blur-xl"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Recovery%20Alliance%20Business%20Cards-UXhe7EFsenUbcy44EqMjYgUa3HNUT3.jpg" alt="Ottawa County Recovery Alliance" className="h-auto w-full rounded-[1.4rem] object-cover" /></div></div></div></div></header>
 
-      <header className="bg-white border-b-2 border-teal-200 shadow-sm">
-        <div className="max-w-6xl mx-auto px-4 py-12">
-          <div className="flex flex-col items-center gap-8 text-center">
-            {/* Logo */}
-            <Link href="/">
-              <img 
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Recovery%20Alliance%20Business%20Cards-UXhe7EFsenUbcy44EqMjYgUa3HNUT3.jpg"
-                alt="Ottawa County Recovery Alliance"
-                className="h-80 w-80 object-contain cursor-pointer hover:opacity-80 transition"
-              />
-            </Link>
-            
-            {/* Title - Much Larger */}
-            <div className="space-y-2">
-              <h1 className="text-8xl font-bold text-teal-700">Support Groups</h1>
-              <p className="text-3xl text-gray-700 font-semibold">Community Recovery & Peer Support</p>
-            </div>
-            
-            {/* Navigation Buttons - Uniform and Centered */}
-            <div className="flex gap-6 flex-wrap justify-center pt-4">
-              <Link href="/">
-                <button className="bg-teal-600 hover:bg-teal-700 text-white font-bold px-10 py-4 rounded-lg transition text-xl min-w-48">Resources</button>
-              </Link>
-              <Link href="/education">
-                <button className="bg-green-600 hover:bg-green-700 text-white font-bold px-10 py-4 rounded-lg transition text-xl min-w-48">Education</button>
-              </Link>
-              <button className="bg-purple-600 hover:bg-purple-700 text-white font-bold px-10 py-4 rounded-lg transition text-xl min-w-48">Support Groups</button>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <main className="max-w-7xl mx-auto px-4 py-8">
-        <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg p-8 mb-12">
+      <main id="groups" className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-20">
+        <div className="animate-slide-in-up relative mb-12 overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-fuchsia-700 via-purple-700 to-slate-950 p-8 text-white shadow-[0_24px_55px_-30px_rgba(192,38,211,0.8)] sm:p-10">
           <h2 className="text-3xl font-bold mb-3">Find Your Community</h2>
           <p className="text-lg mb-4">Support groups connect you with people who understand your journey. Whether you're seeking recovery from addiction, supporting a loved one, or working through emotional challenges, there's a community for you.</p>
           <p className="text-sm opacity-90">All groups listed are peer led and confidential. These meetings are free and available locally or online. While the majority of our sessions are open to any interested individual, some meetings are designated as Closed.</p>
@@ -199,7 +164,7 @@ export default function SupportGroupsPage() {
 
         {supportGroups.map((section, idx) => (
           <div key={idx} className="mb-12">
-            <div className={`flex items-center gap-3 mb-6 pb-4 border-b-4 border-${section.color}-500`}>
+            <div className={`mb-6 flex items-center gap-4 border-b border-slate-200 pb-4`}>
               <span className="text-4xl">{section.icon}</span>
               <h2 className="text-3xl font-bold text-gray-900">{section.category}</h2>
             </div>
@@ -208,7 +173,7 @@ export default function SupportGroupsPage() {
               {section.groups.map((group, gIdx) => (
                 <div
                   key={gIdx}
-                  className={`bg-${section.color}-100 border-l-4 border-${section.color}-500 rounded-lg p-6 shadow-md hover:shadow-lg transition`}
+                  style={{ animationDelay: `${Math.min(gIdx * 55, 400)}ms` }} className={`resource-card group relative overflow-hidden bg-${section.color}-100 border border-white/80 rounded-[1.35rem] p-6 shadow-[0_18px_40px_-30px_rgba(15,23,42,0.8)] hover:-translate-y-2 hover:shadow-[0_25px_48px_-28px_rgba(15,23,42,0.85)] transition duration-500`}
                 >
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{group.name}</h3>
                   <p className="text-gray-700 mb-4 leading-relaxed">{group.description}</p>
