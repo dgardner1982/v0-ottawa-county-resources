@@ -681,7 +681,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mb-12 flex gap-2 overflow-x-auto pb-3">
+        <div className="mb-12 flex flex-wrap justify-center gap-3 pb-3 lg:justify-start">
           {categories.map((cat) => {
             const colors = getCategoryColor(cat);
             return (
