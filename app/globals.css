@@ -271,18 +271,39 @@
   @apply text-primary;
 }
 
+/* Shared emergency banner treatment across every route. */
+div.bg-red-600 {
+  background: #020617 !important;
+  background-color: #020617 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  font-size: 1.125rem;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  padding: 0.75rem 1rem;
+  text-transform: uppercase;
+}
+
+div.bg-red-600 a[href="tel:211"] {
+  color: #24f2a2 !important;
+}
+
+div.bg-red-600 a[href="tel:911"] {
+  color: #ff4d4d !important;
+}
+
 /* Shared visual skin for the legacy substance-detail routes. */
 body:has(header.bg-white.border-b-2.border-teal-200) {
-  background: #cbd5e1;
+  background: #d9f0ee;
 }
 
 body:has(header.bg-white.border-b-2.border-teal-200) main.max-w-6xl {
-  background: #cbd5e1;
+  background: #d9f0ee;
   color: #172033;
 }
 
 body:has(header.bg-white.border-b-2.border-teal-200) main.max-w-6xl > div {
-  background: #f8fafc;
+  background: #ffffff;
   color: #172033;
 }
 
@@ -399,7 +420,7 @@ body:has(header.bg-white.border-b-2.border-teal-200) main.max-w-6xl {
   max-width: none;
   margin: 0;
   padding: 4rem max(1.25rem, calc((100vw - 80rem) / 2));
-  background: #cbd5e1;
+  background: #d9f0ee;
   }
   
 body:has(header.bg-white.border-b-2.border-teal-200) main.max-w-6xl > div {
