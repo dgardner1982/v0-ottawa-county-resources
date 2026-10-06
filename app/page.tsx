@@ -641,9 +641,12 @@ export default function Home() {
                 <Link href="#resources" className="group inline-flex items-center gap-3 rounded-full bg-teal-300 px-6 py-3.5 font-bold text-slate-950 shadow-[0_10px_35px_-12px_#5eead4] transition duration-300 hover:-translate-y-1 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-200">
                   Explore resources <span className="transition-transform group-hover:translate-x-1">→</span>
                 </Link>
-                <Link href="/education" className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-6 py-3.5 font-bold text-white backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-white/50 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-200">
-                  Learn something new
-                </Link>
+<Link href="/education" className="group inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/5 px-6 py-3.5 font-bold text-white backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-white/50 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-200">
+  Learn something new <span className="transition-transform group-hover:translate-x-1">→</span>
+</Link>
+<Link href="/support-groups" className="group inline-flex items-center gap-3 rounded-full border border-amber-200/40 bg-amber-200/10 px-6 py-3.5 font-bold text-amber-100 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-amber-200 hover:bg-amber-200/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-200">
+  Explore support groups <span className="transition-transform group-hover:translate-x-1">→</span>
+</Link>
               </div>
             </div>
             <div className="relative animate-scale-in [animation-delay:180ms]">
