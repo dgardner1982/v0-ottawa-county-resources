@@ -122,7 +122,7 @@ export default function EducationPage() {
         </div>
       </header>
 
-      <main id="guides" className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-20">
+      <main id="guides" className="relative isolate overflow-hidden bg-slate-950 px-5 py-16 text-white sm:px-8 lg:py-20"><div className="pointer-events-none absolute -left-32 top-24 -z-10 h-96 w-96 rounded-full bg-teal-400/10 blur-3xl" /><div className="pointer-events-none absolute -right-32 top-[40rem] -z-10 h-96 w-96 rounded-full bg-fuchsia-500/10 blur-3xl" /><div className="relative mx-auto max-w-7xl">
         <div className="animate-slide-in-up relative mb-12 overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-teal-700 via-cyan-600 to-slate-900 p-8 text-white shadow-[0_24px_55px_-30px_rgba(13,148,136,0.8)] sm:p-10">
           <h2 className="text-3xl font-bold mb-3">Knowledge Saves Lives</h2>
           <p className="text-lg">Learn about emerging substances, recognize dangers, and discover paths to recovery. This information is for harm reduction and education based on current CDC and public health data.</p>
@@ -140,58 +140,46 @@ export default function EducationPage() {
               value={searchQuery}
               onChange={(event) => setSearchQuery(event.target.value)}
               placeholder="Search substance guides..."
-              className="h-14 rounded-xl border-2 border-teal-200 bg-white pl-12 pr-4 text-lg shadow-sm focus-visible:border-teal-500 focus-visible:ring-teal-200"
+              className="h-14 rounded-2xl border border-teal-300/30 bg-white/10 pl-12 pr-4 text-lg text-white shadow-[0_18px_45px_-28px_rgba(45,212,191,0.8)] backdrop-blur-xl placeholder:text-slate-400 focus-visible:border-teal-300 focus-visible:ring-teal-300/30"
             />
           </div>
         </div>
 
         {/* Tab Navigation */}
-        <div className="flex gap-4 mb-8 border-b border-gray-300" ref={contentRef}>
+        <div className="mb-8 flex gap-4 border-b border-white/15" ref={contentRef}>
           <button
             onClick={() => handleTabClick('infograph')}
             className={`px-6 py-3 font-semibold border-b-4 transition ${
               activeTab === 'infograph'
-                ? 'border-teal-600 text-teal-600'
-                : 'border-transparent text-gray-600 hover:text-gray-800'
+                ? 'border-teal-300 text-teal-200'
+                : 'border-transparent text-slate-400 hover:text-white'
             }`}
           >
             Drug Information & Effects
           </button>
-          <Link
-            href="/"
-            className="px-6 py-3 font-semibold border-b-4 border-transparent text-gray-600 transition hover:text-gray-800"
-          >
-            Resources
-          </Link>
-          <Link
-            href="/support-groups"
-            className="px-6 py-3 font-semibold border-b-4 border-transparent text-gray-600 transition hover:text-gray-800"
-          >
-            Support Groups
-          </Link>
         </div>
 
         {/* Drug Boxes Tab */}
         {activeTab === 'infograph' && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="mb-12 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
             {filteredDrugs.length > 0 ? filteredDrugs.map((drug, idx) => {
               const href = drug.slug === 'synthetic-cannabinoids' ? '/synthetic-cannabinoids' : `/drug/${drug.slug}`;
               return (
                 <Link key={idx} href={href}>
-                  <div style={{ animationDelay: `${Math.min(idx * 35, 420)}ms` }} className={`${drug.bgColor} resource-card group rounded-[1.35rem] border border-white/70 p-8 text-center shadow-[0_18px_40px_-30px_rgba(15,23,42,0.8)] transition duration-500 hover:-translate-y-2 hover:shadow-[0_25px_48px_-28px_rgba(15,23,42,0.85)] cursor-pointer h-64 flex flex-col justify-center items-center`}>
-                    <div className="mb-4">
+                  <div style={{ animationDelay: `${Math.min(idx * 35, 420)}ms` }} className="resource-card group flex h-64 cursor-pointer flex-col items-center justify-center rounded-[1.35rem] border border-white/10 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950 p-8 text-center shadow-[0_20px_45px_-28px_rgba(45,212,191,0.5)] transition duration-500 hover:-translate-y-2 hover:border-teal-300/50 hover:shadow-[0_25px_55px_-24px_rgba(45,212,191,0.55)]">
+                    <div className="mb-5 flex h-20 w-20 items-center justify-center rounded-3xl border border-teal-300/25 bg-gradient-to-br from-teal-300/20 to-fuchsia-400/10 text-teal-200 shadow-[0_0_28px_-10px_rgba(94,234,212,0.9)] transition duration-500 group-hover:rotate-3 group-hover:scale-110 group-hover:border-teal-200/60">
                       {drug.image ? (
-                        <img src={drug.image} alt={drug.name} className="w-20 h-20 object-contain mx-auto" />
+                        <img src={drug.image} alt={drug.name} className="h-14 w-14 rounded-xl object-contain" />
                       ) : (
-                        <drug.symbol aria-hidden="true" className="h-16 w-16 stroke-[1.5] text-teal-700" />
+                        <drug.symbol aria-hidden="true" className="h-11 w-11 stroke-[1.6]" />
                       )}
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900">{drug.name}</h3>
+                    <h3 className="text-lg font-black leading-tight tracking-tight text-white">{drug.name}</h3>
                   </div>
                 </Link>
               );
             }) : (
-              <p className="col-span-full rounded-lg border border-dashed border-teal-300 bg-teal-50 p-8 text-center text-lg text-teal-900">
+              <p className="col-span-full rounded-2xl border border-dashed border-teal-300/40 bg-teal-300/10 p-8 text-center text-lg text-teal-100">
                 No substance guides match “{searchQuery}”.
               </p>
             )}
@@ -205,7 +193,7 @@ export default function EducationPage() {
         {activeTab === 'support' && (
           <div className="mb-12">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-              <div className="bg-blue-100 p-6 rounded-lg border-l-4 border-blue-500">
+              <div className="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-6 shadow-lg">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Overdose Prevention</h3>
                 <ul className="space-y-2 text-gray-700"><li>Recognize unresponsiveness, blue lips, and slow breathing.</li><li>Call 9-1-1; Good Samaritan protection applies.</li><li>Use Narcan if available and place the person in recovery position.</li><li>Stay until emergency services arrive.</li></ul>
               </div>
@@ -237,12 +225,13 @@ export default function EducationPage() {
           </div>
         )}
 
-        <div className="bg-teal-600 text-white rounded-lg p-8 text-center">
+        <div className="rounded-[1.75rem] border border-teal-300/20 bg-gradient-to-br from-teal-700 via-cyan-700 to-slate-900 p-8 text-center text-white shadow-[0_24px_55px_-30px_rgba(13,148,136,0.8)]">
           <h3 className="text-2xl font-bold mb-3">Ready to Get Help?</h3>
           <p className="mb-6 text-lg">Recovery is possible. Find resources and support in Ottawa County.</p>
           <Link href="/">
             <button className="bg-white text-teal-600 hover:bg-gray-100 font-bold px-8 py-3 rounded text-lg transition">Browse Recovery Resources</button>
           </Link>
+        </div>
         </div>
       </main>
 
