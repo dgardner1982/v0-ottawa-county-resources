@@ -637,17 +637,17 @@ export default function Home() {
               <p className="mt-7 max-w-2xl text-pretty text-lg leading-8 text-slate-300 sm:text-xl">
                 A central destination for healing, education, and community support—built to help you find the right resource without the runaround.
               </p>
-              <div className="mt-9 flex flex-wrap gap-4">
-                <Link href="#resources" className="group inline-flex items-center gap-3 rounded-full bg-teal-300 px-6 py-3.5 font-bold text-slate-950 shadow-[0_10px_35px_-12px_#5eead4] transition duration-300 hover:-translate-y-1 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-200">
-                  Explore resources <span className="transition-transform group-hover:translate-x-1">→</span>
-                </Link>
-<Link href="/education" className="group inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/5 px-6 py-3.5 font-bold text-white backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-white/50 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-200">
-  Learn something new <span className="transition-transform group-hover:translate-x-1">→</span>
-</Link>
-<Link href="/support-groups" className="group inline-flex items-center gap-3 rounded-full border border-amber-200/40 bg-amber-200/10 px-6 py-3.5 font-bold text-amber-100 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-amber-200 hover:bg-amber-200/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-200">
-  Explore support groups <span className="transition-transform group-hover:translate-x-1">→</span>
-</Link>
-              </div>
+<div className="mt-9 grid max-w-2xl grid-cols-2 gap-4">
+  <Link href="#resources" className="group inline-flex items-center justify-center gap-3 rounded-full bg-teal-300 px-6 py-3.5 font-bold text-slate-950 shadow-[0_10px_35px_-12px_#5eead4] transition duration-300 hover:-translate-y-1 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-200">
+Explore resources <span className="transition-transform group-hover:translate-x-1">→</span>
+  </Link>
+  <Link href="/education" className="group inline-flex items-center justify-center gap-3 rounded-full border border-white/20 bg-white/5 px-6 py-3.5 font-bold text-cyan-200 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-cyan-200/70 hover:bg-white/10 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-200">
+Learn something new <span className="text-cyan-200 transition-transform group-hover:translate-x-1 group-hover:text-white">→</span>
+  </Link>
+  <Link href="/support-groups" className="group col-span-2 inline-flex w-fit justify-self-center items-center gap-3 rounded-full border border-amber-200/40 bg-amber-200/10 px-6 py-3.5 font-bold text-amber-100 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-amber-200 hover:bg-amber-200/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-200">
+Explore support groups <span className="transition-transform group-hover:translate-x-1">→</span>
+  </Link>
+  </div>
             </div>
             <div className="relative animate-scale-in [animation-delay:180ms]">
               <div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-tr from-teal-400/20 via-transparent to-fuchsia-400/20 blur-2xl" />
