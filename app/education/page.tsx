@@ -149,10 +149,10 @@ export default function EducationPage() {
         <div className="mb-8 flex gap-4 border-b border-slate-300" ref={contentRef}>
           <button
             onClick={() => handleTabClick('infograph')}
-            className={`px-6 py-3 font-semibold border-b-4 transition ${
+            className={`px-6 py-3 font-semibold transition ${
               activeTab === 'infograph'
-? 'border-[#0e0e0e] text-[#0f0f10] underline shadow-[0_4px_6px_-1px_rgb(0_0_0_/_0.1),0_2px_4px_-2px_rgb(0_0_0_/_0.1)]'
-  : 'border-transparent text-slate-400 hover:text-slate-900'
+? 'text-[#0f0f10] underline shadow-[0_4px_6px_-1px_rgb(0_0_0_/_0.1),0_2px_4px_-2px_rgb(0_0_0_/_0.1)]'
+  : 'text-slate-400 hover:text-slate-900'
             }`}
           >
             Drug Information & Effects
