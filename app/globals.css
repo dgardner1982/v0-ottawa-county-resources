@@ -273,7 +273,57 @@
 
 /* Shared visual skin for the legacy substance-detail routes. */
 body:has(header.bg-white.border-b-2.border-teal-200) {
-  background: #dbe4ee;
+  background: #cbd5e1;
+}
+
+body:has(header.bg-white.border-b-2.border-teal-200) main.max-w-6xl {
+  background: #cbd5e1;
+  color: #172033;
+}
+
+body:has(header.bg-white.border-b-2.border-teal-200) main.max-w-6xl > div {
+  background: #f8fafc;
+  color: #172033;
+}
+
+body:has(header.bg-white.border-b-2.border-teal-200) main.max-w-6xl > div[class*="bg-"] {
+  background-color: #f8fafc;
+}
+
+body:has(header.bg-white.border-b-2.border-teal-200) main.max-w-6xl > div p,
+body:has(header.bg-white.border-b-2.border-teal-200) main.max-w-6xl > div li,
+body:has(header.bg-white.border-b-2.border-teal-200) main.max-w-6xl > div span {
+  color: #334155;
+}
+
+body:has(header.bg-white.border-b-2.border-teal-200) main.max-w-6xl > div h2,
+body:has(header.bg-white.border-b-2.border-teal-200) main.max-w-6xl > div h3 {
+  color: #172033;
+}
+
+body:has(header.bg-white.border-b-2.border-teal-200) header a > button,
+body:has(header.bg-white.border-b-2.border-teal-200) main.max-w-6xl a > button {
+  background: linear-gradient(135deg, #0f766e, #0891b2);
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 800;
+  box-shadow: 0 12px 24px -14px rgba(8, 145, 178, 0.9);
+  transition: transform 250ms ease, box-shadow 250ms ease, filter 250ms ease;
+}
+
+body:has(header.bg-white.border-b-2.border-teal-200) header a > button:hover,
+body:has(header.bg-white.border-b-2.border-teal-200) main.max-w-6xl a > button:hover {
+  transform: translateY(-3px) scale(1.02);
+  filter: brightness(1.08);
+  box-shadow: 0 18px 30px -14px rgba(8, 145, 178, 0.85);
+}
+
+body:has(header.bg-white.border-b-2.border-teal-200) main.max-w-6xl > div::before,
+body:has(header.bg-white.border-b-2.border-teal-200) main.max-w-6xl > div::after {
+  display: none;
 }
 
 body:has(header.bg-white.border-b-2.border-teal-200) header.bg-white.border-b-2.border-teal-200 {
@@ -349,9 +399,9 @@ body:has(header.bg-white.border-b-2.border-teal-200) main.max-w-6xl {
   max-width: none;
   margin: 0;
   padding: 4rem max(1.25rem, calc((100vw - 80rem) / 2));
-  background: #dbe4ee;
-}
-
+  background: #cbd5e1;
+  }
+  
 body:has(header.bg-white.border-b-2.border-teal-200) main.max-w-6xl > div {
   border: 1px solid rgba(255, 255, 255, 0.72);
   border-left-width: 1px;
@@ -368,7 +418,14 @@ body:has(header.bg-white.border-b-2.border-teal-200) main.max-w-6xl > div:hover 
 body:has(header.bg-white.border-b-2.border-teal-200) main.max-w-6xl > div.grid > div {
   border-left-width: 1px;
   border-radius: 1.35rem;
-  background: linear-gradient(145deg, rgba(255,255,255,0.9), rgba(241,245,249,0.92));
+  background: #ffffff;
+  background-image: none;
+  }
+
+body:has(header.bg-white.border-b-2.border-teal-200) .resource-card::after,
+body:has(header.bg-white.border-b-2.border-teal-200) main.max-w-6xl > div::after {
+  display: none;
+  animation: none;
 }
 
 body:has(header.bg-white.border-b-2.border-teal-200) main.max-w-6xl h2 {
