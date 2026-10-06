@@ -151,7 +151,7 @@ export default function EducationPage() {
             onClick={() => handleTabClick('infograph')}
             className={`px-6 py-3 font-semibold border-b-4 transition ${
               activeTab === 'infograph'
-? 'border-[#9c46ec] text-[#7f36e4] underline'
+? 'border-[#0e0e0e] text-[#0f0f10] underline shadow-[0_4px_6px_-1px_rgb(0_0_0_/_0.1),0_2px_4px_-2px_rgb(0_0_0_/_0.1)]'
   : 'border-transparent text-slate-400 hover:text-slate-900'
             }`}
           >
