@@ -101,9 +101,9 @@ export default function EducationPage() {
   return (
     <>
       <div className="sticky top-0 z-50 flex flex-wrap items-center justify-center gap-x-5 gap-y-1 border-b border-white/20 bg-slate-950 px-4 py-3 text-center text-xs font-bold uppercase tracking-[0.18em] text-white shadow-lg">
-        <span><span className="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-[#fb7185]" />Call <a href="tel:211" className="text-teal-300 underline underline-offset-4 hover:text-white">2-1-1</a> for local resources</span>
+        <span className="text-2xl"><span className="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-[#fb7185]" />Call <a href="tel:211" className="text-[#24f2a2] underline underline-offset-4 hover:text-white">2-1-1</a> for local resources</span>
         <span className="hidden text-slate-500 sm:inline">/</span>
-        <span>Life-threatening emergency? <a href="tel:911" className="text-amber-300 underline underline-offset-4 hover:text-white">Call 9-1-1</a></span>
+        <span className="text-2xl">Life-threatening emergency? <a href="tel:911" className="text-[#ff4d4d] underline underline-offset-4 hover:text-white">Call 9-1-1</a></span>
       </div>
       <header className="relative isolate overflow-hidden bg-slate-950 text-white">
         <div className="absolute -left-24 top-8 -z-10 h-72 w-72 animate-float-orb rounded-full bg-teal-400/30 blur-3xl" />
@@ -140,7 +140,7 @@ export default function EducationPage() {
               value={searchQuery}
               onChange={(event) => setSearchQuery(event.target.value)}
               placeholder="Search substance guides..."
-              className="h-14 rounded-2xl border border-teal-300/30 bg-white/10 pl-12 pr-4 text-lg text-white shadow-[0_18px_45px_-28px_rgba(45,212,191,0.8)] backdrop-blur-xl placeholder:text-slate-400 focus-visible:border-teal-300 focus-visible:ring-teal-300/30"
+              className="inline-flex h-14 w-full rounded-2xl border border-teal-300/30 bg-[rgba(85,229,255,0.47)] pl-12 pr-[11px] text-lg text-[#282020] shadow-[0_4px_6px_-1px_rgb(0_0_0_/_0.1),0_2px_4px_-2px_rgb(0_0_0_/_0.1)] placeholder:text-slate-700 focus-visible:border-teal-500 focus-visible:ring-teal-300/30"
             />
           </div>
         </div>
@@ -151,8 +151,8 @@ export default function EducationPage() {
             onClick={() => handleTabClick('infograph')}
             className={`px-6 py-3 font-semibold border-b-4 transition ${
               activeTab === 'infograph'
-                ? 'border-teal-300 text-teal-200'
-                : 'border-transparent text-slate-400 hover:text-white'
+? 'border-[#9c46ec] text-[#7f36e4] underline'
+  : 'border-transparent text-slate-400 hover:text-slate-900'
             }`}
           >
             Drug Information & Effects
