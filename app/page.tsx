@@ -681,14 +681,14 @@ Explore support groups <span className="transition-transform group-hover:transla
           </div>
         </div>
 
-        <div className="mb-12 flex flex-wrap justify-center gap-3 pb-3 lg:justify-start">
+        <div className="mb-12 grid grid-cols-2 gap-3 pb-3 sm:grid-cols-3 lg:grid-cols-4">
           {categories.map((cat) => {
             const colors = getCategoryColor(cat);
             return (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`whitespace-nowrap rounded-full border px-4 py-2 text-sm font-bold transition duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-500 ${
+                className={`flex min-h-11 w-full items-center justify-center rounded-full border px-4 py-2 text-center text-sm font-bold leading-tight transition duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-500 ${
                   selectedCategory === cat 
                     ? `${colors.button} scale-105 border-transparent text-white shadow-lg`
                     : "border-slate-200 bg-white text-slate-600 hover:-translate-y-0.5 hover:border-teal-300 hover:text-teal-700 hover:shadow-md"
