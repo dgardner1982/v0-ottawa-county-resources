@@ -270,3 +270,119 @@
 .hover\:text-primary:hover {
   @apply text-primary;
 }
+
+/* Shared visual skin for the legacy substance-detail routes. */
+body:has(header.bg-white.border-b-2.border-teal-200) {
+  background: #dbe4ee;
+}
+
+body:has(header.bg-white.border-b-2.border-teal-200) header.bg-white.border-b-2.border-teal-200 {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-bottom: 0;
+  background: linear-gradient(135deg, #020617 0%, #0f172a 58%, #123b46 100%);
+  color: white;
+  box-shadow: none;
+}
+
+body:has(header.bg-white.border-b-2.border-teal-200) header.bg-white.border-b-2.border-teal-200::before,
+body:has(header.bg-white.border-b-2.border-teal-200) header.bg-white.border-b-2.border-teal-200::after {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  border-radius: 9999px;
+  filter: blur(58px);
+  animation: float-orb 8s ease-in-out infinite;
+}
+
+body:has(header.bg-white.border-b-2.border-teal-200) header.bg-white.border-b-2.border-teal-200::before {
+  top: -8rem;
+  left: -5rem;
+  width: 22rem;
+  height: 22rem;
+  background: rgba(45, 212, 191, 0.24);
+}
+
+body:has(header.bg-white.border-b-2.border-teal-200) header.bg-white.border-b-2.border-teal-200::after {
+  right: -6rem;
+  bottom: -10rem;
+  width: 28rem;
+  height: 28rem;
+  background: rgba(217, 70, 239, 0.16);
+  animation-delay: 2s;
+}
+
+body:has(header.bg-white.border-b-2.border-teal-200) header.bg-white.border-b-2.border-teal-200 > div {
+  max-width: 80rem;
+  padding: 5rem 1.25rem;
+}
+
+body:has(header.bg-white.border-b-2.border-teal-200) header.bg-white.border-b-2.border-teal-200 .text-7xl {
+  display: flex;
+  width: 5.5rem;
+  height: 5.5rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(94, 234, 212, 0.28);
+  border-radius: 1.5rem;
+  background: linear-gradient(135deg, rgba(45, 212, 191, 0.22), rgba(217, 70, 239, 0.12));
+  font-size: 2.5rem;
+  box-shadow: 0 0 34px -12px rgba(94, 234, 212, 0.85);
+  animation: float-orb 5s ease-in-out infinite;
+}
+
+body:has(header.bg-white.border-b-2.border-teal-200) header.bg-white.border-b-2.border-teal-200 h1 {
+  color: white;
+  font-size: clamp(2.75rem, 7vw, 5.5rem);
+  font-weight: 900;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+}
+
+body:has(header.bg-white.border-b-2.border-teal-200) header.bg-white.border-b-2.border-teal-200 p {
+  color: #cbd5e1;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+}
+
+body:has(header.bg-white.border-b-2.border-teal-200) main.max-w-6xl {
+  max-width: none;
+  margin: 0;
+  padding: 4rem max(1.25rem, calc((100vw - 80rem) / 2));
+  background: #dbe4ee;
+}
+
+body:has(header.bg-white.border-b-2.border-teal-200) main.max-w-6xl > div {
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-left-width: 1px;
+  border-radius: 1.35rem;
+  box-shadow: 0 20px 45px -30px rgba(15, 23, 42, 0.72);
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+body:has(header.bg-white.border-b-2.border-teal-200) main.max-w-6xl > div:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 52px -28px rgba(15, 23, 42, 0.82);
+}
+
+body:has(header.bg-white.border-b-2.border-teal-200) main.max-w-6xl > div.grid > div {
+  border-left-width: 1px;
+  border-radius: 1.35rem;
+  background: linear-gradient(145deg, rgba(255,255,255,0.9), rgba(241,245,249,0.92));
+}
+
+body:has(header.bg-white.border-b-2.border-teal-200) main.max-w-6xl h2 {
+  letter-spacing: -0.03em;
+}
+
+body:has(header.bg-white.border-b-2.border-teal-200) main.max-w-6xl a > button {
+  border-radius: 9999px;
+  box-shadow: 0 10px 24px -16px rgba(15, 23, 42, 0.8);
+}
+
+@media (min-width: 640px) {
+  body:has(header.bg-white.border-b-2.border-teal-200) header.bg-white.border-b-2.border-teal-200 > div {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
