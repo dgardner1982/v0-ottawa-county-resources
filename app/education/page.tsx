@@ -61,12 +61,12 @@ export default function EducationPage() {
   const drugs = [
     { name: "Alcohol", symbol: Wine, slug: "alcohol", color: "border-amber-600", bgColor: "bg-amber-50" },
     { name: "Bromazolam", symbol: Pill, slug: "bromazolam", color: "border-slate-700", bgColor: "bg-slate-50" },
-    { name: "7-Hydroxymitragynine (7-OH)", symbol: Leaf, slug: "7-hydroxymitragynine", color: "border-lime-600", bgColor: "bg-lime-50" },
+    { name: "7-Hydroxymitragynine", symbol: Leaf, slug: "7-hydroxymitragynine", color: "border-lime-600", bgColor: "bg-lime-50" },
     { name: "Alprazolam", symbol: Pill, slug: "alprazolam", color: "border-sky-600", bgColor: "bg-sky-50" },
     { name: "Adderall", symbol: Zap, slug: "adderall", color: "border-orange-600", bgColor: "bg-orange-50" },
     { name: "Cocaine", symbol: Pill, slug: "cocaine", color: "border-red-500", bgColor: "bg-red-50" },
     { name: "Crack Cocaine", symbol: Atom, slug: "crack-cocaine", color: "border-red-700", bgColor: "bg-red-50" },
-    { name: "Dextromethorphan (DXM)", symbol: FlaskConical, slug: "dextromethorphan", color: "border-fuchsia-600", bgColor: "bg-fuchsia-50" },
+    { name: "Dextromethorphan", symbol: FlaskConical, slug: "dextromethorphan", color: "border-fuchsia-600", bgColor: "bg-fuchsia-50" },
     { name: "GHB", symbol: Droplets, slug: "ghb", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "MDMA", symbol: Sparkles, slug: "mdma", color: "border-pink-600", bgColor: "bg-pink-50" },
     { name: "Oxycodone", symbol: Pill, slug: "oxycodone", color: "border-amber-600", bgColor: "bg-amber-50" },
@@ -122,7 +122,7 @@ export default function EducationPage() {
         </div>
       </header>
 
-      <main id="guides" className="relative isolate overflow-hidden bg-slate-300 px-5 py-16 text-slate-900 sm:px-8 lg:py-20"><div className="pointer-events-none absolute -left-32 top-24 -z-10 h-96 w-96 rounded-full bg-teal-400/10 blur-3xl" /><div className="pointer-events-none absolute -right-32 top-[40rem] -z-10 h-96 w-96 rounded-full bg-fuchsia-500/10 blur-3xl" /><div className="relative mx-auto max-w-7xl">
+      <main id="guides" className="relative isolate overflow-hidden bg-[#41cfdf] [border-color:rgba(235,229,230,0.05)] px-5 py-16 text-slate-900 sm:px-8 lg:py-20"><div className="pointer-events-none absolute -left-32 top-24 -z-10 h-96 w-96 rounded-full bg-teal-400/10 blur-3xl" /><div className="pointer-events-none absolute -right-32 top-[40rem] -z-10 h-96 w-96 rounded-full bg-fuchsia-500/10 blur-3xl" /><div className="relative mx-auto max-w-7xl">
         <div className="animate-slide-in-up relative mb-12 overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-teal-700 via-cyan-600 to-slate-900 p-8 text-white shadow-[0_24px_55px_-30px_rgba(13,148,136,0.8)] sm:p-10">
           <h2 className="text-3xl font-bold mb-3">Knowledge Saves Lives</h2>
           <p className="text-xl">Learn about emerging substances, recognize dangers, and discover paths to recovery. This information is for harm reduction and education based on current CDC and public health data.</p>
@@ -166,7 +166,7 @@ export default function EducationPage() {
               const href = drug.slug === 'synthetic-cannabinoids' ? '/synthetic-cannabinoids' : `/drug/${drug.slug}`;
               return (
                 <Link key={idx} href={href}>
-                  <div style={{ animationDelay: `${Math.min(idx * 35, 420)}ms` }} className="resource-card group flex h-64 cursor-pointer flex-col items-center justify-center rounded-[1.35rem] border border-white/10 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950 p-8 text-center shadow-[0_20px_45px_-28px_rgba(45,212,191,0.5)] transition duration-500 hover:-translate-y-2 hover:border-teal-300/50 hover:shadow-[0_25px_55px_-24px_rgba(45,212,191,0.55)]">
+                  <div style={{ animationDelay: `${Math.min(idx * 35, 420)}ms` }} className="resource-card group flex h-64 cursor-pointer flex-col items-center justify-center rounded-[1.35rem] border border-white/10 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950 p-8 text-center shadow-[0_18px_24px_-10px_rgba(2,8,23,0.9),0_8px_14px_-8px_rgba(15,23,42,0.75)] transition duration-500 hover:-translate-y-2 hover:border-teal-300/50 hover:shadow-[0_25px_55px_-24px_rgba(45,212,191,0.55)]">
                     <div className="mb-5 flex h-20 w-20 items-center justify-center rounded-3xl border border-teal-300/25 bg-gradient-to-br from-teal-300/20 to-fuchsia-400/10 text-teal-200 shadow-[0_0_28px_-10px_rgba(94,234,212,0.9)] transition duration-500 group-hover:rotate-3 group-hover:scale-110 group-hover:border-teal-200/60">
                       {drug.image ? (
                         <img src={drug.image} alt={drug.name} className="h-14 w-14 rounded-xl object-contain" />
@@ -174,7 +174,7 @@ export default function EducationPage() {
                         <drug.symbol aria-hidden="true" className="h-11 w-11 stroke-[1.6]" />
                       )}
                     </div>
-                    <h3 className="text-lg font-black leading-tight tracking-tight text-white">{drug.name}</h3>
+                    <h3 className="text-lg font-black leading-tight tracking-tight text-white">{drug.name}{drug.slug === 'alprazolam' && <span className="block text-sm font-semibold text-cyan-300">(Xanax)</span>}{drug.slug === '7-hydroxymitragynine' && <span className="block text-sm font-semibold text-cyan-300">(7-OH)</span>}{drug.slug === 'dextromethorphan' && <span className="block text-sm font-semibold text-cyan-300">(DXM)</span>}</h3>
                   </div>
                 </Link>
               );

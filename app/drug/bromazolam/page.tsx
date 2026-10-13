@@ -1,7 +1,7 @@
 'use client';
 
-import { SubstanceProfilePage, profiles } from '@/components/substance-profile-page';
+import { BromazolamEducationPage } from '@/components/bromazolam-education-page';
 
 export default function BromazolamPage() {
-  return <SubstanceProfilePage profile={profiles.bromazolam} />;
+  return <BromazolamEducationPage />;
 }
