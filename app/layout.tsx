@@ -48,6 +48,11 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         <nav aria-label="Primary navigation" className="sticky top-0 z-[60] border-b border-slate-200/80 bg-white/85 px-4 py-3 shadow-sm backdrop-blur-xl">
           <div className="mx-auto flex max-w-7xl items-center gap-2 sm:gap-3">
+            <div className="ml-auto flex items-center gap-3 text-xs font-bold sm:text-sm">
+              <a href="tel:211" className="text-teal-700 underline underline-offset-4 transition hover:text-slate-950">2-1-1</a>
+              <a href="tel:911" className="text-red-600 underline underline-offset-4 transition hover:text-slate-950">9-1-1</a>
+              <a href="tel:988" className="text-[#ff5454] underline underline-offset-4 transition hover:text-slate-950">9-8-8</a>
+            </div>
             <Link href="/" aria-label="Go to Ottawa County Recovery Alliance homepage" className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-950 text-teal-300 transition hover:-translate-y-0.5 hover:bg-teal-700 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-500">
               <Home aria-hidden="true" className="h-5 w-5" />
             </Link>
