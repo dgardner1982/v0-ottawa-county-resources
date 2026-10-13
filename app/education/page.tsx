@@ -102,6 +102,7 @@ export default function EducationPage() {
     { name: "Modafinil", symbol: Zap, slug: "modafinil", color: "border-sky-700", bgColor: "bg-sky-50" },
     { name: "Synthetic Cathinones", symbol: Zap, slug: "synthetic-cathinones", color: "border-red-700", bgColor: "bg-red-50" },
     { name: "Alkyl Nitrites (Poppers)", symbol: Pill, slug: "alkyl-nitrites", color: "border-pink-700", bgColor: "bg-pink-50" },
+    { name: "Zolpidem (Ambien)", symbol: Pill, slug: "zolpidem", color: "border-violet-700", bgColor: "bg-violet-50" },
     { name: "Ritalin", symbol: Pill, slug: "ritalin", color: "border-indigo-600", bgColor: "bg-indigo-50" },
     { name: "Tianeptine", symbol: Pill, slug: "tianeptine", color: "border-red-600", bgColor: "bg-red-50" },
     { name: "Suboxone", symbol: Pill, slug: "suboxone", color: "border-cyan-600", bgColor: "bg-cyan-50" },
