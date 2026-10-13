@@ -30,51 +30,62 @@ export function SubstanceProfilePage({ profile }: { profile: Profile }) {
 
   return (
     <>
-      <div className="bg-red-600 px-4 py-3 text-center font-bold text-white">CALL <a href="tel:211" className="underline">2-1-1</a> FOR LOCAL RESOURCES · LIFE-THREATENING EMERGENCIES: <a href="tel:911" className="underline">9-1-1</a></div>
-      <header className="border-b-2 border-teal-200 bg-white shadow-sm">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-4 py-10 text-center">
-          <p className={`text-sm font-bold uppercase tracking-[0.3em] ${profile.accent}`}>Substance education guide</p>
-          <h1 className={`text-6xl font-bold ${profile.accent}`}>{profile.name}</h1>
-          <p className="max-w-3xl text-2xl text-gray-600">{profile.subtitle}</p>
-          <Link href="/education" className="rounded-lg bg-gray-700 px-6 py-2 font-bold text-white transition hover:bg-gray-800">Back to Education</Link>
+      <div className="sticky top-0 z-50 flex flex-wrap items-center justify-center gap-x-5 gap-y-1 border-b border-white/20 bg-slate-950 px-4 py-3 text-center text-xs font-bold uppercase tracking-[0.18em] text-white shadow-lg">
+        <span className="text-lg"><span className="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-[#fb7185]" />Call <a href="tel:211" className="text-teal-300 underline underline-offset-4 hover:text-white">2-1-1</a> for local resources</span>
+        <span className="hidden text-slate-500 sm:inline">/</span>
+        <span className="text-lg"><span className="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-[#fb7185]" />Life-threatening emergency? <a href="tel:911" className="text-amber-300 underline underline-offset-4 hover:text-white">Call 9-1-1</a></span>
+      </div>
+      <header className="relative isolate overflow-hidden bg-slate-950 text-white">
+        <div className="absolute -left-24 top-8 -z-10 h-72 w-72 rounded-full bg-teal-400/20 blur-3xl" />
+        <div className="absolute -right-20 bottom-0 -z-10 h-96 w-96 rounded-full bg-fuchsia-500/15 blur-3xl" />
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_70%_15%,rgba(45,212,191,0.18),transparent_34%),linear-gradient(135deg,#020617_0%,#0f172a_58%,#123b46_100%)]" />
+        <div className="mx-auto max-w-7xl px-5 py-14 text-center sm:px-8 lg:py-20">
+          <p className={`mb-5 text-sm font-bold uppercase tracking-[0.3em] ${profile.accent.replace('text-', 'text-')}`}>Substance education guide</p>
+          <h1 className="text-balance text-5xl font-black leading-[0.98] tracking-[-0.045em] text-white sm:text-7xl">{profile.name}</h1>
+          <p className="mx-auto mt-6 max-w-3xl text-pretty text-lg leading-8 text-slate-300 sm:text-xl">{profile.subtitle}</p>
+          <Link href="/education" className="mt-8 inline-flex rounded-full border border-white/20 bg-white/5 px-6 py-3.5 font-bold text-cyan-200 backdrop-blur transition hover:-translate-y-1 hover:border-cyan-200/70 hover:bg-white/10 hover:text-white">Back to Education <span className="ml-2">→</span></Link>
         </div>
       </header>
-      <main className="mx-auto max-w-6xl px-4 py-12">
-        <section className="mb-10 grid gap-8 md:grid-cols-2">
-          <div className={`rounded-lg border-l-8 ${profile.accent.replace('text-', 'border-')} bg-white p-8 shadow-sm`}>
-            <h2 className="mb-4 text-3xl font-bold text-gray-900">{profile.mechanismTitle}</h2>
-            <p className="leading-relaxed text-gray-700">{profile.mechanism}</p>
-          </div>
-          <div className={`rounded-lg ${profile.accent.replace('text-', 'bg-')} p-8 text-center text-white`}>
-            <h2 className="mb-4 text-sm font-bold uppercase tracking-widest">Key point</h2>
-            <p className="text-3xl font-bold">{profile.highlightTitle}</p>
-            <p className="mt-3 leading-relaxed">{profile.highlight}</p>
-          </div>
-        </section>
-        <section className="mb-10 rounded-lg bg-white p-8 shadow-sm">
-          <h2 className="mb-6 text-3xl font-bold text-gray-900">Recognize the effects</h2>
-          <div className="grid gap-8 md:grid-cols-3">
-            {tabs.map(([title, items]) => (
-              <div key={title}>
-                <h3 className={`mb-4 text-xl font-bold ${profile.accent}`}>{title}</h3>
-                <ul className="space-y-3 text-gray-700">{items.map((item) => <li key={item} className={`border-l-4 ${profile.accent.replace('text-', 'border-')} ${profile.soft} p-3`}>{item}</li>)}</ul>
-              </div>
-            ))}
-          </div>
-        </section>
-        <section className="grid gap-8 md:grid-cols-2">
-          <div className={`rounded-lg border-t-8 ${profile.accent.replace('text-', 'border-')} ${profile.soft} p-8`}>
-            <h2 className="mb-4 text-2xl font-bold text-gray-900">{profile.riskTitle}</h2>
-            <p className="leading-relaxed text-gray-700">{profile.risk}</p>
-          </div>
-          <div className="rounded-lg border-t-8 border-red-600 bg-red-50 p-8">
-            <h2 className="mb-4 text-2xl font-bold text-red-800">Identifying an emergency</h2>
-            <p className="mb-4 text-gray-700">{profile.emergency}</p>
-            {profile.emergencyNote && (
-  <p className="rounded bg-red-100 p-3 text-sm font-bold uppercase text-red-900">{profile.emergencyNote}</p>
-)}
-          </div>
-        </section>
+      <main className="bg-slate-100">
+        <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:py-20">
+          <section className="mb-10 grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+            <div className={`rounded-[1.75rem] border border-slate-200 border-t-4 ${profile.accent.replace('text-', 'border-')} bg-white p-8 shadow-[0_18px_40px_-28px_rgba(15,23,42,0.75)] sm:p-10`}>
+              <p className={`mb-3 text-sm font-black uppercase tracking-[0.18em] ${profile.accent}`}>How it works</p>
+              <h2 className="mb-4 text-3xl font-black tracking-[-0.03em] text-slate-950">{profile.mechanismTitle}</h2>
+              <p className="leading-8 text-slate-600">{profile.mechanism}</p>
+            </div>
+            <div className={`rounded-[1.75rem] ${profile.accent.replace('text-', 'bg-')} p-8 text-white shadow-[0_20px_45px_-24px_rgba(15,23,42,0.8)] sm:p-10`}>
+              <p className="mb-4 text-sm font-black uppercase tracking-[0.18em] text-white/70">Key point</p>
+              <h2 className="text-3xl font-black tracking-[-0.03em]">{profile.highlightTitle}</h2>
+              <p className="mt-4 leading-8 text-white/90">{profile.highlight}</p>
+            </div>
+          </section>
+          <section className="mb-10 rounded-[1.75rem] border border-slate-200 bg-white p-8 shadow-[0_18px_40px_-28px_rgba(15,23,42,0.75)] sm:p-10">
+            <p className="mb-3 text-sm font-black uppercase tracking-[0.18em] text-teal-600">What to know</p>
+            <h2 className="mb-8 text-4xl font-black tracking-[-0.04em] text-slate-950">Recognize the effects</h2>
+            <div className="grid gap-8 md:grid-cols-3">
+              {tabs.map(([title, items]) => (
+                <div key={title}>
+                  <h3 className={`mb-4 text-xl font-black ${profile.accent}`}>{title}</h3>
+                  <ul className="space-y-3 text-slate-600">{items.map((item) => <li key={item} className={`rounded-xl border border-slate-200 border-l-4 ${profile.accent.replace('text-', 'border-')} ${profile.soft} p-4 leading-6`}>{item}</li>)}</ul>
+                </div>
+              ))}
+            </div>
+          </section>
+          <section className="grid gap-6 lg:grid-cols-2">
+            <div className={`rounded-[1.75rem] border border-slate-200 border-t-4 ${profile.accent.replace('text-', 'border-')} ${profile.soft} p-8 sm:p-10`}>
+              <p className={`mb-3 text-sm font-black uppercase tracking-[0.18em] ${profile.accent}`}>Risk awareness</p>
+              <h2 className="mb-4 text-3xl font-black tracking-[-0.03em] text-slate-950">{profile.riskTitle}</h2>
+              <p className="leading-8 text-slate-600">{profile.risk}</p>
+            </div>
+            <div className="rounded-[1.75rem] border border-red-200 border-t-4 border-red-600 bg-red-50 p-8 sm:p-10">
+              <p className="mb-3 text-sm font-black uppercase tracking-[0.18em] text-red-700">Act now</p>
+              <h2 className="mb-4 text-3xl font-black tracking-[-0.03em] text-red-950">Identifying an emergency</h2>
+              <p className="mb-5 leading-8 text-red-900/80">{profile.emergency}</p>
+              {profile.emergencyNote && <p className="rounded-xl border border-red-200 bg-white/70 p-4 text-sm font-black uppercase leading-6 text-red-900">{profile.emergencyNote}</p>}
+            </div>
+          </section>
+        </div>
       </main>
       <Footer />
     </>
