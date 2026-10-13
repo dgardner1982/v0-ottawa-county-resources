@@ -105,7 +105,7 @@ export default function EducationPage() {
     { name: "Zolpidem", symbol: Pill, slug: "zolpidem", color: "border-sky-600", bgColor: "bg-sky-50" },
     { name: "Anabolic-Androgenic Steroids", symbol: Zap, slug: "anabolic-steroids", color: "border-amber-700", bgColor: "bg-amber-50" },
     { name: "Ritalin", symbol: Pill, slug: "ritalin", color: "border-indigo-600", bgColor: "bg-indigo-50" },
-    { name: "Tianeptine", symbol: Pill, slug: "tianeptine", color: "border-red-600", bgColor: "bg-red-50" },
+    { name: "Tianeptine", symbol: Pill, slug: "tianeptine", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "Suboxone", symbol: Pill, slug: "suboxone", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "Synthetic Cannabinoids", symbol: Leaf, slug: "synthetic-cannabinoids", color: "border-teal-500", bgColor: "bg-teal-50" },
     { name: "THC", symbol: Leaf, slug: "thc", color: "border-lime-500", bgColor: "bg-lime-50" },

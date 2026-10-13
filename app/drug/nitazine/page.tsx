@@ -1,9 +1,13 @@
 'use client';
 
+import { SubstanceProfilePage, profiles } from '@/components/substance-profile-page';
 import Link from 'next/link';
 import { Footer } from '@/components/footer';
 
 export default function NitazinePage() {
+  return <SubstanceProfilePage profile={profiles.nitazenes} />;
+
+  /* Legacy nitazine page retained below for reference. */
   return (
     <>
       <div className="bg-red-600 text-white py-3 px-4 text-center sticky top-0 z-50 font-bold flex items-center justify-center gap-4 flex-wrap">
