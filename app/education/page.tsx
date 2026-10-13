@@ -92,7 +92,7 @@ export default function EducationPage() {
     { name: "Nitazine", symbol: Pill, slug: "nitazine", color: "border-yellow-600", bgColor: "bg-yellow-50" },
     { name: "PCP", symbol: FlaskConical, slug: "pcp", color: "border-red-700", bgColor: "bg-red-200" },
     { name: "Psilocybin", symbol: Leaf, slug: "psilocybin", color: "border-emerald-600", bgColor: "bg-emerald-50" },
-    { name: "LSD", symbol: Sparkles, slug: "lsd", color: "border-violet-600", bgColor: "bg-violet-50" },
+    { name: "LSD", symbol: Sparkles, slug: "lsd", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "DMT", symbol: Sparkles, slug: "dmt", color: "border-indigo-700", bgColor: "bg-indigo-50" },
     { name: "Mescaline", symbol: Leaf, slug: "mescaline", color: "border-emerald-700", bgColor: "bg-emerald-50" },
     { name: "2C-B", symbol: Sparkles, slug: "2c-b", color: "border-fuchsia-700", bgColor: "bg-fuchsia-50" },
