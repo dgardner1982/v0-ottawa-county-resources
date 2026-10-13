@@ -55,7 +55,7 @@ export default function RootLayout({
         </nav>
         {children}
         <footer className="border-t border-slate-800/70 bg-slate-950 px-5 py-8 text-center text-slate-300 sm:px-8">
-          <Link href="/medical-disclaimer" className="font-semibold text-cyan-300 underline decoration-cyan-400 underline-offset-4 transition hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300">
+          <Link href="/medical-disclaimer" className="font-semibold italic text-[#ff5454] underline decoration-cyan-400 underline-offset-4 transition hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300">
             Medical Disclaimer
           </Link>
           <p className="mx-auto mt-2 max-w-2xl text-sm leading-6 text-slate-400">
