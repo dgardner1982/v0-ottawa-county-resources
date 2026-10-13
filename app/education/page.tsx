@@ -78,7 +78,7 @@ export default function EducationPage() {
     { name: "Heroin", symbol: Syringe, slug: "heroin", color: "border-amber-700", bgColor: "bg-amber-50" },
     { name: "Nitrous Oxide", symbol: Wind, slug: "nitrous-oxide", color: "border-teal-600", bgColor: "bg-teal-50" },
     { name: "Duster", symbol: Wind, slug: "duster", color: "border-cyan-600", bgColor: "bg-cyan-50" },
-    { name: "Ketamine", symbol: TestTube, slug: "ketamine", color: "border-indigo-500", bgColor: "bg-indigo-50" },
+    { name: "Ketamine", symbol: TestTube, slug: "ketamine", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "Kratom", symbol: Leaf, slug: "kratom", color: "border-green-500", bgColor: "bg-green-50" },
     { name: "Medetomidine", symbol: Microscope, slug: "medetomidine", color: "border-indigo-600", bgColor: "bg-indigo-100" },
     { name: "Methadone", symbol: Pill, slug: "methadone", color: "border-blue-500", bgColor: "bg-blue-50" },
