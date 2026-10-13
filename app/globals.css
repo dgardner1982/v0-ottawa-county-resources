@@ -242,6 +242,11 @@
   animation: shimmer 0.8s ease-out;
 }
 
+#guides .resource-card::after {
+  content: none;
+  display: none;
+}
+
 .animate-slide-in-down {
   animation: slideInDown 0.5s ease-out;
 }
