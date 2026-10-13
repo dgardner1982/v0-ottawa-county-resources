@@ -175,7 +175,7 @@ export default function EducationPage() {
   : 'text-slate-400 hover:text-slate-900'
             }`}
           >
-            Drug Information & Effects
+            Drugs of Misuse: Information & Effects
           </button>
         </div>
 
