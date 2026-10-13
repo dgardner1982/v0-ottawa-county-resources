@@ -1,7 +1,7 @@
 'use client';
 
-import { SubstanceProfilePage, profiles } from '@/components/substance-profile-page';
+import { AdderallEducationPage } from '@/components/adderall-education-page';
 
 export default function AdderallPage() {
-  return <SubstanceProfilePage profile={profiles.adderall} />;
+  return <AdderallEducationPage />;
 }
