@@ -81,7 +81,7 @@ export default function EducationPage() {
     { name: "Ketamine", symbol: TestTube, slug: "ketamine", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "Kratom", symbol: Leaf, slug: "kratom", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "Medetomidine", symbol: Microscope, slug: "medetomidine", color: "border-cyan-600", bgColor: "bg-cyan-50" },
-    { name: "Methadone", symbol: Pill, slug: "methadone", color: "border-blue-500", bgColor: "bg-blue-50" },
+    { name: "Methadone", symbol: Pill, slug: "methadone", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "Hydrocodone", symbol: Pill, slug: "hydrocodone", color: "border-violet-600", bgColor: "bg-violet-50" },
     { name: "Hydromorphone", symbol: Syringe, slug: "hydromorphone", color: "border-violet-800", bgColor: "bg-violet-100" },
   { name: "Codeine", symbol: Pill, slug: "codeine", color: "border-purple-600", bgColor: "bg-purple-50" },
