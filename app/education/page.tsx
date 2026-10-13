@@ -61,12 +61,12 @@ export default function EducationPage() {
   const drugs = [
     { name: "Alcohol", symbol: Wine, slug: "alcohol", color: "border-amber-600", bgColor: "bg-amber-50" },
     { name: "Bromazolam", symbol: Pill, slug: "bromazolam", color: "border-slate-700", bgColor: "bg-slate-50" },
-    { name: "7-Hydroxymitragynine (7-OH)", symbol: Leaf, slug: "7-hydroxymitragynine", color: "border-lime-600", bgColor: "bg-lime-50" },
+    { name: "7-Hydroxymitragynine", symbol: Leaf, slug: "7-hydroxymitragynine", color: "border-lime-600", bgColor: "bg-lime-50" },
     { name: "Alprazolam", symbol: Pill, slug: "alprazolam", color: "border-sky-600", bgColor: "bg-sky-50" },
     { name: "Adderall", symbol: Zap, slug: "adderall", color: "border-orange-600", bgColor: "bg-orange-50" },
     { name: "Cocaine", symbol: Pill, slug: "cocaine", color: "border-red-500", bgColor: "bg-red-50" },
     { name: "Crack Cocaine", symbol: Atom, slug: "crack-cocaine", color: "border-red-700", bgColor: "bg-red-50" },
-    { name: "Dextromethorphan (DXM)", symbol: FlaskConical, slug: "dextromethorphan", color: "border-fuchsia-600", bgColor: "bg-fuchsia-50" },
+    { name: "Dextromethorphan", symbol: FlaskConical, slug: "dextromethorphan", color: "border-fuchsia-600", bgColor: "bg-fuchsia-50" },
     { name: "GHB", symbol: Droplets, slug: "ghb", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "MDMA", symbol: Sparkles, slug: "mdma", color: "border-pink-600", bgColor: "bg-pink-50" },
     { name: "Oxycodone", symbol: Pill, slug: "oxycodone", color: "border-amber-600", bgColor: "bg-amber-50" },
@@ -174,7 +174,7 @@ export default function EducationPage() {
                         <drug.symbol aria-hidden="true" className="h-11 w-11 stroke-[1.6]" />
                       )}
                     </div>
-                    <h3 className="text-lg font-black leading-tight tracking-tight text-white">{drug.name}{drug.slug === 'alprazolam' && <span className="block text-sm font-semibold text-cyan-300">(Xanax)</span>}{drug.slug === '7-hydroxymitragynine' && <span className="block text-sm font-semibold text-cyan-300">(7-OH)</span>}</h3>
+                    <h3 className="text-lg font-black leading-tight tracking-tight text-white">{drug.name}{drug.slug === 'alprazolam' && <span className="block text-sm font-semibold text-cyan-300">(Xanax)</span>}{drug.slug === '7-hydroxymitragynine' && <span className="block text-sm font-semibold text-cyan-300">(7-OH)</span>}{drug.slug === 'dextromethorphan' && <span className="block text-sm font-semibold text-cyan-300">(DXM)</span>}</h3>
                   </div>
                 </Link>
               );
