@@ -82,6 +82,8 @@ export default function EducationPage() {
     { name: "Kratom", symbol: Leaf, slug: "kratom", color: "border-green-500", bgColor: "bg-green-50" },
     { name: "Medetomidine", symbol: Microscope, slug: "medetomidine", color: "border-indigo-600", bgColor: "bg-indigo-100" },
     { name: "Methadone", symbol: Pill, slug: "methadone", color: "border-blue-500", bgColor: "bg-blue-50" },
+    { name: "Hydrocodone", symbol: Pill, slug: "hydrocodone", color: "border-violet-600", bgColor: "bg-violet-50" },
+    { name: "Hydromorphone", symbol: Syringe, slug: "hydromorphone", color: "border-violet-800", bgColor: "bg-violet-100" },
     { name: "Methamphetamine", symbol: Zap, slug: "methamphetamine", color: "border-orange-500", bgColor: "bg-orange-50" },
     { name: "Nitazine", symbol: Pill, slug: "nitazine", color: "border-yellow-600", bgColor: "bg-yellow-50" },
     { name: "PCP", symbol: FlaskConical, slug: "pcp", color: "border-red-700", bgColor: "bg-red-200" },
