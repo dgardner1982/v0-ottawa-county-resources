@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { Footer } from '@/components/footer';
 
-type OpioidKind = 'hydrocodone' | 'hydromorphone';
+type OpioidKind = 'hydrocodone' | 'hydromorphone' | 'codeine' | 'tramadol' | 'oxymorphone' | 'morphine';
 
 const guides = {
   hydrocodone: {
@@ -25,6 +25,42 @@ const guides = {
     effects: [['Therapeutic / low', 'Rapid analgesia, physical calming, mild somnolence, constricted pupils, mild hypotension, and dry mouth.'], ['High / non-prescribed', 'An intense rush, heavy sedation, mental clouding, pinpoint pupils, nausea, itching, constipation, and urinary hesitancy.'], ['Severe toxicity', 'Stupor, loss of consciousness, respiratory arrest, cyanosis, limp muscles, and hypothermia.']],
     risks: [['Rapid high-threshold dependence', 'Dependence can develop quickly, with severe withdrawal often beginning within 12 to 24 hours after cessation.'], ['Brain oxygen injury', 'A non-fatal overdose can cause hypoxic-anoxic encephalopathy, memory loss, tremors, and executive dysfunction.'], ['Injection-related hazards', 'Crushed tablets can introduce insoluble binders, increasing risks of pulmonary talcosis, endocarditis, and thrombosis.'], ['Gastrointestinal dysmotility', 'Severe inhibition of peristalsis can cause painful fecal impaction and bowel perforation.']],
     interactions: 'Benzodiazepines, alcohol, xylazine, and medetomidine can intensify respiratory suppression, hypotension, bradycardia, and deep sedation.',
+  },
+  codeine: {
+    title: 'Codeine', subtitle: '(3-Methylmorphine)',
+    intro: 'A weak opioid prodrug whose effects vary widely with CYP2D6 metabolism and whose combination products can create additional overdose risks.',
+    classification: 'A naturally occurring phenanthrene alkaloid and opioid analgesic/antitussive. About 5% to 10% may be converted by CYP2D6 into morphine; poor and ultra-rapid metabolizers can experience very different effects.',
+    context: 'Used for selected pain and cough indications, including acetaminophen combinations and promethazine/codeine syrup. Counterfeit syrup and tablets may contain fentanyl or nitazene analogues.',
+    effects: [['Therapeutic / low', 'Mild analgesia, reduced coughing, relaxation, drowsiness, constricted pupils, dry mouth, and constipation.'], ['High / non-prescribed', 'Euphoria, lethargy, slowed reactions, itching, nausea, slurred speech, and heavy sedation.'], ['Severe toxicity', 'Stupor, respiratory arrest, agonal breathing, cyanosis, severe hypotension, or coma.']],
+    risks: [['Variable metabolism', 'CYP2D6 differences can produce little effect or unexpectedly high morphine exposure and respiratory depression.'], ['Dependence and withdrawal', 'Repeated use can cause tolerance, body aches, sweating, runny nose, diarrhea, insomnia, and intense cravings after stopping.'], ['Promethazine and dental harm', 'Sedating syrup combinations can add anticholinergic toxicity, urinary retention, cognitive effects, dry mouth, and tooth decay.'], ['Acetaminophen liver injury', 'High intake of combination tablets can produce toxic NAPQI accumulation and acute liver failure.']],
+    interactions: 'Alcohol, benzodiazepines, other opioids, sedating antihistamines, and sleep aids can compound sedation and respiratory depression.',
+  },
+  tramadol: {
+    title: 'Tramadol', subtitle: '(Ultram)',
+    intro: 'An atypical Schedule IV opioid that combines weak opioid activity with serotonin and norepinephrine reuptake inhibition, creating seizure and serotonin-syndrome risks.',
+    classification: 'A synthetic centrally acting analgesic. CYP2D6 converts some tramadol to the more potent M1 opioid metabolite, while the parent drug also affects serotonin and norepinephrine signaling and can lower the seizure threshold.',
+    context: 'Approved for moderate to moderately severe pain in immediate- and extended-release forms and in acetaminophen combinations. High-dose tablets are also trafficked illicitly in some regions.',
+    effects: [['Therapeutic / low', 'Analgesia, mild calming or alertness, dizziness, nausea, sweating, and dry mouth.'], ['High / misuse', 'Euphoria, agitation, tremor, confusion, anxiety, tachycardia, hypertension, and sweating.'], ['Severe toxicity', 'Seizures, delirium, hallucinations, serotonin syndrome, respiratory depression, or cardiovascular collapse.']],
+    risks: [['Dual withdrawal syndrome', 'Stopping after sustained use can cause opioid withdrawal alongside brain zaps, panic, depression, paresthesias, and suicidal thoughts.'], ['Seizure risk', 'Long-term exposure and high doses can lower the seizure threshold and lead to unprovoked seizures.'], ['Serotonin toxicity', 'Excess serotonin signaling can cause hyperthermia, clonus, agitation, autonomic instability, and death.'], ['Metabolic effects', 'Chronic use has been associated with hypoglycemia and adrenal insufficiency.']],
+    interactions: 'SSRIs, SNRIs, MAOIs, TCAs, bupropion, stimulants, antipsychotics, alcohol, and benzodiazepines can make toxicity more likely.',
+  },
+  oxymorphone: {
+    title: 'Oxymorphone', subtitle: '(Opana)',
+    intro: 'A potent Schedule II opioid with rapid central nervous system penetration and a narrow safety margin, especially when extended-release products are misused.',
+    classification: 'A semi-synthetic morphinan and potent full mu-opioid receptor agonist. It is much more potent than oral morphine and can produce rapid analgesia, euphoria, and respiratory depression.',
+    context: 'Used for severe pain in immediate- and extended-release forms. Crushing or injecting tablets has caused serious vascular and renal injuries; high-fat meals can also increase exposure.',
+    effects: [['Therapeutic / low', 'Powerful analgesia, physical relaxation, drowsiness, constricted pupils, dry mouth, and lower blood pressure.'], ['High / non-prescribed', 'Euphoric rush, nodding, mental clouding, itching, nausea, constipation, and severe sedation.'], ['Severe toxicity', 'Unarousable coma, respiratory arrest, agonal breathing, cyanosis, hypothermia, or shock.']],
+    risks: [['Rapid dependence', 'Daily use can quickly produce tolerance and severe withdrawal when stopped abruptly.'], ['Injection-related vascular injury', 'Crushed tablets can cause microvascular thrombosis, anemia, low platelets, kidney failure, and dialysis-requiring injury.'], ['Hypoxic brain damage', 'A non-fatal overdose can leave lasting memory, speech, and executive-function impairment.'], ['Endocrine and bone effects', 'Long-term opioid exposure can suppress sex hormones, reduce muscle mass, and contribute to osteoporosis.']],
+    interactions: 'Benzodiazepines, alcohol, gabapentinoids, muscle relaxants, and other sedatives can eliminate the margin for safe breathing.',
+  },
+  morphine: {
+    title: 'Morphine', subtitle: '(M, Miss Emma, Morph)',
+    intro: 'The clinical reference opioid: a full mu-opioid agonist with powerful analgesic effects and serious respiratory, gastrointestinal, and dependence risks.',
+    classification: 'A naturally occurring phenanthrene alkaloid and Schedule II narcotic analgesic. Its metabolites include M3G, which can contribute to neurotoxicity, and M6G, a potent opioid metabolite that can accumulate with renal impairment.',
+    context: 'Used for moderate to severe pain, acute pulmonary edema, and selected cardiac pain. It is available in oral, extended-release, injectable, and epidural formulations and may be diverted from clinical settings.',
+    effects: [['Therapeutic / low', 'Analgesia, calm, mild sedation, constricted pupils, dry mouth, lower blood pressure, and constipation.'], ['High / misuse', 'Euphoria, heavy somnolence, mental clouding, itching, nausea, slurred speech, and pinpoint pupils.'], ['Severe toxicity', 'Coma, severe respiratory depression, agonal breathing, cyanosis, cold clammy skin, or death.']],
+    risks: [['Profound dependence', 'Abrupt cessation can cause severe aches, vomiting, diarrhea, sweating, piloerection, muscle jerks, and insomnia.'], ['Metabolite neurotoxicity', 'M3G accumulation can worsen pain and cause allodynia, myoclonus, agitation, or seizures, especially with kidney disease.'], ['Narcotic bowel syndrome', 'Persistent gastrointestinal slowing can cause impaction, ulceration, and bowel perforation.'], ['Hormonal suppression', 'Long-term exposure may cause hypogonadism, amenorrhea, sexual dysfunction, fatigue, and osteopenia.']],
+    interactions: 'Benzodiazepines, alcohol, gabapentinoids, sedating antihistamines, barbiturates, and other central depressants amplify respiratory depression.',
   },
 } as const;
 
