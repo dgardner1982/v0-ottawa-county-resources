@@ -64,9 +64,10 @@ export default function EducationPage() {
     { name: "7-Hydroxymitragynine", symbol: Leaf, slug: "7-hydroxymitragynine", color: "border-lime-600", bgColor: "bg-lime-50" },
     { name: "Alprazolam", symbol: Pill, slug: "alprazolam", color: "border-sky-600", bgColor: "bg-sky-50" },
     { name: "Adderall", symbol: Zap, slug: "adderall", color: "border-orange-600", bgColor: "bg-orange-50" },
+    { name: "Nicotine", symbol: Pill, slug: "nicotine", color: "border-teal-600", bgColor: "bg-teal-50" },
     { name: "Cocaine", symbol: Pill, slug: "cocaine", color: "border-red-500", bgColor: "bg-red-50" },
     { name: "Crack Cocaine", symbol: Atom, slug: "crack-cocaine", color: "border-red-700", bgColor: "bg-red-50" },
-    { name: "Dextromethorphan", symbol: FlaskConical, slug: "dextromethorphan", color: "border-fuchsia-600", bgColor: "bg-fuchsia-50" },
+    { name: "Dextromethorphan", symbol: FlaskConical, slug: "dextromethorphan", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "GHB", symbol: Droplets, slug: "ghb", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "MDMA", symbol: Sparkles, slug: "mdma", color: "border-pink-600", bgColor: "bg-pink-50" },
     { name: "Oxycodone", symbol: Pill, slug: "oxycodone", color: "border-amber-600", bgColor: "bg-amber-50" },
@@ -77,15 +78,32 @@ export default function EducationPage() {
     { name: "Heroin", symbol: Syringe, slug: "heroin", color: "border-amber-700", bgColor: "bg-amber-50" },
     { name: "Nitrous Oxide", symbol: Wind, slug: "nitrous-oxide", color: "border-teal-600", bgColor: "bg-teal-50" },
     { name: "Duster", symbol: Wind, slug: "duster", color: "border-cyan-600", bgColor: "bg-cyan-50" },
-    { name: "Ketamine", symbol: TestTube, slug: "ketamine", color: "border-indigo-500", bgColor: "bg-indigo-50" },
-    { name: "Kratom", symbol: Leaf, slug: "kratom", color: "border-green-500", bgColor: "bg-green-50" },
+    { name: "Ketamine", symbol: TestTube, slug: "ketamine", color: "border-cyan-600", bgColor: "bg-cyan-50" },
+    { name: "Kratom", symbol: Leaf, slug: "kratom", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "Medetomidine", symbol: Microscope, slug: "medetomidine", color: "border-indigo-600", bgColor: "bg-indigo-100" },
     { name: "Methadone", symbol: Pill, slug: "methadone", color: "border-blue-500", bgColor: "bg-blue-50" },
+    { name: "Hydrocodone", symbol: Pill, slug: "hydrocodone", color: "border-violet-600", bgColor: "bg-violet-50" },
+    { name: "Hydromorphone", symbol: Syringe, slug: "hydromorphone", color: "border-violet-800", bgColor: "bg-violet-100" },
+  { name: "Codeine", symbol: Pill, slug: "codeine", color: "border-purple-600", bgColor: "bg-purple-50" },
+  { name: "Tramadol", symbol: Pill, slug: "tramadol", color: "border-fuchsia-600", bgColor: "bg-fuchsia-50" },
+  { name: "Oxymorphone", symbol: Syringe, slug: "oxymorphone", color: "border-rose-700", bgColor: "bg-rose-50" },
+  { name: "Morphine", symbol: Pill, slug: "morphine", color: "border-slate-700", bgColor: "bg-slate-100" },
     { name: "Methamphetamine", symbol: Zap, slug: "methamphetamine", color: "border-orange-500", bgColor: "bg-orange-50" },
     { name: "Nitazine", symbol: Pill, slug: "nitazine", color: "border-yellow-600", bgColor: "bg-yellow-50" },
     { name: "PCP", symbol: FlaskConical, slug: "pcp", color: "border-red-700", bgColor: "bg-red-200" },
     { name: "Psilocybin", symbol: Leaf, slug: "psilocybin", color: "border-emerald-600", bgColor: "bg-emerald-50" },
-    { name: "LSD", symbol: Sparkles, slug: "lsd", color: "border-violet-600", bgColor: "bg-violet-50" },
+    { name: "LSD", symbol: Sparkles, slug: "lsd", color: "border-cyan-600", bgColor: "bg-cyan-50" },
+    { name: "DMT", symbol: Sparkles, slug: "dmt", color: "border-indigo-700", bgColor: "bg-indigo-50" },
+    { name: "Mescaline", symbol: Leaf, slug: "mescaline", color: "border-emerald-700", bgColor: "bg-emerald-50" },
+    { name: "2C-B", symbol: Sparkles, slug: "2c-b", color: "border-fuchsia-700", bgColor: "bg-fuchsia-50" },
+    { name: "Salvia Divinorum", symbol: Leaf, slug: "salvia", color: "border-teal-700", bgColor: "bg-teal-50" },
+    { name: "Vyvanse", symbol: Zap, slug: "vyvanse", color: "border-orange-700", bgColor: "bg-orange-50" },
+    { name: "Focalin", symbol: Pill, slug: "dexmethylphenidate", color: "border-blue-700", bgColor: "bg-blue-50" },
+    { name: "Modafinil", symbol: Zap, slug: "modafinil", color: "border-sky-700", bgColor: "bg-sky-50" },
+    { name: "Synthetic Cathinones", symbol: Zap, slug: "synthetic-cathinones", color: "border-red-700", bgColor: "bg-red-50" },
+    { name: "Alkyl Nitrites", symbol: Pill, slug: "alkyl-nitrites", color: "border-sky-600", bgColor: "bg-sky-50" },
+    { name: "Zolpidem", symbol: Pill, slug: "zolpidem", color: "border-sky-600", bgColor: "bg-sky-50" },
+    { name: "Anabolic-Androgenic Steroids", symbol: Zap, slug: "anabolic-steroids", color: "border-amber-700", bgColor: "bg-amber-50" },
     { name: "Ritalin", symbol: Pill, slug: "ritalin", color: "border-indigo-600", bgColor: "bg-indigo-50" },
     { name: "Tianeptine", symbol: Pill, slug: "tianeptine", color: "border-red-600", bgColor: "bg-red-50" },
     { name: "Suboxone", symbol: Pill, slug: "suboxone", color: "border-cyan-600", bgColor: "bg-cyan-50" },
@@ -103,7 +121,9 @@ export default function EducationPage() {
       <div className="sticky top-0 z-50 flex flex-wrap items-center justify-center gap-x-5 gap-y-1 border-b border-white/20 bg-slate-950 px-4 py-3 text-center text-xs font-bold uppercase tracking-[0.18em] text-white shadow-lg">
         <span className="text-2xl"><span className="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-[#fb7185]" />Call <a href="tel:211" className="text-[#24f2a2] underline underline-offset-4 hover:text-white">2-1-1</a> for local resources</span>
         <span className="hidden text-slate-500 sm:inline">/</span>
-        <span className="text-2xl">Life-threatening emergency? <a href="tel:911" className="text-[#ff4d4d] underline underline-offset-4 hover:text-white">Call 9-1-1</a></span>
+        <span className="text-2xl"><span className="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-[#fb7185]" />Life-threatening emergency? <a href="tel:911" className="text-[#ff4d4d] underline underline-offset-4 hover:text-white">Call 9-1-1</a></span>
+        <span className="hidden text-slate-500 sm:inline">/</span>
+        <span className="text-2xl"><span className="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-[#fb7185]" />Suicide crisis support: <a href="tel:988" className="text-[#ff5454] underline underline-offset-4 hover:text-white">Call 9-8-8</a></span>
       </div>
       <header className="relative isolate overflow-hidden bg-slate-950 text-white">
         <div className="absolute -left-24 top-8 -z-10 h-72 w-72 animate-float-orb rounded-full bg-teal-400/30 blur-3xl" />
@@ -125,7 +145,7 @@ export default function EducationPage() {
       <main id="guides" className="relative isolate overflow-hidden bg-[#41cfdf] [border-color:rgba(235,229,230,0.05)] px-5 py-16 text-slate-900 sm:px-8 lg:py-20"><div className="pointer-events-none absolute -left-32 top-24 -z-10 h-96 w-96 rounded-full bg-teal-400/10 blur-3xl" /><div className="pointer-events-none absolute -right-32 top-[40rem] -z-10 h-96 w-96 rounded-full bg-fuchsia-500/10 blur-3xl" /><div className="relative mx-auto max-w-7xl">
         <div className="animate-slide-in-up relative mb-12 overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-teal-700 via-cyan-600 to-slate-900 p-8 text-white shadow-[0_24px_55px_-30px_rgba(13,148,136,0.8)] sm:p-10">
           <h2 className="text-3xl font-bold mb-3">Knowledge Saves Lives</h2>
-          <p className="text-xl">Learn about emerging substances, recognize dangers, and discover paths to recovery. This information is for harm reduction and education based on current CDC and public health data.</p>
+          <p className="text-xl">Learn about emerging substances, recognize dangers, and discover paths to recovery. This information is for harm reduction and education based on current CDC and public health data. <Link href="/medical-disclaimer" className="font-bold italic text-[#ff5454] underline decoration-cyan-200 underline-offset-4 transition hover:text-white">Medical Disclaimer</Link></p>
         </div>
 
         <div className="mb-10">
@@ -146,16 +166,16 @@ export default function EducationPage() {
         </div>
 
         {/* Tab Navigation */}
-        <div className="mb-8 flex gap-4 border-b border-slate-300" ref={contentRef}>
+        <div className="mb-8 flex justify-center gap-4 border-b border-slate-300" ref={contentRef}>
           <button
             onClick={() => handleTabClick('infograph')}
-            className={`px-6 py-3 font-semibold transition ${
+            className={`whitespace-nowrap px-6 py-3 text-[30px] font-semibold transition ${
               activeTab === 'infograph'
-? 'rounded-xl border border-white bg-[rgba(75,198,218,0.36)] text-[#0f0f10] underline shadow-[0_4px_6px_-1px_rgb(0_0_0_/_0.1),0_2px_4px_-2px_rgb(0_0_0_/_0.1)]'
+? 'rounded-xl border border-white bg-[#71ff94] text-[#0f0f10] underline shadow-[0_4px_6px_-1px_rgb(0_0_0_/_0.1),0_2px_4px_-2px_rgb(0_0_0_/_0.1)]'
   : 'text-slate-400 hover:text-slate-900'
             }`}
           >
-            Drug Information & Effects
+            Drugs of Misuse: Information & Effects
           </button>
         </div>
 
@@ -174,7 +194,7 @@ export default function EducationPage() {
                         <drug.symbol aria-hidden="true" className="h-11 w-11 stroke-[1.6]" />
                       )}
                     </div>
-                    <h3 className="text-lg font-black leading-tight tracking-tight text-white">{drug.name}{drug.slug === 'alprazolam' && <span className="block text-sm font-semibold text-cyan-300">(Xanax)</span>}{drug.slug === '7-hydroxymitragynine' && <span className="block text-sm font-semibold text-cyan-300">(7-OH)</span>}{drug.slug === 'dextromethorphan' && <span className="block text-sm font-semibold text-cyan-300">(DXM)</span>}</h3>
+                    <h3 className="text-lg font-black leading-tight tracking-tight text-white">{drug.name}{drug.slug === 'alprazolam' && <span className="block text-sm font-semibold text-cyan-300">(Xanax)</span>}{drug.slug === '7-hydroxymitragynine' && <span className="block text-sm font-semibold text-cyan-300">(7-OH)</span>}{drug.slug === 'dextromethorphan' && <span className="block text-sm font-semibold text-cyan-300">(DXM)</span>}{drug.slug === 'alkyl-nitrites' && <span className="block text-sm font-semibold text-cyan-300">(Poppers)</span>}{drug.slug === 'zolpidem' && <span className="block text-sm font-semibold text-cyan-300">(Ambien)</span>}</h3>
                   </div>
                 </Link>
               );
