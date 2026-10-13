@@ -122,7 +122,7 @@ export default function EducationPage() {
         </div>
       </header>
 
-      <main id="guides" className="relative isolate overflow-hidden bg-slate-300 px-5 py-16 text-slate-900 sm:px-8 lg:py-20"><div className="pointer-events-none absolute -left-32 top-24 -z-10 h-96 w-96 rounded-full bg-teal-400/10 blur-3xl" /><div className="pointer-events-none absolute -right-32 top-[40rem] -z-10 h-96 w-96 rounded-full bg-fuchsia-500/10 blur-3xl" /><div className="relative mx-auto max-w-7xl">
+      <main id="guides" className="relative isolate overflow-hidden bg-[#41cfdf] [border-color:rgba(235,229,230,0.05)] px-5 py-16 text-slate-900 sm:px-8 lg:py-20"><div className="pointer-events-none absolute -left-32 top-24 -z-10 h-96 w-96 rounded-full bg-teal-400/10 blur-3xl" /><div className="pointer-events-none absolute -right-32 top-[40rem] -z-10 h-96 w-96 rounded-full bg-fuchsia-500/10 blur-3xl" /><div className="relative mx-auto max-w-7xl">
         <div className="animate-slide-in-up relative mb-12 overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-teal-700 via-cyan-600 to-slate-900 p-8 text-white shadow-[0_24px_55px_-30px_rgba(13,148,136,0.8)] sm:p-10">
           <h2 className="text-3xl font-bold mb-3">Knowledge Saves Lives</h2>
           <p className="text-xl">Learn about emerging substances, recognize dangers, and discover paths to recovery. This information is for harm reduction and education based on current CDC and public health data.</p>
