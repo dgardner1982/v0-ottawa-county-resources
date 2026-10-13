@@ -174,7 +174,7 @@ export default function EducationPage() {
                         <drug.symbol aria-hidden="true" className="h-11 w-11 stroke-[1.6]" />
                       )}
                     </div>
-                    <h3 className="text-lg font-black leading-tight tracking-tight text-white">{drug.name}{drug.slug === 'alprazolam' && <span className="block text-sm font-semibold text-cyan-300">(Xanax)</span>}</h3>
+                    <h3 className="text-lg font-black leading-tight tracking-tight text-white">{drug.name}{drug.slug === 'alprazolam' && <span className="block text-sm font-semibold text-cyan-300">(Xanax)</span>}{drug.slug === '7-hydroxymitragynine' && <span className="block text-sm font-semibold text-cyan-300">(7-OH)</span>}</h3>
                   </div>
                 </Link>
               );
