@@ -166,7 +166,7 @@ export default function EducationPage() {
               const href = drug.slug === 'synthetic-cannabinoids' ? '/synthetic-cannabinoids' : `/drug/${drug.slug}`;
               return (
                 <Link key={idx} href={href}>
-                  <div style={{ animationDelay: `${Math.min(idx * 35, 420)}ms` }} className="resource-card group flex h-64 cursor-pointer flex-col items-center justify-center rounded-[1.35rem] border border-white/10 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950 p-8 text-center shadow-[0_20px_45px_-28px_rgba(45,212,191,0.5)] transition duration-500 hover:-translate-y-2 hover:border-teal-300/50 hover:shadow-[0_25px_55px_-24px_rgba(45,212,191,0.55)]">
+                  <div style={{ animationDelay: `${Math.min(idx * 35, 420)}ms` }} className="resource-card group flex h-64 cursor-pointer flex-col items-center justify-center rounded-[1.35rem] border border-white/10 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950 p-8 text-center shadow-[0_18px_24px_-10px_rgba(2,8,23,0.9),0_8px_14px_-8px_rgba(15,23,42,0.75)] transition duration-500 hover:-translate-y-2 hover:border-teal-300/50 hover:shadow-[0_25px_55px_-24px_rgba(45,212,191,0.55)]">
                     <div className="mb-5 flex h-20 w-20 items-center justify-center rounded-3xl border border-teal-300/25 bg-gradient-to-br from-teal-300/20 to-fuchsia-400/10 text-teal-200 shadow-[0_0_28px_-10px_rgba(94,234,212,0.9)] transition duration-500 group-hover:rotate-3 group-hover:scale-110 group-hover:border-teal-200/60">
                       {drug.image ? (
                         <img src={drug.image} alt={drug.name} className="h-14 w-14 rounded-xl object-contain" />

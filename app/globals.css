@@ -242,6 +242,10 @@
   animation: shimmer 0.8s ease-out;
 }
 
+#guides .resource-card {
+  box-shadow: 0 16px 24px -14px rgba(2, 8, 23, 0.9), 0 8px 14px -10px rgba(15, 23, 42, 0.75);
+}
+
 #guides .resource-card::after {
   content: none;
   display: none;
