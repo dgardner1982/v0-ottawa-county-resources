@@ -69,26 +69,26 @@ export default function EducationPage() {
     { name: "Crack Cocaine", symbol: Atom, slug: "crack-cocaine", color: "border-red-700", bgColor: "bg-red-50" },
     { name: "Dextromethorphan", symbol: FlaskConical, slug: "dextromethorphan", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "GHB", symbol: Droplets, slug: "ghb", color: "border-cyan-600", bgColor: "bg-cyan-50" },
-    { name: "MDMA", symbol: Sparkles, slug: "mdma", color: "border-pink-600", bgColor: "bg-pink-50" },
+    { name: "MDMA", symbol: Sparkles, slug: "mdma", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "Oxycodone", symbol: Pill, slug: "oxycodone", color: "border-amber-600", bgColor: "bg-amber-50" },
     { name: "Pregabalin", symbol: Brain, slug: "pregabalin", color: "border-green-600", bgColor: "bg-green-50" },
     { name: "Cyclorphine", symbol: ShieldAlert, slug: "cyclorphine", color: "border-purple-700", bgColor: "bg-purple-100" },
     { name: "Fentanyl", symbol: AlertTriangle, slug: "fentanyl", color: "border-red-600", bgColor: "bg-red-100" },
     { name: "Hemp-Derived Cannabinoids", symbol: Leaf, slug: "hemp-derived-cannabinoids", color: "border-green-600", bgColor: "bg-green-100" },
     { name: "Heroin", symbol: Syringe, slug: "heroin", color: "border-amber-700", bgColor: "bg-amber-50" },
-    { name: "Nitrous Oxide", symbol: Wind, slug: "nitrous-oxide", color: "border-teal-600", bgColor: "bg-teal-50" },
+    { name: "Nitrous Oxide", symbol: Wind, slug: "nitrous-oxide", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "Duster", symbol: Wind, slug: "duster", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "Ketamine", symbol: TestTube, slug: "ketamine", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "Kratom", symbol: Leaf, slug: "kratom", color: "border-cyan-600", bgColor: "bg-cyan-50" },
-    { name: "Medetomidine", symbol: Microscope, slug: "medetomidine", color: "border-indigo-600", bgColor: "bg-indigo-100" },
-    { name: "Methadone", symbol: Pill, slug: "methadone", color: "border-blue-500", bgColor: "bg-blue-50" },
+    { name: "Medetomidine", symbol: Microscope, slug: "medetomidine", color: "border-cyan-600", bgColor: "bg-cyan-50" },
+    { name: "Methadone", symbol: Pill, slug: "methadone", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "Hydrocodone", symbol: Pill, slug: "hydrocodone", color: "border-violet-600", bgColor: "bg-violet-50" },
     { name: "Hydromorphone", symbol: Syringe, slug: "hydromorphone", color: "border-violet-800", bgColor: "bg-violet-100" },
   { name: "Codeine", symbol: Pill, slug: "codeine", color: "border-purple-600", bgColor: "bg-purple-50" },
   { name: "Tramadol", symbol: Pill, slug: "tramadol", color: "border-fuchsia-600", bgColor: "bg-fuchsia-50" },
   { name: "Oxymorphone", symbol: Syringe, slug: "oxymorphone", color: "border-rose-700", bgColor: "bg-rose-50" },
   { name: "Morphine", symbol: Pill, slug: "morphine", color: "border-slate-700", bgColor: "bg-slate-100" },
-    { name: "Methamphetamine", symbol: Zap, slug: "methamphetamine", color: "border-orange-500", bgColor: "bg-orange-50" },
+    { name: "Methamphetamine", symbol: Zap, slug: "methamphetamine", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "Nitazine", symbol: Pill, slug: "nitazine", color: "border-yellow-600", bgColor: "bg-yellow-50" },
     { name: "PCP", symbol: FlaskConical, slug: "pcp", color: "border-red-700", bgColor: "bg-red-200" },
     { name: "Psilocybin", symbol: Leaf, slug: "psilocybin", color: "border-emerald-600", bgColor: "bg-emerald-50" },
@@ -105,7 +105,7 @@ export default function EducationPage() {
     { name: "Zolpidem", symbol: Pill, slug: "zolpidem", color: "border-sky-600", bgColor: "bg-sky-50" },
     { name: "Anabolic-Androgenic Steroids", symbol: Zap, slug: "anabolic-steroids", color: "border-amber-700", bgColor: "bg-amber-50" },
     { name: "Ritalin", symbol: Pill, slug: "ritalin", color: "border-indigo-600", bgColor: "bg-indigo-50" },
-    { name: "Tianeptine", symbol: Pill, slug: "tianeptine", color: "border-red-600", bgColor: "bg-red-50" },
+    { name: "Tianeptine", symbol: Pill, slug: "tianeptine", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "Suboxone", symbol: Pill, slug: "suboxone", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "Synthetic Cannabinoids", symbol: Leaf, slug: "synthetic-cannabinoids", color: "border-teal-500", bgColor: "bg-teal-50" },
     { name: "THC", symbol: Leaf, slug: "thc", color: "border-lime-500", bgColor: "bg-lime-50" },
@@ -160,7 +160,7 @@ export default function EducationPage() {
               value={searchQuery}
               onChange={(event) => setSearchQuery(event.target.value)}
               placeholder="Search substance guides..."
-              className="inline-flex h-14 w-full rounded-3xl border border-teal-300/30 bg-[rgba(85,229,255,0.47)] pl-12 pr-[11px] text-lg text-[#282020] shadow-[0_4px_6px_-1px_rgb(0_0_0_/_0.1),0_2px_4px_-2px_rgb(0_0_0_/_0.1)] placeholder:text-slate-700 focus-visible:border-teal-500 focus-visible:ring-teal-300/30"
+              className="inline-flex h-14 w-full rounded-3xl border border-teal-300/30 bg-[rgba(85,229,255,0.47)] pl-12 pr-[11px] text-lg font-semibold text-[#282020] shadow-[0_4px_6px_-1px_rgb(0_0_0_/_0.1),0_2px_4px_-2px_rgb(0_0_0_/_0.1)] placeholder:text-slate-700 focus-visible:border-teal-500 focus-visible:ring-teal-300/30"
             />
           </div>
         </div>
@@ -171,7 +171,7 @@ export default function EducationPage() {
             onClick={() => handleTabClick('infograph')}
             className={`whitespace-nowrap px-6 py-3 text-[30px] font-semibold transition ${
               activeTab === 'infograph'
-? 'rounded-xl border border-white bg-[#71ff94] text-[#0f0f10] underline shadow-[0_4px_6px_-1px_rgb(0_0_0_/_0.1),0_2px_4px_-2px_rgb(0_0_0_/_0.1)]'
+? 'rounded-xl border border-white bg-[#71ff94] text-[#0f0f10] underline shadow-[0_25px_50px_-12px_rgb(0_0_0_/_0.25)]'
   : 'text-slate-400 hover:text-slate-900'
             }`}
           >
