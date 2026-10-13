@@ -101,8 +101,8 @@ export default function EducationPage() {
     { name: "Focalin", symbol: Pill, slug: "dexmethylphenidate", color: "border-blue-700", bgColor: "bg-blue-50" },
     { name: "Modafinil", symbol: Zap, slug: "modafinil", color: "border-sky-700", bgColor: "bg-sky-50" },
     { name: "Synthetic Cathinones", symbol: Zap, slug: "synthetic-cathinones", color: "border-red-700", bgColor: "bg-red-50" },
-    { name: "Alkyl Nitrites (Poppers)", symbol: Pill, slug: "alkyl-nitrites", color: "border-sky-600", bgColor: "bg-sky-50" },
-    { name: "Zolpidem (Ambien)", symbol: Pill, slug: "zolpidem", color: "border-sky-600", bgColor: "bg-sky-50" },
+    { name: "Alkyl Nitrites", symbol: Pill, slug: "alkyl-nitrites", color: "border-sky-600", bgColor: "bg-sky-50" },
+    { name: "Zolpidem", symbol: Pill, slug: "zolpidem", color: "border-sky-600", bgColor: "bg-sky-50" },
     { name: "Anabolic-Androgenic Steroids", symbol: Zap, slug: "anabolic-steroids", color: "border-amber-700", bgColor: "bg-amber-50" },
     { name: "Ritalin", symbol: Pill, slug: "ritalin", color: "border-indigo-600", bgColor: "bg-indigo-50" },
     { name: "Tianeptine", symbol: Pill, slug: "tianeptine", color: "border-red-600", bgColor: "bg-red-50" },
@@ -194,7 +194,7 @@ export default function EducationPage() {
                         <drug.symbol aria-hidden="true" className="h-11 w-11 stroke-[1.6]" />
                       )}
                     </div>
-                    <h3 className="text-lg font-black leading-tight tracking-tight text-white">{drug.name}{drug.slug === 'alprazolam' && <span className="block text-sm font-semibold text-cyan-300">(Xanax)</span>}{drug.slug === '7-hydroxymitragynine' && <span className="block text-sm font-semibold text-cyan-300">(7-OH)</span>}{drug.slug === 'dextromethorphan' && <span className="block text-sm font-semibold text-cyan-300">(DXM)</span>}</h3>
+                    <h3 className="text-lg font-black leading-tight tracking-tight text-white">{drug.name}{drug.slug === 'alprazolam' && <span className="block text-sm font-semibold text-cyan-300">(Xanax)</span>}{drug.slug === '7-hydroxymitragynine' && <span className="block text-sm font-semibold text-cyan-300">(7-OH)</span>}{drug.slug === 'dextromethorphan' && <span className="block text-sm font-semibold text-cyan-300">(DXM)</span>}{drug.slug === 'alkyl-nitrites' && <span className="block text-sm font-semibold text-cyan-300">(Poppers)</span>}{drug.slug === 'zolpidem' && <span className="block text-sm font-semibold text-cyan-300">(Ambien)</span>}</h3>
                   </div>
                 </Link>
               );
