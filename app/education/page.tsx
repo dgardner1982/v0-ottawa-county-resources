@@ -69,7 +69,7 @@ export default function EducationPage() {
     { name: "Crack Cocaine", symbol: Atom, slug: "crack-cocaine", color: "border-red-700", bgColor: "bg-red-50" },
     { name: "Dextromethorphan", symbol: FlaskConical, slug: "dextromethorphan", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "GHB", symbol: Droplets, slug: "ghb", color: "border-cyan-600", bgColor: "bg-cyan-50" },
-    { name: "MDMA", symbol: Sparkles, slug: "mdma", color: "border-pink-600", bgColor: "bg-pink-50" },
+    { name: "MDMA", symbol: Sparkles, slug: "mdma", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "Oxycodone", symbol: Pill, slug: "oxycodone", color: "border-amber-600", bgColor: "bg-amber-50" },
     { name: "Pregabalin", symbol: Brain, slug: "pregabalin", color: "border-green-600", bgColor: "bg-green-50" },
     { name: "Cyclorphine", symbol: ShieldAlert, slug: "cyclorphine", color: "border-purple-700", bgColor: "bg-purple-100" },
