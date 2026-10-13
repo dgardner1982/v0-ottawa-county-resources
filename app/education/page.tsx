@@ -88,7 +88,7 @@ export default function EducationPage() {
   { name: "Tramadol", symbol: Pill, slug: "tramadol", color: "border-fuchsia-600", bgColor: "bg-fuchsia-50" },
   { name: "Oxymorphone", symbol: Syringe, slug: "oxymorphone", color: "border-rose-700", bgColor: "bg-rose-50" },
   { name: "Morphine", symbol: Pill, slug: "morphine", color: "border-slate-700", bgColor: "bg-slate-100" },
-    { name: "Methamphetamine", symbol: Zap, slug: "methamphetamine", color: "border-orange-500", bgColor: "bg-orange-50" },
+    { name: "Methamphetamine", symbol: Zap, slug: "methamphetamine", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "Nitazine", symbol: Pill, slug: "nitazine", color: "border-yellow-600", bgColor: "bg-yellow-50" },
     { name: "PCP", symbol: FlaskConical, slug: "pcp", color: "border-red-700", bgColor: "bg-red-200" },
     { name: "Psilocybin", symbol: Leaf, slug: "psilocybin", color: "border-emerald-600", bgColor: "bg-emerald-50" },
