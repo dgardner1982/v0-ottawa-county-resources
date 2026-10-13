@@ -76,7 +76,7 @@ export default function EducationPage() {
     { name: "Fentanyl", symbol: AlertTriangle, slug: "fentanyl", color: "border-red-600", bgColor: "bg-red-100" },
     { name: "Hemp-Derived Cannabinoids", symbol: Leaf, slug: "hemp-derived-cannabinoids", color: "border-green-600", bgColor: "bg-green-100" },
     { name: "Heroin", symbol: Syringe, slug: "heroin", color: "border-amber-700", bgColor: "bg-amber-50" },
-    { name: "Nitrous Oxide", symbol: Wind, slug: "nitrous-oxide", color: "border-teal-600", bgColor: "bg-teal-50" },
+    { name: "Nitrous Oxide", symbol: Wind, slug: "nitrous-oxide", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "Duster", symbol: Wind, slug: "duster", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "Ketamine", symbol: TestTube, slug: "ketamine", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "Kratom", symbol: Leaf, slug: "kratom", color: "border-cyan-600", bgColor: "bg-cyan-50" },
