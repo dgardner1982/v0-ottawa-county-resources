@@ -298,7 +298,7 @@ export function IconTile({ accent = 'teal', icon: Icon }: { accent?: Accent; ico
 }
 
 export const darkCardClass =
-  'resource-card group relative overflow-hidden rounded-[1.35rem] border border-white/10 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950 text-white shadow-[0_18px_24px_-10px_rgba(2,8,23,0.9),0_8px_14px_-8px_rgba(15,23,42,0.75)] transition duration-500 hover:-translate-y-2';
+  'resource-card group relative overflow-hidden rounded-[1.35rem] border border-white/10 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950 text-white shadow-[0_18px_24px_-10px_rgba(2,8,23,0.9),0_8px_14px_-8px_rgba(15,23,42,0.75)] transition duration-500 hover:-translate-y-2 hover:border-white/30 hover:shadow-[0_26px_52px_-24px_rgba(45,212,191,0.5),0_12px_24px_-14px_rgba(2,8,23,0.95)]';
 
 export const lightCardClass =
   'resource-card group relative overflow-hidden rounded-[1.35rem] border border-white/80 bg-white text-slate-900 shadow-[0_18px_40px_-28px_rgba(15,23,42,0.8)] transition duration-500 hover:-translate-y-2 hover:shadow-[0_25px_48px_-26px_rgba(15,23,42,0.85)]';
