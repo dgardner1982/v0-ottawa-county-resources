@@ -58,7 +58,7 @@ export default function EducationPage() {
     }, 0);
   };
   
-  const drugs = [
+  const drugs: { name: string; symbol: typeof Pill; slug: string; color: string; bgColor: string; image?: string }[] = [
     { name: "Alcohol", symbol: Wine, slug: "alcohol", color: "border-amber-600", bgColor: "bg-amber-50" },
     { name: "Bromazolam", symbol: Pill, slug: "bromazolam", color: "border-slate-700", bgColor: "bg-slate-50" },
     { name: "7-Hydroxymitragynine", symbol: Leaf, slug: "7-hydroxymitragynine", color: "border-lime-600", bgColor: "bg-lime-50" },
@@ -235,7 +235,7 @@ export default function EducationPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {(supportTab === 'resources' ? substanceResources : supportGroups).map((item) => (
                 <article key={item.name} className="rounded-lg border border-teal-200 bg-white p-6 shadow-sm">
-                  <p className="mb-2 text-sm font-bold uppercase tracking-wide text-teal-700">{'type' in item ? item.type : 'Peer Support'}</p>
+                  <p className="mb-2 text-sm font-bold uppercase tracking-wide text-teal-700">{'type' in item ? String(item.type) : 'Peer Support'}</p>
                   <h3 className="text-2xl font-bold text-gray-900">{item.name}</h3>
                   <p className="mt-3 leading-6 text-gray-700">{item.description}</p>
                   <a href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noreferrer' : undefined} className="mt-4 inline-block font-semibold text-teal-700 underline">Learn more</a>
