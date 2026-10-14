@@ -1,7 +1,14 @@
 'use client';
 
+import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { BackToEducationButton } from '@/components/back-to-education-button';
 import { Footer } from '@/components/footer';
+import imageCredits from '@/lib/drug-image-credits.json';
+
+type ImageCredit = { page: string; license: string; artist: string };
+
+const structureSlugs = ['cyclorphine', 'nitazine', 'medetomidine'];
 
 type Profile = {
   name: string;
@@ -24,6 +31,10 @@ type Profile = {
 
 export function SubstanceProfilePage({ profile }: { profile: Profile | undefined }) {
   const activeProfile: Profile = profile ?? profiles.alcohol;
+  const slug = usePathname().split('/').filter(Boolean).pop() ?? '';
+  const credit = (imageCredits as Record<string, ImageCredit>)[slug];
+  const imageSrc = `/drug-images/${slug}.jpg`;
+  const isStructure = structureSlugs.includes(slug);
   const tabs = [
     ['Signs of Use', activeProfile.signs],
     ['Short Term', activeProfile.shortTerm],
@@ -38,10 +49,25 @@ export function SubstanceProfilePage({ profile }: { profile: Profile | undefined
       <header className="bg-[#41cfdf] px-5 pb-10 pt-8 sm:px-8 sm:pt-12">
         <div className="mx-auto max-w-6xl rounded-3xl bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950 px-6 py-10 text-white shadow-[0_24px_38px_-20px_rgba(2,8,23,0.95)] sm:px-12 sm:py-14">
           <BackToEducationButton />
-          <div className="mt-10 max-w-4xl">
-            <p className="font-mono text-xs font-bold uppercase tracking-[0.24em] text-cyan-300">Substance education guide</p>
-            <h1 className="mt-4 max-w-full break-words text-pretty text-5xl font-bold tracking-tight sm:text-7xl">{activeProfile.name}</h1>
-            <p className="mt-5 max-w-3xl text-pretty text-lg leading-8 text-slate-300 sm:text-xl">{activeProfile.subtitle}</p>
+          <div className={`mt-10 grid items-center gap-10 ${credit ? 'lg:grid-cols-[1.1fr_0.9fr]' : ''}`}>
+            <div className="min-w-0 max-w-4xl">
+              <p className="font-mono text-xs font-bold uppercase tracking-[0.24em] text-cyan-300">Substance education guide</p>
+              <h1 className={`mt-4 max-w-full break-words text-pretty text-5xl font-bold tracking-tight ${credit ? 'sm:text-6xl' : 'sm:text-7xl'}`}>{activeProfile.name}</h1>
+              <p className="mt-5 max-w-3xl text-pretty text-lg leading-8 text-slate-300 sm:text-xl">{activeProfile.subtitle}</p>
+            </div>
+            {credit && (
+              <figure className="w-full">
+                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-slate-800 ring-1 ring-white/20 shadow-[0_18px_28px_-16px_rgba(0,0,0,0.9)]">
+                  <Image src={imageSrc} alt="" fill sizes="(min-width: 1024px) 40vw, 100vw" aria-hidden="true" className="scale-125 object-cover opacity-60 blur-2xl" />
+                  <Image src={imageSrc} alt={`${isStructure ? 'Chemical structure of' : 'Representative photo of'} ${activeProfile.name}`} fill priority sizes="(min-width: 1024px) 40vw, 100vw" className="object-contain p-3" />
+                  <span className="absolute left-3 top-3 rounded-full bg-slate-950/80 px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-cyan-200">{isStructure ? 'Chemical structure' : 'What it looks like'}</span>
+                </div>
+                <figcaption className="mt-3 text-xs leading-5 text-slate-400">
+                  Image: {credit.artist ? `${credit.artist} · ` : ''}{credit.license} ·{' '}
+                  <a className="underline underline-offset-2 hover:text-white" href={credit.page} target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>. Appearance varies; illicit products may look different or be counterfeit.
+                </figcaption>
+              </figure>
+            )}
           </div>
         </div>
       </header>
