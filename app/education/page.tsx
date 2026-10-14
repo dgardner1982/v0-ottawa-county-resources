@@ -72,6 +72,7 @@ export default function EducationPage() {
     { name: "MDMA", symbol: Sparkles, slug: "mdma", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "Oxycodone", symbol: Pill, slug: "oxycodone", color: "border-amber-600", bgColor: "bg-amber-50" },
     { name: "Pregabalin", symbol: Brain, slug: "pregabalin", color: "border-green-600", bgColor: "bg-green-50" },
+    { name: "Gabapentin", symbol: Brain, slug: "gabapentin", color: "border-green-700", bgColor: "bg-green-50" },
     { name: "Cyclorphine", symbol: ShieldAlert, slug: "cyclorphine", color: "border-purple-700", bgColor: "bg-purple-100" },
     { name: "Fentanyl", symbol: AlertTriangle, slug: "fentanyl", color: "border-red-600", bgColor: "bg-red-100" },
     { name: "Hemp-Derived Cannabinoids", symbol: Leaf, slug: "hemp-derived-cannabinoids", color: "border-green-600", bgColor: "bg-green-100" },
