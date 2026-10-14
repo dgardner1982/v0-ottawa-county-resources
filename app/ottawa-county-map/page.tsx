@@ -1,7 +1,9 @@
 'use client'
 
 import dynamic from 'next/dynamic'
-import Link from 'next/link'
+import { MapPin } from 'lucide-react'
+import { Footer } from '@/components/footer'
+import { BackPill, EmergencyBar, PageHero } from '@/components/site-chrome'
 
 const OttawaCountyMap = dynamic(
   () => import('@/components/ottawa-county-map').then((module) => module.OttawaCountyMap),
@@ -10,17 +12,26 @@ const OttawaCountyMap = dynamic(
 
 export default function OttawaCountyMapPage() {
   return (
-    <main className="min-h-screen bg-gray-50 px-4 py-8">
-      <div className="mx-auto max-w-6xl">
-        <Link href="/naloxone-locations" className="mb-6 inline-block rounded-lg bg-gray-600 px-6 py-2 font-bold text-white transition hover:bg-gray-700">
-          ← Back to Naloxone Locations
-        </Link>
-        <h1 className="mb-3 text-4xl font-bold text-red-700">Ottawa County Free Naloxone Locations</h1>
-        <p className="mb-6 text-lg text-gray-700">Click a marker to view the location name and address.</p>
-        <div className="overflow-hidden rounded-xl border-2 border-blue-300 bg-white p-2 shadow-lg">
+    <div className="min-h-screen bg-[#41cfdf] text-slate-950">
+      <EmergencyBar />
+      <PageHero
+        accent="teal"
+        eyebrow="Interactive map"
+        title="Free Naloxone"
+        highlight="Locations"
+        icon={MapPin}
+        description="Click a marker to view the location name and address anywhere in Ottawa County."
+        back={{ href: '/naloxone-locations', label: 'Back to naloxone locations' }}
+      />
+      <main className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
+        <div className="overflow-hidden rounded-[1.75rem] border-4 border-slate-950 bg-white p-2 shadow-[0_28px_60px_-28px_rgba(2,8,23,0.9)]">
           <OttawaCountyMap />
         </div>
-      </div>
-    </main>
+        <div className="mt-12 flex justify-center">
+          <BackPill href="/naloxone-locations">Back to naloxone locations</BackPill>
+        </div>
+      </main>
+      <Footer />
+    </div>
   )
 }

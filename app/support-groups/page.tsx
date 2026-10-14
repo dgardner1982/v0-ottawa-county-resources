@@ -1,8 +1,16 @@
 'use client';
 
-import Link from 'next/link';
-import { ExternalLink } from 'lucide-react';
+import { Brain, CheckCircle2, ExternalLink, RefreshCw, ShieldCheck, Users, type LucideIcon } from 'lucide-react';
 import { Footer } from '@/components/footer';
+import {
+  BackPill,
+  Callout,
+  EmergencyBar,
+  PageHero,
+  PillLink,
+  darkCardClass,
+  type Accent,
+} from '@/components/site-chrome';
 
 export default function SupportGroupsPage() {
   const supportGroups = [
@@ -150,90 +158,175 @@ export default function SupportGroupsPage() {
     }
   ];
 
+  const sectionStyles: Record<string, { icon: LucideIcon; accent: Accent; band: string; chip: string }> = {
+    'Substance Recovery': { icon: ShieldCheck, accent: 'amber', band: 'from-amber-500 to-orange-600', chip: 'border-amber-300/30 bg-amber-300/10 text-amber-200 hover:bg-amber-300 hover:text-slate-950' },
+    'Mental Health & Grief': { icon: Brain, accent: 'cyan', band: 'from-cyan-500 to-teal-600', chip: 'border-cyan-300/30 bg-cyan-300/10 text-cyan-200 hover:bg-cyan-300 hover:text-slate-950' },
+    'Behavioral & Compulsive Disorders': { icon: RefreshCw, accent: 'rose', band: 'from-rose-500 to-fuchsia-600', chip: 'border-rose-300/30 bg-rose-300/10 text-rose-200 hover:bg-rose-300 hover:text-slate-950' },
+    'Family & Loved Ones Support': { icon: Users, accent: 'fuchsia', band: 'from-fuchsia-500 to-purple-600', chip: 'border-fuchsia-300/30 bg-fuchsia-300/10 text-fuchsia-200 hover:bg-fuchsia-300 hover:text-slate-950' },
+  };
+
+  const findingMeetings = [
+    'Call 2-1-1 for local support group information and referrals',
+    'Visit individual organization websites for meeting schedules and locations',
+    'Many groups now offer hybrid (in-person and virtual) meetings',
+    'Anonymity and confidentiality are core principles of all 12-step programs',
+  ];
+
+  const startingJourney = [
+    'Experienced members ready to help newcomers',
+    'Free or low-cost meetings and resources',
+    'Online options for convenience and flexibility',
+    'Strong emphasis on anonymity and respect',
+    'Practical tools for lasting change',
+  ];
+
   return (
     <>
-      <div className="sticky top-0 z-50 flex flex-wrap items-center justify-center gap-x-5 gap-y-1 border-b border-white/20 bg-slate-950 px-4 py-3 text-center text-xs font-bold uppercase tracking-[0.18em] text-white shadow-lg"><span><span className="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-[#fb7185]" />Call <a href="tel:211" className="text-teal-300 underline underline-offset-4 hover:text-white">2-1-1</a> for local resources</span><span className="hidden text-slate-500 sm:inline">/</span><span>Life-threatening emergency? <a href="tel:911" className="text-amber-300 underline underline-offset-4 hover:text-white">Call 9-1-1</a></span></div>
-      <header className="relative isolate overflow-hidden bg-slate-950 text-white"><div className="absolute -left-24 top-8 -z-10 h-72 w-72 animate-float-orb rounded-full bg-fuchsia-500/25 blur-3xl" /><div className="absolute -right-20 bottom-0 -z-10 h-96 w-96 animate-float-orb rounded-full bg-teal-400/25 blur-3xl [animation-delay:2s]" /><div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_70%_15%,rgba(217,70,239,0.16),transparent_34%),linear-gradient(135deg,#020617_0%,#0f172a_58%,#32194d_100%)]" /><div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-20"><div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]"><div className="animate-slide-in-up text-left"><div className="mb-7 inline-flex items-center gap-3 rounded-full border border-fuchsia-300/30 bg-fuchsia-300/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-fuchsia-200 backdrop-blur"><span className="h-2 w-2 rounded-full bg-fuchsia-300 shadow-[0_0_14px_#f0abfc]" /> You do not have to do this alone</div><h1 className="text-balance text-5xl font-black leading-[0.98] tracking-[-0.045em] text-white sm:text-7xl">Find a community that <span className="bg-gradient-to-r from-fuchsia-300 via-pink-200 to-amber-200 bg-clip-text text-transparent">gets it.</span></h1><p className="mt-7 max-w-2xl text-pretty text-lg leading-8 text-slate-300 sm:text-xl">Peer support creates connection, accountability, and a place to be understood—wherever you are in your journey.</p><div className="mt-9 grid max-w-2xl grid-cols-2 gap-4"><Link href="/" className="group inline-flex items-center justify-center gap-3 rounded-full bg-teal-300 px-6 py-3.5 font-bold text-slate-950 shadow-[0_10px_35px_-12px_#5eead4] transition duration-300 hover:-translate-y-1 hover:bg-white">Explore resources <span className="transition-transform group-hover:translate-x-1">→</span></Link><Link href="/education" className="group inline-flex items-center justify-center gap-3 rounded-full border border-white/20 bg-white/5 px-6 py-3.5 font-bold text-cyan-200 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-cyan-200/70 hover:bg-white/10 hover:text-white">Learn something new <span className="text-cyan-200 transition-transform group-hover:translate-x-1 group-hover:text-white">→</span></Link><Link href="/support-groups" className="group col-span-2 inline-flex w-fit justify-self-center items-center gap-3 rounded-full border border-fuchsia-200/40 bg-fuchsia-200/10 px-6 py-3.5 font-bold text-fuchsia-100 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-fuchsia-200 hover:bg-fuchsia-200/20">Explore support groups <span className="transition-transform group-hover:translate-x-1">→</span></Link></div></div><div className="relative animate-scale-in [animation-delay:180ms]"><div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-tr from-fuchsia-400/20 via-transparent to-teal-400/20 blur-2xl" /><div className="animate-border-glow relative overflow-hidden rounded-[2rem] border border-white/15 bg-white/10 p-3 backdrop-blur-xl"><Link href="/" aria-label="Go to Ottawa County Recovery Alliance homepage"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Recovery%20Alliance%20Business%20Cards-UXhe7EFsenUbcy44EqMjYgUa3HNUT3.jpg" alt="Ottawa County Recovery Alliance" className="h-auto w-full rounded-[1.4rem] object-cover transition duration-500 hover:scale-[1.02]" /></Link></div></div></div></div></header>
+      <EmergencyBar />
 
-      <main id="groups" className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-20">
-        <div className="animate-slide-in-up relative mb-12 overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-fuchsia-700 via-purple-700 to-slate-950 p-8 text-white shadow-[0_24px_55px_-30px_rgba(192,38,211,0.8)] sm:p-10">
-          <h2 className="text-3xl font-bold mb-3">Find Your Community</h2>
-          <p className="text-lg mb-4">Support groups connect you with people who understand your journey. Whether you're seeking recovery from addiction, supporting a loved one, or working through emotional challenges, there's a community for you.</p>
-          <p className="text-sm opacity-90">All groups listed are peer led and confidential. These meetings are free and available locally or online. While the majority of our sessions are open to any interested individual, some meetings are designated as Closed.</p>
-        </div>
+      <PageHero
+        accent="fuchsia"
+        eyebrow="You do not have to do this alone"
+        title="Find a community that"
+        highlight="gets it."
+        icon={Users}
+        description="Peer support creates connection, accountability, and a place to be understood—wherever you are in your journey."
+        back={{ href: '/', label: 'Back to resources' }}
+        actions={
+          <>
+            <PillLink href="#groups" accent="fuchsia">
+              Browse support groups
+            </PillLink>
+            <PillLink href="/education" accent="fuchsia" variant="ghost">
+              Education guides
+            </PillLink>
+          </>
+        }
+      />
 
-        {supportGroups.map((section, idx) => (
-          <div key={idx} className="mb-12">
-            <div className={`mb-6 flex items-center gap-4 border-b border-slate-200 pb-4`}>
-              <span className="text-4xl">{section.icon}</span>
-              <h2 className="text-3xl font-bold text-gray-900">{section.category}</h2>
+      <main id="groups" className="bg-[#d9f0ee] scroll-mt-24">
+        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-24">
+          <Callout accent="fuchsia" title="Find your community" className="mb-16">
+            <p>
+              Support groups connect you with people who understand your journey. Whether you&apos;re seeking recovery from addiction,
+              supporting a loved one, or working through emotional challenges, there&apos;s a community for you.
+            </p>
+            <p className="text-sm text-white/80">
+              All groups listed are peer led and confidential. These meetings are free and available locally or online. While the
+              majority of our sessions are open to any interested individual, some meetings are designated as Closed.
+            </p>
+          </Callout>
+
+          {supportGroups.map((section) => {
+            const style = sectionStyles[section.category];
+            const SectionIcon = style.icon;
+            return (
+              <section key={section.category} className="mb-16" aria-labelledby={`sg-${section.category}`}>
+                <div className="mb-8 flex items-center gap-4">
+                  <span className={`flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br text-white shadow-lg ${style.band}`}>
+                    <SectionIcon aria-hidden="true" className="h-7 w-7" />
+                  </span>
+                  <h2 id={`sg-${section.category}`} className="text-balance text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">
+                    {section.category}
+                  </h2>
+                </div>
+
+                <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+                  {section.groups.map((group, gIdx) => (
+                    <article
+                      key={group.name}
+                      style={{ animationDelay: `${Math.min(gIdx * 55, 400)}ms` }}
+                      className={`${darkCardClass} animate-slide-in-up flex flex-col p-7 hover:border-white/30`}
+                    >
+                      <span className={`absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r ${style.band}`} />
+                      <h3 className="text-balance text-xl font-black leading-snug tracking-tight text-white">{group.name}</h3>
+                      <p className="mt-3 leading-7 text-slate-300">{group.description}</p>
+                      <div className="mt-auto flex flex-wrap gap-3 pt-6">
+                        <a
+                          href={group.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-bold transition ${style.chip}`}
+                        >
+                          Visit <ExternalLink aria-hidden="true" size={15} />
+                          <span className="sr-only">{group.name} website (opens in a new tab)</span>
+                        </a>
+                        <a
+                          href={group.findMeetings}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-bold text-slate-950 transition hover:bg-teal-300"
+                        >
+                          Find meetings <ExternalLink aria-hidden="true" size={15} />
+                          <span className="sr-only">for {group.name} (opens in a new tab)</span>
+                        </a>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </section>
+            );
+          })}
+
+          <div className="grid gap-6 lg:grid-cols-2">
+            <div className="rounded-[1.75rem] bg-gradient-to-br from-fuchsia-700 via-purple-700 to-slate-950 p-8 text-white shadow-[0_24px_55px_-30px_rgba(192,38,211,0.8)]">
+              <h3 className="text-3xl font-black tracking-tight">Finding meetings in Ottawa County</h3>
+              <ul className="mt-6 space-y-3">
+                {findingMeetings.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-lg leading-7">
+                    <CheckCircle2 aria-hidden="true" className="mt-1 h-6 w-6 shrink-0 text-fuchsia-200" />
+                    {item.startsWith('Call 2-1-1') ? (
+                      <span>
+                        Call{' '}
+                        <a href="tel:211" className="font-black underline underline-offset-4 hover:text-fuchsia-200">
+                          2-1-1
+                        </a>{' '}
+                        for local support group information and referrals
+                      </span>
+                    ) : (
+                      item
+                    )}
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {section.groups.map((group, gIdx) => (
-                <div
-                  key={gIdx}
-                  style={{ animationDelay: `${Math.min(gIdx * 55, 400)}ms` }} className={`resource-card group relative overflow-hidden bg-${section.color}-100 border border-white/80 rounded-[1.35rem] p-6 shadow-[0_18px_40px_-30px_rgba(15,23,42,0.8)] hover:-translate-y-2 hover:shadow-[0_25px_48px_-28px_rgba(15,23,42,0.85)] transition duration-500`}
-                >
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{group.name}</h3>
-                  <p className="text-gray-700 mb-4 leading-relaxed">{group.description}</p>
-                  <div className="flex gap-3 flex-wrap">
-                    <a
-                      href={group.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`flex items-center gap-2 text-${section.color}-700 font-semibold hover:text-${section.color}-900 transition`}
-                    >
-                      Visit <ExternalLink size={16} />
-                    </a>
-                    <a
-                      href={group.findMeetings}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`flex items-center gap-2 text-${section.color}-700 font-semibold hover:text-${section.color}-900 transition`}
-                    >
-                      Find Meetings <ExternalLink size={16} />
-                    </a>
-                  </div>
-                </div>
-              ))}
+            <div className="rounded-[1.75rem] bg-gradient-to-br from-teal-700 via-cyan-600 to-slate-900 p-8 text-white shadow-[0_24px_55px_-30px_rgba(13,148,136,0.8)]">
+              <h3 className="text-3xl font-black tracking-tight">Starting your recovery journey</h3>
+              <p className="mt-4 text-lg leading-8 text-white/90">
+                Everyone&apos;s recovery journey looks different. What works for one person may not work for another. No matter which
+                group you choose, the most important step is reaching out. Each organization has:
+              </p>
+              <ul className="mt-5 space-y-3">
+                {startingJourney.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-lg leading-7">
+                    <CheckCircle2 aria-hidden="true" className="mt-1 h-6 w-6 shrink-0 text-teal-200" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
-        ))}
 
-        <div className="bg-purple-50 border-l-4 border-purple-500 rounded-lg p-8 mb-8">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">Finding Meetings in Ottawa County</h3>
-          <ul className="space-y-3 text-gray-700">
-            <li>✓ Call <a href="tel:211" className="text-purple-700 font-bold">2-1-1</a> for local support group information and referrals</li>
-            <li>✓ Visit individual organization websites for meeting schedules and locations</li>
-            <li>✓ Many groups now offer hybrid (in-person and virtual) meetings</li>
-            <li>✓ Anonymity and confidentiality are core principles of all 12-step programs</li>
-          </ul>
-        </div>
+          <Callout accent="cyan" title="Still looking for help?" className="mt-16">
+            <p>
+              Contact Community Mental Health of Ottawa County or call 2-1-1 for personalized support group recommendations and
+              recovery resources.
+            </p>
+            <div className="pt-3">
+              <PillLink href="/" accent="cyan">
+                Browse all resources
+              </PillLink>
+            </div>
+          </Callout>
 
-        <div className="bg-green-50 border-l-4 border-green-500 rounded-lg p-8 mb-8">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">Starting Your Recovery Journey</h3>
-          <p className="text-gray-700 mb-4">Everyone's recovery journey looks different. What works for one person, may not work for another.</p>
-          <p className="text-gray-700 mb-4">No matter which group you choose, the most important step is reaching out. Each organization has:</p>
-          <ul className="space-y-2 text-gray-700 ml-4">
-            <li>• Experienced members ready to help newcomers</li>
-            <li>• Free or low-cost meetings and resources</li>
-            <li>• Online options for convenience and flexibility</li>
-            <li>• Strong emphasis on anonymity and respect</li>
-            <li>• Practical tools for lasting change</li>
-          </ul>
-        </div>
-
-        <div className="bg-blue-600 text-white rounded-lg p-8 text-center">
-          <h3 className="text-2xl font-bold mb-3">Still Looking for Help?</h3>
-          <p className="mb-6 text-lg">Contact Community Mental Health of Ottawa County or call 2-1-1 for personalized support group recommendations and recovery resources.</p>
-          <Link href="/">
-            <button className="bg-white text-blue-600 hover:bg-gray-100 font-bold px-8 py-3 rounded text-lg transition">Browse All Resources</button>
-          </Link>
+          <div className="mt-14 flex justify-center">
+            <BackPill href="/">Back to resources</BackPill>
+          </div>
         </div>
       </main>
 
       <Footer />
     </>
-  )
+  );
 }
