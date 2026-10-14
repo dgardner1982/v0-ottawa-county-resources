@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import { BackToEducationButton } from '@/components/back-to-education-button';
 import { Footer } from '@/components/footer';
 
 type Profile = {
@@ -37,7 +37,7 @@ export function SubstanceProfilePage({ profile }: { profile: Profile | undefined
       </div>
       <header className="bg-[#41cfdf] px-5 pb-10 pt-8 sm:px-8 sm:pt-12">
         <div className="mx-auto max-w-6xl rounded-3xl bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950 px-6 py-10 text-white shadow-[0_24px_38px_-20px_rgba(2,8,23,0.95)] sm:px-12 sm:py-14">
-          <Link href="/education" className="font-mono text-xs font-bold uppercase tracking-[0.18em] text-cyan-200 hover:text-white">← Back to education guides</Link>
+          <BackToEducationButton />
           <div className="mt-10 max-w-4xl">
             <p className="font-mono text-xs font-bold uppercase tracking-[0.24em] text-cyan-300">Substance education guide</p>
             <h1 className="mt-4 max-w-full break-words text-pretty text-5xl font-bold tracking-tight sm:text-7xl">{activeProfile.name}</h1>
@@ -85,7 +85,8 @@ export function SubstanceProfilePage({ profile }: { profile: Profile | undefined
             </article>
           </section>
         </div>
-      </main>
+      <div className="flex justify-center pt-4"><BackToEducationButton variant="light" /></div>
+</main>
       <Footer />
     </>
   );
