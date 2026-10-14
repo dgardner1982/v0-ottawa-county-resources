@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import { BackToEducationButton } from '@/components/back-to-education-button';
 import { Footer } from '@/components/footer';
 
 const effects = [
@@ -35,7 +35,7 @@ export function AlcoholEducationPage() {
 
       <header className="px-5 pb-10 pt-8 sm:px-8 sm:pt-12">
         <div className="mx-auto max-w-6xl rounded-3xl bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950 px-6 py-10 text-white shadow-[0_24px_38px_-20px_rgba(2,8,23,0.95)] sm:px-12 sm:py-14">
-          <Link href="/education" className="font-mono text-xs font-bold uppercase tracking-[0.18em] text-cyan-200 hover:text-white">← Back to education guides</Link>
+          <BackToEducationButton />
           <div className="mt-10 max-w-4xl">
             <p className="font-mono text-xs font-bold uppercase tracking-[0.24em] text-cyan-300">Substance education guide</p>
             <h1 className="mt-4 text-pretty text-5xl font-bold tracking-tight sm:text-7xl">Alcohol</h1>
@@ -99,7 +99,8 @@ export function AlcoholEducationPage() {
         </section>
 
         <section className="rounded-3xl bg-gradient-to-br from-slate-950 to-cyan-950 p-7 text-white shadow-[0_22px_34px_-18px_rgba(2,8,23,0.95)] sm:p-10"><SectionHeading eyebrow="Verified resources" inverted>Seeking help</SectionHeading><div className="grid gap-5 md:grid-cols-2"><div><h3 className="text-xl font-bold">SAMHSA National Helpline</h3><p className="mt-2 leading-7 text-slate-300">1-800-662-4357 · Free, confidential, 24/7 treatment referral and information.</p></div><div><h3 className="text-xl font-bold">National Institute on Alcohol Abuse and Alcoholism</h3><a className="mt-2 inline-block text-cyan-200 underline underline-offset-4" href="https://rethinkingdrinking.niaaa.nih.gov" target="_blank" rel="noreferrer">rethinkingdrinking.niaaa.nih.gov</a></div></div><p className="mt-8 border-t border-slate-700 pt-6 font-semibold text-cyan-100">In any acute emergency or suspected poisoning: call 911 immediately.</p></section>
-      </main>
+      <div className="flex justify-center pt-4"><BackToEducationButton variant="light" /></div>
+</main>
       <Footer />
     </div>
   );
