@@ -105,11 +105,13 @@ export default function MATResourcesPage() {
 
   return (
     <>
-      <div className="bg-gradient-to-r from-red-600 via-orange-500 to-red-600 bg-[length:200%_100%] animate-gradient text-white py-3 px-4 text-center sticky top-0 z-50 font-bold flex items-center justify-center gap-4 flex-wrap shadow-lg">
-        <span>CALL <a href="tel:211" className="underline font-bold">2-1-1</a> FOR LOCAL RESOURCES</span>
-        <span className="hidden sm:inline">•</span>
-        <span>FOR LIFE-THREATENING EMERGENCIES, CALL <a href="tel:911" className="underline font-bold">9-1-1</a></span>
-      </div>
+<div className="sticky top-0 z-50 flex flex-wrap items-center justify-center gap-x-5 gap-y-1 border-b border-white/20 bg-slate-950 px-4 py-3 text-center text-xs font-bold uppercase tracking-[0.18em] text-white shadow-lg">
+  <span className="text-2xl"><span className="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-[#fb7185]" />Call <a href="tel:211" className="text-[#24f2a2] underline underline-offset-4 hover:text-white">2-1-1</a> for local resources</span>
+  <span className="hidden text-slate-500 sm:inline">/</span>
+  <span className="text-2xl"><span className="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-[#fb7185]" />Life-threatening emergency? <a href="tel:911" className="text-[#ff4d4d] underline underline-offset-4 hover:text-white">Call 9-1-1</a></span>
+  <span className="hidden text-slate-500 sm:inline">/</span>
+  <span className="text-2xl"><span className="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-[#fb7185]" />Suicide crisis support: <a href="tel:988" className="text-[#ff5454] underline underline-offset-4 hover:text-white">Call 9-8-8</a></span>
+  </div>
 
       <header className="relative isolate overflow-hidden border-b border-teal-200 bg-gradient-to-br from-white via-cyan-50 to-orange-50 shadow-sm">
         <div className="pointer-events-none absolute inset-0 -z-10 opacity-70 [background:radial-gradient(circle_at_var(--pointer-x,50%)_var(--pointer-y,30%),rgba(20,184,166,0.22),transparent_28rem)]" />
