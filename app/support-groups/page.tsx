@@ -184,22 +184,26 @@ export default function SupportGroupsPage() {
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{group.name}</h3>
                   <p className="text-gray-700 mb-4 leading-relaxed">{group.description}</p>
                   <div className="flex gap-3 flex-wrap">
-                    <a
-                      href={group.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`flex items-center gap-2 text-${section.color}-700 font-semibold hover:text-${section.color}-900 transition`}
-                    >
-                      Visit <ExternalLink size={16} />
-                    </a>
-                    <a
-                      href={group.findMeetings}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`flex items-center gap-2 text-${section.color}-700 font-semibold hover:text-${section.color}-900 transition`}
-                    >
-                      Find Meetings <ExternalLink size={16} />
-                    </a>
+                    {group.link && (
+                      <a
+                        href={group.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`flex items-center gap-2 text-${section.color}-700 font-semibold hover:text-${section.color}-900 transition`}
+                      >
+                        Visit <ExternalLink size={16} />
+                      </a>
+                    )}
+                    {group.findMeetings && (
+                      <a
+                        href={group.findMeetings}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`flex items-center gap-2 text-${section.color}-700 font-semibold hover:text-${section.color}-900 transition`}
+                      >
+                        Find Meetings <ExternalLink size={16} />
+                      </a>
+                    )}
                   </div>
                 </div>
               ))}
