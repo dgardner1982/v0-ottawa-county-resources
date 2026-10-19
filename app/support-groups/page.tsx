@@ -152,7 +152,7 @@ export default function SupportGroupsPage() {
 
   return (
     <>
-      <div className="sticky top-0 z-50 flex flex-wrap items-center justify-center gap-x-5 gap-y-1 border-b border-white/20 bg-slate-950 px-4 py-3 text-center text-xs font-bold uppercase tracking-[0.18em] text-white shadow-lg">
+      <div className="sticky top-0 z-50 flex flex-nowrap items-center justify-center gap-x-2 overflow-hidden whitespace-nowrap border-b border-white/20 bg-slate-950 px-2 py-2 text-center text-[10px] font-bold uppercase tracking-[0.04em] text-white shadow-lg sm:px-4 sm:text-xs">
   <span className="text-2xl"><span className="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-[#fb7185]" />Call <a href="tel:211" className="text-[#24f2a2] underline underline-offset-4 hover:text-white">2-1-1</a> for local resources</span>
   <span className="hidden text-slate-500 sm:inline">/</span>
   <span className="text-2xl"><span className="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-[#fb7185]" />Life-threatening emergency? <a href="tel:911" className="text-[#ff4d4d] underline underline-offset-4 hover:text-white">Call 9-1-1</a></span>
