@@ -8,8 +8,8 @@ export default function NaloxoneLocations() {
   const locations = [
     {
       name: "Community Mental Health of Ottawa County - Holland",
-      address: "347 Hoover Blvd, Holland, MI 49423",
-      phone: "616-393-4489",
+      address: "12265 James St, Holland, MI 49424",
+      phone: "(616) 393-4489 / (616) 392-1873",
       hours: "M-F 8a-5p",
       details: "Free Naloxone kits available."
     },
@@ -36,22 +36,22 @@ export default function NaloxoneLocations() {
     },
     {
       name: "Ottawa County Jail - Lobby",
-      address: "12220 Fillmore Ave, West Olive, MI 49426",
-      phone: "616-786-4140",
+      address: "12220 Fillmore St, West Olive, MI 49460",
+      phone: "(616) 786-4140",
       hours: "24 hour access",
       details: "Naloxone kits available for free in jail lobby in vending machine."
     },
     {
       name: "Reach for Recovery - Grand Haven",
-      address: "420 Washington Ave, Grand Haven, MI 49417",
-      phone: "616-842-2420",
+      address: "700 Washington Ave, Suite 220, Grand Haven, MI 49417",
+      phone: "(616) 842-6710 / (616) 396-5284",
       hours: "M-F 8a-5p",
       details: "Free Naloxone Kits available."
     },
     {
       name: "Reach for Recovery - Holland",
-      address: "483 Century Lane, Holland, MI 49424",
-      phone: "616-396-5284",
+      address: "483 Century Ln, Holland, MI 49423",
+      phone: "(616) 396-5284",
       hours: "M-F 8a-5p",
       details: "Free Naloxone Kits available."
     },
