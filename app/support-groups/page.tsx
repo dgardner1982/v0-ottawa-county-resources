@@ -52,6 +52,12 @@ export default function SupportGroupsPage() {
           description: "Secular alternative recovery community emphasizing self-directed change",
           link: "https://www.lifering.org",
           findMeetings: "https://meetings.lifering.org/meetings/?scope=hide"
+        },
+        {
+          name: "Celebrate Recovery",
+          description: "A free, Christ-centered, biblically based 12-step recovery program",
+          link: "https://celebraterecovery.com",
+          findMeetings: "https://crlocator.com"
         }
       ]
     },
