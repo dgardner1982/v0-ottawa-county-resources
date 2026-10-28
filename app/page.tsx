@@ -80,7 +80,7 @@ const RESOURCES: Resource[] = [
 
   // Harm Reduction
   { name: "Grand Rapids Red Project", category: "Harm Reduction", address: "401 Hall St SE, Grand Rapids, MI 49507", phone: "616-456-9063", info: "Comprehensive harm reduction services and support.", website: "https://www.redproject.org" },
-  { name: "Grand Rapids Red Project Mobile Health Unit", category: "Harm Reduction", address: "Outside Skip's Pharmacy, 700 Michigan Ave, Holland, MI 49423", phone: "(616) 456-9063", info: "Harm Reduction Services available through the mobile health unit.", website: "https://redproject.org/" }
+  { name: "Grand Rapids Red Project Mobile Health Unit", category: "Harm Reduction", address: "Outside Skip's Pharmacy, 700 Michigan Ave, Holland, MI 49423", phone: "(616) 456-9063", info: "Harm Reduction Services available through the mobile health unit.", website: "https://redproject.org/" },
 
   // Mental Health
   { name: "Community Mental Health of Ottawa County - Holland", category: "Mental Health", address: "12265 James St, Holland", phone: "616-392-1873", info: "Main entry for mental health and IDD services. Includes 24/7 crisis support.", website: "https://miottawa.org/cmh/" },
