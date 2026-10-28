@@ -19,6 +19,7 @@ interface Resource {
   info: string;
   link?: string;
   website?: string;
+  secondaryWebsite?: string;
   hours?: string;
   officeAddress?: string;
   officeHours?: string;
@@ -131,8 +132,9 @@ const RESOURCES: Resource[] = [
   { name: "Reach for Recovery - Holland", category: "Substance Recovery", address: "483 Century Lane, Holland", phone: "616-396-5284", info: "Comprehensive outpatient and residential programs.", website: "https://reachforrecovery.org" },
   { name: "Samaritas - Grand Haven", category: "Substance Recovery", address: "923 S Beechtree St Ste 10, Grand Haven, MI", phone: "(616) 516-9985", info: "Substance use treatment and recovery services including medication-assisted treatment.", website: "https://www.samaritas.org" },
   { name: "Samaritas - Holland", category: "Substance Recovery", address: "2416 Van Ommen Dr, Holland, MI 49424", phone: "(616) 350-7781", info: "Substance use treatment and recovery services including medication-assisted treatment.", website: "https://www.samaritas.org" },
-  { name: "Sobar Recovery Community Center", category: "Substance Recovery", address: "347 Hoover Blvd, Holland", phone: "Call for details", info: "Community recovery center offering support, education, and activities for individuals and families in recovery.", website: "https://sobarrco.com" },
-
+ { name: "Sobar Recovery Community Center", category: "Substance Recovery", address: "347 Hoover Blvd, Holland", phone: "Call for details", info: "Community recovery center offering support, education, and activities for individuals and families in recovery.", website: "https://sobarrco.com" },
+  { name: "Celebrate Recovery", category: "Substance Recovery", address: "Online and local meeting locations", phone: "Visit website for meeting details", info: "A free, Christ-centered, biblically based 12-step recovery program.", website: "https://www.celebraterecovery.com", secondaryWebsite: "https://www.crlocator.com" },
+  
   // Domestic Violence
   { name: "Every Woman's Place Inc", category: "Domestic Violence", address: "1221 W Laketon Ave, Muskegon, MI 49441", phone: "(231) 722-3333", info: "Muskegon-based agency providing crisis intervention, emergency shelter, counseling, and legal advocacy for survivors of domestic violence, sexual assault, and sex trafficking. 24-hour crisis line available.", website: "https://www.everywomansplace.org" },
   { name: "Resilience: Advocates for Ending Violence", category: "Domestic Violence", address: "411 Butternut Dr, Holland, MI 49424", phone: "(800) 848-5991", info: "Non-profit providing 24-hour crisis support, emergency shelter, counseling, legal advocacy, and community education for survivors of domestic and sexual violence.", hours: "M-F 9a-5p, crisis services 24/7", website: "https://www.resiliencemi.org" },
@@ -926,6 +928,14 @@ Explore support groups <span className="transition-transform group-hover:transla
                               return resource.website;
                             }
                           })()}
+                        </a>
+                      </div>
+                    )}
+                    {resource.secondaryWebsite && (
+                      <div className="flex gap-3 items-center">
+                        <Globe size={18} className="text-teal-600 flex-shrink-0" />
+                        <a href={resource.secondaryWebsite} target="_blank" rel="noopener noreferrer" className="text-teal-700 font-bold hover:underline">
+                          Find a meeting
                         </a>
                       </div>
                     )}
