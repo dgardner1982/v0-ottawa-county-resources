@@ -7,9 +7,23 @@ import { Footer } from '@/components/footer';
 export default function NaloxoneLocations() {
   const locations = [
     {
-      name: "Community Mental Health of Ottawa County - Holland",
+      name: "Ottawa County Community Mental Health - Holland",
+      address: "12265 James St, Holland, MI 49424",
+      phone: "(616) 392-1873",
+      hours: "M-F 8a-5p",
+      details: "Free Naloxone kits available."
+    },
+    {
+      name: "Ottawa County Community Mental Health - 347 Hoover Blvd",
       address: "347 Hoover Blvd, Holland, MI 49423",
-      phone: "616-393-4489",
+      phone: "616-393-4424",
+      hours: "M-F 8a-5p",
+      details: "Free Naloxone kits available."
+    },
+    {
+      name: "Ottawa County Community Mental Health - Grand Haven",
+      address: "1111 Fulton St #1, Grand Haven, MI 49417",
+      phone: "(616) 842-5350",
       hours: "M-F 8a-5p",
       details: "Free Naloxone kits available."
     },

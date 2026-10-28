@@ -76,7 +76,7 @@ export default function SupportGroupsPage() {
           name: "The Dinner Party",
           description: "Community for young adults grieving any loss",
           link: "https://www.thedinnerparty.org",
-          findMeetings: "https://connect.thedinnerparty.org/all-experiences"
+          findMeetings: "https://www.thedinnerparty.org/tables"
         }
       ]
     },
