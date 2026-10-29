@@ -161,7 +161,7 @@ export default function EducationPage() {
               value={searchQuery}
               onChange={(event) => setSearchQuery(event.target.value)}
               placeholder="Search substance guides..."
-              className="inline-flex h-14 w-full rounded-3xl border border-teal-300/30 bg-[rgba(85,229,255,0.47)] pl-12 pr-[11px] text-lg font-semibold text-[#282020] shadow-[0_4px_6px_-1px_rgb(0_0_0_/_0.1),0_2px_4px_-2px_rgb(0_0_0_/_0.1)] placeholder:text-slate-700 focus-visible:border-teal-500 focus-visible:ring-teal-300/30"
+              className="inline-flex h-14 w-full rounded-3xl border border-teal-300/30 bg-[rgba(86,249,200,0.47)] pl-12 pr-[11px] text-lg font-semibold text-[#282020] shadow-[0_4px_6px_-1px_rgb(0_0_0_/_0.1),0_2px_4px_-2px_rgb(0_0_0_/_0.1)] placeholder:text-slate-700 focus-visible:border-teal-500 focus-visible:ring-teal-300/30"
             />
           </div>
         </div>
@@ -172,7 +172,7 @@ export default function EducationPage() {
             onClick={() => handleTabClick('infograph')}
             className={`whitespace-nowrap px-6 py-3 text-[30px] font-semibold transition ${
               activeTab === 'infograph'
-? 'rounded-xl border border-white bg-[#71ff94] text-[#0f0f10] underline shadow-[0_25px_50px_-12px_rgb(0_0_0_/_0.25)]'
+? 'rounded-xl border border-white bg-[rgba(223,84,242,0.95)] text-[#0f0f10] underline shadow-[0_25px_50px_-12px_rgb(0_0_0_/_0.25)]'
   : 'text-slate-400 hover:text-slate-900'
             }`}
           >
