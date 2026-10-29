@@ -110,6 +110,11 @@ export default function EducationPage() {
     { name: "Suboxone", symbol: Pill, slug: "suboxone", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "Synthetic Cannabinoids", symbol: Leaf, slug: "synthetic-cannabinoids", color: "border-teal-500", bgColor: "bg-teal-50" },
     { name: "THC", symbol: Leaf, slug: "thc", color: "border-lime-500", bgColor: "bg-lime-50" },
+    { name: "Carfentanil", symbol: AlertTriangle, slug: "carfentanil", color: "border-red-800", bgColor: "bg-red-50" },
+    { name: "Parafluorofentanyl", symbol: AlertTriangle, slug: "parafluorofentanyl", color: "border-orange-700", bgColor: "bg-orange-50" },
+    { name: "Meperidine / Pethidine", symbol: Syringe, slug: "meperidine", color: "border-violet-700", bgColor: "bg-violet-50" },
+    { name: "Tapentadol", symbol: Pill, slug: "tapentadol", color: "border-sky-700", bgColor: "bg-sky-50" },
+    { name: "Barbiturates", symbol: Pill, slug: "barbiturates", color: "border-slate-700", bgColor: "bg-slate-50" },
     { name: "Xylazine", symbol: FlaskConical, slug: "xylazine", color: "border-purple-500", bgColor: "bg-purple-50" }
   ];
 
