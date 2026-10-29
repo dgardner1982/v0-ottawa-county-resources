@@ -75,7 +75,7 @@ export function SubstanceProfilePage({ profile }: { profile: Profile | undefined
         <div className="mx-auto max-w-6xl space-y-8 px-5 pb-16 sm:px-8 lg:pb-20">
           <section className="grid gap-8 lg:grid-cols-[1.3fr_0.7fr]">
             <article className="rounded-3xl bg-white p-7 shadow-[0_18px_28px_-16px_rgba(2,8,23,0.75)] sm:p-10">
-              <p className="mb-2 font-mono text-xs font-bold uppercase tracking-[0.22em] text-cyan-700">01 · How it works</p>
+              <p className="mb-2 font-mono text-xs font-bold uppercase tracking-[0.22em] text-cyan-700">· How it works</p>
               <h2 className="mb-7 text-balance text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">{activeProfile.mechanismTitle}</h2>
               <p className="text-base leading-7 text-slate-700">{activeProfile.mechanism}</p>
             </article>
@@ -85,8 +85,8 @@ export function SubstanceProfilePage({ profile }: { profile: Profile | undefined
               <p className="mt-5 leading-7 text-slate-300">{activeProfile.highlight}</p>
             </aside>
           </section>
-          <section className="rounded-3xl bg-white p-7 shadow-[0_18px_28px_-16px_rgba(2,8,23,0.75)] sm:p-10">
-            <p className="mb-2 font-mono text-xs font-bold uppercase tracking-[0.22em] text-cyan-700">02 · Immediate effects</p>
+          <section className="rounded-3xl bg-[#51eee4] p-7 shadow-[0_18px_28px_-16px_rgba(2,8,23,0.75)] sm:p-10">
+            <p className="mb-2 font-mono text-xs font-bold uppercase tracking-[0.22em] text-cyan-700">· Immediate effects</p>
             <h2 className="mb-7 text-balance text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">Recognize the effects</h2>
             <div className="grid gap-4 md:grid-cols-3">
               {tabs.map(([title, items]) => (
@@ -97,21 +97,15 @@ export function SubstanceProfilePage({ profile }: { profile: Profile | undefined
               ))}
             </div>
           </section>
-          <section className="grid gap-8 lg:grid-cols-2">
-            <article className={`rounded-3xl ${activeProfile.soft} p-7 shadow-[0_18px_28px_-16px_rgba(2,8,23,0.55)] sm:p-10`}>
-              <p className={`mb-2 font-mono text-xs font-bold uppercase tracking-[0.22em] ${activeProfile.accent}`}>03 · Long-term consequences</p>
+          <section className="grid w-[2200px] gap-8 lg:grid-cols-2">
+            <article className={`rounded-[20px] border-[10px] border-[#dd3dcb] bg-[linear-gradient(0deg,#e34c92_0%,#c248eb_50%,#ce6ee4_100%)] p-7 pl-[110px] pr-0 shadow-[0_18px_28px_-16px_rgba(2,8,23,0.55)] sm:p-10 sm:pl-[110px] sm:pr-0`}>
+              <p className={`mb-2 font-mono text-xs font-bold uppercase tracking-[0.22em] ${activeProfile.accent}`}>· Long-term consequences</p>
               <h2 className="mb-7 text-balance text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">{activeProfile.riskTitle}</h2>
               <p className="leading-7 text-slate-700">{activeProfile.risk}</p>
             </article>
-            <article className="rounded-3xl bg-red-50 p-7 shadow-[0_18px_28px_-16px_rgba(2,8,23,0.55)] sm:p-10">
-              <p className="mb-2 font-mono text-xs font-bold uppercase tracking-[0.22em] text-red-700">Medical emergency</p>
-              <h2 className="mb-7 text-balance text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">Identifying an emergency</h2>
-              <p className="leading-7 text-slate-700">{activeProfile.emergency}</p>
-              {activeProfile.emergencyNote && <div className="mt-6 rounded-2xl bg-red-600 p-5 font-bold leading-6 text-white">{activeProfile.emergencyNote}</div>}
-            </article>
           </section>
         </div>
-      <div className="flex justify-center pt-4"><BackToEducationButton variant="light" /></div>
+      <div className="flex items-center justify-evenly bg-transparent pt-4 text-left"><BackToEducationButton variant="light" /></div>
 </main>
       <Footer />
     </>
