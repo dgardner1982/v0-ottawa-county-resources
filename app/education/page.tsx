@@ -122,6 +122,15 @@ export default function EducationPage() {
     drug.name.toLowerCase().includes(searchQuery.trim().toLowerCase()),
   );
 
+  const categories = [
+    { name: 'Opioids & Pain Medications', eyebrow: 'High overdose risk', description: 'Guides covering opioid effects, dependence, interactions, and emergency response.', slugs: ['fentanyl', 'carfentanil', 'parafluorofentanyl', 'heroin', 'oxycodone', 'hydrocodone', 'hydromorphone', 'codeine', 'tramadol', 'oxymorphone', 'morphine', 'methadone', 'suboxone', 'nitazine', 'meperidine', 'tapentadol'] },
+    { name: 'Sedatives & Depressants', eyebrow: 'Slow the nervous system', description: 'Learn how sedatives affect breathing, coordination, dependence, and withdrawal.', slugs: ['alcohol', 'bromazolam', 'alprazolam', 'barbiturates', 'ghb', 'zolpidem', 'pregabalin', 'gabapentin', 'xylazine', 'medetomidine'] },
+    { name: 'Stimulants', eyebrow: 'Energy & alertness', description: 'Understand stimulant effects, cardiovascular risks, and safer response steps.', slugs: ['adderall', 'methamphetamine', 'cocaine', 'crack-cocaine', 'vyvanse', 'dexmethylphenidate', 'modafinil', 'ritalin', 'synthetic-cathinones', 'nicotine'] },
+    { name: 'Psychedelics & Dissociatives', eyebrow: 'Perception & consciousness', description: 'Explore altered perception, dissociation, set and setting, and acute safety concerns.', slugs: ['lsd', 'psilocybin', 'dmt', 'mescaline', '2c-b', 'salvia', 'pcp', 'ketamine', 'dextromethorphan', 'nitrous-oxide'] },
+    { name: 'Cannabinoids & Plant-Based Substances', eyebrow: 'Botanical & cannabinoid guides', description: 'Clear information about cannabis products, kratom, and synthetic cannabinoids.', slugs: ['thc', 'hemp-derived-cannabinoids', 'synthetic-cannabinoids', 'kratom', '7-hydroxymitragynine'] },
+    { name: 'Other Substances', eyebrow: 'Additional guides', description: 'Additional substances and products with unique effects or exposure risks.', slugs: ['duster', 'alkyl-nitrites', 'anabolic-steroids', 'cyclorphine', 'tianeptine', 'focalin'] },
+  ];
+
   return (
     <>
       <div className="sticky top-0 z-50 flex flex-nowrap items-center justify-center gap-x-2 overflow-hidden whitespace-nowrap border-b border-white/20 bg-slate-950 px-2 py-2 text-center text-[10px] font-bold uppercase tracking-[0.04em] text-white shadow-lg sm:px-4 sm:text-xs">
@@ -187,27 +196,38 @@ export default function EducationPage() {
 
         {/* Drug Boxes Tab */}
         {activeTab === 'infograph' && (
-          <div className="mb-12 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {filteredDrugs.length > 0 ? filteredDrugs.map((drug, idx) => {
-              const href = drug.slug === 'synthetic-cannabinoids' ? '/synthetic-cannabinoids' : `/drug/${drug.slug}`;
+          <div className="mb-12 space-y-12">
+            {filteredDrugs.length > 0 ? categories.map((category, categoryIndex) => {
+              const categoryDrugs = filteredDrugs.filter((drug) => category.slugs.includes(drug.slug));
+              if (!categoryDrugs.length) return null;
               return (
-                <Link key={idx} href={href}>
-                  <div style={{ animationDelay: `${Math.min(idx * 35, 420)}ms` }} className="resource-card group flex h-64 cursor-pointer flex-col items-center justify-center rounded-[1.35rem] border border-white/10 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950 p-8 text-center shadow-[0_18px_24px_-10px_rgba(2,8,23,0.9),0_8px_14px_-8px_rgba(15,23,42,0.75)] transition duration-500 hover:-translate-y-2 hover:border-teal-300/50 hover:shadow-[0_25px_55px_-24px_rgba(45,212,191,0.55)]">
-                    <div className="mb-5 flex h-20 w-20 items-center justify-center rounded-3xl border border-teal-300/25 bg-gradient-to-br from-teal-300/20 to-fuchsia-400/10 text-teal-200 shadow-[0_0_28px_-10px_rgba(94,234,212,0.9)] transition duration-500 group-hover:rotate-3 group-hover:scale-110 group-hover:border-teal-200/60">
-                      {drug.image ? (
-                        <img src={drug.image} alt={drug.name} className="h-14 w-14 rounded-xl object-contain" />
-                      ) : (
-                        <drug.symbol aria-hidden="true" className="h-11 w-11 stroke-[1.6]" />
-                      )}
+                <section key={category.name} aria-labelledby={`category-${categoryIndex}`} className="animate-slide-in-up" style={{ animationDelay: `${categoryIndex * 80}ms` }}>
+                  <div className="mb-5 flex flex-col gap-3 border-l-4 border-fuchsia-400 pl-5 sm:flex-row sm:items-end sm:justify-between">
+                    <div>
+                      <p className="font-mono text-xs font-bold uppercase tracking-[0.22em] text-slate-800/70">{category.eyebrow}</p>
+                      <h2 id={`category-${categoryIndex}`} className="mt-1 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">{category.name}</h2>
                     </div>
-                    <h3 className="text-lg font-black leading-tight tracking-tight text-white">{drug.name}{drug.slug === 'alprazolam' && <span className="block text-sm font-semibold text-cyan-300">(Xanax)</span>}{drug.slug === '7-hydroxymitragynine' && <span className="block text-sm font-semibold text-cyan-300">(7-OH)</span>}{drug.slug === 'dextromethorphan' && <span className="block text-sm font-semibold text-cyan-300">(DXM)</span>}{drug.slug === 'alkyl-nitrites' && <span className="block text-sm font-semibold text-cyan-300">(Poppers)</span>}{drug.slug === 'zolpidem' && <span className="block text-sm font-semibold text-cyan-300">(Ambien)</span>}</h3>
+                    <p className="max-w-xl text-sm leading-6 text-slate-800/75">{category.description}</p>
                   </div>
-                </Link>
+                  <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
+                    {categoryDrugs.map((drug, idx) => {
+                      const href = drug.slug === 'synthetic-cannabinoids' ? '/synthetic-cannabinoids' : `/drug/${drug.slug}`;
+                      return (
+                        <Link key={drug.slug} href={href} className="group focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-fuchsia-500/50">
+                          <div style={{ animationDelay: `${Math.min((categoryIndex * 4 + idx) * 35, 560)}ms` }} className="resource-card flex h-64 cursor-pointer flex-col items-center justify-center rounded-[1.35rem] border border-white/10 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950 p-8 text-center shadow-[0_18px_24px_-10px_rgba(2,8,23,0.9),0_8px_14px_-8px_rgba(15,23,42,0.75)] transition duration-500 group-hover:-translate-y-2 group-hover:border-teal-300/50 group-hover:shadow-[0_25px_55px_-24px_rgba(45,212,191,0.55)]">
+                            <div className="mb-5 flex h-20 w-20 items-center justify-center rounded-3xl border border-teal-300/25 bg-gradient-to-br from-teal-300/20 to-fuchsia-400/10 text-teal-200 shadow-[0_0_28px_-10px_rgba(94,234,212,0.9)] transition duration-500 group-hover:rotate-3 group-hover:scale-110 group-hover:border-teal-200/60">
+                              {drug.image ? <img src={drug.image} alt={drug.name} className="h-14 w-14 rounded-xl object-contain" /> : <drug.symbol aria-hidden="true" className="h-11 w-11 stroke-[1.6]" />}
+                            </div>
+                            <h3 className="text-lg font-black leading-tight tracking-tight text-white">{drug.name}{drug.slug === 'alprazolam' && <span className="block text-sm font-semibold text-cyan-300">(Xanax)</span>}{drug.slug === '7-hydroxymitragynine' && <span className="block text-sm font-semibold text-cyan-300">(7-OH)</span>}{drug.slug === 'dextromethorphan' && <span className="block text-sm font-semibold text-cyan-300">(DXM)</span>}{drug.slug === 'alkyl-nitrites' && <span className="block text-sm font-semibold text-cyan-300">(Poppers)</span>}{drug.slug === 'zolpidem' && <span className="block text-sm font-semibold text-cyan-300">(Ambien)</span>}</h3>
+                          </div>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </section>
               );
             }) : (
-              <p className="col-span-full rounded-2xl border border-dashed border-teal-300/40 bg-teal-300/10 p-8 text-center text-lg text-teal-100">
-                No substance guides match “{searchQuery}”.
-              </p>
+              <p className="rounded-2xl border border-dashed border-teal-300/40 bg-teal-300/10 p-8 text-center text-lg text-slate-900">No substance guides match “{searchQuery}”.</p>
             )}
           </div>
         )}
