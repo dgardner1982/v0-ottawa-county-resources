@@ -4,7 +4,23 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { ArrowRight, MessageSquareText, Phone, Search, ShieldPlus, X } from 'lucide-react'
-import { CATEGORIES, NEEDS, SEARCH_EXAMPLES, categoryMeta } from '@/lib/directory'
+import { CATEGORIES, NEEDS, NALOXONE_CATEGORY, SEARCH_EXAMPLES, categoryMeta } from '@/lib/directory'
+import { cn } from '@/lib/utils'
+
+const RESOURCE_TONES: Record<string, { icon: string; chip: string; count: string }> = {
+  Food: { icon: 'bg-[#f28a2e] text-navy', chip: 'border-[#f28a2e]/40 bg-[#fff1e3] text-navy', count: 'text-[#bb5f0a]' },
+  Housing: { icon: 'bg-[#4f8fd4] text-white', chip: 'border-[#4f8fd4]/40 bg-[#eaf3fc] text-navy', count: 'text-[#26639d]' },
+  'Substance Recovery': { icon: 'bg-[#8e6bbf] text-white', chip: 'border-[#8e6bbf]/40 bg-[#f1ebfa] text-navy', count: 'text-[#684399]' },
+  'Mental Health': { icon: 'bg-[#d85da1] text-white', chip: 'border-[#d85da1]/40 bg-[#fcebf5] text-navy', count: 'text-[#a52e70]' },
+  [NALOXONE_CATEGORY]: { icon: 'bg-[#d6403a] text-white', chip: 'border-[#d6403a]/40 bg-[#fdebea] text-navy', count: 'text-[#a82520]' },
+  'Domestic Violence': { icon: 'bg-[#d6403a] text-white', chip: 'border-[#d6403a]/40 bg-[#fdebea] text-navy', count: 'text-[#a82520]' },
+  Employment: { icon: 'bg-[#0f6e75] text-white', chip: 'border-[#0f6e75]/40 bg-[#e3f2f3] text-navy', count: 'text-[#0b5a60]' },
+  'Health Care': { icon: 'bg-[#49a696] text-white', chip: 'border-[#49a696]/40 bg-[#e7f7f3] text-navy', count: 'text-[#27766b]' },
+}
+
+function resourceTone(category: string) {
+  return RESOURCE_TONES[category] ?? { icon: 'bg-primary text-primary-foreground', chip: 'border-primary/30 bg-muted text-navy', count: 'text-primary' }
+}
 
 interface HeroProps {
   query: string
@@ -191,6 +207,7 @@ export function Hero({ query, onQueryChange, intentCategories, resultCount, tota
             {NEEDS.map((need) => {
               const meta = categoryMeta(need.category)
               const Icon = meta.icon
+              const tone = resourceTone(need.category)
               return (
                 <li key={need.id}>
                   <button
@@ -198,11 +215,11 @@ export function Hero({ query, onQueryChange, intentCategories, resultCount, tota
                     onClick={() => onChooseCategory(need.category)}
                     className="group flex h-full w-full flex-col items-start gap-3 rounded-2xl border border-border bg-background p-4 text-left transition hover:-translate-y-0.5 hover:border-primary hover:bg-white hover:shadow-lg hover:shadow-primary/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                   >
-                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-primary-foreground transition group-hover:bg-sunrise group-hover:text-navy">
+                    <span className={cn('inline-flex h-10 w-10 items-center justify-center rounded-xl transition group-hover:scale-110', tone.icon)}>
                       <Icon aria-hidden="true" className="h-5 w-5" />
                     </span>
                     <span className="text-base font-bold leading-snug text-navy text-balance">{need.label}</span>
-                    <span className="mt-auto inline-flex items-center gap-1 text-sm font-semibold text-primary">
+                    <span className={cn('mt-auto inline-flex items-center gap-1 text-sm font-semibold', tone.count)}>
                       {countByCategory.get(need.category) ?? 0}{'\u00a0'}RESOURCES
                       <ArrowRight aria-hidden="true" className="h-4 w-4 transition group-hover:translate-x-1" />
                     </span>

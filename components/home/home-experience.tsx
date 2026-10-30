@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { useEffect, useMemo, useState } from 'react'
 import { Bookmark, Clock, MapPin, Phone, Search, X } from 'lucide-react'
 import {
@@ -21,6 +22,14 @@ import { MCDCLocationsModal } from './mcdc-locations-modal'
 
 const PAGE_SIZE = 24
 const ALL_AREAS = [...AREAS, ANYWHERE_AREA]
+const CATEGORY_CHIP_TONES = [
+  'border-[#f28a2e]/40 bg-[#fff1e3] hover:bg-[#ffe4c8]',
+  'border-[#4f8fd4]/40 bg-[#eaf3fc] hover:bg-[#d9eafa]',
+  'border-[#8e6bbf]/40 bg-[#f1ebfa] hover:bg-[#e6daf6]',
+  'border-[#d85da1]/40 bg-[#fcebf5] hover:bg-[#f8d9ea]',
+  'border-[#0f6e75]/40 bg-[#e3f2f3] hover:bg-[#d1e9eb]',
+  'border-[#49a696]/40 bg-[#e7f7f3] hover:bg-[#d7efe9]',
+]
 
 function scrollToDirectory() {
   document.getElementById('directory')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
@@ -110,12 +119,18 @@ export function HomeExperience() {
       />
 
       <section id="directory" aria-labelledby="directory-heading" className="mx-auto max-w-7xl px-4 pb-24 pt-16 sm:pt-20">
-        <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+        <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.16em] text-primary">The directory</p>
             <h2 id="directory-heading" className="mt-1 font-display text-3xl font-extrabold tracking-tight text-navy sm:text-4xl">
               Everyone who can help, in one place
             </h2>
+            <p className="mt-2 max-w-2xl text-base leading-relaxed text-muted-foreground">
+              Browse by resource type or search in your own words. Save the places you want to remember.
+            </p>
+          </div>
+          <div className="relative mx-auto w-full max-w-[15rem] shrink-0 rounded-[1.5rem] border border-white bg-white p-2 shadow-lg shadow-navy/10 sm:mx-0 sm:max-w-[13rem]">
+            <Image src="/logo-white.jpg" alt="Ottawa County Recovery Alliance" width={520} height={240} className="h-auto w-full rounded-[1.1rem] object-cover" />
           </div>
         </div>
 
@@ -185,7 +200,7 @@ export function HomeExperience() {
             </div>
           </div>
 
-          <div role="group" aria-label="Filter by category" className="-mx-4 mt-3 flex snap-x gap-2 overflow-x-auto px-4 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <div role="group" aria-label="Filter by category" className="-mx-4 mt-3 flex flex-wrap gap-2 px-4 pb-1">
             <button
               type="button"
               aria-pressed={category === 'all'}
@@ -201,6 +216,7 @@ export function HomeExperience() {
             {CATEGORIES.map((entry) => {
               const Icon = entry.icon
               const active = category === entry.key
+              const tone = CATEGORY_CHIP_TONES[CATEGORIES.findIndex((item) => item.key === entry.key) % CATEGORY_CHIP_TONES.length]
               return (
                 <button
                   key={entry.key}
@@ -208,8 +224,8 @@ export function HomeExperience() {
                   aria-pressed={active}
                   onClick={() => setCategory(active ? 'all' : entry.key)}
                   className={cn(
-                    'inline-flex shrink-0 snap-start items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold transition',
-                    active ? 'border-navy bg-navy text-white' : 'border-border bg-white text-navy hover:border-primary',
+                    'inline-flex shrink-0 snap-start items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold transition hover:-translate-y-0.5',
+                    active ? 'border-navy bg-navy text-white shadow-md' : `${tone} text-navy`,
                   )}
                 >
                   <Icon aria-hidden="true" className={cn('h-4 w-4', active ? 'text-sunrise' : 'text-primary')} />
