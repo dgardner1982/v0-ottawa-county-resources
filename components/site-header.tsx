@@ -17,9 +17,9 @@ const NAV_LINKS = [
 ]
 
 const CRISIS_LINKS = [
-  { href: 'tel:988', label: 'Crisis', number: '988', tone: 'text-sunrise' },
-  { href: 'tel:211', label: 'Local help', number: '211', tone: 'text-white' },
-  { href: 'tel:911', label: 'Emergency', number: '911', tone: 'text-white' },
+  { href: 'tel:988', label: 'Crisis', number: '988', tone: 'text-[#f22ed4]', iconTone: 'text-[#f22ed0]' },
+  { href: 'tel:211', label: 'Local help', number: '211', tone: 'text-[#2dec36]', iconTone: 'text-[#2ef24a]' },
+  { href: 'tel:911', label: 'Emergency', number: '911', tone: 'text-[#c7131d]', iconTone: 'text-[#ea1632]' },
 ]
 
 export function SiteHeader() {
@@ -38,9 +38,9 @@ export function SiteHeader() {
                   href={link.href}
                   className="inline-flex items-center gap-1.5 rounded-full px-2 py-1 font-semibold transition hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sunrise"
                 >
-                  <Phone aria-hidden="true" className="h-3.5 w-3.5 text-sunrise" />
-                  <span className="text-white/70">{link.label}</span>
-                  <span className={cn('font-display text-base leading-none tracking-tight', link.tone)}>{link.number}</span>
+                  <Phone aria-hidden="true" className={cn('h-3.5 w-3.5', link.iconTone)} />
+                  <span className="text-xl text-white/70">{link.label}</span>
+                  <span className={cn('font-display text-xl leading-none tracking-tight', link.tone)}>{link.number}</span>
                 </a>
               </li>
             ))}
