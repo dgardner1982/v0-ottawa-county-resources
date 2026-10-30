@@ -1,12 +1,13 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Home } from 'lucide-react'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Bricolage_Grotesque, Geist, Geist_Mono } from 'next/font/google'
+import { SiteHeader } from '@/components/site-header'
 import { AnalyticsWrapper } from './analytics'
 import './globals.css'
 
-const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
+const geist = Geist({ subsets: ['latin'], variable: '--font-geist' })
+const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono' })
+const bricolage = Bricolage_Grotesque({ subsets: ['latin'], variable: '--font-bricolage' })
 
 export const metadata: Metadata = {
   title: 'Ottawa County Recovery Resource and Education Hub | Community Directory',
@@ -44,17 +45,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="bg-background">
+    <html lang="en" className={`bg-background ${geist.variable} ${geistMono.variable} ${bricolage.variable}`}>
       <body className="font-sans antialiased">
-        <nav aria-label="Primary navigation" className="sticky top-0 z-[60] border-b border-slate-200/80 bg-white/85 px-4 py-3 shadow-sm backdrop-blur-xl">
-          <div className="mx-auto flex max-w-7xl items-center gap-2 sm:gap-3">
-<Link href="/" aria-label="Go to Ottawa County Recovery Alliance homepage" className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-950 text-left text-teal-300 transition hover:-translate-y-0.5 hover:bg-teal-700 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-500">
-              <Home aria-hidden="true" className="h-5 w-5" />
-            </Link>
-          </div>
-        </nav>
+        <SiteHeader />
         {children}
-        <footer className="border-t border-slate-800/70 bg-slate-950 px-5 py-8 text-center text-slate-300 sm:px-8">
+        <footer className="print:hidden border-t border-slate-800/70 bg-slate-950 px-5 py-8 text-center text-slate-300 sm:px-8">
           <Link href="/medical-disclaimer" className="font-semibold italic text-[#ff5454] underline decoration-cyan-400 underline-offset-4 transition hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300">
             Medical Disclaimer
           </Link>
