@@ -203,7 +203,7 @@ export function Hero({ query, onQueryChange, intentCategories, resultCount, tota
                     </span>
                     <span className="text-base font-bold leading-snug text-navy text-balance">{need.label}</span>
                     <span className="mt-auto inline-flex items-center gap-1 text-sm font-semibold text-primary">
-                      {countByCategory.get(need.category) ?? 0} places
+                      {countByCategory.get(need.category) ?? 0}{'\u00a0'}RESOURCES
                       <ArrowRight aria-hidden="true" className="h-4 w-4 transition group-hover:translate-x-1" />
                     </span>
                   </button>
