@@ -133,13 +133,6 @@ export default function EducationPage() {
 
   return (
     <>
-      <div className="sticky top-0 z-50 flex flex-nowrap items-center justify-center gap-x-2 overflow-hidden whitespace-nowrap border-b border-white/20 bg-slate-950 px-2 py-2 text-center text-[10px] font-bold uppercase tracking-[0.04em] text-white shadow-lg sm:px-4 sm:text-xs">
-        <span className="text-2xl"><span className="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-[#fb7185]" />Call <a href="tel:211" className="text-[#24f2a2] underline underline-offset-4 hover:text-white">2-1-1</a> for local resources</span>
-        <span className="hidden text-slate-500 sm:inline">/</span>
-        <span className="text-2xl"><span className="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-[#fb7185]" />Life-threatening emergency? <a href="tel:911" className="text-[#ff4d4d] underline underline-offset-4 hover:text-white">Call 9-1-1</a></span>
-        <span className="hidden text-slate-500 sm:inline">/</span>
-        <span className="text-2xl"><span className="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-[#fb7185]" />Suicide crisis support: <a href="tel:988" className="text-[#ff5454] underline underline-offset-4 hover:text-white">Call 9-8-8</a></span>
-      </div>
       <header className="relative isolate overflow-hidden bg-slate-950 text-white">
         <div className="absolute -left-24 top-8 -z-10 h-72 w-72 animate-float-orb rounded-full bg-teal-400/30 blur-3xl" />
         <div className="absolute -right-20 bottom-0 -z-10 h-96 w-96 animate-float-orb rounded-full bg-fuchsia-500/20 blur-3xl [animation-delay:2s]" />
@@ -152,7 +145,7 @@ export default function EducationPage() {
               <p className="mt-7 max-w-2xl text-pretty text-lg leading-8 text-slate-300 sm:text-xl">Explore clear, current substance guides and harm-reduction information designed to help you make informed choices.</p>
               <div className="mt-9 grid max-w-2xl grid-cols-2 gap-4"><Link href="/" className="group inline-flex items-center justify-center gap-3 rounded-full bg-teal-300 px-6 py-3.5 font-bold text-slate-950 shadow-[0_10px_35px_-12px_#5eead4] transition duration-300 hover:-translate-y-1 hover:bg-white">Explore resources <span className="transition-transform group-hover:translate-x-1">→</span></Link><Link href="/education" className="group inline-flex items-center justify-center gap-3 rounded-full border border-white/20 bg-white/5 px-6 py-3.5 font-bold text-cyan-200 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-cyan-200/70 hover:bg-white/10 hover:text-white">Learn something new <span className="text-cyan-200 transition-transform group-hover:translate-x-1 group-hover:text-white">→</span></Link><Link href="/support-groups" className="group col-span-2 inline-flex w-fit justify-self-center items-center gap-3 rounded-full border border-amber-200/40 bg-amber-200/10 px-6 py-3.5 font-bold text-amber-100 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-amber-200 hover:bg-amber-200/20">Explore support groups <span className="transition-transform group-hover:translate-x-1">→</span></Link></div>
             </div>
-            <div className="relative animate-scale-in [animation-delay:180ms]"><div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-tr from-teal-400/20 via-transparent to-fuchsia-400/20 blur-2xl" /><div className="animate-border-glow relative overflow-hidden rounded-[2rem] border border-white/15 bg-white/10 p-3 backdrop-blur-xl"><Link href="/" aria-label="Go to Ottawa County Recovery Alliance homepage"><img src="/logo.jpg" alt="Ottawa County Recovery Alliance" className="h-auto w-full rounded-[1.4rem] object-cover transition duration-500 hover:scale-[1.02]" /></Link></div></div>
+            <div className="relative hidden lg:block animate-scale-in [animation-delay:180ms]" aria-hidden="true"><div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-tr from-teal-400/20 via-transparent to-fuchsia-400/20 blur-2xl" /><div className="animate-border-glow relative overflow-hidden rounded-[2rem] border border-white/15 bg-white/10 p-3 backdrop-blur-xl" /></div>
           </div>
         </div>
       </header>
