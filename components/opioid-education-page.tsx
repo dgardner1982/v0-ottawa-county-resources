@@ -3,7 +3,7 @@
 import { BackToEducationButton } from '@/components/back-to-education-button';
 import { Footer } from '@/components/footer';
 
-type OpioidKind = 'hydrocodone' | 'hydromorphone' | 'codeine' | 'tramadol' | 'oxymorphone' | 'morphine';
+type OpioidKind = 'hydrocodone' | 'hydromorphone' | 'codeine' | 'tramadol' | 'oxymorphone' | 'morphine' | 'cyclorphine';
 
 const guides = {
   hydrocodone: {
@@ -52,6 +52,15 @@ const guides = {
     effects: [['Therapeutic / low', 'Powerful analgesia, physical relaxation, drowsiness, constricted pupils, dry mouth, and lower blood pressure.'], ['High / non-prescribed', 'Euphoric rush, nodding, mental clouding, itching, nausea, constipation, and severe sedation.'], ['Severe toxicity', 'Unarousable coma, respiratory arrest, agonal breathing, cyanosis, hypothermia, or shock.']],
     risks: [['Rapid dependence', 'Daily use can quickly produce tolerance and severe withdrawal when stopped abruptly.'], ['Injection-related vascular injury', 'Crushed tablets can cause microvascular thrombosis, anemia, low platelets, kidney failure, and dialysis-requiring injury.'], ['Hypoxic brain damage', 'A non-fatal overdose can leave lasting memory, speech, and executive-function impairment.'], ['Endocrine and bone effects', 'Long-term opioid exposure can suppress sex hormones, reduce muscle mass, and contribute to osteoporosis.']],
     interactions: 'Benzodiazepines, alcohol, gabapentinoids, muscle relaxants, and other sedatives can eliminate the margin for safe breathing.',
+  },
+  cyclorphine: {
+    title: 'Cyclorphine', subtitle: '(Opioid education guide)',
+    intro: 'Cyclorphine is included here as an opioid education topic. Verify the substance name and seek professional guidance because similarly named compounds can have very different risks.',
+    classification: 'Cyclorphine should be treated as an opioid-risk term until its exact identity is confirmed. Unknown or counterfeit opioid products may suppress breathing and can require naloxone and emergency care.',
+    context: 'Do not rely on appearance, packaging, or a street name to identify a pill or powder. Ask a pharmacist, clinician, or poison center for help identifying an unfamiliar substance.',
+    effects: [['Possible opioid effects', 'Sleepiness, slowed reactions, nausea, constricted pupils, and impaired coordination may occur.'], ['Overdose warning signs', 'Unresponsiveness, slow or absent breathing, gurgling, blue or gray skin, or limpness require immediate help.'], ['Unknown-product risk', 'Counterfeit products can contain fentanyl or other potent opioids without warning.']],
+    risks: [['Uncertain identity', 'A similar name may refer to a different compound. Avoid taking an unidentified product.'], ['Respiratory depression', 'Opioids can slow or stop breathing, especially when combined with alcohol, benzodiazepines, or other sedatives.'], ['Dependence and withdrawal', 'Repeated opioid exposure can lead to tolerance, dependence, and withdrawal symptoms.'], ['Counterfeit contamination', 'Unregulated products may contain unexpected opioids or other drugs.']],
+    interactions: 'Never combine an unidentified opioid product with alcohol, benzodiazepines, sleep medicines, or other sedatives. Carry naloxone when opioid exposure is possible.',
   },
   morphine: {
     title: 'Morphine', subtitle: '(M, Miss Emma, Morph)',

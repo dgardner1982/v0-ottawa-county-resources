@@ -23,12 +23,14 @@ import { MCDCLocationsModal } from './mcdc-locations-modal'
 const PAGE_SIZE = 24
 const ALL_AREAS = [...AREAS, ANYWHERE_AREA]
 const CATEGORY_CHIP_TONES = [
-  'border-[#f28a2e]/40 bg-[#fff1e3] hover:bg-[#ffe4c8]',
-  'border-[#4f8fd4]/40 bg-[#eaf3fc] hover:bg-[#d9eafa]',
-  'border-[#8e6bbf]/40 bg-[#f1ebfa] hover:bg-[#e6daf6]',
-  'border-[#d85da1]/40 bg-[#fcebf5] hover:bg-[#f8d9ea]',
-  'border-[#0f6e75]/40 bg-[#e3f2f3] hover:bg-[#d1e9eb]',
-  'border-[#49a696]/40 bg-[#e7f7f3] hover:bg-[#d7efe9]',
+  'border-[#f28a2e]/50 bg-[#fff1e3] hover:bg-[#ffe4c8]', 'border-[#4f8fd4]/50 bg-[#eaf3fc] hover:bg-[#d9eafa]',
+  'border-[#8e6bbf]/50 bg-[#f1ebfa] hover:bg-[#e6daf6]', 'border-[#d85da1]/50 bg-[#fcebf5] hover:bg-[#f8d9ea]',
+  'border-[#d6403a]/50 bg-[#fdebea] hover:bg-[#f9d8d6]', 'border-[#0f6e75]/50 bg-[#e3f2f3] hover:bg-[#d1e9eb]',
+  'border-[#49a696]/50 bg-[#e7f7f3] hover:bg-[#d7efe9]', 'border-[#e0aa32]/50 bg-[#fff7d9] hover:bg-[#fff0ad]',
+  'border-[#3b82a0]/50 bg-[#e5f4f8] hover:bg-[#d3ebf1]', 'border-[#c45b7c]/50 bg-[#fbeaf0] hover:bg-[#f6d9e3]',
+  'border-[#6d8b4e]/50 bg-[#eef6e5] hover:bg-[#e2efcf]', 'border-[#b16e3f]/50 bg-[#fbefe6] hover:bg-[#f5dfcf]',
+  'border-[#5f72b5]/50 bg-[#eef0fb] hover:bg-[#e0e4f7]', 'border-[#c37b2c]/50 bg-[#fff1db] hover:bg-[#ffe3b5]',
+  'border-[#4d9b88]/50 bg-[#e6f5f0] hover:bg-[#d4ece4]', 'border-[#9b5db0]/50 bg-[#f5eafa] hover:bg-[#ead8f2]',
 ]
 
 function scrollToDirectory() {

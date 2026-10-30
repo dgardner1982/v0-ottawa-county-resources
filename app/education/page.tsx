@@ -89,6 +89,7 @@ export default function EducationPage() {
   { name: "Tramadol", symbol: Pill, slug: "tramadol", color: "border-fuchsia-600", bgColor: "bg-fuchsia-50" },
   { name: "Oxymorphone", symbol: Syringe, slug: "oxymorphone", color: "border-rose-700", bgColor: "bg-rose-50" },
   { name: "Morphine", symbol: Pill, slug: "morphine", color: "border-slate-700", bgColor: "bg-slate-100" },
+ { name: "Cyclorphine", symbol: Pill, slug: "cyclorphine", color: "border-rose-600", bgColor: "bg-rose-50" },
     { name: "Methamphetamine", symbol: Zap, slug: "methamphetamine", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "Nitazine", symbol: Pill, slug: "nitazine", color: "border-yellow-600", bgColor: "bg-yellow-50" },
     { name: "PCP", symbol: FlaskConical, slug: "pcp", color: "border-red-700", bgColor: "bg-red-200" },
@@ -123,7 +124,7 @@ export default function EducationPage() {
   );
 
   const categories = [
-    { name: 'Opioids & Pain Medications', eyebrow: 'High overdose risk', description: 'Guides covering opioid effects, dependence, interactions, and emergency response.', slugs: ['fentanyl', 'carfentanil', 'parafluorofentanyl', 'heroin', 'oxycodone', 'hydrocodone', 'hydromorphone', 'codeine', 'tramadol', 'oxymorphone', 'morphine', 'methadone', 'suboxone', 'nitazine', 'meperidine', 'tapentadol'] },
+    { name: 'Opioids & Pain Medications', eyebrow: 'High overdose risk', description: 'Guides covering opioid effects, dependence, interactions, and emergency response.', slugs: ['fentanyl', 'carfentanil', 'parafluorofentanyl', 'heroin', 'oxycodone', 'hydrocodone', 'hydromorphone', 'codeine', 'tramadol', 'oxymorphone', 'morphine', 'methadone', 'suboxone', 'nitazine', 'meperidine', 'tapentadol', 'cyclorphine'] },
     { name: 'Sedatives & Depressants', eyebrow: 'Slow the nervous system', description: 'Learn how sedatives affect breathing, coordination, dependence, and withdrawal.', slugs: ['alcohol', 'bromazolam', 'alprazolam', 'barbiturates', 'ghb', 'zolpidem', 'pregabalin', 'gabapentin', 'xylazine', 'medetomidine'] },
     { name: 'Stimulants', eyebrow: 'Energy & alertness', description: 'Understand stimulant effects, cardiovascular risks, and safer response steps.', slugs: ['adderall', 'methamphetamine', 'cocaine', 'crack-cocaine', 'vyvanse', 'dexmethylphenidate', 'modafinil', 'ritalin', 'synthetic-cathinones', 'nicotine'] },
     { name: 'Psychedelics & Dissociatives', eyebrow: 'Perception & consciousness', description: 'Explore altered perception, dissociation, set and setting, and acute safety concerns.', slugs: ['lsd', 'psilocybin', 'dmt', 'mescaline', '2c-b', 'salvia', 'pcp', 'ketamine', 'dextromethorphan', 'nitrous-oxide', 'mdma'] },

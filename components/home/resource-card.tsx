@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Bookmark, BookmarkCheck, Check, ChevronDown, Clock, Copy, ExternalLink, MapPin, Navigation, Phone, MessageSquare } from 'lucide-react'
-import { categoryMeta, type DirectoryItem } from '@/lib/directory'
+import { categoryMeta, NALOXONE_CATEGORY, type DirectoryItem } from '@/lib/directory'
 import { cn } from '@/lib/utils'
 
 interface ResourceCardProps {
@@ -14,6 +14,13 @@ interface ResourceCardProps {
 }
 
 const NON_PHYSICAL = /^(national|state program|statewide program|multiple|ottawa county$|ottawa county -)/i
+const RESOURCE_BORDER_TONES: Record<string, string> = {
+  Food: 'border-[#f28a2e]/60', Housing: 'border-[#4f8fd4]/60', 'Substance Recovery': 'border-[#8e6bbf]/60', 'Mental Health': 'border-[#d85da1]/60',
+  [NALOXONE_CATEGORY]: 'border-[#d6403a]/60', 'Domestic Violence': 'border-[#d6403a]/60', Employment: 'border-[#0f6e75]/60', 'Health Care': 'border-[#49a696]/60',
+  'Clothing and Furniture': 'border-[#e0aa32]/60', Dental: 'border-[#3b82a0]/60', 'Government Services': 'border-[#c45b7c]/60', 'Harm Reduction': 'border-[#6d8b4e]/60',
+  Legal: 'border-[#5f72b5]/60', 'Medicated Assisted Treatment': 'border-[#c37b2c]/60', 'Prenatal/Maternal': 'border-[#c45b7c]/60', Seniors: 'border-[#9b5db0]/60',
+}
+
 
 function mapsUrl(address: string) {
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`
@@ -45,10 +52,10 @@ export function ResourceCard({ item, saved, onToggleSave, onOpenLocations }: Res
   }
 
   return (
-    <article className="group flex h-full flex-col rounded-2xl border border-border bg-card p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-navy/10">
+    <article className={cn('group flex h-full flex-col rounded-2xl border bg-card p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-navy/10', RESOURCE_BORDER_TONES[item.category] ?? 'border-border')}>
       <header className="flex items-start justify-between gap-3">
         <div className="flex min-w-0 flex-wrap items-center gap-2">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-muted px-2.5 py-1 text-xs font-semibold text-primary">
+          <span className={cn('inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold text-navy', RESOURCE_BORDER_TONES[item.category]?.replace('border-', 'bg-').replace('/60', '/15') ?? 'bg-muted')}>
             <Icon aria-hidden="true" className="h-3.5 w-3.5" />
             {meta.label}
           </span>

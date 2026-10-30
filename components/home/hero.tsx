@@ -82,6 +82,14 @@ export function Hero({ query, onQueryChange, intentCategories, resultCount, tota
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/85 text-pretty">
               {totalCount} free and low-cost local resources for recovery, housing, food, health and more &mdash; in plain language, with one tap to call.
             </p>
+            <nav aria-label="Explore Ottawa County resources" className="mt-6 flex flex-wrap gap-3">
+              <Link href="/support-groups" className="inline-flex items-center gap-2 rounded-full bg-[#f2d34f] px-5 py-3 font-bold text-navy shadow-lg shadow-black/20 transition hover:-translate-y-1 hover:brightness-105">
+                Explore support groups <ArrowRight aria-hidden="true" className="h-4 w-4" />
+              </Link>
+              <Link href="/education" className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/10 px-5 py-3 font-bold text-white backdrop-blur transition hover:-translate-y-1 hover:bg-white/20">
+                Learn something new <ArrowRight aria-hidden="true" className="h-4 w-4" />
+              </Link>
+            </nav>
 
             <form
               role="search"
