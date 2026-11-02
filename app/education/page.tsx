@@ -110,6 +110,7 @@ export default function EducationPage() {
     { name: "Ritalin", symbol: Pill, slug: "ritalin", color: "border-indigo-600", bgColor: "bg-indigo-50" },
     { name: "Tianeptine", symbol: Pill, slug: "tianeptine", color: "border-cyan-600", bgColor: "bg-cyan-50" },
  { name: "Kava", symbol: Pill, slug: "kava", color: "border-cyan-600", bgColor: "bg-cyan-50" },
+ { name: "Phenibut", symbol: Pill, slug: "phenibut", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "Suboxone", symbol: Pill, slug: "suboxone", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "Synthetic Cannabinoids", symbol: Leaf, slug: "synthetic-cannabinoids", color: "border-teal-500", bgColor: "bg-teal-50" },
     { name: "THC", symbol: Leaf, slug: "thc", color: "border-lime-500", bgColor: "bg-lime-50" },
@@ -191,9 +192,9 @@ export default function EducationPage() {
     { name: 'Sedatives & Depressants', eyebrow: 'Slow the nervous system', description: 'Learn how sedatives affect breathing, coordination, dependence, and withdrawal.', slugs: ['alcohol', 'bromazolam', 'alprazolam', 'barbiturates', 'carisoprodol', 'ghb', 'zolpidem', 'pregabalin', 'gabapentin', 'xylazine', 'medetomidine'] },
     { name: 'Stimulants', eyebrow: 'Energy & alertness', description: 'Understand stimulant effects, cardiovascular risks, and safer response steps.', slugs: ['adderall', 'methamphetamine', 'cocaine', 'crack-cocaine', 'vyvanse', 'dexmethylphenidate', 'modafinil', 'ritalin', 'synthetic-cathinones', 'nicotine'] },
     { name: 'Psychedelics & Dissociatives', eyebrow: 'Perception & consciousness', description: 'Explore altered perception, dissociation, set and setting, and acute safety concerns.', slugs: ['lsd', 'psilocybin', 'dmt', 'mescaline', '2c-b', 'salvia', 'pcp', 'ketamine', 'dextromethorphan', 'mdma'] },
-    { name: 'Cannabinoids & Plant-Based Substances', eyebrow: 'Botanical & cannabinoid guides', description: 'Clear information about cannabis products, kratom, and synthetic cannabinoids.', slugs: ['thc', 'hemp-derived-cannabinoids', 'synthetic-cannabinoids', 'kratom', '7-hydroxymitragynine'] },
+    { name: 'Cannabinoids & Plant-Based Substances', eyebrow: 'Botanical & cannabinoid guides', description: 'Clear information about cannabis products, kratom, and synthetic cannabinoids.', slugs: ['thc', 'hemp-derived-cannabinoids', 'synthetic-cannabinoids', 'kratom', '7-hydroxymitragynine', 'kava'] },
     { name: 'Inhalants', eyebrow: 'Household and pressurized products', description: 'Learn about duster, poppers, nitrous oxide, and volatile solvents or aerosols that can cause sudden oxygen loss and cardiac arrest.', slugs: ['duster', 'alkyl-nitrites', 'nitrous-oxide', 'solvents-aerosols'] },
-    { name: 'Other Substances', eyebrow: 'Additional guides', description: 'Additional substances and products with unique effects or exposure risks.', slugs: ['anabolic-steroids', 'kava', 'tianeptine'] },
+    { name: 'Other Substances', eyebrow: 'Additional guides', description: 'Additional substances and products with unique effects or exposure risks.', slugs: ['anabolic-steroids', 'phenibut', 'tianeptine'] },
   ];
 
   const drugNames = new Map(drugs.map((drug) => [drug.slug, drug.name]));
