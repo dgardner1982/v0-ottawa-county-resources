@@ -79,6 +79,7 @@ export default function EducationPage() {
     { name: "Heroin", symbol: Syringe, slug: "heroin", color: "border-amber-700", bgColor: "bg-amber-50" },
     { name: "Nitrous Oxide", symbol: Wind, slug: "nitrous-oxide", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "Duster", symbol: Wind, slug: "duster", color: "border-cyan-600", bgColor: "bg-cyan-50" },
+       { name: "Solvents / Aerosols", symbol: Wind, slug: "solvents-aerosols", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "Ketamine", symbol: TestTube, slug: "ketamine", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "Kratom", symbol: Leaf, slug: "kratom", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "Medetomidine", symbol: Microscope, slug: "medetomidine", color: "border-cyan-600", bgColor: "bg-cyan-50" },
@@ -107,6 +108,8 @@ export default function EducationPage() {
     { name: "Anabolic-Androgenic Steroids", symbol: Zap, slug: "anabolic-steroids", color: "border-amber-700", bgColor: "bg-amber-50" },
     { name: "Ritalin", symbol: Pill, slug: "ritalin", color: "border-indigo-600", bgColor: "bg-indigo-50" },
     { name: "Tianeptine", symbol: Pill, slug: "tianeptine", color: "border-cyan-600", bgColor: "bg-cyan-50" },
+ { name: "Kava", symbol: Pill, slug: "kava", color: "border-cyan-600", bgColor: "bg-cyan-50" },
+ { name: "Phenibut", symbol: Pill, slug: "phenibut", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "Suboxone", symbol: Pill, slug: "suboxone", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "Synthetic Cannabinoids", symbol: Leaf, slug: "synthetic-cannabinoids", color: "border-teal-500", bgColor: "bg-teal-50" },
     { name: "THC", symbol: Leaf, slug: "thc", color: "border-lime-500", bgColor: "bg-lime-50" },
@@ -115,21 +118,85 @@ export default function EducationPage() {
     { name: "Meperidine / Pethidine", symbol: Syringe, slug: "meperidine", color: "border-violet-700", bgColor: "bg-violet-50" },
     { name: "Tapentadol", symbol: Pill, slug: "tapentadol", color: "border-sky-700", bgColor: "bg-sky-50" },
     { name: "Barbiturates", symbol: Pill, slug: "barbiturates", color: "border-slate-700", bgColor: "bg-slate-50" },
+ { name: "Carisoprodol", symbol: Pill, slug: "carisoprodol", color: "border-slate-700", bgColor: "bg-slate-50" },
     { name: "Xylazine", symbol: FlaskConical, slug: "xylazine", color: "border-purple-500", bgColor: "bg-purple-50" }
   ];
+
+  const substanceImages: Record<string, string> = {
+    '2c-b': 'https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTfgkVN--dYcKc55Q9yigB1nvXMuq9gaMR2p2-qGXfjWivSHj4wC4erWllV9bk_BtNcRCbS-M_uqPwSm7Y',
+    '7-hydroxymitragynine': 'https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcSODgrYgx2z9bWoe2dqiSzRMeX7P7WWPC1OJ4hfoJAo0puxnM95pQwanYPlnr4ze_UV2Bi2W7cNk6-CR34',
+    adderall: 'https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcQH-gpmFGzjXILg0FqP9M1B7d22UT8OJ_Nx0ZlfrGnPJT2JMdWV7d8aw0DNXJkJ4wLfP84UR0mL1A69fSY',
+    'alkyl-nitrites': 'https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTzb_nN-Y4pnc3tl5IVQfq2VXyfSin64NaDMrW73VTy8UAona6tIv0XGaQSQLoHnF4yvzmzNV9BxwJ1kUA',
+    'anabolic-steroids': 'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcSHOsMJ8z2eFYJbH7mCC2rD_f8vnaFl002mx3xPRO8TWA5HeeqSsj7zUzrxrOUH774wxqBvkD6b-iSQucs',
+    dexmethylphenidate: 'https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcQiB30lHtEpRprpAfGo3lToufDDQ9meUt8SZQoj7a0qCZH2oN72LiIbMANtPQT_9cn38cVhd3bXVLt97r8',
+    gabapentin: 'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcSdxcS8eXWztbUHvjUpRB4pyvkHhn_VUTJ7dvTjs-6-nfypCK-wKSdQal5EUqDciV6D5dcjO8Rrj6snOM4',
+    ghb: 'https://images.ctfassets.net/ip74mqmfgvqf/2z3arlHW9S6MUSsqcImSWg/0c88cbdbd6b4819658027d89ebd352b0/FRANK_drug_image_ghb.jpg?fit=scale&f=bottom&q=70&fm=webp&w=3840',
+    mescaline: 'https://upload.wikimedia.org/wikipedia/commons/6/62/Starr_070320-5799_Echinopsis_pachanoi.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original',
+    modafinil: 'https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcTuxVQO9eruV1ZZYdcKU0bRRGGeG6FjJAS1tYgYnqVvbE_u8rMixD5iZqAaL_nxGT50pOU4zAZSCnnEuw4',
+    alcohol: 'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcStXHdUhFaCABQ1jpeLLGJok9Yogo9YcUlUXL1xQsVV_hAUYTxTiGvdwBeflvEBneexNnNb6WbPwSnWj6I',
+    alprazolam: 'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcR6FW80k1h4L_RzyTH6HNeHixeDbKSdprv0Tx_VsuktkXFzVrXrd8vtb46hQMhzhgsmH8O846sE91bAoVU',
+    barbiturates: 'https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcR2hxCXglyf8YBCatxdYRi6--UWf4iO3em-87BheN2uAoXdObFghPx3p15n2xhFMznNhDB7MODklALaiik',
+    bromazolam: 'https://www.hanleycenter.org/wp-content/uploads/2024/03/bromazolam.jpg',
+    carfentanil: 'https://summitbhc.com/wp-content/uploads/2017/05/carfentanil.jpg',
+    codeine: 'https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcRKZccQz_AsBNSwaLGAttGeEHTu7ridyD5qYptqLa_2khofjEflMuHNWWo2CeclSKOoqpdXuRd0x35JaBE',
+    cocaine: 'https://medlineplus.gov/images/Cocaine_share.jpg',
+    'crack-cocaine': 'https://upload.wikimedia.org/wikipedia/commons/c/c7/Rocks_of_crack_cocaine.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original',
+    cyclorphine: 'https://www.narcotics.com/wp-content/uploads/2026/03/new-synthetic-opioid-cyclorphine-raises-overdose-risk.jpg',
+    dextromethorphan: 'https://thenestledrecovery.com/wp-content/uploads/What-is-DXM-Addiction-1024x800.jpg',
+    dmt: 'https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcQlKcup2bXI_6YFkK0gbPBRrYoI8t4YQKGLXLISWBv2xq8c7DX3cxu1S5QAnSVA7_J7AzPCBRZjUNVtqdE',
+    duster: 'https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcSL-N3p69vEkXyoOzYKfW42Qan37EJY43103KVCYsKkJT9_ZbEEWok-HYYtLLq-slaFrHz1_gpaTC1ixf8',
+    fentanyl: 'https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcQu-lpXGNgmxzsv4m6IL6mQYp-7Hqgbb-TtV-UXQPixoczgLhuq9IguZ3vOA7qvYPmn7_jgdC3rI6rPfKU',
+    'hemp-derived-cannabinoids': 'https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcSuPDsrc8MU2dvPAGKfKfdMlKqQr9Hc6Z9m-tob_7MR5XyoUg3a7fhuiEQvauALzu9fnhNKdhiV2ikHUrw',
+    heroin: 'https://bocarecoverycenter.com/wp-content/uploads/2023/09/brown-heroin-scaled.jpg',
+    hydrocodone: 'https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTRAvdod2BfzmOoqsVZzuL6lOXwOlLMUBUeWuqIZV6JQqUA2Mu9v4VB9rim4fv2YotQ-qxSbrnVk8kK7Fk',
+    hydromorphone: 'https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcT3ohlV-qqKPJOY_ugAGQtxpoxjH2H3toQ9sJt_HvkQoYL7L7P5Lg7nZQf3NQ8ERYV-N_MLe75WcCrPB-s',
+    ketamine: 'https://cdn.adf.org.au/media/images/ketamine-social.2e16d0ba.fill-1200x1200.webp',
+    kratom: 'https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcSH3ZqfKFC2cB2riN41U25Sxm8Hur7F2igxrCtxn2TNVDnWn4LwTwEPAo8pmKVNfwGFvy9jWpSgcL1dN4g',
+    lsd: 'https://d7hftxdivxxvm.cloudfront.net/?height=800&quality=85&resize_to=fit&src=https%3A%2F%2Fd32dm0rphc51dk.cloudfront.net%2FgxuGvWYeyC6S2rbasLyV7w%2Fnormalized.jpg&width=800',
+    mdma: 'https://images.ctfassets.net/ip74mqmfgvqf/564b953afSI0iKU448sOAK/dad96622c34abc30b0076373ae859dae/FRANK_news_ecstasy_2.jpg?fit=scale&f=bottom&q=70&fm=webp&w=3840',
+    medetomidine: 'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQWqo_mbfbvRJ1UYbrMomPPCyJGX0k_MhkcGe-Bvogvm1ayH_CViVA3X5l562N6eecdDu-RdE2M7pMm4Io',
+    meperidine: 'https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcR_aS9zKvpjc1nZf0tYDDR5WzuznvoEKZp_3FRyDSOGxtp9NDDjcfJtsV-ReqCcqnlHkGo63lxzyBE-QyY',
+    methadone: 'https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcQAAcgkEqgQomj5W-bVAsS0VobGSmK4RufOi53z2hJqGdYJX7RukIswsInn7JLfJGMWfN4ZHBNAkhoDJSw',
+    methamphetamine: 'https://positivechoices.org.au/pic/iLtr5JK8R7/4/methamphetamine',
+    morphine: 'https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcToVlCcKd2oIea253fVBpRZ8EUXU7cvPyTkjeXW_YOc1UEV_nKnjGGyt6iCesyaS6zCpLS5XKloTPzoSro',
+    nicotine: 'https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcQheeX-LnT1AaHHLGoCw7baUfLF8lOiiIT7f5GWiG5T1NpLqzOl_FbKvHujLZqTwGk2jZqa0siX-ctjETo',
+    nitazine: 'https://wp.anrclinic.com/wp-content/uploads/2024/10/image2-1-1024x692.webp',
+    'nitrous-oxide': 'https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcSh97b6xzAil4eztsb7AfaU6H2OCMGnZx1EiF9-INSWNqzbUTW-Cz_7fnnr13OcxzDDBsJv_ZGRj-kx7h0',
+    oxycodone: 'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcT4kqVXdnedf7S7LgEMlTqHXfE7nsNNRZ0r2RNdw0SfHZWg2xo30LYJ4ObzQpAlRKhGXZLk2DHy10YvrBs',
+    oxymorphone: 'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQ-HIIeu5VmO_hE56jqP-jw6mCAxDpPoTXdDlNygMxBcfN7W4rNl8GclpvdzXHxwGKJVuS6di655cEtj_Y',
+    parafluorofentanyl: 'https://media.labcompare.com/m/53/article/611571.jpg',
+    pcp: 'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQ8pSTB13rQcJAnr4uUvSW_pbuPUplURyjOoA1dyBfKwZxAhSTb4XycZIfnIEtbp79wLXduq4aU4Vce1yM',
+    pregabalin: 'https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcQuBI3dcLWnauZr0k_nk4IGkT57KEVI_g3uBuOp8ec1ZbMEZy7_BvO0eidzvkEhxC6gV4N-hZaCw_HtJU',
+    psilocybin: 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Psilocybe_semilanceata_6514.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original',
+    ritalin: 'https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcQaxE7-fNgK2punuE0AnRnetlcqbKZdmTZzUEJ1Iep3jmn65aqCt29J_ouAxgIFvnKNcws07inBLZOavpY',
+    salvia: 'https://upload.wikimedia.org/wikipedia/commons/8/82/Salvia_divinorum_-_Herba_de_Maria.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original',
+    suboxone: 'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQIOMVlxwnyt0DjlyIlyQtowQGCg1RSoYLXNTCJKjmaVhPIsE7aaHLpYYt0844jxZXOIBR_aXGsqKJmZlw',
+    'synthetic-cathinones': 'https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcRciodumvlOExVp2NxZotzFswfMR-Ksyrf5DY_qWZer8NVxsdZVEHQeEz9yiW6OYdTPRcNfOOV1OivvkOg',
+    'synthetic-cannabinoids': 'https://media.defense.gov/2011/Jan/05/2000295332/2000/2000/0/110105-F-9999B-003.JPG',
+    tapentadol: 'https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcQTACBWJ9_FjQfRWljGbOtiGkRKYbG8-M48-TX0_et7XiQ8lGirgwPJHrCF02x4ci_LgN0hId_t1U-mPkA',
+    thc: 'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQB_G-Zb7kQhRzGPEpR8PrYn-gV8UfZLlokl5_6VmxznIagNPlu1mVFQnK4nsRkffvesQUC164riMb47HQ',
+    tianeptine: 'https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcQ70zv4fW6OVOb-BegmKOBvrkbhWl4DLdgbPvXkoxMwrzfrzEG2Xoefa2I2nIOUOTBTzuhNrcc60Uzn5mU',
+    tramadol: 'https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcTAuIkxzitwYPmm_ZuN1ljTJsxxlOvePSi7Ez8GUWcuDvnkLTBFdnMF3SvmCmCMVJCKGpMREJzfccc45gk',
+    vyvanse: 'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRNtSKS-PhG1-irx2-QHYLQ2b16iVvfJhhRv7bSdO4CrboaZ_T7p6_dHo4Kjs6bNO-LZaOHsMtvnxSLjmw',
+    xylazine: 'https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcTBneWHk_659F9qtuFnE1kpquM-JCFfWOR-EVrqx7DrYSNle6g1A_FAZfozytfL3C8gswzOHBlo0J0BhFA',
+    zolpidem: 'https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcSxd6Vvj4urvEJx71f3ZXbGCe6joKZm_wMbKkZnZLKWjTntFdViWrt3nAJsBghTT0_CxBBMQUxpUcVDm9Y',
+  };
 
   const filteredDrugs = drugs.filter((drug) =>
     drug.name.toLowerCase().includes(searchQuery.trim().toLowerCase()),
   );
 
   const categories = [
-    { name: 'Opioids & Pain Medications', eyebrow: 'High overdose risk', description: 'Guides covering opioid effects, dependence, interactions, and emergency response.', slugs: ['fentanyl', 'carfentanil', 'parafluorofentanyl', 'heroin', 'oxycodone', 'hydrocodone', 'hydromorphone', 'codeine', 'tramadol', 'oxymorphone', 'morphine', 'methadone', 'suboxone', 'nitazine', 'meperidine', 'tapentadol'] },
-    { name: 'Sedatives & Depressants', eyebrow: 'Slow the nervous system', description: 'Learn how sedatives affect breathing, coordination, dependence, and withdrawal.', slugs: ['alcohol', 'bromazolam', 'alprazolam', 'barbiturates', 'ghb', 'zolpidem', 'pregabalin', 'gabapentin', 'xylazine', 'medetomidine'] },
+    { name: 'Opioids & Pain Medications', eyebrow: 'High overdose risk', description: 'Guides covering opioid effects, dependence, interactions, and emergency response.', slugs: ['fentanyl', 'carfentanil', 'parafluorofentanyl', 'heroin', 'oxycodone', 'hydrocodone', 'hydromorphone', 'codeine', 'tramadol', 'oxymorphone', 'morphine', 'methadone', 'suboxone', 'nitazine', 'meperidine', 'tapentadol', 'cyclorphine'] },
+    { name: 'Sedatives & Depressants', eyebrow: 'Slow the nervous system', description: 'Learn how sedatives affect breathing, coordination, dependence, and withdrawal.', slugs: ['alcohol', 'bromazolam', 'alprazolam', 'barbiturates', 'carisoprodol', 'ghb', 'zolpidem', 'pregabalin', 'gabapentin', 'xylazine', 'medetomidine'] },
     { name: 'Stimulants', eyebrow: 'Energy & alertness', description: 'Understand stimulant effects, cardiovascular risks, and safer response steps.', slugs: ['adderall', 'methamphetamine', 'cocaine', 'crack-cocaine', 'vyvanse', 'dexmethylphenidate', 'modafinil', 'ritalin', 'synthetic-cathinones', 'nicotine'] },
-    { name: 'Psychedelics & Dissociatives', eyebrow: 'Perception & consciousness', description: 'Explore altered perception, dissociation, set and setting, and acute safety concerns.', slugs: ['lsd', 'psilocybin', 'dmt', 'mescaline', '2c-b', 'salvia', 'pcp', 'ketamine', 'dextromethorphan', 'nitrous-oxide', 'mdma'] },
-    { name: 'Cannabinoids & Plant-Based Substances', eyebrow: 'Botanical & cannabinoid guides', description: 'Clear information about cannabis products, kratom, and synthetic cannabinoids.', slugs: ['thc', 'hemp-derived-cannabinoids', 'synthetic-cannabinoids', 'kratom', '7-hydroxymitragynine'] },
-    { name: 'Other Substances', eyebrow: 'Additional guides', description: 'Additional substances and products with unique effects or exposure risks.', slugs: ['duster', 'alkyl-nitrites', 'anabolic-steroids', 'cyclorphine', 'tianeptine', 'dexmethylphenidate'] },
+    { name: 'Psychedelics & Dissociatives', eyebrow: 'Perception & consciousness', description: 'Explore altered perception, dissociation, set and setting, and acute safety concerns.', slugs: ['lsd', 'psilocybin', 'dmt', 'mescaline', '2c-b', 'salvia', 'pcp', 'ketamine', 'dextromethorphan', 'mdma'] },
+    { name: 'Cannabinoids & Plant-Based Substances', eyebrow: 'Botanical & cannabinoid guides', description: 'Clear information about cannabis products, kratom, and synthetic cannabinoids.', slugs: ['thc', 'hemp-derived-cannabinoids', 'synthetic-cannabinoids', 'kratom', '7-hydroxymitragynine', 'kava'] },
+    { name: 'Inhalants', eyebrow: 'Household and pressurized products', description: 'Learn about duster, poppers, nitrous oxide, and volatile solvents or aerosols that can cause sudden oxygen loss and cardiac arrest.', slugs: ['duster', 'alkyl-nitrites', 'nitrous-oxide', 'solvents-aerosols'] },
+    { name: 'Other Substances', eyebrow: 'Additional guides', description: 'Additional substances and products with unique effects or exposure risks.', slugs: ['anabolic-steroids', 'phenibut', 'tianeptine'] },
   ];
+
+  const drugNames = new Map(drugs.map((drug) => [drug.slug, drug.name]));
 
   return (
     <>
@@ -152,7 +219,7 @@ export default function EducationPage() {
               <p className="mt-7 max-w-2xl text-pretty text-lg leading-8 text-slate-300 sm:text-xl">Explore clear, current substance guides and harm-reduction information designed to help you make informed choices.</p>
               <div className="mt-9 grid max-w-2xl grid-cols-2 gap-4"><Link href="/" className="group inline-flex items-center justify-center gap-3 rounded-full bg-teal-300 px-6 py-3.5 font-bold text-slate-950 shadow-[0_10px_35px_-12px_#5eead4] transition duration-300 hover:-translate-y-1 hover:bg-white">Explore resources <span className="transition-transform group-hover:translate-x-1">→</span></Link><Link href="/education" className="group inline-flex items-center justify-center gap-3 rounded-full border border-white/20 bg-white/5 px-6 py-3.5 font-bold text-cyan-200 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-cyan-200/70 hover:bg-white/10 hover:text-white">Learn something new <span className="text-cyan-200 transition-transform group-hover:translate-x-1 group-hover:text-white">→</span></Link><Link href="/support-groups" className="group col-span-2 inline-flex w-fit justify-self-center items-center gap-3 rounded-full border border-amber-200/40 bg-amber-200/10 px-6 py-3.5 font-bold text-amber-100 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-amber-200 hover:bg-amber-200/20">Explore support groups <span className="transition-transform group-hover:translate-x-1">→</span></Link></div>
             </div>
-            <div className="relative animate-scale-in [animation-delay:180ms]"><div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-tr from-teal-400/20 via-transparent to-fuchsia-400/20 blur-2xl" /><div className="animate-border-glow relative overflow-hidden rounded-[2rem] border border-white/15 bg-white/10 p-3 backdrop-blur-xl"><Link href="/" aria-label="Go to Ottawa County Recovery Alliance homepage"><img src="/logo.jpg" alt="Ottawa County Recovery Alliance" className="h-auto w-full rounded-[1.4rem] object-cover transition duration-500 hover:scale-[1.02]" /></Link></div></div>
+            <div className="relative animate-scale-in [animation-delay:180ms]"><div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-tr from-teal-400/20 via-transparent to-fuchsia-400/20 blur-2xl" /><div className="animate-border-glow relative overflow-hidden rounded-[2rem] border border-white/15 bg-white/10 p-3 backdrop-blur-xl"><Link href="/" aria-label="Go to Ottawa County Recovery Alliance homepage"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Recovery%20Alliance%20Business%20Cards-UXhe7EFsenUbcy44EqMjYgUa3HNUT3.jpg" alt="Ottawa County Recovery Alliance" className="h-auto w-full rounded-[1.4rem] object-cover transition duration-500 hover:scale-[1.02]" /></Link></div></div>
           </div>
         </div>
       </header>
@@ -198,7 +265,9 @@ export default function EducationPage() {
         {activeTab === 'infograph' && (
           <div className="mb-12 space-y-12">
             {filteredDrugs.length > 0 ? categories.map((category, categoryIndex) => {
-              const categoryDrugs = filteredDrugs.filter((drug) => category.slugs.includes(drug.slug));
+              const categoryDrugs = filteredDrugs
+                .filter((drug) => category.slugs.includes(drug.slug))
+                .sort((a, b) => (drugNames.get(a.slug) ?? a.name).localeCompare(drugNames.get(b.slug) ?? b.name));
               if (!categoryDrugs.length) return null;
               return (
                 <section key={category.name} aria-labelledby={`category-${categoryIndex}`} className="animate-slide-in-up" style={{ animationDelay: `${categoryIndex * 80}ms` }}>
@@ -216,9 +285,9 @@ export default function EducationPage() {
                         <Link key={drug.slug} href={href} className="group focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-fuchsia-500/50">
                           <div style={{ animationDelay: `${Math.min((categoryIndex * 4 + idx) * 35, 560)}ms` }} className="resource-card flex h-64 cursor-pointer flex-col items-center justify-center rounded-[1.35rem] border border-white/10 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950 p-8 text-center shadow-[0_18px_24px_-10px_rgba(2,8,23,0.9),0_8px_14px_-8px_rgba(15,23,42,0.75)] transition duration-500 group-hover:-translate-y-2 group-hover:border-teal-300/50 group-hover:shadow-[0_25px_55px_-24px_rgba(45,212,191,0.55)]">
                             <div className="mb-5 flex h-20 w-20 items-center justify-center rounded-3xl border border-teal-300/25 bg-gradient-to-br from-teal-300/20 to-fuchsia-400/10 text-teal-200 shadow-[0_0_28px_-10px_rgba(94,234,212,0.9)] transition duration-500 group-hover:rotate-3 group-hover:scale-110 group-hover:border-teal-200/60">
-                              {drug.image ? <img src={drug.image} alt={drug.name} className="h-14 w-14 rounded-xl object-contain" /> : <drug.symbol aria-hidden="true" className="h-11 w-11 stroke-[1.6]" />}
+                              {(drug.image ?? substanceImages[drug.slug]) ? <img src={drug.image ?? substanceImages[drug.slug]} alt={`${drug.name} reference`} className="h-14 w-14 rounded-xl object-contain" /> : <drug.symbol aria-hidden="true" className="h-11 w-11 stroke-[1.6]" />}
                             </div>
-                            <h3 className="text-lg font-black leading-tight tracking-tight text-white">{drug.name}{drug.slug === 'alprazolam' && <span className="block text-sm font-semibold text-cyan-300">(Xanax)</span>}{drug.slug === '7-hydroxymitragynine' && <span className="block text-sm font-semibold text-cyan-300">(7-OH)</span>}{drug.slug === 'dextromethorphan' && <span className="block text-sm font-semibold text-cyan-300">(DXM)</span>}{drug.slug === 'alkyl-nitrites' && <span className="block text-sm font-semibold text-cyan-300">(Poppers)</span>}{drug.slug === 'zolpidem' && <span className="block text-sm font-semibold text-cyan-300">(Ambien)</span>}</h3>
+                            <h3 className="text-lg font-black leading-tight tracking-tight text-white">{drug.name}{drug.slug === 'alprazolam' && <span className="block text-sm font-semibold text-cyan-300">(Xanax)</span>}{drug.slug === '7-hydroxymitragynine' && <span className="block text-sm font-semibold text-cyan-300">(7-OH)</span>}{drug.slug === 'dextromethorphan' && <span className="block text-sm font-semibold text-cyan-300">(DXM)</span>}{drug.slug === 'alkyl-nitrites' && <span className="block text-sm font-semibold text-cyan-300">(Poppers)</span>}{drug.slug === 'zolpidem' && <span className="block text-sm font-semibold text-cyan-300">(Ambien)</span>}{drug.slug === 'synthetic-cathinones' && <span className="block text-sm font-semibold text-cyan-300">(Bath Salts)</span>}</h3>
                           </div>
                         </Link>
                       );
