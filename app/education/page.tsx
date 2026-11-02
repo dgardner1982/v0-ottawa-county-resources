@@ -79,6 +79,8 @@ export default function EducationPage() {
     { name: "Heroin", symbol: Syringe, slug: "heroin", color: "border-amber-700", bgColor: "bg-amber-50" },
     { name: "Nitrous Oxide", symbol: Wind, slug: "nitrous-oxide", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "Duster", symbol: Wind, slug: "duster", color: "border-cyan-600", bgColor: "bg-cyan-50" },
+    { name: "Poppers", symbol: Wind, slug: "alkyl-nitrites", color: "border-cyan-600", bgColor: "bg-cyan-50" },
+    { name: "Solvents / Aerosols", symbol: Wind, slug: "solvents-aerosols", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "Ketamine", symbol: TestTube, slug: "ketamine", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "Kratom", symbol: Leaf, slug: "kratom", color: "border-cyan-600", bgColor: "bg-cyan-50" },
     { name: "Medetomidine", symbol: Microscope, slug: "medetomidine", color: "border-cyan-600", bgColor: "bg-cyan-50" },
@@ -188,7 +190,8 @@ export default function EducationPage() {
     { name: 'Stimulants', eyebrow: 'Energy & alertness', description: 'Understand stimulant effects, cardiovascular risks, and safer response steps.', slugs: ['adderall', 'methamphetamine', 'cocaine', 'crack-cocaine', 'vyvanse', 'dexmethylphenidate', 'modafinil', 'ritalin', 'synthetic-cathinones', 'nicotine'] },
     { name: 'Psychedelics & Dissociatives', eyebrow: 'Perception & consciousness', description: 'Explore altered perception, dissociation, set and setting, and acute safety concerns.', slugs: ['lsd', 'psilocybin', 'dmt', 'mescaline', '2c-b', 'salvia', 'pcp', 'ketamine', 'dextromethorphan', 'mdma'] },
     { name: 'Cannabinoids & Plant-Based Substances', eyebrow: 'Botanical & cannabinoid guides', description: 'Clear information about cannabis products, kratom, and synthetic cannabinoids.', slugs: ['thc', 'hemp-derived-cannabinoids', 'synthetic-cannabinoids', 'kratom', '7-hydroxymitragynine'] },
-    { name: 'Other Substances', eyebrow: 'Additional guides', description: 'Additional substances and products with unique effects or exposure risks.', slugs: ['duster', 'alkyl-nitrites', 'anabolic-steroids', 'tianeptine', 'nitrous-oxide'] },
+    { name: 'Inhalants', eyebrow: 'Household and pressurized products', description: 'Learn about duster, poppers, nitrous oxide, and volatile solvents or aerosols that can cause sudden oxygen loss and cardiac arrest.', slugs: ['duster', 'alkyl-nitrites', 'nitrous-oxide', 'solvents-aerosols'] },
+    { name: 'Other Substances', eyebrow: 'Additional guides', description: 'Additional substances and products with unique effects or exposure risks.', slugs: ['anabolic-steroids', 'tianeptine'] },
   ];
 
   const drugNames = new Map(drugs.map((drug) => [drug.slug, drug.name]));
