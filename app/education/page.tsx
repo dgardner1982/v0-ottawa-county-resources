@@ -123,13 +123,15 @@ export default function EducationPage() {
   );
 
   const categories = [
-    { name: 'Opioids & Pain Medications', eyebrow: 'High overdose risk', description: 'Guides covering opioid effects, dependence, interactions, and emergency response.', slugs: ['fentanyl', 'carfentanil', 'parafluorofentanyl', 'heroin', 'oxycodone', 'hydrocodone', 'hydromorphone', 'codeine', 'tramadol', 'oxymorphone', 'morphine', 'methadone', 'suboxone', 'nitazine', 'meperidine', 'tapentadol'] },
+    { name: 'Opioids & Pain Medications', eyebrow: 'High overdose risk', description: 'Guides covering opioid effects, dependence, interactions, and emergency response.', slugs: ['fentanyl', 'carfentanil', 'parafluorofentanyl', 'heroin', 'oxycodone', 'hydrocodone', 'hydromorphone', 'codeine', 'tramadol', 'oxymorphone', 'morphine', 'methadone', 'suboxone', 'nitazine', 'meperidine', 'tapentadol', 'cyclorphine'] },
     { name: 'Sedatives & Depressants', eyebrow: 'Slow the nervous system', description: 'Learn how sedatives affect breathing, coordination, dependence, and withdrawal.', slugs: ['alcohol', 'bromazolam', 'alprazolam', 'barbiturates', 'ghb', 'zolpidem', 'pregabalin', 'gabapentin', 'xylazine', 'medetomidine'] },
     { name: 'Stimulants', eyebrow: 'Energy & alertness', description: 'Understand stimulant effects, cardiovascular risks, and safer response steps.', slugs: ['adderall', 'methamphetamine', 'cocaine', 'crack-cocaine', 'vyvanse', 'dexmethylphenidate', 'modafinil', 'ritalin', 'synthetic-cathinones', 'nicotine'] },
     { name: 'Psychedelics & Dissociatives', eyebrow: 'Perception & consciousness', description: 'Explore altered perception, dissociation, set and setting, and acute safety concerns.', slugs: ['lsd', 'psilocybin', 'dmt', 'mescaline', '2c-b', 'salvia', 'pcp', 'ketamine', 'dextromethorphan', 'nitrous-oxide', 'mdma'] },
     { name: 'Cannabinoids & Plant-Based Substances', eyebrow: 'Botanical & cannabinoid guides', description: 'Clear information about cannabis products, kratom, and synthetic cannabinoids.', slugs: ['thc', 'hemp-derived-cannabinoids', 'synthetic-cannabinoids', 'kratom', '7-hydroxymitragynine'] },
-    { name: 'Other Substances', eyebrow: 'Additional guides', description: 'Additional substances and products with unique effects or exposure risks.', slugs: ['duster', 'alkyl-nitrites', 'anabolic-steroids', 'cyclorphine', 'tianeptine', 'dexmethylphenidate'] },
+    { name: 'Other Substances', eyebrow: 'Additional guides', description: 'Additional substances and products with unique effects or exposure risks.', slugs: ['duster', 'alkyl-nitrites', 'anabolic-steroids', 'tianeptine'] },
   ];
+
+  const drugNames = new Map(drugs.map((drug) => [drug.slug, drug.name]));
 
   return (
     <>
@@ -198,7 +200,9 @@ export default function EducationPage() {
         {activeTab === 'infograph' && (
           <div className="mb-12 space-y-12">
             {filteredDrugs.length > 0 ? categories.map((category, categoryIndex) => {
-              const categoryDrugs = filteredDrugs.filter((drug) => category.slugs.includes(drug.slug));
+              const categoryDrugs = filteredDrugs
+                .filter((drug) => category.slugs.includes(drug.slug))
+                .sort((a, b) => (drugNames.get(a.slug) ?? a.name).localeCompare(drugNames.get(b.slug) ?? b.name));
               if (!categoryDrugs.length) return null;
               return (
                 <section key={category.name} aria-labelledby={`category-${categoryIndex}`} className="animate-slide-in-up" style={{ animationDelay: `${categoryIndex * 80}ms` }}>
