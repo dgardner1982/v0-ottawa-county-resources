@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Home } from 'lucide-react'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { AnalyticsWrapper } from './analytics'
+import { NavigationHistoryManager } from '@/components/navigation-history-manager'
 import './globals.css'
 
 const _geist = Geist({ subsets: ["latin"] });
@@ -53,6 +54,7 @@ export default function RootLayout({
             </Link>
           </div>
         </nav>
+        <NavigationHistoryManager />
         {children}
         <footer className="border-t border-slate-800/70 bg-slate-950 px-5 py-8 text-center text-slate-300 sm:px-8">
           <Link href="/medical-disclaimer" className="font-semibold italic text-[#ff5454] underline decoration-cyan-400 underline-offset-4 transition hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300">
