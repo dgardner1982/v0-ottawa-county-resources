@@ -14,6 +14,10 @@ const locations = [
   { name: 'Reach for Recovery - Holland', address: '483 Century Lane, Holland, MI 49424', position: [42.7785, -86.0878] as [number, number] },
   { name: 'Samaritas', address: '2416 Van Ommen Dr, Holland, MI 49424', position: [42.7552, -86.0677] as [number, number] },
   { name: 'Sobar Recovery Community Center', address: '347 Hoover Blvd, Holland, MI 49423', position: [42.7945, -86.1222] as [number, number] },
+  { name: 'The Ink Society', address: '7610 Cottonwood Dr Ste 101, Jenison, MI 49428', position: [42.9079, -85.7918] as [number, number] },
+  { name: 'Faith Community Church of Coopersville', address: '105 68th Ave N, Coopersville, MI 49404', position: [43.0621, -85.9569] as [number, number] },
+  { name: 'First United Methodist Church', address: '57 W 10th St, Holland, MI 49423', position: [42.7889, -86.1103] as [number, number] },
+  { name: 'Ottawa County Department of Public Health', address: '12251 James St, Holland, MI 49424', position: [42.8121, -86.0866] as [number, number] },
 ]
 
 const markerIcon = new L.Icon({
