@@ -21,7 +21,7 @@ export async function POST(request: Request) {
     const resend = new Resend(process.env.RESEND_API_KEY)
 
     const { error } = await resend.emails.send({
-      from: "Ottawa County Resources <onboarding@resend.dev>",
+      from: "Ottawa County Resources <dgardner@ottawacmh.org>",
       to: ["dgardner@ottawacmh.org"],
       replyTo: email,
       subject: `Recovery Alliance inquiry from ${name}`,
@@ -30,7 +30,15 @@ export async function POST(request: Request) {
 
     if (error) {
       console.error("[v0] Resend submission failed:", error)
-      return NextResponse.json({ error: "We could not send your message. Please try again." }, { status: 502 })
+      const isDomainVerificationError = error.statusCode === 403
+      return NextResponse.json(
+        {
+          error: isDomainVerificationError
+            ? "Email delivery is not active yet. Please verify the ottawacmh.org domain in Resend, then try again."
+            : "We could not send your message. Please try again.",
+        },
+        { status: 502 },
+      )
     }
 
     return NextResponse.json({ success: true })
