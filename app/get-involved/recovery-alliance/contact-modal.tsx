@@ -19,7 +19,7 @@ export default function ContactModal() {
               </div>
               <button type="button" aria-label="Close contact form" onClick={() => setOpen(false)} className="rounded-full px-3 py-1 text-2xl leading-none text-slate-300 hover:bg-slate-800 hover:text-white">×</button>
             </div>
-            <p className="mt-4 leading-7 text-slate-300">Share your details and a brief message. Your email app will open with the completed message addressed to the Ottawa County team.</p>
+            <p className="mt-4 leading-7 text-slate-300">Share your details and a brief message. Your email app will open with the completed message addressed to the Recovery Alliance team.</p>
             <ContactForm onCancel={() => setOpen(false)} />
           </div>
         </div>
