@@ -1,42 +1,49 @@
-import { NextResponse } from 'next/server'
-import { z } from 'zod'
+import { NextResponse } from "next/server"
+import { Resend } from "resend"
+import { z } from "zod"
 
 const contactSchema = z.object({
   name: z.string().trim().min(1).max(120),
   email: z.string().trim().email().max(320),
-  message: z.string().trim().min(1).max(5000),
+  message: z.string().trim().min(1).max(4000),
 })
 
 export async function POST(request: Request) {
   try {
-    const payload = contactSchema.parse(await request.json())
-    const apiKey = process.env.RESEND_API_KEY
+    const body = await request.json()
+    const result = contactSchema.safeParse(body)
 
-    if (!apiKey) {
-      return NextResponse.json({ error: 'Email service is not configured.' }, { status: 503 })
+    if (!result.success) {
+      return NextResponse.json({ error: "Please complete all fields with valid information." }, { status: 400 })
     }
 
-    const response = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        from: 'Ottawa County Resources <onboarding@resend.dev>',
-        to: ['dgardner@ottawacmh.org'],
-        reply_to: payload.email,
-        subject: `New resource message from ${payload.name}`,
-        text: `Name: ${payload.name}\nEmail: ${payload.email}\n\n${payload.message}`,
-      }),
+    const { name, email, message } = result.data
+    const resend = new Resend(process.env.RESEND_API_KEY)
+
+    const { error } = await resend.emails.send({
+      from: "Ottawa County Resources <onboarding@resend.dev>",
+      to: ["dgardnerjr36@outlook.com"],
+      replyTo: email,
+      subject: `Recovery Alliance inquiry from ${name}`,
+      text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
     })
 
-    if (!response.ok) {
-      return NextResponse.json({ error: 'Unable to deliver email.' }, { status: 502 })
+    if (error) {
+      console.error("[v0] Resend submission failed:", error)
+      const isDomainVerificationError = error.statusCode === 403
+      return NextResponse.json(
+        {
+          error: isDomainVerificationError
+            ? "Resend is still in testing mode. This form can only send to the Resend account email until a sending domain is verified."
+            : "We could not send your message. Please try again.",
+        },
+        { status: 502 },
+      )
     }
 
     return NextResponse.json({ success: true })
-  } catch {
-    return NextResponse.json({ error: 'Please provide a valid name, email, and message.' }, { status: 400 })
+  } catch (error) {
+    console.error("[v0] Contact submission failed:", error)
+    return NextResponse.json({ error: "We could not send your message. Please try again." }, { status: 500 })
   }
 }
