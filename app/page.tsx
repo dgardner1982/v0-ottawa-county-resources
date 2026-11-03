@@ -657,7 +657,7 @@ export default function Home() {
                 A central destination for recovery resources, education, and community support. Built to help you find the right resource without the runaround.
               </p>
 <div className="mt-9 grid max-w-2xl grid-cols-1 gap-4 sm:grid-cols-2">
-  <Link href="#resources" className="group inline-flex items-center justify-center gap-3 rounded-full bg-[rgba(70,236,213,0.43)] px-6 py-3.5 font-bold text-[#f9faff] shadow-[0_10px_35px_-12px_#5eead4] transition duration-300 hover:-translate-y-1 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-200">
+  <Link href="#resources" className="group inline-flex items-center justify-center gap-3 rounded-full bg-[rgba(70,236,213,0.43)] border border-[#12c661] px-6 py-3.5 font-bold text-[#f9faff] shadow-[0_10px_35px_-12px_#5eead4] transition duration-300 hover:-translate-y-1 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-200">
 Explore resources <span className="transition-transform group-hover:translate-x-1">→</span>
   </Link>
   <Link href="/education" className="group inline-flex items-center justify-center gap-3 rounded-full border border-white/20 bg-white/5 px-6 py-3.5 font-bold text-cyan-200 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-cyan-200/70 hover:bg-white/10 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-200">
