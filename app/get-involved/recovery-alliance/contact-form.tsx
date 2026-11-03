@@ -3,22 +3,37 @@
 import { FormEvent, useState } from "react"
 
 export default function ContactForm({ onCancel }: { onCancel: () => void }) {
-  const [submitted, setSubmitted] = useState(false)
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle")
+  const [errorMessage, setErrorMessage] = useState("")
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
+    setStatus("submitting")
+    setErrorMessage("")
+
     const form = new FormData(event.currentTarget)
-    const name = String(form.get("name") || "")
-    const email = String(form.get("email") || "")
-    const message = String(form.get("message") || "")
-    const subject = encodeURIComponent(`Recovery Alliance inquiry from ${name}`)
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)
-    window.location.href = `mailto:dgardner@ottawacmh.org?subject=${subject}&body=${body}`
-    setSubmitted(true)
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: form.get("name"),
+        email: form.get("email"),
+        message: form.get("message"),
+      }),
+    })
+
+    const result = await response.json()
+    if (!response.ok) {
+      setErrorMessage(result.error || "We could not send your message. Please try again.")
+      setStatus("error")
+      return
+    }
+
+    setStatus("success")
   }
 
-  if (submitted) {
-    return <p className="mt-6 rounded-2xl border border-cyan-200/30 bg-cyan-200/10 p-4 leading-7 text-cyan-100">Your email draft is ready. Please send it from your email app to complete your message.</p>
+  if (status === "success") {
+    return <p className="mt-6 rounded-2xl border border-cyan-200/30 bg-cyan-200/10 p-4 leading-7 text-cyan-100">Your message was sent successfully. Thank you for reaching out.</p>
   }
 
   return (
@@ -28,9 +43,10 @@ export default function ContactForm({ onCancel }: { onCancel: () => void }) {
         <label className="grid gap-2 text-sm font-semibold text-slate-200">Email<input required name="email" type="email" autoComplete="email" className="rounded-xl border border-slate-600 bg-slate-950/70 px-4 py-3 font-normal text-white outline-none focus:border-cyan-200" /></label>
       </div>
       <label className="grid gap-2 text-sm font-semibold text-slate-200">Message<textarea required name="message" rows={4} className="resize-y rounded-xl border border-slate-600 bg-slate-950/70 px-4 py-3 font-normal text-white outline-none focus:border-cyan-200" /></label>
+      {status === "error" && <p role="alert" className="rounded-xl border border-red-300/30 bg-red-300/10 p-3 text-sm leading-6 text-red-100">{errorMessage}</p>}
       <div className="flex flex-col gap-3 sm:flex-row sm:justify-end">
         <button type="button" onClick={onCancel} className="inline-flex items-center justify-center rounded-full border border-slate-500 px-5 py-3 font-bold text-slate-200 transition hover:border-white hover:text-white">Cancel</button>
-        <button type="submit" className="rounded-full bg-amber-200 px-5 py-3 font-bold text-slate-950 transition hover:-translate-y-1 hover:bg-amber-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-200">Submit</button>
+        <button type="submit" disabled={status === "submitting"} className="rounded-full bg-amber-200 px-5 py-3 font-bold text-slate-950 transition hover:-translate-y-1 hover:bg-amber-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-200 disabled:cursor-wait disabled:opacity-60">{status === "submitting" ? "Sending…" : "Submit"}</button>
       </div>
     </form>
   )
