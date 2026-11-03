@@ -597,13 +597,20 @@ function MCDCLocationsModal({ isOpen, onClose }: { isOpen: boolean; onClose: () 
   );
 }
 
+const CATEGORIES = [
+  'All',
+  ...Array.from(new Set(RESOURCES.map(r => r.category))).sort((a, b) =>
+    a < b ? -1 : a > b ? 1 : 0
+  ),
+];
+
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [showSecondChanceModal, setShowSecondChanceModal] = useState(false);
   const [showMCDCLocations, setShowMCDCLocations] = useState(false);
 
-  const categories = ['All', ...Array.from(new Set(RESOURCES.map(r => r.category))).sort()];
+  const categories = CATEGORIES;
   
   const filtered = RESOURCES.filter(r => {
     const matchesSearch = r.name.toLowerCase().includes(searchTerm.toLowerCase()) || r.info.toLowerCase().includes(searchTerm.toLowerCase());
