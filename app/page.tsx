@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Phone, MapPin, Globe, X } from 'lucide-react';
 import { Footer } from '@/components/footer';
+import { ContactForm } from '@/components/contact-form';
 
 interface Location {
   city: string;
@@ -1020,6 +1021,7 @@ Explore support groups <span className="transition-transform group-hover:transla
             </div>
           )}
         </div>
+        <ContactForm />
       </main>
 
       <Footer />
