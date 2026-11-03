@@ -662,10 +662,10 @@ Explore resources <span className="transition-transform group-hover:translate-x-
   <Link href="/education" className="group inline-flex items-center justify-center gap-3 rounded-full border border-white/20 bg-white/5 px-6 py-3.5 font-bold text-cyan-200 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-cyan-200/70 hover:bg-white/10 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-200">
 Learn something new <span className="text-cyan-200 transition-transform group-hover:translate-x-1 group-hover:text-white">→</span>
   </Link>
-  <Link href="/support-groups" className="group col-span-2 inline-flex w-fit justify-self-center items-center gap-3 rounded-full border border-amber-200/40 bg-amber-200/10 px-6 py-3.5 font-bold text-amber-100 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-amber-200 hover:bg-amber-200/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-200">
+  <Link href="/support-groups" className="group inline-flex w-full items-center justify-center gap-3 rounded-full border border-amber-200/40 bg-amber-200/10 px-6 py-3.5 font-bold text-amber-100 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-amber-200 hover:bg-amber-200/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-200">
 	Explore support groups <span className="transition-transform group-hover:translate-x-1">→</span>
   </Link>
-  <Link href="#resources" className="group col-span-2 inline-flex w-fit justify-self-center items-center gap-3 rounded-full border border-fuchsia-200/40 bg-fuchsia-200/10 px-6 py-3.5 font-bold text-fuchsia-100 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-fuchsia-200 hover:bg-fuchsia-200/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-fuchsia-200">
+  <Link href="#resources" className="group inline-flex w-full items-center justify-center gap-3 rounded-full border border-fuchsia-200/40 bg-fuchsia-200/10 px-6 py-3.5 font-bold text-fuchsia-100 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-fuchsia-200 hover:bg-fuchsia-200/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-fuchsia-200">
 	Explore ways to get involved <span className="transition-transform group-hover:translate-x-1">→</span>
   </Link>
   </div>
