@@ -95,6 +95,8 @@ function Carousel({
 
   React.useEffect(() => {
     if (!api) return
+    // The initial selection must be synchronized before event listeners are attached.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     onSelect(api)
     api.on('reInit', onSelect)
     api.on('select', onSelect)
