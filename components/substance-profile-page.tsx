@@ -97,8 +97,8 @@ export function SubstanceProfilePage({ profile }: { profile: Profile | undefined
               ))}
             </div>
           </section>
-          <section className="grid w-[2200px] gap-8 lg:grid-cols-2">
-            <article className={`rounded-[20px] border-[10px] border-[#dd3dcb] bg-[linear-gradient(0deg,#e34c92_0%,#c248eb_50%,#ce6ee4_100%)] p-7 pl-[110px] pr-0 shadow-[0_18px_28px_-16px_rgba(2,8,23,0.55)] sm:p-10 sm:pl-[110px] sm:pr-0`}>
+          <section className="grid w-full gap-8 lg:grid-cols-2">
+            <article className={`rounded-[20px] border-[10px] border-[#dd3dcb] bg-[linear-gradient(0deg,#e34c92_0%,#c248eb_50%,#ce6ee4_100%)] p-7 shadow-[0_18px_28px_-16px_rgba(2,8,23,0.55)] sm:p-10 sm:pl-[110px] sm:pr-0`}>
               <p className={`mb-2 font-mono text-xs font-bold uppercase tracking-[0.22em] ${activeProfile.accent}`}>· Long-term consequences</p>
               <h2 className="mb-7 text-balance text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">{activeProfile.riskTitle}</h2>
               <p className="leading-7 text-slate-700">{activeProfile.risk}</p>

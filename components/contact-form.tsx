@@ -32,7 +32,7 @@ export function ContactForm() {
       <div className="mb-8">
         <p className="text-sm font-bold uppercase tracking-[0.18em] text-teal-300">Contact us</p>
         <h2 id="contact-heading" className="mt-2 text-3xl font-black tracking-tight">Have a resource to share?</h2>
-        <p className="mt-3 leading-7 text-slate-300">Send us a message and it will be delivered to the Ottawa County resources team.</p>
+        <p className="mt-3 leading-7 text-slate-300">Send us a message and it will be delivered to the Ottawa County Recovery Alliance team for review. If approved, please allow 3-5 business days for it to appear on the website.</p>
       </div>
 
       <form onSubmit={handleSubmit} className="grid gap-5">
