@@ -27,8 +27,15 @@ export default function GetInvolvedPage() {
         </div>
         <div className="mt-12 grid gap-5 md:grid-cols-2">
           {options.map((option) => (
-            <Link key={option.title} href={option.href} className={`group flex min-h-56 flex-col justify-between rounded-[1.75rem] border p-7 transition duration-300 hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-200 ${option.accent}`}>
-              <div>
+            <Link key={option.title} href={option.href} className={`group relative flex min-h-56 flex-col justify-between rounded-[1.75rem] border p-7 transition duration-300 hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-200 ${option.accent}`}>
+              {option.title === "Ottawa County Recovery Alliance" && (
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/OCRA%20%282%29-lLGy1o1XTQB70I8rJ7k2bcZ3v9V22q.jpg"
+                  alt="Ottawa County Recovery Alliance logo"
+                  className="absolute right-5 top-5 size-20 rounded-full object-cover shadow-lg"
+                />
+              )}
+              <div className={option.title === "Ottawa County Recovery Alliance" ? "pr-24" : undefined}>
                 <h2 className="text-2xl font-black">{option.title}</h2>
                 <p className="mt-4 leading-7 text-slate-200">{option.description}</p>
               </div>
