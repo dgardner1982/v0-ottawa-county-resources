@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Home } from 'lucide-react'
+import { CalendarDays, Home } from 'lucide-react'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { AnalyticsWrapper } from './analytics'
 import { NavigationHistoryManager } from '@/components/navigation-history-manager'
@@ -51,6 +51,9 @@ export default function RootLayout({
           <div className="mx-auto flex max-w-7xl items-center gap-2 sm:gap-3">
 <Link href="/" aria-label="Go to Ottawa County Recovery Alliance homepage" className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-950 text-left text-teal-300 transition hover:-translate-y-0.5 hover:bg-teal-700 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-500">
               <Home aria-hidden="true" className="h-5 w-5" />
+            </Link>
+            <Link href="/calendar" aria-label="Open Ottawa County Recovery Events Calendar" className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-fuchsia-600 text-white transition hover:-translate-y-0.5 hover:bg-fuchsia-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fuchsia-600">
+              <CalendarDays aria-hidden="true" className="h-5 w-5" />
             </Link>
           </div>
         </nav>
