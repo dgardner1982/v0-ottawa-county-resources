@@ -687,7 +687,7 @@ Learn something new <span className="text-cyan-200 transition-transform group-ho
           <div>
             <p className="mb-3 text-2xl font-black uppercase tracking-[0.22em] text-teal-600">The resource directory</p>
             <h2 className="text-balance text-4xl font-black tracking-[-0.04em] text-slate-950 sm:text-5xl">Start where you are.</h2>
-            <p className="mt-3 max-w-xl text-base leading-7 text-slate-600">Search by need, browse by category, and connect directly with people who can help.</p>
+            <p className="mt-3 max-w-xl text-base font-bold leading-7 text-slate-600">Search by need, browse by category, and connect directly with people who can help.</p>
           </div>
           <div className="relative w-full lg:max-w-md">
             <label htmlFor="resource-search" className="sr-only">Search resources</label>
