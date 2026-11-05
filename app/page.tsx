@@ -957,7 +957,7 @@ Learn something new <span className="text-cyan-200 transition-transform group-ho
                     )}
                     {resource.hours && (
                       <div className="pt-2 border-t border-gray-300">
-                        <p className="text-gray-800"><span className="font-bold">{resource.officeAddress ? 'Restore Hours:' : 'Hours:'}</span> {resource.hours}</p>
+                        <p className="text-gray-800"><span className="font-bold">Office Hours:</span> {resource.hours}</p>
                       </div>
                     )}
                     {resource.officeAddress && (
