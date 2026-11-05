@@ -13,7 +13,7 @@ export function Footer() {
             Contact Daniel Gardner at <a href="mailto:dgardner@miottawa.org" className="font-semibold text-teal-300 underline decoration-teal-300/40 underline-offset-4 transition hover:text-white">dgardner@miottawa.org</a>
           </p>
         </div>
-        <p className="mt-8 text-sm font-semibold uppercase tracking-[0.08em] text-slate-400">Crisis Support: 2-1-1 for Resources <span className="mx-2 text-slate-600">|</span> 988 for Suicide Crisis <span className="mx-2 text-slate-600">|</span> 911 for Emergencies</p>
+        <p className="mt-8 text-sm font-semibold uppercase tracking-[0.08em] text-[#35e15c]">Crisis Support: 2-1-1 for Resources <span className="mx-2 text-slate-600">|</span> 988 for Suicide Crisis <span className="mx-2 text-slate-600">|</span> 911 for Emergencies</p>
       </div>
     </footer>
   )
