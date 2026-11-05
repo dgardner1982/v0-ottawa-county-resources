@@ -129,11 +129,16 @@ const RESOURCES: Resource[] = [
   { name: "New Vision Withdrawal Management", category: "Substance Recovery", address: "1309 Sheldon Rd, Grand Haven, MI 49417", phone: "(616) 758-4857 (Direct) / (844) 237-3627", info: "Inpatient detoxification and substance use disorder services at Trinity Health Grand Haven Hospital. Comprehensive withdrawal management program.", website: "https://www.trinityhealthmichigan.org/location/new-vision-at-trinity-health-grand-haven-hospital" },
   { name: "Pine Rest Spring Lake", category: "Substance Recovery", address: "17325 Van Wagoner Rd, Spring Lake", phone: "866-852-4001", info: "Substance recovery and mental health services.", website: "https://www.pinerest.org" },
   { name: "Holland Hospital Behavioral Health, Outpatient", category: "Substance Recovery", address: "854 Washington Ave STE 330, Holland, MI 49423", phone: "(616) 355-3926", info: "Hospital-based outpatient behavioral health program offering buprenorphine and naltrexone treatment options alongside intensive outpatient services.", website: "https://hollandhospital.org" },
+  { name: "MI Recovery - Lakeshore Regional Entity (LRE)", category: "Substance Recovery", address: "5000 Hakes Drive, Suite 250, Norton Shores, MI 49441", phone: "(231) 769-2050", info: "Centralized hub connecting individuals, families, and professionals with substance use disorder (SUD) and addiction recovery services across the seven-county LRE region: Allegan, Kent, Lake, Mason, Muskegon, Oceana, and Ottawa counties. Managed by Lakeshore Regional Entity (LRE).", website: "https://mirecovery.org" },
   { name: "Reach for Recovery - Grand Haven", category: "Substance Recovery", address: "700 Washington Ave #220, Grand Haven", phone: "616-842-6710", info: "Counseling and recovery community connection.", website: "https://reachforrecovery.org" },
   { name: "Reach for Recovery - Holland", category: "Substance Recovery", address: "483 Century Lane, Holland", phone: "616-396-5284", info: "Comprehensive outpatient and residential programs.", website: "https://reachforrecovery.org" },
   { name: "Samaritas - Grand Haven", category: "Substance Recovery", address: "923 S Beechtree St Ste 10, Grand Haven, MI", phone: "(616) 516-9985", info: "Substance use treatment and recovery services including medication-assisted treatment.", website: "https://www.samaritas.org" },
   { name: "Samaritas - Holland", category: "Substance Recovery", address: "2416 Van Ommen Dr, Holland, MI 49424", phone: "(616) 350-7781", info: "Substance use treatment and recovery services including medication-assisted treatment.", website: "https://www.samaritas.org" },
  { name: "Sobar Recovery Community Center", category: "Substance Recovery", address: "347 Hoover Blvd, Holland", phone: "Call for details", info: "Community recovery center offering support, education, and activities for individuals and families in recovery.", website: "https://sobarrco.com" },
+    // Parenting/Youth
+    { name: "Arbor Circle - Holland", category: "Parenting/Youth", address: "412 Century Ln, Holland, MI 49423", phone: "(616) 396-2301", info: "Primary Ottawa County outpatient facility offering youth and family counseling, substance use disorder treatment, and early intervention programs. Hours: Monday to Friday, 8:30 AM – 5:00 PM (extended evening hours until 6:00 PM on Mondays and Tuesdays by appointment); closed Saturday and Sunday.", website: "https://arborcircle.org" },
+    { name: "Wedgwood Christian Services", category: "Parenting/Youth", address: "3300 36th St SE, Grand Rapids, MI 49512", phone: "(616) 930-500", info: "Adolescent outpatient SUD treatment and specialized family behavioral health services from its main regional counseling center on the southeast side of Grand Rapids. Hours: Monday to Thursday, 8:00 AM – 7:00 PM; Friday, 8:00 AM – 5:00 PM; closed Saturday and Sunday.", website: "https://www.wedgwood.org" },
+    { name: "Samaritas - Youth & Family", category: "Parenting/Youth", address: "<b>Holland:</b> 2450 Van Ommen Dr, Suite C, Holland, MI 49424 | <b>Grand Haven:</b> 524 Washington Ave, Grand Haven, MI 49417", phone: "(616) 350-7781", info: "Adolescent and adult substance use outpatient programs and co-occurring support across Ottawa County, with clinical suites in Holland and Grand Haven. Hours: Monday to Friday, 9:00 AM – 4:00 PM (individual and group sessions scheduled outside standard clinic windows as needed); closed Saturday and Sunday.", website: "https://www.samaritas.org" },
   
   // Domestic Violence
   { name: "Every Woman's Place Inc", category: "Domestic Violence", address: "1221 W Laketon Ave, Muskegon, MI 49441", phone: "(231) 722-3333", info: "Muskegon-based agency providing crisis intervention, emergency shelter, counseling, and legal advocacy for survivors of domestic violence, sexual assault, and sex trafficking. 24-hour crisis line available.", website: "https://www.everywomansplace.org" },
@@ -592,13 +597,20 @@ function MCDCLocationsModal({ isOpen, onClose }: { isOpen: boolean; onClose: () 
   );
 }
 
+const CATEGORIES = [
+  'All',
+  ...Array.from(new Set(RESOURCES.map(r => r.category))).sort((a, b) =>
+    a < b ? -1 : a > b ? 1 : 0
+  ),
+];
+
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [showSecondChanceModal, setShowSecondChanceModal] = useState(false);
   const [showMCDCLocations, setShowMCDCLocations] = useState(false);
 
-  const categories = ['All', ...Array.from(new Set(RESOURCES.map(r => r.category))).sort()];
+  const categories = CATEGORIES;
   
   const filtered = RESOURCES.filter(r => {
     const matchesSearch = r.name.toLowerCase().includes(searchTerm.toLowerCase()) || r.info.toLowerCase().includes(searchTerm.toLowerCase());
@@ -624,6 +636,7 @@ export default function Home() {
       "Financial Resources": { bg: "bg-yellow-100", border: "border-b-4 border-yellow-500", icon: "💰", button: "bg-yellow-500 hover:bg-yellow-600", buttonHover: "text-white" },
       "Overdose Prevention/Free Naloxone(Narcan)": { bg: "bg-red-200", border: "border-b-4 border-red-700", icon: "⚠️", button: "bg-red-700 hover:bg-red-800", buttonHover: "text-white" },
       "Harm Reduction": { bg: "bg-lime-100", border: "border-b-4 border-lime-600", icon: "🤝", button: "bg-lime-600 hover:bg-lime-700", buttonHover: "text-white" },
+      "Parenting/Youth": { bg: "bg-violet-100", border: "border-b-4 border-violet-500", icon: "👪", button: "bg-violet-500 hover:bg-violet-600", buttonHover: "text-white" },
       "Miscellaneous": { bg: "bg-gray-100", border: "border-b-4 border-gray-400", icon: "📍", button: "bg-gray-400 hover:bg-gray-500", buttonHover: "text-white" },
       "Government Services": { bg: "bg-slate-100", border: "border-b-4 border-slate-500", icon: "🏛️", button: "bg-slate-500 hover:bg-slate-600", buttonHover: "text-white" },
     };

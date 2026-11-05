@@ -5,7 +5,7 @@ import { MapPin, Phone, Clock } from 'lucide-react';
 import { Footer } from '@/components/footer';
 
 export default function NaloxoneLocations() {
-  const locations = [
+  const locations: { name: string; address: string; phone?: string; hours: string; details: string }[] = [
     {
       name: "Ottawa County Community Mental Health - Holland",
       address: "12265 James St, Holland, MI 49424",
@@ -82,6 +82,34 @@ export default function NaloxoneLocations() {
       phone: "(616) 377-5792",
       hours: "24 hour access",
       details: "Free Naloxone kits available in newspaper box outside main entrance."
+    },
+    {
+      name: "The Ink Society",
+      address: "7610 Cottonwood Dr Ste 101, Jenison, MI 49428",
+      phone: "Call for phone",
+      hours: "Call for hours",
+      details: "Free Naloxone kits available."
+    },
+    {
+      name: "Faith Community Church of Coopersville",
+      address: "105 68th Ave N, Coopersville, MI 49404",
+      phone: "Call for phone",
+      hours: "Call for hours",
+      details: "Free Naloxone kits available."
+    },
+    {
+      name: "First United Methodist Church",
+      address: "57 W 10th St, Holland, MI 49423",
+      phone: "Call for phone",
+      hours: "Call for hours",
+      details: "Free Naloxone kits available."
+    },
+    {
+      name: "Ottawa County Department of Public Health",
+      address: "12251 James St, Holland, MI 49424",
+      phone: "Call for phone",
+      hours: "Call for hours",
+      details: "Free Naloxone kits available."
     }
   ];
 
@@ -177,10 +205,12 @@ export default function NaloxoneLocations() {
                   <span className="text-gray-700">{location.address}</span>
                 </div>
                 
-                <div className="flex gap-3 items-center">
-                  <Phone size={20} className="text-red-600 flex-shrink-0" />
-                  <a href={`tel:${location.phone}`} className="text-red-700 font-bold hover:underline">{location.phone}</a>
-                </div>
+                {location.phone && (
+                  <div className="flex gap-3 items-center">
+                    <Phone size={20} className="text-red-600 flex-shrink-0" />
+                    <a href={`tel:${location.phone}`} className="text-red-700 font-bold hover:underline">{location.phone}</a>
+                  </div>
+                )}
                 
                 <div className="flex gap-3 items-center">
                   <Clock size={20} className="text-red-600 flex-shrink-0" />
