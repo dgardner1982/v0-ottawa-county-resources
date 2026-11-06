@@ -1,14 +1,15 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
-import { Float, Html, Sparkles } from '@react-three/drei'
-import type { Group } from 'three'
+import { Suspense, useEffect, useRef, useState } from 'react'
+import { Canvas, useFrame, useLoader } from '@react-three/fiber'
+import { Float, Sparkles } from '@react-three/drei'
+import { TextureLoader, type Group } from 'three'
 
 const LOGO_URL = '/logo.jpg'
 
 function RecoveryLogo() {
   const group = useRef<Group>(null)
+  const texture = useLoader(TextureLoader, LOGO_URL)
   const [tilt, setTilt] = useState({ x: 0, y: 0 })
 
   useFrame((state) => {
@@ -24,9 +25,10 @@ function RecoveryLogo() {
           <boxGeometry args={[2.65, 2.65, 0.12]} />
           <meshStandardMaterial color="#f8fafc" roughness={0.24} metalness={0.25} />
         </mesh>
-        <Html transform distanceFactor={4.8} position={[0, 0, 0.08]}>
-          <img src={LOGO_URL} alt="Ottawa County Recovery Alliance" className="h-64 w-64 max-w-none rounded-2xl object-cover shadow-2xl" />
-        </Html>
+        <mesh position={[0, 0, 0.08]} rotation={[0, 0, 0]}>
+          <planeGeometry args={[2.42, 2.42]} />
+          <meshBasicMaterial map={texture} transparent toneMapped={false} />
+        </mesh>
       </group>
     </Float>
   )
@@ -51,7 +53,9 @@ export function ProgressiveHeroScene() {
           <ambientLight intensity={1.4} />
           <directionalLight position={[3, 4, 4]} intensity={2.5} color="#9fffb2" />
           <pointLight position={[-3, -2, 2]} intensity={8} color="#14b8a6" />
-          <RecoveryLogo />
+          <Suspense fallback={null}>
+            <RecoveryLogo />
+          </Suspense>
           <Sparkles count={30} scale={5.5} size={1.5} speed={0.2} color="#d9f99d" />
         </Canvas>
       ) : (
