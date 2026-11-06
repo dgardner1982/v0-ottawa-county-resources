@@ -2,24 +2,32 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { Float, MeshDistortMaterial, Sparkles } from '@react-three/drei'
-import type { Mesh } from 'three'
+import { Float, Html, Sparkles } from '@react-three/drei'
+import type { Group } from 'three'
 
-function RecoveryOrbit() {
-  const mesh = useRef<Mesh>(null)
+const LOGO_URL = '/logo.jpg'
+
+function RecoveryLogo() {
+  const group = useRef<Group>(null)
+  const [tilt, setTilt] = useState({ x: 0, y: 0 })
 
   useFrame((state) => {
-    if (!mesh.current) return
-    mesh.current.rotation.x = state.clock.elapsedTime * 0.18
-    mesh.current.rotation.y = state.clock.elapsedTime * 0.24
+    if (!group.current) return
+    group.current.rotation.y = state.clock.elapsedTime * 0.42 + tilt.x
+    group.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.55) * 0.08 + tilt.y
   })
 
   return (
-    <Float speed={1.2} rotationIntensity={0.35} floatIntensity={0.55}>
-      <mesh ref={mesh} rotation-z={0.35} scale={1.6}>
-        <icosahedronGeometry args={[1, 2]} />
-        <MeshDistortMaterial color="#35e15c" roughness={0.2} metalness={0.55} distort={0.28} speed={1.5} />
-      </mesh>
+    <Float speed={1.1} rotationIntensity={0.2} floatIntensity={0.45}>
+      <group ref={group}>
+        <mesh onPointerMove={(event) => setTilt({ x: event.point.x * 0.28, y: -event.point.y * 0.18 })} onPointerOut={() => setTilt({ x: 0, y: 0 })}>
+          <boxGeometry args={[2.65, 2.65, 0.12]} />
+          <meshStandardMaterial color="#f8fafc" roughness={0.24} metalness={0.25} />
+        </mesh>
+        <Html transform distanceFactor={4.8} position={[0, 0, 0.08]}>
+          <img src={LOGO_URL} alt="Ottawa County Recovery Alliance" className="h-64 w-64 max-w-none rounded-2xl object-cover shadow-2xl" />
+        </Html>
+      </group>
     </Float>
   )
 }
@@ -43,15 +51,16 @@ export function ProgressiveHeroScene() {
           <ambientLight intensity={1.4} />
           <directionalLight position={[3, 4, 4]} intensity={2.5} color="#9fffb2" />
           <pointLight position={[-3, -2, 2]} intensity={8} color="#14b8a6" />
-          <RecoveryOrbit />
-          <Sparkles count={55} scale={5.5} size={2.2} speed={0.3} color="#d9f99d" />
+          <RecoveryLogo />
+          <Sparkles count={30} scale={5.5} size={1.5} speed={0.2} color="#d9f99d" />
         </Canvas>
       ) : (
-        <div className="relative flex min-h-[22rem] items-center justify-center p-8 text-center">
-          <div className="flex h-40 w-40 items-center justify-center rounded-full border border-teal-200/40 bg-teal-300/10 shadow-[0_0_70px_-18px_rgba(53,225,92,0.9)]">
-            <div className="h-24 w-24 rounded-full border border-lime-200/40 bg-lime-200/20 shadow-[0_0_36px_-8px_rgba(217,249,157,0.9)]" />
+        <div className="relative flex min-h-[22rem] items-center justify-center p-8 text-center [perspective:1000px]">
+          <div className="group/logo relative transition-transform duration-500 [transform-style:preserve-3d] hover:[transform:rotateY(18deg)_rotateX(-8deg)]">
+            <div className="absolute -inset-8 rounded-full bg-teal-300/20 blur-2xl" />
+            <img src={LOGO_URL} alt="Ottawa County Recovery Alliance" className="relative h-48 w-48 animate-logo-spin rounded-3xl object-cover border-8 border-white/80 shadow-2xl" />
           </div>
-          <span className="sr-only">A calm, layered visual representing connected recovery resources.</span>
+          <span className="sr-only">Ottawa County Recovery Alliance logo, rotating gently as an interactive decorative element.</span>
         </div>
       )}
       <div className="pointer-events-none absolute inset-x-5 bottom-4 flex items-center justify-between text-[10px] font-bold uppercase tracking-[0.18em] text-teal-100/70">

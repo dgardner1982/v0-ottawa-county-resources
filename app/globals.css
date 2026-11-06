@@ -258,6 +258,15 @@
   animation: float-orb 8s ease-in-out infinite;
 }
 
+@keyframes logo-spin {
+  0%, 100% { transform: rotateY(-8deg) rotateX(2deg); }
+  50% { transform: rotateY(8deg) rotateX(-2deg); }
+}
+
+.animate-logo-spin {
+  animation: logo-spin 6s ease-in-out infinite;
+}
+
 .animate-border-glow {
   animation: border-glow 3s ease-in-out infinite;
 }
@@ -277,6 +286,17 @@
 
 .resource-card:hover::after {
   animation: shimmer 0.8s ease-out;
+}
+
+a.rounded-full,
+button.rounded-full {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+a.rounded-full:hover,
+button.rounded-full:hover {
+  background-color: color-mix(in srgb, currentColor 10%, transparent) !important;
 }
 
 #guides .resource-card {
