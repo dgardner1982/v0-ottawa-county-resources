@@ -3,14 +3,22 @@
 import { Suspense, useEffect, useRef, useState } from 'react'
 import { Canvas, useFrame, useLoader } from '@react-three/fiber'
 import { Float, Sparkles } from '@react-three/drei'
-import { TextureLoader, type Group } from 'three'
+import { DoubleSide, RepeatWrapping, TextureLoader, type Group } from 'three'
 
-const LOGO_URL = '/logo.jpg'
+const LOGO_URL = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Add%20a%20heading-MLMf9iRkDMjimqE0ySKFlmlepCxX9q.jpg'
 
 function RecoveryLogo() {
   const group = useRef<Group>(null)
   const texture = useLoader(TextureLoader, LOGO_URL)
   const [tilt, setTilt] = useState({ x: 0, y: 0 })
+
+  useEffect(() => {
+    texture.wrapS = RepeatWrapping
+    texture.wrapT = RepeatWrapping
+    texture.repeat.set(5.2, 5.2)
+    texture.offset.set(-2.1, -2.1)
+    texture.needsUpdate = true
+  }, [texture])
 
   useFrame((state) => {
     if (!group.current) return
@@ -27,7 +35,29 @@ function RecoveryLogo() {
         </mesh>
         <mesh position={[0, 0, 0.08]} rotation={[0, 0, 0]}>
           <planeGeometry args={[2.42, 2.42]} />
-          <meshBasicMaterial map={texture} transparent toneMapped={false} />
+          <shaderMaterial
+            uniforms={{ uTexture: { value: texture } }}
+            transparent
+            side={DoubleSide}
+            vertexShader={`
+              varying vec2 vUv;
+              void main() {
+                vUv = uv;
+                gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+              }
+            `}
+            fragmentShader={`
+              uniform sampler2D uTexture;
+              varying vec2 vUv;
+              void main() {
+                vec4 color = texture2D(uTexture, vUv);
+                float white = step(0.86, min(min(color.r, color.g), color.b));
+                color.a *= 1.0 - white;
+                if (color.a < 0.05) discard;
+                gl_FragColor = color;
+              }
+            `}
+          />
         </mesh>
       </group>
     </Float>
@@ -60,9 +90,9 @@ export function ProgressiveHeroScene() {
         </Canvas>
       ) : (
         <div className="relative flex min-h-[22rem] items-center justify-center p-8 text-center [perspective:1000px]">
-          <div className="group/logo relative transition-transform duration-500 [transform-style:preserve-3d] hover:[transform:rotateY(18deg)_rotateX(-8deg)]">
+          <div className="group/logo relative h-56 w-56 overflow-hidden rounded-full border border-teal-100/30 bg-slate-950/30 shadow-2xl transition-transform duration-500 [transform-style:preserve-3d] hover:[transform:rotateY(18deg)_rotateX(-8deg)]">
             <div className="absolute -inset-8 rounded-full bg-teal-300/20 blur-2xl" />
-            <img src={LOGO_URL} alt="Ottawa County Recovery Alliance" className="relative h-48 w-48 animate-logo-spin rounded-3xl object-cover border-8 border-white/80 shadow-2xl" />
+            <img src={LOGO_URL} alt="Ottawa County Recovery Alliance" className="relative h-full w-full scale-[2.8] animate-logo-spin object-cover mix-blend-multiply" />
           </div>
           <span className="sr-only">Ottawa County Recovery Alliance logo, rotating gently as an interactive decorative element.</span>
         </div>
