@@ -4,6 +4,7 @@ import { CalendarDays, Home } from 'lucide-react'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { AnalyticsWrapper } from './analytics'
 import { NavigationHistoryManager } from '@/components/navigation-history-manager'
+import { SpinningLogo } from '@/components/spinning-logo'
 import './globals.css'
 
 const _geist = Geist({ subsets: ["latin"] });
@@ -49,15 +50,18 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         <nav aria-label="Primary navigation" className="sticky top-0 z-[60] border-b border-slate-200/80 bg-white/90 px-4 py-3 shadow-[0_10px_30px_-24px_rgba(15,23,42,0.7)] backdrop-blur-xl">
           <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
-            <Link href="/" className="group flex min-w-0 items-center gap-3" aria-label="Go to Ottawa County Recovery Alliance homepage">
-              <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-slate-950 text-teal-300 shadow-lg shadow-slate-950/15 transition group-hover:-translate-y-0.5 group-hover:bg-teal-700 group-hover:text-white">
-                <Home aria-hidden="true" className="h-5 w-5" />
-              </span>
-              <span className="hidden min-w-0 sm:block">
-                <span className="block truncate text-sm font-black tracking-tight text-slate-950">Ottawa County Recovery Alliance</span>
-                <span className="block text-xs font-semibold uppercase tracking-[0.18em] text-teal-700">Find your next step</span>
-              </span>
-            </Link>
+            <div className="flex min-w-0 items-center gap-2">
+              <SpinningLogo />
+              <Link href="/" className="group flex min-w-0 items-center gap-3" aria-label="Go to Ottawa County Recovery Alliance homepage">
+                <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-slate-950 text-teal-300 shadow-lg shadow-slate-950/15 transition group-hover:-translate-y-0.5 group-hover:bg-teal-700 group-hover:text-white">
+                  <Home aria-hidden="true" className="h-5 w-5" />
+                  </span>
+                <span className="hidden min-w-0 sm:block">
+                  <span className="block truncate text-sm font-black tracking-tight text-slate-950">Ottawa County Recovery Alliance</span>
+                  <span className="block text-xs font-semibold uppercase tracking-[0.18em] text-teal-700">Find your next step</span>
+                </span>
+              </Link>
+            </div>
             <Link href="/calendar" className="inline-flex items-center gap-2 rounded-full bg-fuchsia-600 px-4 py-2.5 text-sm font-bold text-white shadow-lg shadow-fuchsia-600/20 transition hover:-translate-y-0.5 hover:bg-fuchsia-700" aria-label="Open Ottawa County Recovery Events Calendar">
               <CalendarDays aria-hidden="true" className="h-4 w-4" />
               <span>Events calendar</span>
