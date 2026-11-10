@@ -25,9 +25,20 @@ export function SpinningLogo({ variant = 'nav' }: SpinningLogoProps) {
           alt="Ottawa County Recovery Alliance logo"
           fill
           sizes={isHero ? '(min-width: 1024px) 520px, 100vw' : '48px'}
-          className={isHero
+          className={`logo-face ${isHero
             ? 'scale-[1.35] object-cover object-center mix-blend-multiply'
-            : 'scale-[2.8] object-cover object-center mix-blend-multiply'}
+            : 'scale-[2.8] object-cover object-center mix-blend-multiply'}`}
+          priority={isHero}
+        />
+        <Image
+          src="/ottawa-county-recovery-logo.jpg"
+          alt=""
+          aria-hidden="true"
+          fill
+          sizes={isHero ? '(min-width: 1024px) 520px, 100vw' : '48px'}
+          className={`logo-face logo-face-back ${isHero
+            ? 'scale-[1.35] object-cover object-center mix-blend-multiply'
+            : 'scale-[2.8] object-cover object-center mix-blend-multiply'}`}
           priority={isHero}
         />
         <span aria-hidden="true" className="logo-sheen absolute inset-y-0 -left-1/2 w-1/2 skew-x-[-18deg] bg-white/50 blur-sm" />

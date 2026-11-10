@@ -261,6 +261,14 @@
   animation: logo-spin 7s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
 }
 
+.logo-face {
+  backface-visibility: hidden;
+}
+
+.logo-face-back {
+  transform: rotateY(180deg);
+}
+
 .logo-sheen {
   animation: logo-sheen 7s ease-in-out infinite;
 }
