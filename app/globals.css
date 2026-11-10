@@ -153,6 +153,28 @@
   }
 }
 
+@keyframes revealCurtain {
+  from {
+    opacity: 0;
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes softPop {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 @keyframes float-orb {
   0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
   50% { transform: translate3d(0, -18px, 0) scale(1.05); }
@@ -233,6 +255,24 @@
 
 .animate-slide-in-up {
   animation: slideInUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-curtain {
+  animation: revealCurtain 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
+}
+
+.motion-pop {
+  animation: softPop 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.resource-card {
+  will-change: transform;
+  transition: transform 450ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 450ms cubic-bezier(0.22, 1, 0.36, 1), border-color 250ms ease;
+}
+
+.resource-card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 42px -26px rgba(15, 23, 42, 0.8);
 }
 
 .animate-float-orb {

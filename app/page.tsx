@@ -653,14 +653,14 @@ export default function Home() {
   <span className="text-sm sm:text-base"><span className="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-[#fb7185]" />Suicide crisis support: <a href="tel:988" className="text-[#ff5454] underline underline-offset-4 hover:text-white">Call 9-8-8</a></span>
   </div>
 
-      <header className="relative isolate overflow-hidden bg-slate-950 text-white">
+      <header className="hero-curtain relative isolate overflow-hidden bg-slate-950 text-white">
         <div className="absolute -left-24 top-8 -z-10 h-72 w-72 animate-float-orb rounded-full bg-teal-400/30 blur-3xl" />
         <div className="absolute -right-20 bottom-0 -z-10 h-96 w-96 animate-float-orb rounded-full bg-fuchsia-500/20 blur-3xl [animation-delay:2s]" />
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_70%_15%,rgba(45,212,191,0.18),transparent_34%),linear-gradient(135deg,#020617_0%,#0f172a_58%,#123b46_100%)]" />
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-24">
           <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
             <div className="animate-slide-in-up text-left">
-              <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-teal-300/30 bg-teal-300/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-teal-200 backdrop-blur">
+              <div className="motion-pop mb-7 inline-flex items-center gap-3 rounded-full border border-teal-300/30 bg-teal-300/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-teal-200 backdrop-blur [animation-delay:280ms]">
                 <span className="h-2 w-2 rounded-full bg-teal-300 shadow-[0_0_14px_#5eead4]" /> Ottawa County, Michigan
               </div>
               <h1 className="max-w-4xl text-balance text-5xl font-black leading-[0.98] tracking-[-0.045em] text-white sm:text-7xl lg:text-8xl">
@@ -669,7 +669,7 @@ export default function Home() {
               <p className="mt-7 max-w-2xl text-pretty text-lg leading-8 text-slate-300 sm:text-xl">
                 A central destination for recovery resources, education, and community support. Built to help you find the right resource without the runaround.
               </p>
-<div className="mt-9 grid max-w-2xl grid-cols-1 gap-4 sm:grid-cols-2">
+<div className="motion-pop mt-9 grid max-w-2xl grid-cols-1 gap-4 sm:grid-cols-2 [animation-delay:520ms]">
   <Link href="#resources" className="group inline-flex items-center justify-center gap-3 rounded-full bg-[rgba(70,236,213,0.27)] border border-[#12c661] px-6 py-3.5 font-bold text-[#f9faff] shadow-[0_10px_35px_-12px_#5eead4] transition duration-300 hover:-translate-y-1 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-200">
 Explore resources <span className="transition-transform group-hover:translate-x-1">→</span>
   </Link>
@@ -695,7 +695,7 @@ Learn something new <span className="text-cyan-200 transition-transform group-ho
         </div>
       </header>
 
-      <main id="resources" className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-24">
+      <main id="resources" className="hero-curtain mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-24 [animation-delay:260ms]">
         <div className="mb-10 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <p className="mb-3 text-2xl font-black uppercase tracking-[0.22em] text-teal-600">The resource directory</p>
