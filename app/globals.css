@@ -265,11 +265,6 @@
   animation: logo-sheen 7s ease-in-out infinite;
 }
 
-.logo-perspective:hover .logo-spin,
-.logo-perspective:focus-visible .logo-spin {
-  animation-play-state: paused;
-}
-
 .animate-gradient {
   animation: gradientShift 8s ease-in-out infinite;
 }
