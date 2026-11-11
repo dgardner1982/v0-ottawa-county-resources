@@ -241,9 +241,8 @@
 }
 
 @keyframes logo-spin {
-  0% { transform: rotateY(0deg); }
-  45% { transform: rotateY(180deg); }
-  100% { transform: rotateY(360deg); }
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
 }
 
 @keyframes logo-sheen {
@@ -256,17 +255,36 @@
   perspective: 720px;
 }
 
-.logo-spin {
+.logo-stage {
+  isolation: isolate;
+  box-shadow: 0 18px 34px -22px rgba(2, 8, 23, 0.78);
+}
+
+.logo-rotating-depth {
+  z-index: 2;
+  border: 2px solid rgba(255, 255, 255, 0.76);
+  border-radius: inherit;
+  background: transparent;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.52), 0 8px 18px -12px rgba(2, 8, 23, 0.8);
   transform-style: preserve-3d;
-  animation: logo-spin 7s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  backface-visibility: visible;
+  animation: logo-spin 7s linear infinite;
 }
 
-.logo-face {
+.logo-rotating-depth::before {
+  position: absolute;
+  inset: 0;
+  content: '';
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: inherit;
+  background: linear-gradient(135deg, #dbeafe, #64748b 48%, #f8fafc);
+  box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.12);
+  transform: translateZ(-9px);
+}
+
+.logo-readable-face {
+  z-index: 1;
   backface-visibility: hidden;
-}
-
-.logo-face-back {
-  transform: rotateY(180deg);
 }
 
 .logo-sheen {
