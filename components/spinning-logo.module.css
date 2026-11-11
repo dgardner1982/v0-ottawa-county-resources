@@ -1,0 +1,99 @@
+.stage {
+  position: relative;
+  aspect-ratio: 1050 / 600;
+  overflow: hidden;
+  border-radius: 1.4rem;
+  background: #ffffff;
+  perspective: 900px;
+}
+
+.base {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+  -webkit-mask-image: radial-gradient(ellipse 16.1% 28.2% at 47.76% 50.83%, transparent 98%, #000 100%);
+  mask-image: radial-gradient(ellipse 16.1% 28.2% at 47.76% 50.83%, transparent 98%, #000 100%);
+}
+
+.coin {
+  position: absolute;
+  left: 32.05%;
+  top: 23.33%;
+  width: 31.43%;
+  aspect-ratio: 1;
+  container-type: inline-size;
+  transform-style: preserve-3d;
+}
+
+.spinner {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  animation: coinSpin 7s linear infinite;
+}
+
+.face,
+.edge {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+}
+
+.face {
+  overflow: hidden;
+  backface-visibility: hidden;
+  background: #ffffff;
+}
+
+.front {
+  transform: translateZ(3.5cqw);
+}
+
+.back {
+  transform: rotateY(180deg) translateZ(3.5cqw);
+}
+
+.art {
+  position: absolute;
+  top: -42.42%;
+  left: -101.97%;
+  width: 318.18%;
+  max-width: none;
+  height: auto;
+  user-select: none;
+}
+
+.shine {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    radial-gradient(circle at 30% 22%, rgba(255, 255, 255, 0.45), transparent 42%),
+    radial-gradient(circle at 70% 85%, rgba(15, 23, 42, 0.22), transparent 55%);
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+
+.edge {
+  background: #1e3a46;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  transform: translateZ(calc(var(--layer) * 3.4cqw));
+}
+
+@keyframes coinSpin {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation-duration: 30s;
+  }
+}
+
