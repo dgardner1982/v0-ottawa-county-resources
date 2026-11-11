@@ -280,15 +280,15 @@ function SecondChanceModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
     <div className="fixed inset-0 bg-black bg-opacity-50 z-[100] flex items-center justify-center p-4">
       <div className="bg-white rounded-lg max-h-[90vh] overflow-y-auto w-full max-w-4xl shadow-2xl">
         {/* Header */}
-        <div className="sticky top-0 bg-purple-600 text-white p-6 flex items-center justify-between border-b-4 border-purple-800">
-          <h2 className="text-3xl font-bold">Second Chance Employment Agencies</h2>
-          <button onClick={onClose} className="hover:bg-purple-700 p-2 rounded transition">
+        <div className="sticky top-0 bg-purple-600 text-white p-4 sm:p-6 flex items-center justify-between gap-4 border-b-4 border-purple-800">
+          <h2 className="text-xl sm:text-3xl font-bold text-balance">Second Chance Employment Agencies</h2>
+          <button onClick={onClose} aria-label="Close" className="shrink-0 hover:bg-purple-700 p-2 rounded transition">
             <X size={28} />
           </button>
         </div>
 
         {/* Content */}
-        <div className="p-8 space-y-8">
+        <div className="p-4 sm:p-8 space-y-8">
           {/* Introduction */}
           <div className="bg-purple-50 border-l-4 border-purple-600 p-6 rounded-lg">
             <p className="text-gray-800 font-medium text-lg">
@@ -558,11 +558,11 @@ function MCDCLocationsModal({ isOpen, onClose }: { isOpen: boolean; onClose: () 
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-lg max-w-2xl w-full max-h-96 overflow-y-auto">
-        <div className="sticky top-0 bg-teal-600 text-white p-6 flex justify-between items-center">
-          <h2 className="text-2xl font-bold">My Community Dental Centers (MCDC) Locations</h2>
-          <button onClick={onClose} className="text-white hover:text-gray-200">
+    <div className="fixed inset-0 bg-black/50 z-[100] flex items-center justify-center p-4">
+      <div role="dialog" aria-modal="true" aria-labelledby="mcdc-title" className="bg-white rounded-lg max-w-2xl w-full max-h-[85vh] overflow-y-auto">
+        <div className="sticky top-0 bg-teal-600 text-white p-4 sm:p-6 flex justify-between items-center gap-4">
+          <h2 id="mcdc-title" className="text-lg sm:text-2xl font-bold text-balance">My Community Dental Centers (MCDC) Locations</h2>
+          <button onClick={onClose} aria-label="Close locations" className="shrink-0 text-white hover:text-gray-200">
             <X size={24} />
           </button>
         </div>
@@ -646,12 +646,12 @@ export default function Home() {
 
   return (
     <>
-  <div className="sticky top-0 z-50 flex flex-col items-start justify-center gap-1 border-b border-white/20 bg-slate-950 px-4 py-2 text-left text-xs font-bold uppercase tracking-[0.04em] text-white shadow-lg sm:flex-row sm:flex-nowrap sm:items-center sm:gap-x-2 sm:px-4 sm:text-xs sm:text-center sm:whitespace-nowrap">
-  <span className="text-sm sm:text-base"><span className="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-[#fb7185]" />Call <a href="tel:211" className="text-[#24f2a2] underline underline-offset-4 hover:text-white">2-1-1</a> for local resources</span>
-  <span className="hidden text-slate-500 sm:inline">/</span>
-  <span className="text-sm sm:text-base"><span className="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-[#fb7185]" />Life-threatening emergency? <a href="tel:911" className="text-[#ff4d4d] underline underline-offset-4 hover:text-white">Call 9-1-1</a></span>
-  <span className="hidden text-slate-500 sm:inline">/</span>
-  <span className="text-sm sm:text-base"><span className="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-[#fb7185]" />Suicide crisis support: <a href="tel:988" className="text-[#ff5454] underline underline-offset-4 hover:text-white">Call 9-8-8</a></span>
+  <div className="relative z-50 flex flex-col items-start justify-center gap-1 border-b border-white/20 bg-slate-950 px-4 py-2 text-left text-xs font-bold uppercase tracking-[0.04em] text-white shadow-lg lg:sticky lg:top-16 lg:flex-row lg:flex-nowrap lg:items-center lg:gap-x-2 lg:text-center lg:whitespace-nowrap">
+  <span className="text-sm xl:text-base"><span className="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-[#fb7185]" />Call <a href="tel:211" className="text-[#24f2a2] underline underline-offset-4 hover:text-white">2-1-1</a> for local resources</span>
+  <span className="hidden text-slate-500 lg:inline">/</span>
+  <span className="text-sm xl:text-base"><span className="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-[#fb7185]" />Life-threatening emergency? <a href="tel:911" className="text-[#ff4d4d] underline underline-offset-4 hover:text-white">Call 9-1-1</a></span>
+  <span className="hidden text-slate-500 lg:inline">/</span>
+  <span className="text-sm xl:text-base"><span className="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-[#fb7185]" />Suicide crisis support: <a href="tel:988" className="text-[#ff5454] underline underline-offset-4 hover:text-white">Call 9-8-8</a></span>
   </div>
 
       <header className="relative isolate overflow-hidden bg-slate-950 text-white">
@@ -670,7 +670,7 @@ export default function Home() {
               <p className="mt-7 max-w-2xl text-pretty text-lg leading-8 text-slate-300 sm:text-xl">
                 A central destination for recovery resources, education, and community support. Built to help you find the right resource without the runaround.
               </p>
-<div className="mt-9 grid max-w-2xl grid-cols-1 gap-4 sm:grid-cols-2">
+<div className="mt-9 grid max-w-2xl auto-rows-fr grid-cols-1 gap-4 sm:grid-cols-2 [&>a]:text-center [&>a]:leading-snug">
   <Link href="#resources" className="group inline-flex items-center justify-center gap-3 rounded-full bg-[rgba(70,236,213,0.27)] border border-[#12c661] px-6 py-3.5 font-bold text-[#f9faff] shadow-[0_10px_35px_-12px_#5eead4] transition duration-300 hover:-translate-y-1 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-200">
 Explore resources <span className="transition-transform group-hover:translate-x-1">→</span>
   </Link>
@@ -726,7 +726,7 @@ Learn something new <span className="text-cyan-200 transition-transform group-ho
                 onClick={() => setSelectedCategory(cat)}
                 className={`flex min-h-11 w-full items-center justify-center rounded-full border px-4 py-2 text-center text-sm font-bold leading-tight transition duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-500 ${
                   selectedCategory === cat 
-                    ? `${colors.button} scale-105 border-transparent text-white shadow-lg`
+                    ? `${cat === 'All' ? 'bg-slate-900 hover:bg-slate-800' : colors.button} border-transparent text-white shadow-lg`
                     : "border-slate-200 bg-white text-slate-600 hover:-translate-y-0.5 hover:border-teal-300 hover:text-teal-700 hover:shadow-md"
                 }`}
               >
