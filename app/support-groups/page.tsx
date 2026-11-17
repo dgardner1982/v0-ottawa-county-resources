@@ -170,15 +170,16 @@ export default function SupportGroupsPage() {
 
       <main id="groups" className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-20">
         <div className="animate-slide-in-up relative mb-6 min-h-52 overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-fuchsia-700 via-purple-700 to-slate-950 p-8 text-white shadow-[0_24px_55px_-30px_rgba(192,38,211,0.8)] sm:p-10">
-          <h2 className="mb-3 text-3xl font-bold">Find Your Community</h2>
+          <h2 className="mb-3 text-3xl font-bold underline">Find Your Community</h2>
           <p className="mb-4 text-lg">Support groups connect you with people who understand your journey. Whether you're seeking recovery from addiction, supporting a loved one, or working through emotional challenges, there's a community for you.</p>
           <p className="text-sm opacity-90">All groups listed are peer led and confidential. These meetings are free and available locally or online. While the majority of our sessions are open to any interested individual, some meetings are designated as Closed.</p>
         </div>
 
-        <section aria-labelledby="sobar-community" className="relative mb-12 min-h-52 overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-fuchsia-700 via-purple-700 to-slate-950 p-8 text-white shadow-[0_24px_55px_-30px_rgba(192,38,211,0.8)] sm:p-10">
-          <h2 id="sobar-community" className="mb-3 text-3xl font-bold">SoBar Recovery Community Center</h2>
+        <Link href="/support-groups/sobar" aria-labelledby="sobar-community" className="group relative mb-12 block min-h-52 overflow-hidden rounded-[1.75rem] bg-transparent bg-[linear-gradient(135deg,#e2d800_0%,#00dba8_50%,#b9c735_100%)] p-8 text-white shadow-[0_24px_55px_-30px_rgba(192,38,211,0.8)] transition hover:-translate-y-1 hover:shadow-[0_24px_55px_-24px_rgba(192,38,211,0.65)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-700 sm:p-10">
+          <h2 id="sobar-community" className="mb-3 text-3xl font-bold underline">SoBar Recovery Community Center</h2>
           <p className="text-lg leading-relaxed">SoBar provides a welcoming, judgment free environment where people in recovery and those seeking recovery can connect with peers, attend support meetings, and sober social events. SoBar also provides recovery coaching and resource navigation.</p>
-        </section>
+          <span className="mt-5 inline-flex font-bold underline underline-offset-4">Click here for more information <span aria-hidden="true" className="ml-2 transition-transform group-hover:translate-x-1">→</span></span>
+        </Link>
 
         {supportGroups.map((section, idx) => (
           <div key={idx} className="mb-12">
