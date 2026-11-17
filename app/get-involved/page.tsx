@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { SpinningLogo } from "@/components/spinning-logo"
 
 const options = [
   {
@@ -20,22 +21,23 @@ export default function GetInvolvedPage() {
     <main className="min-h-screen bg-slate-950 px-5 py-16 text-white sm:px-8 lg:py-24">
       <div className="mx-auto max-w-5xl">
         <Link href="/" className="text-sm font-semibold text-cyan-200 underline-offset-4 hover:underline">← Back to home</Link>
-        <div className="mt-10 max-w-3xl">
-          <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-200">Make a difference</p>
-          <h1 className="mt-4 text-balance text-4xl font-black tracking-tight sm:text-6xl">Explore ways to get involved</h1>
-          <p className="mt-6 text-pretty text-lg leading-8 text-slate-300">Choose an organization to learn how you can support prevention, recovery, and wellbeing across Ottawa County.</p>
+        <div className="mt-10 grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="max-w-3xl">
+            <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-200">Make a difference</p>
+            <h1 className="mt-4 text-balance text-4xl font-black tracking-tight sm:text-6xl">Explore ways to get involved</h1>
+            <p className="mt-6 text-pretty text-lg leading-8 text-slate-300">Choose an organization to learn how you can support prevention, recovery, and wellbeing across Ottawa County.</p>
+          </div>
+          <div className="relative animate-scale-in [animation-delay:180ms]">
+            <div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-tr from-teal-400/20 via-transparent to-fuchsia-400/20 blur-2xl" />
+            <div className="relative overflow-hidden rounded-[2rem] border border-white/15 bg-white/10 p-3 backdrop-blur-xl">
+              <Link href="/" aria-label="Go to Ottawa County Recovery Alliance homepage" className="block transition duration-500 hover:scale-[1.02]"><SpinningLogo /></Link>
+            </div>
+          </div>
         </div>
         <div className="mt-12 grid gap-5 md:grid-cols-2">
           {options.map((option) => (
             <Link key={option.title} href={option.href} className={`group relative flex min-h-56 flex-col justify-between rounded-[1.75rem] border p-7 transition duration-300 hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-200 ${option.accent}`}>
-              {option.title === "Ottawa County Recovery Alliance" && (
-                <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/OCRA%20%282%29-lLGy1o1XTQB70I8rJ7k2bcZ3v9V22q.jpg"
-                  alt="Ottawa County Recovery Alliance logo"
-                  className="absolute right-5 top-5 size-20 rounded-full object-cover shadow-lg"
-                />
-              )}
-              <div className={option.title === "Ottawa County Recovery Alliance" ? "pr-24" : undefined}>
+              <div>
                 <h2 className="text-2xl font-black">{option.title}</h2>
                 <p className="mt-4 leading-7 text-slate-200">{option.description}</p>
               </div>
