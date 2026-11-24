@@ -891,7 +891,6 @@ Learn something new <span className="text-cyan-200 transition-transform group-ho
           </div>
         )}
 
-        <p className="sr-only" role="status" aria-live="polite">{filtered.length} resources found{selectedCategory !== 'All' ? ` in ${selectedCategory}` : ''}{searchTerm ? ` for ${searchTerm}` : ''}.</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.length > 0 ? (
             filtered.map((resource, idx) => {
