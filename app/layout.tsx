@@ -5,6 +5,7 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import { AnalyticsWrapper } from './analytics'
 import { NavigationHistoryManager } from '@/components/navigation-history-manager'
 import { AccessibilityControls } from '@/components/accessibility-controls'
+import { LanguageTranslator } from '@/components/language-translator'
 import { SiteGuideChat } from '@/components/site-guide-chat'
 import './globals.css'
 
@@ -68,6 +69,7 @@ export default function RootLayout({
             </Link>
           </div>
         </nav>
+        <LanguageTranslator />
         <NavigationHistoryManager />
         <div id="main-content" tabIndex={-1} className="border border-[#eefb12] shadow-[0_10px_15px_-3px_rgb(0_0_0_/_0.1),0_4px_6px_-4px_rgb(0_0_0_/_0.1)]">
           {children}
