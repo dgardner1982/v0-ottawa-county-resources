@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { Footer } from '@/components/footer';
 import { SpinningLogo } from '@/components/spinning-logo';
@@ -50,13 +50,8 @@ export default function EducationPage() {
     { name: 'Nar-Anon', description: 'Support for families and friends affected by someone’s drug addiction.', href: 'https://www.nar-anon.org' },
     { name: 'Recovery Dharma', description: 'A mindfulness-based, Buddhist-inspired approach to addiction recovery.', href: 'https://www.recoverydharma.org' },
   ];
-  const contentRef = useRef<HTMLDivElement>(null);
-
   const handleTabClick = (tab: string) => {
     setActiveTab(tab);
-    setTimeout(() => {
-      contentRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 0);
   };
   
   const drugs: { name: string; symbol: typeof Pill; slug: string; color: string; bgColor: string; image?: string }[] = [
@@ -127,8 +122,8 @@ export default function EducationPage() {
     '2c-b': 'https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTfgkVN--dYcKc55Q9yigB1nvXMuq9gaMR2p2-qGXfjWivSHj4wC4erWllV9bk_BtNcRCbS-M_uqPwSm7Y',
     '7-hydroxymitragynine': 'https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcSODgrYgx2z9bWoe2dqiSzRMeX7P7WWPC1OJ4hfoJAo0puxnM95pQwanYPlnr4ze_UV2Bi2W7cNk6-CR34',
     adderall: 'https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcQH-gpmFGzjXILg0FqP9M1B7d22UT8OJ_Nx0ZlfrGnPJT2JMdWV7d8aw0DNXJkJ4wLfP84UR0mL1A69fSY',
-    'alkyl-nitrites': 'https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTzb_nN-Y4pnc3tl5IVQfq2VXyfSin64NaDMrW73VTy8UAona6tIv0XGaQSQLoHnF4yvzmzNV9BxwJ1kUA',
-    'anabolic-steroids': 'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcSHOsMJ8z2eFYJbH7mCC2rD_f8vnaFl002mx3xPRO8TWA5HeeqSsj7zUzrxrOUH774wxqBvkD6b-iSQucs',
+    'alkyl-nitrites': '/images/substances/alkyl-nitrites.png',
+    'anabolic-steroids': '/images/substances/anabolic-steroids.png',
     dexmethylphenidate: 'https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcQiB30lHtEpRprpAfGo3lToufDDQ9meUt8SZQoj7a0qCZH2oN72LiIbMANtPQT_9cn38cVhd3bXVLt97r8',
     gabapentin: 'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcSdxcS8eXWztbUHvjUpRB4pyvkHhn_VUTJ7dvTjs-6-nfypCK-wKSdQal5EUqDciV6D5dcjO8Rrj6snOM4',
     ghb: 'https://images.ctfassets.net/ip74mqmfgvqf/2z3arlHW9S6MUSsqcImSWg/0c88cbdbd6b4819658027d89ebd352b0/FRANK_drug_image_ghb.jpg?fit=scale&f=bottom&q=70&fm=webp&w=3840',
@@ -139,6 +134,7 @@ export default function EducationPage() {
     barbiturates: 'https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcR2hxCXglyf8YBCatxdYRi6--UWf4iO3em-87BheN2uAoXdObFghPx3p15n2xhFMznNhDB7MODklALaiik',
     bromazolam: 'https://www.hanleycenter.org/wp-content/uploads/2024/03/bromazolam.jpg',
     carfentanil: 'https://summitbhc.com/wp-content/uploads/2017/05/carfentanil.jpg',
+    carisoprodol: '/images/substances/carisoprodol.png',
     codeine: 'https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcRKZccQz_AsBNSwaLGAttGeEHTu7ridyD5qYptqLa_2khofjEflMuHNWWo2CeclSKOoqpdXuRd0x35JaBE',
     cocaine: 'https://medlineplus.gov/images/Cocaine_share.jpg',
     'crack-cocaine': 'https://upload.wikimedia.org/wikipedia/commons/c/c7/Rocks_of_crack_cocaine.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original',
@@ -153,6 +149,7 @@ export default function EducationPage() {
     hydromorphone: 'https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcT3ohlV-qqKPJOY_ugAGQtxpoxjH2H3toQ9sJt_HvkQoYL7L7P5Lg7nZQf3NQ8ERYV-N_MLe75WcCrPB-s',
     ketamine: 'https://cdn.adf.org.au/media/images/ketamine-social.2e16d0ba.fill-1200x1200.webp',
     kratom: 'https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcSH3ZqfKFC2cB2riN41U25Sxm8Hur7F2igxrCtxn2TNVDnWn4LwTwEPAo8pmKVNfwGFvy9jWpSgcL1dN4g',
+    kava: '/images/substances/kava.png',
     lsd: 'https://d7hftxdivxxvm.cloudfront.net/?height=800&quality=85&resize_to=fit&src=https%3A%2F%2Fd32dm0rphc51dk.cloudfront.net%2FgxuGvWYeyC6S2rbasLyV7w%2Fnormalized.jpg&width=800',
     mdma: 'https://images.ctfassets.net/ip74mqmfgvqf/564b953afSI0iKU448sOAK/dad96622c34abc30b0076373ae859dae/FRANK_news_ecstasy_2.jpg?fit=scale&f=bottom&q=70&fm=webp&w=3840',
     medetomidine: 'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQWqo_mbfbvRJ1UYbrMomPPCyJGX0k_MhkcGe-Bvogvm1ayH_CViVA3X5l562N6eecdDu-RdE2M7pMm4Io',
@@ -167,6 +164,7 @@ export default function EducationPage() {
     oxymorphone: 'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQ-HIIeu5VmO_hE56jqP-jw6mCAxDpPoTXdDlNygMxBcfN7W4rNl8GclpvdzXHxwGKJVuS6di655cEtj_Y',
     parafluorofentanyl: 'https://media.labcompare.com/m/53/article/611571.jpg',
     pcp: 'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQ8pSTB13rQcJAnr4uUvSW_pbuPUplURyjOoA1dyBfKwZxAhSTb4XycZIfnIEtbp79wLXduq4aU4Vce1yM',
+    phenibut: '/images/substances/phenibut.png',
     pregabalin: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pregabalin-cpVgTPWOJk4lzE5xwrwczc2jDSSv4B.jpg',
     psilocybin: 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Psilocybe_semilanceata_6514.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original',
     ritalin: 'https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcQaxE7-fNgK2punuE0AnRnetlcqbKZdmTZzUEJ1Iep3jmn65aqCt29J_ouAxgIFvnKNcws07inBLZOavpY',
@@ -176,7 +174,7 @@ export default function EducationPage() {
     'synthetic-cannabinoids': 'https://media.defense.gov/2011/Jan/05/2000295332/2000/2000/0/110105-F-9999B-003.JPG',
     tapentadol: 'https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcQTACBWJ9_FjQfRWljGbOtiGkRKYbG8-M48-TX0_et7XiQ8lGirgwPJHrCF02x4ci_LgN0hId_t1U-mPkA',
     thc: 'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQB_G-Zb7kQhRzGPEpR8PrYn-gV8UfZLlokl5_6VmxznIagNPlu1mVFQnK4nsRkffvesQUC164riMb47HQ',
-    tianeptine: 'https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcQ70zv4fW6OVOb-BegmKOBvrkbhWl4DLdgbPvXkoxMwrzfrzEG2Xoefa2I2nIOUOTBTzuhNrcc60Uzn5mU',
+    tianeptine: '/images/substances/tianeptine.png',
     tramadol: 'https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcTAuIkxzitwYPmm_ZuN1ljTJsxxlOvePSi7Ez8GUWcuDvnkLTBFdnMF3SvmCmCMVJCKGpMREJzfccc45gk',
     vyvanse: 'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRNtSKS-PhG1-irx2-QHYLQ2b16iVvfJhhRv7bSdO4CrboaZ_T7p6_dHo4Kjs6bNO-LZaOHsMtvnxSLjmw',
     xylazine: 'https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcTBneWHk_659F9qtuFnE1kpquM-JCFfWOR-EVrqx7DrYSNle6g1A_FAZfozytfL3C8gswzOHBlo0J0BhFA',
@@ -249,7 +247,7 @@ export default function EducationPage() {
         </div>
 
         {/* Tab Navigation */}
-        <div className="mb-8 flex justify-center gap-4 border-b border-slate-300" ref={contentRef}>
+        <div className="mb-8 flex justify-center gap-4 border-b border-slate-300">
           <button
             onClick={() => handleTabClick('infograph')}
             className={`whitespace-nowrap px-6 py-3 text-[30px] font-semibold transition ${
