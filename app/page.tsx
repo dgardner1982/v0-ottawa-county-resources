@@ -717,12 +717,14 @@ Learn something new <span className="text-cyan-200 transition-transform group-ho
           </div>
         </div>
 
-        <div className="mb-12 grid grid-cols-2 gap-3 pb-3 sm:grid-cols-3 lg:grid-cols-4">
+        <div role="group" aria-label="Filter resources by category" className="mb-12 grid grid-cols-2 gap-3 pb-3 sm:grid-cols-3 lg:grid-cols-4">
           {categories.map((cat) => {
             const colors = getCategoryColor(cat);
             return (
               <button
                 key={cat}
+                type="button"
+                aria-pressed={selectedCategory === cat}
                 onClick={() => setSelectedCategory(cat)}
                 className={`flex min-h-11 w-full items-center justify-center rounded-full border px-4 py-2 text-center text-sm font-bold leading-tight transition duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-500 ${
                   selectedCategory === cat 
@@ -889,12 +891,13 @@ Learn something new <span className="text-cyan-200 transition-transform group-ho
           </div>
         )}
 
+        <p className="sr-only" role="status" aria-live="polite">{filtered.length} resources found{selectedCategory !== 'All' ? ` in ${selectedCategory}` : ''}{searchTerm ? ` for ${searchTerm}` : ''}.</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.length > 0 ? (
             filtered.map((resource, idx) => {
               const colors = getCategoryColor(resource.category);
               return (
-                <div key={idx} style={{ animationDelay: `${Math.min(idx * 45, 450)}ms` }} className={`${colors.bg} ${colors.border} resource-card group relative overflow-hidden rounded-[1.35rem] p-6 shadow-[0_14px_35px_-25px_rgba(15,23,42,0.75)] transition duration-500 hover:-translate-y-2 hover:shadow-[0_24px_45px_-25px_rgba(15,23,42,0.85)]`}>
+                <article key={idx} style={{ animationDelay: `${Math.min(idx * 45, 450)}ms` }} className={`${colors.bg} ${colors.border} resource-card group relative overflow-hidden rounded-[1.35rem] p-6 shadow-[0_14px_35px_-25px_rgba(15,23,42,0.75)] transition duration-500 hover:-translate-y-2 hover:shadow-[0_24px_45px_-25px_rgba(15,23,42,0.85)]`}>
                   <div className="mb-4 flex items-start justify-between gap-3">
                     <div className="flex items-center gap-3">
                       <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/75 text-2xl shadow-sm transition duration-300 group-hover:rotate-6 group-hover:scale-110">{colors.icon}</span>
@@ -1029,7 +1032,7 @@ Learn something new <span className="text-cyan-200 transition-transform group-ho
                       Call Now
                     </a>
                   )}
-                </div>
+                </article>
               );
             })
           ) : (
