@@ -31,7 +31,7 @@ export default function EducationPage() {
 
   const substanceResources = [
     { name: 'Free Naloxone/Narcan', type: 'Overdose Prevention', description: 'Free naloxone kits and locations throughout Ottawa County.', href: '/naloxone-locations' },
-    { name: 'Overdose Prevention Training', type: 'Overdose Prevention', description: 'Free training for individuals and organizations. Call 616-393-4489 or email dgardner@miottawa.org.', href: 'tel:6163934489' },
+    { name: 'Overdose Prevention Training', type: 'Overdose Prevention', description: 'Free training for individuals and organizations. Call 616-393-4489 or email dgardner@ottawacmh.org.', href: 'tel:6163934489' },
     { name: 'Grand Rapids Red Project', type: 'Harm Reduction', description: 'Comprehensive harm reduction services and a mobile health unit serving the area.', href: 'https://www.redproject.org' },
     { name: 'Arbor Circle - Holland', type: 'Substance Recovery', description: 'Substance use treatment and recovery programs. Call (616) 396-2301.', href: 'https://arborcircle.org' },
     { name: 'Reach for Recovery', type: 'Substance Recovery', description: 'Counseling, recovery community connection, and outpatient and residential programs.', href: 'https://reachforrecovery.org' },

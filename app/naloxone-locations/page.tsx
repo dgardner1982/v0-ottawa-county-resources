@@ -185,7 +185,7 @@ export default function NaloxoneLocations() {
             <p className="font-bold text-gray-800 mb-2">Daniel Gardner</p>
             <p className="text-gray-700 mb-2">Community Mental Health of Ottawa County</p>
             <p className="text-gray-700 mb-1">
-              <a href="mailto:dgardner@miottawa.org" className="text-green-700 font-bold hover:underline">dgardner@miottawa.org</a>
+              <a href="mailto:dgardner@ottawacmh.org" className="text-green-700 font-bold hover:underline">dgardner@ottawacmh.org</a>
             </p>
             <p className="text-gray-700 mb-3">
               <a href="tel:616-393-4489" className="text-green-700 font-bold hover:underline">616-393-4489</a>
