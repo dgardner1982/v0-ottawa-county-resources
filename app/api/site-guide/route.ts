@@ -23,6 +23,26 @@ const guidePages = [
   { label: 'Medical disclaimer', href: '/medical-disclaimer', summary: 'Limits and intended use of the site’s health information.' },
 ]
 
+const resourceCategories = [
+  { label: 'Mental Health', href: '/?category=Mental%20Health#resources', aliases: ['mental health', 'behavioral health', 'counseling', 'therapy', 'psychiatric', 'emotional support', 'anxiety', 'depression', 'health'] },
+  { label: 'Housing', href: '/?category=Housing#resources', aliases: ['housing', 'shelter', 'homeless', 'homelessness', 'rent help', 'rental assistance', 'eviction', 'affordable housing', 'housing assistance', 'place to stay'] },
+  { label: 'Health Care', href: '/?category=Health%20Care#resources', aliases: ['health care', 'healthcare', 'medical care', 'doctor', 'clinic', 'medical services', 'health'] },
+  { label: 'Dental', href: '/?category=Dental#resources', aliases: ['dental', 'dentist', 'teeth'] },
+  { label: 'Food', href: '/?category=Food#resources', aliases: ['food', 'food assistance', 'food pantry', 'groceries', 'meal'] },
+  { label: 'Substance Recovery', href: '/?category=Substance%20Recovery#resources', aliases: ['substance recovery', 'addiction recovery', 'recovery support', 'substance use treatment'] },
+  { label: 'Medicated Assisted Treatment', href: '/?category=Medicated%20Assisted%20Treatment#resources', aliases: ['medication assisted treatment', 'medicated assisted treatment', 'mat', 'suboxone treatment', 'methadone treatment'] },
+  { label: 'Overdose Prevention/Free Naloxone(Narcan)', href: '/?category=Overdose%20Prevention%2FFree%20Naloxone%28Narcan%29#resources', aliases: ['naloxone', 'narcan', 'overdose prevention', 'overdose reversal'] },
+  { label: 'Harm Reduction', href: '/?category=Harm%20Reduction#resources', aliases: ['harm reduction', 'safer use', 'needle exchange', 'syringe services'] },
+  { label: 'Domestic Violence', href: '/?category=Domestic%20Violence#resources', aliases: ['domestic violence', 'abuse', 'safety from partner', 'intimate partner violence'] },
+  { label: 'Employment', href: '/?category=Employment#resources', aliases: ['employment', 'job', 'jobs', 'work'] },
+  { label: 'Legal', href: '/?category=Legal#resources', aliases: ['legal', 'lawyer', 'legal aid'] },
+  { label: 'Clothing and Furniture', href: '/?category=Clothing%20and%20Furniture#resources', aliases: ['clothing', 'furniture'] },
+  { label: 'Government Services', href: '/?category=Government%20Services#resources', aliases: ['government services', 'public benefits', 'social services'] },
+  { label: 'Parenting/Youth', href: '/?category=Parenting%2FYouth#resources', aliases: ['parenting', 'youth', 'teen', 'children'] },
+  { label: 'Prenatal/Maternal', href: '/?category=Prenatal%2FMaternal#resources', aliases: ['prenatal', 'maternal', 'pregnancy', 'pregnant'] },
+  { label: 'Seniors', href: '/?category=Seniors#resources', aliases: ['senior', 'seniors', 'older adult', 'elderly'] },
+]
+
 const substanceSlugs = [
   '2c-b', '7-hydroxymitragynine', 'adderall', 'alcohol', 'alkyl-nitrites', 'alprazolam',
   'anabolic-steroids', 'barbiturates', 'bromazolam', 'carfentanil', 'carisoprodol', 'cocaine',
@@ -96,8 +116,26 @@ const substancePages = substanceSlugs.map((slug) => {
   }
 })
 
+function findCategoryMatches(query: string) {
+  const normalizedQuery = normalizeSearchText(query)
+  const matches = resourceCategories.flatMap((category) => {
+    const matchingAliases = category.aliases
+      .map(normalizeSearchText)
+      .filter((alias) => alias.length > 2 && ` ${normalizedQuery} `.includes(` ${alias} `))
+    const score = matchingAliases.reduce((longest, alias) => Math.max(longest, alias.length), 0)
+    return score ? [{ category, score }] : []
+  }).sort((a, b) => b.score - a.score)
+
+  if (!matches.length) return []
+  const bestScore = matches[0].score
+  return matches.filter(({ score }) => score === bestScore).slice(0, 3).map(({ category }) => ({ label: category.label, href: category.href }))
+}
+
 function findRelevantLinks(query: string) {
   const normalizedQuery = normalizeSearchText(query)
+  const categoryMatches = findCategoryMatches(query)
+  if (categoryMatches.length) return categoryMatches
+
   const paddedQuery = ` ${normalizedQuery} `
   const substanceMatches = substancePages.map((page) => {
     const score = page.aliases
@@ -140,6 +178,21 @@ export async function POST(request: Request) {
   const latestQuestion = input.messages.at(-1)
   if (!latestQuestion || latestQuestion.role !== 'user') {
     return NextResponse.json({ error: 'Please ask a question to continue.' }, { status: 400 })
+  }
+
+  const categoryMatches = findCategoryMatches(latestQuestion.content)
+  if (categoryMatches.length > 1) {
+    return NextResponse.json({
+      answer: `Do you mean ${categoryMatches.map(({ label }) => label).join(' or ')}? Choose the matching resource category below.`,
+      links: categoryMatches,
+    })
+  }
+  if (categoryMatches.length === 1) {
+    const category = categoryMatches[0]
+    if (category.label === 'Mental Health' && /\b(suicid|kill myself|end my life|self harm)\b/i.test(latestQuestion.content)) {
+      return NextResponse.json({ answer: 'If you or someone else may be in immediate danger, call 911. For mental health or suicide crisis support in the United States, call or text 988. Open the Mental Health resources below for local support.', links: categoryMatches })
+    }
+    return NextResponse.json({ answer: `I found the ${category.label} resources. Open the matching category below to see relevant local services.`, links: categoryMatches })
   }
 
   const links = findRelevantLinks(latestQuestion.content)
