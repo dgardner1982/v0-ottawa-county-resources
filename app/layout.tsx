@@ -69,7 +69,7 @@ export default function RootLayout({
           </div>
         </nav>
         <NavigationHistoryManager />
-        <div id="main-content" tabIndex={-1}>
+        <div id="main-content" tabIndex={-1} className="border border-[#eefb12] shadow-[0_10px_15px_-3px_rgb(0_0_0_/_0.1),0_4px_6px_-4px_rgb(0_0_0_/_0.1)]">
           {children}
         </div>
         <footer className="border-t border-slate-800/70 bg-slate-950 px-5 py-8 text-center text-slate-300 sm:px-8">

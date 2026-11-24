@@ -1,11 +1,37 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Languages } from 'lucide-react';
 import { Footer } from '@/components/footer';
 import { SpinningLogo } from '@/components/spinning-logo';
 
 export default function SupportGroupsPage() {
+  const [language, setLanguage] = useState('es');
+  const languages = [
+    { code: 'ar', name: 'Arabic' },
+    { code: 'bn', name: 'Bengali' },
+    { code: 'zh-CN', name: 'Chinese (Simplified)' },
+    { code: 'zh-TW', name: 'Chinese (Traditional)' },
+    { code: 'fr', name: 'French' },
+    { code: 'de', name: 'German' },
+    { code: 'gu', name: 'Gujarati' },
+    { code: 'ht', name: 'Haitian Creole' },
+    { code: 'hi', name: 'Hindi' },
+    { code: 'it', name: 'Italian' },
+    { code: 'ja', name: 'Japanese' },
+    { code: 'ko', name: 'Korean' },
+    { code: 'pl', name: 'Polish' },
+    { code: 'pt', name: 'Portuguese' },
+    { code: 'pa', name: 'Punjabi' },
+    { code: 'ru', name: 'Russian' },
+    { code: 'so', name: 'Somali' },
+    { code: 'es', name: 'Spanish' },
+    { code: 'tl', name: 'Tagalog' },
+    { code: 'uk', name: 'Ukrainian' },
+    { code: 'vi', name: 'Vietnamese' },
+  ];
+
   const supportGroups = [
     {
       category: "Substance Recovery",
@@ -166,18 +192,45 @@ export default function SupportGroupsPage() {
   <span className="hidden text-slate-500 sm:inline">/</span>
   <span className="text-2xl"><span className="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-[#fb7185]" />Suicide crisis support: <a href="tel:988" className="text-[#ff5454] underline underline-offset-4 hover:text-white">Call 9-8-8</a></span>
   </div>
+      <div className="border-b border-slate-200 bg-white px-5 py-3 sm:px-8">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-end gap-3">
+          <label htmlFor="support-groups-language" className="text-sm font-semibold text-slate-700">Translate this page</label>
+          <select
+            id="support-groups-language"
+            value={language}
+            onChange={(event) => setLanguage(event.target.value)}
+            className="min-h-11 rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
+          >
+            {languages.map((item) => <option key={item.code} value={item.code}>{item.name}</option>)}
+          </select>
+          <button
+            type="button"
+            onClick={() => {
+              const translationUrl = new URL('https://translate.google.com/translate');
+              translationUrl.searchParams.set('sl', 'auto');
+              translationUrl.searchParams.set('tl', language);
+              translationUrl.searchParams.set('u', window.location.href);
+              window.open(translationUrl.toString(), '_blank', 'noopener,noreferrer');
+            }}
+            className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-slate-900 px-4 py-2 text-sm font-bold text-white transition hover:bg-teal-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
+          >
+            <Languages aria-hidden="true" className="size-4" />
+            Translate
+          </button>
+        </div>
+      </div>
       <header className="relative isolate overflow-hidden bg-slate-950 text-white"><div className="absolute -left-24 top-8 -z-10 h-72 w-72 animate-float-orb rounded-full bg-fuchsia-500/25 blur-3xl" /><div className="absolute -right-20 bottom-0 -z-10 h-96 w-96 animate-float-orb rounded-full bg-teal-400/25 blur-3xl [animation-delay:2s]" /><div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_70%_15%,rgba(217,70,239,0.16),transparent_34%),linear-gradient(135deg,#020617_0%,#0f172a_58%,#32194d_100%)]" /><div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-20"><div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]"><div className="animate-slide-in-up text-left"><div className="mb-7 inline-flex items-center gap-3 rounded-full border border-fuchsia-300/30 bg-fuchsia-300/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-fuchsia-200 backdrop-blur"><span className="h-2 w-2 rounded-full bg-fuchsia-300 shadow-[0_0_14px_#f0abfc]" /> You do not have to do this alone</div><h1 className="text-balance text-5xl font-black leading-[0.98] tracking-[-0.045em] text-white sm:text-7xl">Find a community that <span className="bg-gradient-to-r from-fuchsia-300 via-pink-200 to-amber-200 bg-clip-text text-transparent">gets it.</span></h1><p className="mt-7 max-w-2xl text-pretty text-lg leading-8 text-slate-300 sm:text-xl">Peer support creates connection, accountability, and a place to be understood—wherever you are in your journey.</p><div className="mt-9 grid max-w-2xl grid-cols-1 gap-4 sm:grid-cols-2"><Link href="/" className="group inline-flex items-center justify-center gap-3 rounded-full bg-teal-300 px-6 py-3.5 font-bold text-slate-950 shadow-[0_10px_35px_-12px_#5eead4] transition duration-300 hover:-translate-y-1 hover:bg-white">Explore resources <span className="transition-transform group-hover:translate-x-1">→</span></Link><Link href="/education" className="group inline-flex items-center justify-center gap-3 rounded-full border border-white/20 bg-white/5 px-6 py-3.5 font-bold text-cyan-200 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-cyan-200/70 hover:bg-white/10 hover:text-white">Learn something new <span className="text-cyan-200 transition-transform group-hover:translate-x-1 group-hover:text-white">→</span></Link><Link href="/support-groups" className="group inline-flex w-full items-center justify-center gap-3 rounded-full border border-fuchsia-200/40 bg-fuchsia-200/10 px-6 py-3.5 font-bold text-fuchsia-100 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-fuchsia-200 hover:bg-fuchsia-200/20">Explore support groups <span className="transition-transform group-hover:translate-x-1">→</span></Link><Link href="/get-involved" className="group inline-flex w-full items-center justify-center gap-3 rounded-full border border-fuchsia-200/40 bg-fuchsia-200/10 px-6 py-3.5 font-bold text-fuchsia-100 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-fuchsia-200 hover:bg-fuchsia-200/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-fuchsia-200">Explore ways to get involved <span className="transition-transform group-hover:translate-x-1">→</span></Link></div></div><div className="relative animate-scale-in [animation-delay:180ms]"><div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-tr from-fuchsia-400/20 via-transparent to-teal-400/20 blur-2xl" /><div className="animate-border-glow relative overflow-hidden rounded-[2rem] border border-white/15 bg-white/10 p-3 backdrop-blur-xl"><Link href="/" aria-label="Go to Ottawa County Recovery Alliance homepage" className="block transition duration-500 hover:scale-[1.02]"><SpinningLogo /></Link></div></div></div></div></header>
 
       <main id="groups" className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-20">
         <div className="animate-slide-in-up relative mb-6 min-h-52 overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-fuchsia-700 via-purple-700 to-slate-950 p-8 text-white shadow-[0_24px_55px_-30px_rgba(192,38,211,0.8)] sm:p-10">
           <h2 className="mb-3 text-3xl font-bold">Find Your Community</h2>
-          <p className="mb-4 text-lg">Support groups connect you with people who understand your journey. Whether you're seeking recovery from addiction, supporting a loved one, or working through emotional challenges, there's a community for you.</p>
-          <p className="text-sm opacity-90">All groups listed are peer led and confidential. These meetings are free and available locally or online. While the majority of our sessions are open to any interested individual, some meetings are designated as Closed.</p>
+          <p className="mb-4 text-lg font-bold">Support groups connect you with people who understand your journey. Whether you're seeking recovery from addiction, supporting a loved one, or working through emotional challenges, there's a community for you.</p>
+          <p className="text-sm font-bold opacity-90">All groups listed are peer led and confidential. These meetings are free and available locally or online. While the majority of our sessions are open to any interested individual, some meetings are designated as Closed.</p>
         </div>
 
-        <section aria-labelledby="sobar-community" className="relative mb-12 min-h-52 overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-fuchsia-700 via-purple-700 to-slate-950 p-8 text-white shadow-[0_24px_55px_-30px_rgba(192,38,211,0.8)] sm:p-10">
-          <h2 id="sobar-community" className="mb-3 text-3xl font-bold">SoBar Recovery Community Center</h2>
-          <p className="text-lg leading-relaxed">SoBar provides a welcoming, judgment free environment where people in recovery and those seeking recovery can connect with peers, attend support meetings, and sober social events. SoBar also provides recovery coaching and resource navigation.</p>
+        <section aria-labelledby="sobar-community" className="relative mb-12 min-h-52 overflow-hidden rounded-[1.75rem] bg-transparent p-8 shadow-[0_24px_55px_-30px_rgba(192,38,211,0.8)] sm:p-10" style={{ backgroundImage: 'linear-gradient(135deg, #eefc6d 25%, #a0a047 50%, #f5ff54 100%)' }}>
+          <h2 id="sobar-community" className="mb-3 text-3xl font-bold text-[#0c0b0b]">SoBar Recovery Community Center</h2>
+          <p className="text-lg font-bold leading-relaxed text-[#151515]">SoBar provides a welcoming, judgment free environment where people in recovery and those seeking recovery can connect with peers, attend support meetings, and sober social events. SoBar also provides recovery coaching and resource navigation.</p>
         </section>
 
         {supportGroups.map((section, idx) => (
