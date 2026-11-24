@@ -10,6 +10,7 @@ const messageSchema = z.object({
 const requestSchema = z.object({ messages: z.array(messageSchema).min(1).max(8) })
 
 const guidePages = [
+  { label: 'Housing resources', href: '/?category=Housing#resources', summary: 'Housing assistance, shelter, homelessness support, rent help, affordable housing, and recovery housing in Ottawa County.', aliases: ['housing', 'shelter', 'homeless', 'homelessness', 'rent help', 'rental assistance', 'eviction', 'affordable housing', 'housing assistance', 'place to stay', 'emergency shelter', 'home'] },
   { label: 'Resource directory', href: '/#resources', summary: 'Search the full directory by keyword or browse categories including mental health, substance recovery, food, housing, health care, dental, domestic violence, employment, transportation, financial resources, naloxone, and more.' },
   { label: 'Medication-assisted treatment resources', href: '/mat-resources', summary: 'Information about medication-assisted treatment and providers.' },
   { label: 'Support groups', href: '/support-groups', summary: 'Community support group information.' },
@@ -66,6 +67,26 @@ function normalizeSearchText(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim().replace(/\s+/g, ' ')
 }
 
+function editDistance(left: string, right: string) {
+  const row = Array.from({ length: right.length + 1 }, (_, index) => index)
+  for (let i = 1; i <= left.length; i++) {
+    let diagonal = row[0]
+    row[0] = i
+    for (let j = 1; j <= right.length; j++) {
+      const above = row[j]
+      row[j] = Math.min(row[j] + 1, row[j - 1] + 1, diagonal + (left[i - 1] === right[j - 1] ? 0 : 1))
+      diagonal = above
+    }
+  }
+  return row[right.length]
+}
+
+function tokenMatches(queryToken: string, aliasToken: string) {
+  if (queryToken === aliasToken || queryToken.includes(aliasToken) || aliasToken.includes(queryToken)) return true
+  if (queryToken.length < 4 || aliasToken.length < 4) return false
+  return editDistance(queryToken, aliasToken) <= (Math.max(queryToken.length, aliasToken.length) > 7 ? 2 : 1)
+}
+
 const substancePages = substanceSlugs.map((slug) => {
   const name = substanceNames[slug] ?? slug.split('-').map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
   return {
@@ -97,12 +118,15 @@ function findRelevantLinks(query: string) {
   const stopWords = new Set(['about', 'can', 'do', 'find', 'for', 'get', 'help', 'how', 'i', 'is', 'me', 'need', 'please', 'site', 'the', 'there', 'to', 'what', 'where', 'with', 'you'])
   const words = (normalizedQuery.match(/[a-z0-9]+/g) ?? []).filter((word) => word.length > 2 && !stopWords.has(word))
   const matched = guidePages.map((page) => {
-    const searchable = new Set(normalizeSearchText(`${page.label} ${page.summary} ${page.href}`).match(/[a-z0-9]+/g) ?? [])
-    const score = words.reduce((total, word) => total + (searchable.has(word) ? 1 : 0), 0)
-    return { page, score }
+    const aliases = [...((page as { aliases?: string[] }).aliases ?? []), page.label, page.summary, page.href]
+      .map(normalizeSearchText)
+    const aliasTokens = aliases.flatMap((alias) => alias.split(' ')).filter((token) => token.length > 2)
+    const exactPhrase = aliases.some((alias) => alias.length > 3 && normalizedQuery.includes(alias))
+    const score = words.reduce((total, word) => total + (aliasTokens.some((token) => tokenMatches(word, token)) ? 1 : 0), 0)
+    return { page, score: score + (exactPhrase ? 3 : 0) }
   }).filter(({ score }) => score > 0).sort((a, b) => b.score - a.score).slice(0, 3)
 
-  return (matched.length ? matched : [{ page: guidePages[0], score: 0 }]).map(({ page }) => ({ label: page.label, href: page.href }))
+  return (matched.length ? matched : [{ page: guidePages[1], score: 0 }]).map(({ page }) => ({ label: page.label, href: page.href }))
 }
 
 export async function POST(request: Request) {
@@ -119,6 +143,14 @@ export async function POST(request: Request) {
   }
 
   const links = findRelevantLinks(latestQuestion.content)
+  const housingLink = links[0]?.href.includes('category=Housing') ? links[0] : undefined
+  if (housingLink) {
+    return NextResponse.json({
+      answer: 'I found the Housing section of the resource directory. For additional local referrals, call 2-1-1.',
+      links: [housingLink],
+    })
+  }
+
   const substanceLink = links.find(({ href }) => href.startsWith('/drug/'))
   if (substanceLink) {
     const substanceName = substanceLink.label.replace(/ education page$/i, '')

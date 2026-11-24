@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Languages } from 'lucide-react'
 
 const languages = [
@@ -27,15 +27,56 @@ const languages = [
   { code: 'vi', name: 'Vietnamese' },
 ]
 
+type GoogleTranslateWindow = Window & {
+  google?: {
+    translate?: {
+      TranslateElement: new (options: { pageLanguage: string; includedLanguages: string; autoDisplay: boolean }, elementId: string) => unknown
+    }
+  }
+  googleTranslateElementInit?: () => void
+}
+
 export function LanguageTranslator() {
   const [language, setLanguage] = useState('es')
+  const [status, setStatus] = useState('')
+
+  useEffect(() => {
+    const googleWindow = window as GoogleTranslateWindow
+    const initialize = () => {
+      const TranslateElement = googleWindow.google?.translate?.TranslateElement
+      if (!TranslateElement) return
+      new TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: languages.map(({ code }) => code).join(','),
+        autoDisplay: false,
+      }, 'google-translate-widget')
+    }
+
+    googleWindow.googleTranslateElementInit = initialize
+    if (googleWindow.google?.translate?.TranslateElement) {
+      initialize()
+      return
+    }
+
+    if (!document.querySelector('script[data-google-translate]')) {
+      const script = document.createElement('script')
+      script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'
+      script.async = true
+      script.dataset.googleTranslate = 'true'
+      script.onerror = () => setStatus('Translation could not load. Please try again later.')
+      document.head.appendChild(script)
+    }
+  }, [])
 
   function translateCurrentPage() {
-    const translationUrl = new URL('https://translate.google.com/translate')
-    translationUrl.searchParams.set('sl', 'auto')
-    translationUrl.searchParams.set('tl', language)
-    translationUrl.searchParams.set('u', window.location.href)
-    window.open(translationUrl.toString(), '_blank', 'noopener,noreferrer')
+    const widgetSelect = document.querySelector<HTMLSelectElement>('.goog-te-combo')
+    if (!widgetSelect) {
+      setStatus('Translation is still loading. Please try again in a moment.')
+      return
+    }
+    widgetSelect.value = language
+    widgetSelect.dispatchEvent(new Event('change', { bubbles: true }))
+    setStatus(`Translating this page to ${languages.find((item) => item.code === language)?.name ?? 'the selected language'}.`)
   }
 
   return (
@@ -58,6 +99,8 @@ export function LanguageTranslator() {
           <Languages aria-hidden="true" className="size-4" />
           Translate
         </button>
+        <p role="status" aria-live="polite" className="sr-only">{status}</p>
+        <div id="google-translate-widget" className="sr-only" aria-hidden="true" />
       </div>
     </div>
   )
