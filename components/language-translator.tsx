@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { Languages } from 'lucide-react'
 
 const languages = [
+  { code: 'en', name: 'English (original)' },
   { code: 'ar', name: 'Arabic' },
   { code: 'bn', name: 'Bengali' },
   { code: 'zh-CN', name: 'Chinese (Simplified)' },
@@ -70,6 +71,23 @@ export function LanguageTranslator() {
 
   function translateCurrentPage() {
     const widgetSelect = document.querySelector<HTMLSelectElement>('.goog-te-combo')
+    if (language === 'en') {
+      const englishOption = widgetSelect?.querySelector('option[value="en"]')
+      if (widgetSelect && englishOption) {
+        widgetSelect.value = 'en'
+        widgetSelect.dispatchEvent(new Event('change', { bubbles: true }))
+        setStatus('Showing the original English text.')
+        return
+      }
+
+      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/'
+      if (window.location.hostname.includes('.')) {
+        document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=${window.location.hostname}`
+      }
+      window.location.reload()
+      return
+    }
+
     if (!widgetSelect) {
       setStatus('Translation is still loading. Please try again in a moment.')
       return
@@ -97,7 +115,7 @@ export function LanguageTranslator() {
           className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-slate-900 px-4 py-2 text-sm font-bold text-white transition hover:bg-teal-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
         >
           <Languages aria-hidden="true" className="size-4" />
-          Translate
+          Translate / restore English
         </button>
         <p role="status" aria-live="polite" className="sr-only">{status}</p>
         <div id="google-translate-widget" className="sr-only" aria-hidden="true" />
