@@ -70,24 +70,12 @@ export function LanguageTranslator() {
   }, [])
 
   function translateCurrentPage() {
-    const widgetSelect = document.querySelector<HTMLSelectElement>('.goog-te-combo')
     if (language === 'en') {
-      const englishOption = widgetSelect?.querySelector('option[value="en"]')
-      if (widgetSelect && englishOption) {
-        widgetSelect.value = 'en'
-        widgetSelect.dispatchEvent(new Event('change', { bubbles: true }))
-        setStatus('Showing the original English text.')
-        return
-      }
-
-      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/'
-      if (window.location.hostname.includes('.')) {
-        document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=${window.location.hostname}`
-      }
-      window.location.reload()
+      setStatus('Choose Original to restore the original English page.')
       return
     }
 
+    const widgetSelect = document.querySelector<HTMLSelectElement>('.goog-te-combo')
     if (!widgetSelect) {
       setStatus('Translation is still loading. Please try again in a moment.')
       return
@@ -97,6 +85,24 @@ export function LanguageTranslator() {
     setStatus(`Translating this page to ${languages.find((item) => item.code === language)?.name ?? 'the selected language'}.`)
   }
 
+  function showOriginalPage() {
+    setLanguage('en')
+    const widgetSelect = document.querySelector<HTMLSelectElement>('.goog-te-combo')
+    const englishOption = widgetSelect?.querySelector('option[value="en"]')
+    if (widgetSelect && englishOption) {
+      widgetSelect.value = 'en'
+      widgetSelect.dispatchEvent(new Event('change', { bubbles: true }))
+      setStatus('Showing the original English text.')
+      return
+    }
+
+    document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/'
+    if (window.location.hostname.includes('.')) {
+      document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=${window.location.hostname}`
+    }
+    window.location.reload()
+  }
+
   return (
     <div className="border-b border-slate-200 bg-white px-5 py-3 sm:px-8">
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-end gap-3">
@@ -104,7 +110,10 @@ export function LanguageTranslator() {
         <select
           id="site-language"
           value={language}
-          onChange={(event) => setLanguage(event.target.value)}
+          onChange={(event) => {
+            setLanguage(event.target.value)
+            setStatus(event.target.value === 'en' ? 'Choose Original to restore the original English page.' : '')
+          }}
           className="min-h-11 rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
         >
           {languages.map((item) => <option key={item.code} value={item.code}>{item.name}</option>)}
@@ -112,10 +121,18 @@ export function LanguageTranslator() {
         <button
           type="button"
           onClick={translateCurrentPage}
-          className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-slate-900 px-4 py-2 text-sm font-bold text-white transition hover:bg-teal-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
+          disabled={language === 'en'}
+          className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-slate-900 px-4 py-2 text-sm font-bold text-white transition hover:bg-teal-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700 disabled:cursor-not-allowed disabled:opacity-50"
         >
           <Languages aria-hidden="true" className="size-4" />
-          Translate / restore English
+          Translate
+        </button>
+        <button
+          type="button"
+          onClick={showOriginalPage}
+          className="inline-flex min-h-11 items-center rounded-lg border border-teal-700 bg-white px-4 py-2 text-sm font-bold text-teal-900 transition hover:bg-teal-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
+        >
+          Original
         </button>
         <p role="status" aria-live="polite" className="sr-only">{status}</p>
         <div id="google-translate-widget" className="sr-only" aria-hidden="true" />
