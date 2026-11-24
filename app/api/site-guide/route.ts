@@ -23,6 +23,23 @@ const guidePages = [
   { label: 'Medical disclaimer', href: '/medical-disclaimer', summary: 'Limits and intended use of the site’s health information.' },
 ]
 
+const recoveryTopicLinks = [
+  { label: 'Substance Recovery resources', href: '/?category=Substance%20Recovery#resources' },
+  { label: 'Recovery support groups', href: '/support-groups' },
+  { label: 'Medication-assisted treatment resources', href: '/mat-resources' },
+  { label: 'Substance education and harm reduction', href: '/education' },
+  { label: 'Recovery Alliance', href: '/get-involved/recovery-alliance' },
+  { label: 'Recovery and wellness events', href: '/calendar' },
+  { label: 'Recovery housing resources', href: '/?category=Housing#resources' },
+]
+
+const harmReductionTopicLinks = [
+  { label: 'Harm Reduction resources', href: '/?category=Harm%20Reduction#resources' },
+  { label: 'Harm reduction education', href: '/education' },
+  { label: 'Naloxone locations', href: '/naloxone-locations' },
+  { label: 'Substance Recovery resources', href: '/?category=Substance%20Recovery#resources' },
+]
+
 const resourceCategories = [
   { label: 'Mental Health', href: '/?category=Mental%20Health#resources', aliases: ['mental health', 'behavioral health', 'counseling', 'therapy', 'psychiatric', 'emotional support', 'anxiety', 'depression', 'health'] },
   { label: 'Housing', href: '/?category=Housing#resources', aliases: ['housing', 'shelter', 'homeless', 'homelessness', 'rent help', 'rental assistance', 'eviction', 'affordable housing', 'housing assistance', 'place to stay'] },
@@ -116,12 +133,27 @@ const substancePages = substanceSlugs.map((slug) => {
   }
 })
 
-function findCategoryMatches(query: string) {
+function matchesReorderedAlias(query: string, alias: string) {
+  const queryTokens = normalizeSearchText(query).split(' ')
+  const aliasTokens = normalizeSearchText(alias).split(' ')
+  return aliasTokens.every((aliasToken) => queryTokens.some((queryToken) =>
+    queryToken === aliasToken || (queryToken.length >= 4 && aliasToken.length >= 4 && tokenMatches(queryToken, aliasToken))
+  ))
+}
+
+function matchesTopic(query: string, aliases: string[]) {
   const normalizedQuery = normalizeSearchText(query)
+  return aliases.some((alias) => {
+    const normalizedAlias = normalizeSearchText(alias)
+    return ` ${normalizedQuery} `.includes(` ${normalizedAlias} `) || matchesReorderedAlias(normalizedQuery, normalizedAlias)
+  })
+}
+
+function findCategoryMatches(query: string) {
   const matches = resourceCategories.flatMap((category) => {
     const matchingAliases = category.aliases
+      .filter((alias) => matchesTopic(query, [alias]))
       .map(normalizeSearchText)
-      .filter((alias) => alias.length > 2 && ` ${normalizedQuery} `.includes(` ${alias} `))
     const score = matchingAliases.reduce((longest, alias) => Math.max(longest, alias.length), 0)
     return score ? [{ category, score }] : []
   }).sort((a, b) => b.score - a.score)
@@ -178,6 +210,40 @@ export async function POST(request: Request) {
   const latestQuestion = input.messages.at(-1)
   if (!latestQuestion || latestQuestion.role !== 'user') {
     return NextResponse.json({ error: 'Please ask a question to continue.' }, { status: 400 })
+  }
+
+  const normalizedQuestion = normalizeSearchText(latestQuestion.content)
+  if (normalizedQuestion.includes('recovery position')) {
+    return NextResponse.json({
+      answer: 'For information about the recovery position after an overdose, open the overdose-response guidance or find local naloxone locations below. Call 911 for an overdose emergency.',
+      links: [
+        { label: 'Overdose response and substance education', href: '/education' },
+        { label: 'Naloxone locations', href: '/naloxone-locations' },
+      ],
+    })
+  }
+
+  const isHarmReductionRequest = matchesTopic(latestQuestion.content, [
+    'harm reduction', 'safer use', 'needle exchange', 'syringe services', 'overdose prevention',
+  ])
+  const isRecoveryRequest = matchesTopic(latestQuestion.content, [
+    'recovery', 'recover', 'recovering', 'sobriety', 'sober', 'addiction', 'substance use disorder',
+    'detox', 'rehab', 'rehabilitation', 'sober living', 'relapse', 'relapse prevention',
+    'peer support', '12 step', 'aa', 'na', 'recovery services', 'recovery center',
+  ])
+
+  if (isHarmReductionRequest) {
+    return NextResponse.json({
+      answer: 'Yes—this site has harm reduction resources. Choose a link below for local services, harm reduction education, naloxone locations, or substance recovery support.',
+      links: harmReductionTopicLinks,
+    })
+  }
+
+  if (isRecoveryRequest) {
+    return NextResponse.json({
+      answer: 'I found recovery-related information across the site. These links include local substance recovery services, peer support, treatment, education, events, and recovery housing.',
+      links: recoveryTopicLinks,
+    })
   }
 
   const categoryMatches = findCategoryMatches(latestQuestion.content)
