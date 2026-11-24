@@ -121,6 +121,33 @@
   }
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+  html[data-text-scale='1'] {
+    font-size: 112.5%;
+  }
+  html[data-text-scale='2'] {
+    font-size: 125%;
+  }
+  html[data-high-contrast='true'] :is(a, button, input, select, textarea) {
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+  }
+  html[data-high-contrast='true'] :focus-visible {
+    outline: 4px solid #000;
+    outline-offset: 4px;
+    box-shadow: 0 0 0 2px #fff;
+  }
+  html[data-high-contrast='true'] a:not([class*='text-white']):not([class*='text-slate-100']):not([class*='text-teal-100']) {
+    text-decoration-line: underline;
+  }
+  html[data-reduce-motion='true'] *,
+  html[data-reduce-motion='true'] *::before,
+  html[data-reduce-motion='true'] *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
   body {
     @apply bg-background text-foreground;
@@ -229,6 +256,15 @@
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+html[data-reduced-motion='true'] *,
+html[data-reduced-motion='true'] *::before,
+html[data-reduced-motion='true'] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  scroll-behavior: auto !important;
+  transition-duration: 0.01ms !important;
 }
 
 .animate-slide-in-up {

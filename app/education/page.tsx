@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { Footer } from '@/components/footer';
 import { SpinningLogo } from '@/components/spinning-logo';
@@ -31,7 +31,7 @@ export default function EducationPage() {
 
   const substanceResources = [
     { name: 'Free Naloxone/Narcan', type: 'Overdose Prevention', description: 'Free naloxone kits and locations throughout Ottawa County.', href: '/naloxone-locations' },
-    { name: 'Overdose Prevention Training', type: 'Overdose Prevention', description: 'Free training for individuals and organizations. Call 616-393-4489 or email dgardner@miottawa.org.', href: 'tel:6163934489' },
+    { name: 'Overdose Prevention Training', type: 'Overdose Prevention', description: 'Free training for individuals and organizations. Call 616-393-4489 or email dgardner@ottawacmh.org.', href: 'tel:6163934489' },
     { name: 'Grand Rapids Red Project', type: 'Harm Reduction', description: 'Comprehensive harm reduction services and a mobile health unit serving the area.', href: 'https://www.redproject.org' },
     { name: 'Arbor Circle - Holland', type: 'Substance Recovery', description: 'Substance use treatment and recovery programs. Call (616) 396-2301.', href: 'https://arborcircle.org' },
     { name: 'Reach for Recovery', type: 'Substance Recovery', description: 'Counseling, recovery community connection, and outpatient and residential programs.', href: 'https://reachforrecovery.org' },
@@ -50,13 +50,8 @@ export default function EducationPage() {
     { name: 'Nar-Anon', description: 'Support for families and friends affected by someone’s drug addiction.', href: 'https://www.nar-anon.org' },
     { name: 'Recovery Dharma', description: 'A mindfulness-based, Buddhist-inspired approach to addiction recovery.', href: 'https://www.recoverydharma.org' },
   ];
-  const contentRef = useRef<HTMLDivElement>(null);
-
   const handleTabClick = (tab: string) => {
     setActiveTab(tab);
-    setTimeout(() => {
-      contentRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 0);
   };
   
   const drugs: { name: string; symbol: typeof Pill; slug: string; color: string; bgColor: string; image?: string }[] = [
@@ -127,8 +122,8 @@ export default function EducationPage() {
     '2c-b': 'https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTfgkVN--dYcKc55Q9yigB1nvXMuq9gaMR2p2-qGXfjWivSHj4wC4erWllV9bk_BtNcRCbS-M_uqPwSm7Y',
     '7-hydroxymitragynine': 'https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcSODgrYgx2z9bWoe2dqiSzRMeX7P7WWPC1OJ4hfoJAo0puxnM95pQwanYPlnr4ze_UV2Bi2W7cNk6-CR34',
     adderall: 'https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcQH-gpmFGzjXILg0FqP9M1B7d22UT8OJ_Nx0ZlfrGnPJT2JMdWV7d8aw0DNXJkJ4wLfP84UR0mL1A69fSY',
-    'alkyl-nitrites': 'https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTzb_nN-Y4pnc3tl5IVQfq2VXyfSin64NaDMrW73VTy8UAona6tIv0XGaQSQLoHnF4yvzmzNV9BxwJ1kUA',
-    'anabolic-steroids': 'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcSHOsMJ8z2eFYJbH7mCC2rD_f8vnaFl002mx3xPRO8TWA5HeeqSsj7zUzrxrOUH774wxqBvkD6b-iSQucs',
+    'alkyl-nitrites': '/images/substances/alkyl-nitrites.png',
+    'anabolic-steroids': '/images/substances/anabolic-steroids.png',
     dexmethylphenidate: 'https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcQiB30lHtEpRprpAfGo3lToufDDQ9meUt8SZQoj7a0qCZH2oN72LiIbMANtPQT_9cn38cVhd3bXVLt97r8',
     gabapentin: 'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcSdxcS8eXWztbUHvjUpRB4pyvkHhn_VUTJ7dvTjs-6-nfypCK-wKSdQal5EUqDciV6D5dcjO8Rrj6snOM4',
     ghb: 'https://images.ctfassets.net/ip74mqmfgvqf/2z3arlHW9S6MUSsqcImSWg/0c88cbdbd6b4819658027d89ebd352b0/FRANK_drug_image_ghb.jpg?fit=scale&f=bottom&q=70&fm=webp&w=3840',
@@ -139,6 +134,7 @@ export default function EducationPage() {
     barbiturates: 'https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcR2hxCXglyf8YBCatxdYRi6--UWf4iO3em-87BheN2uAoXdObFghPx3p15n2xhFMznNhDB7MODklALaiik',
     bromazolam: 'https://www.hanleycenter.org/wp-content/uploads/2024/03/bromazolam.jpg',
     carfentanil: 'https://summitbhc.com/wp-content/uploads/2017/05/carfentanil.jpg',
+    carisoprodol: '/images/substances/carisoprodol.png',
     codeine: 'https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcRKZccQz_AsBNSwaLGAttGeEHTu7ridyD5qYptqLa_2khofjEflMuHNWWo2CeclSKOoqpdXuRd0x35JaBE',
     cocaine: 'https://medlineplus.gov/images/Cocaine_share.jpg',
     'crack-cocaine': 'https://upload.wikimedia.org/wikipedia/commons/c/c7/Rocks_of_crack_cocaine.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original',
@@ -153,6 +149,7 @@ export default function EducationPage() {
     hydromorphone: 'https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcT3ohlV-qqKPJOY_ugAGQtxpoxjH2H3toQ9sJt_HvkQoYL7L7P5Lg7nZQf3NQ8ERYV-N_MLe75WcCrPB-s',
     ketamine: 'https://cdn.adf.org.au/media/images/ketamine-social.2e16d0ba.fill-1200x1200.webp',
     kratom: 'https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcSH3ZqfKFC2cB2riN41U25Sxm8Hur7F2igxrCtxn2TNVDnWn4LwTwEPAo8pmKVNfwGFvy9jWpSgcL1dN4g',
+    kava: '/images/substances/kava.png',
     lsd: 'https://d7hftxdivxxvm.cloudfront.net/?height=800&quality=85&resize_to=fit&src=https%3A%2F%2Fd32dm0rphc51dk.cloudfront.net%2FgxuGvWYeyC6S2rbasLyV7w%2Fnormalized.jpg&width=800',
     mdma: 'https://images.ctfassets.net/ip74mqmfgvqf/564b953afSI0iKU448sOAK/dad96622c34abc30b0076373ae859dae/FRANK_news_ecstasy_2.jpg?fit=scale&f=bottom&q=70&fm=webp&w=3840',
     medetomidine: 'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQWqo_mbfbvRJ1UYbrMomPPCyJGX0k_MhkcGe-Bvogvm1ayH_CViVA3X5l562N6eecdDu-RdE2M7pMm4Io',
@@ -167,7 +164,8 @@ export default function EducationPage() {
     oxymorphone: 'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQ-HIIeu5VmO_hE56jqP-jw6mCAxDpPoTXdDlNygMxBcfN7W4rNl8GclpvdzXHxwGKJVuS6di655cEtj_Y',
     parafluorofentanyl: 'https://media.labcompare.com/m/53/article/611571.jpg',
     pcp: 'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQ8pSTB13rQcJAnr4uUvSW_pbuPUplURyjOoA1dyBfKwZxAhSTb4XycZIfnIEtbp79wLXduq4aU4Vce1yM',
-    pregabalin: 'https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcQuBI3dcLWnauZr0k_nk4IGkT57KEVI_g3uBuOp8ec1ZbMEZy7_BvO0eidzvkEhxC6gV4N-hZaCw_HtJU',
+    phenibut: '/images/substances/phenibut.png',
+    pregabalin: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pregabalin-cpVgTPWOJk4lzE5xwrwczc2jDSSv4B.jpg',
     psilocybin: 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Psilocybe_semilanceata_6514.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original',
     ritalin: 'https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcQaxE7-fNgK2punuE0AnRnetlcqbKZdmTZzUEJ1Iep3jmn65aqCt29J_ouAxgIFvnKNcws07inBLZOavpY',
     salvia: 'https://upload.wikimedia.org/wikipedia/commons/8/82/Salvia_divinorum_-_Herba_de_Maria.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original',
@@ -176,7 +174,7 @@ export default function EducationPage() {
     'synthetic-cannabinoids': 'https://media.defense.gov/2011/Jan/05/2000295332/2000/2000/0/110105-F-9999B-003.JPG',
     tapentadol: 'https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcQTACBWJ9_FjQfRWljGbOtiGkRKYbG8-M48-TX0_et7XiQ8lGirgwPJHrCF02x4ci_LgN0hId_t1U-mPkA',
     thc: 'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQB_G-Zb7kQhRzGPEpR8PrYn-gV8UfZLlokl5_6VmxznIagNPlu1mVFQnK4nsRkffvesQUC164riMb47HQ',
-    tianeptine: 'https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcQ70zv4fW6OVOb-BegmKOBvrkbhWl4DLdgbPvXkoxMwrzfrzEG2Xoefa2I2nIOUOTBTzuhNrcc60Uzn5mU',
+    tianeptine: '/images/substances/tianeptine.png',
     tramadol: 'https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcTAuIkxzitwYPmm_ZuN1ljTJsxxlOvePSi7Ez8GUWcuDvnkLTBFdnMF3SvmCmCMVJCKGpMREJzfccc45gk',
     vyvanse: 'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRNtSKS-PhG1-irx2-QHYLQ2b16iVvfJhhRv7bSdO4CrboaZ_T7p6_dHo4Kjs6bNO-LZaOHsMtvnxSLjmw',
     xylazine: 'https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcTBneWHk_659F9qtuFnE1kpquM-JCFfWOR-EVrqx7DrYSNle6g1A_FAZfozytfL3C8gswzOHBlo0J0BhFA',
@@ -225,7 +223,7 @@ export default function EducationPage() {
         </div>
       </header>
 
-      <main id="guides" className="relative isolate overflow-hidden bg-[#41cfdf] [border-color:rgba(235,229,230,0.05)] px-5 py-16 text-slate-900 sm:px-8 lg:py-20"><div className="pointer-events-none absolute -left-32 top-24 -z-10 h-96 w-96 rounded-full bg-teal-400/10 blur-3xl" /><div className="pointer-events-none absolute -right-32 top-[40rem] -z-10 h-96 w-96 rounded-full bg-fuchsia-500/10 blur-3xl" /><div className="relative mx-auto max-w-7xl">
+      <main id="guides" className="relative isolate overflow-hidden bg-[#41cfdf] [border-color:rgba(235,229,230,0.05)] px-5 pb-16 pt-0 text-slate-900 sm:px-8 lg:pb-20 lg:pt-0"><div className="pointer-events-none absolute -left-32 top-24 -z-10 h-96 w-96 rounded-full bg-teal-400/10 blur-3xl" /><div className="pointer-events-none absolute -right-32 top-[40rem] -z-10 h-96 w-96 rounded-full bg-fuchsia-500/10 blur-3xl" /><div className="relative mx-auto max-w-7xl">
         <div className="animate-slide-in-up relative mb-12 overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-teal-700 via-cyan-600 to-slate-900 p-8 text-white shadow-[0_24px_55px_-30px_rgba(13,148,136,0.8)] sm:p-10">
           <h2 className="text-3xl font-bold mb-3">Knowledge Saves Lives</h2>
           <p className="text-xl">Learn about emerging substances, recognize dangers, and discover paths to recovery. This information is for harm reduction and education based on current CDC and public health data. <Link href="/medical-disclaimer" className="font-bold italic text-[#ff5454] underline decoration-cyan-200 underline-offset-4 transition hover:text-white">Medical Disclaimer</Link></p>
@@ -249,7 +247,7 @@ export default function EducationPage() {
         </div>
 
         {/* Tab Navigation */}
-        <div className="mb-8 flex justify-center gap-4 border-b border-slate-300" ref={contentRef}>
+        <div className="mb-8 flex justify-center gap-4 border-b border-slate-300">
           <button
             onClick={() => handleTabClick('infograph')}
             className={`whitespace-nowrap px-6 py-3 text-[30px] font-semibold transition ${
@@ -286,7 +284,7 @@ export default function EducationPage() {
                         <Link key={drug.slug} href={href} className="group focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-fuchsia-500/50">
                           <div style={{ animationDelay: `${Math.min((categoryIndex * 4 + idx) * 35, 560)}ms` }} className="resource-card flex h-64 cursor-pointer flex-col items-center justify-center rounded-[1.35rem] border border-white/10 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950 p-8 text-center shadow-[0_18px_24px_-10px_rgba(2,8,23,0.9),0_8px_14px_-8px_rgba(15,23,42,0.75)] transition duration-500 group-hover:-translate-y-2 group-hover:border-teal-300/50 group-hover:shadow-[0_25px_55px_-24px_rgba(45,212,191,0.55)]">
                             <div className="mb-5 flex h-20 w-20 items-center justify-center rounded-3xl border border-teal-300/25 bg-gradient-to-br from-teal-300/20 to-fuchsia-400/10 text-teal-200 shadow-[0_0_28px_-10px_rgba(94,234,212,0.9)] transition duration-500 group-hover:rotate-3 group-hover:scale-110 group-hover:border-teal-200/60">
-                              {(drug.image ?? substanceImages[drug.slug]) ? <img src={drug.image ?? substanceImages[drug.slug]} alt={`${drug.name} reference`} className="h-14 w-14 rounded-xl object-contain" /> : <drug.symbol aria-hidden="true" className="h-11 w-11 stroke-[1.6]" />}
+                              {(drug.image ?? substanceImages[drug.slug]) ? <img src={drug.image ?? substanceImages[drug.slug]} alt={drug.slug === 'pregabalin' ? 'Red-and-white capsule marked AUU and PG75' : `${drug.name} reference`} className="h-14 w-14 rounded-xl object-contain" /> : <drug.symbol aria-hidden="true" className="h-11 w-11 stroke-[1.6]" />}
                             </div>
                             <h3 className="text-lg font-black leading-tight tracking-tight text-white">{drug.name}{drug.slug === 'alprazolam' && <span className="block text-sm font-semibold text-cyan-300">(Xanax)</span>}{drug.slug === '7-hydroxymitragynine' && <span className="block text-sm font-semibold text-cyan-300">(7-OH)</span>}{drug.slug === 'dextromethorphan' && <span className="block text-sm font-semibold text-cyan-300">(DXM)</span>}{drug.slug === 'alkyl-nitrites' && <span className="block text-sm font-semibold text-cyan-300">(Poppers)</span>}{drug.slug === 'zolpidem' && <span className="block text-sm font-semibold text-cyan-300">(Ambien)</span>}{drug.slug === 'synthetic-cathinones' && <span className="block text-sm font-semibold text-cyan-300">(Bath Salts)</span>}</h3>
                           </div>

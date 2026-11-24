@@ -10,7 +10,7 @@ export function Footer() {
         <div className="border-t border-white/10 pt-7">
           <p className="mb-2 text-lg font-bold text-white">Interested in joining the coalition?</p>
           <p className="text-base text-slate-300">
-            Contact Daniel Gardner at <a href="mailto:dgardner@miottawa.org" className="font-semibold text-teal-300 underline decoration-teal-300/40 underline-offset-4 transition hover:text-white">dgardner@miottawa.org</a>
+            Contact Daniel Gardner at <a href="mailto:dgardner@ottawacmh.org" className="font-semibold text-teal-300 underline decoration-teal-300/40 underline-offset-4 transition hover:text-white">dgardner@ottawacmh.org</a>
           </p>
         </div>
         <p className="mt-8 text-sm font-semibold uppercase tracking-[0.08em] text-[#35e15c]">Crisis Support: 2-1-1 for Resources <span className="mx-2 text-slate-600">|</span> 988 for Suicide Crisis <span className="mx-2 text-slate-600">|</span> 911 for Emergencies</p>

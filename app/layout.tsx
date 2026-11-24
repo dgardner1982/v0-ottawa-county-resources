@@ -1,9 +1,12 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import Link from 'next/link'
 import { CalendarDays, Home } from 'lucide-react'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { AnalyticsWrapper } from './analytics'
 import { NavigationHistoryManager } from '@/components/navigation-history-manager'
+import { AccessibilityControls } from '@/components/accessibility-controls'
+import { LanguageTranslator } from '@/components/language-translator'
+import { SiteGuideChat } from '@/components/site-guide-chat'
 import './globals.css'
 
 const _geist = Geist({ subsets: ["latin"] });
@@ -14,12 +17,6 @@ export const metadata: Metadata = {
   description: 'One-stop guide for recovery resources in Ottawa County MI. Find mental health, substance recovery, housing, food, employment, harm reduction and overdose prevention services. Includes education on emerging substances.',
   generator: 'v0.app',
   keywords: ['recovery', 'resources', 'Ottawa County', 'mental health', 'substance recovery', 'housing', 'food assistance', 'harm reduction', 'overdose prevention'],
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    userScalable: true,
-    viewportFit: 'cover'
-  },
   icons: {
     icon: [
       {
@@ -39,6 +36,13 @@ export const metadata: Metadata = {
   },
 }
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  userScalable: true,
+  viewportFit: 'cover',
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -47,6 +51,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-background">
       <body className="font-sans antialiased">
+        <a href="#main-content" className="sr-only z-[100] rounded-md bg-white px-4 py-3 font-bold text-slate-950 focus:not-sr-only focus:fixed focus:left-4 focus:top-4">Skip to main content</a>
         <nav aria-label="Primary navigation" className="sticky top-0 z-[60] border-b border-slate-200/80 bg-white/90 px-4 py-3 shadow-[0_10px_30px_-24px_rgba(15,23,42,0.7)] backdrop-blur-xl">
           <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
             <Link href="/" className="group flex min-w-0 items-center gap-3" aria-label="Go to Ottawa County Recovery Alliance homepage">
@@ -64,8 +69,11 @@ export default function RootLayout({
             </Link>
           </div>
         </nav>
+        <LanguageTranslator />
         <NavigationHistoryManager />
-        {children}
+        <div id="main-content" tabIndex={-1} className="border border-[#eefb12] shadow-[0_10px_15px_-3px_rgb(0_0_0_/_0.1),0_4px_6px_-4px_rgb(0_0_0_/_0.1)]">
+          {children}
+        </div>
         <footer className="border-t border-slate-800/70 bg-slate-950 px-5 py-8 text-center text-slate-300 sm:px-8">
           <Link href="/medical-disclaimer" className="font-semibold italic text-[#ff5454] underline decoration-cyan-400 underline-offset-4 transition hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300">
             Medical Disclaimer
@@ -74,6 +82,8 @@ export default function RootLayout({
             Educational and harm-reduction information only. Consult a qualified healthcare professional for personal medical guidance.
           </p>
         </footer>
+        <AccessibilityControls />
+        <SiteGuideChat />
         <AnalyticsWrapper />
       </body>
     </html>

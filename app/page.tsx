@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import { Phone, MapPin, Globe, X } from 'lucide-react';
 import { Footer } from '@/components/footer';
@@ -79,7 +79,7 @@ function PhoneLink({ phoneNumber, displayText }: { phoneNumber: string; displayT
 const RESOURCES: Resource[] = [
   // Overdose Prevention
   { name: "Free Naloxone / Narcan Distribution", category: "Overdose Prevention/Free Naloxone(Narcan)", address: "Multiple locations (see naloxone pickup page)", phone: "(616) 393-4489", info: "Free naloxone (Narcan) is a life-saving medication to reverse opioid overdose. Free kits are available in Ottawa County. For a list of locations click below.", link: "/naloxone-locations", website: "https://recoveryresources.app/naloxone-locations" },
-  { name: "Overdose Prevention Training", category: "Overdose Prevention/Free Naloxone(Narcan)", address: "", phone: "616-393-4489", info: "Overdose Prevention and Naloxone Training. To schedule a free overdose prevention training for yourself or your organization contact Daniel at dgardner@miottawa.org or call 616-393-4489." },
+  { name: "Overdose Prevention Training", category: "Overdose Prevention/Free Naloxone(Narcan)", address: "", phone: "616-393-4489", info: "Overdose Prevention and Naloxone Training. To schedule a free overdose prevention training for yourself or your organization contact Daniel at dgardner@ottawacmh.org or call 616-393-4489." },
 
   // Harm Reduction
   { name: "Grand Rapids Red Project", category: "Harm Reduction", address: "401 Hall St SE, Grand Rapids, MI 49507", phone: "616-456-9063", info: "Comprehensive harm reduction services and support.", website: "https://www.redproject.org" },
@@ -605,9 +605,21 @@ const CATEGORIES = [
   ),
 ];
 
+function subscribeToCategoryUrl(onChange: () => void) {
+  window.addEventListener('popstate', onChange);
+  return () => window.removeEventListener('popstate', onChange);
+}
+
+function getCategoryFromUrl() {
+  const category = new URLSearchParams(window.location.search).get('category');
+  return category && CATEGORIES.includes(category) ? category : 'All';
+}
+
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const categoryFromUrl = useSyncExternalStore(subscribeToCategoryUrl, getCategoryFromUrl, () => 'All');
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const activeCategory = selectedCategory ?? categoryFromUrl;
   const [showSecondChanceModal, setShowSecondChanceModal] = useState(false);
   const [showMCDCLocations, setShowMCDCLocations] = useState(false);
 
@@ -615,7 +627,7 @@ export default function Home() {
   
   const filtered = RESOURCES.filter(r => {
     const matchesSearch = r.name.toLowerCase().includes(searchTerm.toLowerCase()) || r.info.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = selectedCategory === 'All' || r.category === selectedCategory;
+    const matchesCategory = activeCategory === 'All' || r.category === activeCategory;
     return matchesSearch && matchesCategory;
   }).sort((a, b) => a.name.localeCompare(b.name));
 
@@ -717,15 +729,17 @@ Learn something new <span className="text-cyan-200 transition-transform group-ho
           </div>
         </div>
 
-        <div className="mb-12 grid grid-cols-2 gap-3 pb-3 sm:grid-cols-3 lg:grid-cols-4">
+        <div role="group" aria-label="Filter resources by category" className="mb-12 grid grid-cols-2 gap-3 pb-3 sm:grid-cols-3 lg:grid-cols-4">
           {categories.map((cat) => {
             const colors = getCategoryColor(cat);
             return (
               <button
                 key={cat}
+                type="button"
+                aria-pressed={activeCategory === cat}
                 onClick={() => setSelectedCategory(cat)}
                 className={`flex min-h-11 w-full items-center justify-center rounded-full border px-4 py-2 text-center text-sm font-bold leading-tight transition duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-500 ${
-                  selectedCategory === cat 
+                  activeCategory === cat
                     ? `${colors.button} scale-105 border-transparent text-white shadow-lg`
                     : "border-slate-200 bg-white text-slate-600 hover:-translate-y-0.5 hover:border-teal-300 hover:text-teal-700 hover:shadow-md"
                 }`}
@@ -736,7 +750,7 @@ Learn something new <span className="text-cyan-200 transition-transform group-ho
           })}
         </div>
 
-{(selectedCategory === 'Substance Recovery' || selectedCategory === 'Medicated Assisted Treatment') && (
+{(activeCategory === 'Substance Recovery' || activeCategory === 'Medicated Assisted Treatment') && (
   <div className="mb-8 rounded-lg bg-gradient-to-r from-orange-500 to-amber-500 p-6 text-white shadow-lg">
   <h3 className="mb-4 text-2xl font-bold">Medicated Assisted Treatment</h3>
   <Link href="/mat-resources" className="inline-block rounded-lg bg-white px-6 py-3 text-lg font-bold text-orange-600 transition hover:bg-orange-50">
@@ -745,7 +759,7 @@ Learn something new <span className="text-cyan-200 transition-transform group-ho
   </div>
   )}
 
-        {selectedCategory === 'Domestic Violence' && (
+        {activeCategory === 'Domestic Violence' && (
           <div className="mb-8 p-6 bg-gradient-to-r from-rose-600 to-red-600 text-white rounded-lg shadow-lg">
             <h3 className="text-2xl font-bold mb-3">Get Help for Domestic Violence</h3>
             <p className="mb-4">If you or someone you know is experiencing domestic violence, comprehensive support and emergency services are available. Visit our dedicated resources page for crisis lines and shelter information.</p>
@@ -757,7 +771,7 @@ Learn something new <span className="text-cyan-200 transition-transform group-ho
           </div>
         )}
 
-        {selectedCategory === 'Food' && (
+        {activeCategory === 'Food' && (
           <div className="mb-8 space-y-6">
             <div className="p-6 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-lg shadow-lg">
               <h3 className="text-2xl font-bold mb-3">Find Food Assistance</h3>
@@ -785,7 +799,7 @@ Learn something new <span className="text-cyan-200 transition-transform group-ho
           </div>
         )}
 
-        {selectedCategory === 'Employment' && (
+        {activeCategory === 'Employment' && (
           <div className="mb-8 p-6 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-lg shadow-lg">
             <h3 className="text-2xl font-bold mb-3">Looking for Employment with a Criminal Background?</h3>
             <p className="mb-4">Worried your background will prevent you from getting a job? You&apos;re not alone. There are employers and agencies in Ottawa County that specialize in helping individuals with records find meaningful employment. We&apos;ve compiled a list of &quot;second chance&quot; employment agencies and resources specifically designed to support you.</p>
@@ -798,14 +812,14 @@ Learn something new <span className="text-cyan-200 transition-transform group-ho
           </div>
         )}
 
-        {selectedCategory === 'Legal' && (
+        {activeCategory === 'Legal' && (
           <div className="mb-8 p-6 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg shadow-lg">
             <h3 className="text-2xl font-bold mb-3">Legal Resources & Support</h3>
             <p className="mb-4">Ottawa County offers a variety of legal assistance services, from affordable legal representation to court self-help resources. Whether you need help with probation, immigration, domestic relations, or criminal matters, these resources can help guide you through the legal process.</p>
           </div>
         )}
 
-        {selectedCategory === 'Transportation' && (
+        {activeCategory === 'Transportation' && (
           <div className="mb-8 space-y-6">
             {/* Medicaid Transportation Section */}
             <div className="p-6 bg-gradient-to-r from-teal-600 to-cyan-600 text-white rounded-lg shadow-lg">
@@ -873,7 +887,7 @@ Learn something new <span className="text-cyan-200 transition-transform group-ho
           </div>
         )}
 
-        {selectedCategory === 'Housing' && (
+        {activeCategory === 'Housing' && (
           <div className="mb-8 p-6 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg shadow-lg">
             <h3 className="text-2xl font-bold mb-3">Good Samaritan Housing Search Packet</h3>
             <p className="mb-4">Get step-by-step guidance to help you in your housing search. This comprehensive packet includes tips, resources, and important information for finding affordable housing.</p>
@@ -894,7 +908,7 @@ Learn something new <span className="text-cyan-200 transition-transform group-ho
             filtered.map((resource, idx) => {
               const colors = getCategoryColor(resource.category);
               return (
-                <div key={idx} style={{ animationDelay: `${Math.min(idx * 45, 450)}ms` }} className={`${colors.bg} ${colors.border} resource-card group relative overflow-hidden rounded-[1.35rem] p-6 shadow-[0_14px_35px_-25px_rgba(15,23,42,0.75)] transition duration-500 hover:-translate-y-2 hover:shadow-[0_24px_45px_-25px_rgba(15,23,42,0.85)]`}>
+                <article key={idx} style={{ animationDelay: `${Math.min(idx * 45, 450)}ms` }} className={`${colors.bg} ${colors.border} resource-card group relative overflow-hidden rounded-[1.35rem] p-6 shadow-[0_14px_35px_-25px_rgba(15,23,42,0.75)] transition duration-500 hover:-translate-y-2 hover:shadow-[0_24px_45px_-25px_rgba(15,23,42,0.85)]`}>
                   <div className="mb-4 flex items-start justify-between gap-3">
                     <div className="flex items-center gap-3">
                       <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/75 text-2xl shadow-sm transition duration-300 group-hover:rotate-6 group-hover:scale-110">{colors.icon}</span>
@@ -1029,7 +1043,7 @@ Learn something new <span className="text-cyan-200 transition-transform group-ho
                       Call Now
                     </a>
                   )}
-                </div>
+                </article>
               );
             })
           ) : (
